@@ -9,10 +9,10 @@
 	<preference name="phonegap-version" value="2.3.0" />
 	<preference name="fullscreen" value="false" />
 
-	<name>Sole Insider</name>
+	<name>Sole Insider Free</name>
 
 	<description>
-		Sole Insider, Sneaker release dates and availability history
+		Sole Insider, sneaker restocks
 	</description>
 
 	<author href="devverse@gmail.com"
