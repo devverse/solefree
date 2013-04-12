@@ -1,0 +1,59 @@
+div[data-role="page"] {
+ /* background: transparent url(../img/noisy_grid.png) !important;
+  color:black;*/
+}
+
+[data-role=page]{height: 100% !important; position:relative !important;}
+[data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
+
+#content{
+
+
+}
+
+.price{
+	color:green;
+	font-family: verdana;
+	font-weight: bold;
+}
+
+.product_title{
+	margin-bottom: -5px;
+	font-family: verdana;
+	color:steel;
+}
+
+.date{
+	font-family: verdana;
+}
+
+.content{
+	width:50%;
+
+}
+
+.ui-page img{
+	width: 300px;
+}
+
+.ui-page {
+background: #eee !important;
+}
+
+#loginPage  {
+ background: transparent url(../img/jordan4.jpg) !important;
+  color:black;
+}
+
+#createAccountpg {
+ background: transparent url(../img/jordan5.jpg) !important;
+  color:#FFF;
+}
+
+#dashboard {
+ background: transparent url(../img/jordan1.jpg) !important;
+  color:black;	
+}
+
+
+
