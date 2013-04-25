@@ -1,13 +1,45 @@
 var member_id = localStorage.getItem('member_id');
 
-$('#myaccountpg').live('pageshow', function(event) {
-  loginCheck();
+$('#accountpg').live('pageshow', function(event) {
 	getAccount();
 });
 
+$("#updateAccountBtn").click(function(e){
+      updateAccount();
+ });
+
+
+
+
+function updateAccount(){
+
+  if ($('.username').val().length < 4){
+    alert('Please enter a valid username');
+    return;
+  }
+
+   var data = {
+        'member_id' : member_id,
+        'username' : $('.username').val(),
+        'phone' : $('.phone').val(),
+        'carrier' : $("select").val()
+    };
+
+  
+    var account = makePost("updateAccount",data);
+}
 
 function getAccount(){
-  
+
+   var data = {
+        'member_id' : member_id
+    };
+
+   var account = makePost("accountInfo",data);
+   $(".username").val(account.email);
+   $(".phone").val(account.phone_number);
+   $(".carrier option[value='"  + account.carrier +"']").attr("selected", "selected");
+    $('select').selectmenu('refresh', true);
 }
 
 function loginCheck(){
@@ -30,8 +62,8 @@ function makePost(endPoint,formData){
         cache: false,
         data: formData,
         success: function(data) {
-			results = jQuery.parseJSON(data);
-		} // end sucess
+		    	results = jQuery.parseJSON(data);
+		    } // end sucess
     });
 
   return results;
