@@ -9,26 +9,38 @@
 	</head>
 	<body>
 
-	<div id="dashboard" data-role="page" data-add-back-btn="true" data-theme="b">
+
+
+	<!-- Releases page-->
+	<div id="releasespg" data-role="page" data-add-back-btn="true" data-theme="b">
 
 		<div data-role="header" data-theme="a" >
-			<h1>Sole Insider</h1>
+			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
+			<h1>Upcoming Releases</h1>
 		</div>
 
 		<div data-role="content">
-			<ul data-role="listview" data-theme="a" id="" data-inset="true">
-				<li><a href="releases.html" rel="external" data-transition="slide"> Upcoming Releases</a></li>
-				<li><a href="pastreleases.html" rel="external" data-transition="slide"> Past Releases</a></li>
-				<li><a href="productchecks.html" rel="external" data-transition="slide"> Restocks</a></li>
-				<li><a href="availabilityhistory.html" rel="external" data-transition="slide"> Restock Availability History</a></li>
-				<li><a href="sales.html" rel="external" data-transition="slide"> Sales</a></li>
-				<li><a href="stillavail.html" rel="external" data-transition="slide"> Still Available</a></li>
-				<li><a href="news.html" rel="external" data-transition="slide"> News</a></li> 
-				<li><a href="account.html" rel="external" data-transition="slide"> My Account</a></li> 
-			</ul>
+
+			<h4> Use 'Send me a reminder', and we'll send you a reminder email and text message two hours before the shoes drop on release day .</h4>
+			<hr/>
+			<span id="releases" style="width:80%;">
+
+			</span>
 		</div>
   	</div>
+  	<!-- Releases page-->
 
+
+<script id="releasesTemplate" type="text/x-jquery-tmpl">
+	<div data-role="collapsible" data-collapsed="true" data-theme="a">
+
+	<p>
+	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> <span class='date'>${release_date}</span><br/>
+	<img src="http://soleinsider.com/public/products/${image}">
+	<br/><button data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button'>Send me a reminder</button><br/><br/>
+	</p>
+	</div>
+</script>
 
 <script type="text/javascript" src="assets/jquery/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="assets/jquery/jquery.mobile-1.3.0-beta.1.min.js" charset="utf-8"></script>
