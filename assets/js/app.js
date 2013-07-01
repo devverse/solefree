@@ -1,17 +1,18 @@
 var member_id = localStorage.getItem('member_id');
 
 function loginCheck(){
+
+  var member_type = localStorage.getItem('member_type');
   var member_id = localStorage.getItem('member_id');
   var username  = localStorage.getItem('username');
 
-  if ( member_id == null ||  username == null || member_id === 'undefined' || username === 'undefined'){
-    window.location.href = "index.html";
+  if ( member_id == null ||  member_type == 'guest' || username == null || member_id === 'undefined' || username === 'undefined'){
+     $(".hideBtn").remove();
   }
 }
 
 $('#releasespg').live('pageshow', function(event) {
-  loginCheck();
-	getReleases();
+  getReleases();
 });
 
 $('#pastreleasespg').live('pageshow', function(event) {
@@ -21,8 +22,7 @@ $('#pastreleasespg').live('pageshow', function(event) {
 
 
 $('#productcheckspg').live('pageshow', function(event) {
-  loginCheck();
-	getProducts();
+  getProducts();
 });
 
 $('#availabilityhistorypg').live('pageshow', function(event) {
@@ -34,6 +34,10 @@ $('#salespage').live('pageshow', function(event) {
     getSales();
 });
 
+$('#allsalespage').live('pageshow', function(event) {
+    getallSales();
+});
+
 $('#newspg').live('pageshow', function(event) {
     getNewsFeed();
 });
@@ -41,8 +45,6 @@ $('#newspg').live('pageshow', function(event) {
 $('#stillavailpage').live('pageshow', function(event) {
     getStillAvail();
 });
-
-
 
 $("#createAccountBtn").live('click',function(event){
     var username = $(".createusername").val();
@@ -75,6 +77,12 @@ $('.sendLinkToPurchase').live('click',function(event){
     sendLinkToPurchase(product_id);
 });
 
+$('.sendShopifyLinkToPurchase').live('click',function(event){
+    var element = $(event.target);
+    var sneaker_url = element.attr('data-sneaker-url');
+    var sneaker_image = element.attr('data-sneaker-image');
+    sendShopifyLinkToPurchase(sneaker_url,sneaker_image);
+});
 
 
 function makePost(endPoint,formData){
@@ -88,22 +96,31 @@ function makePost(endPoint,formData){
         cache: false,
         data: formData,
         success: function(data) {
-			results = jQuery.parseJSON(data);
-		} // end sucess
+      results = jQuery.parseJSON(data);
+    } // end sucess
     });
 
   return results;
 }
 
+function getallSales(){
+   var releases = makePost("getallSales",'');
+    $( "#stillAvailTemplate" ).tmpl( releases ).appendTo("#saleslist");
+    loginCheck();
+    $(".button").button();
+}
+
 function getSales(){
     var releases = makePost("getSales",'');
     $( "#stillAvailTemplate" ).tmpl( releases ).appendTo("#saleslist");
+     loginCheck();
     $(".button").button();
 }
 
 function getStillAvail(){
     var releases = makePost("getStillAvail",'');
     $( "#stillAvailTemplate" ).tmpl( releases ).appendTo("#stillavail");
+     loginCheck();
     $(".button").button();
 }
 
@@ -113,16 +130,18 @@ function getPastReleases(){
 }
 
 function getReleases(){
-	 var releases = makePost("releaseDates",'');
+   var releases = makePost("releaseDates",'');
      $( "#releasesTemplate" ).tmpl( releases ).appendTo("#releases")
+     loginCheck();
      $(".button").button();
   }
 
   function getProducts(){
      var releases = makePost("productsChecks",'');
      $( "#productsTemplate" ).tmpl( releases ).appendTo("#productChecks");
-
+      loginCheck();
      $(".button").button();
+
   }
 
   function createAccount(username,password){
@@ -149,7 +168,6 @@ function getReleases(){
    function getNewsFeed(){
        var news = makePost("rssFeeds",'');
        $( "#newsTemplate" ).tmpl( news ).appendTo("#news");
-       console.log(news);
   }
 
   function addReleaseAlert(product_id){
@@ -180,6 +198,17 @@ function getReleases(){
     
     alert('You will be notified as soon as the shoe becomes available online again.');
     makePost("addRestockAlert",data);
+  }
+
+  function sendShopifyLinkToPurchase(sneaker_url,sneaker_image){
+     var data = {
+        'sneaker_url' : sneaker_url,
+        'sneaker_image' : sneaker_image,
+        'member_id' : member_id
+    };
+    
+    alert('You have been email a link to purchase this item. Please check your spam folder');
+    var results = makePost("sendShopifyLinkToPurchase",data);
   }
 
   function getAvailabilityHistory(){

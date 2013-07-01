@@ -10,29 +10,19 @@
 	<body>
 
 <!-- Start of login div -->
-<div data-role="page" id="loginPage" >
+<div data-role="page" id="indexPage" >
 
-	<div data-role="header" data-theme="b">
+	<div data-role="header" data-theme="c">
 		<h1>Sole Insider</h1>
 
 	</div><!-- /header -->
 
 	 <div data-role="content" >
 
-	<form id="loginAjaxForm">
-
-		<h4> This app is best used over a wifi connection, but will work fine over a normal mobile data plan. </h4>
-
-		<h3> Login </h3>
-		<input type="text" class="username" value="">
-		<input type="password" class="password" value="">
-		<a href="#" id="loginBtn" data-role="button" data-theme=
-		"b">Login</a>
-		<a href="createaccount.html"  data-role="button" data-theme=
-		"e">Create an account</a>
-	</form>
-
-	<hr/>
+	 <a href="login.html" data-role="button" data-theme=
+		"c" rel="external">Login / Register</a>
+		<a href="" id="guestGtn" data-role="button" data-theme=
+		"c" rel="external">Continue As Guest</a>	<hr/>
 	</div> <!-- /content -->
 
 
@@ -46,51 +36,12 @@
 <script type="text/javascript" src="assets/js/app.js" charset="utf-8"></script>
 <script>
 
-$("#loginBtn").click(function(e){
-        e.preventDefault();
-        login();
-        return false;
- });
 
+$('#guestGtn').live('click', function() {
+    localStorage.setItem("member_type","guest");
+       location.href = "dashboard.html";
+});
 
-function activeSession(){
-		var username = localStorage.getItem("username");
-
-		if (username !=""){
-				window.location.href="dashboard.html";
-		}
-
-}
-
-function login(){
-
-	var data = {
-		'username' : $(".username").val(),
-		'password' : $(".password").val()
-	};
-
-	var formData = data;
-
-    $.ajax({
-        type: "POST",
-        url: serviceURL+"login",
-        cache: false,
-        data: formData,
-        success: function(data) {
-		    data = $.trim(data);
-			data = jQuery.parseJSON(data);
-
-			if (data != false){
-				localStorage.setItem('username', data.email);
-				localStorage.setItem('member_id',  data.id);
-				window.location.href="dashboard.html";
-
-			} else{
-				alert("Incorrect login");
-			}
-		} // end success
-    });
-}
 
 </script>
 </body>

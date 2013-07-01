@@ -7,24 +7,24 @@ div[data-role="page"] {
 [data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
 
 #content{
-
+font-family: georgia;
 
 }
 
 .price{
 	color:green;
-	font-family: verdana;
+	font-family: georgia;
 	font-weight: bold;
 }
 
 .product_title{
 	margin-bottom: -5px;
-	font-family: verdana;
-	color:steel;
+	font-family: arial;;
+	color: #555 !important;
 }
 
 .date{
-	font-family: verdana;
+	font-family: georgia;
 }
 
 .content{
@@ -40,18 +40,18 @@ div[data-role="page"] {
 background: #eee !important;
 }
 
-#loginPage  {
- background: transparent url(../img/jordan4.jpg) !important;
+#loginPage,#indexPage  {
+ background: transparent url(../img/jordan5.jpg) !important;
   color:black;
 }
 
-#createAccountpg {
+#createAccountpg_ {
  background: transparent url(../img/jordan5.jpg) !important;
   color:#FFF;
 }
 
 #dashboard {
- background: transparent url(../img/jordan1.jpg) !important;
+ background: transparent url(../img/jordan5.jpg) !important;
   color:black;	
 }
 

@@ -12,9 +12,9 @@
 
 
 	<!-- Releases page-->
-	<div id="releasespg" data-role="page" data-add-back-btn="true" data-theme="b">
+	<div id="releasespg" data-role="page" data-add-back-btn="true" data-theme="d">
 
-		<div data-role="header" data-theme="a" >
+		<div data-role="header" data-theme="c" >
 			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
 			<h1>Upcoming Releases</h1>
 		</div>
@@ -22,7 +22,7 @@
 		<div data-role="content">
 
 			<h4> Use 'Send me a reminder', and we'll send you a reminder email and text message two hours before the shoes drop on release day .</h4>
-			<hr/>
+		
 			<span id="releases" style="width:80%;">
 
 			</span>
@@ -35,9 +35,9 @@
 	<div data-role="collapsible" data-collapsed="true" data-theme="a">
 
 	<p>
-	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> <span class='date'>${release_date}</span><br/>
+	<h2 class='product_title'>${name}</h2> <span class='price'> ($${price}) </span>  <span class='date'>${release_date}</span><br/>
 	<img src="http://soleinsider.com/public/products/${image}">
-	<br/><button data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button'>Send me a reminder</button><br/><br/>
+	<br/><button data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button hideBtn'>Send me a reminder</button><br/><br/>
 	</p>
 	</div>
 </script>
