@@ -9,8 +9,6 @@ $("#updateAccountBtn").click(function(e){
  });
 
 
-
-
 function updateAccount(){
 
   if ($('.username').val().length < 4){

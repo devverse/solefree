@@ -155,12 +155,13 @@ function getReleases(){
 
     var member_id = makePost("createAccount",data);
 
-    if (status !== false){
+
+    if (member_id !== false){
         localStorage.setItem('username', username);
         localStorage.setItem('member_id',member_id);
         location.href = 'dashboard.html';
     }else{
-        alert('This email address is ');
+        alert('Your account could be created, please try again');
     }
 
   }

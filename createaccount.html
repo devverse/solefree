@@ -55,51 +55,6 @@
 <script type="text/javascript" src="assets/js/app.js" charset="utf-8"></script>
 <script>
 
-$("#loginBtn").click(function(e){
-        e.preventDefault();
-        login();
-        return false;
- });
-
-
-function activeSession(){
-		var username = localStorage.getItem("username");
-
-		if (username !=""){
-				window.location.href="dashboard.html";
-		}
-
-}
-
-function login(){
-
-	var data = {
-		'username' : $(".username").val(),
-		'password' : $(".password").val()
-	};
-
-	var formData = data;
-
-    $.ajax({
-        type: "POST",
-        url: serviceURL+"login",
-        cache: false,
-        data: formData,
-        success: function(data) {
-		    data = $.trim(data);
-			data = jQuery.parseJSON(data);
-
-			if (data != false){
-				localStorage.setItem('username', data.email);
-				localStorage.setItem('member_id',  data.id);
-				window.location.href="dashboard.html";
-
-			} else{
-				alert("Incorrect login");
-			}
-		} // end success
-    });
-}
 
 </script>
 </body>
