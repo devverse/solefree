@@ -4,6 +4,7 @@ function loginCheck(){
 
   var member_type = localStorage.getItem('member_type');
   var member_id = localStorage.getItem('member_id');
+
   var username  = localStorage.getItem('username');
 
   if ( member_id == null ||  member_type == 'guest' || username == null || member_id === 'undefined' || username === 'undefined'){
@@ -56,7 +57,12 @@ $("#createAccountBtn").live('click',function(event){
         return;
     }
 
-    createAccount(username,password);
+     if (password.length < 4){
+        alert("Password must be longer than 4 characters");
+        return;
+    }
+
+    return createAccount(username,password);
 });
 
 $('.addReleaseAlert').live('click',function(event){
@@ -155,9 +161,12 @@ function getReleases(){
 
     var member_id = makePost("createAccount",data);
 
+
     if (member_id !== false){
+        localStorage.clear();
         localStorage.setItem('username', username);
         localStorage.setItem('member_id',member_id);
+        localStorage.setItem('member_type',"member");
         location.href = 'dashboard.html';
     }else{
         alert('Your account could be created, please try again');
