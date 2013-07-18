@@ -28,9 +28,10 @@
 		<input type="text" class="username" value="">
 		<input type="password" class="password" value="">
 		<a href="#" id="loginBtn" data-role="button" data-theme=
-		"b">Login</a>
-		<a href="createaccount.html"  data-role="button" data-theme=
-		"e">Create an account</a>
+		"b" rel="external">Login</a>
+
+		<a href="createaccount.html"  rel="external" data-role="button" data-theme=
+		"e" >Create an account</a>
 	</form>
 
 	<hr/>
@@ -54,12 +55,11 @@ $("#loginBtn").click(function(e){
 
 
 function activeSession(){
-		var username = localStorage.getItem("username");
+	var username = localStorage.getItem("username");
 
-		if (username !=""){
-				window.location.href="dashboard.html";
-		}
-
+	if (username !=""){
+		window.location.href="dashboard.html";
+	}
 }
 
 function login(){

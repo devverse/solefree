@@ -145,6 +145,7 @@ function getReleases(){
   }
 
   function createAccount(username,password){
+
     var data = {
         'username' : username,
         'password' : password,
@@ -152,9 +153,7 @@ function getReleases(){
         'carrier' : $(".carrier option:selected").val()
     };
 
-
     var member_id = makePost("createAccount",data);
-
 
     if (member_id !== false){
         localStorage.setItem('username', username);
