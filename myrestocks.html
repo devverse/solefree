@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+		<title>Sole Insider</title>
+
+		<link rel="stylesheet" href="assets/jquery/jquery.mobile-1.3.0-beta.1.min.css" />
+		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
+	</head>
+	<body>
+
+
+  	<!-- Products page-->
+	<div id="myrestockspg" data-role="page" data-add-back-btn="true" data-theme="d">
+
+		<div data-role="header" data-theme="c" >
+			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
+			<h1>My Restocks</h1>
+		</div>
+
+		<div data-role="content">
+			<h4 class="hiddenmessage"> Your must be logged in to use this feature </h4>
+			
+			<span id="productChecks" style="width:80%;">
+
+			</span>
+		</div>
+	</div>
+	<!-- Products page-->
+
+<script id="productsTemplate" type="text/x-jquery-tmpl">
+	<p>
+	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> 
+	<img src="http://soleinsider.com/public/products/${image}">
+	</p>
+</script>
+
+
+<script type="text/javascript" src="assets/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="assets/jquery/jquery.mobile-1.3.0-beta.1.min.js" charset="utf-8"></script>
+<script src="assets/js/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

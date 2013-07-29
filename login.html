@@ -84,6 +84,7 @@ function login(){
 				localStorage.setItem('username', data.email);
 				localStorage.setItem('member_id',  data.id);
 				localStorage.setItem('member_type',  'member');
+				localStorage.setItem('password',  $(".password").val());
 				window.location.href="dashboard.html";
 
 			} else{
@@ -92,6 +93,15 @@ function login(){
 		} // end success
     });
 }
+
+function getLogin(){
+	var username = localStorage.getItem('username');
+	var password = localStorage.getItem('password');
+	$(".username").val(username);
+	$(".password").val(password);
+}
+
+getLogin();
 
 </script>
 </body>

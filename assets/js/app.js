@@ -9,8 +9,20 @@ function loginCheck(){
 
   if ( member_id == null ||  member_type == 'guest' || username == null || member_id === 'undefined' || username === 'undefined'){
      $(".hideBtn").remove();
+     $(".hiddenmessage").show();
   }
 }
+
+
+
+$('#myreleasespg').live('pageshow', function(event) {
+  getMyReleases();
+});
+
+$('#myrestockspg').live('pageshow', function(event) {
+  getMyRestocks();
+});
+
 
 $('#releasespg').live('pageshow', function(event) {
   getReleases();
@@ -142,6 +154,34 @@ function getReleases(){
      $(".button").button();
   }
 
+  function getMyReleases(){
+     var data = {
+        'member_id' : member_id
+    };
+
+    var releases = makePost("getMyReleases",data);
+     loginCheck();
+
+     if (releases){
+      $( "#releasesTemplate" ).tmpl( releases ).appendTo("#releases");
+    }
+  }
+
+
+  function getMyRestocks(){
+     var data = {
+        'member_id' : member_id
+    };
+
+    var restocks = makePost("getMyRestocks",data);
+     loginCheck();
+
+     if (restocks){
+       $( "#productsTemplate" ).tmpl( restocks ).appendTo("#productChecks");
+    }
+  }
+
+
   function getProducts(){
      var releases = makePost("productsChecks",'');
      $( "#productsTemplate" ).tmpl( releases ).appendTo("#productChecks");
@@ -223,7 +263,6 @@ function getReleases(){
   function getAvailabilityHistory(){
      var history = makePost("getAvailabilityHistory",'');
       $( "#availhistorytemplate" ).tmpl( history ).appendTo("#availhistory");
-      console.log(history);
   }
 
   function getUrlVars() {

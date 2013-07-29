@@ -38,8 +38,9 @@
 
 
 $('#guestGtn').live('click', function() {
+	localStorage.clear();
     localStorage.setItem("member_type","guest");
-       location.href = "dashboard.html";
+    location.href = "dashboard.html";
 });
 
 

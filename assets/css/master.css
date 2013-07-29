@@ -8,7 +8,10 @@ div[data-role="page"] {
 
 #content{
 font-family: georgia;
+}
 
+.hiddenmessage{
+	display: none;
 }
 
 .price{
