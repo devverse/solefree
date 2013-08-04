@@ -1,12 +1,4 @@
-div[data-role="page"] {
- /* background: transparent url(../img/noisy_grid.png) !important;
-  color:black;*/
-}
-
-[data-role=page]{height: 100% !important; position:relative !important;}
-[data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}
-
-#content{
+/*#content{
 font-family: georgia;
 }
 
@@ -35,9 +27,6 @@ font-family: georgia;
 
 }
 
-.ui-page img{
-	width: 300px;
-}
 
 .ui-page {
 background: #eee !important;
@@ -63,8 +52,34 @@ background: #eee !important;
   color:black;	
 }
 
-
+.ui-pannel-inner{
+	width:10px !important;
+}
 
 embed{
 	max-width: 200px !important;
+}*/
+
+.panelList li{
+	margin-bottom: 20px;
+	border: 2px solid #ccc;
+	width: 120px;
+	padding: 5px;
+	border-radius: 5px;
+	text-align: center;;
+	box-shadow: 6px 6px 4px #000;
+	font-size: 14px;
+	background-color: #efe;
+	color: #555;
+	font-family: arial !important;
+
+}
+
+.ui-page img{
+	width: 300px;
+}
+
+.panelList{
+	
+
 }
