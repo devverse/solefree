@@ -33,6 +33,11 @@ function loadPanel(){
 }
 
 
+$('#twitterpg').live('pageshow', function(event) {
+  getTwitterFeeds();
+  //getMyTwitterFeeds();
+});
+
 
 $('#myreleasespg').live('pageshow', function(event) {
   getMyReleases();
@@ -119,6 +124,25 @@ $('.sendShopifyLinkToPurchase').live('click',function(event){
     var sneaker_url = element.attr('data-sneaker-url');
     var sneaker_image = element.attr('data-sneaker-image');
     sendShopifyLinkToPurchase(sneaker_url,sneaker_image);
+});
+
+
+$('.watchTwitterBtn').live('click',function(event){
+
+    var twitter_ids = [];
+    $('input[type=checkbox]').each(function () {
+           if (this.checked) {
+              twitter_ids.push($(this).val());
+           }
+    });
+
+    var data = {
+        'twitter_ids' : twitter_ids,
+        'member_id' : member_id
+    };
+
+    makePost("twitterWatch",data);
+
 });
 
 
@@ -284,6 +308,20 @@ function getReleases(){
      var history = makePost("getAvailabilityHistory",'');
       $( "#availhistorytemplate" ).tmpl( history ).appendTo("#availhistory");
   }
+
+  function getTwitterFeeds(){
+    var feeds = makePost("getTwitterFeeds",'');
+    $( "#twitterTemplate" ).tmpl( feeds ).appendTo("#twitterlist");
+    loginCheck();
+    //$(".button").button();
+
+}
+
+function getMyTwitterFeeds(){
+    var releases = makePost("getMyTwitterFeeds",'');
+    //$( "#myTwitterTemplate" ).tmpl( releases ).appendTo("#mytwitterlist");
+    //$(".button").button();
+}
 
   function getUrlVars() {
     var vars = [], hash;

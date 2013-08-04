@@ -24,7 +24,7 @@ $('.addToWatchList').live('click',function(event){
     addToWatchList(twitter_id);
 });
 
-$('.watchBtn').live('click',function(event){
+$('.watchTwitterBtn').live('click',function(event){
 
     var twitter_ids = [];
     $('input[type=checkbox]').each(function () {
@@ -38,6 +38,8 @@ $('.watchBtn').live('click',function(event){
         'member_id' : member_id
     };
 
+    console.log(data);
+  
     makePost("twitterWatch",data);
 
 });
