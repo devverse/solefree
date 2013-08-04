@@ -10,7 +10,7 @@ div[data-role="page"] {
 font-family: georgia;
 }
 
-.hiddenmessage{
+.hiddenmessage,.showBtn{
 	display: none;
 }
 

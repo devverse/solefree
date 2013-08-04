@@ -14,26 +14,31 @@
 	<div id="productcheckspg" data-role="page" data-add-back-btn="true" data-theme="d">
 
 		<div data-role="header" data-theme="c" >
-			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
-			<h1>Restock Notifier</h1>
+			<a href="#mypanel" data-icon=""  data-theme="c">Menu</a>
+			<a href="index.html" data-transition="slideup" rel="external" data-transition="slide">Home</a>
+			<h1>Restocks</h1>
 		</div>
 
-		<div data-role="content">
-			<h4> Our bots scan a select few websites for restocks every few minutes. As soon as we find a shoe that has become available, we send you a text message and an email with a link to go buy.</h4>
-			
-			<span id="productChecks" style="width:80%;">
+		<div data-role="panel" id="mypanel" class="panelDiv">
 
-			</span>
+		</div>
+
+
+		<div data-role="content">
+			<p class="showBtn" style="Text-align:center"> Please login to watch these restocks</p>
+			<ul id="productChecks" data-role="listview" data-filter="true">
+			</ul>
+		
 		</div>
 	</div>
 	<!-- Products page-->
 
 <script id="productsTemplate" type="text/x-jquery-tmpl">
-	<p>
+	<li data-filtertext="${name}" style="text-align:center">
 	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> 
 	<img src="http://soleinsider.com/public/products/${image}">
 	<br/><button data-product-id='${product_id}' data-role="button" data-icon="star" class='addRestockAlert button hideBtn' > Watch these sneakers</button><br/><br/>
-	</p>
+	</li>
 </script>
 
 

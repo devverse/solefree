@@ -12,32 +12,38 @@
 
 
   	<!-- Availabile products page-->
-  	<div id="stillavailpage" data-role="page" data-add-back-btn="true" data-theme="b">
+  	<div id="stillavailpage" data-role="page" data-add-back-btn="true" data-theme="d">
 
 		<div data-role="header" data-theme="c" >
-			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
-			<h1>Sneakers still available</h1>
+			<a href="#mypanel" data-icon=""  data-theme="c">Menu</a>
+			<a href="index.html" data-transition="slideup" rel="external" data-transition="slide">Home</a>
+			<h1>Still Available</h1>
 		</div>
 
+
+		<div data-role="panel" id="mypanel" class="panelDiv">
+
+		</div>
 
 		<div data-role="content">
-			<span id="stillavail" style="width:80%;">
+			<ul id="stillavail"  data-role="listview" data-filter="true">
 
-			</span>
+			</ul>
 
 		</div>
+
   	</div>
   	<!-- Availabile products page-->
 
 
 <script id="stillAvailTemplate" type="text/x-jquery-tmpl">
-	<div data-role="collapsible" data-collapsed="true" data-theme="a">
+	<li data-filtertext="${name}" style="text-align:center">
 	<p>
 	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> 
 	<img src="http://soleinsider.com/public/products/${image}">
 	<button data-product-id='${product_id}' data-role="button" data-theme="c" data-icon="star" class='sendLinkToPurchase button hideBtn'>Send me link to purchase</button><br/><br/>
 	</p>
-	</div>
+	</li>
 </script>
 
 

@@ -14,25 +14,30 @@
 	<div id="myrestockspg" data-role="page" data-add-back-btn="true" data-theme="d">
 
 		<div data-role="header" data-theme="c" >
-			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
+			<a href="#mypanel" data-icon=""  data-theme="c">Menu</a>
+			<a href="index.html" data-transition="slideup" rel="external" data-transition="slide">Home</a>
 			<h1>My Restocks</h1>
+		</div>
+
+		<div data-role="panel" id="mypanel" class="panelDiv">
+
 		</div>
 
 		<div data-role="content">
 			<h4 class="hiddenmessage"> Your must be logged in to use this feature </h4>
 			
-			<span id="productChecks" style="width:80%;">
+			<ul id="productChecks" data-role="listview" data-filter="true">
 
-			</span>
+			</ul>
 		</div>
 	</div>
 	<!-- Products page-->
 
 <script id="productsTemplate" type="text/x-jquery-tmpl">
-	<p>
+	<li data-filtertext="${name}" style="text-align:center">
 	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> 
 	<img src="http://soleinsider.com/public/products/${image}">
-	</p>
+	</li>
 </script>
 
 

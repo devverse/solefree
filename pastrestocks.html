@@ -11,18 +11,24 @@
 
 
   	<!-- Availability history page-->
-  	<div id="availabilityhistorypg" data-role="page" data-add-back-btn="true" data-theme="b">
+  	<div id="availabilityhistorypg" data-role="page" data-add-back-btn="true" data-theme="d">
 
 		<div data-role="header" data-theme="c" >
-			<a href="dashboard.html" data-transition="slideup" rel="external" data-transition="slide">Back</a>
-			<h1>Availability History</h1>
+			<a href="#mypanel" data-icon=""  data-theme="c">Menu</a>
+			<a href="index.html" data-transition="slideup" rel="external" data-transition="slide">Home</a>
+			<h1>Past Restocks</h1>
 		</div>
 
+		<div data-role="panel" id="mypanel" class="panelDiv">
+
+		</div>
 
 		<div data-role="content">
-			<span id="availhistory" style="width:80%;">
+			
 
-			</span>
+			<ul id="availhistory" data-role="listview" data-filter="true">
+
+			</ul>
 
 		</div>
   	</div>
@@ -31,10 +37,10 @@
 
 
 <script id="availhistorytemplate" type="text/x-jquery-tmpl">
-	<p>
+	<li data-filtertext="${name}" style="text-align:center">
 	<h2 class='product_title'> ${name} </h2> were restocked on  ${available_timestamp}<br/>
 	<img src="http://soleinsider.com/public/products/${image}">
-	</p>
+	</li>
 </script>
 
 

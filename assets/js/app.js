@@ -10,7 +10,26 @@ function loginCheck(){
   if ( member_id == null ||  member_type == 'guest' || username == null || member_id === 'undefined' || username === 'undefined'){
      $(".hideBtn").remove();
      $(".hiddenmessage").show();
+     $(".showBtn").show();
+     $(".button").button();
+
   }
+}
+
+$('div[data-role="page"]').on( 'pagebeforeshow',function(event){
+  loadPanel();
+  $(".button").button();
+  
+});
+
+function loadPanel(){
+
+  $('.panelDiv').load('panel.html', function() {  
+  $( "#mypanel" ).trigger( "updatelayout" );
+    //$(".panelList").listview("refresh");
+  });
+
+
 }
 
 
@@ -120,6 +139,7 @@ function makePost(endPoint,formData){
 
   return results;
 }
+
 
 function getallSales(){
    var releases = makePost("getallSales",'');
