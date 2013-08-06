@@ -127,23 +127,6 @@ $('.sendShopifyLinkToPurchase').live('click',function(event){
 });
 
 
-$('.watchTwitterBtn').live('click',function(event){
-
-    var twitter_ids = [];
-    $('input[type=checkbox]').each(function () {
-           if (this.checked) {
-              twitter_ids.push($(this).val());
-           }
-    });
-
-    var data = {
-        'twitter_ids' : twitter_ids,
-        'member_id' : member_id
-    };
-
-    makePost("twitterWatch",data);
-
-});
 
 
 function makePost(endPoint,formData){
@@ -163,6 +146,28 @@ function makePost(endPoint,formData){
 
   return results;
 }
+
+
+$('.watchTwitterBtn').live('click',function(event){
+
+
+    var twitter_ids = [];
+    $('input[type=checkbox]').each(function () {
+           if (this.checked) {
+              twitter_ids.push($(this).val());
+           }
+    });
+
+    var data = {
+        'twitter_ids' : twitter_ids,
+        'member_id' : member_id
+    };
+
+    makePost("twitterWatch",data);
+    console.log("here");
+
+});
+
 
 
 function getallSales(){
@@ -251,7 +256,7 @@ function getReleases(){
         localStorage.setItem('username', username);
         localStorage.setItem('member_id',member_id);
         localStorage.setItem('member_type',"member");
-        location.href = 'dashboard.html';
+        location.href = 'index.html';
     }else{
         alert('Your account could be created, please try again');
     }
