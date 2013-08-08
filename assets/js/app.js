@@ -28,58 +28,58 @@ function loadPanel(){
   $( "#mypanel" ).trigger( "updatelayout" );
     //$(".panelList").listview("refresh");
   });
-
-
 }
 
 
-$('#twitterpg').live('pageshow', function(event) {
+$('#twitterpg').live('pageinit', function(event) {
   getTwitterFeeds();
   //getMyTwitterFeeds();
 });
 
 
-$('#myreleasespg').live('pageshow', function(event) {
+$('#myreleasespg').live('pageinit', function(event) {
   getMyReleases();
 });
 
-$('#myrestockspg').live('pageshow', function(event) {
+$('#myrestockspg').live('pageinit', function(event) {
   getMyRestocks();
 });
 
 
-$('#releasespg').live('pageshow', function(event) {
+$('#releasespg').live('pageinit', function(event) {;
   getReleases();
 });
 
-$('#pastreleasespg').live('pageshow', function(event) {
+
+
+$('#pastreleasespg').live('pageinit', function(event) {
   loginCheck();
   getPastReleases();
 });
 
 
-$('#productcheckspg').live('pageshow', function(event) {
+$('#productcheckspg').live('pageinit', function(event) {
   getProducts();
 });
 
-$('#availabilityhistorypg').live('pageshow', function(event) {
+$('#availabilityhistorypg').live('pageinit', function(event) {
     loginCheck();
     getAvailabilityHistory();
 });
 
-$('#salespage').live('pageshow', function(event) {
+$('#salespage').live('pageinit', function(event) {
     getSales();
 });
 
-$('#allsalespage').live('pageshow', function(event) {
+$('#allsalespage').live('pageinit', function(event) {
     getallSales();
 });
 
-$('#newspg').live('pageshow', function(event) {
+$('#newspg').live('pageinit', function(event) {
     getNewsFeed();
 });
 
-$('#stillavailpage').live('pageshow', function(event) {
+$('#stillavailpage').live('pageinit', function(event) {
     getStillAvail();
 });
 

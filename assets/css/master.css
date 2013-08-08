@@ -114,4 +114,8 @@ hr{
 	height: 1px;
 }
 
+.ui-panel {
+    width: 11em !important;
+}
+
 
