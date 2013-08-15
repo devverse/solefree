@@ -8,7 +8,7 @@ function loginCheck(){
   var username  = localStorage.getItem('username');
 
   if ( member_id == null ||  member_type == 'guest' || username == null || member_id === 'undefined' || username === 'undefined'){
-     $(".hideBtn").remove();
+     //$(".hideBtn").remove();
      $(".hiddenmessage").show();
      $(".showBtn").show();
      $(".button").button();
@@ -116,7 +116,8 @@ $('.addRestockAlert').live('click',function(event){
 $('.sendLinkToPurchase').live('click',function(event){
     var element = $(event.target);
     var product_id = element.attr('data-product-id');
-    sendLinkToPurchase(product_id);
+    var product_link = element.attr('data-sneaker-url');
+    sendLinkToPurchase(product_id,product_link);
 });
 
 $('.sendShopifyLinkToPurchase').live('click',function(event){
@@ -269,6 +270,13 @@ function getReleases(){
   }
 
   function addReleaseAlert(product_id){
+
+
+    if (!member_id){
+      alert('You must be logged in to use this feature');
+      return false;
+    }
+
     var data = {
         'product_id' : product_id,
         'member_id' : member_id
@@ -278,17 +286,23 @@ function getReleases(){
     makePost("addReleaseAlert",data);
   }
 
-  function sendLinkToPurchase(product_id){
+  function sendLinkToPurchase(product_id,product_link){
     var data = {
         'product_id' : product_id,
         'member_id' : member_id
     };
-    alert('You have been email a link to purchase this item. Please check your spam folder');
-    makePost("sendLinkToPurchase",data);
-
+    //alert('You have been email a link to purchase this item. Please check your spam folder');
+    // makePost("sendLinkToPurchase",data);
+    location.href = product_link;
   }
 
    function addRestockAlert(product_id){
+
+    if (!member_id){
+      alert('You must be logged in to use this feature');
+      return false;
+    }
+
     var data = {
         'product_id' : product_id,
         'member_id' : member_id
