@@ -319,8 +319,9 @@ function getReleases(){
         'member_id' : member_id
     };
     
-    alert('You have been email a link to purchase this item. Please check your spam folder');
-    var results = makePost("sendShopifyLinkToPurchase",data);
+    location.href = sneaker_url;
+    //alert('You have been email a link to purchase this item. Please check your spam folder');
+    //var results = makePost("sendShopifyLinkToPurchase",data);
   }
 
   function getAvailabilityHistory(){
