@@ -30,6 +30,7 @@
 	<icon src="icon.jpg" width="72" height="72" />
 	<icon src="icon.jpg" width="48" height="48" />
 	<icon src="icon.jpg" width="36" height="36"  gap:role="default"  />
+	<IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
 
     <gap:splash src="splash.jpg" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
