@@ -33,10 +33,10 @@
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
 	<!-- Android -->
-	<icon src="icons/android/drawable_ldpi:ic_launcher.png" gap:platform="android" gap:density="ldpi" />
-	<icon src="icons/android/drawable_mdpi:ic_launcher.png" gap:platform="android" gap:density="mdpi" />
-	<icon src="icons/android/drawable_hdpi:ic_launcher.png" gap:platform="android" gap:density="hdpi" />
-	<icon src="icons/android/drawable_xhdpi:ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="icons/android/drawable_ldpi_ic_launcher.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="icons/android/drawable_mdpi_ic_launcher.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icons/android/drawable_hdpi_ic_launcher.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="icons/android/drawable_xhdpi_ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
 
 	<!-- Iphone -->
 	<icon src="icons/ios/Icon-Small-50" gap:platform="ios" width="57" height="57" />
