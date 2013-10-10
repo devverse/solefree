@@ -193,12 +193,14 @@ function getStillAvail(){
 }
 
 function getPastReleases(){
-     var releases = makePost("pastReleaseDates",'');
+     releases = Cache.get("pastReleaseDates");
      $( "#pastreleasesTemplate" ).tmpl( releases ).appendTo("#pastreleases")
 }
 
 function getReleases(){
-   var releases = makePost("releaseDates",'');
+
+     releases = Cache.get("releaseDates");
+
      $( "#releasesTemplate" ).tmpl( releases ).appendTo("#releases")
      loginCheck();
      $(".button").button();
@@ -233,7 +235,9 @@ function getReleases(){
 
 
   function getProducts(){
-     var releases = makePost("productsChecks",'');
+
+     releases = Cache.get("productsChecks");
+
      $( "#productsTemplate" ).tmpl( releases ).appendTo("#productChecks");
       loginCheck();
      $(".button").button();
