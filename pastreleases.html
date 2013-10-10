@@ -35,11 +35,21 @@
 
 <script id="pastreleasesTemplate" type="text/x-jquery-tmpl">
 	<li data-filtertext="${name}" style="text-align:center">
-	<h2 class='product_title'>${name}</h2> <span class='price'> ($${price}) </span>  <span class='date'>${release_date}</span><br/>
-	<img src="http://soleinsider.com/public/products/${image}">
-	</p>
+
+	<div class="product">
+		<div class="productImages">
+			<img src="http://soleinsider.com/public/products/${image}" class="productImage">
+		</div>
+
+		<div class="productDetails">
+			<p class='product_title' style="margin-top:-4px">${name}</p> 
+			<p class='date'>${release_date}</p>
+			<p class='price'> ($${price}) </p> 
+			
+		</div>
+	</div>
+	<hr/>
 	</li>
-		<hr/>
 
 </script>
 

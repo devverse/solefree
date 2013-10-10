@@ -37,11 +37,23 @@
 
 
 <script id="availhistorytemplate" type="text/x-jquery-tmpl">
+
 	<li data-filtertext="${name}" style="text-align:center">
-	<h2 class='product_title'> ${name} </h2> were restocked on  ${available_timestamp}<br/>
-	<img src="http://soleinsider.com/public/products/${image}">
-	</li>
+
+	<div class="product">
+		<div class="productImages">
+			<img src="http://soleinsider.com/public/products/${image}" class="productImage">
+		</div>
+
+		<div class="productDetails">
+			<div class='product_title'>${name}</div> 
+			<div class='date'>Restocked On: ${available_timestamp}</div>
+			<div class='price'> ($${price}) </div> 
+		
+		</div>
+	</div>
 	<hr/>
+	</li>
 </script>
 
 

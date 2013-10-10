@@ -36,14 +36,24 @@
 
 
 <script id="stillAvailTemplate" type="text/x-jquery-tmpl">
-	<li data-filtertext="${name}" style="text-align:center">
-	<p>
-	<h2 class='product_title'>${name}</h2> <span class='price'>$${price} </span> <br/> 
-	<img src="http://soleinsider.com/public/products/${image}">
-	<button data-product-id='${product_id}' data-role="button" data-theme="c" data-icon="star" data-sneaker-url="${link}" class='sendLinkToPurchase button hideBtn'>View Details</button>
-	</p>
-	</li>
+
+<li data-filtertext="${name}" style="text-align:center">
+
+	<div class="product">
+		<div class="productImages">
+			<img src="http://soleinsider.com/public/products/${image}" class="productImage">
+		</div>
+
+		<div class="productDetails">
+			<div class='product_title'>${name}</div> 
+			<div class='price'> ($${price}) </div> 
+			<a href="${link}" data-product-id='${product_id}' data-role="button" data-icon="star" class='button2 gray hideBtn'>Details</a>
+		
+		</div>
+	</div>
 	<hr/>
+	</li>
+
 </script>
 
 

@@ -27,6 +27,7 @@
 
 		<div data-role="content">
 			<span  style="width:80%;">
+
 				<ul id="releases" data-role="listview" data-filter="true">
 
 				</ul>
@@ -41,12 +42,23 @@
 
 <script id="releasesTemplate" type="text/x-jquery-tmpl">
 	<li data-filtertext="${name}" style="text-align:center">
-	<h2 class='product_title'>${name}</h2> <span class='price'> ($${price}) </span>  <span class='date'>${release_date}</span><br/>
-	<img src="http://soleinsider.com/public/products/${image}">
-	<br/><button data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button hideBtn'>Send me a reminder</button>
-	</p>
-	</li>
+
+	<div class="product">
+		<div class="productImages">
+			<img src="http://soleinsider.com/public/products/${image}" class="productImage">
+		</div>
+
+		<div class="productDetails">
+			<div class='product_title'>${name}</div> 
+			<div class='date'>${release_date}</div>
+			<div class='price'> ($${price}) </div> 
+			
+			<a href="#/" data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button2 gray hideBtn'>Remind me</a>
+		</div>
+	</div>
 	<hr/>
+	</li>
+
 </script>
 
 <script type="text/javascript" src="assets/jquery/jquery-1.8.3.min.js"></script>

@@ -36,15 +36,24 @@
 
 
 <script id="stillAvailTemplate" type="text/x-jquery-tmpl">
-	<li data-filtertext="${name}" style="text-align:center">
-	<p>
-	<h2 class='product_title'>${name}</h2> 
-	<span class='price' > <strike> $${price} </strike> $${salePrice} </span> <br/> 
-	<img src="${image.sizes.IPhone.url}"/>
-	<button data-role="button" data-icon="star" data-sneaker-url="${clickUrl}" data-theme="c" data-sneaker-image="${image.sizes.IPhone.url}" class='sendShopifyLinkToPurchase button'>View Details</button>
-	</p>
-	</li>
+
+<li data-filtertext="${name}" style="text-align:center">
+
+	<div class="product">
+		<div class="productImages">
+			<img src="${image.sizes.IPhone.url}" class="productImage">
+		</div>
+
+		<div class="productDetails">
+			<div class='product_title'>${name}</div> 
+			<div class='price'> ($${price}) </div> 
+			<a href="${clickUrl}" data-product-id='${product_id}' data-role="button" data-icon="star" class='button2 gray hideBtn'>Details</a>
+		</div>
+	</div>
 	<hr/>
+	</li>
+
+
 </script>
 
 
