@@ -1,0 +1,13 @@
+<div ng-repeat="r in releases" class="product">
+
+	<div class="productImages">
+		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
+	</div>
+
+	<div class="productDetails">
+		<span class="product_title"> {{r.name}} </span> <br/>
+		<span class='date'>{{r.release_date}}</span> <br/> <b class='price'>${{r.price}} </b><br/>
+	
+	</div>
+</div>
+

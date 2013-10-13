@@ -1,0 +1,13 @@
+<div ng-repeat="r in sales" class="product">
+
+	<div class="productImages">
+		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
+	</div>
+
+	<div class="productDetails">
+		<span class="product_title"> {{r.name}} </span> 
+		<br/> <b class='price'>${{r.price}} </b><br/>
+		<a class='button blue' ng-href="{{r.link}}" >Buy Now</a>
+		
+	</div>
+</div>

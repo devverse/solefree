@@ -1,71 +1,252 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<!--[if IE 8 ]>    <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js lt-ie9> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
 	<head>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
-		<title>Sole Insider</title>
 
-		<link rel="stylesheet" href="assets/jquery/jquery.mobile-1.3.0-beta.1.min.css" />
-		<link rel="stylesheet" href="assets/css/master.css" type="text/css" media="screen" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width" />
+<title>SoleInsider</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="Jan Šimeček - http://themeforest.net/user/xRicrdx">
+
+
+	    
+    <!-- Web App Data -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- =Web App Data -->
+
+
+<!-- Icons -->
+<!-- non-retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon57.png" sizes="57x57">
+<!-- non-retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon72.png" sizes="72x72">
+<!-- non-retina iPad iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon76.png" sizes="76x76">
+<!-- retina iPhone pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon114.png" sizes="114x114">
+<!-- retina iPhone iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon120.png" sizes="120x120">
+<!-- retina iPad pre iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon144.png" sizes="144x144">
+<!-- retina iPad iOS 7 -->
+<link rel="apple-touch-icon-precomposed" href="webapp/icon152.png" sizes="152x152">
+
+
+
+<!-- iPhone SPLASHSCREEN-->
+<link href="webapp/apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+<!-- iPhone (Retina) SPLASHSCREEN-->
+<link href="webapp/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<!-- iPhone SPLASHSCREEN 4" -->
+<link href="webapp/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+<!-- iPad (portrait) SPLASHSCREEN-->
+<link href="webapp/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+<!-- iPad (landscape) SPLASHSCREEN-->
+<link href="webapp/apple-touch-startup-image-1024x748.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+<!-- iPad (Retina, portrait) SPLASHSCREEN-->
+<link href="webapp/apple-touch-startup-image-1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<!-- iPad (Retina, landscape) SPLASHSCREEN-->
+<link href="webapp/apple-touch-startup-image-2048x1496.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<!-- =Web App Data --> 
+
+
+
+    <!-- Favicon -->
+
+	    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+	    
+    <!-- =Favicon -->
+
+
+
+    <!-- Import Styles-->
+
+	    <link rel='stylesheet' href='css/vendor/normalize.css'>
+	    <link rel='stylesheet' href='css/vendor/fontello.css'>
+	    <link rel='stylesheet' href='css/style.css'>
+	    <link rel='stylesheet' href='css/master.css'>
+
+    <!-- =Import Styles-->
+	    
+
+	    
+    <!-- Import GoogleWebFonts -->
+
+	    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,100,200,700,500' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+    <!-- =Import GoogleWebFonts -->
+	    
+
+	    
+    <!-- Modernizr & HTML5 Shiv -->
+
+	    <script src='js/vendor/modernizr.js'></script>
+
+		<!--[if lt IE 9]>
+		<script src='js/vendor/html5shiv.js'></script>
+		<![endif]-->
+
+    <!-- =Modernizr & HTML5 Shiv -->
+	    
+
+	    
 	</head>
-	<body>
+	<body class="touch-gesture">
+
+	    
+
+	    
+    <!-- Container -->
+
+	    <div id="container" ng-controller="releasesController" ng-app="soleinsiderApp">
+	    
+
+        <!-- Main Content-->
+
+        			<!-- Sidebar -->
+	
+	        <aside id="sidemenu-container">
+	        	<div id="sidemenu">
+	        		<div id="author-profile">
+	        			<div class="author-profile-photo">
+	        				<img src="icons/icon.png" alt="">
+	        			</div>
+	        			
+	        		</div>
+		        	<nav id="nav-container">
+		        		<ul class="nav">
+		        			<li> <a href="#/sales" class> Store</a></li>
+		        			<li> <a href="#/releases" class> Releases</a></li>
+		        			<li> <a href="#/past_releases" class> Past Releases</a></li>
+		        			<li> <a href="#/restocks" class>  Restocks</a></li>
+		        			<li> <a href="#/restock_history" class> Past Restocks</a></li>
+		        			<li> <a href="#/avail" class> Still Available</a></li>
+		        			<li> <a href="#/myrestocks" class> My Restocks</a></li>
+		        			<li> <a href="#/myreleases" class> My Releases</a></li>
+		        			<li> <a href="#/sales" class> Sales</a></li>
+		        			<li> <a href="#/sales" class> Account</a></li>     			
+		        		</ul>
+		        	</nav>
+	        	</div>
+	        </aside>
+
+		<!-- =Sidebar -->
+
+	        <section id="content-container">
+
+	        		        <!-- Header -->
+
+		        <header id="header">
+		        	<div id="menu-trigger" class="header-button left icon-menu"></div>
+		        	<h1><a href="index.html">SoleInsider V4</a></h1>
+		        </header>
+
+	        <!-- =Header -->
+
+		        <div id="content">
+
+		        	<div style="min-height:700px">
+		        		   <div ng-view>
+                  
+                 			 </div>
+                 	</div>		 
+
+		        		
+		        	
+		        </div>
+
+	        </section>
+
+        <!-- =Main Content -->
+	    
+
+	    
+
+	    </div>
+    <!-- =Container -->
+	    
+
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+	    
+	<!--jQuery & Google Maps -->
+	
+	    <script src="../../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	    <script>!window.jQuery && document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
+
+	    <!-- Google Maps script -->
+
+	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYpkxGMeJcDfwD5QJMhBZT0No7Jleg-E&amp;sensor=false"></script>
+
+	<!-- =jQuery & Google Maps -->
 
 
+	
+	<!-- Custom Scripts -->
 
-	<!-- Releases page-->
-	<div id="releasespg" data-role="page" data-add-back-btn="true" data-theme="d" class="ui-responsive-panel">
+<script src='js/plugins/klass.js'></script>
+<script src='js/plugins/photoswipe.js'></script>
+<script src='js/plugins/hammer.js'></script>
+<script src='js/plugins/flexslider.js'></script>
+<script src='js/plugins/h5validate.js'></script>
+<script src='js/plugins/responsivetables.js'></script>
+<script src='js/plugins/prism.js'></script>
+<script src='js/script.js'></script>
 
-		<div data-role="panel" id="mypanel" class="panelDiv" data-theme="a" data-display="overlay">
-
-		</div>
-
-		<div data-role="header" data-theme="c" >
-			<a href="#mypanel" data-icon=""  data-theme="c">Menu</a>
-			<a href="index.html" data-transition="slideup" rel="external" data-transition="slide">Home</a>
-			<h1>Upcoming Releases</h1>
-		</div>
-
-
-		<div data-role="content">
-			<span  style="width:80%;">
-
-				<ul id="releases" data-role="listview" data-filter="true">
-
-				</ul>
-			</span>
-		</div>
-
-
-
-  	</div>
-  	<!-- Releases page-->
-
-
-<script id="releasesTemplate" type="text/x-jquery-tmpl">
-	<li data-filtertext="${name}" style="text-align:center">
-
-	<div class="product">
-		<div class="productImages">
-			<img src="http://soleinsider.com/public/products/${image}" class="productImage">
-		</div>
-
-		<div class="productDetails">
-			<div class='product_title'>${name}</div> 
-			<div class='date'>${release_date}</div>
-			<div class='price'> ($${price}) </div> 
-			
-			<a href="#/" data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button2 gray hideBtn'>Remind me</a>
-		</div>
-	</div>
-	<hr/>
-	</li>
-
-</script>
-
-<script type="text/javascript" src="assets/jquery/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="assets/jquery/jquery.mobile-1.3.2.min.js" charset="utf-8"></script>
-<script src="assets/js/jquery.tmpl.js" type="text/javascript" charset="utf-8"></script>
+	<!-- =Custom Scripts -->
 <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/config.js" type="text/javascript" charset="utf-8"></script>
-<script src="assets/js/app.js" type="text/javascript" charset="utf-8"></script>
-</body>
+<script src="app/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/controllers/releases_c.js"></script>
+<script src="app/controllers/past_releases_c.js"></script>
+<script src="app/controllers/past_restocks_c.js"></script>
+<script src="app/controllers/restocks_c.js"></script>
+<script src="app/controllers/sales_c.js"></script>
+<script src="app/controllers/avail_c.js"></script>
+<script src="app/controllers/myrestocks_c.js"></script>
+<script src="app/controllers/myreleases_c.js"></script>
+<script src="app/controllers/login_c.js"></script>
+<script src="app/models/release_service.js"></script>
+<script src="app/models/util_service.js"></script>
+<script src="app/models/restock_service.js"></script>
+<script src="app/models/sales_service.js"></script>
+<script src="app/models/login_service.js"></script>
+
+	   
+	    
+	</body>
 </html>
