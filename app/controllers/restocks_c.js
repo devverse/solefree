@@ -1,10 +1,10 @@
-function restocksController($scope, $rootScope,restock_service)
+function restocksController($scope, $rootScope,restock_service,cache_service)
 {
 	$scope.restocks = [];
     $scope.showmsg = false;
     
 	$scope.getRestocks = function(){
-		restock_service.getRestocks();
+        $scope.restocks = cache_service.request("productsChecks"); 
 	};
 
      $scope.addReminder = function(product){
@@ -30,7 +30,7 @@ function restocksController($scope, $rootScope,restock_service)
     {	
     	$scope.getRestocks();
 
-        $rootScope.$on('getRestocks', function(e, data) {
+        $rootScope.$on('productsChecks', function(e, data) {
             $scope.restocks = data;
         });
 

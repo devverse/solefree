@@ -46,6 +46,11 @@ var soleinsiderApp = angular.module('soleinsiderApp', []).
 					controller: availController	
 				}).
 
+				when('/account', {
+					templateUrl: admin_url + 'partials/account.html',
+					controller: accountController
+				}).
+
 				when('/login', {
 					templateUrl: admin_url + 'partials/login.html',
 					controller: loginController

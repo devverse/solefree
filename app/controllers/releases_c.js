@@ -1,16 +1,14 @@
-function releasesController($scope, $rootScope, release_service)
+function releasesController($scope, $rootScope, release_service, cache_service)
 {
 	$scope.releases = [];
     $scope.showmsg = false;
     $scope.showerror = false;
 
 	$scope.getReleases = function(){
-
-		release_service.getReleases()
+        $scope.releases  = cache_service.request("releaseDates");
 	};
 
     $scope.addReminder = function(product){
-
 
         member_id = soleinsider.member_id;
         if (member_id == "false"){
@@ -35,8 +33,7 @@ function releasesController($scope, $rootScope, release_service)
     	$scope.getReleases();
 
         // Listeners
-
-        $rootScope.$on('getReleases', function(e, data) {
+        $rootScope.$on('releaseDates', function(e, data) {
             $scope.releases = data;
         });
         

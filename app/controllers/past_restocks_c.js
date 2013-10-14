@@ -1,17 +1,17 @@
-function pastRestocksController($scope, $rootScope, restock_service)
+function pastRestocksController($scope, $rootScope, restock_service,cache_service)
 {
 	$scope.restocks = [];
 
 	$scope.getPastRestocks = function(){
 
-		restock_service.getPastRestocks();
+		$scope.past_restocks  = cache_service.request("getAvailabilityHistory");
 	};
 
     $scope.init = (function ()
     {	
     	$scope.getPastRestocks();
 
-        $rootScope.$on('getPastRestocks', function(e, data) {
+        $rootScope.$on('getAvailabilityHistory', function(e, data) {
             $scope.past_restocks = data;
         });
 
