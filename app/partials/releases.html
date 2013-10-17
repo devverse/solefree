@@ -1,0 +1,16 @@
+<div class="panel yellow" ng-show="showerror == true">
+	{{errorMessage}}
+</div>
+
+		        	<div ng-repeat="r in releases" class="product">
+
+	<div class="productImages">
+		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
+	</div>
+	
+	<div class="productDetails">
+		<span class="product_title"> {{r.name}} </span> <br/>
+		<span class='date'>{{r.release_date}}</span> <br/> <b class='price'>${{r.price}} </b><br/>
+		<a data-product-id='{{r.product_id}}' data-icon="star" class='button radius' ng-click="addReminder(r)" > Remind me</a>
+	</div>
+</div>
