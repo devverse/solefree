@@ -1,8 +1,9 @@
 	<form >
 		<p> Your Email Address 
-		<input type="text" class="username" value=""> </p>
-		<p> Your cellphone (Used for text alerts, NO SPACES OR HYPHENS) <input type="text" class="phone" value=""></p>
-		<p> Carriers <select class="carrier" data-theme="c">
+		<input type="text" class="username" value="" ng-model="account.username"> </p>
+		<p> Your cellphone (Used for text alerts, NO SPACES OR HYPHENS) 
+			<input type="text" class="phone" value="" ng-model="account.phone"></p>
+		<p> Carriers <select class="carrier" data-theme="c" ng-model="account.carrier">
 			<option value="1"> AT&T </option>
 			<option value="2"> Verizon </option>
 			<option value="3"> T-Mobile </option>
@@ -17,5 +18,5 @@
 		</p>
 
 
-		<button class="blue">Update Account</button>
+		<button class="blue" ng-click="updateAccount(account)">Update Account</button>
 	</form>

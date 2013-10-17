@@ -80,14 +80,14 @@
 	        		</div>
 		        	<nav id="nav-container">
 		        		<ul class="nav">
-		        			<li> <a href="#/sales" class> Store</a></li>
+		        			<li> <a href="store.html" class> SoleInsider Store</a></li>
 		        			<li> <a href="#/releases" class> Releases</a></li>
 		        			<li> <a href="#/past_releases" class> Past Releases</a></li>
 		        			<li> <a href="#/restocks" class>  Restocks</a></li>
 		        			<li> <a href="#/restock_history" class> Past Restocks</a></li>
-		        			<li> <a href="#/avail" class> Still Available</a></li>
 		        			<li> <a href="#/myrestocks" class> My Restocks</a></li>
 		        			<li> <a href="#/myreleases" class> My Releases</a></li>
+		        			<li> <a href="#/avail" class> Still Available</a></li>
 		        			<li> <a href="#/sales" class> Sales</a></li>
 		        			<li> <a href="#/account" class> Account</a></li>   
 		        			<li> <a href="#/login" class> Login/Register</a></li>     			
@@ -109,14 +109,21 @@
 
 	        <!-- =Header -->
 
-		        <div id="content">
+		        <div id="content" ng-app="soleinsiderApp" ng-controller="appController" ng-cloak>
 
 		        	
-		        	<div class="panel green">
-		        		Follow us @robsmanifesto
+		        	<div class="panel green" ng-cloak>
+		        		{{message}}
 		        	</div>
 
-		        	<div style="min-height:700px"  ng-controller="releasesController" ng-app="soleinsiderApp">
+		        
+
+		        	<div style="min-height:700px"  >
+
+
+		        	<div class="loading" ng-show="showLoading == true" style="text-align:center">
+		        		<img src="http://cdn.css-tricks.com/wp-content/uploads/2011/02/spinnnnnn.gif" />
+		        	</div>
 		        		   <div ng-view>
                   
                  			</div>
@@ -196,6 +203,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 
 <script src="app/app.js"></script>
+<script src="app/controllers/app_c.js"></script>
 <script src="app/controllers/releases_c.js"></script>
 <script src="app/controllers/account_c.js"></script>
 <script src="app/controllers/past_releases_c.js"></script>
@@ -213,7 +221,6 @@
 <script src="app/models/login_service.js"></script>
 <script src="app/models/cache_service.js"></script>
 
-	   
-	    
-	</body>
+	   	    
+</body>
 </html>

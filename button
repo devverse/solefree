@@ -1,1 +1,0 @@
-	<button data-product-id='${product_id}' data-role="button" data-icon="star" class='addReleaseAlert button hideBtn'>Send me a reminder</button>

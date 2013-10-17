@@ -1,6 +1,7 @@
 soleinsiderApp.factory('util_service', ['$http','$q', function($http,$q) {
 
-	var self = this;
+	var api = soleinsider.base_url;
+
 	self.request = function(endpoint, post) {
 
 		post = (!post) ? {} : post;
@@ -10,7 +11,7 @@ soleinsiderApp.factory('util_service', ['$http','$q', function($http,$q) {
 		}
 
 		var deferred = $q.defer();
-		$http.post(MN.base_url + endpoint, post).success(function(data) {
+		$http.post(api + endpoint, post).success(function(data) {
 			if(data) {
 				if(data == 'false') {
 					data = [];

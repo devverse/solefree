@@ -2,15 +2,19 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
 {
 	$scope.restocks = [];
     $scope.showmsg = false;
+    $scope.showerror = false;
+    $scope.errorMessage = "";
     
 	$scope.getRestocks = function(){
+        $scope.showLoading = true;
         $scope.restocks = cache_service.request("productsChecks"); 
 	};
 
      $scope.addReminder = function(product){
         member_id = soleinsider.member_id;
-        if (member_id == "false"){
+        if (member_id == "false" || member_id == 0){
              $scope.showerror = true;
+             $scope.errorMessage = "You must be logged for watching restocks";
              return;
         }
 
@@ -32,6 +36,7 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
 
         $rootScope.$on('productsChecks', function(e, data) {
             $scope.restocks = data;
+            $scope.showLoading = false;
         });
 
     })();

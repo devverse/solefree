@@ -3,14 +3,16 @@ var url = window.location.href;
 if (url.indexOf("localhost") != -1) {
 	var serviceURL = "http://localhost/dev/restock/site/public";
 } else{
-	var serviceURL = "http://soleinsider.com/public/mobile";
+	var serviceURL = "http://soleinsider.com/public";
 }
 
-
-var app_name = "High End";
-var page_title = "High End";
+var admin_url = 'app/';
+var app_name = "Sole Insider";
+var page_title = "Sole Insider";
 
 var soleinsider = {};
 soleinsider.base_url = serviceURL;
 soleinsider.username =   "";
-soleinsider.member_id =  1;
+soleinsider.member_id =  '';
+soleinsider.cache = true;
+soleinsider.version = "4.0";

@@ -1,17 +1,22 @@
-function pastReleasesController($scope, $rootScope, release_service, cache_service)
+function pastReleasesController($scope, $rootScope, cache_service)
 {
 	$scope.releases = [];
+    $scope.showmsg = false;
+    $scope.showerror = false;
 
-	$scope.getReleases = function(){
+	$scope.getPastReleases = function(){
+        $scope.showLoading = true;
         $scope.releases  = cache_service.request("pastReleaseDates");
 	};
 
     $scope.init = (function ()
     {	
-    	$scope.getReleases();	
+    	$scope.getPastReleases();	
 
         $rootScope.$on('pastReleaseDates', function(e, data) {
             $scope.releases = data;
+            $scope.showLoading = false;
+            alert("here");
         });
 
 

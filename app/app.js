@@ -1,6 +1,5 @@
 /*global angular:true, MN: true, accountcontroller:true, specialtycontroller:true, themecontroller:true, servicescontroller:true, locationscontroller:true, emrcontroller:true, insurancecontroller:true, policycontroller:true, doctorscontroller:true, staffcontroller: true, sloganscontroller:true, logocontroller:true, billingcontroller:true, specialtycontroller:true, bannerimageController:true, sitemapcontroller:true */
 
-var admin_url = 'http://localhost/dev/restock/free/app/';
 
 var soleinsiderApp = angular.module('soleinsiderApp', []).
 		config(['$routeProvider', function ($routeProvider) {
