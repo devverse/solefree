@@ -63,7 +63,7 @@
      
     <!-- Container -->
 
-        <div id="container">
+        <div id="container" ng-app="soleinsiderApp" ng-controller="storeController">
         
 
         <!-- Main Content-->
@@ -80,17 +80,8 @@
                     </div>
                     <nav id="nav-container">
                         <ul class="nav">
-                            <li> <a href="store.html" class> Store</a></li>
-                            <li> <a href="#/releases" class> Releases</a></li>
-                            <li> <a href="#/past_releases" class> Past Releases</a></li>
-                            <li> <a href="#/restocks" class>  Restocks</a></li>
-                            <li> <a href="#/restock_history" class> Past Restocks</a></li>
-                            <li> <a href="#/avail" class> Still Available</a></li>
-                            <li> <a href="#/myrestocks" class> My Restocks</a></li>
-                            <li> <a href="#/myreleases" class> My Releases</a></li>
-                            <li> <a href="#/sales" class> Sales</a></li>
-                            <li> <a href="#/account" class> Account</a></li>   
-                            <li> <a href="#/login" class> Login/Register</a></li>               
+                            <li> <a href="index.html" class> Back to App</a></li>
+                            <li ng-repeat="m in menu"> <a href="#" ng-click="search(m.search)" class> {{m.name}} </a></li>            
                         </ul>
                     </nav>
                 </div>
@@ -110,26 +101,25 @@
             <!-- =Header -->
 
                 <div id="content">
+                        <div class="panel green" style="text-align:Center">
+                            <p>{{category.toUpperCase()}}</p>
+                        </div>
 
-                    
-                    <div class="panel green">
-                        Follow us @robsmanifesto
-                    </div>
+                            <div ng-repeat="p in products" class="product">
 
-                    <div style="min-height:700px"  ng-app="soleinsiderApp">
+                                <div class="productImages">
+                                    <img src="{{p.image.sizes.IPhone.url}}" alt="{{p.name}}" class="productImage">
+                                </div>
 
-                    <div class="loading" ng-show="showLoading == true" style="text-align:center">
-                        <img src="http://cdn.css-tricks.com/wp-content/uploads/2011/02/spinnnnnn.gif" />
-                    </div>
-                           <div ng-view>
-                  
+                                <div class="productDetails">
+                                    <span class="product_title"> {{p.name}} </span> <br/>
+
+                                    <span class="price"> Retailer - {{p.retailer.name}} </span> <br/>
+                                    <span class="price"> {{p.priceLabel}} </span> <br/>
+                                    <br/><a href="{{p.clickUrl}}" class="button blue radius">Details</a>
+                                </div>
                             </div>
-                    </div>  
-
-                    <div class="panel green">
-                        Follow us @robsmanifesto
-                    </div>   
-
+                            <a href="#" class="button blue radius" style="margin-left:10px">Next</a>
                         
                     
                 </div>
@@ -199,11 +189,10 @@
 <script src="app/config.js" type="text/javascript" charset="utf-8"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 
-<script src="app/app.js"></script>
+
 <script src="app/controllers/store_c.js"></script>
 <script src="app/models/store_service.js"></script>
 <script src="app/models/cache_service.js"></script>
-
             
 </body>
 </html>

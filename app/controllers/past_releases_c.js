@@ -16,7 +16,6 @@ function pastReleasesController($scope, $rootScope, cache_service)
         $rootScope.$on('pastReleaseDates', function(e, data) {
             $scope.releases = data;
             $scope.showLoading = false;
-            alert("here");
         });
 
 

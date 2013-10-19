@@ -6,7 +6,7 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
 
         post = (!post) ? {} : post;
         if(!endpoint) {
-            window.alert("Could not connect to database");
+            window.alert("Could not connect, please check your internet connection");
             return;
         }
 
