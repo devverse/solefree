@@ -1,4 +1,4 @@
-soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($rootScope, $q, $http) {
+soleinsiderApp.factory('account_service', ['$rootScope', '$q', '$http', function($rootScope, $q, $http) {
 
 	var api = serviceURL;
 
@@ -27,8 +27,8 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($ro
 
     };
 
-    self.getMessages = function(){
-    	return self.makePost('/mobile/getMessages');
+    self.getAccount = function(post){
+    	return self.makePost('/mobile/accountInfo',post);
     };
  
 	return {
@@ -38,8 +38,8 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($ro
 
 		},
 
-		getMessages : function(){
-			return self.getMessages();
+		getAccount : function(post){
+			return self.getAccount(post);
 		},
 
        

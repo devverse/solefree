@@ -1,8 +1,15 @@
-	<form >
-		<p> Your Email Address 
-		<input type="text" class="username" value="" ng-model="account.username"> </p>
-		<p> Your cellphone (Used for text alerts, NO SPACES OR HYPHENS) 
-			<input type="text" class="phone" value="" ng-model="account.phone"></p>
+<div class="panel yellow" ng-show="showConfirmation == true">
+	{{confirmation}}
+</div>
+
+
+<div style="width:90%;padding:10px">
+<h2> Account Settings </h2>
+<form >
+		<p> Your Email Address <br/>
+		<input type="text" class="username" value="" ng-model="account.email"> </p>
+		<p> Phone (NO SPACES OR HYPHENS) <br/>
+			<input type="text" class="phone" value="" ng-model="account.phone_number"></p>
 		<p> Carriers <select class="carrier" data-theme="c" ng-model="account.carrier">
 			<option value="1"> AT&T </option>
 			<option value="2"> Verizon </option>
@@ -18,5 +25,12 @@
 		</p>
 
 
-		<button class="blue" ng-click="updateAccount(account)">Update Account</button>
+		<button class="blue radius" ng-click="updateAccount(account)">Update Account</button>
 	</form>
+
+
+<hr/>	
+
+<h2> Cache </h2>
+<button class="blue radius" ng-click="clearCache()">Clear app cache</button>
+</div>	
