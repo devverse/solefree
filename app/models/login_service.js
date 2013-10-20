@@ -25,11 +25,29 @@ soleinsiderApp.factory('login_service', ['$rootScope', '$q', '$http', function($
 
     };
 
+
+     self.login = function(post){
+        return self.makePost('/mobile/login',post);
+    };
+
+
+    self.createAccount = function(post){
+        return self.makePost('/mobile/createAccount',post);
+    };
+
  	return {
 		init : function()
 		{
 
-		}
+		},
+
+        login : function(post){
+            return self.login(post);
+        },
+
+        createAccount : function(post){
+            return self.createAccount(post);
+        }
 	};
 
 }]);

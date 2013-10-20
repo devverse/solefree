@@ -28,7 +28,7 @@ soleinsiderApp.factory('restock_service', ['util_service','$rootScope', '$q', '$
     self.getMyRestocks = function(){
 
 
-        var data = "member_id=" + soleinsider.member_id;
+        var data = "member_id=" + localStorage.getItem("member_id");
         
         
         return self.makePost('/mobile/getMyRestocks',data).then(

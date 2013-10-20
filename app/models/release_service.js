@@ -54,7 +54,7 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
     };
 
     self.getMyReleases = function(){
-        var data = "member_id=" + soleinsider.member_id;
+        var data = "member_id=" + localStorage.getItem("member_id");
 
           return self.makePost('/mobile/getMyReleases',data).then(
         function(data) {

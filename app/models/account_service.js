@@ -30,6 +30,10 @@ soleinsiderApp.factory('account_service', ['$rootScope', '$q', '$http', function
     self.getAccount = function(post){
     	return self.makePost('/mobile/accountInfo',post);
     };
+
+     self.updateAccount = function(post){
+        return self.makePost('/mobile/updateAccount',post);
+    };
  
 	return {
 
@@ -41,6 +45,10 @@ soleinsiderApp.factory('account_service', ['$rootScope', '$q', '$http', function
 		getAccount : function(post){
 			return self.getAccount(post);
 		},
+
+        updateAccount : function(post){
+            return self.updateAccount(post);
+        }
 
        
 

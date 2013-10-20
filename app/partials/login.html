@@ -1,27 +1,59 @@
-<div class="section_title">
-<span>
-	Login / Register
-</span>
+<div class="panel yellow" ng-show="showConfirmation == true">
+	{{confirmation}}
 </div>
-<br/>
-<div class="row">
 
-	<div class="span6 well">
-		
+
+<div class="panel">		
 		<b style="Text-align:center">Login</b><br/><br/>
 		<form>
-			Username <input type="text"> <br/>
-			Password <input type="password"> <br/>
-			<input type="submit" class="btn btn-primary" value="Login"/> 
+			<table class="full-width text-center">
+				<tr>
+				<td>Username </td> 
+				<td> <input type="text" ng-model="account.username"></td>
+			</tr>
+				<tr>
+					<td >Password </td>
+					<td> <input type="password" ng-model="account.password"> </td>
+			</tr>
+	</table>
+			<input type="submit" class="btn btn-primary radius"  ng-click="login(account)" value="Login"/> 
 		</form>	
-	</div>
-		<div class="span6 well">
+	</div>	
+
+	<div class="panel">
 		
 		<b style="Text-align:center">Register</b><br/><br/>
 		<form>
-			Username <input type="text"> <br/>
-			Password <input type="password"> <br/>
-			<input type="submit" class="btn btn-primary" value="Register"/> 
+		<table class="full-width text-center">
+				<tr>
+				<td>Username </td> 
+				<td> <input type="text" ng-model="newaccount.username"></td>
+			</tr>
+				<tr>
+					<td >Password </td>
+					<td> <input type="password" ng-model="newaccount.password"> </td>
+			</tr>
+			<tr>
+					<td > Phone <br/>(NO SPACES OR HYPHENS) </td>
+					<td> 	<input type="text" class="phone" value="" ng-model="newaccount.phone_number"></td>
+			</tr>
+			<tr>
+					<td > Carriers </td>
+					<td>   <select class="carrier" data-theme="c" ng-model="newaccount.carrier">
+			<option value="1"> AT&T </option>
+			<option value="2"> Verizon </option>
+			<option value="3"> T-Mobile </option>
+			<option value="4"> Sprint </option>
+			<option value="5"> Virgin Mobile </option>
+			<option value="6"> US Cellular </option>
+			<option value="7"> Nextel </option>
+			<option value="8"> Boost </option>
+			<option value="9"> Alltel</option>
+
+		</select>
+	</td>
+	</table>
+			<input type="submit" class="btn btn-primary radius" ng-click="register(newaccount)" value="Register"/> 
 		</form>	
 	</div>
 </div>

@@ -6,16 +6,21 @@ function accountController($scope, $rootScope,account_service)
 
 	$scope.updateAccount = function(account){
 		var post = "member_id=" + soleinsider.member_id;
-			post += "username=" + account.email;
-			post += "phone=" + account.phone_number;
-			post += "carrier=" + account.carrier;
+			post += "&username=" + account.email;
+			post += "&phone=" + account.phone_number;
+			post += "&carrier=" + account.carrier;
 
-			console.log(account);
+		account_service.updateAccount(post).then(function (data) {
+			$scope.confirmation = "Your account has been updated";
+			$scope.showConfirmation = true;
+		}, function (err) {
+			window.console.log(err);
+		});
 	};
 
 
 	$scope.getAccount = function(){
-		var post = "member_id=" + 2;
+		var post = "member_id=" + soleinsider.member_id;;
 		account_service.getAccount(post).then(function (data) {
 			$scope.account = data;
 		}, function (err) {
