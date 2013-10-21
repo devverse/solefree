@@ -96,6 +96,9 @@ function storeController($scope, $rootScope, store_service)
     };
 
     $scope.paginate = function(){
+
+        $("html, body").animate({ scrollTop: 0 }, 10);
+
         $scope.showLoading = true;
         $scope.page = $scope.page + 20;
         var post = "search=" + $scope.searchStr;

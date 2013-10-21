@@ -40,3 +40,7 @@
 	font-size: 9px;
 	margin-top: -8px;
 }
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
