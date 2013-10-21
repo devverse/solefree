@@ -63,7 +63,7 @@
      
     <!-- Container -->
 
-        <div id="container" ng-app="soleinsiderApp" ng-controller="storeController">
+        <div id="container" ng-app="soleinsiderApp" ng-controller="storeController" ng-cloak>
         
 
         <!-- Main Content-->
@@ -101,11 +101,11 @@
             <!-- =Header -->
 
                 <div id="content">
-                        <div class="panel green" style="text-align:Center">
-                            <p>{{category.toUpperCase()}}</p>
+                        <div class="panel green" style="text-align:Center" ng-cloak>
+                            <p>{{category}}</p>
                         </div>
 
-                            <div ng-repeat="p in products" class="product">
+                            <div ng-repeat="p in products" class="product" ng-cloak>
 
                                 <div class="productImages">
                                     <img src="{{p.image.sizes.IPhone.url}}" alt="{{p.name}}" class="productImage">
@@ -119,7 +119,7 @@
                                     <br/><a href="{{p.clickUrl}}" class="button blue radius">Details</a>
                                 </div>
                             </div>
-                            <a href="#" class="button blue radius" style="margin-left:10px">Next</a>
+                            <button class=" blue radius" style="margin-left:10px" ng-click="paginate()">Next</button>
                         
                     
                 </div>

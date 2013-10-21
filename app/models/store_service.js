@@ -32,10 +32,12 @@ soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http', function($
     };
 
      self.search = function(search){
-
-
         var post = "search=" + search;
         return self.makePost('/store/search',post);
+    };
+
+    self.paginate = function(post){
+        return self.makePost('/store/paginate',post);
     };
 
     self.getDefaultItems = function(){
@@ -60,6 +62,10 @@ soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http', function($
 
         getDefaultItems : function(){
             return self.getDefaultItems();
+        },
+
+         paginate : function(post){
+            return self.paginate(post);
         }
 
 	};

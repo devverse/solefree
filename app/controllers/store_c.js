@@ -9,7 +9,9 @@ function storeController($scope, $rootScope, store_service)
     $scope.app_name = app_name;
     $scope.page_title = page_title;
     $scope.products = [];
-    $scope.category = "Sole Insider Store";
+    $scope.category = "Best Sellers";
+    $scope.page = 10;
+    $scope.searchStr = "nike";
 
     $scope.getMenu = function(){
         store_service.getMenu().then(function (data) {
@@ -20,9 +22,6 @@ function storeController($scope, $rootScope, store_service)
         });
     };
 
-    $scope.getItems = function(){
-
-    };
 
     $scope.getDefaultItems = function(){
         store_service.getDefaultItems().then(function (data) {
@@ -35,7 +34,6 @@ function storeController($scope, $rootScope, store_service)
      $scope.getCache = function(functionName){
         
         var retrievedObject = localStorage.getItem(functionName);
-
         if (typeof retrievedObject === 'string' || typeof retrievedObject == undefined){
           return JSON.parse(retrievedObject);
         } else{
@@ -50,7 +48,9 @@ function storeController($scope, $rootScope, store_service)
 
     $scope.search = function(search){
 
-        $scope.category = search;
+        $scope.page = 10;
+        $scope.searchStr = search;
+        $scope.category = $scope.searchStr.replace("_"," ");
         var products = $scope.getCache(search);
             
         if (products !== false){
@@ -66,14 +66,16 @@ function storeController($scope, $rootScope, store_service)
     };
 
     $scope.completeSearch = function(search){
-        store_service.search(search).then(function (data) {
-            $scope.products = data;
-            $scope.setCache(search,data);
-            $('#content-container').toggleClass('active');
+
+        $('#content-container').toggleClass('active');
             $('#sidemenu').toggleClass('active');
             setTimeout(function() {
                 $('#sidemenu-container').toggleClass('active');
             }, 500);
+
+        store_service.search(search).then(function (data) {
+            $scope.products = data;
+            $scope.setCache(search,data);
         }, function (err) {
             window.console.log(err);
         });
@@ -88,6 +90,22 @@ function storeController($scope, $rootScope, store_service)
 
         return -1;
     };
+
+    $scope.paginate = function(){
+         $scope.page = $scope.page + 20;
+
+        var post = "search=" + $scope.searchStr;
+        post += "&offset=" + $scope.page;
+
+
+        alert(post);
+        store_service.paginate(post).then(function (data) {
+            $scope.products = data;
+        }, function (err) {
+            window.console.log(err);
+        });
+
+    }
 
     $scope.init = (function ()
     {
