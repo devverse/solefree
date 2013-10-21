@@ -96,15 +96,14 @@ function storeController($scope, $rootScope, store_service)
     };
 
     $scope.paginate = function(){
-         $scope.showLoading = true;
-         $scope.page = $scope.page + 20;
+        $scope.showLoading = true;
+        $scope.page = $scope.page + 20;
         var post = "search=" + $scope.searchStr;
         post += "&offset=" + $scope.page;
 
         store_service.paginate(post).then(function (data) {
             $scope.products = data;
-            window.scrollTo(0, 0);
-             $scope.showLoading = false;
+            $scope.showLoading = false;
         }, function (err) {
             window.console.log(err);
         });
