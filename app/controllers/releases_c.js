@@ -17,12 +17,14 @@ function releasesController($scope, $rootScope, release_service, cache_service)
              $scope.showerror = true;
              $scope.errorMessage = "You must be logged for reminders";
              return;
+        } else{
+            $scope.showerror = true;
+             $scope.errorMessage = "Reminder added for " + product.name;
         }
 
         release_service.addReminder(product,member_id).then(
             function (data) {
                $scope.showmsg = true;
-               $scope.showerror = false;
                $scope.sneakerName = product.name;
             },
             function (err) {

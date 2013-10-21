@@ -30,6 +30,10 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($ro
     self.getMessages = function(){
     	return self.makePost('/mobile/getMessages');
     };
+
+    self.getAds = function(){
+        return self.makePost('/mobile/getAds');
+    };
  
 	return {
 
@@ -41,6 +45,10 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($ro
 		getMessages : function(){
 			return self.getMessages();
 		},
+
+        getAds : function(){
+            return self.getAds();
+        }
 
        
 

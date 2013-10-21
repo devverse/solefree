@@ -16,3 +16,4 @@ soleinsider.username =   "";
 soleinsider.member_id =  '';
 soleinsider.cache = true;
 soleinsider.version = "4.0";
+soleinsider.version_type = "free";

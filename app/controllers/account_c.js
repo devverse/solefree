@@ -3,6 +3,8 @@ function accountController($scope, $rootScope,account_service)
 
 	$scope.confirmation = "";
 	$scope.showConfirmation = false;
+	$scope.version = soleinsider.version;
+	$scope.version_type = soleinsider.version_type;
 
 	$scope.updateAccount = function(account){
 		var post = "member_id=" + soleinsider.member_id;
@@ -29,9 +31,15 @@ function accountController($scope, $rootScope,account_service)
 	};
 
 	$scope.clearCache = function(){	
+		member_id = localStorage.getItem("member_id");
+		username = localStorage.getItem("username");
+
 		$scope.confirmation = "Cache has been cleared";
 		$scope.showConfirmation = true;
     	localStorage.clear();
+
+    	localStorage.setItem("member_id", member_id);
+		localStorage.setItem("username", username);
 	};
 
     $scope.init = (function ()
