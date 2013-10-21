@@ -97,10 +97,9 @@ function storeController($scope, $rootScope, store_service)
         var post = "search=" + $scope.searchStr;
         post += "&offset=" + $scope.page;
 
-
-        alert(post);
         store_service.paginate(post).then(function (data) {
             $scope.products = data;
+            window.scrollTo(0, 0);
         }, function (err) {
             window.console.log(err);
         });
