@@ -105,6 +105,12 @@
                             <p>{{category}}</p>
                         </div>
 
+
+                        <div class="loading" ng-show="showLoading == true" style="text-align:center">
+                                 <img src="http://cdn.css-tricks.com/wp-content/uploads/2011/02/spinnnnnn.gif" />
+                         </div>
+
+                         <div class="loading" ng-show="showLoading == false" style="text-align:center">
                             <div ng-repeat="p in products" class="product" ng-cloak>
 
                                 <div class="productImages">
@@ -119,8 +125,9 @@
                                     <br/><a href="{{p.clickUrl}}" class="button blue radius">Details</a>
                                 </div>
                             </div>
+                         </div>
+                         
                             <button class=" blue radius" style="margin-left:10px" ng-click="paginate()">Next</button>
-                        
                     
                 </div>
 
