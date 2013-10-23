@@ -63,8 +63,7 @@ soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http', function($
         getDefaultItems : function(){
             return self.getDefaultItems();
         },
-
-         paginate : function(post){
+        paginate : function(post){
             return self.paginate(post);
         }
 
