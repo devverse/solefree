@@ -1,7 +1,7 @@
 var url = window.location.href;
 
 if (url.indexOf("localhost") != -1) {
-	var serviceURL = "http://localhost/dev/restock/site/public";
+	var serviceURL = "http://localhost/dev/soleinsider/site/public";
 } else{
 	var serviceURL = "http://soleinsider.com/public";
 }
