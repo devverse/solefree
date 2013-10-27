@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]>    <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js lt-ie9> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
 <html lang="en" class="no-js">
-<!--<![endif]-->
-	<head>
+<head>
 
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width" />
 <title>SoleInsider</title>
-
-
 
     <!-- Import Styles-->
 
@@ -126,40 +118,15 @@
 	    
 
     
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
+          <!--jQuery & Google Maps -->
+    
+        <script>!window.jQuery && document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
 
-	    
-	<!--jQuery & Google Maps -->
-	
-	    <script>!window.jQuery && document.write('<script src="js/vendor/jquery.js"><\/script>')</script>
+        <!-- Google Maps script -->
 
-	    <!-- Google Maps script -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYpkxGMeJcDfwD5QJMhBZT0No7Jleg-E&amp;sensor=false"></script>
 
-	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYpkxGMeJcDfwD5QJMhBZT0No7Jleg-E&amp;sensor=false"></script>
-
-	<!-- =jQuery & Google Maps -->
-
+    <!-- =jQuery & Google Maps -->
 
 	
 	<!-- Custom Scripts -->
@@ -167,7 +134,7 @@
 <!-- <script src='js/plugins/klass.js'></script>
 <script src='js/plugins/photoswipe.js'></script> -->
 <script src='js/plugins/hammer.js'></script>
-<script src='js/plugins/flexslider.js'></script>
+<!-- <script src='js/plugins/flexslider.js'></script> -->
 <script src='js/plugins/h5validate.js'></script>
 <!-- <script src='js/plugins/responsivetables.js'></script> -->
 <script src='js/plugins/prism.js'></script>
