@@ -3,6 +3,7 @@ function appController($scope, $rootScope,app_service)
 
 	$scope.message = "";
     $scope.ads = "";
+    $scope.showads = soleinsider.showads;
 
 	$scope.getMessages = function(){
 		app_service.getMessages().then(
