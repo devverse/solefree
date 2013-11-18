@@ -1,0 +1,15 @@
+<div ng-repeat="c in coupons" class="product">
+
+	<div class="productImages">
+		<img src="{{c.logo}}" class="productImage"/>
+	</div>
+	
+	<div class="productDetails">
+		<span class="product_title"> {{c.name}} </span> <br/>
+		<span class="product_title"> {{c.description}} </span> <br/>
+		<a class="button round green" href="{{c.website}}">{{c.coupon}} </a>
+	</div>
+
+<br/>
+
+</div>

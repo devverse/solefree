@@ -63,8 +63,16 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
             alert(err);
         });
 
+    };
 
-    }
+    self.coporNot = function(data){
+        return self.makePost('/mobile/coporNot').then(
+        function(data) {
+            $rootScope.$broadcast('coporNot', data);
+        }, function(err) {
+            alert(err);
+        });
+    };
 
     return {
 
@@ -86,6 +94,10 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
 
         getMyReleases : function(){
             return self.getMyReleases();
+        },
+
+        coporNot : function(post){
+            return self.coporNot(post);
         }
     };
 

@@ -5,6 +5,16 @@ function releasesController($scope, $rootScope, release_service, cache_service)
     $scope.showerror = false;
     $scope.errorMessage = "";
 
+    $scope.coporNot = function(product,status){
+        release_service.coporNot().then(function (data) {
+            var post = "member_id=" + soleinsider.member_id;
+            post += "&product.id=" + product.id;
+            post += "&status=" + status;
+        }, function (err) {
+            window.console.log(err);
+        });
+    };
+
 	$scope.getReleases = function(){
         $scope.showLoading = true;
         $scope.releases  = cache_service.request("releaseDates");
@@ -41,7 +51,6 @@ function releasesController($scope, $rootScope, release_service, cache_service)
         $rootScope.$on('releaseDates', function(e, data) {
             $scope.releases = data;
             $scope.showLoading = false;
-  
         });
 
     })();
