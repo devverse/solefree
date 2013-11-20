@@ -6,10 +6,13 @@ function releasesController($scope, $rootScope, release_service, cache_service)
     $scope.errorMessage = "";
 
     $scope.coporNot = function(product,status){
-        release_service.coporNot().then(function (data) {
-            var post = "member_id=" + soleinsider.member_id;
+
+        var post = "member_id=" + soleinsider.member_id;
             post += "&product.id=" + product.id;
             post += "&status=" + status;
+
+        release_service.coporNot(post).then(function (data) {
+            
         }, function (err) {
             window.console.log(err);
         });
@@ -17,7 +20,16 @@ function releasesController($scope, $rootScope, release_service, cache_service)
 
 	$scope.getReleases = function(){
         $scope.showLoading = true;
-        $scope.releases  = cache_service.request("releaseDates");
+        release_service.getReleases().then(
+        function(data) {
+            $scope.releases = data;
+            console.log(data);
+        }, function(err) {
+            alert(err);
+        });
+    
+       
+
 	};
 
     $scope.addReminder = function(product){
@@ -47,11 +59,7 @@ function releasesController($scope, $rootScope, release_service, cache_service)
     {	
     	$scope.getReleases();
 
-        // Listeners
-        $rootScope.$on('releaseDates', function(e, data) {
-            $scope.releases = data;
-            $scope.showLoading = false;
-        });
+
 
     })();
 

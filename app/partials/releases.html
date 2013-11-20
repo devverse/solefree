@@ -2,8 +2,15 @@
 	{{errorMessage}}
 </div>
 
-		        	<div ng-repeat="r in releases" class="product">
 
+<div ng-repeat="(key, value) in releases" class="">
+
+	<div class="panel grey" style="text-align:center">
+		<span style="font-weight:bold">{{value.month}} </span>
+	</div>
+
+	<div class="product">
+	<div ng-repeat="r in value.products" class="product">
 	<div class="productImages">
 		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
 		<a data-product-id='{{r.product_id}}' data-icon="star" class='button radius' ng-click="addReminder(r)" > Remind me</a>
@@ -19,5 +26,7 @@
 		<a class='button green radius' style="font-size:10;width:30px" ng-click="coporNot(r,'yes')" > Cop</a>
 
 		<a class='button red radius' style="font-size:10;width:30px" ng-click="coporNot(r,'no')" > Not</a>
+	</div>
+	</div>
 	</div>
 </div>

@@ -26,13 +26,7 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
     };
 
     self.getReleases = function(){
-        return self.makePost('/mobile/releaseDates').then(
-
-        function(data) {
-            $rootScope.$broadcast('getReleases', data);
-        }, function(err) {
-            alert(err);
-        });
+        return self.makePost('/mobile/releaseDatesFormatted');
     };
 
     self.getPastReleases = function(){
@@ -66,12 +60,7 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
     };
 
     self.coporNot = function(data){
-        return self.makePost('/mobile/coporNot').then(
-        function(data) {
-            $rootScope.$broadcast('coporNot', data);
-        }, function(err) {
-            alert(err);
-        });
+        return self.makePost('/mobile/coporNot',data);
     };
 
     return {
