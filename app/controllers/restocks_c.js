@@ -14,6 +14,7 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
         member_id = localStorage.getItem("member_id");
 
         if (member_id == "false" || member_id == 0 || member_id == null ){
+             $("html, body").animate({ scrollTop: 0 }, "slow");
              $scope.showerror = true;
              $scope.errorMessage = "You must be logged for watching restocks";
              return;
@@ -21,9 +22,18 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
 
         restock_service.addAlert(product,member_id).then(
             function (data) {
-               $scope.showmsg = true;
-               $scope.sneakerName = product.name;
-               $scope.showerror = false;
+
+               // if (data.status == 'limit'){
+                   $("html, body").animate({ scrollTop: 0 }, "slow");
+                   $scope.showmsg = false;
+                   $scope.showerror = true;
+                   $scope.errorMessage = "You have reached the limit of restocks. Please purchase SoleInsider Premium for unlimited use";
+                   
+                // } else{ 
+                //    $scope.showmsg = true;
+                //    $scope.sneakerName = product.name;
+                //    $scope.showerror = false;
+                // }
             },
             function (err) {
                 alert(err);

@@ -32,6 +32,7 @@ function loginController($scope, $rootScope,login_service)
 			post += "&password=" + newaccount.password;
 			post += "&phone=" + newaccount.phone_number;
 			post += "&carrier=" + newaccount.carrier;
+			post += "&member_type" +soleinsider.member_type;
 
 		login_service.createAccount(post).then(function (data) {
 			$scope.showConfirmation = true;

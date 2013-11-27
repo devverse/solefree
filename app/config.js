@@ -17,6 +17,7 @@ soleinsider.member_id =  '';
 soleinsider.cache = true;
 soleinsider.version = "4.1";
 soleinsider.version_type = "free";
+soleinsider.member_type = "free";
 
 if (soleinsider.version_type == "free"){
 	soleinsider.showads = true;

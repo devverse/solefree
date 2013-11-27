@@ -229,6 +229,8 @@ input[type="submit"], input[type="reset"], input[type="button"] {
   color: #fff;
   font-weight: 400;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+  
   .button.radius, button.radius, input[type="submit"].radius, input[type="reset"].radius, input[type="button"].radius {
     border-radius: 3px; }
   .button.round, button.round, input[type="submit"].round, input[type="reset"].round, input[type="button"].round {

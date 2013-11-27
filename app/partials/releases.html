@@ -2,6 +2,12 @@
 	{{errorMessage}}
 </div>
 
+<style>
+	.custombutton {
+		padding: 15px 19px;
+		font-size: 11px;
+	}
+</style>
 
 <div ng-repeat="(key, value) in releases" class="">
 
@@ -20,12 +26,12 @@
 	
 	<div class="productDetails">
 		<span class="product_title"> {{r.name}} </span> <br/>
-		<span class='date'>{{r.release_date}}</span> <br/> <b class='price'>${{r.price}} </b><br/>
+		<span class='date'>{{r.release_date}}</span> <br/> <b class='price'>${{r.price}} </b><br/><br/>
 		
 
-		<a class='button green radius' style="font-size:10;width:30px" ng-click="coporNot(r,'yes')" > Cop</a>
+		<a class='button green radius custombutton'  ng-click="coporNot(r,'yes')" > Hot ({{r.yes_percentage}}%)</a>
 
-		<a class='button red radius' style="font-size:10;width:30px" ng-click="coporNot(r,'no')" > Not</a>
+		<a class='button red radius custombutton'  ng-click="coporNot(r,'no')" > Wack ({{r.no_percentage}}%)</a>
 	</div>
 	</div>
 	</div>
