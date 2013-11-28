@@ -63,9 +63,24 @@ soleinsiderApp.factory('restock_service', ['util_service','$rootScope', '$q', '$
     };
 
     self.addAlert = function(product){
+
+        member_id = localStorage.getItem("member_id");
         var data = "product_id=" + product.id;
             data += "&member_id=" + member_id;
         return self.makePost('/mobile/addRestockAlert',data);
+    };
+
+    self.deleteRestock = function(product){
+
+        member_id = localStorage.getItem("member_id");
+        var data = "product_id=" + product.id;
+            data += "&member_id=" + member_id;
+        return self.makePost('/mobile/deleteRestock',data).then(
+        function(data) {
+            $rootScope.$broadcast('deleteRestock', data);
+        }, function(err) {
+            alert(err);
+        });
     };
 
     return {
@@ -84,6 +99,10 @@ soleinsiderApp.factory('restock_service', ['util_service','$rootScope', '$q', '$
 
         getMyRestocks : function(){
             return self.getMyRestocks();
+        },
+
+        deleteRestock : function(product){
+            return self.deleteRestock(product);
         }
     };
 

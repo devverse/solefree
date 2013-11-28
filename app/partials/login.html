@@ -2,8 +2,12 @@
 	{{confirmation}}
 </div>
 
+<div class="panel" ng-show="showLogin == false">		
+	<b> You are logged in as {{username}} </b>  <br/> <br/>
+	<button data-product-id='{{r.product_id}}' data-role="button" data-icon="star" class='addReleaseAlert red btn-primary radius' ng-click="logout()">Delete </button>
+</div>
 
-<div class="panel">		
+<div class="panel" ng-show="showLogin == true">		
 		<b style="Text-align:center">Login</b><br/><br/>
 		<form>
 			<table class="full-width text-center">
@@ -20,7 +24,7 @@
 		</form>	
 	</div>	
 
-	<div class="panel">
+	<div class="panel" ng-show="showLogin == true">
 		
 		<b style="Text-align:center">Register</b><br/><br/>
 		<form>

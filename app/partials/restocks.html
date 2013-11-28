@@ -1,5 +1,9 @@
-<div class="panel yellow" ng-show="showerror == true">
+<div class="panel red" ng-show="showerror == true">
 	{{errorMessage}}
+</div>
+
+<div class="panel yellow" ng-show="showmsg == true">
+	{{success_message}}
 </div>
 
 <div ng-repeat="r in restocks" class="product">

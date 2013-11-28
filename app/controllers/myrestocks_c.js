@@ -4,8 +4,8 @@ function myRestocksController($scope, $rootScope,restock_service)
     
 	$scope.getRestocks = function(){
 
-         member_id = localStorage.getItem("member_id");
- 
+        member_id = localStorage.getItem("member_id");
+
         if (member_id == "false" || member_id == 0 || member_id == null ){
              $scope.showerror = true;
              $scope.errorMessage = "You must be logged to view your restocks";
@@ -16,6 +16,10 @@ function myRestocksController($scope, $rootScope,restock_service)
 		restock_service.getMyRestocks();
 	};
 
+    $scope.deleteRestock = function(product){
+        restock_service.deleteRestock(product);
+    };
+
     $scope.init = (function ()
     {	
 
@@ -23,6 +27,10 @@ function myRestocksController($scope, $rootScope,restock_service)
 
         $rootScope.$on('getMyRestocks', function(e, data) {
             $scope.restocks = data;
+        });
+
+         $rootScope.$on('deleteRestock', function(e, data) {
+            $scope.getRestocks();
         });
 
     })();

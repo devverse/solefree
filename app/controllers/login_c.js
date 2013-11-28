@@ -3,6 +3,22 @@ function loginController($scope, $rootScope,login_service)
 
 	$scope.confirmation = "";
 	$scope.showConfirmation = false;
+	$scope.showLogin = true;
+
+	$scope.toggleLogin = function(){
+	 	member_id = localStorage.getItem("member_id");
+	    if (member_id == "false" || member_id == 0 || member_id == null ) {
+	         $scope.showLogin = true;
+	    } else{
+	    	$scope.username = localStorage.getItem("username");
+	    	$scope.showLogin = false;
+	    }
+	};
+
+	$scope.logout = function(){
+		localStorage.clear();
+		$scope.toggleLogin();
+	};
 
 	$scope.login = function(account){
 		var post = "&username=" + account.username;
@@ -10,14 +26,13 @@ function loginController($scope, $rootScope,login_service)
 
 		login_service.login(post).then(function (data) {
 
-
-			$scope.showConfirmation = true;
+			
 			if (data !== "false" && data !== false && data.length !== 0){
-				console.log(data);
 				localStorage.setItem("username", account.username);
 				localStorage.setItem("member_id", data.id);
-				$scope.confirmation = "Your account have been logged in";
+				$scope.toggleLogin();
 			} else{
+				$scope.showConfirmation = true;
 				$scope.confirmation = "Incorrect username or password";
 			}
 		}, function (err) {
@@ -52,7 +67,7 @@ function loginController($scope, $rootScope,login_service)
 
     $scope.init = (function ()
     {
-    	
+    	$scope.toggleLogin();	
     })();
 
 }

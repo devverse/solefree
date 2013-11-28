@@ -23,17 +23,17 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
         restock_service.addAlert(product,member_id).then(
             function (data) {
 
-               // if (data.status == 'limit'){
+               if (data.status == 'limit'){
                    $("html, body").animate({ scrollTop: 0 }, "slow");
                    $scope.showmsg = false;
                    $scope.showerror = true;
-                   $scope.errorMessage = "You have reached the limit of restocks. Please purchase SoleInsider Premium for unlimited use";
-                   
-                // } else{ 
-                //    $scope.showmsg = true;
-                //    $scope.sneakerName = product.name;
-                //    $scope.showerror = false;
-                // }
+                   $scope.errorMessage = "Free accounts can only watch 6 restocks. Please purchase SoleInsider Premium for unlimited Watching";
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                } else{ 
+                    $scope.showmsg = true;
+                    $scope.success_message = "You are now watching " +product.name;
+                    $scope.showerror = false;
+                }
             },
             function (err) {
                 alert(err);
