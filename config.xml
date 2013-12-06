@@ -2,8 +2,8 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="11"
-	version 	= "4"
+	versionCode="12"
+	version 	= "4.1"
 	id        = "com.sole.insider.free">
 
 	<preference name="phonegap-version" value="2.9.0" />
@@ -27,11 +27,7 @@
 		<gap:platform name="blackberry" project="widgets"/>
 	</gap:platforms>
 
-	<!-- General -->
-	<icon src="icons/icon.png" width="72" height="72" />
-	<icon src="icons/icon.png" width="48" height="48" />
-	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
-
+	
 	<!-- Android -->
 	<icon src="icons/android/drawable_ldpi_ic_launcher.png" gap:platform="android" gap:density="ldpi" />
 	<icon src="icons/android/drawable_mdpi_ic_launcher.png" gap:platform="android" gap:density="mdpi" />
@@ -60,5 +56,9 @@
     <gap:splash src="splash.jpg" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
+	<!-- General -->
+	<icon src="icons/icon.png" width="72" height="72" />
+	<icon src="icons/icon.png" width="48" height="48" />
+	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
 </widget>

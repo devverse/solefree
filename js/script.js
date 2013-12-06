@@ -184,47 +184,6 @@ if($(photoswipeContainer).length > 0){
 
 
 
-/**
-*
-* Google Maps - Contact
-*
-**/
-
-google.maps.visualRefresh = true;
-
-/* Set Latitude and longitude for your google maps center and marker */
-
-var mapLatitude = 37.8017993;
-var maplongitude = -122.4768507;
-
-var map;
-var mapContainer = document.getElementById('map-container-api');
-var mapMarker = new google.maps.LatLng(mapLatitude, maplongitude);
-
-if( document.getElementById('map-container-api') != null){
-
-	function initialize() {
-		var mapOptions = {
-			zoom: 13,
-			center: new google.maps.LatLng(mapLatitude, maplongitude),
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			disableDefaultUI: true,
-		};
-
-		map = new google.maps.Map(mapContainer, mapOptions);
-
-		var marker = new google.maps.Marker({
-			position: mapMarker,
-		    animation: google.maps.Animation.DROP,
-			map: map,
-			flat: true,
-			tite: 'Restart Inc.'
-		});
-	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
-
-}
 
 
 

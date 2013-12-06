@@ -63,6 +63,20 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
         return self.makePost('/mobile/coporNot',data);
     };
 
+    self.deleteRelease = function(product){
+
+        member_id = localStorage.getItem("member_id");
+        var data = "product_id=" + product.id;
+            data += "&member_id=" + member_id;
+        return self.makePost('/mobile/deleteRelease',data).then(
+        function(data) {
+            $rootScope.$broadcast('deleteRelease', data);
+        }, function(err) {
+            alert(err);
+        });
+    };
+
+
     return {
 
         getPastReleases : function(){
@@ -87,6 +101,10 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
 
         coporNot : function(post){
             return self.coporNot(post);
+        },
+
+        deleteRelease : function(product){
+            return self.deleteRelease(product);
         }
     };
 

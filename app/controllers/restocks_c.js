@@ -27,7 +27,7 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
                    $("html, body").animate({ scrollTop: 0 }, "slow");
                    $scope.showmsg = false;
                    $scope.showerror = true;
-                   $scope.errorMessage = "Free accounts can only watch 6 restocks. Please purchase SoleInsider Premium for unlimited Watching";
+                   $scope.errorMessage = "Free accounts can only watch 6 restocks. Please purchase SoleInsider Premium in the app store for unlimited Watching";
                     $("html, body").animate({ scrollTop: 0 }, "slow");
                 } else{ 
                     $scope.showmsg = true;

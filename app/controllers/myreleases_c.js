@@ -13,10 +13,13 @@ function myReleasesController($scope, $rootScope, release_service)
              return;
         }
 
-
-
-		release_service.getMyReleases()
+		release_service.getMyReleases();
 	};
+
+     $scope.deleteRelease = function(product){
+        release_service.deleteRelease(product);
+    };
+
 
     $scope.init = (function ()
     {	
@@ -27,6 +30,10 @@ function myReleasesController($scope, $rootScope, release_service)
 
         $rootScope.$on('getMyReleases', function(e, data) {
             $scope.releases = data;
+        });
+
+         $rootScope.$on('deleteRelease', function(e, data) {
+            $scope.getMyReleases();
         });
         
     })();
