@@ -20,7 +20,7 @@ soleinsider.version_type = "free";
 soleinsider.member_type = "free";
 
 if (soleinsider.version_type == "free"){
-	soleinsider.showads = true;
+	soleinsider.showads = false;
 } else{
 	soleinsider.showads = false;
 }
