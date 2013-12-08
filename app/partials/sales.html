@@ -1,4 +1,4 @@
-<div ng-repeat="r in sales" class="product">
+<div ng-repeat="r in sales | filter:formatPrice"  class="product">
 
 	<div class="productImages">
 		<img src="{{r.image}}"  class="productImage">
@@ -6,7 +6,7 @@
 
 	<div class="productDetails">
 		<span class="product_title"> {{r.name}} </span> 
-		<br/> <b class='price'>${{r.price.toFixed(2)}} </b><br/>
+		<br/> <b class='price'>${{r.price}} </b><br/>
 		<a class='button blue radius' ng-href="{{r.link}}" >Buy Now</a>
 		
 	</div>

@@ -77,7 +77,8 @@ function loginController($scope, $rootScope,login_service)
 				if (data !== "false" && data !== false && data.length !== 0){
 					localStorage.setItem("username", newaccount.username);
 					localStorage.setItem("member_id", data);
-					$scope.confirmation = "Your account have been created";
+					$scope.confirmation = "Your account has been created";
+					$scope.toggleLogin();
 				} else{
 					$scope.confirmation = "This username is already in use";
 				}

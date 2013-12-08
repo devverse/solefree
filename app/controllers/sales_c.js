@@ -13,6 +13,11 @@ function salesController($scope, $rootScope,sales_service)
         //product_service.sendPurchaseLink(product);
     };
 
+    $scope.formatPrice = function(product){
+        product.price = parseFloat(product.price.toFixed(2));
+        return product;
+    }
+
     $scope.init = (function ()
     {	
     	$scope.getSales();
