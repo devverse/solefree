@@ -14,7 +14,7 @@ function salesController($scope, $rootScope,sales_service)
     };
 
     $scope.formatPrice = function(product){
-        product.price = parseFloat(product.price.toFixed(2));
+        product.price = parseFloat(product.price).toFixed(2);
         return product;
     }
 
