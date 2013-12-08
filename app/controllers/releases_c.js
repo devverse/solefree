@@ -8,6 +8,8 @@ function releasesController($scope, $rootScope, release_service, cache_service)
     $scope.coporNot = function(product,status){
 
 
+       var member_id = localStorage.getItem("member_id");
+
         if (status =="yes" && parseInt(product.yes_percentage) < 98){
             product.yes_percentage = parseInt(product.yes_percentage) + parseInt(3.2);
         } 
@@ -15,7 +17,7 @@ function releasesController($scope, $rootScope, release_service, cache_service)
         if (status =="no" && parseInt(product.no_percentage) < 98){
              product.no_percentage = parseInt(product.no_percentage) + parseInt(3.2);
         }
-        var post = "member_id=" + soleinsider.member_id;
+        var post = "member_id=" + member_id;
             post += "&product.id=" + product.id;
             post += "&status=" + status;
 
