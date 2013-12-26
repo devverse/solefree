@@ -87,6 +87,26 @@
 		        		{{message}}
 		        	</div>
 
+		        	<div class="panel grey featured" ng-cloak ng-show="show_featured == true" style="text-align:center">
+		        		<span style="font-weight:bold;"> Featured  </span>
+		        	
+					</div>
+						<div class="product">
+						<div class="productImages">
+								<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="productImage">
+								
+
+							
+								</span>
+								<br/>
+						</div>
+							<div class="productDetails">
+								<span class="product_title"> {{featured.name}} </span> <br/>
+								<b class='price'>${{featured.price}} </b><br/><br/>
+									<a href="{{r.link}}" class='button custombutton2 radius green' > Buy Now</a>
+							</div>
+						</div>
+
 		        
 
 		        	<div style="min-height:500px"  >
