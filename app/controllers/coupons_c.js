@@ -14,5 +14,7 @@ function couponsController($scope, $rootScope,cache_service)
             $scope.showLoading = false;
         });
 
+        $rootScope.$emit("featured", false);
+
     })();
 }

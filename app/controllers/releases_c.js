@@ -75,7 +75,7 @@ function releasesController($scope, $rootScope, $filter,release_service, cache_s
     $scope.init = (function ()
     {	
     	$scope.getReleases();
-
+        $rootScope.$emit("featured", true);
 
 
     })();

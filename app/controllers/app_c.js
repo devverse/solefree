@@ -54,8 +54,8 @@ function appController($scope, $rootScope,app_service)
     	$scope.getMessages();
     	$scope.getFeaturedProducts();	
 
-        $rootScope.$on('featured', function(status) {
-            alert("asdasd");
+        $rootScope.$on('featured', function(e,status) {
+            $scope.show_featured = status;
         });
 
     })();

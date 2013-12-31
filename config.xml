@@ -61,4 +61,5 @@
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
+	<gap:plugin name="com.phonegap.plugins.childbrowser" />
 </widget>

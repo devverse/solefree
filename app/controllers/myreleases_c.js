@@ -35,6 +35,8 @@ function myReleasesController($scope, $rootScope, release_service)
          $rootScope.$on('deleteRelease', function(e, data) {
             $scope.getMyReleases();
         });
+
+         $rootScope.$emit("featured", true);
         
     })();
 
