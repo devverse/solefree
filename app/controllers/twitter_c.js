@@ -50,8 +50,8 @@ function twitterController($scope, $rootScope,twitter_service)
 
     $scope.init = (function ()
     {
-    	$scope.twittterAccounts();
-        $rootScope.$emit("featured", true);
+        $scope.twittterAccounts();
+        $rootScope.$emit("featured", false);
     })();
 
 }

@@ -27,18 +27,18 @@ soleinsiderApp.factory('twitter_service', ['$rootScope', '$q', '$http', function
 
 
     self.getTwitterAccounts = function(){
-        return self.makePost('app/twitter/getTwitterAccounts');
+        return self.makePost('/app/twitter/getTwitterAccounts');
     };
 
-    self.getMyTwitterWathing = function(,post){
-        return self.makePost('app/twitter/getMyTwitterWathing',post);
+    self.getMyTwitterWathing = function(post){
+        return self.makePost('/app/twitter/getMyTwitterWathing',post);
     };
 
     self.addToWatch = function(post){
-        return self.makePost('app/twitter/addToWatch',post);
+        return self.makePost('/app/twitter/addToWatch',post);
     }
     self.removeFromWatch = function(post){
-        return self.makePost('app/twitter/removeFromWatch',post);
+        return self.makePost('/app/twitter/removeFromWatch',post);
     }
 
  	return {
