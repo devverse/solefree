@@ -27,18 +27,18 @@ soleinsiderApp.factory('twitter_service', ['$rootScope', '$q', '$http', function
 
 
     self.getTwitterAccounts = function(){
-        return self.makePost('/app/twitter/getTwitterAccounts');
+        return self.makePost('/mobile/getTwitterFeeds');
     };
 
-    self.getMyTwitterWathing = function(post){
-        return self.makePost('/app/twitter/getMyTwitterWathing',post);
+    self.getMemberTwitterWatching = function(post){
+        return self.makePost('/mobile/getMemberTwitterWatching',post);
     };
 
     self.addToWatch = function(post){
-        return self.makePost('/app/twitter/addToWatch',post);
+        return self.makePost('/mobile/watchTwitterAccount',post);
     }
     self.removeFromWatch = function(post){
-        return self.makePost('/app/twitter/removeFromWatch',post);
+        return self.makePost('/mobile/removeMemberTwitterWatching',post);
     }
 
  	return {
@@ -50,8 +50,8 @@ soleinsiderApp.factory('twitter_service', ['$rootScope', '$q', '$http', function
         getTwitterAccounts : function(){
             return self.getTwitterAccounts();
         },
-        getMyTwitterWathing : function(post){
-            return self.getMyTwitterWathing(post);
+        getMemberTwitterWatching : function(post){
+            return self.getMemberTwitterWatching(post);
         },
         addToWatch : function(post){
             return self.addToWatch(post);

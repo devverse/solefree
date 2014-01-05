@@ -3,7 +3,7 @@ function twitterController($scope, $rootScope,twitter_service)
 
     $scope.showConfirmation = false;
 
-	$scope.twittterAccounts = function(){
+	$scope.twitterAccounts = function(){
 		
         twitter_service.getTwitterAccounts().then(
         function(data) {
@@ -14,9 +14,9 @@ function twitterController($scope, $rootScope,twitter_service)
 
 	};
 
-    $scope.getMyTwitterWathing = function(){
+    $scope.getMemberTwitterWatching = function(){
          var post = "member_id=" + localStorage.getItem("member_id");
-         twitter_service.getMyTwitterWathing(post).then(
+         twitter_service.getMemberTwitterWatching(post).then(
         function(data) {
             $scope.watching = data;
         }, function(err) {
@@ -43,6 +43,7 @@ function twitterController($scope, $rootScope,twitter_service)
         twitter_service.removeFromWatch(post).then(
         function(data) {
             $scope.showConfirmation = true;
+            $scope.getMemberTwitterWatching();
         }, function(err) {
             alert(err);
         });
@@ -50,7 +51,8 @@ function twitterController($scope, $rootScope,twitter_service)
 
     $scope.init = (function ()
     {
-        $scope.twittterAccounts();
+        $scope.twitterAccounts();
+        $scope.getMemberTwitterWatching();
         $rootScope.$emit("featured", false);
     })();
 
