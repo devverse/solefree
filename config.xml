@@ -21,7 +21,7 @@
 	</author>
 
 	<gap:platforms>
-		<gap:platform name="android" minVersion="2.2" />
+		<gap:platform name="android" minVersion="2.4" />
 		<gap:platform name="webos" />
 		<gap:platform name="symbian.wrt" />
 		<gap:platform name="blackberry" project="widgets"/>
@@ -53,7 +53,7 @@
 	<icon src="icons/webos/icon.png" gap:platform="webos" />
 	<icon src="icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
 
-    <gap:splash src="splash.jpg" />
+    <gap:splash src="splash.png" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<!-- General -->
