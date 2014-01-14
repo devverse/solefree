@@ -15,7 +15,7 @@ function pastRestocksController($scope, $rootScope, restock_service,cache_servic
             $scope.past_restocks = data;
             $scope.showLoading = false;
         });
-
+        $rootScope.$emit("featured", true);
     })();
 
 }

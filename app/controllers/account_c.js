@@ -46,5 +46,6 @@ function accountController($scope, $rootScope,account_service)
     {	
     	$scope.getAccount();
     	$scope.showConfirmation = false;
+    	$rootScope.$emit("featured", false);
     })();
 }

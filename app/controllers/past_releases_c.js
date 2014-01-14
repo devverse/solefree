@@ -18,7 +18,7 @@ function pastReleasesController($scope, $rootScope, cache_service)
             $scope.showLoading = false;
         });
 
-
+        $rootScope.$emit("featured", true);
     })();
 
 }

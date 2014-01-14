@@ -32,7 +32,7 @@ function myRestocksController($scope, $rootScope,restock_service)
          $rootScope.$on('deleteRestock', function(e, data) {
             $scope.getRestocks();
         });
-
+        $rootScope.$emit("featured", true); 
     })();
 
 }

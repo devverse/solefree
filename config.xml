@@ -2,13 +2,18 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="15"
-	version 	= "4.1"
+	versionCode="16"
+	version 	= "4.2"
 	id        = "com.sole.insider.free">
 
 	<preference name="phonegap-version" value="2.9.0" />
-	<preference name="fullscreen" value="false" />
+	<preference name="fullscreen" value="true" />
+	<preference name="splash-screen-duration" value="2500"/>
 
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
+	<gap:plugin name="com.phonegap.plugins.childbrowser" />
+	
 	<name>Sole Insider Free</name>
 
 	<description>
@@ -53,9 +58,14 @@
 	<icon src="icons/webos/icon.png" gap:platform="webos" />
 	<icon src="icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
 
+<<<<<<< HEAD
     <gap:splash src="splash.png" />
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
+=======
+    <gap:splash src="splash.jpg" />
+	
+>>>>>>> version4.2
 	<!-- General -->
 	<icon src="icons/icon.png" width="72" height="72" />
 	<icon src="icons/icon.png" width="48" height="48" />

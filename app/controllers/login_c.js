@@ -93,7 +93,9 @@ function loginController($scope, $rootScope,login_service)
 
     $scope.init = (function ()
     {
-    	$scope.toggleLogin();	
+    	$scope.toggleLogin();
+    	$rootScope.$emit("featured", false);
+    	
     })();
 
 }

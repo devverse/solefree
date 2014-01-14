@@ -15,7 +15,8 @@ soleinsider.base_url = serviceURL;
 soleinsider.username =   "";
 soleinsider.member_id =  '';
 soleinsider.cache = true;
-soleinsider.version = "4.1";
+soleinsider.show_featured = true;
+soleinsider.version = "4.2";
 soleinsider.version_type = "free";
 soleinsider.member_type = "free";
 

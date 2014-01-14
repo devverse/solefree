@@ -1,3 +1,7 @@
+<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center;min-height:1400px">
+	<span style="font-weight:bold;"> Coupons  </span>        	
+</div>
+
 <div ng-repeat="c in coupons" class="product">
 
 	<div class="productImages">
@@ -7,7 +11,8 @@
 	<div class="productDetails">
 		<span class="product_title"> {{c.name}} </span> <br/>
 		<span class="product_title"> {{c.description}} </span> <br/>
-		<a class="button round green" href="{{c.website}}">{{c.coupon}} </a>
+		<h4>{{c.coupon}} </h4> 
+		<a class="button  green" href="{{c.website}}"> Use Coupon</a>
 	</div>
 
 <br/>

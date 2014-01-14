@@ -1,4 +1,4 @@
-function releasesController($scope, $rootScope, release_service, cache_service)
+function releasesController($scope, $rootScope, $filter,release_service, cache_service)
 {
 	$scope.releases = [];
     $scope.showmsg = false;
@@ -33,14 +33,21 @@ function releasesController($scope, $rootScope, release_service, cache_service)
         release_service.getReleases().then(
         function(data) {
             $scope.releases = data;
-            console.log(data);
         }, function(err) {
             alert(err);
         });
-    
-       
-
 	};
+
+    $scope.filterReleases = function(product){
+
+       
+         product.showBuyLink = false;
+
+        if (product.link.length > 2){
+           product.showBuyLink = true;
+        }
+        return product;
+    };
 
     $scope.addReminder = function(product){
 
@@ -68,7 +75,7 @@ function releasesController($scope, $rootScope, release_service, cache_service)
     $scope.init = (function ()
     {	
     	$scope.getReleases();
-
+        $rootScope.$emit("featured", true);
 
 
     })();

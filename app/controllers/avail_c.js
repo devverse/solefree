@@ -19,6 +19,7 @@ function availController($scope, $rootScope,sales_service,cache_service)
             $scope.products = data;
         });
 
+         $rootScope.$emit("featured", true);
     })();
 
 }

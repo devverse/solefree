@@ -115,8 +115,8 @@ function storeController($scope, $rootScope, store_service)
 
     $scope.init = (function ()
     {
-
         $scope.getMenu();
         $scope.getDefaultItems();
+        $rootScope.$emit("featured", true);
     })();
 }

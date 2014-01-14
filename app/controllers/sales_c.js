@@ -26,6 +26,8 @@ function salesController($scope, $rootScope,sales_service)
             $scope.sales = data;
         });
 
+        $rootScope.$emit("featured", true); 
+
     })();
 
 }
