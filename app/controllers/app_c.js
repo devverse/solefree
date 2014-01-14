@@ -49,10 +49,12 @@ function appController($scope, $rootScope,app_service)
         );
 	};
 
+
+
     $scope.init = (function ()
     {	
     	$scope.getMessages();
-    	$scope.getFeaturedProducts();	
+    	$scope.getFeaturedProducts();
 
         $rootScope.$on('featured', function(e,status) {
             $scope.show_featured = status;

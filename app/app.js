@@ -81,4 +81,3 @@ soleinsiderApp.config(['$httpProvider', function ($httpProvider) {
 	"use strict";
 	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 }]);
-
