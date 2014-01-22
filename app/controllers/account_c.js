@@ -5,7 +5,7 @@ function accountController($scope, $rootScope,account_service)
 	$scope.showConfirmation = false;
 	$scope.version = soleinsider.version;
 	$scope.version_type = soleinsider.version_type;
-
+	
 	$scope.updateAccount = function(account){
 		var post = "member_id=" + soleinsider.member_id;
 			post += "&username=" + account.email;
@@ -22,7 +22,7 @@ function accountController($scope, $rootScope,account_service)
 
 
 	$scope.getAccount = function(){
-		var post = "member_id=" + soleinsider.member_id;;
+		var post = "member_id=" + soleinsider.member_id;
 		account_service.getAccount(post).then(function (data) {
 			$scope.account = data;
 		}, function (err) {

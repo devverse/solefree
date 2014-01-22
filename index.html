@@ -1,189 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
+<!doctype html>
 
-<meta charset="utf-8">
-<title>SoleInsider</title>
+<html>
 
-    <!-- Import Styles-->
+	<head>
 
-	    <link rel='stylesheet' href='css/vendor/normalize.css'>
-	    <link rel='stylesheet' href='css/vendor/fontello.css'>
-	    <link rel='stylesheet' href='css/style.css'>
-	    <link rel='stylesheet' href='css/master.css'>
+		<title>tittle</title>
 
-    <!-- =Import Styles-->
-	    
-	    
-    <!-- Modernizr & HTML5 Shiv -->
+		<script>
 
-	    <script src='js/vendor/modernizr.js'></script>
+			window.location='./main.html';
 
-		<!--[if lt IE 9]>
-		<script src='js/vendor/html5shiv.js'></script>
-		<![endif]-->
+		</script>
 
-    <!-- =Modernizr & HTML5 Shiv -->
-	    
+	<body>		
 
-	    
-	</head>
-	<body>
+	</body>
 
-	 
-    <!-- Container -->
-
-	    <div id="container">
-	    
-
-        <!-- Main Content-->
-
-        			<!-- Sidebar -->
-	
-	        <aside id="sidemenu-container">
-	        	<div id="sidemenu">
-	        		<div id="author-profile">
-	        			<div class="author-profile-photo">
-	        				<img src="icons/icon.png" alt="">
-	        			</div>
-	        			
-	        		</div>
-		        	<nav id="nav-container">
-		        		<ul class="nav">
-		        			<li> <a href="store.html" class="active"> SoleInsider Shop</a></li>
-		        			<li> <a href="#/sales" class> Sales</a></li>
-		        			<li> <a href="#/releases" class> Releases</a></li>
-		        			<li> <a href="#/restocks" class>  Restocks</a></li>
-		        			<li> <a href="#/restock_history" class> Past Restocks</a></li>
-		        			<li> <a href="#/myrestocks" class> My Restocks</a></li>
-		        			<li> <a href="#/myreleases" class> My Releases</a></li>
-		        			<li> <a href="#/coupons" class> Coupons </a></li>
-		        			<!-- <li> <a href="#/twitter" class>Twitter</a></li> --> 
-		        			<li> <a href="#/avail" class> Still Available</a></li>
-		        			<li> <a href="#/login" class> Login/Register</a></li>
-		        			<li> <a href="#/account" class> Settings</a></li>        			
-		        		</ul>
-		        	</nav>
-	        	</div>
-	        </aside>
-
-		<!-- =Sidebar -->
-
-	        <section id="content-container">
-
-	        	  <!-- Header -->
-
-		        <header id="header">
-		        	<div id="menu-trigger" class="header-button left icon-menu"></div>
-		        	<h1><a href="index.html">SoleInsider</a></h1>
-		        </header>
-
-	        <!-- =Header -->
-
-		        <div id="content" ng-app="soleinsiderApp" ng-controller="appController" >
-
-		        	
-		        	<div class="panel green" ng-cloak>
-		        		{{message}}
-		        	</div>
-
-		        	<div ng-cloak ng-show="show_featured == true">
-		        	<div class="panel grey featured" style="text-align:center">
-		        		<span style="font-weight:bold;"> Featured  </span>
-		        	
-					</div>
-						<div class="product">
-						<div class="productImages">
-								<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="productImage">
-								
-
-							
-								</span>
-								<br/>
-						</div>
-							<div class="productDetails">
-								<span class="product_title"> {{featured.name}} </span> <br/>
-								<b class='price'>${{featured.price}} </b><br/><br/>
-									<a href="{{r.link}}" class='button custombutton2 radius green' > Buy Now</a>
-							</div>
-						</div>
-					</div>
-
-		        
-
-		        	<div style="min-height:500px"  >
-
-
-		        	<div class="loading" ng-show="showLoading == true" style="text-align:center">
-		        		<img src="img/spinner.gif" />
-		        	</div>
-		        		   <div ng-view>
-                  
-                 			</div>
-                 	</div>	
-
-                   <div class="panel green" ng-show="showads == true">
-		        		asd
-		        	</div>	  -
-
-		        		
-		        	
-		        </div>
-
-	        </section>
-
-        <!-- =Main Content -->
-	    
-
-	    
-
-	    </div>
-    <!-- =Container -->
-	    
-
-	
-	<!-- Custom Scripts -->
-
-<!-- <script src='js/plugins/klass.js'></script>
-<script src='js/plugins/photoswipe.js'></script> -->
-<script src='js/vendor/jquery.js'></script>
-<script src='js/plugins/hammer.js'></script>
-<!-- <script src='js/plugins/flexslider.js'></script> -->
-<script src='js/plugins/h5validate.js'></script>
-<!-- <script src='js/plugins/responsivetables.js'></script> -->
-<script src='js/plugins/prism.js'></script>
-<script src='js/script.js'></script>
-
-	<!-- =Custom Scripts -->
-<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-<script src="app/config.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/angular.js"></script>
-
-<script src="app/child_browser_plugin.js"></script>
-<script src="app/app.js"></script>
-<script src="app/controllers/app_c.js"></script>
-<script src="app/controllers/releases_c.js"></script>
-<script src="app/controllers/account_c.js"></script>
-<script src="app/controllers/past_releases_c.js"></script>
-<script src="app/controllers/past_restocks_c.js"></script>
-<script src="app/controllers/restocks_c.js"></script>
-<script src="app/controllers/sales_c.js"></script>
-<script src="app/controllers/avail_c.js"></script>
-<script src="app/controllers/myrestocks_c.js"></script>
-<script src="app/controllers/myreleases_c.js"></script>
-<script src="app/controllers/login_c.js"></script>
-<script src="app/controllers/coupons_c.js"></script>
-<script src="app/controllers/twitter_c.js"></script>
-<script src="app/models/release_service.js"></script>
-<script src="app/models/util_service.js"></script>
-<script src="app/models/restock_service.js"></script>
-<script src="app/models/sales_service.js"></script>
-<script src="app/models/login_service.js"></script>
-<script src="app/models/cache_service.js"></script>
-<script src="app/models/app_service.js"></script>
-<script src="app/models/account_service.js"></script>
-<script src="app/models/twitter_service.js"></script>
-
-	   	    
-</body>
 </html>

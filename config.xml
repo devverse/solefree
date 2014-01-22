@@ -9,7 +9,7 @@
 	<name>Sole Insider Free</name>
 
 	<description>
-		Sole Insider. Sneaker releases, sneaker restocks. Jordans, Nikes, Pumas, Reebooks, Kicks, Hypebeast
+		Sole Insider. Sneaker releases, sneaker restocks, jordan releases, jordan restocks. Jordans, Nikes, Pumas, Reebooks, Kicks, Hypebeast.
 	</description>
 
 	<author href="devverse@gmail.com"
@@ -62,7 +62,4 @@
 	<preference name="fullscreen" value="false" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
-
-	<gap:plugin name="com.phonegap.plugins.childbrowser" />
-
 </widget>
