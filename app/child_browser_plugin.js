@@ -12,8 +12,7 @@ function onDeviceReady()
 		cb.onClose = function(){root.onCloseBrowser()};
 		cb.onOpenExternal = function(){root.onOpenExternal();};
 
-		window.plugins.childBrowser.showWebPage("http://google.com");
-		
+		window.plugins.childBrowser.showWebPage("http://google.com");		
 	}
 
 	alert("deviceready!");
