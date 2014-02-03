@@ -3,7 +3,7 @@ var url = window.location.href;
 if (url.indexOf("localhost") != -1) {
 	var serviceURL = "http://localhost/dev/soleinsider/site/public";
 } else{
-	var serviceURL = "http://http://162.243.76.81/public";
+	var serviceURL = "http://soleinsider.com/public";
 }
 
 var admin_url = 'app/';
