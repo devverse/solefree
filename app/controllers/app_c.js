@@ -6,6 +6,11 @@ function appController($scope, $rootScope,app_service)
     $scope.showads = soleinsider.showads;
     $scope.show_featured = soleinsider.show_featured;
 
+    $scope.buyProduct = function(product){
+        alert('Child childBrowser');
+        window.plugins.childBrowser.showWebPage(featured.link, { showLocationBar: true });
+    };
+
     $scope.getFeaturedProducts= function(){
         app_service.getFeaturedProducts().then(
             function (data) {

@@ -100,7 +100,7 @@
 							<div class="productDetails">
 								<span class="product_title"> {{featured.name}} </span> <br/>
 								<b class='price'>${{featured.price}} </b><br/><br/>
-									<a href="{{featured.link}}" class='button custombutton2 radius green' > Buy Now</a>
+									<button href="" ng-click="buyProduct(featured)" class='button custombutton2 radius green' > Buy Now</button>
 							</div>
 						</div>
 					</div>
@@ -152,7 +152,7 @@
 
 	<!-- =Custom Scripts -->
 <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-<script src="child_browser_plugin.js" type="text/javascript" charset="utf-8"></script>
+<script src="childbrowser.js" />
 
 <!-- Setup angular classes -->
 <script src="app/config.js" type="text/javascript" charset="utf-8"></script>
