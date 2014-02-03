@@ -7,8 +7,7 @@ function appController($scope, $rootScope,app_service)
     $scope.show_featured = soleinsider.show_featured;
 
     $scope.buyProduct = function(product){
-        alert('Child childBrowser');
-        window.plugins.childBrowser.showWebPage(featured.link, { showLocationBar: true });
+        window.plugins.childBrowser.showWebPage(featured.link);
     };
 
     $scope.getFeaturedProducts= function(){
