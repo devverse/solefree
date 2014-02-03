@@ -7,7 +7,7 @@ function appController($scope, $rootScope,app_service)
     $scope.show_featured = soleinsider.show_featured;
 
     $scope.buyProduct = function(product){
-        window.plugins.childBrowser.showWebPage(featured.link);
+        window.open(featured.link,'_system');
     };
 
     $scope.getFeaturedProducts= function(){
