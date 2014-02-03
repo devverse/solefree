@@ -1,12 +1,16 @@
-function releasesController($scope, $rootScope, $filter,release_service, cache_service)
+function releasesController($scope, $rootScope, $filter,$location,release_service, cache_service)
 {
 	$scope.releases = [];
     $scope.showmsg = false;
     $scope.showerror = false;
     $scope.errorMessage = "";
 
-    $scope.coporNot = function(product,status){
+    $scope.details = function(product){
+         localStorage.setItem("product_details", JSON.stringify(product));
+         $location.path('/details')
+    };
 
+    $scope.coporNot = function(product,status){
 
        var member_id = localStorage.getItem("member_id");
 

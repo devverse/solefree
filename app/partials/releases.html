@@ -2,6 +2,7 @@
 	{{errorMessage}}
 </div>
 
+
 <style>
 	.custombutton {
 		padding: 8px 8px;
@@ -9,8 +10,8 @@
 	}
 
 	.custombutton2 {
-		padding: 10px 30px;
-		font-size: 11px;
+		padding: 8px 28px;
+		font-size: 10px;
 	}
 </style>
 
@@ -26,20 +27,21 @@
 
 		
 		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
-		<span ng-show="r.showBuyLink == false">
-		<a data-product-id='{{r.product_id}}'  class='button custombutton2 radius' ng-click="addReminder(r)" > Remind </a>
-		</span>
-
+		
 		<span ng-show="r.showBuyLink == true">
 		<a data-product-id='{{r.product_id}}' href="{{r.link}}" class='button custombutton2 radius green' > Buy Now</a>
 		</span>
 		<br/>
 
+		<span ng-show="r.showBuyLink == false">
+		<a data-product-id='{{r.product_id}}'  class='button custombutton2 radius' ng-click="details(r)" > Details </a>
+		</span>
+
 
 	</div>
 	
 	<div class="productDetails">
-		<span class="product_title"> {{r.name}} </span> <br/>
+		<span class="product_title" >  {{r.name}} </a> </span> <br/>
 		<span class='date'>{{r.release_date}}</span> <br/> <b class='price'>${{r.price}} </b><br/><br/>
 		
 

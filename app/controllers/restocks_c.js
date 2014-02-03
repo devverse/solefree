@@ -50,7 +50,7 @@ function restocksController($scope, $rootScope,restock_service,cache_service)
             $scope.showLoading = false;
         });
         
-        $rootScope.$emit("featured", true);
+        $rootScope.$emit("featured", false);
 
     })();
 
