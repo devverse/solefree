@@ -58,7 +58,7 @@
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
-	<preference name="phonegap-version" value="3.1.0" />
+	<preference name="phonegap-version" value="2.9.0" />
 	<preference name="fullscreen" value="false" />
 	<preference name="load-url-timeout" value="60000" />
 
