@@ -17,7 +17,14 @@ function myReleasesController($scope, $rootScope, release_service)
 	};
 
      $scope.deleteRelease = function(product){
-        release_service.deleteRelease(product);
+        release_service.deleteRelease(product).then(
+            function (data) {
+               $().toastmessage('showSuccessToast',"Reminder deleted for " + product.name);
+            },
+            function (err) {
+                alert(err);
+            }
+        );
     };
 
 

@@ -34,7 +34,7 @@ function detailsController($scope, $rootScope,$location,comments_service,release
             function (data) {
                $scope.showmsg = true;
                $scope.sneakerName = product.name;
-               $().toastmessage('showSuccessToast',"Reminder added for " + product.name);
+               $().toastmessage('showSuccessToast',"Reminder saved for " + product.name);
             },
             function (err) {
                 alert(err);

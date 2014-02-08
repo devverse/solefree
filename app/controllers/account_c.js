@@ -13,6 +13,7 @@ function accountController($scope, $rootScope,account_service)
 			post += "&carrier=" + account.carrier;
 
 		account_service.updateAccount(post).then(function (data) {
+			$().toastmessage('showSuccessToast',"Your account has been updated");
 			$scope.confirmation = "Your account has been updated";
 			$scope.showConfirmation = true;
 		}, function (err) {
@@ -34,6 +35,7 @@ function accountController($scope, $rootScope,account_service)
 		member_id = localStorage.getItem("member_id");
 		username = localStorage.getItem("username");
 
+		$().toastmessage('showSuccessToast',"Cache has been cleared");
 		$scope.confirmation = "Cache has been cleared";
 		$scope.showConfirmation = true;
     	localStorage.clear();

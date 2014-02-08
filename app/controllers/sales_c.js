@@ -3,15 +3,13 @@ function salesController($scope, $rootScope,sales_service)
 
 	$scope.products = [];
 
-	$scope.getSales = function(){
-
-		sales_service.getSales();
-          
-	};
-
-    $scope.sendPurchaseLink = function(product){
-        //product_service.sendPurchaseLink(product);
+    $scope.buyProduct = function(product){
+        window.open(product.link, '_blank', 'location=yes');
     };
+
+	$scope.getSales = function(){
+		sales_service.getSales();
+	};
 
     $scope.formatPrice = function(product){
         product.price = parseFloat(product.price).toFixed(2);
