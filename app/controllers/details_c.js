@@ -17,6 +17,32 @@ function detailsController($scope, $rootScope,$location,comments_service,release
 
 	};
 
+    $scope.addReminder = function(product){
+
+   
+        member_id = localStorage.getItem("member_id");
+        if (member_id == "false" || member_id == 0 || member_id == null ) {
+             $scope.showerror = true;
+             $scope.errorMessage = "You must be logged for reminders";
+             return;
+        } else{
+            $scope.showerror = true;
+             $scope.errorMessage = "Reminder added for " + product.name;
+        }
+
+        release_service.addReminder(product,member_id).then(
+            function (data) {
+               $scope.showmsg = true;
+               $scope.sneakerName = product.name;
+               $().toastmessage('showSuccessToast',"Reminder added for " + product.name);
+            },
+            function (err) {
+                alert(err);
+            }
+        );
+    }
+
+
 	 $scope.coporNot = function(product,status){
 
        var member_id = localStorage.getItem("member_id");
@@ -73,6 +99,7 @@ function detailsController($scope, $rootScope,$location,comments_service,release
             post += "&comment=" + $scope.new_comment;
 
         comments_service.leaveComment(post).then(function (data) {
+             $().toastmessage('showSuccessToast',"Comment saved!");
             $scope.getComments();
             $scope.new_comment = "";
         }, function (err) {
