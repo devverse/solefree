@@ -65,5 +65,6 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+	<gap:plugin name="nl.x-services.plugins.calendar" />
 
 </widget>

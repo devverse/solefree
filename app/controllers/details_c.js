@@ -49,9 +49,17 @@ function detailsController($scope, $rootScope,$location,comments_service,release
         });
 	};
 
-	$scope.addToCalender = function(){
+	$scope.addToCalender = function(product){
+         var startDate = new Date(product.release_date);
+         var endDate = new Date(product.release_datee);
+         var title = product.title;
+         var location = "Home";
+         var notes = product.title + " releasing on " + startDate;
+         var success = function(message) { };
+         var error = function(message) { };
 
-	};
+         window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
+	}; 
 
 	$scope.getAds = function(){
 
