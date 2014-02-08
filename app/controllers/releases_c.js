@@ -69,6 +69,7 @@ function releasesController($scope, $rootScope, $filter,$location,release_servic
             function (data) {
                $scope.showmsg = true;
                $scope.sneakerName = product.name;
+               window.plugins.toast.show("Reminder added for " + product.name, 'short', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})
             },
             function (err) {
                 alert(err);
