@@ -1,6 +1,5 @@
 function salesController($scope, $rootScope,sales_service)
 {
-
 	$scope.products = [];
 
     $scope.buyProduct = function(product){
