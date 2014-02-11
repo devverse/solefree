@@ -1,4 +1,4 @@
-function detailsController($scope, $rootScope,$location,comments_service,release_service)
+function detailsController($scope, $rootScope,$location,$filter,comments_service,release_service)
 {
 
 	$scope.comments = [];
@@ -74,6 +74,13 @@ function detailsController($scope, $rootScope,$location,comments_service,release
             window.console.log(err);
         });
 	};
+
+    $scope.maskCommentUser = function(comment){
+   
+        alert(comment.email);
+        //comment.email = comment.email.substring(0,position);
+        return comment;
+    };
 
 	$scope.addToCalender = function(product){
          var startDate = new Date(product.release_date);

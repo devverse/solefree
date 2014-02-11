@@ -41,9 +41,9 @@
             <div class="comments-content-container">
                 <div class="comments-content">
                     <p class="comments-meta">
-                        <span class="comments-meta-name"><p>{{comment.email}}</p></span>
+                        <span class="comments-meta-name"><p>{{comment.email.substr(0,6)}} ******
                        
-                       <p>  on {{comment.comment_date}}</p>
+                      on {{comment.comment_date}}</p></span>
                     </p>
 
                     <p>{{comment.comment}}</p>
