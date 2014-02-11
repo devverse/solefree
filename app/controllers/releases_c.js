@@ -5,6 +5,11 @@ function releasesController($scope, $rootScope, $filter,$location,release_servic
     $scope.showerror = false;
     $scope.errorMessage = "";
 
+    $scope.buyProduct = function(product){
+        window.open(product.link, '_blank', 'location=yes');
+    };
+
+
     $scope.details = function(product){
          localStorage.setItem("product_details", JSON.stringify(product));
          $location.path('/details')

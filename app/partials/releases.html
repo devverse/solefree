@@ -29,7 +29,7 @@
 		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
 		
 		<span ng-show="r.showBuyLink == true">
-		<a data-product-id='{{r.product_id}}' href="{{r.link}}" class='button custombutton2 radius green' > Buy Now</a>
+		<a data-product-id='{{r.product_id}}' href="" ng-click="buyProduct(r)" class='button custombutton2 radius green' > Buy Now</a>
 		</span>
 		<br/>
 
