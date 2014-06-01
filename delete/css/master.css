@@ -1,0 +1,46 @@
+.product{
+	overflow: hidden;
+	background: #eaf2eb;
+	margin-bottom: 6px;
+	padding: 10px;
+}
+
+.productImages{
+	width: 38%;
+	float: left;
+}
+
+.productImage {
+	width: 90% !important;
+}
+
+.productDetails{
+	width: 55%;
+	float: left;
+	text-align: left;
+}
+
+
+.product_title{
+	margin-bottom: 0px;
+	color: #555 !important;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+.price{
+	color:green;
+	font-family: arial;
+	font-weight: 200;
+	font-size: 9px;
+	margin-top: -8px;
+}
+
+.date{
+	font-size: 9px;
+	margin-top: -8px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}

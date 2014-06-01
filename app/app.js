@@ -75,10 +75,6 @@ var soleinsiderApp = angular.module('soleinsiderApp', []).
 					controller: salesController
 				});
 
-
-
-		
-
 			//.otherwise({redirectTo:'/home'});
 		}]);
 
