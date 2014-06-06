@@ -9,7 +9,6 @@ function releasesController($scope, $rootScope, $filter,$location,release_servic
         window.open(product.link, '_blank', 'location=yes');
     };
 
-
     $scope.details = function(product){
          localStorage.setItem("product_details", JSON.stringify(product));
          $location.path('/details')
@@ -84,10 +83,9 @@ function releasesController($scope, $rootScope, $filter,$location,release_servic
 
     $scope.init = (function ()
     {	
-    	$scope.getReleases();
+        $scope.releases = datastore.releases;
+    	//$scope.getReleases();
         $rootScope.$emit("featured", true);
-
-
     })();
 
 }

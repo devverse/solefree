@@ -65,6 +65,16 @@ var soleinsiderApp = angular.module('soleinsiderApp', []).
 					controller: twitterController
 				}).
 
+				when('/twitter_watcher', {
+					templateUrl: admin_url + 'partials/twitter_watcher.html',
+					controller: twitterWatcherController
+				}).
+
+				when('/instagram', {
+					templateUrl: admin_url + 'partials/instagram.html',
+					controller: instagramController
+				}).
+
 				when('/details', {
 					templateUrl: admin_url + 'partials/details.html',
 					controller: detailsController

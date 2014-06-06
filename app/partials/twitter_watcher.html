@@ -1,0 +1,33 @@
+<div class="panel yellow" ng-show="showerror == true">
+	{{errorMessage}}
+</div>
+
+<div class="panel grey" ng-cloak style="text-align:center">
+	<span style="font-weight:bold;font-size:9px"> Twitter Watcher | Use this feature to be notified whenever a sneaker link gets posted on any of the twitter accounts listed below </span>        	
+</div>
+
+
+<div ng-repeat="c in accounts"  class="product">
+	<div class="productImages">
+		<img src="{{c.logo}}" class="productImage"/>
+	</div>
+	
+	<div class="productDetails">
+		<span class="product_title"> {{c.twitter_handle}} </span> <br/>
+		<a class="button radius blue" ng-click="addToWatch(c)"> Watch </a>
+	</div>
+</div>
+
+<div class="panel">
+<h5> Currently Watching </h5>
+</div>
+<div ng-repeat="c in watching"  class="product">
+	<div class="productImages">
+		<img src="{{c.logo}}" class="productImage"/>
+	</div>
+	
+	<div class="productDetails">
+		<span class="product_title"> {{c.twitter_handle}} </span> <br/>
+		<a class="button radius red" ng-click="removeFromWatch(c)"> Remove </a>
+	</div>
+</div>

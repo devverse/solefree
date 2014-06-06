@@ -169,7 +169,7 @@ jQuery('#menu-open-overlay').on('click', function() {
 <!-- END HIDE WHEN CLICKED/TAPPED OUTSIDE MENU -->
 
 <!-- BEGIN HIDE WHEN MENU ITEM CLICKED/TAPPED -->
-jQuery('.menu-item').on('click', function() {
+jQuery('.menu-item:not(.sub)').on('click', function() {
 
   /* enable scroll */
   setTimeout(function() {

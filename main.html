@@ -58,12 +58,26 @@
 				<ul id="menu-main-menu" class="menu">
 					<li class="menu-item"> <a href="store.html" class="active"> SoleInsider Shop</a>
 					</li>
-					<li class="menu-item"> <a href="#/releases" class> Releases</a>
+					<li class="sub menu-item"><a href="#">Releases</a>
+						<ul class="sub-menu">
+							<li class="menu-item"> <a href="#/releases" class> Current Releases </a></li>
+							<li class="menu-item"> <a href="#/past_releases" class> Past Releases </a>
+							</li>
+								<li class="menu-item"> <a href="#/myreleases" class> My Releases</a>
 					</li>
-					<li class="menu-item"> <a href="#/myreleases" class> My Releases</a>
+						</ul>
 					</li>
+				
+					<li class="sub menu-item"><a href="#">Restocks</a>
+						<ul class="sub-menu">
 					<li class="menu-item"> <a href="#/restocks" class>  Restocks</a>
+					<li class="menu-item"> <a href="#/past_restocks" class> Past Restocks</a>
+					<li class="menu-item"> <a href="#/myrestocks" class>  My Restocks</a>
 					</li>
+
+						</ul>
+					</li>
+
 					<li class="menu-item"> <a href="#/avail" class> Still Available</a>
 					</li>
 					<li class="menu-item"> <a href="#/sales" class> Sales</a>
@@ -130,6 +144,7 @@
 				<!-- Setup angular classes -->
 				<script src="app/config.js" type="text/javascript" charset="utf-8"></script>
 				<script src="app/angular.js"></script>
+				<script src="app/datastore.js"></script>
 				<script src="app/app.js"></script>
 				<script src="app/controllers/app_c.js"></script>
 				<script src="app/controllers/releases_c.js"></script>
@@ -144,7 +159,9 @@
 				<script src="app/controllers/login_c.js"></script>
 				<script src="app/controllers/coupons_c.js"></script>
 				<script src="app/controllers/twitter_c.js"></script>
+				<script src="app/controllers/twitter_watcher_c.js"></script>
 				<script src="app/controllers/details_c.js"></script>
+				<script src="app/controllers/instagram_c.js"></script>
 				<script src="app/models/release_service.js"></script>
 				<script src="app/models/util_service.js"></script>
 				<script src="app/models/restock_service.js"></script>
@@ -155,6 +172,7 @@
 				<script src="app/models/account_service.js"></script>
 				<script src="app/models/twitter_service.js"></script>
 				<script src="app/models/comments_service.js"></script>
+				<script src="app/models/instagram_service.js"></script>
 				<script src="assets/toast/javascript/jquery.toastmessage.js"></script>
 				<link rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
 					<!-- END FOOTER JS INCLUDES -->
