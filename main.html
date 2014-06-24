@@ -11,6 +11,9 @@
 	    <link rel='stylesheet' href='css/vendor/fontello.css'>
 	    <link rel='stylesheet' href='css/style.css'>
 	    <link rel='stylesheet' href='css/master.css'>
+	    <link rel='stylesheet' href='css/carousel-style.css'>
+	    <link rel='stylesheet' href='css/carousel.css'>
+	    <link rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
 
     <!-- =Import Styles-->
 	    
@@ -50,15 +53,55 @@
 	        		</div>
 		        	<nav id="nav-container">
 		        		<ul class="nav">
-		        			<li> <a href="store.html" class="active"> SoleInsider Shop</a></li>
-		        			<li> <a href="#/releases" class> Releases</a></li>
-		        			<li> <a href="#/myreleases" class> My Releases</a></li>
-		        			<li> <a href="#/restocks" class>  Restocks</a></li>
-		        			<li> <a href="#/avail" class> Still Available</a></li>
-		        			<li> <a href="#/sales" class> Sales</a></li>
-		        			<li> <a href="#/login" class> Login/Register</a></li>
-		        			<li> <a href="#/account" class> Settings</a></li>        			
-		        		</ul>
+		        			<li>
+		        				<a href="store.html" class="active"> Shop </a>
+		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+		        				<ul style="height: 0px;" class="">
+		     				        <li> <a href="#/avail" class> Still Available</a></li>
+		        					<li> <a href="#/sales" class> Sales</a></li>
+		        					<li> <a href="#/coupons" class> Coupons</a></li>
+		        				</ul>
+		        			</li>
+		        			<li>
+		        				<a href="#/releases" class="nav-with-ul">Releases</a>
+		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+		        				<ul style="height: 0px;" class="">
+
+				        			<li><a href="#/past_releases" class="">Past Releases</a></li>
+				        			<li><a href="#/myreleases" class=""> My Releases</a></li>
+		        				</ul>
+		        			</li>
+
+		        			<li>
+		        				<a href="#/restocks"  class="nav-with-ul">  Restocks</a>
+		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+		        				<ul style="height: 0px;" class="">
+
+				        			<li><a href="#/restock_history" class="">Past Restocks</a></li>
+				        			<li><a href="#/myrestocks" class=""> My Restocks</a></li>
+		        				</ul>
+		        			</li>
+
+		        			<li>
+		        				<a href="#/restocks" class="nav-with-ul">  Social</a>
+		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+		        				<ul style="height: 0px;" class="">
+		        					<li><a href="#/instagram" class="active"> Instagram </a></li>
+				        			<li><a href="#/twitter" class="active"> Twitter </a></li>
+				        			<li><a href="#/news" class="active"> News </a></li>
+		        				</ul>
+		        			</li>
+
+
+		        			<li>
+		        				<a href="#/account" class>  Account </a>
+		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
+		        				<ul style="height: 0px;" class="">		
+				        			<li> <a href="#/login" class> Login/Register</a></li>
+		        				</ul>
+		        			</li>
+
+		        	
 		        	</nav>
 	        	</div>
 	        </aside>
@@ -89,20 +132,28 @@
 		        	
 					</div>
 						<div class="product">
-						<div class="productImages">
-								<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="productImage">
-								
 
-							
-								</span>
-								<br/>
-						</div>
-							<div class="productDetails">
-								<span class="product_title"> {{featured.name}} </span> <br/>
-								<b class='price'>${{featured.price}} </b><br/><br/>
-									<a href="" ng-click="buyProduct(featured)" class='button custombutton2 radius green' > Buy Now</a>
-							</div>
-						</div>
+							<!-- the viewport -->
+								<div class="m-carousel m-fluid m-carousel-photos">
+								  <!-- the slider -->
+								  <div class="m-carousel-inner">
+								    <!-- the items -->
+								    <div class="m-item m-active">
+								    	<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="featuredImage">
+								    	<button class="button radius green buyBtn custombutton"> Buy Now </button>
+								    </div>
+								    <div class="m-item">
+								      	<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="featuredImage">
+								      	<button class="button radius green buyBtn custombutton"> Buy Now </button>
+								    </div>
+								   
+								  </div>
+								  <!-- the controls -->
+								  <div class="m-carousel-controls m-carousel-bulleted">
+								    <a href="#" data-slide="1" class="m-active">1</a>
+								    <a href="#" data-slide="2">2</a>
+								  </div>
+								</div>
 					</div>
 
 		        
@@ -145,6 +196,7 @@
 <script src='js/plugins/h5validate.js'></script>
 <!-- <script src='js/plugins/responsivetables.js'></script> -->
 <script src='js/plugins/prism.js'></script>
+<script src='js/plugins/carousel.js'></script>
 <script src='js/script.js'></script>
 
 	<!-- =Custom Scripts -->
@@ -180,7 +232,6 @@
 <script src="app/models/comments_service.js"></script>
 
 <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
-<link rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
-
+<script>$('.m-carousel').carousel()</script>
 </body>
 </html>
