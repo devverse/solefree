@@ -14,12 +14,14 @@
 	width: 90% !important;
 }
 
+.featuredImage{
+	width: 60% !important;
+}
 .productDetails{
 	width: 55%;
 	float: left;
 	text-align: left;
 }
-
 
 .product_title{
 	margin-bottom: 0px;
@@ -43,4 +45,9 @@
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
+}
+
+.buyBtn{
+	padding: 8px 28px;
+	font-size: 10px;
 }

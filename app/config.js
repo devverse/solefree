@@ -1,7 +1,7 @@
 var url = window.location.href;
 
 if (url.indexOf("localhost") != -1) {
-	var serviceURL = "http://localhost/dev/soleinsider/site/public";
+	var serviceURL = "http://localhost/sole-web/public";
 } else{
 	var serviceURL = "http://soleinsider.com/public";
 }
@@ -16,7 +16,7 @@ soleinsider.username =   "";
 soleinsider.member_id =  '';
 soleinsider.cache = true;
 soleinsider.show_featured = true;
-soleinsider.version = "4.3";
+soleinsider.version = "4.5";
 soleinsider.version_type = "free";
 soleinsider.member_type = "free";
 
