@@ -43,7 +43,7 @@ function myReleasesController($scope, $rootScope, release_service)
             $scope.getMyReleases();
         });
 
-         $rootScope.$emit("featured", true);
+         $rootScope.$emit("featured", false);
         
     })();
 

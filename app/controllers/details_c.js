@@ -67,18 +67,21 @@ function detailsController($scope, $rootScope,$location,$filter,comments_service
         
         var post = "&product_id=" + $scope.product_id;
         comments_service.getComments(post).then(function (data) {
-            $scope.comments = data;
+            $scope.formatComments(data);
         }, function (err) {
             window.console.log(err);
         });
 	};
 
-    $scope.maskCommentUser = function(comment){
-   
-        alert(comment.email);
-        //comment.email = comment.email.substring(0,position);
-        return comment;
-    };
+    $scope.formatComments = function(comments){
+
+        for (var i =0; i < comments.length; i++){
+            var formatted =  moment(comments[i].comment_date, "MM-DD-YYYY");
+            comments[i].comment_date = moment(formatted,"MM-DD-YYYY").fromNow();
+        }
+
+        $scope.comments = comments;
+    }
 
 	$scope.addToCalender = function(product){
          var startDate = new Date(product.release_date);
@@ -91,10 +94,6 @@ function detailsController($scope, $rootScope,$location,$filter,comments_service
 
          window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
 	}; 
-
-	$scope.getAds = function(){
-
-	};
 
     $scope.submitComment = function(){
         var member_id = localStorage.getItem("member_id");

@@ -12,17 +12,18 @@
 <form >
 
 	<table class="full-width text-center">
-				<tr>
+			<tr>
 				<td>Your Email Address  </td> 
 				<td><input type="text" class="username" value="" ng-model="account.email"></td>
 			</tr>
-				<tr>
-					<td > Phone <br/>(NO SPACES OR HYPHENS) </td>
-					<td> 	<input type="text" class="phone" value="" ng-model="account.phone_number"></td>
+			<tr>
+				<td > Phone <br/>(NO SPACES OR HYPHENS) </td>
+				<td> 	<input type="text" class="phone" value="" ng-model="account.phone_number"></td>
 			</tr>
 			<tr>
-					<td > Carriers </td>
-					<td>   <select class="carrier" data-theme="c" ng-model="account.carrier">
+			<td > Carriers </td>
+			<td>   
+			<select class="carrier" data-theme="c" ng-model="account.carrier">
 			<option value="1"> AT&T </option>
 			<option value="2"> Verizon </option>
 			<option value="3"> T-Mobile </option>
@@ -34,7 +35,18 @@
 			<option value="9"> Alltel</option>
 
 		</select>
-	</td>
+		</td>
+			</tr>
+			<tr>
+				<td valign="top">Profile Pic  </td> 
+				<td>
+					<span ng-repeat="p in profiles">
+						<span style="float:left;width:27%">
+						<input type="radio" value="{{p.name}}" name="profile">
+						<img src="img/profiles/{{p.name}}" width="48" height="48"/>
+						</span>
+					</span>
+				</td>
 			</tr>
 	</table>
 

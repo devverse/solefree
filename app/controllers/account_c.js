@@ -7,6 +7,7 @@ function accountController($scope, $rootScope,account_service)
 	$scope.version_type = soleinsider.version_type;
 	
 	$scope.updateAccount = function(account){
+
 		var post = "member_id=" + soleinsider.member_id;
 			post += "&username=" + account.email;
 			post += "&phone=" + account.phone_number;
@@ -46,6 +47,7 @@ function accountController($scope, $rootScope,account_service)
 
     $scope.init = (function ()
     {	
+    	$scope.profiles = soleinsider.profiles;
     	$scope.getAccount();
     	$scope.showConfirmation = false;
     	$rootScope.$emit("featured", false);
