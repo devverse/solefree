@@ -26,7 +26,6 @@ function myReleasesController($scope, $rootScope, release_service) {
     );
   };
 
-
   $scope.init = (function() {
 
     $scope.getMyReleases();

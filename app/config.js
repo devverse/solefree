@@ -25,3 +25,18 @@ if (soleinsider.version_type == "free"){
 } else{
 	soleinsider.showads = false;
 }
+
+soleinsider.profiles = [
+	{'name' : 'rocket.png'},
+	{'name' : 'skateboard.png'},
+	{'name' : 'trophy.png'},
+	{'name' : 'ufo.png'},
+	{'name' : 'radio.png'},
+	{'name' : 'bomb.png'},
+	{'name' : 'money.png'},
+	{'name' : 'motorcycle.png'},
+	{'name' : 'speedometer.png'},
+	{'name' : 'star.png'},
+	{'name' : 'hazard.png'},
+	{'name' : 'volume.png'},
+];

@@ -61,7 +61,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&product_id=" + product.id;
     post += "&status=" + status;
 
-    release_service.sneakerRating(post).then(function(data) {
+    release_service.coporNot(post).then(function(data) {
 
     }, function(err) {
       window.console.log(err);
@@ -69,13 +69,24 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.getComments = function(product) {
+
     var post = "&product_id=" + $scope.product_id;
     comments_service.getComments(post).then(function(data) {
-      $scope.comments = data;
+      $scope.formatComments(data);
     }, function(err) {
       window.console.log(err);
     });
   };
+
+  $scope.formatComments = function(comments) {
+
+    for (var i = 0; i < comments.length; i++) {
+      var formatted = moment(comments[i].comment_date, "MM-DD-YYYY");
+      comments[i].comment_date = moment(formatted, "MM-DD-YYYY").fromNow();
+    }
+
+    $scope.comments = comments;
+  }
 
   $scope.addToCalender = function(product) {
     var startDate = new Date(product.release_date);
@@ -111,6 +122,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getSlideShow();
     $scope.getComments();
     $scope.getAds();
-  })();
+  })(); 
 
 }

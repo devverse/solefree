@@ -4,8 +4,7 @@
 
 
 <div class="panel grey" style="text-align:center">
-    <span style="font-weight:bold">{{r.name}}</span>
-    <br/>{{r.release_date}}
+    <span style="font-weight:bold"> {{r.name}} </span> <br/> {{r.release_date}} (${{r.price}})
 </div>
 
 <div style="text-align:center">
@@ -34,9 +33,26 @@
     </div>
 
 
-    <div class="panel grey" style="text-align:center">
-        <span style="font-weight:bold">Comments</span>
-    </div>
+
+ <!-- Comments -->
+<div id="comments" class="bg-dark comments wrapped-content">
+  <h3>{{comments.length}} Comments</h3>
+    <ul ng-repeat="comment in comments">
+      <li>
+            <img class="comments-avatar" src="img/profiles/trophy.png" alt="Comments Author">
+            <div class="comments-content-container">
+                <div class="comments-content">
+                    <p class="comments-meta">
+                        <span class="comments-meta-name"><p>{{comment.email.substr(0,6)}} ****
+                       
+                      , {{comment.comment_date}}</p></span>
+                    </p>
+
+                    <p>{{comment.comment}}</p>
+                    
+                </div>
+            </div>
+        </li>
 
     <!-- Comments -->
     <div id="comments" class="bg-dark comments wrapped-content">
