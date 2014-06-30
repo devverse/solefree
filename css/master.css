@@ -148,18 +148,19 @@
 }
 /* Buttons */
  .button {
-    line-height: 4;
+    line-height: 2;
 }
 input[type="submit"], input[type="reset"], input[type="button"] {
     line-height: 1.6;
 }
+
 .button, button, input[type="submit"], input[type="reset"], input[type="button"] {
     box-shadow: none;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     margin-right: 5px;
-    padding: 13px 32px;
+    padding: 5px 10px;
     border: none;
     background: #3cabda;
     color: #fff;

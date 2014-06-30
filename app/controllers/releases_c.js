@@ -83,8 +83,7 @@ function releasesController($scope, $rootScope, $filter,$location,release_servic
 
     $scope.init = (function ()
     {	
-        $scope.releases = datastore.releases;
-    	//$scope.getReleases();
+    	$scope.getReleases();
         $rootScope.$emit("featured", true);
     })();
 
