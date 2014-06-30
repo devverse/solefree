@@ -70,6 +70,11 @@ var soleinsiderApp = angular.module('soleinsiderApp', []).
 					controller: detailsController
 				}).
 
+				when('/news', {
+					templateUrl: admin_url + 'partials/news.html',
+					controller: newsController
+				}).
+
 				when('/sales', {
 					templateUrl: admin_url + 'partials/sales.html',
 					controller: salesController
