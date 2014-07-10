@@ -91,3 +91,12 @@ soleinsiderApp.config(['$httpProvider', function ($httpProvider) {
 	"use strict";
 	$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 }]);
+
+
+soleinsiderApp.directive('myRepeatDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+    	$('.m-carousel').carousel();
+    }
+  };
+});

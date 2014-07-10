@@ -42,7 +42,7 @@
 .m-carousel-inner  {
     position:  relative;
     white-space:  nowrap;
-    text-align:  left;
+    text-align:  center;
     /*  Removes  inline-block  gaps  due  to  whitespace  */
     font-size:  0;
     /*  Configure  animations  */

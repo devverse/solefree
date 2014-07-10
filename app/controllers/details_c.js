@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service) {
 
   $scope.comments = [];
@@ -6,6 +7,55 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     product = JSON.parse(localStorage.getItem("product_details"));
 
     product.showBuyLink = false;
+=======
+function detailsController($scope, $rootScope,$location,$filter,comments_service,release_service)
+{
+	$scope.comments = [];
+    $scope.related = [];
+
+	$scope.loadProduct = function(){
+		product = JSON.parse(localStorage.getItem("product_details"));
+
+		product.showBuyLink = false;
+
+        if (product.link.length > 2){
+           product.showBuyLink = true;
+        }
+
+        $scope.r = product;
+        $scope.product_id = product.product_id;
+	};
+
+    $scope.getRelatedItems = function(name){
+       release_service.getRelatedItems(name).then(function (data) {
+            $scope.related = data;
+        }, function (err) {
+            window.console.log(err);
+        });
+    };
+
+    $scope.addReminder = function(product){
+
+        member_id = localStorage.getItem("member_id");
+        if (member_id == "false" || member_id == 0 || member_id == null ) {
+             $scope.showerror = true;
+             $scope.errorMessage = "You must be logged for reminders";
+             return;
+        } 
+
+        release_service.addReminder(product,member_id).then(
+            function (data) {
+               $scope.showmsg = true;
+               $scope.showerror = false;
+               $scope.sneakerName = product.name;
+               $().toastmessage('showSuccessToast',"Reminder saved for " + product.name);
+            },
+            function (err) {
+                alert(err);
+            }
+        );
+    }
+>>>>>>> Added featured carousel
 
     if (product.link.length > 2) {
       product.showBuyLink = true;

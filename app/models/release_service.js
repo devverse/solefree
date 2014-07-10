@@ -62,11 +62,19 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
       return self.makePost('/mobile/coporNot', data);
     };
 
+<<<<<<< HEAD
     self.deleteRelease = function(product) {
       member_id = localStorage.getItem("member_id");
       var data = "product_id=" + product.id;
       data += "&member_id=" + member_id;
       return self.makePost('/mobile/deleteRelease', data).then(
+=======
+    self.deleteRelease = function(product){
+        member_id = localStorage.getItem("member_id");
+        var data = "product_id=" + product.id;
+            data += "&member_id=" + member_id;
+        return self.makePost('/mobile/deleteRelease',data).then(
+>>>>>>> Added featured carousel
         function(data) {
           $rootScope.$broadcast('deleteRelease', data);
         }, function(err) {
@@ -77,6 +85,17 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
     self.getSlideShow = function(data) {
       return self.makePost('/mobile/getSlideShow', data);
     };
+
+    self.getRelatedItems = function(name){
+        var data = "product_name=" + name;
+        return self.makePost('/mobile/getRelatedItems',data).then(
+        function(data) {
+            $rootScope.$broadcast('getRelatedItems', data);
+        }, function(err) {
+            alert(err);
+        });
+    };
+
 
     return {
 
@@ -104,6 +123,7 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
         return self.sneakerRating(post);
       },
 
+<<<<<<< HEAD
       deleteRelease: function(product) {
         return self.deleteRelease(product);
       },
@@ -111,6 +131,15 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
       getSlideShow: function(post) {
         return self.getSlideShow(post);
       }
+=======
+        deleteRelease : function(product){
+            return self.deleteRelease(product);
+        },
+
+        getRelatedItems : function(name){
+            return self.getRelatedItems(name);
+        }
+>>>>>>> Added featured carousel
     };
 
   }

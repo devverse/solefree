@@ -1,20 +1,42 @@
+<<<<<<< HEAD
 function appController($scope, $rootScope, app_service) {
 
   $scope.message = "";
   $scope.ads = "";
   $scope.showads = soleinsider.showads;
   $scope.show_featured = soleinsider.show_featured;
+=======
+
+function appController($scope, $rootScope,app_service)
+{
+	$scope.message = "";
+    $scope.ads = "";
+    $scope.showads = soleinsider.showads;
+    $scope.show_featured = soleinsider.show_featured;
+>>>>>>> Added featured carousel
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
   };
 
+<<<<<<< HEAD
   $scope.getFeaturedProducts = function() {
     app_service.getFeaturedProducts().then(
       function(data) {
         $scope.featured = data;
       },
       function(err) {
+=======
+    $scope.getFeaturedProducts= function(){
+        app_service.getFeaturedProducts().then(
+            function (data) {
+                $scope.featured = data;
+            },
+            function (err) {
+            }
+        );
+    };
+>>>>>>> Added featured carousel
 
       }
     );
@@ -37,6 +59,7 @@ function appController($scope, $rootScope, app_service) {
     );
   };
 
+<<<<<<< HEAD
   $scope.init = (function() {
     $scope.getMessages();
     $scope.getFeaturedProducts();
@@ -47,3 +70,17 @@ function appController($scope, $rootScope, app_service) {
 
   })();
 }
+=======
+    $scope.init = (function ()
+    {	
+    	$scope.getMessages();
+    	$scope.getFeaturedProducts();
+
+        $rootScope.$on('featured', function(e,status) {
+            $scope.show_featured = status;
+        });
+
+    })();
+}
+
+>>>>>>> Added featured carousel
