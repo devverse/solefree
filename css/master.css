@@ -17,6 +17,11 @@
 .featuredImage{
 	width: 60% !important;
 }
+}
+
+.featuredImageDiv{
+}
+
 .productDetails{
 	width: 55%;
 	float: left;
@@ -50,4 +55,5 @@
 .buyBtn{
 	padding: 8px 28px;
 	font-size: 10px;
+	height:40px;
 }

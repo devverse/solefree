@@ -1,6 +1,6 @@
+
 function appController($scope, $rootScope,app_service)
 {
-
 	$scope.message = "";
     $scope.ads = "";
     $scope.showads = soleinsider.showads;
@@ -16,7 +16,6 @@ function appController($scope, $rootScope,app_service)
                 $scope.featured = data;
             },
             function (err) {
-              
             }
         );
     };
@@ -53,8 +52,6 @@ function appController($scope, $rootScope,app_service)
         );
 	};
 
-
-
     $scope.init = (function ()
     {	
     	$scope.getMessages();
@@ -66,3 +63,4 @@ function appController($scope, $rootScope,app_service)
 
     })();
 }
+

@@ -64,13 +64,23 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
     };
 
     self.deleteRelease = function(product){
-
         member_id = localStorage.getItem("member_id");
         var data = "product_id=" + product.id;
             data += "&member_id=" + member_id;
         return self.makePost('/mobile/deleteRelease',data).then(
         function(data) {
             $rootScope.$broadcast('deleteRelease', data);
+        }, function(err) {
+            alert(err);
+        });
+    };
+
+
+    self.getRelatedItems = function(name){
+        var data = "product_name=" + name;
+        return self.makePost('/mobile/getRelatedItems',data).then(
+        function(data) {
+            $rootScope.$broadcast('getRelatedItems', data);
         }, function(err) {
             alert(err);
         });
@@ -105,6 +115,10 @@ soleinsiderApp.factory('release_service', ['util_service','$rootScope', '$q', '$
 
         deleteRelease : function(product){
             return self.deleteRelease(product);
+        },
+
+        getRelatedItems : function(name){
+            return self.getRelatedItems(name);
         }
     };
 

@@ -1,7 +1,7 @@
 function detailsController($scope, $rootScope,$location,$filter,comments_service,release_service)
 {
-
 	$scope.comments = [];
+    $scope.related = [];
 
 	$scope.loadProduct = function(){
 		product = JSON.parse(localStorage.getItem("product_details"));
@@ -14,12 +14,18 @@ function detailsController($scope, $rootScope,$location,$filter,comments_service
 
         $scope.r = product;
         $scope.product_id = product.product_id;
-
 	};
+
+    $scope.getRelatedItems = function(name){
+       release_service.getRelatedItems(name).then(function (data) {
+            $scope.related = data;
+        }, function (err) {
+            window.console.log(err);
+        });
+    };
 
     $scope.addReminder = function(product){
 
-   
         member_id = localStorage.getItem("member_id");
         if (member_id == "false" || member_id == 0 || member_id == null ) {
              $scope.showerror = true;

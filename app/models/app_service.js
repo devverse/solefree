@@ -36,7 +36,7 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($ro
     };
  
     self.getFeaturedProducts = function(){
-        return self.makePost('/mobile/getFeatured');
+        return self.makePost('/mobile/getFeatureds');
     };
 
 	return {

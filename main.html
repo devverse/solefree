@@ -82,7 +82,7 @@
 		        				</ul>
 		        			</li>
 
-		        			<li>
+		        		<!-- 	<li>
 		        				<a href="#/restocks" class="nav-with-ul">  Social</a>
 		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
 		        				<ul style="height: 0px;" class="">
@@ -90,7 +90,7 @@
 				        			<li><a href="#/twitter" class="active"> Twitter </a></li>
 				        			<li><a href="#/news" class="active"> News </a></li>
 		        				</ul>
-		        			</li>
+		        			</li> -->
 
 
 		        			<li>
@@ -134,27 +134,24 @@
 						<div class="product">
 
 							<!-- the viewport -->
-						<!-- 		<div class="m-carousel m-fluid m-carousel-photos">
+								<div class="m-carousel m-fluid m-carousel-photos">
 								  
-								  <div class="m-carousel-inner">
-								 
-								    <div class="m-item m-active">
-								    	<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="featuredImage">
-								    	<button class="button radius green buyBtn custombutton"> Buy Now </button>
+								  <div class="m-carousel-inner featuredImageDiv">
+							
+								    <div class="m-item" ng-repeat="f in featured" my-repeat-directive>
+								    	<img src="http://soleinsider.com/public/products/{{f.image}}"  class="featuredImage" style="clear:both"> <br/>
+								    	<button class="radius green buyBtn" ng-click="buyProduct(f)"> Buy Now </button>
 								    </div>
-								    <div class="m-item">
-								      	<img src="http://soleinsider.com/public/products/{{featured.image}}"  class="featuredImage">
-								      	<button class="button radius green buyBtn custombutton"> Buy Now </button>
-								    </div>
-								   
+
 								  </div>
+								   
 								  <!-- the controls -->
 								  
-								  <div class="m-carousel-controls m-carousel-bulleted">
-								    <a href="#" data-slide="1" class="m-active">1</a>
-								    <a href="#" data-slide="2">2</a>
+								  <div class="m-carousel-controls m-carousel-hud">
+								    <a class="m-carousel-prev" href="#" data-slide="prev">Previous</a>
+								    <a class="m-carousel-next" href="#" data-slide="next">Next</a>
 								  </div>
-								</div>
+								</div></div>
 					</div>
 
 		        
@@ -237,6 +234,5 @@
 <script src="app/models/news_service.js"></script>
 
 <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
-<script>// $('.m-carousel').carousel()</script>
 </body>
 </html>
