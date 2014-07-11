@@ -1,30 +1,29 @@
-function salesController($scope, $rootScope,sales_service)
-{
-	$scope.products = [];
+function salesController($scope, $rootScope, sales_service) {
 
-    $scope.buyProduct = function(product){
-        window.open(product.link, '_blank', 'location=yes');
-    };
+  $scope.products = [];
 
-	$scope.getSales = function(){
-		sales_service.getSales();
-	};
+  $scope.buyProduct = function(product) {
+    window.open(product.link, '_blank', 'location=yes');
+  };
 
-    $scope.formatPrice = function(product){
-        product.price = parseFloat(product.price).toFixed(2);
-        return product;
-    }
+  $scope.getSales = function() {
+    sales_service.getSales();
+  };
 
-    $scope.init = (function ()
-    {	
-    	$scope.getSales();
+  $scope.formatPrice = function(product) {
+    product.price = parseFloat(product.price).toFixed(2);
+    return product;
+  }
 
-         $rootScope.$on('getSales', function(e, data) {
-            $scope.sales = data;
-        });
+  $scope.init = (function() {
+    $scope.getSales();
 
-        $rootScope.$emit("featured", true); 
+    $rootScope.$on('getSales', function(e, data) {
+      $scope.sales = data;
+    });
 
-    })();
+    $rootScope.$emit("featured", true);
+
+  })();
 
 }
