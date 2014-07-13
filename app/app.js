@@ -93,10 +93,18 @@ soleinsiderApp.config(['$httpProvider', function ($httpProvider) {
 }]);
 
 
-soleinsiderApp.directive('myRepeatDirective', function() {
+soleinsiderApp.directive('featuredDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-    	$('.m-carousel').carousel();
+    	$('.featured-carousel').carousel();
+    }
+  };
+});
+
+soleinsiderApp.directive('productImagesDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+    	$('.product-carousel').carousel();
     }
   };
 });

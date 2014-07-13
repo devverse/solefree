@@ -82,15 +82,15 @@
 		        				</ul>
 		        			</li>
 
-		        		<!-- 	<li>
-		        				<a href="#/restocks" class="nav-with-ul">  Social</a>
+		        			<li>
+		        				<a href="#/news" class="nav-with-ul">  Social</a>
 		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
 		        				<ul style="height: 0px;" class="">
-		        					<li><a href="#/instagram" class="active"> Instagram </a></li>
-				        			<li><a href="#/twitter" class="active"> Twitter </a></li>
+		        				<!-- 	<li><a href="#/instagram" class="active"> Instagram </a></li>
+				        			<li><a href="#/twitter" class="active"> Twitter </a></li> -->
 				        			<li><a href="#/news" class="active"> News </a></li>
 		        				</ul>
-		        			</li> -->
+		        			</li>
 
 
 		        			<li>
@@ -134,11 +134,11 @@
 						<div class="product">
 
 							<!-- the viewport -->
-								<div class="m-carousel m-fluid m-carousel-photos">
+								<div class="featured-carousel m-carousel m-fluid m-carousel-photos">
 								  
-								  <div class="m-carousel-inner featuredImageDiv">
+								  <div class="m-carousel-inner">
 							
-								    <div class="m-item" ng-repeat="f in featured" my-repeat-directive>
+								    <div class="m-item" ng-repeat="f in featured" featured-directive>
 								    	<img src="http://soleinsider.com/public/products/{{f.image}}"  class="featuredImage" style="clear:both"> <br/>
 								    	<button class="radius green buyBtn" ng-click="buyProduct(f)"> Buy Now </button>
 								    </div>

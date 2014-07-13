@@ -1,128 +1,127 @@
-function detailsController($scope, $rootScope,$location,$filter,comments_service,release_service)
-{
-	$scope.comments = [];
-    $scope.related = [];
+function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service) {
 
-	$scope.loadProduct = function(){
-		product = JSON.parse(localStorage.getItem("product_details"));
+  $scope.comments = [];
+  $scope.slideshow = [];
 
-		product.showBuyLink = false;
+  $scope.loadProduct = function() {
+    product = JSON.parse(localStorage.getItem("product_details"));
 
-        if (product.link.length > 2){
-           product.showBuyLink = true;
-        }
+    product.showBuyLink = false;
 
-        $scope.r = product;
-        $scope.product_id = product.product_id;
-	};
-
-    $scope.getRelatedItems = function(name){
-       release_service.getRelatedItems(name).then(function (data) {
-            $scope.related = data;
-        }, function (err) {
-            window.console.log(err);
-        });
-    };
-
-    $scope.addReminder = function(product){
-
-        member_id = localStorage.getItem("member_id");
-        if (member_id == "false" || member_id == 0 || member_id == null ) {
-             $scope.showerror = true;
-             $scope.errorMessage = "You must be logged for reminders";
-             return;
-        } 
-
-        release_service.addReminder(product,member_id).then(
-            function (data) {
-               $scope.showmsg = true;
-               $scope.showerror = false;
-               $scope.sneakerName = product.name;
-               $().toastmessage('showSuccessToast',"Reminder saved for " + product.name);
-            },
-            function (err) {
-                alert(err);
-            }
-        );
+    if (product.link.length > 2) {
+      product.showBuyLink = true;
     }
 
+    $scope.r = product;
+    $scope.product_id = product.product_id;
+  };
 
-	 $scope.coporNot = function(product,status){
+  $scope.getSlideShow = function() {
+    var post = "&product_id=" + $scope.product_id;
+    release_service.getSlideShow(post).then(function(data) {
+      $scope.slideshow = data;
+    }, function(err) {
+      window.console.log(err);
+    });
+  };
 
-       var member_id = localStorage.getItem("member_id");
+  $scope.addReminder = function(product) {
 
-        if (status =="yes" && parseInt(product.yes_percentage) < 98){
-            product.yes_percentage = parseInt(product.yes_percentage) + parseInt(3.2);
-        } 
-
-        if (status =="no" && parseInt(product.no_percentage) < 98){
-             product.no_percentage = parseInt(product.no_percentage) + parseInt(3.2);
-        }
-        var post = "member_id=" + member_id;
-            post += "&product_id=" + product.id;
-            post += "&status=" + status;
-
-        release_service.coporNot(post).then(function (data) {
-            
-        }, function (err) {
-            window.console.log(err);
-        });
-    };
-
-	$scope.getComments = function(product){
-        
-        var post = "&product_id=" + $scope.product_id;
-        comments_service.getComments(post).then(function (data) {
-            $scope.formatComments(data);
-        }, function (err) {
-            window.console.log(err);
-        });
-	};
-
-    $scope.formatComments = function(comments){
-
-        for (var i =0; i < comments.length; i++){
-            var formatted =  moment(comments[i].comment_date, "MM-DD-YYYY");
-            comments[i].comment_date = moment(formatted,"MM-DD-YYYY").fromNow();
-        }
-
-        $scope.comments = comments;
+    member_id = localStorage.getItem("member_id");
+    if (member_id == "false" || member_id == 0 || member_id == null) {
+      $scope.showerror = true;
+      $scope.errorMessage = "You must be logged for reminders";
+      return;
     }
 
-	$scope.addToCalender = function(product){
-         var startDate = new Date(product.release_date);
-         var endDate = new Date(product.release_datee);
-         var title = product.title;
-         var location = "Home";
-         var notes = product.title + " releasing on " + startDate;
-         var success = function(message) { };
-         var error = function(message) { };
+    release_service.addReminder(product, member_id).then(
+      function(data) {
+        $scope.showmsg = true;
+        $scope.showerror = false;
+        $scope.sneakerName = product.name;
+        $().toastmessage('showSuccessToast', "Reminder saved for " + product.name);
+      },
+      function(err) {
+        alert(err);
+      }
+    );
+  }
 
-         window.plugins.calendar.createEvent(title,location,notes,startDate,endDate,success,error);
-	}; 
+  $scope.sneakerRating = function(product, status) {
 
-    $scope.submitComment = function(){
-        var member_id = localStorage.getItem("member_id");
+    var member_id = localStorage.getItem("member_id");
 
-        var post = "member_id=" + member_id;
-            post += "&product_id=" + $scope.product_id;
-            post += "&comment=" + $scope.new_comment;
+    if (status == "yes" && parseInt(product.yes_percentage) < 98) {
+      product.yes_percentage = parseInt(product.yes_percentage) + parseInt(3.2);
+    }
 
-        comments_service.leaveComment(post).then(function (data) {
-             $().toastmessage('showSuccessToast',"Comment saved!");
-            $scope.getComments();
-            $scope.new_comment = "";
-        }, function (err) {
-            window.console.log(err);
-        });
-    };
+    if (status == "no" && parseInt(product.no_percentage) < 98) {
+      product.no_percentage = parseInt(product.no_percentage) + parseInt(3.2);
+    }
+    var post = "member_id=" + member_id;
+    post += "&product_id=" + product.id;
+    post += "&status=" + status;
 
-    $scope.init = (function ()
-    {
-    	$rootScope.$emit("featured", false);
-    	$scope.loadProduct();
-        $scope.getComments();
-    	$scope.getAds();
-    })();
+    release_service.coporNot(post).then(function(data) {
+
+    }, function(err) {
+      window.console.log(err);
+    });
+  };
+
+  $scope.getComments = function(product) {
+    var post = "&product_id=" + $scope.product_id;
+    comments_service.getComments(post).then(function(data) {
+      $scope.formatComments(data);
+    }, function(err) {
+      window.console.log(err);
+    });
+  };
+
+  $scope.formatComments = function(comments) {
+
+    for (var i = 0; i < comments.length; i++) {
+      var formatted = moment(comments[i].comment_date, "MM-DD-YYYY h:mm:ss");
+      comments[i].comment_date = moment(formatted, "MM-DD-YYYY h:mm:ss").fromNow();
+    }
+
+    $scope.comments = comments;
+  }
+
+  $scope.addToCalender = function(product) {
+    var startDate = new Date(product.release_date);
+    var endDate = new Date(product.release_datee);
+    var title = product.title;
+    var location = "Home";
+    var notes = product.title + " releasing on " + startDate;
+    var success = function(message) {};
+    var error = function(message) {};
+
+    window.plugins.calendar.createEvent(title, location, notes, startDate, endDate, success, error);
+  };
+
+  $scope.submitComment = function() {
+    var member_id = localStorage.getItem("member_id");
+
+    var post = "member_id=" + member_id;
+    post += "&product_id=" + $scope.product_id;
+    post += "&comment=" + $scope.new_comment;
+
+    comments_service.leaveComment(post).then(function(data) {
+      $().toastmessage('showSuccessToast', "Comment saved!");
+      $scope.getComments();
+      $scope.new_comment = "";
+    }, function(err) {
+      window.console.log(err);
+    });
+  };
+
+  $scope.init = (function() {
+    $rootScope.$emit("featured", false);
+    $scope.loadProduct();
+    $scope.getSlideShow();
+    $scope.getComments();
+    $scope.getAds();
+  })(); 
 
 }
