@@ -88,16 +88,21 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.comments = comments;
   }
 
-  $scope.addToCalender = function(product) {
-    var startDate = new Date(product.release_date);
-    var endDate = new Date(product.release_datee);
+  $scope.addToCalender = function() {
     var title = product.title;
     var location = "Home";
     var notes = product.title + " releasing on " + startDate;
-    var success = function(message) {};
-    var error = function(message) {};
+    var startDate = new Date(product.release_date);
+    var endDate = new Date(product.release_date);
 
-    window.plugins.calendar.createEvent(title, location, notes, startDate, endDate, success, error);
+    var success = function(message) {
+      $().toastmessage('showSuccessToast', "Calendar event added for " + product.name);
+    };
+    var error = function(message) {
+      $().toastmessage('showSuccessToast', "Calendar event could not be added for " + product.name);
+    };
+
+    window.plugins.calendar.createEventInteractively(title, location, notes, startDate, endDate, success, error);
   };
 
   $scope.submitComment = function() {
@@ -122,6 +127,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getSlideShow();
     $scope.getComments();
     $scope.getAds();
-  })(); 
+  })();
 
 }

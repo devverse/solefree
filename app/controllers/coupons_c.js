@@ -1,5 +1,5 @@
 function couponsController($scope, $rootScope, cache_service) {
-    
+
   $scope.getCoupons = function() {
     $scope.coupons = cache_service.request("getCoupons");
   };

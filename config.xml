@@ -57,13 +57,13 @@
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
-	<preference name="phonegap-version" value="2.9.0" />
+	<preference name="phonegap-version" value="3.3.0" />
 	<preference name="fullscreen" value="false" />
 	<preference name="load-url-timeout" value="60000" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-	<plugin name="com.badrit.calendar" version="0.1.0" />
+	<plugin name="nl.x-services.plugins.calendar" version="4.2.4" />
 
 </widget>

@@ -1,15 +1,12 @@
-function appController($scope, $rootScope,app_service)
-{
-	$scope.message = "";
-    $scope.ads = "";
-    $scope.showads = soleinsider.showads;
-    $scope.show_featured = soleinsider.show_featured;
-
+function appController($scope, $rootScope, app_service) {
+  $scope.message = "";
+  $scope.ads = "";
+  $scope.showads = soleinsider.showads;
+  $scope.show_featured = soleinsider.show_featured;
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
   };
-
 
   $scope.getFeaturedProducts = function() {
     app_service.getFeaturedProducts().then(
