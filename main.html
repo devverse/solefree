@@ -81,17 +81,16 @@
 				        			<li><a href="#/myrestocks" class=""> My Restocks</a></li>
 		        				</ul>
 		        			</li>
+<li><a href="#/news" class="active"> News </a></li>
 
-		        			<li>
+		        			<!-- <li>
 		        				<a href="#/news" class="nav-with-ul">  Social</a>
 		        				<span class="nav-child-container"><span class="nav-child-trigger">+</span></span>
 		        				<ul style="height: 0px;" class="">
-		        				<!-- 	<li><a href="#/instagram" class="active"> Instagram </a></li>
-				        			<li><a href="#/twitter" class="active"> Twitter </a></li> -->
-				        			<li><a href="#/news" class="active"> News </a></li>
+		        				
 		        				</ul>
 		        			</li>
-
+ -->
 
 		        			<li>
 		        				<a href="#/account" class>  Account </a>
@@ -134,12 +133,14 @@
 						<div class="product">
 
 							<!-- the viewport -->
-								<div class="featured-carousel m-carousel m-fluid m-carousel-photos">
+								<div class="featured-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
 								  
 								  <div class="m-carousel-inner">
 							
 								    <div class="m-item" ng-repeat="f in featured" featured-directive>
+								    	<h4> {{f.name}} </h4>
 								    	<img src="http://soleinsider.com/public/products/{{f.image}}"  class="featuredImage" style="clear:both"> <br/>
+
 								    	<button class="radius green buyBtn" ng-click="buyProduct(f)"> Buy Now </button>
 								    </div>
 
@@ -198,8 +199,10 @@
 <script src='js/plugins/moment.js'></script>
 <script src='js/script.js'></script>
 
-	<!-- =Custom Scripts -->
+<!-- =Custom Scripts -->
 <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="js/calendar.js"></script>
+
 
 <!-- Setup angular classes -->
 <script src="app/config.js" type="text/javascript" charset="utf-8"></script>

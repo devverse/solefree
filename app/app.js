@@ -79,11 +79,7 @@ var soleinsiderApp = angular.module('soleinsiderApp', []).
 					templateUrl: admin_url + 'partials/sales.html',
 					controller: salesController
 				});
-
-
-
-		
-
+				
 			//.otherwise({redirectTo:'/home'});
 		}]);
 

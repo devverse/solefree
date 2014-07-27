@@ -94,10 +94,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var title = product.title;
     var location = "Home";
     var notes = product.title + " releasing on " + startDate;
-    var success = function(message) {};
-    var error = function(message) {};
+    var success = function() {};
+    var error = function() {};
 
-    window.plugins.calendar.createEvent(title, location, notes, startDate, endDate, success, error);
+    window.plugins.calendar.createEventInteractively(title,location,notes,startDate,endDate,success,error);
   };
 
   $scope.submitComment = function() {
