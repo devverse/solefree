@@ -1,5 +1,5 @@
 function pastReleasesController($scope, $rootScope, cache_service) {
-    
+
   $scope.releases = [];
   $scope.showmsg = false;
   $scope.showerror = false;

@@ -1,65 +1,66 @@
-soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http', function($rootScope, $q, $http) {
+soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http',
+  function($rootScope, $q, $http) {
 
-	var api = serviceURL;
+    var api = serviceURL;
 
-	self.makePost = function (endpoint, post) {
+    self.makePost = function(endpoint, post) {
 
-        post = (!post) ? {} : post;
-        if(!endpoint) {
-            window.alert("Could not connect to database");
-            return;
+      post = (!post) ? {} : post;
+      if (!endpoint) {
+        window.alert("Could not connect to database");
+        return;
+      }
+
+      var deferred = $q.defer();
+      $http.post(api + endpoint, post).success(function(data) {
+
+
+        if (data) {
+          if (data == 'false') {
+            data = [];
+          }
+          deferred.resolve(data);
+        } else {
+          deferred.reject("Data was rejected: " + post);
         }
-
-        var deferred = $q.defer();
-        $http.post(api + endpoint, post).success(function (data) {
-
-
-            if(data) {
-                if(data == 'false') {
-                    data = [];
-                }
-                deferred.resolve(data);
-            } else {
-                deferred.reject("Data was rejected: " + post);
-            }
-        });
-        return deferred.promise;
+      });
+      return deferred.promise;
 
     };
 
-    self.getMessages = function(){
-    	return self.makePost('/mobile/getMessages');
+    self.getMessages = function() {
+      return self.makePost('/mobile/getMessages');
     };
 
-    self.getAds = function(){
-        return self.makePost('/mobile/getAds');
-    };
- 
-    self.getFeaturedProducts = function(){
-        return self.makePost('/mobile/getFeatureds');
+    self.getAds = function() {
+      return self.makePost('/mobile/getAds');
     };
 
-	return {
+    self.getFeaturedProducts = function() {
+      return self.makePost('/mobile/getFeatureds');
+    };
 
-		init : function()
-		{ 
+    return {
 
-		},
+      init: function() {
 
-		getMessages : function(){
-			return self.getMessages();
-		},
+      },
 
-        getAds : function(){
-            return self.getAds();
-        },
+      getMessages: function() {
+        return self.getMessages();
+      },
 
-        getFeaturedProducts : function(){
-            return self.getFeaturedProducts();
-        }
+      getAds: function() {
+        return self.getAds();
+      },
 
-       
+      getFeaturedProducts: function() {
+        return self.getFeaturedProducts();
+      }
 
-	};
 
-}]);
+
+    };
+
+  }
+]);

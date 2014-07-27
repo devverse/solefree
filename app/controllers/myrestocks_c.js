@@ -11,7 +11,6 @@ function myRestocksController($scope, $rootScope, restock_service) {
       return;
     }
 
-
     restock_service.getMyRestocks();
   };
 

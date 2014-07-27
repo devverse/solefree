@@ -31,7 +31,6 @@ function myReleasesController($scope, $rootScope, release_service) {
     $scope.getMyReleases();
 
     // Listeners
-
     $rootScope.$on('getMyReleases', function(e, data) {
       $scope.releases = data;
     });
@@ -41,6 +40,5 @@ function myReleasesController($scope, $rootScope, release_service) {
     });
 
     $rootScope.$emit("featured", true);
-
   })();
 }

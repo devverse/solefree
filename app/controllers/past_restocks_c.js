@@ -1,5 +1,5 @@
 function pastRestocksController($scope, $rootScope, restock_service, cache_service) {
-    
+
   $scope.restocks = [];
 
   $scope.getPastRestocks = function() {
