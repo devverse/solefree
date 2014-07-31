@@ -105,13 +105,14 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     startDate =  new Date(date);
     endDate = new Date(date);
 
-    var notes = product.title + " releasing on " + startDate;
+    var notes = product.name + " releasing" + startDate;
 
-    var success = function(message) {
-      $().toastmessage('showSuccessToast', "Calendar event added for " + product.name);
+    var success = function() {
+      return;
     };
-    var error = function(message) {
-      $().toastmessage('showSuccessToast', "Calendar event could not be added for");
+    
+    var error = function() {
+      return;
     };
 
     window.plugins.calendar.createEventInteractively(title, location, notes, startDate, endDate, success, error);
