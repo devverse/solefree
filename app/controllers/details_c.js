@@ -88,19 +88,30 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.comments = comments;
   }
 
-  $scope.addToCalender = function() {
-    var title = product.title;
-    var location = "Home";
-    var notes = product.title + " releasing on " + startDate;
+  $scope.share = function(product){
+    return window.plugins.socialsharing.share(
+      'I saw this on SoleInsider', 
+      product.name, 
+      'http://soleinsider.com/public/products/' + product.image,
+       null);
+  };
 
-    var startDate = new Date(product.release_date);
-    var endDate = new Date(product.release_date);
+  $scope.addToCalender = function(product) {
+    var startDate, endDate;
+    var title = product.name;
+    var location = "Home";
+    
+    var date = product.release_date_calendar;
+    startDate =  new Date(date);
+    endDate = new Date(date);
+
+    var notes = product.title + " releasing on " + startDate;
 
     var success = function(message) {
       $().toastmessage('showSuccessToast', "Calendar event added for " + product.name);
     };
     var error = function(message) {
-      $().toastmessage('showSuccessToast', "Calendar event could not be added for " + product.name);
+      $().toastmessage('showSuccessToast', "Calendar event could not be added for");
     };
 
     window.plugins.calendar.createEventInteractively(title, location, notes, startDate, endDate, success, error);
