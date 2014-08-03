@@ -104,3 +104,13 @@ soleinsiderApp.directive('productImagesDirective', function() {
     }
   };
 });
+
+$(document).ready(function(){
+	$(".nav a").click(function(){
+		$(this).removeClass("active");
+	});
+
+	$(".nav-child-container").click(function(){
+	
+	});
+});

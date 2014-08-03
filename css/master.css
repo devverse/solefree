@@ -58,8 +58,8 @@
 	height:40px;
 }
 
-#news > img {
-	max-width: 85% !important;
+#news img {
+	max-width: 97% !important;
 	height: auto !important;
 }
 

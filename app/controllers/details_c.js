@@ -81,7 +81,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.formatComments = function(comments) {
 
     for (var i = 0; i < comments.length; i++) {
-      var formatted = moment(comments[i].comment_date, "MM-DD-YYYY h:mm:ss");
+      var formatted = moment.utc(comments[i].comment_date, "MM-DD-YYYY h:mm:ss");
       comments[i].comment_date = moment(formatted, "MM-DD-YYYY h:mm:ss").fromNow();
     }
 
@@ -90,7 +90,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.share = function(product){
     return window.plugins.socialsharing.share(
-      'I saw this on SoleInsider', 
+      '#SoleInsider ' + product.name, 
       product.name, 
       'http://soleinsider.com/public/products/' + product.image,
        null);
@@ -99,18 +99,18 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.addToCalender = function(product) {
     var startDate, endDate;
     var title = product.name;
-    var location = "Home";
+    var location = "SoleInsider";
     
     var date = product.release_date_calendar;
     startDate =  new Date(date);
     endDate = new Date(date);
 
-    var notes = product.name + " releasing" + startDate;
+    var notes = product.name + " releasing " + startDate;
 
     var success = function() {
       return;
     };
-    
+
     var error = function() {
       return;
     };
