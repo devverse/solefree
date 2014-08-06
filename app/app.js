@@ -89,18 +89,28 @@ soleinsiderApp.config(['$httpProvider', function ($httpProvider) {
 }]);
 
 
+var ngrepeat_counter = 1;
 soleinsiderApp.directive('featuredDirective', function() {
   return function(scope, element, attrs) {
+
+  	var link = '<a href="#" data-slide="'+ ngrepeat_counter +'">' + ngrepeat_counter + '</a>';
+  	$(".featured-carousel-pagination").append(link);
+  	ngrepeat_counter++;
     if (scope.$last){
     	$('.featured-carousel').carousel();
+    	ngrepeat_counter = 1;
     }
   };
 });
 
 soleinsiderApp.directive('productImagesDirective', function() {
   return function(scope, element, attrs) {
+
+  	var link = '<a href="#" data-slide="'+ ngrepeat_counter +'">' + ngrepeat_counter + '</a>';
+  	$(".product-carousel-pagination").append(link);
     if (scope.$last){
     	$('.product-carousel').carousel();
+    	ngrepeat_counter = 1;
     }
   };
 });
