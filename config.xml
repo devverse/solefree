@@ -14,7 +14,7 @@
 
 	<author href="devverse@gmail.com"
 		email="devverse@gmail.com">
-		Sole Insider
+		SoleInsider
 	</author>
 
 	<gap:platforms>
@@ -63,7 +63,8 @@
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
-	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" version="0.2.2" />
+	
 	<gap:plugin name="nl.x-services.plugins.calendar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
 
