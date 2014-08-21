@@ -25,7 +25,6 @@ soleinsiderApp.factory('util_service', ['$http', '$q',
       return deferred.promise;
     };
 
-
     return {
       /**
        * Make Post request
