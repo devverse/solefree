@@ -49,7 +49,12 @@
 	<icon src="icons/webos/icon.png" gap:platform="webos" />
 	<icon src="icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
 
-    <gap:splash src="splash.png" />
+    <gap:splash src="splash/splash.png" />
+	<gap:splash src="splash/res/drawable-mdpi.splash.9.png" gap:platform="android" gap:qualifier="mdpi" />
+	<gap:splash src="splash/res/drawable-hdpi.splash.9.png" gap:platform="android" gap:qualifier="hdpi" />
+	<gap:splash src="splash/res/drawable-xhdpi.splash.9.png" gap:platform="android" gap:qualifier="xhdpi" />
+	<gap:splash src="splash/res/drawable-xxhdpi.splash.9.png" gap:platform="android" gap:qualifier="xxhdpi" />
+
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<!-- General -->
