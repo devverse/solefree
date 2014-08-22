@@ -1,68 +1,53 @@
-.product{
-	overflow: hidden;
-	background: #eaf2eb;
-	margin-bottom: 6px;
-	padding: 10px;
+.product {
+    overflow: hidden;
+    background: #eaf2eb;
+    margin-bottom: 6px;
+    padding: 10px;
 }
-
-.productImages{
-	width: 38%;
-	float: left;
+.productImages {
+    width: 38%;
+    float: left;
 }
-
 .productImage {
-	width: 90% !important;
+    width: 90% !important;
 }
-
-.featuredImage{
-	width: 60% !important;
+.featuredImage {
+    width: 60% !important;
 }
+.featuredImageDiv {} .productDetails {
+    width: 55%;
+    float: left;
+    text-align: left;
 }
-
-.featuredImageDiv{
+.product_title {
+    margin-bottom: 0px;
+    color: #555 !important;
+    font-size: 10px;
+    text-transform: uppercase;
 }
-
-.productDetails{
-	width: 55%;
-	float: left;
-	text-align: left;
+.price {
+    color: green;
+    font-family: arial;
+    font-weight: 200;
+    font-size: 9px;
+    margin-top: -8px;
 }
-
-.product_title{
-	margin-bottom: 0px;
-	color: #555 !important;
-	font-size: 10px;
-	text-transform: uppercase;
+.date {
+    font-size: 9px;
+    margin-top: -8px;
 }
-
-.price{
-	color:green;
-	font-family: arial;
-	font-weight: 200;
-	font-size: 9px;
-	margin-top: -8px;
-}
-
-.date{
-	font-size: 9px;
-	margin-top: -8px;
-}
-
 [ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none !important;
+    display: none !important;
 }
-
-.buyBtn{
-	padding: 8px 28px;
-	font-size: 10px;
-	height:40px;
+.buyBtn {
+    padding: 8px 28px;
+    font-size: 10px;
+    height: 40px;
 }
-
-#news img {
-	max-width: 97% !important;
-	height: auto !important;
+#news img, #news object, #news video, #news iframe {
+    max-width: 97% !important;
+    height: auto !important;
 }
-
-#news{
-	max-width: 95%;
+#news, #news * {
+    max-width: 95%;
 }

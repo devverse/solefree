@@ -1,16 +1,18 @@
 <div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-	<span style="font-weight:bold;"> Past Restocks  </span>        	
+    <span style="font-weight:bold;">Past Restocks</span>
 </div>
 <div ng-repeat="r in past_restocks" class="product">
 
-	<div class="productImages">
-		<img src="http://soleinsider.com/public/products/{{r.image}}"  class="productImage">
-	</div>
+    <div class="productImages">
+        <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
+    </div>
 
-	<div class="productDetails">
-		<span class="product_title"> {{r.name}} </span> <br/>
-		<span class='product_title'>Restocked On: {{r.available_timestamp}} </span><br/>
-		<b class='price'>${{r.price}} </b><br/>
-		
-	</div>
+    <div class="productDetails">
+        <span class="product_title">{{r.name}}</span>
+        <br/>
+        <span class='product_title'>Restocked On: {{r.available_timestamp}}</span>
+        <br/>
+        <b class='price'>${{r.price}} </b>
+        <br/>
+    </div>
 </div>

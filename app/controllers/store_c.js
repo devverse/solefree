@@ -115,7 +115,6 @@ function storeController($scope, $rootScope, store_service) {
     }, function(err) {
       window.console.log(err);
     });
-
   }
 
   $scope.init = (function() {
