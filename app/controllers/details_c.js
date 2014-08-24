@@ -105,7 +105,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     startDate =  new Date(date);
     endDate = new Date(date);
 
-    var notes = product.name + " releasing " + startDate;
+    var notes = product.name + " Releasing " + startDate;
 
     var success = function() {
       return;
