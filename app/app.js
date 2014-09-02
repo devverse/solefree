@@ -75,9 +75,19 @@ config(['$routeProvider',
       controller: newsController
     }).
 
+    when('/twitter_watcher', {
+      templateUrl: admin_url + 'partials/twitter_watcher.html',
+      controller: newsController
+    }).
+
+    when('/instagram', {
+      templateUrl: admin_url + 'partials/instagram.html',
+      controller: instagramController
+    }).
+
     when('/sales', {
       templateUrl: admin_url + 'partials/sales.html',
-      controller: salesController
+      controller: twitterWatcherController
     });
 
     //.otherwise({redirectTo:'/home'});

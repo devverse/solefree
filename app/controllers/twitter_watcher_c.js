@@ -1,10 +1,9 @@
-function twitterController($scope, $rootScope, twitter_service) {
+function twitterWatcherController($scope, $rootScope, twitter_service) {
 
   $scope.showConfirmation = false;
   $scope.member_id = localStorage.getItem("member_id");
 
   $scope.twitterAccounts = function() {
-
     twitter_service.getTwitterAccounts().then(
       function(data) {
         $scope.accounts = data;
@@ -24,7 +23,6 @@ function twitterController($scope, $rootScope, twitter_service) {
   };
 
   $scope.addToWatch = function(feed) {
-
     if ($scope.member_id == "false" || $scope.member_id == 0 || $scope.member_id == null) {
       $scope.showerror = true;
       $scope.errorMessage = "You must be logged for this feature";

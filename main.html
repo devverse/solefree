@@ -14,14 +14,11 @@
     <link rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
     <!-- =Import Styles-->
     <!-- Modernizr & HTML5 Shiv -->
-
     <script src='js/vendor/modernizr.js'></script>
 </head>
 <body>
-
     <!-- Container -->
     <div id="container">
-
         <!-- Main Content-->
         <!-- Sidebar -->
         <aside id="sidemenu-container">
@@ -30,7 +27,6 @@
                     <div class="author-profile-photo">
                         <img src="icons/icon.png" alt="">
                     </div>
-
                 </div>
                 <nav id="nav-container">
                     <ul class="nav">
@@ -61,7 +57,6 @@
                                 </li>
                             </ul>
                         </li>
-
                         <li>
                             <a href="#/restocks" class="nav-with-ul">  Restocks</a>
                             <span class="nav-child-container">
@@ -75,7 +70,19 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="#/news" class="active"> News </a>
+                        <li>
+                            <a href="#" class="nav-with-ul">Social</a>
+                            <span class="nav-child-container">
+                                <span class="nav-child-trigger">+</span>
+                            </span>
+                            <ul style="height: 0px;" class="">
+                                <li><a href="#/news" class="active"> News </a>
+                                </li>
+                            </ul>
+                            <ul style="height: 0px;" class="">
+                                <li><a href="#/twitter_watcher" class="active"> Twitter Watcher </a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="#/account" class>  Account </a>
@@ -143,25 +150,18 @@
                         </div>
                     </div>
                 </div>
-
                 <div style="min-height:500px">
-
                     <div class="loading" ng-show="showLoading == true" style="text-align:center">
                         <img src="img/spinner.gif" />
                     </div>
                     <div ng-view>
-
                     </div>
                 </div>
-
             </div>
-
         </section>
-
         <!-- =Main Content -->
     </div>
     <!-- =Container -->
-
     <!-- Custom Scripts -->
     <script src='js/vendor/jquery.js'></script>
     <script src='js/plugins/hammer.js'></script>
@@ -170,7 +170,6 @@
     <script src='js/plugins/carousel.js'></script>
     <script src='js/plugins/moment.js'></script>
     <script src='js/script.js'></script>
-
     <!-- =Custom Scripts -->
     <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" src="js/calendar.js"></script>
@@ -191,9 +190,10 @@
     <script src="app/controllers/myreleases_c.js"></script>
     <script src="app/controllers/login_c.js"></script>
     <script src="app/controllers/coupons_c.js"></script>
-    <script src="app/controllers/twitter_c.js"></script>
+    <script src="app/controllers/twitter_watcher.js"></script>
     <script src="app/controllers/details_c.js"></script>
     <script src="app/controllers/news_c.js"></script>
+    <script src="app/controllers/instagram_c.js"></script>
 
     <script src="app/models/release_service.js"></script>
     <script src="app/models/util_service.js"></script>
@@ -206,6 +206,7 @@
     <script src="app/models/twitter_service.js"></script>
     <script src="app/models/comments_service.js"></script>
     <script src="app/models/news_service.js"></script>
+    <script src="app/models/instagram_service.js"></script>
 
     <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
 </body>
