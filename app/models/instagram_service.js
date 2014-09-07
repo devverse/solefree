@@ -1,4 +1,4 @@
-soleinsiderApp.factory('inst_service', ['$rootScope', '$q', '$http',
+soleinsiderApp.factory('instagram_service', ['$rootScope', '$q', '$http',
   function($rootScope, $q, $http) {
 
     var api = soleinsider.base_url;
@@ -27,7 +27,7 @@ soleinsiderApp.factory('inst_service', ['$rootScope', '$q', '$http',
     };
 
     self.getInstagramImages = function() {
-      return self.makePost('/mobile/getInstagramImages');
+      return self.makePost('/mobile/instagram');
     };
 
     return {

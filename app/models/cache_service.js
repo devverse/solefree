@@ -26,7 +26,6 @@ soleinsiderApp.factory('cache_service', ['$rootScope', '$q', '$http',
     };
 
     self.request = function(endpoint, post) {
-
       url = "/mobile/" + endpoint;
       self.makePost(url).then(
         function(data) {
