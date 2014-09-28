@@ -1,213 +1,217 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
+
 <head>
-    <meta charset="utf-8">
-    <title>SoleInsider</title>
+  <meta charset="utf-8">
+  <title>SoleInsider</title>
 
-    <!-- Import Styles-->
-    <link rel='stylesheet' href='css/vendor/normalize.css'>
-    <link rel='stylesheet' href='css/vendor/fontello.css'>
-    <link rel='stylesheet' href='css/style.css'>
-    <link rel='stylesheet' href='css/master.css'>
-    <link rel='stylesheet' href='css/carousel-style.css'>
-    <link rel='stylesheet' href='css/carousel.css'>
-    <link rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
-    <!-- =Import Styles-->
-    <!-- Modernizr & HTML5 Shiv -->
-    <script src='js/vendor/modernizr.js'></script>
+  <!-- Import Styles-->
+  <link rel='stylesheet' href='css/vendor/normalize.css'>
+  <link rel='stylesheet' href='css/vendor/fontello.css'>
+  <link rel='stylesheet' href='css/style.css'>
+  <link rel='stylesheet' href='css/master.css'>
+  <link rel='stylesheet' href='css/carousel-style.css'>
+  <link rel='stylesheet' href='css/carousel.css'>
+  <link rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
+  <!-- =Import Styles-->
+  <!-- Modernizr & HTML5 Shiv -->
+  <script src='js/vendor/modernizr.js'></script>
 </head>
+
 <body>
-    <!-- Container -->
-    <div id="container">
-        <!-- Main Content-->
-        <!-- Sidebar -->
-        <aside id="sidemenu-container">
-            <div id="sidemenu">
-                <div id="author-profile">
-                    <div class="author-profile-photo">
-                        <img src="icons/icon.png" alt="">
-                    </div>
+  <!-- Container -->
+  <div id="container">
+    <!-- Main Content-->
+    <!-- Sidebar -->
+    <aside id="sidemenu-container">
+      <div id="sidemenu">
+        <div id="author-profile">
+          <div class="author-profile-photo">
+            <img src="icons/icon.png" alt="">
+          </div>
+        </div>
+        <nav id="nav-container">
+          <ul class="nav">
+            <li>
+              <a href="#" class="active"> Shop </a>
+              <span class="nav-child-container">
+                <span class="nav-child-trigger">+</span>
+              </span>
+              <ul style="height: 0px;" class="">
+                <li> <a href="store.html" class> Sneaker Store </a>
+                </li>
+                <li> <a href="clothing_store.html" class> Clothing Store </a>
+                </li>
+                <li> <a href="#/avail" class> Still Available</a>
+                </li>
+                <li> <a href="#/sales" class> Sales</a>
+                </li>
+                <li> <a href="#/coupons" class> Coupons</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#/releases" class="nav-with-ul">Releases</a>
+              <span class="nav-child-container">
+                <span class="nav-child-trigger">+</span>
+              </span>
+              <ul style="height: 0px;" class="">
+
+                <li><a href="#/past_releases" class="">Past Releases</a>
+                </li>
+                <li><a href="#/myreleases" class=""> My Releases</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#/restocks" class="nav-with-ul">  Restocks</a>
+              <span class="nav-child-container">
+                <span class="nav-child-trigger">+</span>
+              </span>
+              <ul style="height: 0px;" class="">
+
+                <li><a href="#/restock_history" class="">Past Restocks</a>
+                </li>
+                <li><a href="#/myrestocks" class=""> My Restocks</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class="nav-with-ul">Social</a>
+              <span class="nav-child-container">
+                <span class="nav-child-trigger">+</span>
+              </span>
+              <ul style="height: 0px;" class="">
+                <li><a href="#/news" class="active"> News </a>
+                </li>
+              </ul>
+              <ul style="height: 0px;" class="">
+                <li><a href="#/twitter_watcher" class="active"> Twitter Watcher </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#/account" class>  Account </a>
+              <span class="nav-child-container">
+                <span class="nav-child-trigger">+</span>
+              </span>
+              <ul style="height: 0px;" class="">
+                <li> <a href="#/login" class> Login/Register</a>
+                </li>
+              </ul>
+            </li>
+
+
+        </nav>
+      </div>
+    </aside>
+
+    <!-- =Sidebar -->
+
+    <section id="content-container">
+
+      <!-- Header -->
+
+      <header id="header">
+        <div id="menu-trigger" class="header-button left icon-menu"></div>
+        <h1><a href="index.html">SoleInsider</a>
+        </h1>
+      </header>
+
+      <!-- =Header -->
+
+      <div id="content" ng-app="soleinsiderApp" ng-controller="appController">
+        <div class="panel green" ng-cloak>
+          {{message}}
+        </div>
+        <div ng-cloak ng-show="show_featured == true">
+          <div class="panel grey featured" style="text-align:center">
+            <span style="font-weight:bold;">Featured</span>
+
+          </div>
+          <div class="product">
+
+            <!-- the viewport -->
+            <div class="featured-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
+
+              <div class="m-carousel-inner">
+
+                <div class="m-item" ng-repeat="f in featured" featured-directive>
+                  <h4>{{f.name}} - {{f.price}}</h4>
+                  <img src="http://soleinsider.com/public/products/{{f.image}}" class="featuredImage" style="clear:both">
+                  <br/>
+
+                  <button class="radius green buyBtn" ng-click="buyProduct(f)">Buy Now</button>
                 </div>
-                <nav id="nav-container">
-                    <ul class="nav">
-                        <li>
-                            <a href="store.html" class="active"> Shop </a>
-                            <span class="nav-child-container">
-                                <span class="nav-child-trigger">+</span>
-                            </span>
-                            <ul style="height: 0px;" class="">
-                                <li> <a href="#/avail" class> Still Available</a>
-                                </li>
-                                <li> <a href="#/sales" class> Sales</a>
-                                </li>
-                                <li> <a href="#/coupons" class> Coupons</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#/releases" class="nav-with-ul">Releases</a>
-                            <span class="nav-child-container">
-                                <span class="nav-child-trigger">+</span>
-                            </span>
-                            <ul style="height: 0px;" class="">
 
-                                <li><a href="#/past_releases" class="">Past Releases</a>
-                                </li>
-                                <li><a href="#/myreleases" class=""> My Releases</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#/restocks" class="nav-with-ul">  Restocks</a>
-                            <span class="nav-child-container">
-                                <span class="nav-child-trigger">+</span>
-                            </span>
-                            <ul style="height: 0px;" class="">
+              </div>
 
-                                <li><a href="#/restock_history" class="">Past Restocks</a>
-                                </li>
-                                <li><a href="#/myrestocks" class=""> My Restocks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-with-ul">Social</a>
-                            <span class="nav-child-container">
-                                <span class="nav-child-trigger">+</span>
-                            </span>
-                            <ul style="height: 0px;" class="">
-                                <li><a href="#/news" class="active"> News </a>
-                                </li>
-                            </ul>
-                            <ul style="height: 0px;" class="">
-                                <li><a href="#/twitter_watcher" class="active"> Twitter Watcher </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#/account" class>  Account </a>
-                            <span class="nav-child-container">
-                                <span class="nav-child-trigger">+</span>
-                            </span>
-                            <ul style="height: 0px;" class="">
-                                <li> <a href="#/login" class> Login/Register</a>
-                                </li>
-                            </ul>
-                        </li>
+              <!-- the controls -->
 
-
-                </nav>
+              <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
+              </div>
             </div>
-        </aside>
+          </div>
+        </div>
+        <div style="min-height:500px">
+          <div class="loading" ng-show="showLoading == true" style="text-align:center">
+            <img src="img/spinner.gif" />
+          </div>
+          <div ng-view>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- =Main Content -->
+  </div>
+  <!-- =Container -->
+  <!-- Custom Scripts -->
+  <script src='js/vendor/jquery.js'></script>
+  <script src='js/plugins/hammer.js'></script>
+  <script src='js/plugins/h5validate.js'></script>
+  <script src='js/plugins/prism.js'></script>
+  <script src='js/plugins/carousel.js'></script>
+  <script src='js/plugins/moment.js'></script>
+  <script src='js/script.js'></script>
+  <!-- =Custom Scripts -->
+  <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" src="js/calendar.js"></script>
 
-        <!-- =Sidebar -->
+  <!-- Setup angular classes -->
+  <script src="app/config.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/angular.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/controllers/app_c.js"></script>
+  <script src="app/controllers/releases_c.js"></script>
+  <script src="app/controllers/account_c.js"></script>
+  <script src="app/controllers/past_releases_c.js"></script>
+  <script src="app/controllers/past_restocks_c.js"></script>
+  <script src="app/controllers/restocks_c.js"></script>
+  <script src="app/controllers/sales_c.js"></script>
+  <script src="app/controllers/avail_c.js"></script>
+  <script src="app/controllers/myrestocks_c.js"></script>
+  <script src="app/controllers/myreleases_c.js"></script>
+  <script src="app/controllers/login_c.js"></script>
+  <script src="app/controllers/coupons_c.js"></script>
+  <script src="app/controllers/twitter_watcher.js"></script>
+  <script src="app/controllers/details_c.js"></script>
+  <script src="app/controllers/news_c.js"></script>
+  <script src="app/controllers/instagram_c.js"></script>
 
-        <section id="content-container">
+  <script src="app/models/release_service.js"></script>
+  <script src="app/models/util_service.js"></script>
+  <script src="app/models/restock_service.js"></script>
+  <script src="app/models/sales_service.js"></script>
+  <script src="app/models/login_service.js"></script>
+  <script src="app/models/cache_service.js"></script>
+  <script src="app/models/app_service.js"></script>
+  <script src="app/models/account_service.js"></script>
+  <script src="app/models/twitter_service.js"></script>
+  <script src="app/models/comments_service.js"></script>
+  <script src="app/models/news_service.js"></script>
+  <script src="app/models/instagram_service.js"></script>
 
-            <!-- Header -->
-
-            <header id="header">
-                <div id="menu-trigger" class="header-button left icon-menu"></div>
-                <h1><a href="index.html">SoleInsider</a>
-                </h1>
-            </header>
-
-            <!-- =Header -->
-
-            <div id="content" ng-app="soleinsiderApp" ng-controller="appController">
-
-
-                <div class="panel green" ng-cloak>
-                    {{message}}
-                </div>
-
-                <div ng-cloak ng-show="show_featured == true">
-                    <div class="panel grey featured" style="text-align:center">
-                        <span style="font-weight:bold;">Featured</span>
-
-                    </div>
-                    <div class="product">
-
-                        <!-- the viewport -->
-                        <div class="featured-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
-
-                            <div class="m-carousel-inner">
-
-                                <div class="m-item" ng-repeat="f in featured" featured-directive>
-                                    <h4>{{f.name}}</h4>
-                                    <img src="http://soleinsider.com/public/products/{{f.image}}" class="featuredImage" style="clear:both">
-                                    <br/>
-
-                                    <button class="radius green buyBtn" ng-click="buyProduct(f)">Buy Now</button>
-                                </div>
-
-                            </div>
-
-                            <!-- the controls -->
-
-                            <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="min-height:500px">
-                    <div class="loading" ng-show="showLoading == true" style="text-align:center">
-                        <img src="img/spinner.gif" />
-                    </div>
-                    <div ng-view>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- =Main Content -->
-    </div>
-    <!-- =Container -->
-    <!-- Custom Scripts -->
-    <script src='js/vendor/jquery.js'></script>
-    <script src='js/plugins/hammer.js'></script>
-    <script src='js/plugins/h5validate.js'></script>
-    <script src='js/plugins/prism.js'></script>
-    <script src='js/plugins/carousel.js'></script>
-    <script src='js/plugins/moment.js'></script>
-    <script src='js/script.js'></script>
-    <!-- =Custom Scripts -->
-    <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
-
-    <!-- Setup angular classes -->
-    <script src="app/config.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/angular.js"></script>
-    <script src="app/app.js"></script>
-    <script src="app/controllers/app_c.js"></script>
-    <script src="app/controllers/releases_c.js"></script>
-    <script src="app/controllers/account_c.js"></script>
-    <script src="app/controllers/past_releases_c.js"></script>
-    <script src="app/controllers/past_restocks_c.js"></script>
-    <script src="app/controllers/restocks_c.js"></script>
-    <script src="app/controllers/sales_c.js"></script>
-    <script src="app/controllers/avail_c.js"></script>
-    <script src="app/controllers/myrestocks_c.js"></script>
-    <script src="app/controllers/myreleases_c.js"></script>
-    <script src="app/controllers/login_c.js"></script>
-    <script src="app/controllers/coupons_c.js"></script>
-    <script src="app/controllers/twitter_watcher.js"></script>
-    <script src="app/controllers/details_c.js"></script>
-    <script src="app/controllers/news_c.js"></script>
-    <script src="app/controllers/instagram_c.js"></script>
-
-    <script src="app/models/release_service.js"></script>
-    <script src="app/models/util_service.js"></script>
-    <script src="app/models/restock_service.js"></script>
-    <script src="app/models/sales_service.js"></script>
-    <script src="app/models/login_service.js"></script>
-    <script src="app/models/cache_service.js"></script>
-    <script src="app/models/app_service.js"></script>
-    <script src="app/models/account_service.js"></script>
-    <script src="app/models/twitter_service.js"></script>
-    <script src="app/models/comments_service.js"></script>
-    <script src="app/models/news_service.js"></script>
-    <script src="app/models/instagram_service.js"></script>
-
-    <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
+  <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
 </body>
+
 </html>

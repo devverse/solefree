@@ -1,17 +1,17 @@
 <div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-    <span style="font-weight:bold;">Still Available</span>
+  <span style="font-weight:bold;">Still Available</span>
 </div>
 
 <div ng-repeat="r in products" class="product">
 
-    <div class="productImages">
-        <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
-    </div>
+  <div class="productImages">
+    <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
+  </div>
 
-    <div class="productDetails">
-        <span class="product_title">{{r.name}}</span>
-        <br/> <b class='price'>${{r.price}} </b>
-        <br/>
-        <a class='button blue radius' href="" ng-click="buyProduct(r)">Buy Now</a>
-    </div>
+  <div class="productDetails">
+    <span class="product_title">{{r.name}}</span>
+    <br/> <b class='price'>${{r.price}} </b>
+    <br/>
+    <a class='button blue radius' href="" ng-click="buyProduct(r)">Buy Now</a>
+  </div>
 </div>

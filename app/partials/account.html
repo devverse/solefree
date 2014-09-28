@@ -1,72 +1,70 @@
 <div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-    <span style="font-weight:bold;">Settings</span>
+  <span style="font-weight:bold;">Settings</span>
 </div>
 
 <div class="panel yellow" ng-show="showConfirmation == true">
-    {{confirmation}}
+  {{confirmation}}
 </div>
-
-
 <div class="panel">
-    <h2>Account Settings</h2>
-    <form>
+  <h2>Account Settings</h2>
+  <form>
 
-        <table class="full-width text-center">
-            <tr>
-                <td>Your Email Address</td>
+    <table class="full-width text-center">
+      <tr>
+        <td>Your Email Address</td>
+        <td>
+          <input type="text" class="username" value="" ng-model="account.email">
+        </td>
+      </tr>
+      <tr>
+        <td>Phone
+          <br/>(NO SPACES OR HYPHENS)</td>
+        <td>
+          <input type="text" class="phone" value="" ng-model="account.phone_number">
+        </td>
+      </tr>
+      <tr>
+        <td>Carriers</td>
+        <td>
+          <select class="carrier" data-theme="c" ng-model="account.carrier">
+            <option value="1">AT&T</option>
+            <option value="2">Verizon</option>
+            <option value="3">T-Mobile</option>
+            <option value="4">Sprint</option>
+            <option value="5">Virgin Mobile</option>
+            <option value="6">US Cellular</option>
+            <option value="7">Nextel</option>
+            <option value="8">Boost</option>
+            <option value="9">Alltel</option>
+
+          </select>
+        </td>
+      </tr>
+      <!--  <tr>
+                <td valign="top">Profile Pic  </td> 
                 <td>
-                    <input type="text" class="username" value="" ng-model="account.email">
+                    <span ng-repeat="p in profiles">
+                        <span style="float:left;width:27%">
+                        <input type="radio" value="{{p.name}}" name="profile">
+                        <img src="img/profiles/{{p.name}}" width="48" height="48"/>
+                        </span>
+                    </span>
                 </td>
-            </tr>
-            <tr>
-                <td>Phone
-                    <br/>(NO SPACES OR HYPHENS)</td>
-                <td>
-                    <input type="text" class="phone" value="" ng-model="account.phone_number">
-                </td>
-            </tr>
-            <tr>
-                <td>Carriers</td>
-                <td>
-                    <select class="carrier" data-theme="c" ng-model="account.carrier">
-                        <option value="1">AT&T</option>
-                        <option value="2">Verizon</option>
-                        <option value="3">T-Mobile</option>
-                        <option value="4">Sprint</option>
-                        <option value="5">Virgin Mobile</option>
-                        <option value="6">US Cellular</option>
-                        <option value="7">Nextel</option>
-                        <option value="8">Boost</option>
-                        <option value="9">Alltel</option>
+            </tr> -->
+    </table>
+    <br/>
+    <button class="blue radius" ng-click="updateAccount(account)">Update Account</button>
+  </form>
 
-                    </select>
-                </td>
-            </tr>
-            <!-- 	<tr>
-				<td valign="top">Profile Pic  </td> 
-				<td>
-					<span ng-repeat="p in profiles">
-						<span style="float:left;width:27%">
-						<input type="radio" value="{{p.name}}" name="profile">
-						<img src="img/profiles/{{p.name}}" width="48" height="48"/>
-						</span>
-					</span>
-				</td>
-			</tr> -->
-        </table>
-        <br/>
-        <button class="blue radius" ng-click="updateAccount(account)">Update Account</button>
-    </form>
-
-</div>
-
-<div class="panel">
-    <h2>Cache</h2>
-    <button class="blue radius" ng-click="clearCache()">Clear app cache</button>
 </div>
 
 <div class="panel">
-    <h2>Information</h2>
-    SoleInsider {{version}}
-    <br/>SoleInsider Version {{version_type}}
+  <h2>Cache</h2>
+  <button class="blue radius" ng-click="clearCache()">Clear app cache</button>
+</div>
+
+<div class="panel">
+  <h2>Information</h2>
+  SoleInsider {{version}}
+  <br/>SoleInsider Version {{version_type}}
 </div>

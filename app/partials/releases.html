@@ -1,55 +1,55 @@
 <div class="panel yellow" ng-show="showerror == true">
-    {{errorMessage}}
+  {{errorMessage}}
 </div>
 
 <style>
 .custombutton {
-    padding: 8px 8px;
-    font-size: 10px;
+  padding: 8px 8px;
+  font-size: 10px;
 }
 .custombutton2 {
-    padding: 8px 28px;
-    font-size: 10px;
+  padding: 8px 28px;
+  font-size: 10px;
 }
 </style>
 
 <div ng-repeat="(key, value) in releases  " class="">
 
-    <div class="panel grey" style="text-align:center">
-        <span style="font-weight:bold">{{value.month}}</span>
+  <div class="panel grey" style="text-align:center">
+    <span style="font-weight:bold">{{value.month}}</span>
+  </div>
+
+  <div class="product">
+    <div ng-repeat="r in value.products | filter:filterReleases" class="product">
+      <div class="productImages">
+
+        <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
+
+        <span ng-show="r.showBuyLink == true">
+          <a data-product-id='{{r.product_id}}' href="" ng-click="buyProduct(r)" class='button custombutton2 radius green'> Buy Now</a>
+        </span>
+        <br/>
+
+        <span ng-show="r.showBuyLink == false">
+          <a data-product-id='{{r.product_id}}' class='button custombutton2 radius' ng-click="details(r)"> Details </a>
+        </span>
+
+      </div>
+
+      <div class="productDetails">
+        <span class="product_title">{{r.name}}</a>
+        </span>
+        <br/>
+        <span class='date'>{{r.release_date}}</span>
+        <br/> <b class='price'>${{r.price}} </b>
+        <br/>
+        <br/>
+
+
+        <a class='button green radius custombutton' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+
+        <a class='button red radius custombutton' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+      </div>
     </div>
-
-    <div class="product">
-        <div ng-repeat="r in value.products | filter:filterReleases" class="product">
-            <div class="productImages">
-
-                <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
-
-                <span ng-show="r.showBuyLink == true">
-                    <a data-product-id='{{r.product_id}}' href="" ng-click="buyProduct(r)" class='button custombutton2 radius green'> Buy Now</a>
-                </span>
-                <br/>
-
-                <span ng-show="r.showBuyLink == false">
-                    <a data-product-id='{{r.product_id}}' class='button custombutton2 radius' ng-click="details(r)"> Details </a>
-                </span>
-
-            </div>
-
-            <div class="productDetails">
-                <span class="product_title">{{r.name}}</a>
-                </span>
-                <br/>
-                <span class='date'>{{r.release_date}}</span>
-                <br/> <b class='price'>${{r.price}} </b>
-                <br/>
-                <br/>
-
-
-                <a class='button green radius custombutton' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-
-                <a class='button red radius custombutton' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

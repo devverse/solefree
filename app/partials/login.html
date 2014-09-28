@@ -1,67 +1,85 @@
 <div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-	<span style="font-weight:bold;"> Login  </span>        	
+  <span style="font-weight:bold;">Login</span>
 </div>
 
 <div class="panel yellow" ng-show="showConfirmation == true">
-	{{confirmation}}
+  {{confirmation}}
 </div>
 
-<div class="panel" ng-show="showLogin == false">		
-	<b> You are logged in as {{username}} </b>  <br/> <br/>
-	<button data-product-id='{{r.product_id}}' data-role="button" data-icon="star" class='addReleaseAlert red btn-primary radius' ng-click="logout()">Logout </button>
+<div class="panel" ng-show="showLogin == false">
+  <b> You are logged in as {{username}} </b> 
+  <br/>
+  <br/>
+  <button data-product-id='{{r.product_id}}' data-role="button" data-icon="star" class='addReleaseAlert red btn-primary radius' ng-click="logout()">Logout</button>
 </div>
 
-<div class="panel" ng-show="showLogin == true">		
-		<b style="Text-align:center">Login</b><br/><br/>
-		<form>
-			<table class="full-width text-center">
-				<tr>
-				<td>Email </td> 
-				<td> <input type="text" ng-model="account.username"></td>
-			</tr>
-				<tr>
-					<td >Password </td>
-					<td> <input type="password" ng-model="account.password"> </td>
-			</tr>
-	</table>
-			<input type="submit" class="btn btn-primary radius"  ng-click="login(account)" value="Login"/> 
-		</form>	
-	</div>	
+<div class="panel" ng-show="showLogin == true">
+  <b style="Text-align:center">Login</b>
+  <br/>
+  <br/>
+  <form>
+    <table class="full-width text-center">
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="text" ng-model="account.username">
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="password" ng-model="account.password">
+        </td>
+      </tr>
+    </table>
+    <input type="submit" class="btn btn-primary radius" ng-click="login(account)" value="Login" />
+  </form>
+</div>
 
-	<div class="panel" ng-show="showLogin == true">
-		
-		<b style="Text-align:center">Register</b><br/><br/>
-		<form>
-		<table class="full-width text-center">
-				<tr>
-				<td>Email </td> 
-				<td> <input type="text" ng-model="newaccount.username"></td>
-			</tr>
-				<tr>
-					<td >Password </td>
-					<td> <input type="password" ng-model="newaccount.password"> </td>
-			</tr>
-			<tr>
-					<td > Phone <br/>(NO SPACES OR HYPHENS) </td>
-					<td> 	<input type="text" class="phone" value="" ng-model="newaccount.phone_number"></td>
-			</tr>
-			<tr>
-					<td > Carriers </td>
-					<td>   <select class="carrier" data-theme="c" ng-model="newaccount.carrier">
-			<option value="1"> AT&T </option>
-			<option value="2"> Verizon </option>
-			<option value="3"> T-Mobile </option>
-			<option value="4"> Sprint </option>
-			<option value="5"> Virgin Mobile </option>
-			<option value="6"> US Cellular </option>
-			<option value="7"> Nextel </option>
-			<option value="8"> Boost </option>
-			<option value="9"> Alltel</option>
+<div class="panel" ng-show="showLogin == true">
 
-		</select>
-	</td>
-	</table>
-			<input type="submit" class="btn btn-primary radius" ng-click="register(newaccount)" value="Register"/> 
-		</form>	
-	</div>
+  <b style="Text-align:center">Register</b>
+  <br/>
+  <br/>
+  <form>
+    <table class="full-width text-center">
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="text" ng-model="newaccount.username">
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="password" ng-model="newaccount.password">
+        </td>
+      </tr>
+      <tr>
+        <td>Phone
+          <br/>(NO SPACES OR HYPHENS)</td>
+        <td>
+          <input type="text" class="phone" value="" ng-model="newaccount.phone_number">
+        </td>
+      </tr>
+      <tr>
+        <td>Carriers</td>
+        <td>
+          <select class="carrier" data-theme="c" ng-model="newaccount.carrier">
+            <option value="1">AT&T</option>
+            <option value="2">Verizon</option>
+            <option value="3">T-Mobile</option>
+            <option value="4">Sprint</option>
+            <option value="5">Virgin Mobile</option>
+            <option value="6">US Cellular</option>
+            <option value="7">Nextel</option>
+            <option value="8">Boost</option>
+            <option value="9">Alltel</option>
+
+          </select>
+        </td>
+    </table>
+    <input type="submit" class="btn btn-primary radius" ng-click="register(newaccount)" value="Register" />
+  </form>
+</div>
 </div>
