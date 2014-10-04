@@ -38,6 +38,7 @@ function storeController($scope, $rootScope, store_service) {
 
   $scope.getCache = function(functionName) {
     var retrievedObject = localStorage.getItem(functionName);
+
     if (typeof retrievedObject === 'string' || typeof retrievedObject == undefined) {
       $scope.showLoading = false;
       return JSON.parse(retrievedObject);
@@ -71,7 +72,6 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.completeSearch = function(search) {
-
     $('#content-container').toggleClass('active');
     $('#sidemenu').toggleClass('active');
     setTimeout(function() {
@@ -98,7 +98,6 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.paginate = function() {
-
     $("html, body").animate({
       scrollTop: 0
     }, 10);

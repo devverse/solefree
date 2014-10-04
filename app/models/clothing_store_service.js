@@ -1,4 +1,4 @@
-soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http',
+soleinsiderApp.factory('clothing_store_service', ['$rootScope', '$q', '$http',
   function($rootScope, $q, $http) {
 
     var api = serviceURL;
@@ -26,20 +26,20 @@ soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http',
     };
 
     self.getMenu = function() {
-      return self.makePost('/store/getMenu');
+      return self.makePost('/clothes/getMenu');
     };
 
     self.search = function(search) {
       var post = "search=" + search;
-      return self.makePost('/store/search', post);
+      return self.makePost('/clothes/search', post);
     };
 
     self.paginate = function(post) {
-      return self.makePost('/store/paginate', post);
+      return self.makePost('/clothes/paginate', post);
     };
 
     self.getDefaultItems = function() {
-      return self.makePost('/store/getDefaultItems', '');
+      return self.makePost('/clothes/getDefaultItems', '');
     };
 
     return {
