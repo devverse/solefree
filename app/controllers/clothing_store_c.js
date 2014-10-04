@@ -6,7 +6,7 @@ soleinsiderApp.config(['$httpProvider',
   }
 ]);
 
-function clothingStoreController($scope, $rootScope, store_service) {
+function clothingStoreController($scope, $rootScope, clothing_store_service) {
   $scope.app_name = app_name;
   $scope.page_title = page_title;
   $scope.products = [];
@@ -19,7 +19,7 @@ function clothingStoreController($scope, $rootScope, store_service) {
   };
 
   $scope.getMenu = function() {
-    store_service.getMenu().then(function(data) {
+    clothing_store_service.getMenu().then(function(data) {
       data.sort(orderByNameAscending);
       $scope.menu = data;
     }, function(err) {
@@ -28,7 +28,7 @@ function clothingStoreController($scope, $rootScope, store_service) {
   };
 
   $scope.getDefaultItems = function() {
-    store_service.getDefaultItems().then(function(data) {
+    clothing_store_service.getDefaultItems().then(function(data) {
       $scope.products = data;
       $scope.showLoading = false;
     }, function(err) {
@@ -79,7 +79,7 @@ function clothingStoreController($scope, $rootScope, store_service) {
       $('#sidemenu-container').toggleClass('active');
     }, 500);
 
-    store_service.search(search).then(function(data) {
+    clothing_store_service.search(search).then(function(data) {
       $scope.products = data;
       $scope.setCache(search, data);
       $scope.showLoading = false;
@@ -109,7 +109,7 @@ function clothingStoreController($scope, $rootScope, store_service) {
     var post = "search=" + $scope.searchStr;
     post += "&offset=" + $scope.page;
 
-    store_service.paginate(post).then(function(data) {
+    clothing_store_service.paginate(post).then(function(data) {
       $scope.products = data;
       $scope.showLoading = false;
     }, function(err) {
