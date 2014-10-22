@@ -37,7 +37,6 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.getCache = function(functionName) {
-
     var retrievedObject = localStorage.getItem(functionName);
     if (typeof retrievedObject === 'string' || typeof retrievedObject == undefined) {
       $scope.showLoading = false;

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>SoleInsider</title>
+    <!-- Import Styles-->
+    <link rel='stylesheet' href='css/vendor/normalize.css'>
+    <link rel='stylesheet' href='css/vendor/fontello.css'>
+    <link rel='stylesheet' href='css/style.css'>
+    <link rel='stylesheet' href='css/master.css'>
+    <!-- =Import Styles-->
+
+    <!-- Modernizr & HTML5 Shiv -->
+    <script src='js/vendor/modernizr.js'></script>
+    <!-- =Modernizr & HTML5 Shiv -->
+</head>
+
+<body class="touch-gesture">
+
+
+    <!-- Container -->
+
+    <div id="container" ng-app="soleinsiderApp" ng-controller="storeController">
+
+
+        <!-- Main Content-->
+
+        <!-- Sidebar -->
+
+        <aside id="sidemenu-container">
+            <div id="sidemenu">
+                <div id="author-profile">
+                    <div class="author-profile-photo">
+                        <img src="icons/icon.png" alt="">
+                    </div>
+
+                </div>
+                <nav id="nav-container">
+                    <ul class="nav">
+                        <li> <a href="index.html" class> Back to App</a>
+                        </li>
+                        <li ng-repeat="m in menu"> <a href="#" ng-click="search(m.search)" class> {{m.name}} </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- =Sidebar -->
+
+        <section id="content-container">
+
+            <!-- Header -->
+
+            <header id="header">
+                <div id="menu-trigger" class="header-button left icon-menu"></div>
+                <h1><a href="index.html">SoleInsider</a>
+                </h1>
+            </header>
+
+            <!-- =Header -->
+
+            <div id="content" style="min-height:500px">
+                <div class="panel green" style="text-align:Center" ng-cloak>
+                    <p>{{category}}</p>
+                </div>
+
+
+                <div class="loading" ng-show="showLoading == true" style="text-align:center">
+                    <img src="img/spinner.gif" />
+                </div>
+
+                <div class="loading" ng-show="showLoading == false" style="text-align:center">
+                    <div ng-repeat="p in products" class="product" ng-cloak>
+
+                        <div class="productImages">
+                            <img src="{{p.image.sizes.IPhone.url}}" alt="{{p.name}}" class="productImage">
+                        </div>
+
+                        <div class="productDetails">
+                            <span class="product_title">{{p.name}}</span>
+                            <br/>
+
+                            <span class="price">Retailer - {{p.retailer.name}}</span>
+                            <br/>
+                            <span class="price">{{p.priceLabel}}</span>
+                            <br/>
+                            <br/><a href="" ng-click="buyProduct(p)" class="button blue radius">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class=" blue radius" style="margin-left:10px" ng-click="paginate()">Next</button>
+
+            </div>
+
+        </section>
+
+        <!-- =Main Content -->
+
+    </div>
+    <!-- =Container -->
+
+    <!--jQuery & Google Maps -->
+
+    <script>
+    !window.jQuery && document.write('<script src="js/vendor/jquery.js"><\/script>')
+    </script>
+
+    <!-- Google Maps script -->
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYpkxGMeJcDfwD5QJMhBZT0No7Jleg-E&amp;sensor=false"></script>
+
+    <!-- =jQuery & Google Maps -->
+
+    <!-- Custom Scripts -->
+    <script src='js/plugins/hammer.js'></script>
+    <script src='js/plugins/h5validate.js'></script>
+    <script src='js/plugins/prism.js'></script>
+    <script src='js/script.js'></script>
+
+    <!-- =Custom Scripts -->
+    <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="app/config.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/angular.js"></script>
+    <script src="app/controllers/clothing_store_c.js"></script>
+    <script src="app/models/clothing_store_service.js"></script>
+</body>
+</html>

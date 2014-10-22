@@ -17,7 +17,6 @@
   <!-- Modernizr & HTML5 Shiv -->
   <script src='js/vendor/modernizr.js'></script>
 </head>
-
 <body>
   <!-- Container -->
   <div id="container">
@@ -76,20 +75,8 @@
                 </li>
               </ul>
             </li>
-            <li>
-              <a href="#" class="nav-with-ul">Social</a>
-              <span class="nav-child-container">
-                <span class="nav-child-trigger">+</span>
-              </span>
-              <ul style="height: 0px;" class="">
-                <li><a href="#/news" class="active"> News </a>
-                </li>
-              </ul>
-              <ul style="height: 0px;" class="">
-                <li><a href="#/twitter_watcher" class="active"> Twitter Watcher </a>
-                </li>
-              </ul>
-            </li>
+            <li><a href="#/instagram" class="active"> Gallery </a>
+            <li><a href="#/news" class="active"> News </a>
             <li>
               <a href="#/account" class>  Account </a>
               <span class="nav-child-container">
@@ -138,7 +125,7 @@
 
                 <div class="m-item" ng-repeat="f in featured" featured-directive>
                   <h4>{{f.name}} - ${{f.price}}</h4>
-                  <img src="http://soleinsider.com/public/products/{{f.image}}" class="featuredImage" style="clear:both">
+                  <img src="{{f.image.sizes.IPhone.url}}" class="featuredImage" style="clear:both;width: 45% !important;">
                   <br/>
 
                   <button class="radius green buyBtn" ng-click="buyProduct(f)">Buy Now</button>
@@ -151,6 +138,7 @@
               <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
               </div>
             </div>
+
           </div>
         </div>
         <div style="min-height:500px">

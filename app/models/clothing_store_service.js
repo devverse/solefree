@@ -14,7 +14,6 @@ soleinsiderApp.factory('clothing_store_service', ['$rootScope', '$q', '$http',
       var deferred = $q.defer();
       $http.post(api + endpoint, post).success(function(data) {
 
-
         if (data) {
           if (data == 'false') {
             data = [];
@@ -25,7 +24,6 @@ soleinsiderApp.factory('clothing_store_service', ['$rootScope', '$q', '$http',
         }
       });
       return deferred.promise;
-
     };
 
     self.getMenu = function() {
@@ -44,7 +42,6 @@ soleinsiderApp.factory('clothing_store_service', ['$rootScope', '$q', '$http',
     self.getDefaultItems = function() {
       return self.makePost('/clothing/getDefaultItems', '');
     };
-
 
     return {
       getMenu: function() {

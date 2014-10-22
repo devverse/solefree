@@ -14,11 +14,11 @@ var soleinsider = {};
 soleinsider.base_url = serviceURL;
 soleinsider.username = "";
 soleinsider.member_id = '';
-soleinsider.cache = true;
+soleinsider.cache = false;
 soleinsider.show_featured = true;
-soleinsider.version = "4.5";
-soleinsider.version_type = "free";
-soleinsider.member_type = "free";
+soleinsider.version = "4.4";
+soleinsider.version_type = "premium";
+soleinsider.member_type = "premium";
 
 if (soleinsider.version_type == "free") {
   soleinsider.showads = false;

@@ -59,9 +59,7 @@ config(['$routeProvider',
       templateUrl: admin_url + 'partials/coupons.html',
       controller: couponsController
     }).
-
-  
-
+    
     when('/details', {
       templateUrl: admin_url + 'partials/details.html',
       controller: detailsController
@@ -71,12 +69,10 @@ config(['$routeProvider',
       templateUrl: admin_url + 'partials/news.html',
       controller: newsController
     }).
-
     when('/twitter_watcher', {
       templateUrl: admin_url + 'partials/twitter_watcher.html',
       controller: twitterWatcherController
     }).
-
     when('/instagram', {
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController
@@ -97,7 +93,6 @@ soleinsiderApp.config(['$httpProvider',
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
   }
 ]);
-
 
 var ngrepeat_counter = 1;
 soleinsiderApp.directive('featuredDirective', function() {

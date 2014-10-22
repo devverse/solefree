@@ -11,6 +11,22 @@
 .productImage {
     width: 90% !important;
 }
+.instagramImages{
+    width: 100% !important;
+}
+.instagramImage{
+    width: 100% !important;
+}
+.instagramProfile{
+    float:left;
+    width: 20%;
+}
+.instagramUsername{
+    font-weight: bold;
+    font-size: 14px;
+    float:left;
+    margin-top: 18px;
+}
 .featuredImage {
     width: 60% !important;
 }

@@ -37,15 +37,10 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http',
     };
 
     self.getFeaturedProducts = function() {
-      return self.makePost('/mobile/getFeatureds');
+      return self.makePost('/mobile/getFeaturedShopify');
     };
 
     return {
-
-      init: function() {
-
-      },
-
       getMessages: function() {
         return self.getMessages();
       },
@@ -58,9 +53,6 @@ soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http',
         return self.getFeaturedProducts();
       }
 
-
-
     };
-
   }
 ]);
