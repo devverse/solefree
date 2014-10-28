@@ -7,8 +7,8 @@ if (url.indexOf("localhost") != -1) {
 }
 
 var admin_url = 'app/';
-var app_name = "Sole Insider";
-var page_title = "Sole Insider";
+var app_name = "SoleInsider Free";
+var page_title = "SoleInsider Free";
 
 var soleinsider = {};
 soleinsider.base_url = serviceURL;
@@ -16,9 +16,9 @@ soleinsider.username = "";
 soleinsider.member_id = '';
 soleinsider.cache = false;
 soleinsider.show_featured = true;
-soleinsider.version = "4.4";
-soleinsider.version_type = "premium";
-soleinsider.member_type = "premium";
+soleinsider.version = "4.5";
+soleinsider.version_type = "free";
+soleinsider.member_type = "free";
 
 if (soleinsider.version_type == "free") {
   soleinsider.showads = false;
