@@ -2,14 +2,14 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="19"
+	versionCode="21"
 	version 	= "4.5"
 	id        = "com.sole.insider.free">
 
-	<name>SoleInsider</name>
+	<name>SoleInsider Free</name>
 
 	<description>
-		SoleInsider. Sneaker releases, sneaker restocks, jordan releases, jordan restocks.Jordans, Nikes, Pumas, Reebooks, Kicks, Hypebeast.
+		SoleInsider. Sneaker releases, sneaker restocks, jordan releases, jordan restocks.Jordans, Aisics, Ronnie Fief, Nikes, Pumas, Reebooks, Kicks, Hypebeast.
 	</description>
 
 	<author href="devverse@gmail.com"
@@ -71,5 +71,4 @@
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
 	<gap:plugin name="nl.x-services.plugins.calendar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
-
 </widget>
