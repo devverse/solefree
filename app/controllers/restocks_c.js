@@ -1,4 +1,4 @@
-function restocksController($scope, $rootScope, restock_service, cache_service) {
+function restocksController($scope, $rootScope, restock_service, mixpanel_service) {
     
   $scope.restocks = [];
   $scope.showmsg = false;
@@ -7,7 +7,7 @@ function restocksController($scope, $rootScope, restock_service, cache_service) 
 
   $scope.getRestocks = function() {
     $scope.showLoading = true;
-    $scope.restocks = cache_service.request("productsChecks");
+    restock_service.getRestocks();
   };
 
   $scope.addReminder = function(product) {
@@ -40,6 +40,7 @@ function restocksController($scope, $rootScope, restock_service, cache_service) 
           $scope.success_message = "You are now watching " + product.name;
           $scope.showerror = false;
           $().toastmessage('showSuccessToast', "You are now watching " + product.name);
+          mixpanel_service.trackEvent('Sneaker restock reminder added');
         }
       },
       function(err) {
@@ -54,10 +55,10 @@ function restocksController($scope, $rootScope, restock_service, cache_service) 
     $rootScope.$on('productsChecks', function(e, data) {
       $scope.restocks = data;
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Sneaker restocks fetched');
     });
 
     $rootScope.$emit("featured", false);
-
   })();
 
 }

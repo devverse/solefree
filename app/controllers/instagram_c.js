@@ -1,4 +1,4 @@
-function instagramController($scope, $rootScope, instagram_service) {
+function instagramController($scope, $rootScope, instagram_service, mixpanel_service) {
 
   $scope.images = [];
 
@@ -6,6 +6,7 @@ function instagramController($scope, $rootScope, instagram_service) {
     instagram_service.getImages().then(
       function(data) {
         $scope.images = data;
+        mixpanel_service.trackEvent('Instagram feed fetched');
       }, function(err) {
         alert(err);
       });

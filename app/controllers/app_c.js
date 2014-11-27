@@ -1,29 +1,18 @@
-function appController($scope, $rootScope, app_service) {
+function appController($scope, $rootScope, app_service, mixpanel_service) {
 
   $scope.message = "";
-  $scope.ads = "";
   $scope.showads = soleinsider.showads;
   $scope.show_featured = soleinsider.show_featured;
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
+    mixpanel_service.trackEvent('Featured product click');
   };
 
   $scope.getFeaturedProducts = function() {
     app_service.getFeaturedProducts().then(
       function(data) {
         $scope.featured = data;
-      }
-    );
-  };
-
-  $scope.getAds = function() {
-    app_service.getAds().then(
-      function(data) {
-        if (data.length > 0) {
-          var index = Math.floor((Math.random() * data.length));
-          $scope.ads = data[index].content;
-        }
       }
     );
   };

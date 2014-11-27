@@ -6,7 +6,7 @@ soleinsiderApp.config(['$httpProvider',
   }
 ]);
 
-function clothingStoreController($scope, $rootScope, clothing_store_service) {
+function clothingStoreController($scope, $rootScope, clothing_store_service, mixpanel_service) {
   $scope.app_name = app_name;
   $scope.page_title = page_title;
   $scope.products = [];
@@ -16,6 +16,7 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
+    mixpanel_service.trackEvent('Clothing store product buy click');
   };
 
   $scope.getMenu = function() {
@@ -31,6 +32,7 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
     clothing_store_service.getDefaultItems().then(function(data) {
       $scope.products = data;
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Get default clothing store items');
     }, function(err) {
       window.console.log(err);
     });
@@ -82,6 +84,7 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
       $scope.products = data;
       $scope.setCache(search, data);
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Get new clothing store products from menu');
     }, function(err) {
       window.console.log(err);
     });
@@ -110,6 +113,7 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
     clothing_store_service.paginate(post).then(function(data) {
       $scope.products = data;
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Clothing store pagination');
     }, function(err) {
       window.console.log(err);
     });

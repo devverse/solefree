@@ -1,4 +1,4 @@
-function newsController($scope, $rootScope, $location, $filter, news_service) {
+function newsController($scope, $rootScope, $location, $filter, news_service, mixpanel_service) {
   $scope.news = [];
 
   $scope.getNews = function() {
@@ -6,6 +6,7 @@ function newsController($scope, $rootScope, $location, $filter, news_service) {
     news_service.getFeeds().then(
       function(data) {
         $scope.news = data;
+        mixpanel_service.trackEvent('News feed fetched');
       }, function(err) {
         alert(err);
       });

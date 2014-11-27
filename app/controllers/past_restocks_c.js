@@ -1,4 +1,4 @@
-function pastRestocksController($scope, $rootScope, restock_service, cache_service) {
+function pastRestocksController($scope, $rootScope, restock_service, cache_service, mixpanel_service) {
 
   $scope.restocks = [];
 
@@ -13,6 +13,7 @@ function pastRestocksController($scope, $rootScope, restock_service, cache_servi
     $rootScope.$on('getAvailabilityHistory', function(e, data) {
       $scope.past_restocks = data;
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Past restocks fetched');
     });
     $rootScope.$emit("featured", true);
   })();

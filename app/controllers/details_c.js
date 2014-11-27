@@ -1,4 +1,4 @@
-function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service) {
+function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, mixpanel_service) {
 
   $scope.comments = [];
   $scope.slideshow = [];
@@ -40,6 +40,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showerror = false;
         $scope.sneakerName = product.name;
         $().toastmessage('showSuccessToast', "Reminder saved for " + product.name);
+        mixpanel_service.trackEvent('Reminder Added for ' + product.name);
       },
       function(err) {
         alert(err);
@@ -48,7 +49,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   }
 
   $scope.sneakerRating = function(product, status) {
-
     var member_id = localStorage.getItem("member_id");
 
     if (status == "yes" && parseInt(product.yes_percentage) < 98) {
@@ -79,7 +79,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.formatComments = function(comments) {
-
     for (var i = 0; i < comments.length; i++) {
       var formatted = moment.utc(comments[i].comment_date, "MM-DD-YYYY h:mm:ss");
       comments[i].comment_date = moment(formatted, "MM-DD-YYYY h:mm:ss").fromNow();
@@ -89,6 +88,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   }
 
   $scope.share = function(product){
+    mixpanel_service.trackEvent('Sneaker shared ' + product.name);
     return window.plugins.socialsharing.share(
       '#SoleInsider ' + product.name, 
       product.name, 
@@ -116,6 +116,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     };
 
     window.plugins.calendar.createEventInteractively(title, location, notes, startDate, endDate, success, error);
+    mixpanel_service.trackEvent('Sneaker added to calendar ' + product.name);
   };
 
   $scope.submitComment = function() {
@@ -129,6 +130,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       $().toastmessage('showSuccessToast', "Comment saved!");
       $scope.getComments();
       $scope.new_comment = "";
+      mixpanel_service.trackEvent('Comment submited');
     }, function(err) {
       window.console.log(err);
     });
@@ -139,7 +141,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.loadProduct();
     $scope.getSlideShow();
     $scope.getComments();
-    $scope.getAds();
   })();
 
 }

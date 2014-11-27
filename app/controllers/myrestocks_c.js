@@ -1,8 +1,8 @@
-function myRestocksController($scope, $rootScope, restock_service) {
+function myRestocksController($scope, $rootScope, restock_service, mixpanel_service) {
+  
   $scope.restocks = [];
 
   $scope.getRestocks = function() {
-
     member_id = localStorage.getItem("member_id");
 
     if (member_id == "false" || member_id == 0 || member_id == null) {
@@ -31,12 +31,13 @@ function myRestocksController($scope, $rootScope, restock_service) {
 
     $rootScope.$on('getMyRestocks', function(e, data) {
       $scope.restocks = data;
+      mixpanel_service.trackEvent('My restocks fetched');
     });
 
     $rootScope.$on('deleteRestock', function(e, data) {
       $scope.getRestocks();
+      mixpanel_service.trackEvent('My restocks item deleted');
     });
     $rootScope.$emit("featured", false);
   })();
-
 }

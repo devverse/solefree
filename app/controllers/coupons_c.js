@@ -1,4 +1,4 @@
-function couponsController($scope, $rootScope, cache_service) {
+function couponsController($scope, $rootScope, cache_service, mixpanel_service) {
 
   $scope.getCoupons = function() {
     $scope.coupons = cache_service.request("getCoupons");
@@ -11,6 +11,7 @@ function couponsController($scope, $rootScope, cache_service) {
     $rootScope.$on('getCoupons', function(e, data) {
       $scope.coupons = data;
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Coupons fetched');
     });
 
     $rootScope.$emit("featured", false);

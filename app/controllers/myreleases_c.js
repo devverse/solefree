@@ -1,4 +1,4 @@
-function myReleasesController($scope, $rootScope, release_service) {
+function myReleasesController($scope, $rootScope, release_service, mixpanel_service) {
   $scope.releases = [];
   $scope.showerror = false;
   $scope.errorMessage = "";
@@ -33,10 +33,12 @@ function myReleasesController($scope, $rootScope, release_service) {
     // Listeners
     $rootScope.$on('getMyReleases', function(e, data) {
       $scope.releases = data;
+      mixpanel_service.trackEvent('My releases fetched');
     });
 
     $rootScope.$on('deleteRelease', function(e, data) {
       $scope.getMyReleases();
+      mixpanel_service.trackEvent('My releases item deleted');
     });
 
     $rootScope.$emit("featured", true);

@@ -1,4 +1,4 @@
-function salesController($scope, $rootScope, sales_service) {
+function salesController($scope, $rootScope, sales_service, mixpanel_service) {
 
   $scope.products = [];
 
@@ -20,6 +20,7 @@ function salesController($scope, $rootScope, sales_service) {
 
     $rootScope.$on('getSales', function(e, data) {
       $scope.sales = data;
+      mixpanel_service.trackEvent('Sales items fetched');
     });
 
     $rootScope.$emit("featured", true);

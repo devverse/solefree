@@ -1,4 +1,4 @@
-function pastReleasesController($scope, $rootScope, cache_service) {
+function pastReleasesController($scope, $rootScope, cache_service, mixpanel_service) {
 
   $scope.releases = [];
   $scope.showmsg = false;
@@ -15,6 +15,7 @@ function pastReleasesController($scope, $rootScope, cache_service) {
     $rootScope.$on('pastReleaseDates', function(e, data) {
       $scope.releases = data;
       $scope.showLoading = false;
+      mixpanel_service.trackEvent('Past releases fetched');
     });
 
     $rootScope.$emit("featured", true);

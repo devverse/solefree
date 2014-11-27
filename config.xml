@@ -38,16 +38,9 @@
 	<!-- retina iPad support: PhoneGap 2.5.0+ only -->
 	<icon src="icons/ios/Icon-72@2x.png" gap:platform="ios" width="144" height="144" />
 
-	<!-- BlackBerry -->
-	<icon src="icons/blackberry/icon.png" gap:platform="blackberry" />
-
 	<!-- Windows -->
 	<icon src="icons/windows/icon.png" gap:platform="winphone" />
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
-
-	<!-- Web OS -->
-	<icon src="icons/webos/icon.png" gap:platform="webos" />
-	<icon src="icons/webos/miniicon.png" gap:platform="webos" gap:role="mini" />
 
     <gap:splash src="splash/splash.png" />
 	<gap:splash src="splash/res/drawable-mdpi.splash.9.png" gap:platform="android" gap:qualifier="mdpi" />
