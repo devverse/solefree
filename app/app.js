@@ -77,7 +77,10 @@ config(['$routeProvider',
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController
     }).
-
+    when('/storeFinder', {
+      templateUrl: admin_url + 'partials/store_finder.html',
+      controller: storeFinderController
+    }).
     when('/sales', {
       templateUrl: admin_url + 'partials/sales.html',
       controller: salesController

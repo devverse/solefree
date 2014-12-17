@@ -1,0 +1,37 @@
+<div class="panel grey" ng-cloak  style="text-align:center">
+    <span style="font-weight:bold;">Store Finder</span>
+</div>
+
+<div class="product" >
+  <h3> Find sneaker spots near you. <br/>Enter your zipcode to search! </h3>
+  <input type="text" ng-model="search" style="background-color:white" > <br/><br/>
+  <button ng-click="storeSearch(search)" data-role="button" data-icon="star" class='btn btn-primary small'>Search</button><br/><br/>
+  <div class="alert" ng-show="stores.length == 0">
+    <h2> No stores found </h2>
+  </div>
+
+  <br/>
+</div>
+</div>
+  <div class="row">
+<div ng-repeat="r in stores.businesses" class="product">
+
+  <div class="productImages">
+    <img src="{{r.image_url}}" class="productImage">
+  </div>
+
+  <div class="productDetails">
+    <span class="product_title">{{r.name}}</span>
+    <br/>
+    <span ng-repeat="add in r.location.display_address"> 
+        {{add}} <br/> 
+    </span> 
+    {{r.display_phone}}
+    <br/>
+   <a class="btn button radius green small" href="{{r.url}}"> Yelp Review </a>  
+  </div>
+</div>
+
+
+
+</div>
