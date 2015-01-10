@@ -88,17 +88,11 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
         });
     };
 
-
-    self.getRelatedItems = function(name) {
-      var data = "product_name=" + name;
-      return self.makePost('/mobile/getRelatedItems', data).then(
-        function(data) {
-          $rootScope.$broadcast('getRelatedItems', data);
-        }, function(err) {
-          alert(err);
-        });
+    self.getRelatedItems = function(name, product_id) {
+      var data = "keywords=" + name;
+      data += "&product_id=" + product_id;
+      return self.makePost('/ebay/getRelatedProducts', data);
     };
-
 
     return {
 
@@ -134,8 +128,8 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
         return self.getSlideShow(post);
       },
 
-      getRelatedItems: function(name) {
-        return self.getRelatedItems(name);
+      getRelatedItems: function(name, product_id) {
+        return self.getRelatedItems(name, product_id);
       }
     };
 

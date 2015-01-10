@@ -67,3 +67,8 @@
 #news, #news * {
     max-width: 95%;
 }
+
+.longButton{
+  background: #6b6b6b !important;
+  font-size: 8px !important;
+}

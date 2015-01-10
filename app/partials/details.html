@@ -2,11 +2,9 @@
   {{errorMessage}}
 </div>
 
-
 <div class="panel grey" style="text-align:center">
   <span style="font-weight:bold">{{r.name}}</span>
   <br/>{{r.release_date}} (${{r.price}})
-
 </div>
 
 <div style="text-align:center">
@@ -30,8 +28,8 @@
 </div>
 </div>
 
-<div>
 
+<div>
   <div style="text-align:center">
     <a class='button green radius custombutton' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
     <a class='button red radius custombutton' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
@@ -57,10 +55,40 @@
 
   </div>
 
+<div class="panel grey" style="text-align:center">
+  <span style="font-weight:bold">Related Sneakers And Comments</span>
+    <br/><br/>
+    <div style="text-align:center">
+
+    <a class='button grey longButton' ng-click="showRelatedItems()"> Show Related Sneakers ({{related.length}})</a> 
+    <a class='button grey longButton' ng-click="showComments()"> Show Comments ({{comments.length}})</a>
+    <br/>
+  </div>
+
+</div>
+
+  <!-- Related -->
+  <div class="products bg-dark wrapped-content" ng-show="relatedDisplay == true">
+    <h3 style="margin-left:5px">{{related.length}} Related Sneakers</h3>
+    <div ng-repeat="r in related" class="product">
+        <div class="productImages">
+          <img src="{{r.galleryURL}}" class="productImage">
+        </div>
+
+        <div class="productDetails">
+          <span class="product_title">{{r.title}}</span>
+          <br/>
+          <span class="product_title">${{r.value}}</span>
+          <br/>
+         <a class="btn button radius green small" href="" ng-click="buyEbayProduct(r.viewItemURL)"> 
+          Buy Now </a>  
+        </div>
+    </div>
+  </div>
 
   <!-- Comments -->
-  <div id="comments" class="bg-dark comments wrapped-content">
-    <h3>{{comments.length}} Comments</h3>
+  <div id="comments" class="bg-dark comments wrapped-content" ng-show="commentDisplay == true">
+    <h3 style="margin-left:5px">{{comments.length}} Comments</h3>
     <ul ng-repeat="comment in comments">
       <li>
         <img class="comments-avatar" src="icons/icon.png" alt="Comments Author">
@@ -77,22 +105,18 @@
           </div>
         </div>
       </li>
-
     </ul>
-
   </div>
 
-  <div class="panel grey" style="text-align:center">
+  <div class="panel grey" style="text-align:center" ng-show="commentDisplay == true">
     <span style="font-weight:bold">Leave a Comment</span>
   </div>
 
-  <textarea style="width:99%;height:90px" class="blue" ng-model="new_comment">
+  <textarea style="width:99%;height:90px" class="blue" ng-model="new_comment" ng-show="commentDisplay == true">
 
   </textarea>
 
   <br/>
   <br/>
 
-  <button class="green radius" ng-click="submitComment()">Leave Comment</button>
-  <div ng-repeat="comment in comments">
-  </div>
+  <button class="green radius" ng-click="submitComment()" ng-show="commentDisplay == true">Leave Comment</button>

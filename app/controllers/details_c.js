@@ -2,8 +2,44 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.comments = [];
   $scope.slideshow = [];
+  $scope.related = [];
+
+  $scope.buyEbayProduct = function(url) {
+    window.open(url, '_blank', 'location=yes');
+    mixpanel_service.trackEvent('Ebay product purchase click');
+  };
+
+  $scope.showComments = function() {
+    $scope.commentDisplay = true;
+    $scope.relatedDisplay = false;
+    mixpanel_service.trackEvent('Show comment click');
+  };
+
+  $scope.showRelatedItems = function() {
+    $scope.commentDisplay = false;
+    $scope.relatedDisplay = true;
+    mixpanel_service.trackEvent('Show related items click');
+  };
+
+  $scope.getRelatedItems = function(product) {
+    var keywords;
+
+    if (product.description.length > 2) {
+      keywords = product.description;
+    } else {
+      keywords = product.name;
+    }
+
+    release_service.getRelatedItems(keywords, product.id).then(function(data) {
+      $scope.related = data;
+    }, function(err) {
+      window.console.log(err);
+    });
+
+  };
 
   $scope.loadProduct = function() {
+    $scope.showRelatedItems();
     product = JSON.parse(localStorage.getItem("product_details"));
 
     product.showBuyLink = false;
@@ -14,6 +50,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     $scope.r = product;
     $scope.product_id = product.product_id;
+    $scope.getRelatedItems(product);
   };
 
   $scope.getSlideShow = function() {
@@ -62,8 +99,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&product_id=" + product.id;
     post += "&status=" + status;
 
-    release_service.coporNot(post).then(function(data) {
-
+    release_service.sneakerRating(post).then(function(data) {
     }, function(err) {
       window.console.log(err);
     });
