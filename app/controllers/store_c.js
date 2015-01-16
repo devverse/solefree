@@ -125,3 +125,5 @@ function storeController($scope, $rootScope, store_service, mixpanel_service) {
     $rootScope.$emit("featured", true);
   })();
 }
+
+storeController.$inject = ['$scope', '$rootScope', 'store_service', 'mixpanel_service'];

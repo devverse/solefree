@@ -31,12 +31,7 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
     };
 
     self.getPastReleases = function() {
-      return self.makePost('/mobile/pastReleaseDates').then(
-        function(data) {
-          $rootScope.$broadcast('getPastReleases', data);
-        }, function(err) {
-          alert(err);
-        });
+      return self.makePost('/mobile/pastReleaseDates');
     };
 
     self.addReminder = function(product, member_id) {

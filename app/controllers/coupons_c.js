@@ -18,3 +18,5 @@ function couponsController($scope, $rootScope, cache_service, mixpanel_service) 
 
   })();
 }
+
+couponsController.$inject = ['$scope', '$rootScope', 'cache_service', 'mixpanel_service'];

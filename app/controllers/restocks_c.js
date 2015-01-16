@@ -62,3 +62,5 @@ function restocksController($scope, $rootScope, restock_service, mixpanel_servic
   })();
 
 }
+
+restocksController.$inject = ['$scope', '$rootScope', 'restock_service', 'mixpanel_service'];

@@ -17,3 +17,5 @@ function instagramController($scope, $rootScope, instagram_service, mixpanel_ser
     $rootScope.$emit("featured", false);
   })();
 }
+
+instagramController.$inject = ['$scope', '$rootScope', 'instagram_service', 'mixpanel_service'];

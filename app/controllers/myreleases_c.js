@@ -44,3 +44,5 @@ function myReleasesController($scope, $rootScope, release_service, mixpanel_serv
     $rootScope.$emit("featured", true);
   })();
 }
+
+myReleasesController.$inject = ['$scope', '$rootScope', 'release_service', 'mixpanel_service'];

@@ -88,5 +88,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $scope.getReleases();
     $rootScope.$emit("featured", true);
   })();
-
 }
+
+releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'mixpanel_service'];

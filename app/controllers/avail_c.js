@@ -22,3 +22,5 @@ function availController($scope, $rootScope, sales_service, cache_service, mixpa
     $rootScope.$emit("featured", true);
   })();
 }
+
+availController.$inject = ['$scope', '$rootScope', 'sales_service', 'cache_service', 'mixpanel_service'];

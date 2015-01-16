@@ -41,3 +41,5 @@ function myRestocksController($scope, $rootScope, restock_service, mixpanel_serv
     $rootScope.$emit("featured", false);
   })();
 }
+
+myRestocksController.$inject = ['$scope', '$rootScope', 'restock_service', 'mixpanel_service'];

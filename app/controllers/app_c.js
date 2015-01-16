@@ -36,3 +36,5 @@ function appController($scope, $rootScope, app_service, mixpanel_service) {
     });
   })();
 }
+
+appController.$inject = ['$scope', '$rootScope', 'app_service', 'mixpanel_service'];

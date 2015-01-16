@@ -1,4 +1,4 @@
-function newsController($scope, $rootScope, $location, $filter, news_service, mixpanel_service) {
+function newsController($scope, $rootScope, news_service, mixpanel_service) {
   $scope.news = [];
 
   $scope.getNews = function() {
@@ -17,3 +17,5 @@ function newsController($scope, $rootScope, $location, $filter, news_service, mi
     $rootScope.$emit("featured", false);
   })();
 }
+
+newsController.$inject = ['$scope', '$rootScope', 'news_service', 'mixpanel_service'];

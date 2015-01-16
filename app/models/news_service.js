@@ -31,7 +31,6 @@ soleinsiderApp.factory('news_service', ['$rootScope', '$q', '$http',
     };
 
     return {
-
       getFeeds: function() {
         return self.getFeeds();
       },

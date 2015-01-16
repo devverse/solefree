@@ -27,13 +27,8 @@ soleinsiderApp.factory('restock_service', ['util_service', '$rootScope', '$q', '
     };
 
     self.getMyRestocks = function() {
-
-
       var data = "member_id=" + localStorage.getItem("member_id");
-
-
       return self.makePost('/mobile/getMyRestocks', data).then(
-
         function(data) {
           $rootScope.$broadcast('getMyRestocks', data);
         }, function(err) {
@@ -43,14 +38,7 @@ soleinsiderApp.factory('restock_service', ['util_service', '$rootScope', '$q', '
     };
 
     self.getPastRestocks = function() {
-
-      return self.makePost('/mobile/getAvailabilityHistory').then(
-
-        function(data) {
-          $rootScope.$broadcast('getPastRestocks', data);
-        }, function(err) {
-          alert(err);
-        });
+      return self.makePost('/mobile/getAvailabilityHistory');
     };
 
     self.getRestocks = function() {

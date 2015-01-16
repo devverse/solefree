@@ -14,12 +14,17 @@ module.exports = function (grunt) {
    concat: {
       application: {
         src: [
-          '<banner:meta.banner>',
-          'app/app.js',
+          'app/config.js',
           'app/controllers/*.js',
           'app/models/*.js',
         ],
         dest: 'app/dist/application.concat.js'
+      },
+      plugins: {
+        src: [
+          'js/plugins/*.js',
+        ],
+        dest: 'app/dist/plugins.concat.js'
       }
     },
     watch: {

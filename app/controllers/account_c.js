@@ -53,3 +53,5 @@ function accountController($scope, $rootScope, account_service, mixpanel_service
     $rootScope.$emit("featured", false);
   })();
 }
+
+accountController.$inject = ['$scope', '$rootScope', 'account_service', 'mixpanel_service'];

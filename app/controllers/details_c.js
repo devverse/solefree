@@ -180,3 +180,5 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   })();
 
 }
+
+detailsController.$inject = ['$scope', '$rootScope', '$location', '$filter', 'comments_service', 'release_service', 'mixpanel_service'];

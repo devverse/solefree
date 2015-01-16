@@ -99,3 +99,5 @@ function loginController($scope, $rootScope, login_service, mixpanel_service) {
     $rootScope.$emit("featured", false);
   })();
 }
+
+loginController.$inject = ['$scope', '$rootScope', 'login_service', 'mixpanel_service'];

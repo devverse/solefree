@@ -1,0 +1,27 @@
+{
+  "name": "SoleInsider",
+  "version": "4.5.0",
+  "description": "SoleInsider Web Application",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.3.2",
+    "grunt-remove-logging": "~0.2.0",
+    "jsdoc": "git+https://github.com/jsdoc3/jsdoc.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/devverse/sole-web.git"
+  },
+  "author": "Robbins Cleozier",
+  "license": "BSD"
+}

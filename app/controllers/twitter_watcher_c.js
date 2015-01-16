@@ -1,4 +1,4 @@
-function twitterWatcherController($scope, $rootScope, twitter_service) {
+function twitterWatcherController($scope, $rootScope, twitter_service, mixpanel_service) {
 
   $scope.showConfirmation = false;
   $scope.member_id = localStorage.getItem("member_id");
@@ -60,3 +60,5 @@ function twitterWatcherController($scope, $rootScope, twitter_service) {
     $rootScope.$emit("featured", false);
   })();
 }
+
+twitterWatcherController.$inject = ['$scope', '$rootScope', 'twitter_service', 'mixpanel_service'];

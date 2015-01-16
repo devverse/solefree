@@ -1,5 +1,3 @@
-/*global angular:true, MN: true, accountcontroller:true, specialtycontroller:true, themecontroller:true, servicescontroller:true, locationscontroller:true, emrcontroller:true, insurancecontroller:true, policycontroller:true, doctorscontroller:true, staffcontroller: true, sloganscontroller:true, logocontroller:true, billingcontroller:true, specialtycontroller:true, bannerimageController:true, sitemapcontroller:true */
-
 var soleinsiderApp = angular.module('soleinsiderApp', []).
 config(['$routeProvider',
   function($routeProvider) {
@@ -100,7 +98,6 @@ soleinsiderApp.config(['$httpProvider',
 var ngrepeat_counter = 1;
 soleinsiderApp.directive('featuredDirective', function() {
   return function(scope, element, attrs) {
-
     var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
     $(".featured-carousel-pagination").append(link);
     ngrepeat_counter++;

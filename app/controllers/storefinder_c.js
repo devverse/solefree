@@ -14,7 +14,6 @@ function storeFinderController($scope, $rootScope, store_finder_service, mixpane
           for (var i =0; i < data.businesses.length; i++) {
             if (data.businesses[i].image_url) {
               stores.push(data.businesses[i]);
-              console.log(data.businesses[i]);
             } 
           }
           $scope.stores = stores;
