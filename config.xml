@@ -2,7 +2,7 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="22"
+	versionCode="23"
 	version 	= "4.5"
 	id        = "com.sole.insider.free">
 
