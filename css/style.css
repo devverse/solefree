@@ -796,6 +796,7 @@ form p {
   z-index: 1;
   width: 260px;
   height: 100%;
+  /*background: #34393d;*/
   background: #34393d;
   color: #fff; }
   #sidemenu-container.active {
