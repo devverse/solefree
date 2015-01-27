@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -44,30 +44,11 @@
         <nav id="nav-container">
           <ul class="nav">
             <li>
-              <a href="store.html" class="active"> Shop </a>
-              <span class="nav-child-container">
-                <span class="nav-child-trigger">+</span>
-              </span>
-              <ul style="height: 0px;" class="">
-                <li> <a href="store.html" class> Sneakers </a>
-                </li>
-                <li> <a href="clothing_store.html" class> Clothes </a>
-                </li>
-                <li> <a href="#/storeFinder" class> Store Finder </a>
-                </li>
-                <li> <a href="#/avail" class> Still Available</a>
-                </li>
-                <li> <a href="#/coupons" class> Coupons</a>
-                </li>
-              </ul>
-            </li>
-            <li>
               <a href="#/releases" class="nav-with-ul">Releases</a>
               <span class="nav-child-container">
                 <span class="nav-child-trigger">+</span>
               </span>
               <ul style="height: 0px;" class="">
-
                 <li><a href="#/past_releases" class="">Past Releases</a>
                 </li>
                 <li><a href="#/myreleases" class=""> My Releases</a>
@@ -87,7 +68,8 @@
                 </li>
               </ul>
             </li>
-            <li><a href="#/instagram" class="active"> Gallery </a>
+            <li> <a href="store.html"> Shop Sneakers </a></li>
+            <li> <a href="clothing_store.html"> Shop Clothes</a></li>
             <li><a href="#/news" class="active"> News </a>
             <li>
               <a href="#/account" class>  Account </a>
@@ -99,9 +81,7 @@
                 </li>
               </ul>
             </li>
-
-
-        </nav>
+        </ul>
       </div>
     </aside>
 
@@ -126,36 +106,32 @@
         <div ng-cloak ng-show="show_featured == true">
           <div class="panel grey featured" style="text-align:center">
             <span style="font-weight:bold;">Featured</span>
-
           </div>
-          <div class="product">
 
+          <div class="product">
             <!-- the viewport -->
             <div class="featured-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
 
               <div class="m-carousel-inner">
-
                 <div class="m-item" ng-repeat="f in featured" featured-directive>
                   <h4>{{f.name}} - ${{f.price}}</h4>
-                  <img src="{{f.image.sizes.IPhone.url}}" class="featuredImage" style="clear:both;width: 45% !important;">
+                  <img src="{{f.image.sizes.IPhone.url}}" ng-show="show_featured == true" class="featuredImage" style="clear:both;width: 45% !important;">
                   <br/>
 
                   <button class="radius green buyBtn" ng-click="buyProduct(f)">Details</button>
                 </div>
-
               </div>
 
               <!-- the controls -->
-
               <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
               </div>
             </div>
-
           </div>
         </div>
         <div style="min-height:500px">
           <div class="loading" ng-show="showLoading == true" style="text-align:center">
-            <img src="img/spinner.gif" />
+            <br/>
+            <img src="img/spinner.gif" width="100px" height="100px" />
           </div>
           <div ng-view>
           </div>
