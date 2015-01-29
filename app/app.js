@@ -1,9 +1,12 @@
-var soleinsiderApp = angular.module('soleinsiderApp', []).
-config(['$routeProvider', '$compileProvider',
-  function($routeProvider, $compileProvider) {
-    "use strict";
+var soleinsiderApp = angular.module('soleinsiderApp', []);
 
-    $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|ghttps?|ms-appx|x-wmapp0):/);
+soleinsiderApp.config(['$compileProvider', function($compileProvider) {
+  $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
+}]);
+
+soleinsiderApp.config(['$routeProvider',
+  function($routeProvider) {
+    "use strict";
 
     $routeProvider.when('/', {
       templateUrl: admin_url + 'partials/releases.html',
