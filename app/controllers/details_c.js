@@ -50,7 +50,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     $scope.r = product;
     $scope.product_id = product.product_id;
-    $scope.getRelatedItems(product);
   };
 
   $scope.getSlideShow = function() {

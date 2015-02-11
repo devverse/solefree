@@ -1,12 +1,11 @@
 var soleinsiderApp = angular.module('soleinsiderApp', []);
 
-soleinsiderApp.config(['$compileProvider', function($compileProvider) {
-  $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
-}]);
 
-soleinsiderApp.config(['$routeProvider',
-  function($routeProvider) {
+soleinsiderApp.config(['$routeProvider', '$compileProvider',
+  function($routeProvider, $compileProvider) {
     "use strict";
+
+    $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
 
     $routeProvider.when('/', {
       templateUrl: admin_url + 'partials/releases.html',
@@ -121,6 +120,14 @@ soleinsiderApp.directive('productImagesDirective', function() {
     if (scope.$last) {
       $('.product-carousel').carousel();
       ngrepeat_counter = 1;
+    }
+  };
+});
+
+soleinsiderApp.directive('lazyLoadDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      $('img.lazy').lazyload();
     }
   };
 });
