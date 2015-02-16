@@ -133,11 +133,8 @@ soleinsiderApp.directive('lazyLoadDirective', function() {
 });
 
 $(document).ready(function() {
-  $(".nav a").click(function() {
-    $(this).removeClass("active");
-    $(".nav-child-container").each(function() {
-      $(this).removeClass("active");
-      $(this).parent().children("ul").css("height", "0").removeClass("active");
-    })
+  $(".mainMenuWrapper a").click(function() {
+    console.log('here');
+    $('.mainMenuOuterWrapper').fadeOut(300);
   });
 });

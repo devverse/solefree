@@ -1,13 +1,15 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">Past Restocks</span>
-</div>
-<div ng-repeat="r in past_restocks" class="product">
+ <div class="">
+   <!-- page content wrapper starts -->
+    <div ng-repeat="r in past_restocks">
+    <div class="pageContentWrapper"> 
+      <!-- page title starts -->
+      <div style="float:left;width:50%">
+        <img src="http://soleinsider.com/public/products/mobile/{{r.image}}" width="100%" />
+        <br/>
+      </div>
 
-  <div class="productImages">
-    <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
-  </div>
-
-  <div class="productDetails">
+      <div style="float:right;width:45%">
+        <div class="productDetails">
     <span class="product_title">{{r.name}}</span>
     <br/>
     <span class='product_title'>Restocked On: {{r.available_timestamp}}</span>
@@ -15,4 +17,9 @@
     <b class='price'>${{r.price}} </b>
     <br/>
   </div>
-</div>
+      </div>
+    </div>
+    </div>
+    <br/>
+    <!-- page content wrapper ends -->
+</div>    

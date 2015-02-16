@@ -1,4 +1,4 @@
-function pastReleasesController($scope, $rootScope, release_service, mixpanel_service) {
+function pastReleasesController($scope, $rootScope, release_service) {
 
   $scope.releases = [];
   $scope.showmsg = false;
@@ -9,7 +9,6 @@ function pastReleasesController($scope, $rootScope, release_service, mixpanel_se
     release_service.getPastReleases().then(
       function(data) {
         $scope.releases = data;
-        mixpanel_service.trackEvent('Past releases fetched');
       }, function(err) {
         alert(err);
       });
@@ -22,4 +21,4 @@ function pastReleasesController($scope, $rootScope, release_service, mixpanel_se
 
 }
 
-pastReleasesController.$inject = ['$scope', '$rootScope', 'release_service', 'mixpanel_service'];pastReleasesController.$inject = ['$scope', '$rootScope', 'release_service', 'mixpanel_service'];
+pastReleasesController.$inject = ['$scope', '$rootScope', 'release_service'];

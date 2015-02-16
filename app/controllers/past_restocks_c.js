@@ -1,4 +1,4 @@
-function pastRestocksController($scope, $rootScope, restock_service, mixpanel_service) {
+function pastRestocksController($scope, $rootScope, restock_service) {
 
   $scope.restocks = [];
 
@@ -8,7 +8,6 @@ function pastRestocksController($scope, $rootScope, restock_service, mixpanel_se
       function(data) {
         $scope.past_restocks = data;
         $scope.showLoading = false;
-        mixpanel_service.trackEvent('Past restocks fetched');
       }, function(err) {
         alert(err);
       });
@@ -21,4 +20,4 @@ function pastRestocksController($scope, $rootScope, restock_service, mixpanel_se
 
 }
 
-pastRestocksController.$inject = ['$scope', '$rootScope', 'restock_service', 'mixpanel_service'];
+pastRestocksController.$inject = ['$scope', '$rootScope', 'restock_service'];

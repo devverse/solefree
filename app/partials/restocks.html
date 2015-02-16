@@ -1,26 +1,25 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">Restocks</span>
-</div>
+ <div class="">
+   <!-- page content wrapper starts -->
+    <div ng-repeat="r in restocks">
+    <div class="pageContentWrapper"> 
+      <!-- page title starts -->
+      <div style="float:left;width:50%">
+        <img src="http://soleinsider.com/public/products/mobile/{{r.image}}" width="100%" />
+        <br/>
+      </div>
 
-<div class="panel red" ng-show="showerror == true">
-  {{errorMessage}}
-</div>
-
-<div class="panel yellow" ng-show="showmsg == true">
-  {{success_message}}
-</div>
-
-<div ng-repeat="r in restocks" class="product">
-
-  <div class="productImages">
-    <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
-  </div>
-
-  <div class="productDetails">
-    <span class="product_title">{{r.name}}</span>
+      <div style="float:right;width:45%">
+        <div class="productDetails">
+          <span class="product_title" style="font-size:12px">{{r.name}}</a>
+          </span>
+          <br/>
+          <span class='date' style="font-size:11px">{{r.release_date}}</span>
+          <br/> <span class='price'>${{r.price}} </span>
+          <br/><br/><br/>
+        </div>
+      </div>
+    </div>
+    </div>
     <br/>
-    <b class='price'>${{r.price}} </b>
-    <br/>
-    <button data-product-id='{{r.product_id}}' data-role="button" data-icon="star" class='addReleaseAlert btn btn-primary radius' ng-click="addReminder(r)">Watch these</button>
-  </div>
-</div>
+    <!-- page content wrapper ends -->
+</div>    
