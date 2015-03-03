@@ -1,4 +1,4 @@
-function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, mixpanel_service) {
+function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service) {
 
   $scope.comments = [];
   $scope.slideshow = [];
@@ -6,19 +6,16 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.buyEbayProduct = function(url) {
     window.open(url, '_blank', 'location=yes');
-    mixpanel_service.trackEvent('Ebay product purchase click');
   };
 
   $scope.showComments = function() {
     $scope.commentDisplay = true;
     $scope.relatedDisplay = false;
-    mixpanel_service.trackEvent('Show comment click');
   };
 
   $scope.showRelatedItems = function() {
     $scope.commentDisplay = false;
     $scope.relatedDisplay = true;
-    mixpanel_service.trackEvent('Show related items click');
   };
 
   $scope.getRelatedItems = function(product) {
@@ -76,7 +73,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showerror = false;
         $scope.sneakerName = product.name;
         $().toastmessage('showSuccessToast', "Reminder saved for " + product.name);
-        mixpanel_service.trackEvent('Reminder Added for ' + product.name);
       },
       function(err) {
         alert(err);
@@ -122,8 +118,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.comments = comments;
   }
 
-  $scope.share = function(product){
-    mixpanel_service.trackEvent('Sneaker shared ' + product.name);
+  $scope.share = function(product) {
     return window.plugins.socialsharing.share(
       '#SoleInsider ' + product.name, 
       product.name, 
@@ -151,7 +146,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     };
 
     window.plugins.calendar.createEventInteractively(title, location, notes, startDate, endDate, success, error);
-    mixpanel_service.trackEvent('Sneaker added to calendar ' + product.name);
   };
 
   $scope.submitComment = function() {
@@ -165,7 +159,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       $().toastmessage('showSuccessToast', "Comment saved!");
       $scope.getComments();
       $scope.new_comment = "";
-      mixpanel_service.trackEvent('Comment submited');
     }, function(err) {
       window.console.log(err);
     });
@@ -180,4 +173,4 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
 }
 
-detailsController.$inject = ['$scope', '$rootScope', '$location', '$filter', 'comments_service', 'release_service', 'mixpanel_service'];
+detailsController.$inject = ['$scope', '$rootScope', '$location', '$filter', 'comments_service', 'release_service'];

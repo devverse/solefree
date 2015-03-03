@@ -1,4 +1,3 @@
- <div class="">
    <!-- page content wrapper starts -->
     <div ng-repeat="r in restocks">
     <div class="pageContentWrapper"> 
@@ -13,8 +12,10 @@
           <span class="product_title" style="font-size:12px">{{r.name}}</a>
           </span>
           <br/>
-          <span class='date' style="font-size:11px">{{r.release_date}}</span>
-          <br/> <span class='price'>${{r.price}} </span>
+
+          <div class="value">${{r.price}}</div>
+           <a data-product-id='{{r.product_id}}' class='buttonWrapper buttonDefault' ng-click="addReminder(r)">Watch these sneakers</a>
+          </div>
           <br/><br/><br/>
         </div>
       </div>
@@ -22,4 +23,3 @@
     </div>
     <br/>
     <!-- page content wrapper ends -->
-</div>    

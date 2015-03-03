@@ -9,6 +9,47 @@
     <div ng-repeat="r in value.products | filter:filterReleases">
     <div class="pageContentWrapper"> 
       <!-- page title starts -->
+      <div style="float:left;width:42%">
+        <img src="http://soleinsider.com/public/products/mobile/{{r.image}}" width="100%" />
+        <br/>
+        <span ng-show="r.showBuyLink == false">
+        <a data-product-id='{{r.product_id}}' class='buttonWrapper buttonGreen' style="padding:10px;width:40px;text-align:center" ng-click="details(r)"> Details </a>
+
+        <a data-product-id='{{r.product_id}}' class='buttonWrapper buttonGreen' style="padding:10px;width:40px;text-align:center" ng-click="buyNow(r)"> Buy </a>
+        </span>
+      </div>
+
+      <div style="float:right;width:58">
+        <div class="productDetails" style="=text-align:center">
+          <span class="" style="font-size:12px">{{r.name}} </span>
+          <br/>
+          <span class='date' style="font-size:11px">{{r.release_date}}</span>
+          <br/> <span class='price'>${{r.price}} </span>
+          <br/><br/><br/>
+
+
+          <a class='buttonWrapper buttonDefault' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+
+          <a class='buttonWrapper buttonRed' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <br/>
+    <!-- page content wrapper ends --> 
+
+       <br/>
+    </div>
+    <!-- page content wrapper starts -->
+      <div class="panel grey" style="text-align:center;padding:10px;font-size:24px">
+      <span style="font-weight:bold">Coming Soon</span>
+      <hr/>
+    </div>
+    
+    <div ng-repeat="r in coming">
+    <div class="pageContentWrapper"> 
+      <!-- page title starts -->
       <div style="float:left;width:40%">
         <img src="http://soleinsider.com/public/products/mobile/{{r.image}}" width="100%" />
         <br/>
@@ -33,7 +74,3 @@
 
         </div>
       </div>
-    </div>
-    </div>
-    <br/>
-    <!-- page content wrapper ends --> 

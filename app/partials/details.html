@@ -1,76 +1,63 @@
-<div class="panel yellow" ng-show="showerror == true">
-  {{errorMessage}}
-</div>
-
-<div class="panel grey" style="text-align:center">
-  <span style="font-weight:bold">{{r.name}}</span>
-  <br/>{{r.release_date}} (${{r.price}})
-</div>
-
-<div style="text-align:center">
-  <!-- the viewport -->
-  <div class="product-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
-
-    <div class="m-carousel-inner featuredImageDiv">
-
-      <div class="m-item" ng-repeat="f in slideshow" product-images-directive ng-cloak>
-        <img src="http://soleinsider.com/public/products/mobile/{{f.image}}" class="featuredImage" style="clear:both">
-        <br/>
+ <div class="">
+   <!-- page content wrapper starts -->
+    <div class="pageContentWrapper"> 
+      <!-- page title starts -->
+      <div class="panel grey" style="text-align:center">
+        <span style="font-weight:bold">{{r.name}}</span>
+        <br/>{{r.release_date}} (${{r.price}})
       </div>
 
-    </div>
+      <div style="text-align:center">
+        <!-- the viewport -->
+        <div class="product-carousel m-carousel m-fluid m-carousel-photos overflowVisible" style="width:95%">
+          <div class="m-carousel-inner featuredImageDiv overflowVisible">
+            <div class="m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive ng-cloak>
+              <img src="http://soleinsider.com/public/products/mobile/{{f.image}}" class="featuredImage maxWidth">
+              <br/>
+            </div>
+          </div>
+          <!-- the controls -->
+          <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
+          </div>
+        </div>
+      </div>
+      <br/>
+        <div style="text-align:center">
+          <a class='buttonWrapper buttonDefault' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+          <a class='buttonWrapper buttonRed' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+          <br/>
+    
+          <span ng-show="r.showBuyLink == false">
+            <a data-product-id='{{r.product_id}}' class='buttonWrapper buttonDefault' ng-click="addReminder(r)"> Remind Me</a>
+          </span>
 
-    <!-- the controls -->
+          <span>
+            <a href="{{r.link}}" class='buttonWrapper buttonDefault' ng-click="addToCalender(r)"> Add to calander</a>
+          </span>
 
-    <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
-    </div>
-  </div>
-</div>
-</div>
-
-
-<div>
-  <div style="text-align:center">
-    <a class='button green radius custombutton' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-    <a class='button red radius custombutton' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+          <span>
+            <a href="{{r.link}}" class='buttonWrapper buttonDefault' ng-click="share(r)">Share </a>
+          </span>
+        </div>
     <br/>
-  </div>
 
-  <div style="text-align:center">
-    <span ng-show="r.showBuyLink == false">
-      <a data-product-id='{{r.product_id}}' class='button custombutton radius' ng-click="addReminder(r)"> Remind Me</a>
-    </span>
-
-    <span ng-show="r.showBuyLink == true">
-      <a data-product-id='{{r.product_id}}' href="{{r.link}}" class='button custombutton2 radius green'> Buy Now</a>
-    </span>
-
-    <span>
-      <a href="{{r.link}}" class='button custombutton radius blue' ng-click="addToCalender(r)"> Add to calander</a>
-    </span>
-
-    <span>
-      <a href="{{r.link}}" class='button custombutton radius blue' ng-click="share(r)">Share </a>
-    </span>
-
-  </div>
-
-<div class="panel grey" style="text-align:center">
-  Comments
-</div>
+    <ul class="portfolioMenuWrapper" id="portfolioMenuWrapper">
+      <li>Comments</li>
+    </ul>
+    <!-- page content wrapper ends -->
 
   <!-- Comments -->
   <div id="comments" class="bg-dark comments wrapped-content">
     <h3 style="margin-left:5px">{{comments.length}} Comments</h3>
-    <ul ng-repeat="comment in comments">
+    <ul ng-repeat="comment in comments" class="comments-list">
       <li>
-        <img class="comments-avatar" src="icons/icon.png" alt="Comments Author">
+        <div class="comments-avatar">
+        <img class="comments-avatar-img" src="icons/icon.png" alt="Comments Author">
+        </div>
         <div class="comments-content-container">
           <div class="comments-content">
             <p class="comments-meta">
-              <span class="comments-meta-name">
                 <p>{{comment.email.substr(0,6)}} ****** {{comment.comment_date}}</p>
-              </span>
             </p>
 
             <p>{{comment.comment}}</p>
@@ -85,11 +72,11 @@
     <span style="font-weight:bold">Leave a Comment</span>
   </div>
 
-  <textarea style="width:99%;height:90px" class="blue" ng-model="new_comment">
+  <textarea style="width:90%;height:90px" class="blue" ng-model="new_comment">
 
   </textarea>
 
   <br/>
-  <br/>
-
-  <button class="green radius" ng-click="submitComment()">Leave Comment</button>
+  <a class="buttonWrapper buttonDefault" ng-click="submitComment()">Leave Comment</a>
+</div>  
+</div>    

@@ -114,9 +114,9 @@ soleinsiderApp.directive('featuredDirective', function() {
 
 soleinsiderApp.directive('productImagesDirective', function() {
   return function(scope, element, attrs) {
-
     var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
     $(".product-carousel-pagination").append(link);
+    ngrepeat_counter++;
     if (scope.$last) {
       $('.product-carousel').carousel();
       ngrepeat_counter = 1;
@@ -134,7 +134,6 @@ soleinsiderApp.directive('lazyLoadDirective', function() {
 
 $(document).ready(function() {
   $(".mainMenuWrapper a").click(function() {
-    console.log('here');
-    $('.mainMenuOuterWrapper').fadeOut(300);
+    $('.mainMenuButton').trigger('click');
   });
 });

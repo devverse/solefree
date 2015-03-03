@@ -1,5 +1,7 @@
 function releasesController($scope, $rootScope, $filter, $location, release_service, mixpanel_service) {
 
+  $scope.coming = [];
+  $scope.last_product_id = false;
   $scope.releases = [];
   $scope.showmsg = false;
   $scope.showerror = false;
@@ -47,13 +49,21 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       });
   };
 
-  $scope.filterReleases = function(product) {
+   $scope.filterReleases = function(product) {
     product.showBuyLink = false;
 
     if (product.link.length > 2) {
       product.showBuyLink = true;
     }
-    return product;
+
+    if (product.coming_soon === '1' && $scope.last_product_id != product.id) {
+      $scope.last_product_id = product.id
+      $scope.coming.push(product);
+    } else if ($scope.last_product_id == product.id) {
+      return;
+    } else {
+      return product;
+    }
   };
 
   $scope.addReminder = function(product) {

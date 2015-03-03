@@ -84,8 +84,8 @@ input[type="submit"] {
 	padding-top: 18px;
 	padding-left: 12px;
 	padding-right: 12px;
-	margin-left: 24px;
-	margin-right: 24px;
+	margin-left: 12px;
+	margin-right: 12px;
 	padding-bottom: 27px;
 	background-color: #fff;
 	border-radius: 3px;
@@ -638,8 +638,8 @@ a.nivo-prevNav:hover {
 	padding-top: 23px;
 	margin-bottom: 36px;
 	padding-bottom: 18px;
-	margin-left: 24px;
-	margin-right: 24px;
+	margin-left: 12px;
+	margin-right: 12px;
 	background-color: #fff;
 	border-radius: 3px;
 	padding-left: 12px;

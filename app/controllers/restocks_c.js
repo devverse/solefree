@@ -7,7 +7,10 @@ function restocksController($scope, $rootScope, restock_service) {
 
   $scope.getRestocks = function() {
     $scope.showLoading = true;
-    restock_service.getRestocks();
+    restock_service.getRestocks().then(function(data){
+      $scope.restocks = data;
+      $scope.showLoading = false;
+    })
   };
 
   $scope.addReminder = function(product) {
@@ -50,12 +53,6 @@ function restocksController($scope, $rootScope, restock_service) {
 
   $scope.init = (function() {
     $scope.getRestocks();
-
-    $rootScope.$on('productsChecks', function(e, data) {
-      $scope.restocks = data;
-      $scope.showLoading = false;
-    });
-
     $rootScope.$emit("featured", false);
   })();
 

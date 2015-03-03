@@ -42,13 +42,7 @@ soleinsiderApp.factory('restock_service', ['util_service', '$rootScope', '$q', '
     };
 
     self.getRestocks = function() {
-      return self.makePost('/mobile/productsChecks').then(
-
-        function(data) {
-          $rootScope.$broadcast('getRestocks', data);
-        }, function(err) {
-          alert(err);
-        });
+      return self.makePost('/mobile/productsChecks');
     };
 
     self.addAlert = function(product) {
