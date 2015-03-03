@@ -26,6 +26,10 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
 
     };
 
+    self.getComingSoon = function() {
+      return self.makePost('/mobile/getComingSoon');
+    };
+
     self.getReleases = function() {
       return self.makePost('/mobile/releaseDatesFormatted');
     };
@@ -97,6 +101,10 @@ soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '
 
       getReleases: function() {
         return self.getReleases();
+      },
+
+      getComingSoon: function() {
+        return self.getComingSoon();
       },
 
       addAlert: function(product) {

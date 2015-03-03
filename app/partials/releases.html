@@ -13,7 +13,7 @@
 }
 </style>
 
-<div ng-repeat="(key, value) in releases  " class="">
+<div ng-repeat="(key, value) in releases">
 
   <div class="panel grey" style="text-align:center">
     <span style="font-weight:bold">{{value.month}}</span>
@@ -53,3 +53,36 @@
     </div>
   </div>
 </div>
+
+ <div class="panel grey" style="text-align:center">
+    <span style="font-weight:bold">Coming Soon</span>
+  </div>
+   <div class="product">
+    <div ng-repeat="r in coming" class="product" lazy-load-directive>
+      <div class="productImages">
+
+        <img data-original="http://soleinsider.com/public/products/mobile/{{r.image}}" class="lazy productImage"/>
+
+        <span>
+      
+          <a data-product-id='{{r.product_id}}' class='button custombutton2 radius' ng-click="details(r)"> Details </a>
+        </span>
+
+      </div>
+
+      <div class="productDetails">
+        <span class="product_title">{{r.name}}</a>
+        </span>
+        <br/>
+        <span class='date'>{{r.release_date}}</span>
+        <br/> <b class='price'>${{r.price}} </b>
+        <br/>
+        <br/>
+
+
+        <a class='button green radius custombutton' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+
+        <a class='button red radius custombutton' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+      </div>
+    </div>
+  </div>
