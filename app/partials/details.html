@@ -4,7 +4,13 @@
 
 <div class="panel grey" style="text-align:center">
   <span style="font-weight:bold">{{r.name}}</span>
-  <br/>{{r.release_date}} (${{r.price}})
+  <br/>
+  <span ng-show="r.coming_soon != 1">
+  {{r.release_date}} (${{r.price}})
+  </span>
+  <span ng-show="r.coming_soon == 1">
+    Release date not available yet
+  </span>
 </div>
 
 <div style="text-align:center">

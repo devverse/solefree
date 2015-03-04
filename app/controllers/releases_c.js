@@ -1,5 +1,6 @@
 function releasesController($scope, $rootScope, $filter, $location, release_service, mixpanel_service) {
 
+  $scope.show_coming = false;
   $scope.coming = [];
   $scope.last_product_id = false;
   $scope.releases = [];
@@ -53,6 +54,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     release_service.getComingSoon().then(
       function(data) {
         $scope.coming = data;
+        $scope.show_coming = true;
       }, function(err) {
         alert(err);
       });

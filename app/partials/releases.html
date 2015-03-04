@@ -54,10 +54,10 @@
   </div>
 </div>
 
- <div class="panel grey" style="text-align:center">
+ <div class="panel grey" style="text-align:center" ng-show="show_coming == true">
     <span style="font-weight:bold">Coming Soon</span>
   </div>
-   <div class="product">
+   <div class="product" ng-show="show_coming == true">
     <div ng-repeat="r in coming" class="product" lazy-load-directive>
       <div class="productImages">
 
@@ -74,8 +74,8 @@
         <span class="product_title">{{r.name}}</a>
         </span>
         <br/>
-        <span class='date'>{{r.release_date}}</span>
-        <br/> <b class='price'>${{r.price}} </b>
+        <span class='date'>No date available yet</span>
+        <br/> <b class='price'>No price available yet </b>
         <br/>
         <br/>
 

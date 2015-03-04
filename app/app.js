@@ -117,6 +117,7 @@ soleinsiderApp.directive('productImagesDirective', function() {
 
     var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
     $(".product-carousel-pagination").append(link);
+    ngrepeat_counter++;
     if (scope.$last) {
       $('.product-carousel').carousel();
       ngrepeat_counter = 1;
