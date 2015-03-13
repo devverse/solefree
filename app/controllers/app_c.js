@@ -30,7 +30,7 @@ function appController($scope, $rootScope, app_service, mixpanel_service) {
 
   $scope.init = (function() {
     $scope.getFeaturedProducts();
-    $scope.getMessages();
+    //$scope.getMessages();
     $rootScope.$on('featured', function(e, status) {
       $scope.show_featured = status;
     });
