@@ -4,6 +4,18 @@
     either  NONE  or  'center'  or  'right'
 
 */
+
+.normal-div {
+    display: block;
+    position: relative;
+}
+.normal-div img {
+    max-height: 200px;
+}
+.featuredImage {
+    width: 50%;
+    left: 30%;
+}
 .m-carousel  {
     position:  relative;
     overflow:  hidden;
@@ -89,3 +101,5 @@
                 margin-right:  0;  }
         .m-center:not(.m-fluid)  >  .m-carousel-inner  >  *:last-child  {
             margin-right:  -30000px;  }
+
+

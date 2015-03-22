@@ -1,4 +1,4 @@
-function instagramController($scope, $rootScope, instagram_service, mixpanel_service) {
+function instagramController($scope, $rootScope, instagram_service) {
 
   $scope.images = [];
 
@@ -6,7 +6,6 @@ function instagramController($scope, $rootScope, instagram_service, mixpanel_ser
     instagram_service.getImages().then(
       function(data) {
         $scope.images = data;
-        mixpanel_service.trackEvent('Instagram feed fetched');
       }, function(err) {
         alert(err);
       });
@@ -18,4 +17,4 @@ function instagramController($scope, $rootScope, instagram_service, mixpanel_ser
   })();
 }
 
-instagramController.$inject = ['$scope', '$rootScope', 'instagram_service', 'mixpanel_service'];
+instagramController.$inject = ['$scope', '$rootScope', 'instagram_service'];

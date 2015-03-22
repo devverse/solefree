@@ -75,7 +75,7 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/twitter_watcher.html',
       controller: twitterWatcherController
     }).
-    when('/instagram', {
+    when('/gallery', {
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController
     }).

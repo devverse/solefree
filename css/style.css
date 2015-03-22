@@ -82,10 +82,10 @@ input[type="submit"] {
 }
 .pageContentWrapper {
 	padding-top: 18px;
-	padding-left: 12px;
-	padding-right: 12px;
-	margin-left: 12px;
-	margin-right: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
+	margin-left: 0px;
+	margin-right: 0px;
 	padding-bottom: 27px;
 	background-color: #fff;
 	border-radius: 3px;
@@ -169,18 +169,19 @@ input[type="submit"] {
 	background-color: #333;
 }
 .mainLogo {
-	height: 28px;
+	height: 40px !important;
 	z-index: 990;
-	margin-top: 22px;
+	margin-top: 32px;
 	float: left;
-}
-.mainLogo > img {
-	height: 28px;
-	width: auto;
+	font-size: 26px;
+	color: #fefefe;
+	text-decoration: none;
+	font-family: Verdana, Geneva, sans-serif;
+	letter-spacing: 1.2px;
 }
 .headerLogo {
 	height: 60px;
-	margin-top: 3px;
+	margin-top: 13px;
 	display: block;
 	float: left;
 }
@@ -633,16 +634,15 @@ a.nivo-prevNav:hover {
 }
 .portfolioMenuWrapper {
 	list-style: none;
-	padding-left: 0px;
-	padding-right: 12px;
+	padding-left: 4px;
+	padding-right: 4px;
 	padding-top: 23px;
 	margin-bottom: 36px;
 	padding-bottom: 18px;
-	margin-left: 12px;
-	margin-right: 12px;
+	margin-left: 0px;
+	margin-right: 0px;
 	background-color: #fff;
 	border-radius: 3px;
-	padding-left: 12px;
 }
 .portfolioMenuWrapper li {
 	float: left;

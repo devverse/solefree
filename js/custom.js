@@ -41,7 +41,9 @@ jQuery(document).ready(function($){
 	
 	$('.mainMenuWrapper > li').each(function(){
 		menuIndex -= 10;
-		$(this).css({'background-color': $(this).attr('data-background'), 'z-index': menuIndex});
+		if (typeof $(this).attr('data-background') != 'undefined') {
+			$(this).css({'background-color': $(this).attr('data-background'), 'z-index': menuIndex});
+		}
 	});
 	
 	var windowWidth = $(window).width() - 48;
@@ -288,8 +290,6 @@ jQuery(document).ready(function($){
 	
 	lightbox();
 	// lightbox functions end
-
-
 
 });
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

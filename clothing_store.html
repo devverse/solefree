@@ -43,13 +43,15 @@
 </head>
 <body>
 <!-- website wrapper starts -->
-<div class="websiteWrapper"> 
+<div class="websiteWrapper" ng-app="soleinsiderApp" ng-controller="clothingStoreController"> 
   
   <!-- header outer wrapper starts -->
   <div class="headerOuterWrapper">
     <!-- header outer wrapper starts -->
   <div class="headerOuterWrapper">
-    <div class="headerWrapper"> <a href="index.html" class="mainLogo"><img src="images/common/mainLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a></div>
+    <div class="headerWrapper"> 
+    <span class="mainLogo">SoleInsider</span> 
+    <a href="" class="mainMenuButton"></a></div>
   </div>
   <!-- header outer wrapper ends --> 
   </div>
@@ -58,28 +60,22 @@
   <!-- main menu outer wrapper starts -->
   <div class="mainMenuOuterWrapper mainMenuHidden">
     <ul class="mainMenuWrapper">
-      <li data-background="#80a697" class="menuFire"><a href="store.html">Store</a> </li>
-      <li data-background="#c47acb" class="menuFire"><a href="clothing_store.html">Clothes</a></li>
-      <li data-background="#649ae1" class="menuFire"><a href="#/releases">Releases</a> </li>
-      <li data-background="#b3cfc1" class="menuFire"><a href="#/past_releases">Past Releases</a></li>
-      <li data-background="#ec6f5a" class="menuFire"><a href="#/restocks">Restocks</a></li>
-      <li data-background="#f7c65f" class="menuFire"><a href="#/restock_history">Past Restocks</a></li>
-      <li data-background="#a992e2" class="menuFire"><a href="#/news">News</a></li>
-      <li data-background="#75d4cb" class="menuUser"><a href="#/account">My Account</a></li>
-      <li data-background="#dc6e6e" class="menuUser"><a href="#/login">Login/Register</a></li>
+      <li ng-repeat="m in menu" style="background-color:{{m.menu_color}}" class="menuFire" >
+        <a href="clothing_store.html">{{ m.name }}</a>
+      </li>
     </ul>
   </div>
   <!-- main menu outer wrapper ends --> 
   
   <!-- page wrapper starts -->
-  <div class="pageWrapper blogPageWrapper" ng-app="soleinsiderApp" ng-controller="clothingStoreController"> 
+  <div class="pageWrapper blogPageWrapper"> 
     
     <!-- blog posts wrapper starts -->
     <div class="blogPostsWrapper"> 
   
 
     <ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
-      <li>{{category}}</li>
+      <li style="text-align:center">{{category}}</li>
     </ul>  
 
     <div class="loading" ng-show="showLoading == true" style="text-align:center">
@@ -103,17 +99,21 @@
               <br/>
               <span class="price">{{p.priceLabel}}</span>
               <br/>
-              <br/><a href="" ng-click="buyProduct(p)" class="buttonWrapper buttonDefault">Details</a>
+              <br/><a href="" ng-click="buyProduct(p)" class="buttonWrapper buttonBlack">Details</a>
             </div>
           </div>
         </div>
 
 
-        <button class="buttonWrapper buttonDefault" style="margin-left:10px" ng-click="paginate()">Next</button>
+      
 
     </div>
     <!-- blog posts wrapper ends --> 
     
+     <br/>
+   <a class="buttonWrapper buttonBlack" style="padding:10px" ng-click="paginate()">Next</a> 
+
+
   </div>
   <!-- page wrapper ends --> 
   

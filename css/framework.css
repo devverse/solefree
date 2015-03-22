@@ -59,6 +59,11 @@ div, header, footer, section, article, nav, button, a, p, img, ul, ol, blockquot
 	overflow: hidden;
 	position: relative;
 }
+div.normal-div) {
+	display: block !important;
+	overflow: hidden !important;
+	position: inherit; !important;
+}
 p {
 	line-height: 18px;
 	margin-bottom: 18px;

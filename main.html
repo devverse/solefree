@@ -49,7 +49,9 @@
   <div class="headerOuterWrapper">
     <!-- header outer wrapper starts -->
   <div class="headerOuterWrapper">
-    <div class="headerWrapper"> <a href="index.html" class="mainLogo"><img src="images/common/mainLogo.png" alt=""/></a> <a href="" class="mainMenuButton"></a></div>
+    <div class="headerWrapper"> 
+    <span class="mainLogo">SoleInsider</span> 
+    <a href="" class="mainMenuButton"></a></div>
   </div>
   <!-- header outer wrapper ends --> 
   </div>
@@ -64,6 +66,7 @@
       <li data-background="#b3cfc1" class="menuFire"><a href="#/past_releases">Past Releases</a></li>
       <li data-background="#ec6f5a" class="menuFire"><a href="#/restocks">Restocks</a></li>
       <li data-background="#f7c65f" class="menuFire"><a href="#/restock_history">Past Restocks</a></li>
+      <li data-background="#649ae1" class="menuFire"><a href="#/gallery">Gallery</a></li>
       <li data-background="#a992e2" class="menuFire"><a href="#/news">News</a></li>
       <li data-background="#75d4cb" class="menuUser"><a href="#/account">My Account</a></li>
       <li data-background="#dc6e6e" class="menuUser"><a href="#/login">Login/Register</a></li>
@@ -74,9 +77,35 @@
   <!-- page wrapper starts -->
   <div class="pageWrapper blogPageWrapper" ng-app="soleinsiderApp" ng-controller="appController"> 
     
-    <!-- blog posts wrapper starts -->
-    <div class="blogPostsWrapper"> 
 
+  <div ng-cloak ng-show="show_featured == true">
+    <div class="panel grey featured" style="text-align:center">
+      <span style="font-weight:bold;font-size:24px">Featured Sneakers</span>
+    </div>
+  </div>
+
+    <div class="pageContentWrapper" ng-show="show_featured == true" ng-cloak> 
+          <!-- the viewport -->
+            <span class="normal-div featured-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
+
+              <span class="normal-div m-carousel-inner">
+                <span class="normal-div m-item" ng-repeat="f in featured" featured-directive>
+                  <h4>{{f.name}} - ${{f.price}}</h4>
+                  <img src="{{f.image.sizes.IPhone.url}}" ng-show="show_featured == true" class="featuredImage" style="clear:both;width: 45% !important;">
+                  <br/>
+
+                  <a class="buttonWrapper buttonBlack" ng-click="buyProduct(f)">Details</a>
+                </span>
+              </span>
+
+              <!-- the controls -->
+              <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
+              </div>
+            </span>
+    </div>
+
+  <hr/>
+   <div class="blogPostsWrapper"> 
     <div ng-view>
     </div>
     <br/><br/>
