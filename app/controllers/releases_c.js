@@ -48,7 +48,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       });
   };
 
-<<<<<<< HEAD
   $scope.getComingSoon = function() {
     release_service.getComingSoon().then(
       function(data) {
@@ -59,10 +58,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       });
   };
 
-  $scope.filterReleases = function(product) {
-=======
    $scope.filterReleases = function(product) {
->>>>>>> v5
     product.showBuyLink = false;
 
     if (product.link.length > 2) {
