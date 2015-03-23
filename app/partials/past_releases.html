@@ -1,18 +1,25 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">Past Releases</span>
-</div>
+ <div class="">
+   <!-- page content wrapper starts -->
+    <div ng-repeat="r in releases | filter:filterReleases">
+    <div class="pageContentWrapper"> 
+      <!-- page title starts -->
+      <div style="float:left;width:50%">
+        <img src="http://soleinsider.com/public/products/mobile/{{r.image}}" width="100%" />
+        <br/>
+      </div>
 
-<div ng-repeat="r in releases" class="product">
-
-  <div class="productImages">
-    <img src="http://soleinsider.com/public/products/{{r.image}}" class="productImage">
-  </div>
-
-  <div class="productDetails">
-    <span class="product_title">{{r.name}}</span>
+      <div style="float:right;width:45%">
+        <div class="productDetails">
+          <span class="product_title" style="font-size:12px">{{r.name}}</a>
+          </span>
+          <br/>
+          <span class='date' style="font-size:11px">{{r.release_date}}</span>
+          <br/> <span class='price'>${{r.price}} </span>
+          <br/><br/><br/>
+        </div>
+      </div>
+    </div>
+    </div>
     <br/>
-    <span class='date'>{{r.release_date}}</span>
-    <br/> <b class='price'>${{r.price}} </b>
-    <br/>
-  </div>
-</div>
+    <!-- page content wrapper ends -->
+</div>    

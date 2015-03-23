@@ -1,4 +1,4 @@
-function restocksController($scope, $rootScope, restock_service, mixpanel_service) {
+function restocksController($scope, $rootScope, restock_service) {
     
   $scope.restocks = [];
   $scope.showmsg = false;
@@ -7,7 +7,10 @@ function restocksController($scope, $rootScope, restock_service, mixpanel_servic
 
   $scope.getRestocks = function() {
     $scope.showLoading = true;
-    restock_service.getRestocks();
+    restock_service.getRestocks().then(function(data){
+      $scope.restocks = data;
+      $scope.showLoading = false;
+    })
   };
 
   $scope.addReminder = function(product) {
@@ -40,7 +43,6 @@ function restocksController($scope, $rootScope, restock_service, mixpanel_servic
           $scope.success_message = "You are now watching " + product.name;
           $scope.showerror = false;
           $().toastmessage('showSuccessToast', "You are now watching " + product.name);
-          mixpanel_service.trackEvent('Sneaker restock reminder added');
         }
       },
       function(err) {
@@ -51,16 +53,9 @@ function restocksController($scope, $rootScope, restock_service, mixpanel_servic
 
   $scope.init = (function() {
     $scope.getRestocks();
-
-    $rootScope.$on('productsChecks', function(e, data) {
-      $scope.restocks = data;
-      $scope.showLoading = false;
-      mixpanel_service.trackEvent('Sneaker restocks fetched');
-    });
-
     $rootScope.$emit("featured", false);
   })();
 
 }
 
-restocksController.$inject = ['$scope', '$rootScope', 'restock_service', 'mixpanel_service'];
+restocksController.$inject = ['$scope', '$rootScope', 'restock_service'];

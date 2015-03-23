@@ -1,10 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>tittle</title>
-  <script>
-  window.location = './main.html';
-  </script>
-  <body>
-  </body>
+<title>SoleInsider</title>
+<!-- meta tags start -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="blinds, premium, mobile, template, HTML, Css" />
+<meta name="Description" content="Premium mobile HTML/CSS template." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- meta tags end -->
+
+<!-- favorite icon starts -->
+<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
+<!-- favorite icon ends -->
+
+<!-- Google fonts start -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
+<!-- Google fonts end -->
+
+<!-- CSS files start -->
+<link href="css/framework.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/elements.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/skin.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+<link rel='stylesheet' href='css2/carousel-style.css'>
+<link rel='stylesheet' href='css2/carousel.css'>
+<!-- CSS files end -->
+
+<!-- JavaScript files start -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/effects.jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.nivo-slider.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src='js2/plugins/carousel.js'></script>
+<script src='js2/plugins/moment.js'></script>
+<script src='js2/plugins/lazy.load.min.js'></script>
+<!-- JavaScript files end -->
+</head>
+<body>
+<!-- website wrapper starts -->
+<div class="websiteWrapper"> 
+  
+  <!-- header outer wrapper starts -->
+  <div class="headerOuterWrapper">
+    <!-- header outer wrapper starts -->
+  <div class="headerOuterWrapper">
+    <div class="headerWrapper"> 
+      <span class="mainLogo">SoleInsider</span> 
+      <a href="" class="mainMenuButton"></a></div>
+  </div>
+  <!-- header outer wrapper ends --> 
+  </div>
+  <!-- header outer wrapper ends --> 
+  
+  <!-- main menu outer wrapper starts -->
+  <div class="mainMenuOuterWrapper mainMenuHidden">
+
+  </div>
+  <!-- main menu outer wrapper ends --> 
+  
+  <!-- page wrapper starts -->
+  <div class="pageWrapper blogPageWrapper" ng-app="soleinsiderApp" ng-controller="appController"> 
+    
+    <!-- blog posts wrapper starts -->
+    <div class="blogPostsWrapper"> 
+   
+	<div style="text-align:center">
+	 	<img style="width:100%;height:450px;" src="" class="main-image"/>
+		<br/>
+		<a href="main.html" class='buttonWrapper buttonBlack' style="width:93%; padding:12px"> Enter SoleInsider </a>
+	</div>
+    </div>
+    <br/><br/>
+    </div>
+    <!-- blog posts wrapper ends --> 
+    
+  </div>
+  <!-- page wrapper ends --> 
+  
+
+  
+  <!-- footer wrapper starts -->
+  <div class="footerWrapper"> 
+    <!-- copyright wrapper starts -->
+    <div class="copyrightWrapper"> 
+      <!-- copyright starts --> 
+      <span class="copyright">&copy; 2015 SoleInsider</span> 
+      <!-- copyright ends --> 
+      <!-- back to top button starts --> 
+      <a href="" class="backToTopButton"></a> 
+      <!-- back to top button ends --> 
+    </div>
+    <!-- copyright wrapper ends --> 
+  </div>
+  <!-- footer wrapper ends --> 
+  
+</div>
+<!-- website wrapper ends -->
+    
+<!-- preloader starts -->
+<div class="preloader"></div>
+<!-- preloader ends -->
+
+<script>
+$(document).ready(function() {
+
+	function shuffle(o){ //v1.0
+    	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    	return o;
+	};
+
+	var images = [
+		'https://38.media.tumblr.com/2c87980f46942310ebe7e7545aeff66d/tumblr_njxq7mwebr1rl35vno1_400.gif',
+		'http://33.media.tumblr.com/53e3b3852e15a74f1f9ab80f7b2bdf43/tumblr_ms677zMuzW1qcmnsoo1_400.gif',
+		'http://38.media.tumblr.com/2e850df25f7e32e73fbf1469c9fa97ea/tumblr_mibz78cljD1qfkqupo4_250.gif',
+		'http://33.media.tumblr.com/2f9edeb2463c03876334f39a5ba56485/tumblr_mibz78cljD1qfkqupo3_250.gif',
+		'http://38.media.tumblr.com/e09e7801b354e68b06707605f19a994f/tumblr_mibz78cljD1qfkqupo1_250.gif',
+		'http://31.media.tumblr.com/b6cb29e850038d3e417a5bc4851dfe06/tumblr_mibz78cljD1qfkqupo2_250.gif',
+	]
+
+	images = shuffle(images);
+
+	var i = 0, howManyTimes = images.length;
+	function f() {
+	    $('.main-image').attr('src', images[i]);
+	    i++;
+	    if( i <= howManyTimes ){
+	        setTimeout( f, 1400 );
+	    } else {
+	    	$('.main-image').attr('src', 'http://soleinsider.com/public/products/air_jordan_xi(11)_retro_low_black_red_white_customs_by_dank_customs-1.jpg');
+	    }
+	}
+	f();
+
+
+});
+</script>
+</body>
 </html>

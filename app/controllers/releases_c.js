@@ -1,6 +1,5 @@
-function releasesController($scope, $rootScope, $filter, $location, release_service, mixpanel_service) {
+function releasesController($scope, $rootScope, $filter, $location, release_service) {
 
-  $scope.show_coming = false;
   $scope.coming = [];
   $scope.last_product_id = false;
   $scope.releases = [];
@@ -10,7 +9,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
-    mixpanel_service.trackEvent('Featured product click');
   };
 
   $scope.details = function(product) {
@@ -50,6 +48,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       });
   };
 
+<<<<<<< HEAD
   $scope.getComingSoon = function() {
     release_service.getComingSoon().then(
       function(data) {
@@ -61,6 +60,9 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.filterReleases = function(product) {
+=======
+   $scope.filterReleases = function(product) {
+>>>>>>> v5
     product.showBuyLink = false;
 
     if (product.link.length > 2) {
@@ -94,7 +96,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
         $scope.showmsg = true;
         $scope.sneakerName = product.name;
         window.plugins.toast.show("Reminder added for " + product.name, 'short', 'center', function(a) {
-        mixpanel_service.trackEvent('Sneaker release reminder added');
         }, function(b) {
           alert('toast error: ' + b)
         })
@@ -112,4 +113,4 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   })();
 }
 
-releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'mixpanel_service'];
+releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service'];

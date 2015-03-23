@@ -1,7 +1,5 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-    <span style="font-weight:bold;">News</span>
-</div>
-<div ng-repeat="n in news" class="product" id="news">
+<div ng-repeat="n in news">
+<div class="pageContentWrapper" id="news">
     <article class="format-standard" style="width:99%">
         <div>
             <h4>{{n.title}}</h4>
@@ -11,4 +9,6 @@
             <p ng-bind-html-unsafe="n.description"></p>
         </div>
     </article>
+</div>
+<br/><br/>
 </div>

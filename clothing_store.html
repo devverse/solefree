@@ -1,85 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<!--<![endif]-->
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>SoleInsider</title>
-  <!-- Import Styles-->
-  <link rel='stylesheet' href='css/vendor/normalize.css'>
-  <link rel='stylesheet' href='css/vendor/fontello.css'>
-  <link rel='stylesheet' href='css/style.css'>
-  <link rel='stylesheet' href='css/master.css'>
-  <!-- =Import Styles-->
+<title>SoleInsider</title>
+<!-- meta tags start -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="blinds, premium, mobile, template, HTML, Css" />
+<meta name="Description" content="Premium mobile HTML/CSS template." />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- meta tags end -->
 
-  <!-- Modernizr & HTML5 Shiv -->
-  <script src='js/vendor/modernizr.js'></script>
-  <!-- =Modernizr & HTML5 Shiv -->
-  <!-- start Mixpanel -->
-  <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
-    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
-    mixpanel.init("df92d8b9ad620c51c4d9183e0e56b5b7");</script>
-  <!-- end Mixpanel -->
+<!-- favorite icon starts -->
+<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
+<!-- favorite icon ends -->
+
+<!-- Google fonts start -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
+<!-- Google fonts end -->
+
+<!-- CSS files start -->
+<link href="css/framework.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/elements.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/skin.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+<link rel='stylesheet' href='css2/carousel-style.css'>
+<link rel='stylesheet' href='css2/carousel.css'>
+<!-- CSS files end -->
+
+<!-- JavaScript files start -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/effects.jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.nivo-slider.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src='js2/plugins/carousel.js'></script>
+<script src='js2/plugins/moment.js'></script>
+<script src='js2/plugins/lazy.load.min.js'></script>
+<!-- JavaScript files end -->
 </head>
+<body>
+<!-- website wrapper starts -->
+<div class="websiteWrapper" ng-app="soleinsiderApp" ng-controller="clothingStoreController"> 
+  
+  <!-- header outer wrapper starts -->
+  <div class="headerOuterWrapper">
+    <!-- header outer wrapper starts -->
+  <div class="headerOuterWrapper">
+    <div class="headerWrapper"> 
+    <span class="mainLogo">SoleInsider</span> 
+    <a href="" class="mainMenuButton"></a></div>
+  </div>
+  <!-- header outer wrapper ends --> 
+  </div>
+  <!-- header outer wrapper ends --> 
+  
+  <!-- main menu outer wrapper starts -->
+  <div class="mainMenuOuterWrapper mainMenuHidden">
+    <ul class="mainMenuWrapper">
+      <li ng-repeat="m in menu" style="background-color:{{m.menu_color}}" class="menuFire" >
+        <a href="clothing_store.html">{{ m.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <!-- main menu outer wrapper ends --> 
+  
+  <!-- page wrapper starts -->
+  <div class="pageWrapper blogPageWrapper"> 
+    
+    <!-- blog posts wrapper starts -->
+    <div class="blogPostsWrapper"> 
+  
 
-<body class="touch-gesture">
-  <!-- Container -->
-  <div id="container" ng-app="soleinsiderApp" ng-controller="clothingStoreController">
+    <ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
+      <li style="text-align:center">{{category}}</li>
+    </ul>  
 
-    <!-- Main Content-->
-    <!-- Sidebar -->
-
-    <aside id="sidemenu-container">
-      <div id="sidemenu">
-        <div id="author-profile">
-          <div class="author-profile-photo">
-            <img src="icons/icon.png" alt="">
-          </div>
-
-        </div>
-        <nav id="nav-container">
-          <ul class="nav">
-            <li> <a href="index.html" class> Back to App</a>
-            </li>
-            <li ng-repeat="m in menu"> <a href="#" ng-click="search(m.search)" class> {{m.name}} </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
-
-    <!-- =Sidebar -->
-
-    <section id="content-container">
-
-      <!-- Header -->
-
-      <header id="header">
-        <div id="menu-trigger" class="header-button left icon-menu"></div>
-        <h1><a href="index.html">SoleInsider</a>
-        </h1>
-      </header>
-
-      <!-- =Header -->
-
-      <div id="content" style="min-height:500px">
-        <div class="panel green" style="text-align:Center" ng-cloak>
-          <p>{{category}}</p>
-        </div>
-
-
-        <div class="loading" ng-show="showLoading == true" style="text-align:center">
+    <div class="loading" ng-show="showLoading == true" style="text-align:center">
           <img src="img/spinner.gif" width="100px" height="100px" />
         </div>
 
         <div class="loading" ng-show="showLoading == false" style="text-align:center">
           <div ng-repeat="p in products" class="product" ng-cloak>
 
-            <div class="productImages">
-              <img src="{{p.image.sizes.IPhone.url}}" alt="{{p.name}}" class="productImage">
+             <div class="pageContentWrapper"> 
+
+            <div style="float:left;width:50%">
+              <img src="{{p.image.sizes.IPhone.url}}" alt="{{p.name}}"  width="100%" class="productImage">
             </div>
 
-            <div class="productDetails">
+            <div class="productDetails" style="float:right;width:45%">
               <span class="product_title">{{p.name}}</span>
               <br/>
 
@@ -87,49 +99,58 @@
               <br/>
               <span class="price">{{p.priceLabel}}</span>
               <br/>
-              <br/><a href="" ng-click="buyProduct(p)" class="button blue radius">Details</a>
+              <br/><a href="" ng-click="buyProduct(p)" class="buttonWrapper buttonBlack">Details</a>
             </div>
           </div>
         </div>
 
-        <button class=" blue radius" style="margin-left:10px" ng-click="paginate()">Next</button>
 
-      </div>
+      
 
-    </section>
+    </div>
+    <!-- blog posts wrapper ends --> 
+    
+     <br/>
+   <a class="buttonWrapper buttonBlack" style="padding:10px" ng-click="paginate()">Next</a> 
 
-    <!-- =Main Content -->
 
   </div>
-  <!-- =Container -->
+  <!-- page wrapper ends --> 
+  
 
-  <!--jQuery & Google Maps -->
+  
+  <!-- footer wrapper starts -->
+  <div class="footerWrapper"> 
+    <!-- copyright wrapper starts -->
+    <div class="copyrightWrapper"> 
+      <!-- copyright starts --> 
+      <span class="copyright">&copy; 2015 SoleInsider</span> 
+      <!-- copyright ends --> 
+      <!-- back to top button starts --> 
+      <a href="" class="backToTopButton"></a> 
+      <!-- back to top button ends --> 
+    </div>
+    <!-- copyright wrapper ends --> 
+  </div>
+  <!-- footer wrapper ends --> 
+  
+</div>
+<!-- website wrapper ends -->
+    
+<!-- preloader starts -->
+<div class="preloader"></div>
+<!-- preloader ends -->
 
-  <script>
-  !window.jQuery && document.write('<script src="js/vendor/jquery.js"><\/script>')
-  </script>
+  <script src='js2/plugins/carousel.js'></script>
+  <script src='js2/plugins/moment.js'></script>
 
-  <!-- Google Maps script -->
-
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpYpkxGMeJcDfwD5QJMhBZT0No7Jleg-E&amp;sensor=false"></script>
-
-  <!-- =jQuery & Google Maps -->
-
-  <!-- Custom Scripts -->
-  <script src='js/plugins/hammer.js'></script>
-  <script src='js/plugins/h5validate.js'></script>
-  <script src='js/plugins/prism.js'></script>
-  <script src='js/script.js'></script>
-
-  <!-- =Custom Scripts -->
-  <script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
-  <script src="app/config.js" type="text/javascript" charset="utf-8"></script>
+  <!-- Setup angular classes -->
   <script src="js/angular.js"></script>
+  <script src="app/config.js"></script>
   <script src="app/controllers/clothing_store_c.js"></script>
-
   <script src="app/models/mixpanel_service.js"></script>
   <script src="app/models/clothing_store_service.js"></script>
   <script src="app/models/cache_service.js"></script>
 </body>
-
+</body>
 </html>

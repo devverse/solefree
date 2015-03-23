@@ -1,16 +1,7 @@
-<div class="panel grey" ng-cloak style="text-align:center">
-    <span style="font-weight:bold;font-size:12px"> Tag your Instagram photos with the hashtag #SoleInsider to have your pictures featured in our app and website.</span>
-</div>
-<div ng-repeat="img in images" class="product">
+<div ng-repeat="img in images" style="float:left;width:48%;margin-right:2px;">
     <div class="instagramImages">
     	<div style="overflow:hidden"> 
-    		<div class="instagramProfile"> <img src="{{img.profile_picture}}" style="width:64px;height:64px;border-radius:60px"/>
-    		</div>
-    		<div class="instagramUsername">
-    			{{img.username}} 
-    		</div>
-    	</div>
-        <img src="{{img.image}}" class="instagramImage" />
-        <p> {{img.caption}} </p>
+        <img src="{{img.image}}" class="instagramImage" style="width:100%" />
     </div>
 </div>
+<br/>

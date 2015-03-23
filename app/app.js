@@ -75,7 +75,7 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/twitter_watcher.html',
       controller: twitterWatcherController
     }).
-    when('/instagram', {
+    when('/gallery', {
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController
     }).
@@ -114,7 +114,6 @@ soleinsiderApp.directive('featuredDirective', function() {
 
 soleinsiderApp.directive('productImagesDirective', function() {
   return function(scope, element, attrs) {
-
     var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
     $(".product-carousel-pagination").append(link);
     ngrepeat_counter++;
@@ -134,11 +133,7 @@ soleinsiderApp.directive('lazyLoadDirective', function() {
 });
 
 $(document).ready(function() {
-  $(".nav a").click(function() {
-    $(this).removeClass("active");
-    $(".nav-child-container").each(function() {
-      $(this).removeClass("active");
-      $(this).parent().children("ul").css("height", "0").removeClass("active");
-    })
+  $(".mainMenuWrapper a").click(function() {
+    $('.mainMenuButton').trigger('click');
   });
 });

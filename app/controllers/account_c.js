@@ -1,4 +1,4 @@
-function accountController($scope, $rootScope, account_service, mixpanel_service) {
+function accountController($scope, $rootScope, account_service) {
 
   $scope.confirmation = "";
   $scope.showConfirmation = false;
@@ -16,7 +16,6 @@ function accountController($scope, $rootScope, account_service, mixpanel_service
       $().toastmessage('showSuccessToast', "Your account has been updated");
       $scope.confirmation = "Your account has been updated";
       $scope.showConfirmation = true;
-      mixpanel_service.trackEvent('Account Updated');
     }, function(err) {
       window.console.log(err);
     });
@@ -43,15 +42,13 @@ function accountController($scope, $rootScope, account_service, mixpanel_service
 
     localStorage.setItem("member_id", member_id);
     localStorage.setItem("username", username);
-    mixpanel_service.trackEvent('Cache Cleared');
   };
 
   $scope.init = (function() {
-    mixpanel_service.trackEvent('Account page loaded');
     $scope.getAccount();
     $scope.showConfirmation = false;
     $rootScope.$emit("featured", false);
   })();
 }
 
-accountController.$inject = ['$scope', '$rootScope', 'account_service', 'mixpanel_service'];
+accountController.$inject = ['$scope', '$rootScope', 'account_service'];
