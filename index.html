@@ -1,143 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SoleInsider</title>
-<!-- meta tags start -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="blinds, premium, mobile, template, HTML, Css" />
-<meta name="Description" content="Premium mobile HTML/CSS template." />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<!-- meta tags end -->
-
-<!-- favorite icon starts -->
-<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
-<!-- favorite icon ends -->
-
-<!-- Google fonts start -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
-<!-- Google fonts end -->
-
-<!-- CSS files start -->
-<link href="css/framework.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/elements.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="css/skin.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
-<link rel='stylesheet' href='css2/carousel-style.css'>
-<link rel='stylesheet' href='css2/carousel.css'>
-<!-- CSS files end -->
-
-<!-- JavaScript files start -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/effects.jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/jquery.nivo-slider.min.js"></script>
-<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src='js2/plugins/carousel.js'></script>
-<script src='js2/plugins/moment.js'></script>
-<script src='js2/plugins/lazy.load.min.js'></script>
-<!-- JavaScript files end -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png" />
+<title> SoleInsider</title>
+<link rel="stylesheet" href="css/framework7.css">
+<link rel="stylesheet" href="style.css">
+<link type="text/css" rel="stylesheet" href="css/swipebox.css" />
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<!-- website wrapper starts -->
-<div class="websiteWrapper"> 
-  
-  <!-- header outer wrapper starts -->
-  <div class="headerOuterWrapper">
-    <!-- header outer wrapper starts -->
-  <div class="headerOuterWrapper">
-    <div class="headerWrapper"> 
-      <span class="mainLogo">SoleInsider</span> 
-      <a href="" class="mainMenuButton"></a></div>
-  </div>
-  <!-- header outer wrapper ends --> 
-  </div>
-  <!-- header outer wrapper ends --> 
-  
-  <!-- main menu outer wrapper starts -->
-  <div class="mainMenuOuterWrapper mainMenuHidden">
+<body id="mobile_wrap">
 
-  </div>
-  <!-- main menu outer wrapper ends --> 
-  
-  <!-- page wrapper starts -->
-  <div class="pageWrapper blogPageWrapper" ng-app="soleinsiderApp" ng-controller="appController"> 
-    
-    <!-- blog posts wrapper starts -->
-    <div class="blogPostsWrapper"> 
-   
-	<div style="text-align:center">
-	 	<img style="width:100%;height:450px;" src="" class="main-image"/>
-		<br/>
-		<a href="main.html" class='buttonWrapper buttonBlack' style="width:93%; padding:12px"> Enter SoleInsider </a>
-	</div>
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+      <nav class="list-nav">
+        <ul>
+          <li class="cart-icon"><a href="main.html#/releases" class="close-panel">Releases</a></li>
+          <li class="cart-icon"><a href="main.html#/past_releases" class="close-panel">Past Releases</a></li>
+          <li class="heart-icon"><a href="main.html#/restocks" class="close-panel">Restocks</a></li>
+          <li class="heart-icon"><a href="main.html#/restock_history" class="close-panel">Past Restocks</a></li>
+          <li class="photos-icon"><a href="main.html#/gallery" class="close-panel">Gallery</a></li>
+          <li class="list-icon"><a href="main.html#/news" class="close-panel">News</a></li>
+          <li class="about-icon"><a href="main.html#/account" class="close-panel">My Account</a></li>
+          <li class="about-icon"><a href="main.html#/login" class="close-panel">Login</a></li>
+        </ul>
+      </nav>  
     </div>
-    <br/><br/>
+
+    <div class="panel panel-right panel-cover">
+      <div class="user_login_info">
+        <h2>Hi, username</h2>
+        <p>Edit your account settings</p>
+              <nav class="list-nav-small">
+                <ul>
+                  <li class="about-icon"><a href="about.html" class="close-panel">Profile</a></li>
+                  <li class="tools-icon"><a href="features.html" class="close-panel">Settings</a></li>
+                  <li class="lock-icon"><a href="features.html" class="close-panel">Account</a></li>
+                  <li class="envelope-icon"><a href="features.html" class="close-panel">Messages</a></li>
+                  <li class="heart-icon"><a href="features.html" class="close-panel">Favorites</a></li>
+                  <li class="download-icon"><a href="features.html" class="close-panel">Downloads</a></li>
+                  <li class="logout-icon"><a href="index.html" class="close-panel">Logout</a></li>
+                </ul>
+              </nav>
+      </div>
     </div>
-    <!-- blog posts wrapper ends --> 
-    
-  </div>
-  <!-- page wrapper ends --> 
-  
 
-  
-  <!-- footer wrapper starts -->
-  <div class="footerWrapper"> 
-    <!-- copyright wrapper starts -->
-    <div class="copyrightWrapper"> 
-      <!-- copyright starts --> 
-      <span class="copyright">&copy; 2015 SoleInsider</span> 
-      <!-- copyright ends --> 
-      <!-- back to top button starts --> 
-      <a href="" class="backToTopButton"></a> 
-      <!-- back to top button ends --> 
+    <div class="views">
+
+      <div class="view view-main">
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left sliding"><div class="logo_title">SoleInsider</div></div>
+            <div class="right menu_open_icon"><a href="#" data-panel="left" class="link icon-only open-panel"></a></div>
+          </div>
+        </div>
+
+        <div class="pages navbar-through toolbar-through">
+
+          <div data-page="index" class="page homepage">
+            <div class="page-content">
+
+                  <!-- Slider -->
+                  <div class="swiper-container swiper-init" data-effect="coverflow" data-pagination=".swiper-pagination">
+                    <div class="swiper-wrapper">
+                    
+                      <div class="swiper-slide">
+                          <span>SoleInsider <br /></span>
+                          <span class="subtitle">Jordans, Nikes, Yeezys. <br/> We've got them all.</span>
+                          <a href="main.html" class="swiper_read_more">Swipe to see more</a>                      </div>
+                      <div class="swiper-slide">
+                          <span> Always up to date</span>
+                          <span class="subtitle">Stay up to date<br/> New sneakers being added daily</span>
+                          <a href="main.html" class="swiper_read_more">Swipe to see more</a>                      </div>
+
+                      <div class="swiper-slide">
+                          <span>100% Free</span>
+                          <span class="subtitle">Designed by sneaker lovers </span>
+                          <a href="main.html" class="swiper_read_more open-panel">Enter</a>                      </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                  </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+<!--         <div class="toolbar">
+              <div class="toolbar-inner">
+              <ul class="toolbar_icons icons_4row">
+              <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title="" /></a></li>
+              <li><a href="features.html"><img src="images/icons/white/settings.png" alt="" title="" /></a></li>
+              <li><a href="photos.html"><img src="images/icons/white/photos.png" alt="" title="" /></a></li>
+              <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/heart.png" alt="" title="" /></a></li>
+              </ul>
+              </div>  
+        </div> -->
+        
+
+      </div>
     </div>
-    <!-- copyright wrapper ends --> 
-  </div>
-  <!-- footer wrapper ends --> 
-  
-</div>
-<!-- website wrapper ends -->
     
-<!-- preloader starts -->
-<div class="preloader"></div>
-<!-- preloader ends -->
-
-<script>
-$(document).ready(function() {
-
-	function shuffle(o){ //v1.0
-    	for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    	return o;
-	};
-
-	var images = [
-		'http://soleinsider.com/public/splashes/1.gif',
-    'http://soleinsider.com/public/splashes/2.gif',
-    'http://soleinsider.com/public/splashes/3.gif',
-    'http://soleinsider.com/public/splashes/4.gif',
-    'http://soleinsider.com/public/splashes/5.gif',
-	]
-
-	images = shuffle(images);
-
-	var i = 0, howManyTimes = images.length;
-	function f() {
-	    $('.main-image').attr('src', images[i]);
-	    i++;
-	    if( i <= howManyTimes ){
-	        setTimeout( f, 1400 );
-	    } else {
-	    	$('.main-image').attr('src', 'http://soleinsider.com/public/splashes/end.jpg');
-	    }
-	}
-	f();
-
-
-});
-</script>
-</body>
+    <!-- About Popup -->
+    <div class="popup popup-login">
+    <div class="content-block">
+      <h4>Login</h4>
+            <div class="loginform">
+            <form id="LoginForm" method="post">
+            <label>Username:</label>
+            <input type="text" name="Username" value="" class="form_input required" />
+            <label>Password:</label>
+            <input type="password" name="Password" value="" class="form_input required" />
+            <input type="submit" name="submit" class="form_submit" id="submit" value="Login" />
+            </form>
+            </div>
+      <div class="close_popup_button_gray"><a href="#" class="close-popup">Close</a></div>
+    </div>
+    </div>
+    <!-- Services Popup -->
+    <div class="popup popup-social">
+    <div class="content-block">
+      <h4>Social Share</h4>
+      <p>Share icons solution that allows you share and increase your social popularity.</p>
+      <ul class="social_share">
+      <li><a href="#"><img src="images/icons/white/twitter.png" alt="" title="" /></a></li>
+      <li><a href="#"><img src="images/icons/white/facebook.png" alt="" title="" /></a></li>
+      <li><a href="#"><img src="images/icons/white/googleplus.png" alt="" title="" /></a></li>
+      <li><a href="#"><img src="images/icons/white/dribbble.png" alt="" title="" /></a></li>
+      <li><a href="#"><img src="images/icons/white/linkedin.png" alt="" title="" /></a></li>
+      <li><a href="#"><img src="images/icons/white/pinterest.png" alt="" title="" /></a></li>
+      </ul>
+      <div class="close_popup_button"><a href="#" class="close-popup">Close</a></div>
+    </div>
+    </div>
+    
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/jquery.swipebox.js"></script>
+<script type="text/javascript" src="js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="js/email.js"></script>
+  </body>
 </html>

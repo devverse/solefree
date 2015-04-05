@@ -110,9 +110,19 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.formatComments = function(comments) {
+    var divisor = 0;
+
     for (var i = 0; i < comments.length; i++) {
       var formatted = moment.utc(comments[i].comment_date, "MM-DD-YYYY h:mm:ss");
       comments[i].comment_date = moment(formatted, "MM-DD-YYYY h:mm:ss").fromNow();
+
+      divisor++;
+      if (divisor / 1 == 1) {
+        comments[i].cssClass = 'from-me';
+      } else {
+        divisor = 0;
+        comments[i].cssClass = 'from-them';
+      }
     }
 
     $scope.comments = comments;

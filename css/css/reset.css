@@ -1,11 +1,11 @@
 /*==============================================
 [Main stylesheet style.css]
 
-Author:	SINDEVO.COM - Smart Internet Development
-Version:	1.0
-Created:	25 February 2015
-Last updated:	25 February 2015
-Template:	Minio - Mobile Web APP Template
+Author: SINDEVO.COM - Smart Internet Development
+Version:  1.0
+Created:  25 February 2015
+Last updated: 25 February 2015
+Template: Minio - Mobile Web APP Template
 ================================================*/
 /*
 [Table of Contents]
@@ -16,8 +16,8 @@ Template:	Minio - Mobile Web APP Template
 4. LEFT AND RIGHT SLIDE PANELS
     4-1. SIDE NAVIGATION
 5. TOP NAVIGATION BAR AND FOOTER TOOLBAR
-	5-1. TOP NAVIGATION AND HEADER
-	5-2. FOOTER TOOLBAR
+  5-1. TOP NAVIGATION AND HEADER
+  5-2. FOOTER TOOLBAR
 6. PAGES LAYOUT
 7. HOME SWIPER
 8. LISTS
@@ -25,21 +25,21 @@ Template:	Minio - Mobile Web APP Template
 10. PHOTO GALLERY
 11. BLOG LAYOUT
 12. FORMS
-	12-1. CONTACT FORM
-	12-2. LOGIN FORM
-	12-3. COMMENT FORM
+  12-1. CONTACT FORM
+  12-2. LOGIN FORM
+  12-3. COMMENT FORM
 13. TABS & ACCORDION
 14. MEDIA QUERIES
     - @media screen and (max-width: 480px)
 */
 /*===============================================*/
-/* 1. RESET		 						 */
+/* 1. RESET                */
 /*===============================================*/
 @import "css/reset.css";
 
 /*===============================================*/
-/* 2. GENERAL		 						 */
-/*===============================================*/	
+/* 2. GENERAL                */
+/*===============================================*/ 
 html,
 body {
 position: relative;
@@ -105,7 +105,7 @@ margin:auto;
 }
 /*===============================================*/
 /* 3. CUSTOM BUTTONS */
-/*===============================================*/	
+/*===============================================*/ 
 a.button_full{
 width:100%;
 background-color:#0c928d; 
@@ -168,7 +168,7 @@ color: #fff;
 }
 /*===============================================*/
 /* 4. LEFT AND RIGHT SLIDE PANELS */
-/*===============================================*/	
+/*===============================================*/ 
 .panel {
 z-index: 1000;
 display: none;
@@ -325,7 +325,7 @@ background-position: 10px 50%;
 /*===============================================*/
 /* 5. TOP NAVIGATION BAR AND FOOTER TOOLBAR */
 /*===============================================*/
-/* 5.1 TOP NAVIGATION AND HEADER */	
+/* 5.1 TOP NAVIGATION AND HEADER */ 
 .logo_title{ 
 font-size:30px;
 font-weight:700;
@@ -418,7 +418,7 @@ width:14%; margin:0 3%;
 }
 /*===============================================*/
 /* 6. PAGES LAYOUT */
-/*===============================================*/	
+/*===============================================*/ 
 .homepage{
 background: url(images/bg.jpg) no-repeat center center;
 background-attachment:fixed;
@@ -487,7 +487,7 @@ background:url(images/bullet.png) no-repeat left;
 }
 /*===============================================*/
 /* 7. HOME SWIPER */
-/*===============================================*/	
+/*===============================================*/ 
 .swiper-container {
 height: 90%;
 }
@@ -528,7 +528,7 @@ font-size:20px;
 }
 /*===============================================*/
 /* 8. LISTS */
-/*===============================================*/	
+/*===============================================*/ 
 ul.features_list{
 padding:10px 0 30px 0;
 width:100%;
@@ -604,7 +604,7 @@ margin:0px;
 
 /*===============================================*/
 /* 9. POPUPS */
-/*===============================================*/	
+/*===============================================*/ 
 .popup,
 .login-screen {
 background:url(images/trans_black.png) repeat;
@@ -761,7 +761,7 @@ display:block;
 
 /*===============================================*/
 /* 11. BLOG LAYOUT */
-/*===============================================*/	
+/*===============================================*/ 
 .list-block {
 margin:0px 0;
 }
@@ -893,7 +893,7 @@ font-style:italic;
 
 /*===============================================*/
 /* 12. FORMS */
-/*===============================================*/	
+/*===============================================*/ 
 /* 12.1 CONTACT FORM */
 .contactform{
 width:100%;
@@ -1045,7 +1045,7 @@ padding:0 0 10px 0;
 }
 /*===============================================*/
 /* 13. TABS & ACCORDION */
-/*===============================================*/	
+/*===============================================*/ 
 .tabs-animated-wrap, .tabs-simple{
 position: relative;
 width: 100%;
@@ -1098,7 +1098,7 @@ padding:0px 15px;
 }
 /*===============================================*/
 /* 14. MEDIA QUERIES */
-/*===============================================*/	
+/*===============================================*/ 
 @media screen and (max-width: 480px) {
 .navbar:after {
   left: 5%;

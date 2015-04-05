@@ -1,14 +1,11 @@
-<div ng-repeat="n in news">
-<div class="pageContentWrapper" id="news">
-    <article class="format-standard" style="width:99%">
+<div class="" ng-repeat="r in news">
+  <div class="swipeout-content item-content" >
+    <div class="post_entry">
+        <h4> {{r.title}}  </h4>
         <div>
-            <h4>{{n.title}}</h4>
-        </div>
+          <p ng-bind-html-unsafe="r.description"></p>
+       </div>
 
-        <div>
-            <p ng-bind-html-unsafe="n.description"></p>
-        </div>
-    </article>
-</div>
-<br/><br/>
-</div>
+    </div>
+  </div>
+</div> 

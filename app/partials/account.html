@@ -1,71 +1,47 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">Settings</span>
-</div>
+<div id="pages_maincontent" style="margin-top:-60px">
 
-<div class="panel yellow" ng-show="showConfirmation == true">
-  {{confirmation}}
-</div>
-<div class="panel">
-  <h2>Account Settings</h2>
-  <form>
+  <div class="" ng-show="showConfirmation == true">
+    <h6> {{confirmation}} </h6> <br/>
+  </div>
 
-    <table class="full-width text-center">
-      <tr>
-        <td>Your Email Address</td>
-        <td>
-          <input type="text" class="username" value="" ng-model="account.email">
-        </td>
-      </tr>
-      <tr>
-        <td>Phone
-          <br/>(NO SPACES OR HYPHENS)</td>
-        <td>
-          <input type="text" class="phone" value="" ng-model="account.phone_number">
-        </td>
-      </tr>
-      <tr>
-        <td>Carriers</td>
-        <td>
-          <select class="carrier" data-theme="c" ng-model="account.carrier">
-            <option value="1">AT&T</option>
-            <option value="2">Verizon</option>
-            <option value="3">T-Mobile</option>
-            <option value="4">Sprint</option>
-            <option value="5">Virgin Mobile</option>
-            <option value="6">US Cellular</option>
-            <option value="7">Nextel</option>
-            <option value="8">Boost</option>
-            <option value="9">Alltel</option>
+  <h2 class="page_subtitle">Update your account </h2>
 
-          </select>
-        </td>
-      </tr>
-      <!--  <tr>
-                <td valign="top">Profile Pic  </td> 
-                <td>
-                    <span ng-repeat="p in profiles">
-                        <span style="float:left;width:27%">
-                        <input type="radio" value="{{p.name}}" name="profile">
-                        <img src="img/profiles/{{p.name}}" width="48" height="48"/>
-                        </span>
-                    </span>
-                </td>
-            </tr> -->
-    </table>
-    <a href="#" style="margin-bottom:-6px" class="buttonWrapper buttonBlack" ng-click="updateAccount(account)">Update Account</a>
+  <h2 id="Note"></h2>
+  <div class="contactform">
+  <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate">
+  
+  <label>Your Email Address:</label>
+  <input type="text" name="username" class="form_input required" ng-model="account.email">
+  
+  <label>Phone: (NO SPACES OR HYPHENS)</label>
+  <input type="text" name="phone" value="" class="form_input required email" ng-model="account.phone_number">
+  
+  <label>Carriers</label>
+  <select class="carrier" data-theme="c" ng-model="account.carrier">
+    <option value="1">AT&T</option>
+    <option value="2">Verizon</option>
+    <option value="3">T-Mobile</option>
+    <option value="4">Sprint</option>
+    <option value="5">Virgin Mobile</option>
+    <option value="6">US Cellular</option>
+    <option value="7">Nextel</option>
+    <option value="8">Boost</option>
+    <option value="9">Alltel</option>
+  </select>
+
+  <br/><br/>
+  <a href="# "class="button_full" ng-click="updateAccount(account)"> Save Changes</a>
+
+
+  <label id="loader" style="display:none;"><img src="images/loader.gif" alt="Loading..." id="LoadingGraphic"></label>
   </form>
 
-</div>
 
 <br/><br/>
-<div class="panel">
-  <h2 style="margin-bottom:-1px">Cache</h2>
-  <a href="# "class="buttonWrapper buttonBlack" ng-click="clearCache()">Clear app cache</a>
-</div>
-
-<br/><br/>
-<div class="panel">
-  <h2 style="margin-bottom:-1px">Information</h2>
+<div class="">
+  <h1 style="">Information</h1>
   SoleInsider {{version}}
-  <br/>SoleInsider Version {{version_type}}
 </div>
+
+</div>
+  

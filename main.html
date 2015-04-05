@@ -1,84 +1,71 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>SoleInsider</title>
-<!-- meta tags start -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="blinds, premium, mobile, template, HTML, Css" />
-<meta name="Description" content="Premium mobile HTML/CSS template." />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<!-- meta tags end -->
+<html class="pixel-ratio-1 watch-active-state"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png">
+<title> SoleInsider</title>
+<link rel="stylesheet" href="css/framework7.css">
+<link rel="stylesheet" href="style.css">
+<link type="text/css" rel="stylesheet" href="css/swipebox.css">
+<link type="text/css" rel='stylesheet' href='css/carousel-style.css'>
+<link type="text/css" rel='stylesheet' href='css/carousel.css'>
 
-<!-- favorite icon starts -->
-<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
-<!-- favorite icon ends -->
-
-<!-- Google fonts start -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
-<!-- Google fonts end -->
-
-<!-- CSS files start -->
-<link href="css/framework.css?=5dce" rel="stylesheet" type="text/css" media="all" />
-<link href="css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/elements.css?=5dce" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css?=5dce" rel="stylesheet" type="text/css" media="all" />
-<link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="css/skin.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/custom.css?=5dce" rel="stylesheet" type="text/css" media="all" />
-<link rel='stylesheet' href='css2/carousel-style.css'>
-<link rel='stylesheet' href='css2/carousel.css'>
-<!-- CSS files end -->
-
-<!-- JavaScript files start -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/effects.jquery-ui.min.js"></script>
-<script type="text/javascript" src="js/jquery.nivo-slider.min.js"></script>
-<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
-<script type="text/javascript" src='js2/plugins/carousel.js'></script>
-<script src='js2/plugins/moment.js'></script>
-<script src='js2/plugins/lazy.load.min.js'></script>
-<!-- JavaScript files end -->
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900" rel="stylesheet" type="text/css">
 </head>
-<body>
-<!-- website wrapper starts -->
-<div class="websiteWrapper"> 
-  
-  <!-- header outer wrapper starts -->
-  <div class="headerOuterWrapper">
-    <!-- header outer wrapper starts -->
-  <div class="headerOuterWrapper">
-    <div class="headerWrapper"> 
-    <span class="mainLogo">SoleInsider</span> 
-    <a href="" class="mainMenuButton"></a></div>
-  </div>
-  <!-- header outer wrapper ends --> 
-  </div>
-  <!-- header outer wrapper ends --> 
-  
-  <!-- main menu outer wrapper starts -->
-  <div class="mainMenuOuterWrapper mainMenuHidden">
-    <ul class="mainMenuWrapper">
-      <li data-background="#80a697" class="menuFire"><a href="store.html">Store</a> </li>
-      <li data-background="#c47acb" class="menuFire"><a href="clothing_store.html">Clothes</a></li>
-      <li data-background="#649ae1" class="menuFire"><a href="#/releases">Releases</a> </li>
-      <li data-background="#b3cfc1" class="menuFire"><a href="#/past_releases">Past Releases</a></li>
-      <li data-background="#ec6f5a" class="menuFire"><a href="#/restocks">Restocks</a></li>
-      <li data-background="#f7c65f" class="menuFire"><a href="#/restock_history">Past Restocks</a></li>
-      <li data-background="#649ae1" class="menuFire"><a href="#/gallery">Gallery</a></li>
-      <li data-background="#a992e2" class="menuFire"><a href="#/news">News</a></li>
-      <li data-background="#75d4cb" class="menuUser"><a href="#/account">My Account</a></li>
-      <li data-background="#dc6e6e" class="menuUser"><a href="#/login">Login/Register</a></li>
-    </ul>
-  </div>
-  <!-- main menu outer wrapper ends --> 
-  
-  <!-- page wrapper starts -->
-  <div class="pageWrapper blogPageWrapper" ng-app="soleinsiderApp" ng-controller="appController"> 
+<body id="mobile_wrap" class="">
+
+    <div class="statusbar-overlay"></div>
+
+    <div class="panel-overlay"></div>
+
+    <div class="panel panel-left panel-cover">
+      <nav class="list-nav">
+        <ul>
+          <li class="cart-icon"><a href="#/releases" class="close-panel">Releases</a></li>
+          <li class="cart-icon"><a href="#/past_releases" class="close-panel">Past Releases</a></li>
+          <li class="heart-icon"><a href="#/restocks" class="close-panel">Restocks</a></li>
+          <li class="heart-icon"><a href="#/restock_history" class="close-panel">Past Restocks</a></li>
+          <li class="photos-icon"><a href="#/gallery" class="close-panel">Gallery</a></li>
+          <li class="list-icon"><a href="#/news" class="close-panel">News</a></li>
+          <li class="about-icon"><a href="#/account" class="close-panel">My Account</a></li>
+          <li class="about-icon"><a href="#/login" class="close-panel">Login</a></li>
+        </ul>
+      </nav>  
+    </div>
+
+    <div class="views">
+
+      <div class="view view-main" data-page="projects">
+
+        <div class="navbar navbar-hidden">
+          <div class="navbar-inner">
+            <div class="left sliding"><div class="logo_title">SoleInsider</div></div>
+            <div class="right menu_open_icon"><a href="#" data-panel="left" class="link icon-only open-panel"></a></div>
+          </div>
+        </div>
+
+        <div class="pages navbar-through toolbar-through">
+
+          
+        <div data-page="projects" class="page no-toolbar no-navbar page-on-left">
+    <div class="page-content">
     
 
-  <div ng-cloak ng-show="show_featured == true">
+      
+    </div>
+  </div><div data-page="projects" class="page no-toolbar no-navbar page-on-center">
+    <div class="page-content">
+    
+     <div class="navbarpages">
+       <div class="navbar_home_link"><a href="index.html"><img src="images/icons/white/home.png" alt="" title=""></a></div>
+       <div class="navbar_page_center">SoleInsider</div>
+       <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title=""></a></div>
+     </div>
+     <div id="pages_maincontent" class="" ng-app="soleinsiderApp" ng-controller="appController">
+      
+       <div ng-cloak ng-show="show_featured == true">
     <div class="panel grey featured" style="text-align:center">
       <span style="font-weight:bold;font-size:24px">Featured Sneakers</span>
     </div>
@@ -92,9 +79,9 @@
                 <span class="normal-div m-item" ng-repeat="f in featured" featured-directive>
                   <h4>{{f.name}} - ${{f.price}}</h4>
                   <img src="{{f.image.sizes.IPhone.url}}" ng-show="show_featured == true" class="featuredImage" style="clear:both;width: 45% !important;">
-                  <br/>
+                  <br/><br/>
 
-                  <a class="buttonWrapper buttonBlack" ng-click="buyProduct(f)">Details</a>
+                  <a class="button" ng-click="buyProduct(f)">Details</a>
                 </span>
               </span>
 
@@ -102,83 +89,82 @@
               <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
               </div>
             </span>
+            
+      <hr/>
     </div>
 
-  <hr/>
-   <div class="blogPostsWrapper"> 
-    <div ng-view>
+      <div ng-view>
+      </div>
+   
+      <div class="clear"></div>
+      </div>
+      
+      
     </div>
-    <br/><br/>
+  </div></div>
+        <!-- Bottom Toolbar-->
+        <div class="toolbar toolbar-hidden">
+              <div class="toolbar-inner">
+              <ul class="toolbar_icons icons_4row">
+              <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title=""></a></li>
+              <li><a href="features.html"><img src="images/icons/white/settings.png" alt="" title=""></a></li>
+              <li><a href="photos.html"><img src="images/icons/white/photos.png" alt="" title=""></a></li>
+              <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/heart.png" alt="" title=""></a></li>
+              </ul>
+              </div>  
+        </div>
+        
+
+      </div>
     </div>
-    <!-- blog posts wrapper ends --> 
     
-  </div>
-  <!-- page wrapper ends --> 
-  
 
-  
-  <!-- footer wrapper starts -->
-  <div class="footerWrapper"> 
-    <!-- copyright wrapper starts -->
-    <div class="copyrightWrapper"> 
-      <!-- copyright starts --> 
-      <span class="copyright">&copy; 2015 SoleInsider</span> 
-      <!-- copyright ends --> 
-      <!-- back to top button starts --> 
-      <a href="" class="backToTopButton"></a> 
-      <!-- back to top button ends --> 
-    </div>
-    <!-- copyright wrapper ends --> 
-  </div>
-  <!-- footer wrapper ends --> 
-  
-</div>
-<!-- website wrapper ends -->
-    
-<!-- preloader starts -->
-<div class="preloader"></div>
-<!-- preloader ends -->
 
-  <script src='js2/plugins/carousel.js'></script>
-  <script src='js2/plugins/moment.js'></script>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
+<script type="text/javascript" src="js/jquery.swipebox.js"></script>
 
-  <!-- Setup angular classes -->
-  <script src="js/angular.js"></script>
-  <script src="app/config.js"></script>
-  <script src="app/app.js"></script>
-  <script src="app/controllers/app_c.js"></script>
-  <script src="app/controllers/releases_c.js"></script>
-  <script src="app/controllers/account_c.js"></script>
-  <script src="app/controllers/past_releases_c.js"></script>
-  <script src="app/controllers/past_restocks_c.js"></script>
-  <script src="app/controllers/restocks_c.js"></script>
-  <script src="app/controllers/sales_c.js"></script>
-  <script src="app/controllers/avail_c.js"></script>
-  <script src="app/controllers/myrestocks_c.js"></script>
-  <script src="app/controllers/myreleases_c.js"></script>
-  <script src="app/controllers/login_c.js"></script>
-  <script src="app/controllers/coupons_c.js"></script>
-  <script src="app/controllers/twitter_watcher_c.js"></script>
-  <script src="app/controllers/details_c.js"></script>
-  <script src="app/controllers/news_c.js"></script>
-  <script src="app/controllers/instagram_c.js"></script>
-  <script src="app/controllers/storefinder_c.js"></script>
+<!-- Setup angular classes -->
+<script src="js/angular.js"></script>
+<script src="app/config.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers/app_c.js"></script>
+<script src="app/controllers/releases_c.js"></script>
+<script src="app/controllers/account_c.js"></script>
+<script src="app/controllers/past_releases_c.js"></script>
+<script src="app/controllers/past_restocks_c.js"></script>
+<script src="app/controllers/restocks_c.js"></script>
+<script src="app/controllers/sales_c.js"></script>
+<script src="app/controllers/avail_c.js"></script>
+<script src="app/controllers/myrestocks_c.js"></script>
+<script src="app/controllers/myreleases_c.js"></script>
+<script src="app/controllers/login_c.js"></script>
+<script src="app/controllers/coupons_c.js"></script>
+<script src="app/controllers/twitter_watcher_c.js"></script>
+<script src="app/controllers/details_c.js"></script>
+<script src="app/controllers/news_c.js"></script>
+<script src="app/controllers/instagram_c.js"></script>
+<script src="app/controllers/storefinder_c.js"></script>
 
-  <script src="app/models/mixpanel_service.js"></script>
-  <script src="app/models/release_service.js"></script>
-  <script src="app/models/util_service.js"></script>
-  <script src="app/models/restock_service.js"></script>
-  <script src="app/models/sales_service.js"></script>
-  <script src="app/models/login_service.js"></script>
-  <script src="app/models/cache_service.js"></script>
-  <script src="app/models/app_service.js"></script>
-  <script src="app/models/account_service.js"></script>
-  <script src="app/models/twitter_service.js"></script>
-  <script src="app/models/comments_service.js"></script>
-  <script src="app/models/news_service.js"></script>
-  <script src="app/models/instagram_service.js"></script>
-  <script src="app/models/store_finder_service.js"></script>
-  
-  <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
+<script src="app/models/mixpanel_service.js"></script>
+<script src="app/models/release_service.js"></script>
+<script src="app/models/util_service.js"></script>
+<script src="app/models/restock_service.js"></script>
+<script src="app/models/sales_service.js"></script>
+<script src="app/models/login_service.js"></script>
+<script src="app/models/cache_service.js"></script>
+<script src="app/models/app_service.js"></script>
+<script src="app/models/account_service.js"></script>
+<script src="app/models/twitter_service.js"></script>
+<script src="app/models/comments_service.js"></script>
+<script src="app/models/news_service.js"></script>
+<script src="app/models/instagram_service.js"></script>
+<script src="app/models/store_finder_service.js"></script>
+
+<script src='js/moment.js'></script>
+<script src='js/carousel.js'></script>
+<script src="js/jquery.toastmessage.js"></script>
 </body>
 </html>

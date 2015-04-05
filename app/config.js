@@ -13,16 +13,8 @@ var page_title = "SoleInsider Free";
 var soleinsider = {};
 soleinsider.base_url = serviceURL;
 soleinsider.username = "";
-soleinsider.member_id = '';
+soleinsider.member_id = false;
 soleinsider.cache = false;
 soleinsider.show_featured = true;
 soleinsider.version = "5";
-soleinsider.version_type = "free";
-soleinsider.member_type = "free";
 soleinsider.build = "android";
-
-if (soleinsider.version_type == "free") {
-  soleinsider.showads = false;
-} else {
-  soleinsider.showads = false;
-}

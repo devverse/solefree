@@ -7,6 +7,12 @@ function accountController($scope, $rootScope, account_service) {
 
   $scope.updateAccount = function(account) {
 
+    if (soleinsider.member_id == false) {
+      $scope.confirmation = "You need to be logged to update your account";
+      $scope.showConfirmation = true;
+      return;
+    }
+
     var post = "member_id=" + soleinsider.member_id;
     post += "&username=" + account.email;
     post += "&phone=" + account.phone_number;

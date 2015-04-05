@@ -1,20 +1,53 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">Login</span>
-</div>
-
-<div class="panel yellow" ng-show="showConfirmation == true">
-  {{confirmation}}
-</div>
-
-<div class="panel" ng-show="showLogin == false">
+<div id="pages_maincontent" ng-show="showLogin == false">
   <b> You are logged in as {{username}} </b> 
-  <br/>
   <br/>
   <button data-product-id='{{r.product_id}}' data-role="button" data-icon="star" class='addReleaseAlert red btn-primary radius' ng-click="logout()">Logout</button>
 </div>
 
+
+<div id="pages_maincontent" style="margin-top:-70px" ng-show="showLogin == true">
+
+  <div class="panel yellow" ng-show="showConfirmation == true">
+    {{confirmation}}
+  </div>
+
+  <h2 class="page_subtitle"> Register </h2>
+
+  <h2 id="Note"></h2>
+  <div class="contactform">
+  <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate">
+  
+  <label>Your Email Address:</label>
+  <input type="text" name="username" class="form_input required" ng-model="newaccount.email">
+  
+  <label>Phone: (NO SPACES OR HYPHENS)</label>
+  <input type="text" name="phone" value="" class="form_input required email" ng-model="newaccount.phone_number">
+  
+  <label>Carriers</label>
+  <select class="carrier" data-theme="c" ng-model="newaccount.carrier">
+    <option value="1">AT&T</option>
+    <option value="2">Verizon</option>
+    <option value="3">T-Mobile</option>
+    <option value="4">Sprint</option>
+    <option value="5">Virgin Mobile</option>
+    <option value="6">US Cellular</option>
+    <option value="7">Nextel</option>
+    <option value="8">Boost</option>
+    <option value="9">Alltel</option>
+  </select>
+
+  <input type="submit" name="submit" class="form_submit" id="submit" ng-click="register(newaccount)" value="Register" />
+ 
+  <label id="loader" style="display:none;"><img src="images/loader.gif" alt="Loading..." id="LoadingGraphic"></label>
+  </form>
+
+
+</div>
+  
+
+
 <div class="panel" ng-show="showLogin == true">
-  <b style="Text-align:center">Login</b>
+   <h2 class="page_subtitle">Login </h2>
   <br/>
   <br/>
   <form>
@@ -36,50 +69,4 @@
   </form>
 </div>
 
-<div class="panel" ng-show="showLogin == true">
-
-  <b style="Text-align:center">Register</b>
-  <br/>
-  <br/>
-  <form>
-    <table class="full-width text-center">
-      <tr>
-        <td>Email</td>
-        <td>
-          <input type="text" ng-model="newaccount.username">
-        </td>
-      </tr>
-      <tr>
-        <td>Password</td>
-        <td>
-          <input type="password" ng-model="newaccount.password">
-        </td>
-      </tr>
-      <tr>
-        <td>Phone
-          <br/>(NO SPACES OR HYPHENS)</td>
-        <td>
-          <input type="text" class="phone" value="" ng-model="newaccount.phone_number">
-        </td>
-      </tr>
-      <tr>
-        <td>Carriers</td>
-        <td>
-          <select class="carrier" data-theme="c" ng-model="newaccount.carrier">
-            <option value="1">AT&T</option>
-            <option value="2">Verizon</option>
-            <option value="3">T-Mobile</option>
-            <option value="4">Sprint</option>
-            <option value="5">Virgin Mobile</option>
-            <option value="6">US Cellular</option>
-            <option value="7">Nextel</option>
-            <option value="8">Boost</option>
-            <option value="9">Alltel</option>
-
-          </select>
-        </td>
-    </table>
-    <input type="submit" class="btn btn-primary radius" ng-click="register(newaccount)" value="Register" />
-  </form>
-</div>
 </div>

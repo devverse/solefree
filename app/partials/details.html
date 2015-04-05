@@ -8,7 +8,7 @@
 
       <div style="text-align:center">
         <!-- the viewport -->
-        <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:95%">
+        <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
           <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
             <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
               <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth">
@@ -23,49 +23,38 @@
       <br/>
         <div style="text-align:center">
           <span ng-show="r.showBuyLink == false">
-            <a data-product-id='{{r.product_id}}' class='buttonWrapper buttonBlack' ng-click="addReminder(r)"> Remind Me</a>
+            <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> Remind Me</a>
           </span>
 
           <span>
-            <a href="{{r.link}}" class='buttonWrapper buttonBlack' ng-click="addToCalender(r)"> Add to calander</a>
+            <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> Add to calander</a>
           </span>
 
           <span>
-            <a href="{{r.link}}" class='buttonWrapper buttonBlack' ng-click="share(r)">Share </a>
+            <a href="{{r.link}}" class='button_small' ng-click="share(r)">Share </a>
           </span>
         </div>
     <br/>
     <!-- page content wrapper ends -->
   <!-- Comments -->
-  <div id="comments" class="bg-dark comments wrapped-content">
-    <h3 style="margin-left:5px">{{comments.length}} Comments</h3>
-    <ul ng-repeat="comment in comments" class="comments-list">
-      <li>
-        <div class="comments-avatar">
-        <img class="comments-avatar-img" src="icons/icon.png" alt="Comments Author">
-        </div>
-        <div class="comments-content-container">
-          <div class="comments-content">
-            <p class="comments-meta">
-                <p>{{comment.email.substr(0,6)}} ****** {{comment.comment_date}}</p>
-            </p>
-
-            <p>{{comment.comment}}</p>
-
-          </div>
-        </div>
-      </li>
-    </ul>
+  <div id="comments" class="">
+    
+    <div ng-repeat="comment in comments" class="commentDiv">
+     <div class="clear"></div>
+      <div class="{{comment.cssClass}}" style="margin-bottom:15px">
+        <p>{{comment.comment}}</p>
+        <p> - {{comment.email.substr(0,6)}} ****** {{comment.comment_date}}</p>
+      </div>
+    </div>
   </div>
 
-  <div class="panel grey" style="text-align:center">
-    <span style="font-weight:bold">Leave a Comment</span>
-  </div>
+  <br/><br/><br/><br/><br/>
+  <h3> Leave a comment </h3>
 
-  <textarea style="width:90%;height:90px" class="blue" ng-model="new_comment">
+  <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
 
   </textarea>
 
   <br/>
-  <a class="buttonWrapper buttonBlack" ng-click="submitComment()">Leave Comment</a>
+  <a class="button" ng-click="submitComment()">Leave Comment</a>
 </div>   
