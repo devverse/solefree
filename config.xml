@@ -2,11 +2,11 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="25"
-	version 	= "4.6"
+	versionCode="26"
+	version 	= "5"
 	id        = "com.sole.insider.free">
 
-	<name>SoleInsider Free</name>
+	<name>SoleInsider</name>
 
 	<description>
 		SoleInsider. Sneaker releases, sneaker restocks, jordan releases, jordan restocks.Jordans, Aisics, Ronnie Fief, Nikes, Pumas, Reebooks, Kicks, Hypebeast.

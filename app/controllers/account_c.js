@@ -8,8 +8,7 @@ function accountController($scope, $rootScope, account_service) {
   $scope.updateAccount = function(account) {
 
     if (soleinsider.member_id == false) {
-      $scope.confirmation = "You need to be logged to update your account";
-      $scope.showConfirmation = true;
+      $().toastmessage('showErrorToast', "You need to be logged to update your account");
       return;
     }
 
@@ -19,9 +18,6 @@ function accountController($scope, $rootScope, account_service) {
     post += "&carrier=" + account.carrier;
 
     account_service.updateAccount(post).then(function(data) {
-      $().toastmessage('showSuccessToast', "Your account has been updated");
-      $scope.confirmation = "Your account has been updated";
-      $scope.showConfirmation = true;
     }, function(err) {
       window.console.log(err);
     });
@@ -42,8 +38,6 @@ function accountController($scope, $rootScope, account_service) {
     username = localStorage.getItem("username");
 
     $().toastmessage('showSuccessToast', "Cache has been cleared");
-    $scope.confirmation = "Cache has been cleared";
-    $scope.showConfirmation = true;
     localStorage.clear();
 
     localStorage.setItem("member_id", member_id);

@@ -1,8 +1,6 @@
 function restocksController($scope, $rootScope, restock_service) {
     
   $scope.restocks = [];
-  $scope.showmsg = false;
-  $scope.showerror = false;
   $scope.errorMessage = "";
 
   $scope.getRestocks = function() {
@@ -20,8 +18,7 @@ function restocksController($scope, $rootScope, restock_service) {
       $("html, body").animate({
         scrollTop: 0
       }, "slow");
-      $scope.showerror = true;
-      $scope.errorMessage = "You must be logged for watching restocks";
+      $().toastmessage('showErrorToast', "You must be logged for watching restocks");
       return;
     }
 
@@ -32,16 +29,11 @@ function restocksController($scope, $rootScope, restock_service) {
           $("html, body").animate({
             scrollTop: 0
           }, "slow");
-          $scope.showmsg = false;
-          $scope.showerror = true;
-          $scope.errorMessage = "Free accounts can only watch 6 restocks. Please purchase SoleInsider Premium in the app store for unlimited Watching";
+          $().toastmessage('showErrorToast', "You have reached the limit for watching restocks");
           $("html, body").animate({
             scrollTop: 0
           }, "slow");
         } else {
-          $scope.showmsg = true;
-          $scope.success_message = "You are now watching " + product.name;
-          $scope.showerror = false;
           $().toastmessage('showSuccessToast', "You are now watching " + product.name);
         }
       },

@@ -1,4 +1,4 @@
-function loginController($scope, $rootScope, login_service, mixpanel_service) {
+function loginController($scope, $rootScope, login_service) {
 
   $scope.confirmation = "";
   $scope.showConfirmation = false;
@@ -17,7 +17,6 @@ function loginController($scope, $rootScope, login_service, mixpanel_service) {
   $scope.logout = function() {
     localStorage.clear();
     $scope.toggleLogin();
-    mixpanel_service.trackEvent('Logout');
   };
 
   $scope.login = function(account) {
@@ -30,11 +29,8 @@ function loginController($scope, $rootScope, login_service, mixpanel_service) {
         localStorage.setItem("username", account.username);
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
-        mixpanel_service.trackEvent('Succesful Login');
       } else {
-        $scope.showConfirmation = true;
-        $scope.confirmation = "Incorrect username or password";
-        mixpanel_service.trackEvent('Incorrect Login');
+        $().toastmessage('showSuccessToast', "Incorrect username or password");
       }
     }, function(err) {
 
@@ -57,15 +53,14 @@ function loginController($scope, $rootScope, login_service, mixpanel_service) {
 
   $scope.register = function(newaccount) {
 
+    console.log(newaccount);
     var validated = $scope.validateAccount(newaccount);
 
     if (!validated) {
       $("html, body").animate({
         scrollTop: 0
       }, "slow");
-      $scope.showConfirmation = true;
-      $scope.confirmation = "Incorrect information";
-      mixpanel_service.trackEvent('Registration Incorrect information Error');
+      $().toastmessage('showSuccessToast', "Incorrect information used");
       return;
     } else {
 
@@ -80,12 +75,10 @@ function loginController($scope, $rootScope, login_service, mixpanel_service) {
         if (data !== "false" && data !== false && data.length !== 0) {
           localStorage.setItem("username", newaccount.username);
           localStorage.setItem("member_id", data);
-          $scope.confirmation = "Your account has been created";
+          $().toastmessage('showSuccessToast', "Your account has been created");
           $scope.toggleLogin();
-          mixpanel_service.trackEvent('Registration Complete');
         } else {
-          $scope.confirmation = "This username is already in use";
-          mixpanel_service.trackEvent('Registration Error, username in use');
+          $().toastmessage('showSuccessToast', "This username is already in use");
         }
       }, function(err) {
         window.console.log(err);
@@ -100,4 +93,4 @@ function loginController($scope, $rootScope, login_service, mixpanel_service) {
   })();
 }
 
-loginController.$inject = ['$scope', '$rootScope', 'login_service', 'mixpanel_service'];
+loginController.$inject = ['$scope', '$rootScope', 'login_service'];

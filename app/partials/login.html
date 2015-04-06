@@ -5,11 +5,7 @@
 </div>
 
 
-<div id="pages_maincontent" style="margin-top:-70px" ng-show="showLogin == true">
-
-  <div class="panel yellow" ng-show="showConfirmation == true">
-    {{confirmation}}
-  </div>
+<div id="pages_maincontent" style="margin-top:-70px" ng-show="showLogin == true" ng-model="newaccount">
 
   <h2 class="page_subtitle"> Register </h2>
 
@@ -41,31 +37,18 @@
   <label id="loader" style="display:none;"><img src="images/loader.gif" alt="Loading..." id="LoadingGraphic"></label>
   </form>
 
-
-</div>
-  
-
-
-<div class="panel" ng-show="showLogin == true">
+<br/><br/>
    <h2 class="page_subtitle">Login </h2>
   <br/>
   <br/>
-  <form>
-    <table class="full-width text-center">
-      <tr>
-        <td>Email</td>
-        <td>
-          <input type="text" ng-model="account.username">
-        </td>
-      </tr>
-      <tr>
-        <td>Password</td>
-        <td>
-          <input type="password" ng-model="account.password">
-        </td>
-      </tr>
-    </table>
-    <input type="submit" class="btn btn-primary radius" ng-click="login(account)" value="Login" />
+
+  <label>Email:</label>
+  <input type="text" name="username" class="form_input required" ng-model="account.email">
+  
+  <label>Password:</label>
+  <input type="text" name="phone" value="" class="form_input required email" ng-model="account.password">
+
+   <input type="submit" name="submit" class="form_submit" id="submit" ng-click="login(account)" value="Login" />
   </form>
 </div>
 
