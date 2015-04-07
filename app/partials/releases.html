@@ -3,7 +3,7 @@
 <div ng-repeat="(key, value) in releases" style="clear:both;width:100%;margin-bottom:0px">
 
 <!-- <h3 class="page_subtitle">{{value.month}}</h3> -->
-  <li class="swipeout" ng-repeat="r in value.products | filter:filterReleases" style="min-height: 120px;">
+  <div class="swipeout" ng-repeat="r in value.products | filter:filterReleases">
     <div class="swipeout-content item-content" >
       <div class="post_entry">
 
@@ -13,9 +13,9 @@
           <span class='date' style="font-size:11px">{{r.release_date}}</span>
           <br/> <span class='price'>${{r.price}} </span>
           <br/>
-          <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+        <!--   <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
           <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-
+ -->
           </div>
           <div class="post_swipe">
             <a href="#" ng-click="details(r)"><img src="images/swipe_more.png" alt="" title=""></a>
@@ -25,9 +25,9 @@
   </li>  
 </div>
 
-
+<br/>
 <h3 class="page_subtitle">Coming Soon</h3>
-  <li class="swipeout" ng-repeat="r in coming" style="min-height: 120px;">
+  <li class="swipeout" ng-repeat="r in coming" >
     <div class="swipeout-content item-content" >
       <div class="post_entry">
 
@@ -36,9 +36,6 @@
           <h4> {{r.name}}  </h4>
           <span class='price'>${{r.price}} </span>
           <br/>
-          <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-          <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-
           </div>
           <div class="post_swipe">
             <a href="#" ng-click="details(r)"><img src="images/swipe_more.png" alt="" title=""></a>

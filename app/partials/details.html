@@ -22,6 +22,11 @@
       </div>
       <br/>
         <div style="text-align:center">
+          
+          <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+          <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+          <div style="clear:both"></div> <br/>
+
           <span ng-show="r.showBuyLink == false">
             <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> Remind Me</a>
           </span>
@@ -33,6 +38,8 @@
           <span>
             <a href="{{r.link}}" class='button_small' ng-click="share(r)">Share </a>
           </span>
+
+     
         </div>
     <br/>
     <!-- page content wrapper ends -->

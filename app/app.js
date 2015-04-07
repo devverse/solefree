@@ -86,9 +86,8 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     when('/sales', {
       templateUrl: admin_url + 'partials/sales.html',
       controller: salesController
-    });
-
-    //.otherwise({redirectTo:'/home'});
+    })
+    .otherwise({redirectTo:'/'});
   }
 ]);
 
@@ -130,10 +129,4 @@ soleinsiderApp.directive('lazyLoadDirective', function() {
       $('img.lazy').lazyload();
     }
   };
-});
-
-$(document).ready(function() {
-  $(".mainMenuWrapper a").click(function() {
-    $('.mainMenuButton').trigger('click');
-  });
 });

@@ -553,6 +553,7 @@ margin:0 0 20px 0;
 .post_entry img {
   width: 100%;
   height: auto;
+  clear: both;
 }
 .page_single ul.simple_list{
 padding:0px 0 20px 10px;
@@ -851,14 +852,23 @@ margin:0 0 20px 0;
 }
 .list-block .swipeout-actions-left a,
 .list-block .swipeout-actions-right a {
-padding:0 30px;
+padding:0 10px;
 margin:0 0 0 20px;
 color: #fff;
 background: #0c928d;
 text-align:center;
 }
+.swipeout {
+  height: auto;
+  clear: both;
+  margin-bottom: 5px;
+  float: left;
+}
+.swipeout-content {
+  clear: both;
+}
 .post_thumb{
-width:40%;
+width:38%;
 float:left;
 }
 .post_thumb img{
@@ -866,7 +876,7 @@ display:inline-block;
 max-width:100%;
 }
 .post_details{
-width:48%;
+width:50%;
 float:left;
 margin:0 0 0 1%;
 }
@@ -878,13 +888,14 @@ margin:0px 0 10px 0;
 padding:0px;
 }
 .post_swipe{
-width:5%;
+width:7%;
 float:right;
 -webkit-box-align: center;
 -ms-flex-align: center;
 -webkit-align-items: center;
 align-items: center;
 text-align:center;
+margin-top: -20px;
 }
 .post_swipe img{
 padding:50px 0 0 0;

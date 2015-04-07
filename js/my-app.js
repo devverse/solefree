@@ -19,6 +19,10 @@ $(document).ready(function() {
 		var link = $(this).attr('href');
 		location.href = link;
 	});
+
+	$(".home_link").on('click', function() {
+		location.href = "main.html";
+	});
 });
 
 $(document).on('pageInit', function (e) {
