@@ -3,7 +3,14 @@
       <!-- page title starts -->
       <div class="" style="text-align:center">
         <span style="font-weight:bold">{{r.name}}</span>
-        <br/>{{r.release_date}} (${{r.price}})
+         <br/>
+
+        <div ng-show="r.coming_soon == 1">
+          Coming Soon
+        </div>
+        <div ng-show="r.coming_soon == 0">
+          {{r.release_date}} (${{r.price}})
+        </div>
       </div>
 
       <div style="text-align:center">

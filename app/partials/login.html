@@ -18,6 +18,9 @@
   
   <label>Phone: (NO SPACES OR HYPHENS)</label>
   <input type="text" name="phone" value="" class="form_input required email" ng-model="newaccount.phone_number">
+
+   <label>Password</label>
+  <input type="password" name="phone" value="" class="form_input required email" ng-model="newaccount.password">
   
   <label>Carriers</label>
   <select class="carrier" data-theme="c" ng-model="newaccount.carrier">
@@ -35,6 +38,8 @@
   <input type="submit" name="submit" class="form_submit" id="submit" ng-click="register(newaccount)" value="Register" />
  
   <label id="loader" style="display:none;"><img src="images/loader.gif" alt="Loading..." id="LoadingGraphic"></label>
+
+
   </form>
 
 <br/><br/>
@@ -46,7 +51,7 @@
   <input type="text" name="username" class="form_input required" ng-model="account.email">
   
   <label>Password:</label>
-  <input type="text" name="phone" value="" class="form_input required email" ng-model="account.password">
+  <input type="password" name="phone" value="" class="form_input required email" ng-model="account.password">
 
    <input type="submit" name="submit" class="form_submit" id="submit" ng-click="login(account)" value="Login" />
   </form>

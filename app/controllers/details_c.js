@@ -166,7 +166,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&comment=" + $scope.new_comment;
 
     comments_service.leaveComment(post).then(function(data) {
-      $().toastmessage('showSuccessToast', "Comment saved!");
+      $().toastmessage('showSuccessToast', "Comment posted!");
       $scope.getComments();
       $scope.new_comment = "";
     }, function(err) {
