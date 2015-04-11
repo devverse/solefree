@@ -42,6 +42,25 @@ Template:	Minio - Mobile Web APP Template
 /*===============================================*/
 /* 2. GENERAL		 						 */
 /*===============================================*/	
+.date_price {
+  overflow: hidden;
+}
+.date {
+  width: 47%;
+  float: left;
+  font-size: 13px;
+}
+.price {
+  width: 40%;
+  float: left;
+  color: red;
+  font-weight: bold;
+  font-size: 13px;
+}
+.sneaker_title {
+  color: #333;
+}
+
 html,
 body {
 position: relative;
@@ -511,16 +530,16 @@ background-size: 100%;
 background-size: cover;
 }
 #pages_maincontent{
-width:90%;
-padding:30px 5% 30px 5%;
-margin:0px;
-position: absolute; 
-top: 60px; 
-left: 0; 
-right: 0; 
-bottom: 0px;
-overflow: scroll; 
--webkit-overflow-scrolling: touch;
+  width:98%;
+  padding:30px 1% 30px 1%;
+  margin:0px;
+  position: absolute; 
+  top: 60px; 
+  left: 0; 
+  right: 0; 
+  bottom: 0px;
+  overflow: scroll; 
+  -webkit-overflow-scrolling: touch;
 }
 h2.page_subtitle{
 font-size:24px;
@@ -865,12 +884,12 @@ text-align:center;
 .swipeout {
   height: auto;
   clear: both;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   float: left;
   border: 1px solid #ccc;
   box-shadow: 5px 5px 2.5px #aaa;
-  padding: 10px;
-  width: 98%;
+  padding: 5px;
+  width: 95%;
 }
 .swipeout-content {
   clear: both;
@@ -1237,14 +1256,12 @@ max-width:40%;
 width:20%;
 }
 #pages_maincontent{
-width:90%;
-padding:20px 5% 20px 5%;
-margin:0px;
-position: absolute; 
-top: 50px; 
+  width:96%;
+  padding: 20px 1% 20px 1%;
+  margin:0px;
+  position: absolute; 
+  top: 50px; 
 }
-}
-
 .maxWidth {
   width: 100%;
 }

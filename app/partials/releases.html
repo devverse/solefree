@@ -9,9 +9,13 @@
 
           <div class="post_thumb"><img src="http://soleinsider.com/public/products/{{r.image}}" alt="" title=""></div>
           <div class="post_details">
-          <h4> {{r.name}}  </h4>
-          <span class='date' style="font-size:11px">{{r.release_date}}</span>
-          <br/> <span class='price'>${{r.price}} </span>
+          <h4 class="sneaker_title"> {{r.name}}  </h4>
+
+          <div class="date_price">
+            <span class="date">{{r.release_date}}</span>
+            <span class="price">${{r.price}} </span>
+          </div>
+
           <br/>
         <!--   <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
           <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
