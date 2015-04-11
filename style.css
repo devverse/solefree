@@ -105,7 +105,7 @@ hr {
   margin-bottom: 10px;
 }
 .featuredImage {
-  max-height: 120px;
+  max-height: 70px;
 }
 .featured-carousel  {
   height: 350px;
@@ -260,9 +260,13 @@ line-height:50px;
 border-bottom:1px #1d2020 solid;
 }
 .list-nav ul li a{
-color:#FFFFFF;
-font-size:17px;
-font-weight:300;
+  color:#FFFFFF;
+  font-size:17px;
+  font-weight:300;
+}
+.list-nav ul li a:hover {
+  color: #4B9EBF;
+  font-weight:300;
 }
 .list-nav-small{
 padding:20px 0 20px 0px;
@@ -868,6 +872,7 @@ text-align:center;
   clear: both;
 }
 .post_thumb{
+min-width: 100px;
 width:38%;
 float:left;
 }
