@@ -42,37 +42,6 @@ Template:	Minio - Mobile Web APP Template
 /*===============================================*/
 /* 2. GENERAL		 						 */
 /*===============================================*/	
-.date_price {
-  overflow: hidden;
-}
-.date {
-  width: 58%;
-  float: left;
-  font-size: 13px;
-}
-.price {
-  width: 30%;
-  float: left;
-  color: red;
-  font-weight: bold;
-  font-size: 13px;
-}
-.sneaker_title {
-  color: #333;
-}
-.details_slideshow {
-  height: auto;
-  clear: both;
-  margin-bottom: 15px;
-  float: left;
-  border: 2px solid #ccc;
-  box-shadow: 5px 5px 2.5px #aaa;
-  padding: 5px;
-  width: 96%;
-  text-align: center;
-  margin-top: 5px;
-}
-
 html,
 body {
 position: relative;
