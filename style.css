@@ -46,12 +46,12 @@ Template:	Minio - Mobile Web APP Template
   overflow: hidden;
 }
 .date {
-  width: 47%;
+  width: 58%;
   float: left;
   font-size: 13px;
 }
 .price {
-  width: 40%;
+  width: 30%;
   float: left;
   color: red;
   font-weight: bold;
@@ -59,6 +59,18 @@ Template:	Minio - Mobile Web APP Template
 }
 .sneaker_title {
   color: #333;
+}
+.details_slideshow {
+  height: auto;
+  clear: both;
+  margin-bottom: 15px;
+  float: left;
+  border: 2px solid #ccc;
+  box-shadow: 5px 5px 2.5px #aaa;
+  padding: 5px;
+  width: 96%;
+  text-align: center;
+  margin-top: 5px;
 }
 
 html,
@@ -184,6 +196,27 @@ padding:10px 20px;
 text-align:center;
 -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
 cursor: pointer;
+}
+a.button_small {
+  background-color:#0C91BE; 
+  display:inline-block;
+  color:#FFFFFF; 
+  padding:10px 20px;
+  text-align:center;
+  -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
+  cursor: pointer;
+}
+a.button_tiny {
+  background-color:#0C91BE; 
+  display:inline-block;
+  color:#FFFFFF; 
+  padding:5px 5px;
+  text-align:center;
+  -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
+  font-size: 12px;
+  margin-top: 8px;
+  -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
+  cursor: pointer;
 }
 .call_button a{
 display:block;
