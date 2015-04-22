@@ -166,14 +166,42 @@ text-align:center;
 -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
 cursor: pointer;
 }
-a.button_small {
-  background-color:#0C91BE; 
+.button_menu_small {
   display:inline-block;
   color:#FFFFFF; 
-  padding:10px 20px;
+  padding:0px 0px;
   text-align:center;
   -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
   cursor: pointer;
+  border: 1px solid #0c928d;
+  color: #0c928d;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+  line-height: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: none;
+  height:20px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  background-color:#333;
+  color: #fff;
+  margin-top: 5px;
+  width: 32%;
+  float: left;
+
 }
 a.button_tiny {
   background-color:#0C91BE; 

@@ -20,17 +20,17 @@ function loginController($scope, $rootScope, login_service) {
   };
 
   $scope.login = function(account) {
-    var post = "&username=" + account.username;
+    var post = "&username=" + account.email;
     post += "&password=" + account.password;
     post += "&member_type=" + soleinsider.member_type;
 
     login_service.login(post).then(function(data) {
       if (data !== "false" && data !== false && data.length !== 0) {
-        localStorage.setItem("username", account.username);
+        localStorage.setItem("username", account.email);
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
       } else {
-        $().toastmessage('showSuccessToast', "Incorrect username or password");
+        $().toastmessage('showErrorToast', "Incorrect username or password");
       }
     }, function(err) {
 
@@ -52,15 +52,13 @@ function loginController($scope, $rootScope, login_service) {
   };
 
   $scope.register = function(newaccount) {
-
-    console.log(newaccount);
     var validated = $scope.validateAccount(newaccount);
 
     if (!validated) {
       $("html, body").animate({
         scrollTop: 0
       }, "slow");
-      $().toastmessage('showSuccessToast', "Incorrect information used");
+      $().toastmessage('showErrorToast', "Incorrect information used");
       return;
     } else {
 
@@ -68,17 +66,16 @@ function loginController($scope, $rootScope, login_service) {
       post += "&password=" + newaccount.password;
       post += "&phone=" + newaccount.phone_number;
       post += "&carrier=" + newaccount.carrier;
-      post += "&member_type=" + soleinsider.member_type;
 
       login_service.createAccount(post).then(function(data) {
         $scope.showConfirmation = true;
         if (data !== "false" && data !== false && data.length !== 0) {
           localStorage.setItem("username", newaccount.username);
           localStorage.setItem("member_id", data);
-          $().toastmessage('showSuccessToast', "Your account has been created");
+          $().toastmessage('showErrorToast', "Your account has been created");
           $scope.toggleLogin();
         } else {
-          $().toastmessage('showSuccessToast', "This username is already in use");
+          $().toastmessage('showErrorToast', "This username is already in use");
         }
       }, function(err) {
         window.console.log(err);

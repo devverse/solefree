@@ -1,11 +1,3 @@
-var soleinsiderApp = angular.module('soleinsiderApp', []);
-
-soleinsiderApp.config(['$httpProvider',
-  function($httpProvider) {
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-  }
-]);
-
 function storeController($scope, $rootScope, store_service) {
   $scope.app_name = app_name;
   $scope.page_title = page_title;
@@ -13,8 +5,7 @@ function storeController($scope, $rootScope, store_service) {
   $scope.category = "Best Sellers";
   $scope.page = 10;
   $scope.searchStr = "nike";
-  $scope.menu_colors = ['#80a697', '#c47acb', '#649ae1', '#b3cfc1', '#ec6f5a', '#f7c65f', '#a992e2', '#75d4cb', '#dc6e6e'];
-
+  $scope.showLoading = true;
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
@@ -23,17 +14,7 @@ function storeController($scope, $rootScope, store_service) {
    $scope.getMenu = function() {
     store_service.getMenu().then(function(data) {
       data.sort(orderByNameAscending);
-
-      var max = $scope.menu_colors.length, j = 0;
-      for (var i =0; i < data.length; i++) {
-        if (i == max) {
-          j = 0;
-        }
-          data[i].menu_color = $scope.menu_colors[j];
-        j++;
-      }
       $scope.menu = data;
-      console.log(data);
     }, function(err) {
       window.console.log(err);
     });
@@ -131,7 +112,7 @@ function storeController($scope, $rootScope, store_service) {
   $scope.init = (function() {
     $scope.getMenu();
     $scope.getDefaultItems();
-    $rootScope.$emit("featured", true);
+    $rootScope.$emit("featured", false);
   })();
 }
 

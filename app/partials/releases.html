@@ -2,7 +2,7 @@
 
 <div ng-repeat="(key, value) in releases" style="clear:both;width:100%;margin-bottom:0px">
 
-<!-- <h3 class="page_subtitle">{{value.month}}</h3> -->
+ <h3 class="page_subtitle">{{value.month}}</h3> 
   <div class="swipeout" ng-repeat="r in value.products | filter:filterReleases" ng-cloak>
     <div class="swipeout-content item-content" >
       <div class="post_entry">
@@ -35,7 +35,8 @@
 </div>
 
 <br/>
-<h3 class="page_subtitle" ng-cloak>Coming Soon</h3>
+
+<h3 class="page_subtitle" ng-show="coming.length > 0">Coming Soon</h3>
   <li class="swipeout" ng-repeat="r in coming" ng-cloak>
     <div class="swipeout-content item-content" >
       <div class="post_entry">

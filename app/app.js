@@ -11,62 +11,50 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
     }).
-
     when('/releases', {
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
     }).
-
     when('/past_releases', {
       templateUrl: admin_url + 'partials/past_releases.html',
       controller: pastReleasesController
     }).
-
     when('/restock_history', {
       templateUrl: admin_url + 'partials/past_restocks.html',
       controller: pastRestocksController
     }).
-
     when('/restocks', {
       templateUrl: admin_url + 'partials/restocks.html',
       controller: restocksController
     }).
-
     when('/myrestocks', {
       templateUrl: admin_url + 'partials/myrestocks.html',
       controller: myRestocksController
     }).
-
     when('/myreleases', {
       templateUrl: admin_url + 'partials/myreleases.html',
       controller: myReleasesController
     }).
-
     when('/avail', {
       templateUrl: admin_url + 'partials/still_avail.html',
       controller: availController
     }).
-
     when('/account', {
       templateUrl: admin_url + 'partials/account.html',
       controller: accountController
     }).
-
     when('/login', {
       templateUrl: admin_url + 'partials/login.html',
       controller: loginController
     }).
-
     when('/coupons', {
       templateUrl: admin_url + 'partials/coupons.html',
       controller: couponsController
     }).
-    
     when('/details', {
       templateUrl: admin_url + 'partials/details.html',
       controller: detailsController
     }).
-
     when('/news', {
       templateUrl: admin_url + 'partials/news.html',
       controller: newsController
@@ -86,6 +74,14 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     when('/sales', {
       templateUrl: admin_url + 'partials/sales.html',
       controller: salesController
+    }).
+    when('/store', {
+      templateUrl: admin_url + 'partials/store.html',
+      controller: storeController
+    }).
+    when('/clothing', {
+      templateUrl: admin_url + 'partials/clothing.html',
+      controller: clothingStoreController
     })
     .otherwise({redirectTo:'/'});
   }
