@@ -42,6 +42,9 @@ Template:	Minio - Mobile Web APP Template
 /*===============================================*/
 /* 2. GENERAL		 						 */
 /*===============================================*/	
+html, body, .pageContentWrapper, #pages_maincontent {
+  overflow-x: hidden !important;
+}
 html,
 body {
 position: relative;
