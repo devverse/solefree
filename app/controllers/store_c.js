@@ -11,9 +11,9 @@ function storeController($scope, $rootScope, store_service) {
     window.open(product.clickUrl, '_blank', 'location=yes');
   };
 
-   $scope.getMenu = function() {
+  $scope.getMenu = function() {
     store_service.getMenu().then(function(data) {
-      data.sort(orderByNameAscending);
+      data.sort($scope.sortBy('name', false, function(a){return a.toUpperCase()}))
       $scope.menu = data;
     }, function(err) {
       window.console.log(err);
@@ -80,34 +80,37 @@ function storeController($scope, $rootScope, store_service) {
     });
   };
 
-  function orderByNameAscending(a, b) {
-    if (a.name == b.name) {
-      return 0;
-    } else if (a.name > b.name) {
-      return 1;
-    }
+  $scope.sortBy = function(field, reverse, primer){
+    var key = primer ? 
+      function(x) {return primer(x[field])} : 
+      function(x) {return x[field]};
 
-    return -1;
-  };
+    reverse = !reverse ? 1 : -1;
 
-  $scope.paginate = function() {
+    return function (a, b) {
+      return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+    } 
+  }
 
-    $("html, body").animate({
-      scrollTop: 0
-    }, 10);
-
+  $scope.paginate = function(){
     $scope.showLoading = true;
     $scope.page = $scope.page + 20;
     var post = "search=" + $scope.searchStr;
     post += "&offset=" + $scope.page;
 
-    store_service.paginate(post).then(function(data) {
-      $scope.products = data;
+    store_service.paginate(post).then(function (data) {
       $scope.showLoading = false;
-    }, function(err) {
-      window.console.log(err);
+        $scope.completePaginate(data);
+    }, function (err) {
+        window.console.log(err);
     });
   }
+
+  $scope.completePaginate = function(data) {
+    for (var i = 0; i < data.length; i++) {
+      $scope.products.push(data[i]);
+    }
+  };
 
   $scope.init = (function() {
     $scope.getMenu();

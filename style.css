@@ -639,7 +639,7 @@ font-size:80px;
 line-height:90px;
 font-weight:900;
 letter-spacing:-1px;
-color:#fff;
+color: #fff;
 } 
 .swiper-slide span.subtitle{
 margin:0px 0 10px 0;
@@ -654,7 +654,6 @@ opacity: 1;
 background: #fff;
 }
 a.swiper_read_more{
-color:#ffca2e;
 border:1px solid #fff;
 padding:20px 30px;
 text-decoration:none;
@@ -919,8 +918,8 @@ text-align:center;
   clear: both;
   margin-bottom: 15px;
   float: left;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 2.5px #ddd;
+  border: 1px solid #eee;
+  box-shadow: 1px 1px 1.5px #eee;
   padding: 5px;
   width: 95%;
 }
@@ -935,7 +934,7 @@ text-align:center;
 .post_thumb img{
   display:inline-block;
   max-width:100%;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   padding: 2px;
   margin-right: 3px;
 }
@@ -1274,7 +1273,8 @@ font-size:20px;
 line-height:20px;
 } 
 a.swiper_read_more{
-color:#ffca2e;
+background-color: #000;
+color:#fff;
 padding:10px 20px;
 margin:30px 0 0 0;
 font-size:14px;

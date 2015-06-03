@@ -1,3 +1,7 @@
+.paginate_button {
+  width: 88%;
+}
+
 .date_price {
   overflow: hidden;
 }
