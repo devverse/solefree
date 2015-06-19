@@ -1,4 +1,27 @@
-<div id="pages_maincontent" ng-show="showLogin == false" style="margin-top:-50px">
+<div class="login-page bg3">
+    <div class="login-page-overlay"></div>
+    <div class="login-page-wrapper">
+        <a href="#" class="login-logo"></a>
+        <p>
+            Please enter your login credentials bellow. 
+        </p>
+        <input type="text" class="login-username" placeholder="username" ng-model="newaccount.email">
+
+        <input type="password" class="login-password" placeholder="password" ng-model="account.password">
+
+        <div class="one-half">
+            <a href="#" class="button button-green" ng-click="login(account,$event)">Login</a>
+        </div>
+        <div class="one-half last-column">
+            <a href="#/signup" class="button button-blue">Signup</a>
+        </div>
+        <div class="clear"></div>
+        <a class="forgot" href="#">Forgot Password?</a>
+    </div>            
+</div>
+
+
+<!-- <div id="pages_maincontent" ng-show="showLogin == false" style="margin-top:-50px">
   <b> You are logged in as {{username}} </b> <br/>
   <a  class='button_small' ng-click="logout()">Logout</a>
 </div>
@@ -57,3 +80,4 @@
 </div>
 
 </div>
+ -->

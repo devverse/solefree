@@ -19,7 +19,9 @@ function loginController($scope, $rootScope, login_service) {
     $scope.toggleLogin();
   };
 
-  $scope.login = function(account) {
+  $scope.login = function(account, $event) {
+    $event.preventDefault();
+
     var post = "&username=" + account.email;
     post += "&password=" + account.password;
     post += "&member_type=" + soleinsider.member_type;

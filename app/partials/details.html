@@ -1,72 +1,66 @@
-   <!-- page content wrapper starts -->
-    <div class="pageContentWrapper" style="margin-top:0px"> 
-      <!-- page title starts -->
-      <div class="" style="text-align:center">
-        <span style="font-weight:bold">{{r.name}}</span>
-         <br/>
-
-        <div ng-show="r.coming_soon == 1">
-          Coming Soon
-        </div>
-        <div ng-show="r.coming_soon == 0">
-          {{r.release_date}} (${{r.price}})
-        </div>
-      </div>
-
-        <!-- the viewport -->
-        <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
-          <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
-            <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
-              <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth">
-              <br/>
-            </div>
-          </div>
-          <!-- the controls -->
-          <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
-          </div>
-        </div>
-      </div>
-      <br/>
-        <div style="text-align:center" class="">
-          
-          <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-          <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-          <div style="clear:both"></div> <br/>
-
-          <span ng-show="r.showBuyLink == false">
-            <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> Remind Me</a>
-          </span>
-
-          <span>
-            <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> Add to calander</a>
-          </span>
-
-          <span>
-            <a href="{{r.link}}" class='button_small' ng-click="share(r)">Share </a>
-          </span>
-
-     
-        </div>
+<!-- page content wrapper starts -->
+<div class="pageContentWrapper" style="margin-top:0px">
+  <!-- page title starts -->
+  <div class="" style="text-align:center">
+    <span style="font-weight:bold">{{r.name}}</span>
     <br/>
-    <!-- page content wrapper ends -->
-  <!-- Comments -->
-  <div id="comments" class="">
-    
-    <div ng-repeat="comment in comments" class="commentDiv">
-     <div class="clear"></div>
-      <div class="{{comment.cssClass}}" style="margin-bottom:15px">
-        <p>{{comment.comment}}</p>
-        <p> - {{comment.email.substr(0,6)}} ****** {{comment.comment_date}}</p>
-      </div>
+    <div ng-show="r.coming_soon == 1">
+      Coming Soon
+    </div>
+    <div ng-show="r.coming_soon == 0">
+      {{r.release_date}} (${{r.price}})
     </div>
   </div>
-
-  <br/><br/><br/><br/><br/>
-  <h3> Leave a comment </h3>
-
-  <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
-
-  </textarea>
-
-  <br/>
-  <a class="button" ng-click="submitComment()">Leave Comment</a>
+  <!-- the viewport -->
+  
+  <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
+    <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
+      <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
+        <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth">
+        <br/>
+      </div>
+    </div>
+    <!-- the controls -->
+    <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
+    </div>
+  </div>
+</div>
+<div style="text-align:center" class="">
+  
+  <span>
+    <a class='button button-green' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+  </span>
+  <span>
+    <a class='button button-red' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+  </span>
+  <div style="clear:both"></div>
+  <span ng-show="r.showBuyLink == false">
+    <a data-product-id='{{r.product_id}}' class='button-dark button' ng-click="addReminder(r)"> Remind Me</a>
+  </span>
+  <span>
+    <a href="{{r.link}}" class='button-dark button' ng-click="addToCalender(r)"> Add to calander</a>
+  </span>
+  <span>
+    <a href="{{r.link}}" class='button-dark button' ng-click="share(r)">Share </a>
+  </span>
+  
+</div>
+<br/>
+<!-- page content wrapper ends -->
+<!-- Comments -->
+<div id="comments" class="">
+  
+  <div ng-repeat="comment in comments" class="commentDiv">
+    <div class="clear"></div>
+    <div class="{{comment.cssClass}}" style="margin-bottom:15px">
+      {{comment.comment}} <br/>
+      {{comment.email.substr(0,6)}} ****** {{comment.comment_date}}
+    </div>
+  </div>
+</div>
+<br/><br/><br/><br/><br/>
+<h3> Leave a comment </h3>
+<textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
+</textarea>
+<br/>
+<a class="button-blue button-3d" ng-click="submitComment()">Leave Comment</a>

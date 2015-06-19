@@ -118,10 +118,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
       divisor++;
       if (divisor / 1 == 1) {
-        comments[i].cssClass = 'from-me';
+        comments[i].cssClass = 'speach-left';
       } else {
         divisor = 0;
-        comments[i].cssClass = 'from-them';
+        comments[i].cssClass = 'speach-right blue-bubble';
       }
     }
 

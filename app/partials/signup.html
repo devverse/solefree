@@ -1,0 +1,30 @@
+<div class="login-page bg3">
+    <div class="login-page-overlay"></div>
+    <div class="login-page-wrapper">
+        <h1 style="color:#fff">
+        Please signup below.
+        </h1>
+        <input placeholder="username" type="text" class="login-username" ng-model="newaccount.email">
+        <input placeholder="password" type="password" class="login-password" ng-model="newaccount.password">
+        <input placeholder="phone" type="text" class="login-username" ng-model="newaccount.phone_number">
+        <select class="login-username" data-theme="c" ng-model="newaccount.carrier">
+            <option value="1">AT&T</option>
+            <option value="2">Verizon</option>
+            <option value="3">T-Mobile</option>
+            <option value="4">Sprint</option>
+            <option value="5">Virgin Mobile</option>
+            <option value="6">US Cellular</option>
+            <option value="7">Nextel</option>
+            <option value="8">Boost</option>
+            <option value="9">Alltel</option>
+        </select>
+        <div class="one-half">
+            <a href="#/signup" class="button button-blue" ng-click="register(newaccount, $event)">Signup</a>
+        </div>
+        <div class="one-half last-column">
+            <a href="#/login" class="button button-green">Login</a>
+        </div>
+        <div class="clear"></div>
+        <a class="forgot" href="#">Forgot Password?</a>
+    </div>
+</div>

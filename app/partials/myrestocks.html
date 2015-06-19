@@ -1,9 +1,5 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">My Restocks</span>
-</div>
-
-<div class="panel yellow" ng-show="showerror == true">
-  {{errorMessage}}
+<div class="static-notification-yellow" ng-show="showerror == true">
+  <p class="center-text uppercase"> {{errorMessage}}</p>
 </div>
 
 <div ng-repeat="r in restocks" class="product">

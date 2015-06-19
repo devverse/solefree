@@ -6,6 +6,7 @@ function storeController($scope, $rootScope, store_service) {
   $scope.page = 10;
   $scope.searchStr = "nike";
   $scope.showLoading = true;
+  $scope.menu = [];
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
@@ -14,7 +15,10 @@ function storeController($scope, $rootScope, store_service) {
   $scope.getMenu = function() {
     store_service.getMenu().then(function(data) {
       data.sort($scope.sortBy('name', false, function(a){return a.toUpperCase()}))
-      $scope.menu = data;
+       for (var i =0; i < data.length; i++) {
+        $scope.menu.push(data[i]);
+      }
+      jQuery(".menu-dropdown option[value='? undefined:undefined ?']").remove();
     }, function(err) {
       window.console.log(err);
     });
@@ -44,19 +48,15 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.search = function(search) {
+    $scope.products = [];
     $scope.showLoading = true;
     $scope.page = 10;
     $scope.searchStr = search;
-    $scope.category = $scope.searchStr.replace("_", " ");
+    $scope.category = $scope.searchStr.replace(" ", "_");
     var products = $scope.getCache(search);
 
     if (products !== false) {
       $scope.products = products;
-      $('#content-container').toggleClass('active');
-      $('#sidemenu').toggleClass('active');
-      setTimeout(function() {
-        $('#sidemenu-container').toggleClass('active');
-      }, 500);
       $scope.showLoading = false;
     } else {
       $scope.completeSearch(search);
@@ -64,13 +64,7 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.completeSearch = function(search) {
-
-    $('#content-container').toggleClass('active');
-    $('#sidemenu').toggleClass('active');
-    setTimeout(function() {
-      $('#sidemenu-container').toggleClass('active');
-    }, 500);
-
+    search = search.replace(" ", "_");
     store_service.search(search).then(function(data) {
       $scope.products = data;
       $scope.setCache(search, data);
@@ -95,7 +89,7 @@ function storeController($scope, $rootScope, store_service) {
   $scope.paginate = function(){
     $scope.showLoading = true;
     $scope.page = $scope.page + 20;
-    var post = "search=" + $scope.searchStr;
+    var post = "search=" + $scope.searchStr.replace(" ", "_");
     post += "&offset=" + $scope.page;
 
     store_service.paginate(post).then(function (data) {

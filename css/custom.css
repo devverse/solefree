@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+.page-logo {
+  	width: 120px !important;
+	margin-top: 20px !important;
+	height: 30px !important;
+}
+
+.page-logo h2{
+	color: white;
+	font-family: 'Pacifico', cursive;
+	font-size: 22px !important;
+}
+
+.content-section h1 {
+    text-transform: capitalize;
+}
+
+.title {
+	text-transform: capitalize;
+}
+
+.product {
+	overflow: hidden;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px #eee solid;
+	margin-bottom: 5px;
+	width: 95%;
+	margin-left: 5px;
+	padding: 10px;
+}
+
+.productLeft, .productRight {
+	float: left;
+}
+
+.productLeft img {
+	width: 100%;
+	max-height: 150px;
+	border-radius: 10px;
+}
+
+.productLeft {
+	width: 43%;
+	margin-right: 10px;
+}
+
+.productRight {
+	width: 47%;
+}
+
+.product_title {
+	font-weight: bold;
+}
+.clear {
+	clear: both;
+}
+
+.productBtn {
+	width:50%;
+	text-align:center
+}
+
+.news-post img {
+	width: 100%;
+	height: auto;
+}
+
+.paginate_button {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.shopify-image{
+	height: auto !important;
+	max-height: 400px !important;
+}
+
+.hot_or_not_btn {
+	float: left;
+	width: 40%;
+}
+
+.maxWidth {
+	width: 100%;
+}
+
+.menu-dropdown {
+	text-align: center;
+	width: 109%;
+	height: 50px;
+	font-size: 16px;
+	background-color: #202428;
+	color: #efefef;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+	line-height: 50px;
+	font-size: 12px;
+	padding-left: 20px;
+	padding-right: 00px;
+	display: block;
+	margin-top: -20px;
+	margin-bottom: 15px;
+}

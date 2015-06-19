@@ -2,11 +2,9 @@
   <span style="font-weight:bold;">Sales</span>
 </div>
 <div ng-repeat="r in sales | filter:formatPrice" class="product">
-
   <div class="productImages">
     <img src="{{r.image}}" class="productImage">
   </div>
-
   <div class="productDetails">
     <span class="product_title">{{r.name}}</span>
     <br/> <b class='price'>${{r.price}} </b>

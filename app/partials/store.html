@@ -1,49 +1,37 @@
-<ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
-<li>{{category}} </li>
-</ul>  
-
-
-<ul class="portfolioMenuWrapper" id="" style="text-align:center;margin-bottom:30px;overflow:hidden;margin-left:5%">
-<div class="button_menu_small" ng-repeat="m in menu" ng-click="search(m.search)">
-  {{m.name}}
+<div class="static-notification-blue">
+  <p class="center-text uppercase">{{category}}</p>
 </div>
-</ul>
+<select ng-model="form.type" required ng-change="search(form.type)" class="menu-dropdown">
+  <option value="Best Sellers"> Select A Category </option>
+  <option ng-repeat="m in menu" value="{{m.name}}">{{m.name}}</option>
+</select>
 
-<div class="swipeout" ng-repeat="p in products" ng-cloak>
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-
-          <div class="post_thumb">
-          <a href="#" ng-click="details(r)">
-          <img src="{{p.image.sizes.IPhone.url}}"/>
-          </a>
-          </div>  
-          <div class="post_details">
-          <h4 class="sneaker_title">  
-          <a href="#" ng-click="details(r)">{{p.name}} </a> </h4>
-
-          <div class="date_price">
-            <span class="date" style="width:20%;margin-top:5px">
-            {{p.priceLabel}}
-            </span>
-            <span class="price">
-              <a href="" ng-click="buyProduct(p)" class="button_small">Details</a>
-            </span>
-            <br/>
-          </div>
-
+<div ng-repeat="p in products" class="product">
+  
+  <!-- page title starts -->
+  <div class="productLeft">
+    <a href="#" ng-click="details(r)">
+      <img src="{{p.image.sizes.IPhone.url}}" class="shopify-image" />
+    </a>
+  </div>
+  <div class="productRight">
+    <h4 class="sneaker_title">
+    <a href="#" ng-click="details(r)">{{p.name}} </a> </h4>
+    <span class="price">Price {{p.priceLabel}}
+      <span ng-show="p.salePriceLabel != null">
+        <br/> Sales Price {{p.salePriceLabel}}
+      </span>
+      <span ng-show="p.salePriceRangeLabel != null">
+        <br/> Sales Price Range: {{p.salePriceRangeLabel}}
+      </span>
+    </span>
+    <br/>
     
-      </div>
-    </div>
- 
+    <a href="" ng-click="buyProduct(p)" class="button button-blue">Details</a>
+  </div>
 </div>
-</div>
-
 <div class="loading" ng-show="showLoading == true" style="text-align:center">
-  <img src="images/loader.gif" width="80px" height="80px" />
+  <img src="images/status.gif" width="80px" height="80px" style="display:inline" />
 </div>
 <br/><br/>
-
-
- <a class="button_small paginate_button" ng-click="paginate()" ng-show="showLoading == false"> View More </a> 
-
+<a class="button button-dark paginate_button" ng-click="paginate()" ng-show="showLoading == false"> View More </a>

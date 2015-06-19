@@ -8,9 +8,15 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
 
     $routeProvider.when('/', {
-      templateUrl: admin_url + 'partials/releases.html',
-      controller: releasesController
+      templateUrl: admin_url + 'partials/home.html',
+      controller: homeController
     }).
+
+    when('/index', {
+      templateUrl: admin_url + 'partials/home.html',
+      controller: homeController
+    }).
+
     when('/releases', {
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
@@ -46,6 +52,10 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     when('/login', {
       templateUrl: admin_url + 'partials/login.html',
       controller: loginController
+    }).
+    when('/signup', {
+      templateUrl: admin_url + 'partials/signup.html',
+      controller: signupController
     }).
     when('/coupons', {
       templateUrl: admin_url + 'partials/coupons.html',
@@ -101,7 +111,7 @@ soleinsiderApp.directive('featuredDirective', function() {
     $(".featured-carousel-pagination").append(link);
     ngrepeat_counter++;
     if (scope.$last) {
-      $('.featured-carousel').carousel();
+      jQuery('.featured-carousel').carousel();
       ngrepeat_counter = 1;
     }
   };
@@ -110,10 +120,10 @@ soleinsiderApp.directive('featuredDirective', function() {
 soleinsiderApp.directive('productImagesDirective', function() {
   return function(scope, element, attrs) {
     var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
-    $(".product-carousel-pagination").append(link);
+    jQuery(".product-carousel-pagination").append(link);
     ngrepeat_counter++;
     if (scope.$last) {
-      $('.product-carousel').carousel();
+      jQuery('.product-carousel').carousel();
       ngrepeat_counter = 1;
     }
   };
@@ -122,7 +132,7 @@ soleinsiderApp.directive('productImagesDirective', function() {
 soleinsiderApp.directive('lazyLoadDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-      $('img.lazy').lazyload();
+      jQuery('img.lazy').lazyload();
     }
   };
 });

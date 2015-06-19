@@ -1,137 +1,129 @@
-<html class="pixel-ratio-1 watch-active-state"><head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<!DOCTYPE html>
+<!-- saved from url=(0057)http://www.enableds.com/products/circle/gallery-wide.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0 minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<link rel="apple-touch-startup-image" href="images/apple-touch-startup-image-320x460.png">
-<title> SoleInsider</title>
-<link rel="stylesheet" href="css/framework7.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="style-custom.css">
-<link type="text/css" rel="stylesheet" href="css/swipebox.css">
+
+<title>SoleInsider</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/menu.css" rel="stylesheet" type="text/css">
+<link href="css/framework.css" rel="stylesheet" type="text/css">
+<link href="css/owl.theme.css" rel="stylesheet" type="text/css">
+<link href="css/swipebox.css" rel="stylesheet" type="text/css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+<link href="css/custom.css" rel="stylesheet" type="text/css">
+
 <link type="text/css" rel='stylesheet' href='css/carousel-style.css'>
 <link type="text/css" rel='stylesheet' href='css/carousel.css'>
-<link type="text/css" rel='stylesheet' href='assets/toast/resources/css/jquery.toastmessage.css'>
 
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,900" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jqueryui.js"></script>
+<script type="text/javascript" src="js/framework.plugins.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
 </head>
-<body id="mobile_wrap" class="">
+<body> 
 
-    <div class="statusbar-overlay"></div>
-
-    <div class="panel-overlay"></div>
-
-    <div class="panel panel-left panel-cover">
-      <nav class="list-nav">
-        <ul>
-          <li class="cart-icon"><a href="#/store" class="close-panel">Sneaker Store</a></li>
-         <!--  <li class="cart-icon"><a href="#/clothing" class="close-panel">Clothing Store</a></li> -->
-          <li class="cart-icon"><a href="#/releases" class="close-panel">Releases</a></li>
-          <li class="cart-icon"><a href="#/past_releases" class="close-panel">Past Releases</a></li>
-          <li class="heart-icon"><a href="#/restocks" class="close-panel">Restocks</a></li>
-          <li class="heart-icon"><a href="#/restock_history" class="close-panel">Past Restocks</a></li>
-          <li class="photos-icon"><a href="#/gallery" class="close-panel">Gallery</a></li>
-          <li class="list-icon"><a href="#/news" class="close-panel">News</a></li>
-          <li class="about-icon"><a href="#/account" class="close-panel">My Account</a></li>
-          <li class="about-icon"><a href="#/login" class="close-panel">Login</a></li>
-        </ul>
-      </nav>  
+<div id="preloader" style="display: none;">
+  <div id="status" style="display: none;">
+      <p class="center-text">
+      Loading the content...
+            <em>Loading depends on your connection speed!</em>
+        </p>
     </div>
-
-    <div class="views">
-
-      <div class="view view-main" data-page="projects">
-
-        <div class="navbar navbar-hidden">
-          <div class="navbar-inner">
-            <div class="left sliding"><div class="logo_title">SoleInsider</div></div>
-            <div class="right menu_open_icon"><a href="#" data-panel="left" class="link icon-only open-panel"></a></div>
-          </div>
-        </div>
-
-        <div class="pages navbar-through toolbar-through">
-
-          
-        <div data-page="projects" class="page no-toolbar no-navbar page-on-left">
-    <div class="page-content">
+</div>
     
-
-      
-    </div>
-  </div><div data-page="projects" class="page no-toolbar no-navbar page-on-center">
-    <div class="page-content">
+<div class="gallery-fix"></div> <!-- Important for all pages that have galleries or portfolios -->
     
-     <div class="navbarpages">
-       <div class="navbar_home_link"><a href="main.html" class="home_link"><img src="images/icons/white/home.png" alt="" title=""></a></div>
-       <div class="navbar_page_center">SoleInsider</div>
-       <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title=""></a></div>
-     </div>
-     <div id="pages_maincontent" class="" ng-app="soleinsiderApp" ng-controller="appController">
-      
-       <div ng-cloak ng-show="show_featured == true">
-    <div class="panel grey featured" style="text-align:center">
-      <span style="font-weight:bold;font-size:24px">Featured Sneakers</span>
-    </div>
-  </div>
-
-    <div class="pageContentWrapper" ng-show="show_featured == true" ng-cloak> 
-          <!-- the viewport -->
-            <span class="normal-div featured-carousel m-carousel m-fluid m-carousel-photos" style="width:95%;height:300px">
-
-              <span class="normal-div m-carousel-inner">
-                <span class="normal-div m-item" ng-repeat="f in featured" featured-directive>
-                  <h4>{{f.name}} - ${{f.price}}</h4>
-                  <img src="{{f.image.sizes.IPhone.url}}" ng-show="show_featured == true" class="featuredImage" style="clear:both;width: 45% !important;">
-                  <br/><br/>
-
-                  <a class="button" ng-click="buyProduct(f)">Details</a>
-                </span>
-              </span>
-
-              <!-- the controls -->
-              <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
-              </div>
-            </span>
-            
-    </div>
-
-      <div ng-view>
-      </div>
-   
-      <div class="clear"></div>
-      </div>
-      
-      
-    </div>
-  </div></div>
-        <!-- Bottom Toolbar-->
-        <div class="toolbar toolbar-hidden">
-              <div class="toolbar-inner">
-              <ul class="toolbar_icons icons_4row">
-              <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title=""></a></li>
-              <li><a href="features.html"><img src="images/icons/white/settings.png" alt="" title=""></a></li>
-              <li><a href="photos.html"><img src="images/icons/white/photos.png" alt="" title=""></a></li>
-              <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/heart.png" alt="" title=""></a></li>
-              </ul>
-              </div>  
+<div class="all-elements">  
+    <div class="header">
+        <a class="header-logo" href="index.html">SoleInsider</a>
+        <div class="header-icons">
+            <a class="bg-green2 show-share-bottom" href="http://www.enableds.com/products/circle/gallery-wide.html#"><i class="fa fa-share"></i></a>
+            <a class="twitter-color" href="http://www.twitter.com/soleinsider"><i class="fa fa-twitter"></i></a>
+            <a class="facebook-color" href="https://www.facebook.com/pages/Sole-Insider/125715087614718"><i class="fa fa-facebook"></i></a>
         </div>
+        <div class="decoration"></div>
+    </div>
+    <div class="header-clear"></div>
+    <!-- Left Top Menu -->
+    
+    <ul class="top-menu">
+        <li class="has-submenu">
+            <a class="deploy-submenu" href="http://www.enableds.com/products/circle/gallery-wide.html#"><i class="fa fa-cog bg-blue2"></i>Homepages<i class="fa fa-plus"></i></a>
+            <ul class="submenu">
+                <li><a href="http://www.enableds.com/products/circle/index.html"><i class="fa fa-angle-right"></i>Circle Slider<i class="fa fa-circle"></i></a></li>
+            </ul>
+        </li>
+        <li><a href="http://www.enableds.com/products/circle/contact.html"><i class="fa fa-envelope bg-red1"></i>Contact<i class="fa fa-circle"></i></a></li>  
+        <li><a href="http://www.enableds.com/products/circle/gallery-wide.html#" class="close-menu"><i class="fa fa-times bg-red2"></i>Close<i class="fa fa-circle"></i></a></li>  
+    </ul>
+    
+    <!-- Ball Footer Menu -->
         
+    <a href="http://www.enableds.com/products/circle/gallery-wide.html#" class="show-big-menu"><i class="fa fa-navicon bg-red2"></i></a>
 
-      </div>
-    </div>
+    <div class="menu-background"></div>
     
+    <!--Content Starts Here-->
+        
+    <span style="display:block; min-height:400px; height: auto" ng-app="soleinsiderApp" ng-controller="appController">
+        <span ng-view style="display:block; min-height:400px; height: auto"> </span>
+    </span>
+    
+    <!--Page Footer Here-->
+    <div class="footer">
+        <p class="center-text half-bottom">
+            Copyright 2015, <a href="http://www.enableds.com/products/circle/gallery-wide.html#">SoleInsider</a><br> 
+            All rights reserved.
+        </p>
+    </div>
 
+</div>
+    
+<div class="share-bottom">
+    <h3>Share Page</h3>
+    <div class="share-socials-bottom">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.themeforest.net/">
+            <i class="fa fa-facebook facebook-color"></i>
+            Facebook
+        </a>
+        <a href="https://twitter.com/home?status=Check%20out%20ThemeForest%20http://www.themeforest.net">
+            <i class="fa fa-twitter twitter-color"></i>
+            Twitter
+        </a>
+        <a href="https://plus.google.com/share?url=http://www.themeforest.net">
+            <i class="fa fa-google-plus google-color"></i>
+            Google
+        </a>
 
-<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-<script type="text/javascript" src="js/framework7.min.js"></script>
-<script type="text/javascript" src="js/my-app.js"></script>
+        <a href="https://pinterest.com/pin/create/button/?url=http://www.themeforest.net/&media=https://0.s3.envato.com/files/63790821/profile-image.jpg&description=Themes%20and%20Templates">
+            <i class="fa fa-pinterest-p pinterest-color"></i>
+            Pinterest
+        </a>
+        <a href="sms:">
+            <i class="fa fa-comment-o sms-color"></i>
+            Text
+        </a>
+        <a href="mailto:?&subject=Check%20this%20page%20out!&body=http://www.themeforest.net">
+            <i class="fa fa-envelope-o mail-color"></i>
+            Email
+        </a>
+    </div>
+    <a href="http://www.enableds.com/products/circle/gallery-wide.html#" class="close-share-bottom">Close</a>
+</div>
+        
 
 <!-- Setup angular classes -->
 <script src="js/angular.js"></script>
 <script src="app/config.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controllers/app_c.js"></script>
+<script src="app/controllers/home_c.js"></script>
 <script src="app/controllers/clothing_store_c.js"></script>
 <script src="app/controllers/store_c.js"></script>
 <script src="app/controllers/releases_c.js"></script>
@@ -144,6 +136,7 @@
 <script src="app/controllers/myrestocks_c.js"></script>
 <script src="app/controllers/myreleases_c.js"></script>
 <script src="app/controllers/login_c.js"></script>
+<script src="app/controllers/signup_c.js"></script>
 <script src="app/controllers/coupons_c.js"></script>
 <script src="app/controllers/twitter_watcher_c.js"></script>
 <script src="app/controllers/details_c.js"></script>
@@ -171,5 +164,5 @@
 <script src='js/moment.js'></script>
 <script src='js/carousel.js'></script>
 <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
-</body>
-</html>
+
+</body></html>

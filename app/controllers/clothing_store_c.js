@@ -5,7 +5,9 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
   $scope.category = "Best Sellers";
   $scope.page = 10;
   $scope.searchStr = "nike";
+  $scope.showLoading = true;
   $scope.menu = [];
+
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
@@ -13,9 +15,12 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
 
   $scope.getMenu = function() {
     clothing_store_service.getMenu().then(function(data) {
-      data.sort(orderByNameAscending);
-      $scope.menu = data;
-      console.log(data);
+      data.sort($scope.sortBy('name', false, function(a){return a.toUpperCase()}))
+      for (var i =0; i < data.length; i++) {
+        $scope.menu.push(data[i]);
+      }
+      
+      jQuery(".menu-dropdown option[value='? undefined:undefined ?']").remove();
     }, function(err) {
       window.console.log(err);
     });
@@ -32,7 +37,6 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
 
   $scope.getCache = function(functionName) {
     var retrievedObject = localStorage.getItem(functionName);
-
     if (typeof retrievedObject === 'string' || typeof retrievedObject == undefined) {
       $scope.showLoading = false;
       return JSON.parse(retrievedObject);
@@ -46,19 +50,16 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
   };
 
   $scope.search = function(search) {
+    $scope.products = [];
     $scope.showLoading = true;
     $scope.page = 10;
     $scope.searchStr = search;
     $scope.category = $scope.searchStr.replace("_", " ");
+
     var products = $scope.getCache(search);
 
     if (products !== false) {
       $scope.products = products;
-      $('#content-container').toggleClass('active');
-      $('#sidemenu').toggleClass('active');
-      setTimeout(function() {
-        $('#sidemenu-container').toggleClass('active');
-      }, 500);
       $scope.showLoading = false;
     } else {
       $scope.completeSearch(search);
@@ -66,12 +67,7 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
   };
 
   $scope.completeSearch = function(search) {
-    $('#content-container').toggleClass('active');
-    $('#sidemenu').toggleClass('active');
-    setTimeout(function() {
-      $('#sidemenu-container').toggleClass('active');
-    }, 500);
-
+    search = search.replace(" ", "_");
     clothing_store_service.search(search).then(function(data) {
       $scope.products = data;
       $scope.setCache(search, data);
@@ -81,33 +77,37 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
     });
   };
 
-  function orderByNameAscending(a, b) {
-    if (a.name == b.name) {
-      return 0;
-    } else if (a.name > b.name) {
-      return 1;
-    }
+  $scope.sortBy = function(field, reverse, primer){
+    var key = primer ? 
+      function(x) {return primer(x[field])} : 
+      function(x) {return x[field]};
 
-    return -1;
-  };
+    reverse = !reverse ? 1 : -1;
 
-  $scope.paginate = function() {
-    $("html, body").animate({
-      scrollTop: 0
-    }, 10);
+    return function (a, b) {
+      return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+    } 
+  }
 
+  $scope.paginate = function(){
     $scope.showLoading = true;
     $scope.page = $scope.page + 20;
-    var post = "search=" + $scope.searchStr;
+    var post = "search=" + $scope.searchStr.replace(" ", "_");
     post += "&offset=" + $scope.page;
 
-    clothing_store_service.paginate(post).then(function(data) {
-      $scope.products = data;
+    clothing_store_service.paginate(post).then(function (data) {
       $scope.showLoading = false;
-    }, function(err) {
-      window.console.log(err);
+        $scope.completePaginate(data);
+    }, function (err) {
+        window.console.log(err);
     });
   }
+
+  $scope.completePaginate = function(data) {
+    for (var i = 0; i < data.length; i++) {
+      $scope.products.push(data[i]);
+    }
+  };
 
   $scope.init = (function() {
     $scope.getMenu();
@@ -115,3 +115,5 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
     $rootScope.$emit("featured", false);
   })();
 }
+
+clothingStoreController.$inject = ['$scope', '$rootScope', 'clothing_store_service'];

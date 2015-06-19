@@ -1,12 +1,12 @@
-<ul class="posts" style="margin-top:0px">
-  <li class="swipeout" ng-repeat="r in past_restocks" style="clear:both;"
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-          <div class="post_thumb"><img src="http://soleinsider.com/public/products/{{r.image}}" alt="" title=""></div>
-          <div class="post_details">
-          <h4> {{r.name}}  </h4>
-          <div class='product_title'>Restocked {{r.available_timestamp}}</div>
-      </div>
-    </div>
-  </li>  
-</ul>  
+<div ng-repeat="r in past_restocks" class="product">
+	<!-- page title starts -->
+	<div class="productLeft">
+		<img src="http://soleinsider.com/public/products/{{r.image}}" width="100%" />
+	</div>
+	<div class="productRight">
+		
+		<h4> {{r.name}}  </h4>
+		<div class='product_title'>Restocked {{r.available_timestamp}}</div>
+		<br/>
+	</div>
+</div>
