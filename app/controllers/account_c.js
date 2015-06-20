@@ -3,7 +3,7 @@ function accountController($scope, $rootScope, account_service) {
   $scope.confirmation = "";
   $scope.showConfirmation = false;
   $scope.version = soleinsider.version;
-  $scope.version_type = soleinsider.version_type;
+  $scope.showError = false;
 
   $scope.updateAccount = function(account) {
     member_id = localStorage.getItem("member_id");
@@ -25,9 +25,16 @@ function accountController($scope, $rootScope, account_service) {
   };
 
   $scope.getAccount = function() {
-    var post = "member_id=" + localStorage.getItem("member_id");
+    member_id = localStorage.getItem("member_id");
+    if (member_id == "false" || member_id == 0 || member_id == null) {
+      $scope.showError = true;
+      return;
+    }
+
+    var post = "member_id=" + member_id;
     account_service.getAccount(post).then(function(data) {
       $scope.account = data;
+      $scope.showError = false;
     }, function(err) {
       window.console.log(err);
     });

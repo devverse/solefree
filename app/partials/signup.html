@@ -1,12 +1,12 @@
-<div class="login-page bg3">
+<div class="login-page bg3" ng-show="showLogin == true">
     <div class="login-page-overlay"></div>
     <div class="login-page-wrapper">
-        <h1 style="color:#fff">
-        Please signup below.
-        </h1>
-        <input placeholder="username" type="text" class="login-username" ng-model="newaccount.email">
-        <input placeholder="password" type="password" class="login-password" ng-model="newaccount.password">
-        <input placeholder="phone" type="text" class="login-username" ng-model="newaccount.phone_number">
+        <p>
+            Create a SoleInsider Account Below
+        </p>
+        <input placeholder="Username" type="text" class="login-username" ng-model="newaccount.email">
+        <input placeholder="Password" type="password" class="login-password" ng-model="newaccount.password">
+        <input placeholder="Phone Number" type="text" class="login-username" ng-model="newaccount.phone_number">
         <select class="login-username" data-theme="c" ng-model="newaccount.carrier">
             <option value="1">AT&T</option>
             <option value="2">Verizon</option>
@@ -19,12 +19,15 @@
             <option value="9">Alltel</option>
         </select>
         <div class="one-half">
-            <a href="#/signup" class="button button-blue" ng-click="register(newaccount, $event)">Signup</a>
+            <a href="#/signup" class="button button-green" ng-click="register(newaccount, $event)">Signup</a>
         </div>
         <div class="one-half last-column">
-            <a href="#/login" class="button button-green">Login</a>
+            <a href="#/login" class="button button-blue">Login</a>
         </div>
-        <div class="clear"></div>
-        <a class="forgot" href="#">Forgot Password?</a>
     </div>
+</div>
+<div id="pages_maincontent" ng-show="showLogin == false" style="margin-top:0px" class="static-notification-blue">
+    <p class="center-text uppercase"> <br/>You are logged in as {{username}} <br/>
+        <a  class='button button-light' ng-click="logout()">Logout</a>
+    </p>
 </div>

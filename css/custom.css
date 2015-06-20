@@ -90,7 +90,7 @@
 
 .menu-dropdown {
 	text-align: center;
-	width: 109%;
+	width: 99%;
 	height: 50px;
 	font-size: 16px;
 	background-color: #202428;
@@ -104,4 +104,5 @@
 	display: block;
 	margin-top: -20px;
 	margin-bottom: 15px;
+	margin-left: 2px;
 }

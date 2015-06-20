@@ -19,25 +19,6 @@ function signupController($scope, $rootScope, login_service) {
     $scope.toggleLogin();
   };
 
-  $scope.login = function(account) {
-    var post = "&username=" + account.email;
-    post += "&password=" + account.password;
-    post += "&member_type=" + soleinsider.member_type;
-
-    login_service.login(post).then(function(data) {
-      if (data !== "false" && data !== false && data.length !== 0) {
-        localStorage.setItem("username", account.email);
-        localStorage.setItem("member_id", data.id);
-        $scope.toggleLogin();
-      } else {
-        $().toastmessage('showErrorToast', "Incorrect username or password");
-      }
-    }, function(err) {
-
-    });
-
-  };
-
   $scope.validateEmail = function(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
@@ -55,10 +36,10 @@ function signupController($scope, $rootScope, login_service) {
     var validated = $scope.validateAccount(newaccount);
 
     if (!validated) {
-      $("html, body").animate({
+      jQuery("html, body").animate({
         scrollTop: 0
       }, "slow");
-      $().toastmessage('showErrorToast', "Incorrect information used");
+      jQuery().toastmessage('showErrorToast', "Incorrect information used");
       return;
     } else {
 
@@ -72,10 +53,10 @@ function signupController($scope, $rootScope, login_service) {
         if (data !== "false" && data !== false && data.length !== 0) {
           localStorage.setItem("username", newaccount.username);
           localStorage.setItem("member_id", data);
-          $().toastmessage('showErrorToast', "Your account has been created");
+          jQuery().toastmessage('showErrorToast', "Your account has been created");
           $scope.toggleLogin();
         } else {
-          $().toastmessage('showErrorToast', "This username is already in use");
+          jQuery().toastmessage('showErrorToast', "This username is already in use");
         }
       }, function(err) {
         window.console.log(err);
