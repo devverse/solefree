@@ -30,10 +30,9 @@ function loginController($scope, $rootScope, login_service) {
         localStorage.setItem("username", account.email);
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
-        jQuery().toastmessage('showSuccessToast', "You are now logged in");
+        toastr.success("You are now logged in");
       } else {
-        alert('error');
-        jQuery().toastmessage('showErrorToast', "Incorrect username or password");
+        toastr.error("Incorrect username or password");
       }
     }, function(err) {
 

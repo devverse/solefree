@@ -1,4 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
+.header-logo {
+	font-size: 24px;
+	color: #626769;
+}
+
+.header-logo a:hover {
+	color: #000;
+}
+
+.button:hover, .button-3d:hover {
+	cursor: pointer;
+}
+
 .page-logo {
   	width: 120px !important;
 	margin-top: 20px !important;
@@ -105,4 +117,10 @@
 	margin-top: -20px;
 	margin-bottom: 15px;
 	margin-left: 2px;
+}
+
+#comments {
+	width: 90%;
+  	margin-left: 5%;
+  	margin-top: 20px;
 }

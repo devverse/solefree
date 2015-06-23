@@ -72,7 +72,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showmsg = true;
         $scope.showerror = false;
         $scope.sneakerName = product.name;
-        $().toastmessage('showSuccessToast', "Reminder saved for " + product.name);
+        toastr.success("Reminder saved for " + product.name);
       },
       function(err) {
         alert(err);
@@ -166,7 +166,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&comment=" + $scope.new_comment;
 
     comments_service.leaveComment(post).then(function(data) {
-      $().toastmessage('showSuccessToast', "Comment posted!");
+      toastr.success("Comment posted!");
       $scope.getComments();
       $scope.new_comment = "";
     }, function(err) {
