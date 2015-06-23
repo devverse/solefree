@@ -10,19 +10,21 @@
       {{r.release_date}} (${{r.price}})
     </div>
   </div>
-  <!-- the viewport --> 
-  <div class="product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
-    <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
-      <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
-        <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth">
-        <br/>
+        <!-- the viewport -->
+        <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
+          <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
+            <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
+              <img src="http://soleinsider.com/public/products/mobile/{{f.image}}" class="maxWidth">
+              <br/>
+            </div>
+          </div>
+          <!-- the controls -->
+          <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- the controls -->
-    <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
-    </div>
-  </div>
-</div>
+
+
 <div style="text-align:center" class="">
   
   <span>
