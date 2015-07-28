@@ -1,4 +1,4 @@
-function myReleasesController($scope, $rootScope, release_service, mixpanel_service) {
+function myReleasesController($scope, $rootScope, release_service) {
   $scope.releases = [];
   $scope.showerror = false;
   $scope.errorMessage = "";
@@ -18,7 +18,7 @@ function myReleasesController($scope, $rootScope, release_service, mixpanel_serv
   $scope.deleteRelease = function(product) {
     release_service.deleteRelease(product).then(
       function(data) {
-        $().toastmessage('showSuccessToast', "Reminder deleted for " + product.name);
+        toastr.success("Reminder deleted for " + product.name);
       },
       function(err) {
         alert(err);
@@ -33,16 +33,16 @@ function myReleasesController($scope, $rootScope, release_service, mixpanel_serv
     // Listeners
     $rootScope.$on('getMyReleases', function(e, data) {
       $scope.releases = data;
-      mixpanel_service.trackEvent('My releases fetched');
     });
 
     $rootScope.$on('deleteRelease', function(e, data) {
       $scope.getMyReleases();
-      mixpanel_service.trackEvent('My releases item deleted');
     });
 
-    $rootScope.$emit("featured", true);
+    $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
+    window.showBannerAd();
   })();
 }
 
-myReleasesController.$inject = ['$scope', '$rootScope', 'release_service', 'mixpanel_service'];
+myReleasesController.$inject = ['$scope', '$rootScope', 'release_service'];

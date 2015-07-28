@@ -47,6 +47,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     $scope.r = product;
     $scope.product_id = product.product_id;
+    $scope.getRelatedItems(product);
   };
 
   $scope.getSlideShow = function() {
@@ -62,8 +63,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      $scope.showerror = true;
-      $scope.errorMessage = "You must be logged for reminders";
+      toastr.error("You must be logged for reminders");
       return;
     }
 
@@ -72,7 +72,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showmsg = true;
         $scope.showerror = false;
         $scope.sneakerName = product.name;
-        $().toastmessage('showSuccessToast', "Reminder saved for " + product.name);
+        toastr.success("Reminder saved for " + product.name);
       },
       function(err) {
         alert(err);
@@ -118,10 +118,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
       divisor++;
       if (divisor / 1 == 1) {
-        comments[i].cssClass = 'from-me';
+        comments[i].cssClass = 'speach-left';
       } else {
         divisor = 0;
-        comments[i].cssClass = 'from-them';
+        comments[i].cssClass = 'speach-right blue-bubble';
       }
     }
 
@@ -166,7 +166,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&comment=" + $scope.new_comment;
 
     comments_service.leaveComment(post).then(function(data) {
-      $().toastmessage('showSuccessToast', "Comment posted!");
+      toastr.success("Comment posted!");
       $scope.getComments();
       $scope.new_comment = "";
     }, function(err) {
@@ -176,9 +176,24 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
     $scope.loadProduct();
     $scope.getSlideShow();
     $scope.getComments();
+    window.removeBannerAd();
+
+
+  jQuery('ul.tabs li').click(function(){
+    var tab_id = jQuery(this).attr('data-tab');
+
+    jQuery('ul.tabs li').removeClass('current');
+    jQuery('.tab-content').removeClass('current');
+
+    jQuery(this).addClass('current');
+    jQuery("#"+tab_id).addClass('current');
+  })
+
+  $scope.build = soleinsider.build;
   })();
 
 }

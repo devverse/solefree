@@ -4,6 +4,10 @@
   font-family: 'Titillium Web', sans-serif;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 .paginate_button {
   width: 88%;
 }
@@ -66,6 +70,124 @@
   text-align: left;
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
+.menu-dropdown {
+  text-align: center;
+  width: 99%;
+  height: 50px;
+  font-size: 16px;
+  background-color: #202428;
+  color: #efefef;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  line-height: 50px;
+  font-size: 12px;
+  padding-left: 20px;
+  padding-right: 00px;
+  display: block;
+  margin-top: -20px;
+  margin-bottom: 15px;
+  margin-left: 2px;
+}
+
+/* Tabs */
+ul.tabs{
+  margin: -5px;
+  padding: 0px;
+  list-style: none;
+  font-size: 12px;
+  font-family: arial;
+}
+
+ul.tabs li{
+  background: none;
+  color: #222;
+  display: inline-block;
+  padding: 20px;
+  cursor: pointer;
+  width: 38.5%;
+  padding-top: 10px;
+  font-family: arial;
+}
+
+ul.tabs li.current{
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content{
+  display: none;
+  background: #ededed;
+  padding: 15px;
+}
+
+.tab-content.current{
+  display: inherit;
+}
+
+.responsive-image {
+  height: 140px;
+}
+
+.product {
+  overflow: hidden;
+  margin-bottom: 5px;
+  border-bottom: 1px #eee solid;
+  margin-bottom: 1px;
+  width: 95%;
+  margin-left: 5px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.productLeft, .productRight, .releasesRight, .releasesLeft, .salesLeft {
+  float: left;
+}
+
+.releasesLeft img {
+  width: 100%;
+  max-height: 200px;
+}
+
+.releasesLeft {
+  width: 40%;
+  margin-right: 10px;
+}
+
+.releasesRight {
+  width: 55%;
+}
+
+.speach-left {
+  float: left;
+  display: inline;
+  text-align: left;
+  max-width: 75%;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: solid 1px #cacaca;
+}
+
+.speach-right {
+  float: right;
+  text-align: right;
+  text-align: left;
+  max-width: 75%;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: solid 1px #cacaca;
+}
+
+.blue-bubble {
+  background-color: #0b84fe!important;
+  color: #FFFFFF!important;
+  border: none!important;
 }

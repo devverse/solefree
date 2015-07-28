@@ -15,10 +15,7 @@ function restocksController($scope, $rootScope, restock_service) {
     member_id = localStorage.getItem("member_id");
 
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      $("html, body").animate({
-        scrollTop: 0
-      }, "slow");
-      $().toastmessage('showErrorToast', "You must be logged for watching restocks");
+      toastr.error("You must be logged to watch restocks");
       return;
     }
 
@@ -29,12 +26,12 @@ function restocksController($scope, $rootScope, restock_service) {
           $("html, body").animate({
             scrollTop: 0
           }, "slow");
-          $().toastmessage('showErrorToast', "You have reached the limit for watching restocks");
+          toastr.error("You have reached the limit for watching restocks");
           $("html, body").animate({
             scrollTop: 0
           }, "slow");
         } else {
-          $().toastmessage('showSuccessToast', "You are now watching " + product.name);
+          toastr.success("You are now watching " + product.name);
         }
       },
       function(err) {
@@ -46,6 +43,8 @@ function restocksController($scope, $rootScope, restock_service) {
   $scope.init = (function() {
     $scope.getRestocks();
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
+    window.removeBannerAd();
   })();
 
 }

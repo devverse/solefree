@@ -47,6 +47,10 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/login.html',
       controller: loginController
     }).
+    when('/signup', {
+      templateUrl: admin_url + 'partials/signup.html',
+      controller: signupController
+    }).
     when('/coupons', {
       templateUrl: admin_url + 'partials/coupons.html',
       controller: couponsController
