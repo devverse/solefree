@@ -913,16 +913,6 @@ color: #fff;
 background: #0c928d;
 text-align:center;
 }
-.swipeout {
-  height: auto;
-  clear: both;
-  margin-bottom: 15px;
-  float: left;
-  border: 1px solid #eee;
-  box-shadow: 1px 1px 1.5px #eee;
-  padding: 5px;
-  width: 95%;
-}
 .swipeout-content {
   clear: both;
 }

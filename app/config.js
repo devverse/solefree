@@ -1,10 +1,5 @@
 var url = window.location.href;
-
-if (url.indexOf("localhost") != -1) {
-  var serviceURL = "http://localhost/soleinsider/public";
-} else {
-  var serviceURL = "http://soleinsider.com/public";
-}
+var serviceURL = "http://soleinsider.com/public";
 
 var admin_url = 'app/';
 var app_name = "SoleInsider Free";

@@ -19,18 +19,20 @@ function loginController($scope, $rootScope, login_service) {
     $scope.toggleLogin();
   };
 
-  $scope.login = function(account) {
+  $scope.login = function(account, $event) {
+    $event.preventDefault();
+
     var post = "&username=" + account.email;
     post += "&password=" + account.password;
-    post += "&member_type=" + soleinsider.member_type;
 
     login_service.login(post).then(function(data) {
       if (data !== "false" && data !== false && data.length !== 0) {
         localStorage.setItem("username", account.email);
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
+        toastr.success("You are now logged in");
       } else {
-        $().toastmessage('showErrorToast', "Incorrect username or password");
+        toastr.error("Incorrect username or password");
       }
     }, function(err) {
 
@@ -87,6 +89,8 @@ function loginController($scope, $rootScope, login_service) {
   $scope.init = (function() {
     $scope.toggleLogin();
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
+    window.removeBannerAd();
   })();
 }
 

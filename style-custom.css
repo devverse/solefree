@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900);
+
+* {
+  font-family: 'Titillium Web', sans-serif;
+}
+
 .paginate_button {
   width: 88%;
 }
@@ -9,16 +15,23 @@
   width: 58%;
   float: left;
   font-size: 13px;
+  color: #888;
 }
 .price {
   width: 30%;
   float: left;
-  color: red;
-  font-weight: bold;
   font-size: 13px;
+  color: #888;
 }
+
+.sneaker_title a {
+  color: #888;
+}
+
 .sneaker_title {
-  color: #333;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .details_slideshow {
   height: auto;
@@ -32,6 +45,27 @@
   text-align: center;
   margin-top: 5px;
 }
+
+.swipeout {
+  overflow: hidden;
+  margin-bottom: 5px;
+  border-bottom: 1px #eee solid;
+  margin-bottom: 1px;
+  width: 95%;
+  margin-left: 5px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.releasesLeft {
+  width: 40%;
+  margin-right: 10px;
+}
+
+.releasesRight {
+  width: 55%;
+  text-align: left;
+}
+
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }

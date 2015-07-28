@@ -1,63 +1,53 @@
 <ul class="posts" style="margin-top:5px">
-
-<div ng-repeat="(key, value) in releases" style="clear:both;width:100%;margin-bottom:0px">
-
- <h3 class="page_subtitle">{{value.month}}</h3> 
-  <div class="swipeout" ng-repeat="r in value.products | filter:filterReleases" ng-cloak>
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-
+  <div ng-repeat="(key, value) in releases" style="clear:both;width:100%;margin-bottom:0px">
+    <!-- <h3 class="page_subtitle">{{value.month}}</h3>  -->
+    <div class="swipeout" ng-repeat="r in value.products | filter:filterReleases" ng-cloak>
+      <div class="swipeout-content item-content" >
+        <div class="post_entry">
           <div class="post_thumb">
-          <a href="#" ng-click="details(r)">
-          <img src="http://soleinsider.com/public/products/{{r.image}}"/>
-          </a>
-          </div>  
-          <div class="post_details">
-          <h4 class="sneaker_title">  
-          <a href="#" ng-click="details(r)">{{r.name}} </a> </h4>
-
-          <div class="date_price">
-            <span class="date">{{r.release_date}}</span>
-            <span class="price">${{r.price}} </span>
+            <a href="#" ng-click="details(r)">
+              <img src="http://soleinsider.com/public/products/{{r.image}}"/>
+            </a>
           </div>
-
-          <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-          <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-
+          <div class="post_details">
+            <h4 class="sneaker_title">
+            <a href="#" ng-click="details(r)">{{r.name}} </a>
+            </h4>
+            <div class="date_price">
+              <span class="date">{{r.release_date}}</span>
+              <span class="price">${{r.price}} </span>
+            </div>
+            <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+            <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
           </div>
           <div class="post_swipe">
             <a href="#" ng-click="details(r)"><img src="images/swipe_more.png" alt="" title=""></a>
           </div>
+        </div>
       </div>
-    </div>
-  </li>  
+    </li>
+  </div>
 </div>
-</div>
-
 <br/>
-
 <h3 class="page_subtitle" ng-show="coming.length > 0">Coming Soon</h3>
-  <li class="swipeout" ng-repeat="r in coming" ng-cloak>
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-
-          <div class="post_thumb">
-           <a href="#" ng-click="details(r)">
-           <img src="http://soleinsider.com/public/products/{{r.image}}"/>
-           </a>
-           </div>
-
-          <div class="post_details">
-          <h4> <a href="#" ng-click="details(r)"> {{r.name}} </a> </h4>
-          Release Date Coming Soon <br/>
-          <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-          <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-          </div>
-          <div class="post_swipe">
-            <a href="#" ng-click="details(r)"><img src="images/swipe_more.png" alt="" title=""></a>
-          </div>
+<li class="swipeout" ng-repeat="r in coming" ng-cloak>
+  <div class="swipeout-content item-content" >
+    <div class="post_entry">
+      <div class="post_thumb">
+        <a href="#" ng-click="details(r)">
+          <img src="http://soleinsider.com/public/products/{{r.image}}"/>
+        </a>
+      </div>
+      <div class="post_details">
+        <h4 class="sneaker_title"> <a href="#" ng-click="details(r)"> {{r.name}} </a> </h4>
+        Release Date Coming Soon <br/>
+        <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+        <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
+      </div>
+      <div class="post_swipe">
+        <a href="#" ng-click="details(r)"><img src="images/swipe_more.png" alt="" title=""></a>
       </div>
     </div>
-  </li> 
-
+  </div>
+</li>
 </ul>

@@ -1,32 +1,42 @@
-var inmobi_conf = {
-    siteid : "4028cba631d63df10131e1d3191d00cb", // your Property ID
-    slot: 15,
-    test: true,
-    manual: true,
-    autoRefresh: 60,
-    targetWindow : "_blank", // default "_top"
-    onError : function(code)
-    {
-      if(code == "nfr")
-      {
-        console.log("Error getting the ads!");
-      }
+var admobid = {};
+
+// for Android
+admobid = {
+    banner: 'ca-app-pub-0083160636450496/6391719559',
+    interstitial: 'ca-app-pub-0083160636450496/7728851959'
+};
+
+function showBannerAd() {
+    return true;
+    if (typeof AdMob != 'undefined') {
+        AdMob.createBanner({
+            adId : admobid.banner,
+            position : AdMob.AD_POSITION.BOTTOM_CENTER,
+            autoShow : true
+        });
     }
-  };
+}
 
-  document.addEventListener("deviceready", onDeviceReady, false);
+function removeBannerAd() {
+    return true;
+	if (typeof AdMob != 'undefined') {
+		AdMob.removeBanner();
+	}
+}
 
-  function onDeviceReady() {
-    alert('device ready');
-    $.getScript("inmobi.js", function(){
-      showAds();
-    });
-  }
+function prepareInterstitial() {
+    return true;
+	if(typeof AdMob != 'undefined') {
+	 	AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow: false} );
+	}
+}
 
-  function showAds()
-  {
-    var adsElement = document.getElementById('ads');
-    _inmobi.getNewAd(adsElement);
-  }
 
-  alert('ads');
+function showInterstitial() {
+    return true;
+    if(typeof AdMob != 'undefined') {
+    	AdMob.showInterstitial();
+    }
+}
+
+// document.addEventListener('prepareInterstitial', prepareInterstitial, false);
