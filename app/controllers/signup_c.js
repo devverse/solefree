@@ -20,11 +20,13 @@ function signupController($scope, $rootScope, login_service) {
   };
 
   $scope.validateEmail = function(email) {
+    console.log(email);
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
   };
 
   $scope.validateAccount = function(account) {
+    console.log(account);
     if (typeof account == 'undefined' || !account.hasOwnProperty('carrier') || !account.hasOwnProperty('username') || !account.hasOwnProperty('password') || !account.hasOwnProperty('phone_number')) {
       return false;
     }

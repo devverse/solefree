@@ -11,13 +11,13 @@
     
     <label>Password:</label>
     <input type="password" name="phone" value="" class="form_input required email" ng-model="account.password">
-    <input type="submit" name="submit" class="form_submit" id="submit" ng-click="login(account)" value="Login" />
-    <a href="#/signup"  class='button button-light'>Signup</a>
+    <input type="submit" name="submit" class="form_submit" id="submit" ng-click="login(account, $event)" value="Login" />
+    <a href="#/signup"  class='button button-blue'> Or Signup</a>
   </form>
 </div>
 </div>
 
-<div id="pages_maincontent" ng-show="showLogin == false" style="margin-top:0px" class="static-notification-blue">
+<div id="pages_maincontent" ng-show="showLogin == false" style="margin-top:-30px" class="static-notification-blue">
   <p class="center-text uppercase"> <br/>You are logged in as {{username}} <br/>
     <a class='button button-light' ng-click="logout()">Logout</a>
   </p>
