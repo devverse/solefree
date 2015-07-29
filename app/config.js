@@ -11,9 +11,8 @@ soleinsider.username = "";
 soleinsider.member_id = false;
 soleinsider.cache = false;
 soleinsider.show_featured = true;
-soleinsider.version = "5";
+soleinsider.version = "6.2";
 soleinsider.build = "android";
-
 
 toastr.options = {
   "closeButton": false,
