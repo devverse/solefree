@@ -259,10 +259,6 @@ a.portfolio-wide-item {
     overflow: hidden;
  }
 
-@media (min-width: 768px)
-.portfolio-wide-item h3 {
-    font-size: 28px;
-}
 
 .portfolio-wide-item h4 {
     position: absolute;

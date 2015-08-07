@@ -1276,11 +1276,11 @@ max-width:40%;
 width:20%;
 }
 #pages_maincontent{
-  width:96%;
-  padding: 20px 1% 20px 1%;
+  width: 100%;
   margin:0px;
   position: absolute; 
   top: 50px; 
+  padding-top: 20px;
 }
 .maxWidth {
   width: 100%;
