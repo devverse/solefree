@@ -563,16 +563,13 @@ background-size: 100%;
 background-size: cover;
 }
 #pages_maincontent{
-  width:98%;
-  padding:30px 1% 30px 1%;
+  width:100%;
   margin:0px;
   position: absolute; 
   top: 60px; 
   left: 0; 
   right: 0; 
   bottom: 0px;
-  overflow: scroll; 
-  -webkit-overflow-scrolling: touch;
 }
 h2.page_subtitle{
 font-size:24px;
@@ -956,7 +953,7 @@ display:block;
 }
 .post_details span, .post_single span{
 display:inline-block;
-padding:0 5px;
+/*padding:0 5px;*/
 }
 .post_details span.post_comments, .post_single span.post_comments{
 background:url(images/comments.png) no-repeat right;

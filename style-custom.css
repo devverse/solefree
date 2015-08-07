@@ -15,28 +15,30 @@
 .date_price {
   overflow: hidden;
 }
+
 .date {
   width: 58%;
   float: left;
-  font-size: 13px;
-  color: #888;
+  font-size: 12px;
 }
+
 .price {
   width: 30%;
   float: left;
-  font-size: 13px;
-  color: #888;
+  font-size: 12px;
 }
 
 .sneaker_title a {
-  color: #888;
+  color: #101010;
 }
 
 .sneaker_title {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+  margin-top: 10%;
 }
+
 .details_slideshow {
   height: auto;
   clear: both;
@@ -123,6 +125,7 @@ ul.tabs li.current{
 
 .responsive-image {
   height: 140px;
+  width: 100%;
 }
 
 .product {
@@ -188,3 +191,113 @@ ul.tabs li.current{
   color: #FFFFFF!important;
   border: none!important;
 }
+
+/* 27. Portfolio */ 
+
+.portfolio-wide {
+  margin-top: -18px;
+}
+
+.portfolio-wide-item img{
+  margin:0px;
+  padding:0px;  
+}
+
+.portfolio-wide-item{
+  margin-bottom:5px;  
+}
+
+.portfolio-wide-item .overlay{
+  background-color:rgba(0,0,0,0.7);
+    z-index:9
+}
+
+.portfolio-wide-item h3{
+  position:absolute;
+  width:100%;
+  top:50%;
+  margin-top:-20px;
+  z-index:98;
+  color:#FFFFFF;
+  text-align:center;
+  font-weight:500;  
+}
+
+.portfolio-wide-item p{
+  color:rgba(255,255,255,0.5);
+  position:absolute;
+  width:100%;
+  top:50%;
+  margin-top:0px;
+  z-index:98;
+  text-align:center;  
+}
+
+@media (min-width:768px){
+  
+  .portfolio-wide-item{
+    max-height:200px;
+  }
+  
+  .portfolio-wide-item h3{
+    font-size:28px;
+  }
+  
+  .portfolio-wide-item p{
+    font-size:14px;
+    margin-top:20px;  
+  }
+}
+
+.half-bottom {
+    margin-bottom: 15px;
+}
+
+a.portfolio-wide-item {
+      display: block;
+    position: relative;
+    overflow: hidden;
+ }
+
+@media (min-width: 768px)
+.portfolio-wide-item h3 {
+    font-size: 28px;
+}
+
+.portfolio-wide-item h4 {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    margin-top: -20px;
+    z-index: 98;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.portfolio-wide-item .overlay {
+    background-color: rgba(0,0,0,0.7);
+    z-index: 9;
+}
+
+.portfolio-wide-item p {
+    color: rgba(255,255,255,0.5);
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    margin-top: 0px;
+    z-index: 98;
+    text-align: center;
+}
+
+.overlay {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*
+
+
