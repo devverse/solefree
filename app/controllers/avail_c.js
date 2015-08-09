@@ -20,6 +20,7 @@ function availController($scope, $rootScope, sales_service, cache_service, mixpa
     });
 
     $rootScope.$emit("featured", true);
+    window.showBannerAd();
   })();
 }
 

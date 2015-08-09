@@ -24,7 +24,7 @@ function salesController($scope, $rootScope, sales_service, mixpanel_service) {
     });
 
     $rootScope.$emit("featured", true);
-
+    window.removeBannerAd();
   })();
 }
 

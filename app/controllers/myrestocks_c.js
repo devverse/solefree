@@ -39,6 +39,7 @@ function myRestocksController($scope, $rootScope, restock_service, mixpanel_serv
       mixpanel_service.trackEvent('My restocks item deleted');
     });
     $rootScope.$emit("featured", false);
+    window.showBannerAd();
   })();
 }
 

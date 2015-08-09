@@ -192,6 +192,30 @@ ul.tabs li.current{
   border: none!important;
 }
 
+.product-details {
+  padding: 10px;
+  background-color: #eee;
+  width: 100%;
+}
+
+.details-actions {
+  width: 50%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.details-actions a {
+  width: 80%;
+}
+
+.button_small, .button_small_yes, .button_small_no {
+  border-radius: 0px !important;
+}
+
+.button_small {
+  background-color: black !important;
+}
+
 /* 27. Portfolio */ 
 
 .portfolio-wide {

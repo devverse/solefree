@@ -25,6 +25,7 @@ function storeFinderController($scope, $rootScope, store_finder_service, mixpane
 
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
+    window.removeBannerAd();
   })();
 }
 

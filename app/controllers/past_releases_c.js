@@ -17,6 +17,7 @@ function pastReleasesController($scope, $rootScope, release_service) {
   $scope.init = (function() {
     $scope.getPastReleases();
     $rootScope.$emit("featured", false);
+    window.showBannerAd();
   })();
 
 }

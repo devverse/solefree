@@ -1,16 +1,5 @@
 <!-- page content wrapper starts -->
-<div class="pageContentWrapper" style="margin-top:0px">
-  <!-- page title starts -->
-  <div class="" style="text-align:center">
-    <span style="font-weight:bold">{{r.name}}</span>
-    <br/>
-    <div ng-show="r.coming_soon == 1">
-      Coming Soon
-    </div>
-    <div ng-show="r.coming_soon == 0">
-      {{r.release_date}} (${{r.price}})
-    </div>
-  </div>
+<div class="pageContentWrapper" style="margin-top:-20px">
   <!-- the viewport -->
   <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
     <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
@@ -25,20 +14,29 @@
   </div>
 </div>
 <br/>
-<div style="text-align:center" class="">
+<div class="product-details">
+  <span style="font-weight:bold">{{r.name}}</span>
+  <br/>
+  <div ng-show="r.coming_soon == 1">
+    Coming Soon
+  </div>
+  <div ng-show="r.coming_soon == 0">
+    {{r.release_date}}  <br/> ${{r.price}}
+  </div>
+</div>
+<div style="text-align:left">
   
-  <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-  <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a>
-  <div style="clear:both"></div> <br/>
-  <span ng-show="r.showBuyLink == false">
-    <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> Remind Me</a>
-  </span>
-  <span>
-    <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> Add to calander</a>
-  </span>
-  <span>
+  <!--   <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
+  <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a> -->
+  <div ng-show="r.showBuyLink == false" class="details-actions">
+    <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
+  </div>
+  <div class="details-actions">
+    <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Add to calander</a>
+  </div>
+<!--   <span>
     <a href="{{r.link}}" class='button_small' ng-click="share(r)">Share </a>
-  </span>
+  </span> -->
   
 </div>
 <br/>
@@ -74,11 +72,12 @@
         </div>
       </div>
       <br/><br/><br/><br/><br/><br/>
-      <h3> Leave a comment </h3>
+      <h4> Leave a comment </h4>
       <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
       </textarea>
-      <br/>
-      <a class="button" ng-click="submitComment()">Leave Comment</a>
+      <br/> <br/>
+      <a href="#" class="button_small" ng-click="submitComment()" style="width:90%">
+      <i class="fa fa-comments-o"> </i> &nbsp; Leave Comment</a>
     </div>
   </div>
 </div>

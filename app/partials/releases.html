@@ -1,6 +1,5 @@
 <ul class="posts" style="margin-top:5px">
   <div ng-repeat="(key, value) in releases" style="clear:both;width:100%;margin-bottom:0px">
-    <!-- <h3 class="page_subtitle">{{value.month}}</h3>  -->
     <div class="swipeout" ng-repeat="r in value.products | filter:filterReleases" ng-cloak>
       <div class="swipeout-content item-content" >
         <div class="post_entry">

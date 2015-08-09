@@ -16,6 +16,7 @@ function pastRestocksController($scope, $rootScope, restock_service) {
   $scope.init = (function() {
     $scope.getPastRestocks();
     $rootScope.$emit("featured", false);
+    window.showBannerAd();
   })();
 
 }

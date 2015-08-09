@@ -116,6 +116,7 @@ function storeController($scope, $rootScope, store_service) {
     $scope.getMenu();
     $scope.getDefaultItems();
     $rootScope.$emit("featured", false);
+    window.removeBannerAd();
   })();
 }
 

@@ -15,6 +15,7 @@ function couponsController($scope, $rootScope, cache_service, mixpanel_service) 
     });
 
     $rootScope.$emit("featured", false);
+    window.showBannerAd();
 
   })();
 }

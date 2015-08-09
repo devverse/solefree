@@ -14,6 +14,7 @@ function instagramController($scope, $rootScope, instagram_service) {
   $scope.init = (function() {
     $scope.getImages();
     $rootScope.$emit("featured", false);
+    window.showBannerAd();
   })();
 }
 

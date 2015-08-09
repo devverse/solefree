@@ -14,6 +14,7 @@ function newsController($scope, $rootScope, news_service, mixpanel_service) {
   $scope.init = (function() {
     $scope.getNews();
     $rootScope.$emit("featured", false);
+    window.showBannerAd();
   })();
 }
 
