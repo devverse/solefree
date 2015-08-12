@@ -3,7 +3,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	versionCode="34"
-	version 	= "6.3.1"
+	version 	= "6.3"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -62,4 +62,5 @@
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
 	<gap:plugin name="nl.x-services.plugins.calendar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
+	<gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
 </widget>
