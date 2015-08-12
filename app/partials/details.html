@@ -32,11 +32,11 @@
     <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
   </div>
   <div class="details-actions">
-    <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Add to calander</a>
+    <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Calander</a>
   </div>
-<!--   <span>
-    <a href="{{r.link}}" class='button_small' ng-click="share(r)">Share </a>
-  </span> -->
+  <div class="details-actions">
+    <a href="{{r.link}}" class='button_small' ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Share </a>
+  </div>
   
 </div>
 <br/>
@@ -57,8 +57,8 @@
         <br/>
         <span class="price">${{r.value}}</span>
         <br/>
-        <a class="button button-blue" href="" ng-click="buyEbayProduct(r.viewItemURL)">
-        <i class="fa fa-cart-plus"> </i> Details  </a>
+        <a class="button_small" href="" ng-click="buyEbayProduct(r.viewItemURL)">
+        <i class="fa fa-cart-plus"> </i> &nbsp; Details  </a>
       </div>
     </div>
   </div>
