@@ -1,3 +1,6 @@
+<div style="margin-top:-10px;margin-bottom:10px;padding:15px">
+  We regularly check sites for restocks. When we find one, we'll send you an email and a text message alert.
+</div>
 <ul class="posts" style="margin-top:0px">
   <li class="swipeout" ng-repeat="r in restocks" style="clear:both;margin-bottom:10px"
     <div class="swipeout-content item-content" >
@@ -6,7 +9,7 @@
         <div class="post_details">
           <h4> {{r.name}}  </h4>
           <span class='price'>${{r.price}} </span> <br/>
-          <a data-product-id='{{r.product_id}}' class='button button-blue' ng-click="addReminder(r)">Watch these sneakers</a>
+          <a class="button_small" ng-click="addReminder(r)" style="width:80%"> <i class="fa fa-cart-plus"> </i> &nbsp; Watch</a>
         </div>
       </div>
     </div>

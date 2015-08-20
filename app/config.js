@@ -11,8 +11,10 @@ soleinsider.username = "";
 soleinsider.member_id = false;
 soleinsider.cache = false;
 soleinsider.show_featured = true;
-soleinsider.version = "6.2";
+soleinsider.version = "6.3";
 soleinsider.build = "android";
+soleinsider.localhost = (url.indexOf("localhost") != -1 ? true :  false);
+
 
 toastr.options = {
   "closeButton": false,

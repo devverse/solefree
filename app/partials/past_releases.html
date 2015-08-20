@@ -1,17 +1,15 @@
-<ul class="posts" style="margin-top:0px">
-
+<ul class="posts" style="margin-top:-20px">
   <li class="swipeout" ng-repeat="r in releases | filter:filterReleases" style="clear:both;"
     <div class="swipeout-content item-content" >
       <div class="post_entry">
-
-          <div class="post_thumb"><img src="http://soleinsider.com/public/products/{{r.image}}" alt="" title=""></div>
-          <div class="post_details">
+        <div class="post_thumb"><img src="http://soleinsider.com/public/products/{{r.image}}" alt="" title=""></div>
+        <div class="post_details">
           <h4> {{r.name}}  </h4>
           <span class='date' style="font-size:11px">{{r.release_date}}</span>
           <span class='price'>${{r.price}} </span>
           <br/>
-          </div>
+        </div>
       </div>
     </div>
-  </li>  
+  </li>
 </ul>

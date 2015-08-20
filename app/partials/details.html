@@ -26,15 +26,21 @@
 </div>
 <div style="text-align:left">
   
-  <!--   <a class='button_small_yes' ng-click="sneakerRating(r,'yes')"> Hot ({{r.yes_percentage}}%)</a>
-  <a class='button_small_no' ng-click="sneakerRating(r,'no')"> Wack ({{r.no_percentage}}%)</a> -->
-  <div ng-show="r.showBuyLink == false" class="details-actions">
+  <div style="overflow:hidden;width:100%;padding:0px;">
+    <div class="button_small_yes" ng-click="sneakerRating(r,'yes')">
+      <a> Cop ({{r.yes_percentage}}%)</a>
+    </div>
+    <div class="button_small_no" ng-click="sneakerRating(r,'no')">
+      <a> Drop ({{r.no_percentage}}%)</a>
+    </div>
+  </div>
+  <div class="details-actions">
     <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
   </div>
-  <div class="details-actions">
+  <div class="details-actions" ng-show="build == 'android'">
     <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Calander</a>
   </div>
-  <div class="details-actions">
+  <div class="details-actions" ng-show="build == 'android'">
     <a href="{{r.link}}" class='button_small' ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Share </a>
   </div>
   

@@ -2,8 +2,8 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="34"
-	version 	= "6.3"
+	versionCode="35"
+	version 	= "6.3.2"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -53,13 +53,12 @@
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
-	<preference name="phonegap-version" value="3.7.0" />
+	<preference name='phonegap-version' value='cli-5.1.1' />
 	<preference name="fullscreen" value="false" />
-	<preference name="load-url-timeout" value="60000" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
-	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
+	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.2" />
 	<gap:plugin name="nl.x-services.plugins.calendar" />
 	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
 	<gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
