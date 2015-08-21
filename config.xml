@@ -61,5 +61,4 @@
 	<gap:plugin name="org.li8.inappbrowser" version="0.1" source="npm"/>
 	<gap:plugin name="nl.x-services.plugins.calendar" source="npm"/>
 	<gap:plugin name="nl.x-services.plugins.socialsharing" source="npm"/>
-	<gap:plugin name="com.google.cordova.admob" source="npm"/>
 </widget>
