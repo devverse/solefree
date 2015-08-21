@@ -58,7 +58,7 @@ function twitterWatcherController($scope, $rootScope, twitter_service, mixpanel_
     $scope.twitterAccounts();
     $scope.getMemberTwitterWatching();
     $rootScope.$emit("featured", false);
-    window.removeBannerAd();
+    window.showBannerAd();
   })();
 }
 
