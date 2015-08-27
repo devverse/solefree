@@ -335,6 +335,13 @@ a.portfolio-wide-item {
     height: 100%;
 }
 
-/*
+.search-field {
+  padding: 3%;
+  width: 97%;
+  margin: 0 0 5px 0;
+  border: 1px solid #ddd;
+  margin-left: 5px;
+  font-size: 16px;
+}
 
 
