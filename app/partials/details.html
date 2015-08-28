@@ -43,31 +43,34 @@
   <div class="details-actions" ng-show="build == 'android'">
     <a href="{{r.link}}" class='button_small' ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Share </a>
   </div>
-  
 </div>
-<br/>
 <!-- page content wrapper ends -->
-<!-- Comments -->
-<div class="">
-  <ul class="tabs">
-    <li class="tab-link" data-tab="tab-1"> {{related.length}} Similar Sneakers</li>
-    <li class="tab-link current" data-tab="tab-2"> {{comments.length}} Comments </li>
-  </ul>
-  <div id="tab-1" class="tab-content">
-    <div ng-repeat="r in related" class="product">
-      <div class="releasesLeft">
-        <img src="{{r.galleryURL}}" class="productImage">
+<p class="ebay-items-heading"> Buy These Sneakers (Swipe to see more) </p>
+<div class="ebay-items">
+  <div class="normal-div_ ebay-product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
+    <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
+      <div ng-repeat="r in related" class="products" ebay-items-directive>
+        <div class="releasesLeft">
+          <img src="{{r.galleryURL}}" class="productImage">
+        </div>
+        <div class="releasesRight">
+          <span class="product_title">{{r.title.substring(1, 120);}}</span>
+          <br/>
+          <span class="price">${{r.value}}</span>
+          <br/>
+          <a class="button_small" href="" ng-click="buyEbayProduct(r.viewItemURL)">
+          <i class="fa fa-cart-plus"> </i> &nbsp; Details  </a>
+        </div>
       </div>
-      <div class="releasesRight">
-        <span class="product_title">{{r.title}}</span>
-        <br/>
-        <span class="price">${{r.value}}</span>
-        <br/>
-        <a class="button_small" href="" ng-click="buyEbayProduct(r.viewItemURL)">
-        <i class="fa fa-cart-plus"> </i> &nbsp; Details  </a>
+      <!-- the controls -->
+      <div class="m-carousel-controls m-carousel-bulleted ebay-product-carousel-pagination">
       </div>
     </div>
   </div>
+</div>
+<!-- Comments -->
+<p class="ebay-items-heading"> Comments </p>
+<div class="">
   <div id="tab-2" class="tab-content current">
     <div id="comments" class="">
       <div ng-repeat="comment in comments" class="commentDiv">

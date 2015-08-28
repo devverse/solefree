@@ -201,7 +201,6 @@ ul.tabs li.current{
 .details-actions {
   width: 33%;
   float: left;
-  margin-bottom: 20px;
 }
 
 .details-actions a {
@@ -344,4 +343,20 @@ a.portfolio-wide-item {
   font-size: 16px;
 }
 
+.ebay-items {
+  padding: 5px;
+  background-color: #ddd;
+  width: 100%;
+}
 
+p.ebay-items-heading, p.comments-heading {
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+  padding: 10px !important;
+}
+
+.ebay-product-carousel {
+  max-height: 170px;
+}

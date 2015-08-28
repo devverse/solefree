@@ -8,8 +8,8 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
 
     $routeProvider.when('/', {
-      templateUrl: admin_url + 'partials/releases.html',
-      controller: releasesController
+      templateUrl: admin_url + 'partials/home.html',
+      controller: homeController
     }).
     when('/releases', {
       templateUrl: admin_url + 'partials/releases.html',
@@ -35,10 +35,6 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/myreleases.html',
       controller: myReleasesController
     }).
-    when('/avail', {
-      templateUrl: admin_url + 'partials/still_avail.html',
-      controller: availController
-    }).
     when('/account', {
       templateUrl: admin_url + 'partials/account.html',
       controller: accountController
@@ -51,10 +47,6 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/signup.html',
       controller: signupController
     }).
-    when('/coupons', {
-      templateUrl: admin_url + 'partials/coupons.html',
-      controller: couponsController
-    }).
     when('/details', {
       templateUrl: admin_url + 'partials/details.html',
       controller: detailsController
@@ -63,21 +55,9 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
       templateUrl: admin_url + 'partials/news.html',
       controller: newsController
     }).
-    when('/twitter_watcher', {
-      templateUrl: admin_url + 'partials/twitter_watcher.html',
-      controller: twitterWatcherController
-    }).
     when('/gallery', {
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController
-    }).
-    when('/storeFinder', {
-      templateUrl: admin_url + 'partials/store_finder.html',
-      controller: storeFinderController
-    }).
-    when('/sales', {
-      templateUrl: admin_url + 'partials/sales.html',
-      controller: salesController
     }).
     when('/store', {
       templateUrl: admin_url + 'partials/store.html',
@@ -118,6 +98,19 @@ soleinsiderApp.directive('productImagesDirective', function() {
     ngrepeat_counter++;
     if (scope.$last) {
       $('.product-carousel').carousel();
+      ngrepeat_counter = 1;
+    }
+  };
+});
+
+
+soleinsiderApp.directive('ebayItemsDirective', function() {
+  return function(scope, element, attrs) {
+    var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
+    $(".ebay-product-carousel-pagination").append(link);
+    ngrepeat_counter++;
+    if (scope.$last) {
+      $('.ebay-product-carousel').carousel();
       ngrepeat_counter = 1;
     }
   };
