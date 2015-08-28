@@ -1,5 +1,7 @@
-<ul class="posts" style="margin-top:-20px">
-  <li class="swipeout" ng-repeat="r in releases | filter:filterReleases" style="clear:both;"
+<input type="text" ng-model="search" class="search-field" placeholder="Search"/>
+
+<ul class="posts" style="margin-top:10px">
+  <li class="swipeout" ng-repeat="r in releases | filter:filterReleases | filter:search" style="clear:both;"
     <div class="swipeout-content item-content" >
       <div class="post_entry">
         <div class="post_thumb"><img src="http://soleinsider.com/public/products/{{r.image}}" alt="" title=""></div>

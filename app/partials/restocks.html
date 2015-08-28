@@ -1,8 +1,10 @@
 <div style="margin-top:-10px;margin-bottom:10px;padding:15px">
   We regularly check sites for restocks. When we find one, we'll send you an email and a text message alert.
 </div>
+<input type="text" ng-model="search" class="search-field" placeholder="Search"/>
+
 <ul class="posts" style="margin-top:0px">
-  <li class="swipeout" ng-repeat="r in restocks" style="clear:both;margin-bottom:10px"
+  <li class="swipeout" ng-repeat="r in restocks | filter:search" style="clear:both;margin-bottom:10px"
     <div class="swipeout-content item-content" >
       <div class="post_entry">
         <div class="post_thumb"><img src="http://soleinsider.com/public/products/{{r.image}}" alt="" title=""></div>
