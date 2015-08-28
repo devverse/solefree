@@ -269,7 +269,6 @@ color: #fff;
 .panel {
 z-index: 1000;
 display: none;
-background:url(images/trans_black.png) repeat;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
@@ -284,6 +283,7 @@ transform: translate3d(0, 0, 0);
 -webkit-transition-duration: 400ms;
 transition-duration: 400ms;
 color:#FFFFFF;
+background-color: #3b5998;
 }
 .content-block {
 margin: 35px 0;
@@ -309,7 +309,6 @@ margin:0px;
 display:block;
 height:50px;
 line-height:50px;
-border-bottom:1px #1d2020 solid;
 }
 .list-nav ul li a{
   color:#FFFFFF;
@@ -486,7 +485,7 @@ height: 60px;
 height: 100px;
 }
 .navbarpages{
-background-color: #3b5998;
+background-color: #007bb6;
 position: fixed;
 top:0px;
 width:100%;
