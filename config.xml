@@ -2,8 +2,8 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="35"
-	version 	= "6.3.2"
+	versionCode="36"
+	version 	= "6.3.3"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -40,11 +40,11 @@
 	<icon src="icons/windows/icon.png" gap:platform="winphone" />
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
 
-    <gap:splash src="splash/android/res/drawable-hdpi/splash_1.9.png" />
-	<gap:splash src="splash/android/res/drawable-mdpi/splash_1.9.png" gap:platform="android" gap:qualifier="mdpi" />
+    <gap:splash src="splash/splash.png" />
+<!-- 	<gap:splash src="splash/android/res/drawable-mdpi/splash_1.9.png" gap:platform="android" gap:qualifier="mdpi" />
 	<gap:splash src="splash/android/res/drawable-hdpi/splash_1.9.png" gap:platform="android" gap:qualifier="hdpi" />
 	<gap:splash src="splash/android/res/drawable-xhdpi/splash_1.9.png" gap:platform="android" gap:qualifier="xhdpi" />
-	<gap:splash src="splash/android/res/drawable-xxhdpi/splash_1.9.png" gap:platform="android" gap:qualifier="xxhdpi" />
+	<gap:splash src="splash/android/res/drawable-xxhdpi/splash_1.9.png" gap:platform="android" gap:qualifier="xxhdpi" /> -->
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
