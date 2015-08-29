@@ -106,8 +106,6 @@ soleinsiderApp.directive('productImagesDirective', function() {
 
 soleinsiderApp.directive('ebayItemsDirective', function() {
   return function(scope, element, attrs) {
-    var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';
-    $(".ebay-product-carousel-pagination").append(link);
     ngrepeat_counter++;
     if (scope.$last) {
       $('.ebay-product-carousel').carousel();

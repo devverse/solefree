@@ -1,36 +1,39 @@
-<div class="static-notification-blue" ng-show="showError == true">
-  <p class="center-text uppercase">You must be logged in to manage your account</p>
-</div>
-<div ng-show="showError == true" style="text-align:center">
-  <a href="#/login" class="button_full"> Login</a>
-</div>
-
-<div id="" style="margin-top:0px" ng-show="showError == false">
-  <h2 class="page_subtitle">Update your account </h2>
-  <h2 id="Note"></h2>
-  <div class="contactform">
-    <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate"/>
-      
-      <label>Your Email Address:</label>
-      <input type="text" class="form_input required email" placeholder="Username" ng-model="account.email"/>
-      
-      <label>Phone: (NO SPACES OR HYPHENS)</label>
-      <input type="text" name="phone" value="" class="form_input required email" placeholder="Phone Number" ng-model="account.phone_number">
-      
-      <label>Carriers</label>
-      <select class="carrier" data-theme="c" ng-model="account.carrier">
-        <option value="1">AT&T</option>
-        <option value="2">Verizon</option>
-        <option value="3">T-Mobile</option>
-        <option value="4">Sprint</option>
-        <option value="5">Virgin Mobile</option>
-        <option value="6">US Cellular</option>
-        <option value="7">Nextel</option>
-        <option value="8">Boost</option>
-        <option value="9">Alltel</option>
-      </select>
-      <br/><br/>
-      <a href="# "class="button_full" ng-click="updateAccount(account)"> Update Account </a>
-    </form>
+<div class="login-background">
+  <div class="login-background-inside">
+    <div class="static-notification-blue" ng-show="showError == true">
+      <p class="center-text uppercase" style="text-align:center">You must be logged in to manage your account</p>
+    </div>
+    <div ng-show="showError == true" style="text-align:center">
+      <a href="#/login" class="button_small"> Login</a>
+    </div>
+    <div id="" style="margin-top:0px" ng-show="showError == false">
+      <h2 class="page_subtitle">Update your account </h2>
+      <h2 id="Note"></h2>
+      <div class="contactform">
+        <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate"/>
+          
+          <label>Your Email Address:</label>
+          <input type="text" class="form_input required email" placeholder="Username" ng-model="account.email"/>
+          
+          <label>Phone: (NO SPACES OR HYPHENS)</label>
+          <input type="text" name="phone" value="" class="form_input required email" placeholder="Phone Number" ng-model="account.phone_number">
+          
+          <label>Carriers</label>
+          <select class="carrier" data-theme="c" ng-model="account.carrier">
+            <option value="1">AT&T</option>
+            <option value="2">Verizon</option>
+            <option value="3">T-Mobile</option>
+            <option value="4">Sprint</option>
+            <option value="5">Virgin Mobile</option>
+            <option value="6">US Cellular</option>
+            <option value="7">Nextel</option>
+            <option value="8">Boost</option>
+            <option value="9">Alltel</option>
+          </select>
+          <br/><br/>
+          <a href="# "class="button_small" ng-click="updateAccount(account)"> Update Account </a>
+        </form>
+      </div>
+    </div>
   </div>
-  </div>
+</div>

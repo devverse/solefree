@@ -195,16 +195,11 @@ ul.tabs li.current{
 .product-details {
   padding: 10px;
   background-color: #eee;
-  width: 100%;
 }
 
 .details-actions {
-  width: 33%;
+  width: 23.3%;
   float: left;
-}
-
-.details-actions a {
-  width: 80%;
 }
 
 .button_small, .button_small_yes, .button_small_no {
@@ -346,7 +341,6 @@ a.portfolio-wide-item {
 .ebay-items {
   padding: 5px;
   background-color: #ddd;
-  width: 100%;
 }
 
 p.ebay-items-heading, p.comments-heading {
@@ -359,4 +353,27 @@ p.ebay-items-heading, p.comments-heading {
 
 .ebay-product-carousel {
   max-height: 170px;
+}
+
+.login-background {
+  background-image: url("splash/splash.png");
+  padding: 10px;
+  min-height: 400px;
+  margin-top: -20px;
+  text-align: center;
+  overflow: hidden;;
+  height: 100%;
+}
+
+.login-background-inside {
+  border-radius: 10px;
+  width: 85%;
+  min-height: 200px;
+  height: auto;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 15%;
+  background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+  background: rgba(255, 255, 255, 0.9);
 }

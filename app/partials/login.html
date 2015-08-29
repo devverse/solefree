@@ -1,24 +1,21 @@
-<div class="contactform" ng-show="showLogin == true">
-  <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate">
-    <div id="pages_maincontent" style="margin-top:-70px" ng-show="showLogin == true" ng-model="newaccount">
-    </form>
-    <br/><br/>
-    <h2 class="page_subtitle">Login </h2>
+<div class="login-background">
+  <div class="login-background-inside contactform" style="text-align:center">
+    <div ng-show="showLogin == true" ng-model="newaccount">
+      <h2 class="page_subtitle"> Login </h2>
+      <label>Email:</label>
+      <input type="text" name="username" class="form_input required" ng-model="account.email">
+      <label>Password:</label>
+      <input type="password" name="phone" value="" class="form_input required email" ng-model="account.password">
+      <br/><br/>
+      <a href="#" class="button_small" ng-click="login(account, $event)"> Login </a>
+      <a href="#/signup"  class='button_small'> Or Signup</a>
+    </div>
+  </div>
+  <div id="pages_maincontent" ng-show="showLogin == false" style="" class="static-notification-blue">
     <br/>
-    <br/>
-    <label>Email:</label>
-    <input type="text" name="username" class="form_input required" ng-model="account.email">
-    
-    <label>Password:</label>
-    <input type="password" name="phone" value="" class="form_input required email" ng-model="account.password">
-    <input type="submit" name="submit" class="form_submit" id="submit" ng-click="login(account, $event)" value="Login" />
-    <a href="#/signup"  class='button button-blue'> Or Signup</a>
-  </form>
+    <p class="center-text uppercase"> <br/>You are logged in as {{username}} <br/>
+      <a class='button_small' ng-click="logout()">Logout</a>
+    </p>
+  </div>
 </div>
-</div>
-
-<div id="pages_maincontent" ng-show="showLogin == false" style="margin-top:-30px" class="static-notification-blue">
-  <p class="center-text uppercase"> <br/>You are logged in as {{username}} <br/>
-    <a class='button button-light' ng-click="logout()">Logout</a>
-  </p>
 </div>

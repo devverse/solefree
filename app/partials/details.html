@@ -26,7 +26,7 @@
 </div>
 <div style="text-align:left">
   
-  <div style="overflow:hidden;width:100%;padding:0px;">
+  <div style="overflow:hidden;padding:0px;margin-top:-8px">
     <div class="button_small_yes" ng-click="sneakerRating(r,'yes')">
       <a> Cop ({{r.yes_percentage}}%)</a>
     </div>
@@ -34,15 +34,10 @@
       <a> Drop ({{r.no_percentage}}%)</a>
     </div>
   </div>
-  <div class="details-actions">
-    <a data-product-id='{{r.product_id}}' class='button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
-  </div>
-  <div class="details-actions" ng-show="build == 'android'">
-    <a href="{{r.link}}" class='button_small' ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Calander</a>
-  </div>
-  <div class="details-actions" ng-show="build == 'android'">
-    <a href="{{r.link}}" class='button_small' ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Share </a>
-  </div>
+    <a data-product-id='{{r.product_id}}' class='details-actions button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
+    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Calander</a>
+
+    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Share </a>
 </div>
 <!-- page content wrapper ends -->
 <p class="ebay-items-heading"> Buy These Sneakers (Swipe to see more) </p>
@@ -62,8 +57,7 @@
           <i class="fa fa-cart-plus"> </i> &nbsp; Details  </a>
         </div>
       </div>
-      <!-- the controls -->
-      <div class="m-carousel-controls m-carousel-bulleted ebay-product-carousel-pagination">
+
       </div>
     </div>
   </div>
@@ -80,7 +74,7 @@
           <p> - {{comment.email.substr(0,6)}} ****** {{comment.comment_date}}</p>
         </div>
       </div>
-      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/><br/>
       <h4> Leave a comment </h4>
       <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
       </textarea>
