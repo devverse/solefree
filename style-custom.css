@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,200);
 
 * {
   font-family: 'Titillium Web', sans-serif;
@@ -198,8 +198,12 @@ ul.tabs li.current{
 }
 
 .details-actions {
-  width: 23.3%;
+  width: 38.8%;
   float: left;
+}
+
+.hide {
+  display: none !important;
 }
 
 .button_small, .button_small_yes, .button_small_no {
