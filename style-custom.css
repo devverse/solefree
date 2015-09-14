@@ -198,8 +198,9 @@ ul.tabs li.current{
 }
 
 .details-actions {
-  width: 38.8%;
-  float: left;
+  width: 100%;
+  text-align: center;
+  padding: 5px 10px !important;
 }
 
 .hide {
@@ -380,4 +381,9 @@ p.ebay-items-heading, p.comments-heading {
   margin-top: 15%;
   background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
   background: rgba(255, 255, 255, 0.9);
+}
+
+.back-button {
+  display: none;
+  max-width: 55% !important;
 }

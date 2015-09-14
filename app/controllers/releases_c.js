@@ -106,6 +106,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $scope.getReleases();
     $scope.getComingSoon();
     $rootScope.$emit("featured", true);
+    $rootScope.$emit("showback_button", false);
     window.removeBannerAd();
   })();
 }

@@ -30,10 +30,22 @@ function appController($scope, $rootScope, app_service, mixpanel_service) {
 
   $scope.init = (function() {
     $scope.getFeaturedProducts();
-    //$scope.getMessages();
     $rootScope.$on('featured', function(e, status) {
       $scope.show_featured = status;
     });
+
+    $rootScope.$on('showback_button', function(e, status) {
+      if (status == true) {
+          $(".home-button").hide();
+          $(".back-button").show();
+        return;
+      }
+
+      $(".home-button").show();
+      $(".back-button").hide();
+    });
+
+
   })();
 }
 
