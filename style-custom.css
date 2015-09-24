@@ -409,3 +409,12 @@ p.ebay-items-heading, p.comments-heading {
 .spinner {
   text-align: center;
 }
+
+.coming-soon {
+  padding: 10px;
+  text-align: center;
+  background-color: #007bb6;
+  width: 100%;
+  color: #fff !important;
+  font-size: 14px !important;
+}
