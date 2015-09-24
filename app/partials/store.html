@@ -1,49 +1,39 @@
 <ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
-<li>{{category}} </li>
-</ul>  
-
-
+  <li>{{category}} </li>
+</ul>
 <select ng-model="form.type" required ng-change="search(form.type)" class="menu-dropdown">
   <option value="Best Sellers"> Select A Category </option>
   <option ng-repeat="m in menu" value="{{m.name}}">{{m.name}}</option>
 </select>
-
 <div class="swipeout" ng-repeat="p in products" ng-cloak>
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-
-          <div class="post_thumb">
-          <a href="#" ng-click="details(r)">
+  <div class="swipeout-content item-content" >
+    <div class="post_entry">
+      <div class="post_thumb">
+        <a href="#" ng-click="details(r)">
           <img src="{{p.image.sizes.IPhone.url}}"/>
-          </a>
-          </div>  
-          <div class="post_details">
-          <h4 class="sneaker_title">  
-          <a href="#" ng-click="details(r)">{{p.name}} </a> </h4>
-
-          <div class="date_price">
-            <span class="date" style="width:20%;margin-top:5px">
+        </a>
+      </div>
+      <div class="post_details">
+        <h4 class="sneaker_title">
+        <a href="#" ng-click="details(r)">{{p.name}} </a> </h4>
+        <div class="date_price">
+          <span class="date" style="width:20%;margin-top:5px">
             {{p.priceLabel}}
-            </span>
-            <br/><br/>
-            <span class="price">
-              <a href="" ng-click="buyProduct(p)" class="button_small">Details</a>
-            </span>
-            <br/>
-          </div>
-
-    
+          </span>
+          <br/><br/>
+          <span class="price">
+            <a href="" ng-click="buyProduct(p)" class="button_small">Details</a>
+          </span>
+          <br/>
+        </div>
+        
       </div>
     </div>
- 
+    
+  </div>
 </div>
-</div>
-
 <div class="loading" ng-show="showLoading == true" style="text-align:center">
-  <img src="images/loader.gif" width="80px" height="80px" />
+  <img src="images/spinner.gif" />
 </div>
 <br/><br/>
-
-
- <a class="button_small paginate_button" ng-click="paginate()" ng-show="showLoading == false"> View More </a> 
-
+<a class="button_small paginate_button" ng-click="paginate()" ng-show="showLoading == false"> View More </a>

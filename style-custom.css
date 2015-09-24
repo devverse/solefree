@@ -156,6 +156,21 @@ ul.tabs li.current{
   width: 55%;
 }
 
+.speach-center {
+  float: left;
+  display: inline;
+  text-align: left;
+  width: 95%;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  border: solid 1px #cacaca;
+}
+
 .speach-left {
   float: left;
   display: inline;
@@ -201,6 +216,8 @@ ul.tabs li.current{
   width: 100%;
   text-align: center;
   padding: 5px 10px !important;
+  margin-bottom: 1px;
+  text-align: left;
 }
 
 .hide {
@@ -386,4 +403,9 @@ p.ebay-items-heading, p.comments-heading {
 .back-button {
   display: none;
   max-width: 55% !important;
+  margin-top: -5px;
+}
+
+.spinner {
+  text-align: center;
 }

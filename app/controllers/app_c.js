@@ -1,8 +1,9 @@
-function appController($scope, $rootScope, app_service, mixpanel_service) {
+function appController($scope, $rootScope, $window, app_service) {
 
   $scope.message = "";
   $scope.showads = soleinsider.showads;
   $scope.show_featured = soleinsider.show_featured;
+  $scope.show_loading = true;
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
@@ -32,6 +33,7 @@ function appController($scope, $rootScope, app_service, mixpanel_service) {
     $scope.getFeaturedProducts();
     $rootScope.$on('featured', function(e, status) {
       $scope.show_featured = status;
+      $scope.show_loading = false;
     });
 
     $rootScope.$on('showback_button', function(e, status) {
@@ -45,8 +47,20 @@ function appController($scope, $rootScope, app_service, mixpanel_service) {
       $(".back-button").hide();
     });
 
+    $(".back-button").on('click', function(event) {
+      console.log('back-button');
+      event.preventDefault();
+      $window.history.back();
+    });
+
+    $(".home-button").on('click', function(event) {
+      console.log("home-button")
+      event.preventDefault();
+      window.location = "main.html";
+    });
+
 
   })();
 }
 
-appController.$inject = ['$scope', '$rootScope', 'app_service', 'mixpanel_service'];
+appController.$inject = ['$scope', '$rootScope', '$window', 'app_service'];

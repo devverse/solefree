@@ -115,14 +115,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     for (var i = 0; i < comments.length; i++) {
       var formatted = moment.utc(comments[i].comment_date, "MM-DD-YYYY h:mm:ss");
       comments[i].comment_date = moment(formatted, "MM-DD-YYYY h:mm:ss").fromNow();
-
-      divisor++;
-      if (divisor / 1 == 1) {
-        comments[i].cssClass = 'speach-left';
-      } else {
-        divisor = 0;
-        comments[i].cssClass = 'speach-right blue-bubble';
-      }
     }
 
     $scope.comments = comments;

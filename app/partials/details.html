@@ -21,7 +21,7 @@
     Coming Soon
   </div>
   <div ng-show="r.coming_soon == 0">
-    {{r.release_date}}  <br/> ${{r.price}}
+    {{r.release_date}}  <br/> {{r.price != '0.00'}}  <div ng-show="{{r.price != '0.00'}} == true">${{r.price}} </div> <span ng-show="{{r.price == 0.00}}">$N/A </span>
   </div>
 </div>
 <div style="text-align:left">
@@ -35,9 +35,9 @@
     </div>
   </div>
   <div style="overflow:hidden;float:left;width:100%">
+    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> Add to Calander Calander</a>
     <a data-product-id='{{r.product_id}}' class='details-actions button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
-<!--     <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Calander</a>
-    <a href="{{r.link}}" class="details-actions button_small hide" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> &nbsp; Share </a> -->
+    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> Share </a>
   </div>
   <!-- page content wrapper ends -->
   <p class="ebay-items-heading"> Buy These Sneakers (Swipe to see more) </p>
@@ -71,9 +71,9 @@
     <div id="comments" class="">
       <div ng-repeat="comment in comments" class="commentDiv">
         <div class="clear"></div>
-        <div class="{{comment.cssClass}}" style="margin-bottom:15px">
+        <div class="speach-center" style="margin-bottom:15px">
           <p>{{comment.comment}}</p>
-          <p> - {{comment.email.substr(0,6)}} ****** {{comment.comment_date}}</p>
+          <p> - {{comment.email.substr(0,6)}} ****** <br/> {{comment.comment_date}}</p>
         </div>
       </div>
       <br/><br/><br/><br/><br/><br/><br/>

@@ -6,6 +6,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.showmsg = false;
   $scope.showerror = false;
   $scope.errorMessage = "";
+  $scope.show_loading = true;
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
@@ -13,7 +14,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.details = function(product) {
     localStorage.setItem("product_details", JSON.stringify(product));
-    $location.path('/details')
+    $location.path('/details');
   };
 
   $scope.sneakerRating = function(product, status) {
@@ -43,6 +44,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     release_service.getReleases().then(
       function(data) {
         $scope.releases = data;
+        $scope.show_loading = false;
       }, function(err) {
         alert(err);
       });

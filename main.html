@@ -54,15 +54,19 @@
         <div class="page-content">
           
           <div class="navbarpages">
-            <div class="navbar_home_link"><a href="main.html" class="home_link">
-            <img src="images/icons/white/home.png" class="home-button">
-            <img src="images/back_button.png" class="back-button">
-            </a></div>
+            <div class="navbar_home_link">
+            <a href="#" class="home_link">
+              <img src="images/icons/white/home.png" class="home-button">
+              <img src="images/back_button.png" class="back-button">
+            </a>
+            </div>
             <div class="navbar_page_center">SoleInsider</div>
             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu_open.png" alt="" title=""></a></div>
           </div>
           <div id="pages_maincontent" class="" ng-app="soleinsiderApp" ng-controller="appController">
-            
+                <div ng-cloak ng-show="show_loading == true" class="spinner">
+              <img src="images/spinner.gif"/>
+            </div>
             <div ng-cloak ng-show="show_featured == true">
               <div class="panel grey featured" style="text-align:center">
                 <span style="font-weight:bold;font-size:24px">Featured Sneakers</span>

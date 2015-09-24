@@ -1,11 +1,14 @@
 function newsController($scope, $rootScope, news_service, mixpanel_service) {
+  
   $scope.news = [];
+  $scope.show_loading = true;
 
   $scope.getNews = function() {
     $scope.showLoading = true;
     news_service.getFeeds().then(
       function(data) {
         $scope.news = data;
+        $scope.show_loading = false;
       }, function(err) {
         alert(err);
       });
