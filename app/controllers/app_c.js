@@ -49,15 +49,13 @@ function appController($scope, $rootScope, $window, app_service) {
 
     $(".back-button").on('click', function(event) {
       event.preventDefault();
-      $window.history.back();
+      window.history.go(-1);
     });
 
     $(".home-button").on('click', function(event) {
       event.preventDefault();
       window.location = "main.html";
     });
-
-
   })();
 }
 
