@@ -14,7 +14,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.details = function(product) {
     localStorage.setItem("product_details", JSON.stringify(product));
-    $location.path('/details');
+    window.location.href = '#/details';
   };
 
   $scope.sneakerRating = function(product, status) {

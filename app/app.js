@@ -99,6 +99,7 @@ soleinsiderApp.directive('productImagesDirective', function() {
     if (scope.$last) {
       $('.product-carousel').carousel();
       ngrepeat_counter = 1;
+        window.scrollTo(0, 0);
     }
   };
 });

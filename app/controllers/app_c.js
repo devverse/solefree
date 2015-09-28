@@ -38,8 +38,8 @@ function appController($scope, $rootScope, $window, app_service) {
 
     $rootScope.$on('showback_button', function(e, status) {
       if (status == true) {
-          $(".home-button").hide();
-          $(".back-button").show();
+        $(".home-button").hide();
+        $(".back-button").show();
         return;
       }
 
@@ -48,13 +48,11 @@ function appController($scope, $rootScope, $window, app_service) {
     });
 
     $(".back-button").on('click', function(event) {
-      console.log('back-button');
       event.preventDefault();
       $window.history.back();
     });
 
     $(".home-button").on('click', function(event) {
-      console.log("home-button")
       event.preventDefault();
       window.location = "main.html";
     });
