@@ -21,7 +21,9 @@
     Coming Soon
   </div>
   <div ng-show="r.coming_soon == 0">
-    {{r.release_date}}  <br/> {{r.price != '0.00'}}  <div ng-show="{{r.price != '0.00'}} == true">${{r.price}} </div> <span ng-show="{{r.price == 0.00}}">$N/A </span>
+    {{r.release_date}}  <br/>
+    <div ng-show="r.price != '0.00'">${{r.price}} </div> 
+    <span ng-show="r.price == 0.00">$N/A </span>
   </div>
 </div>
 <div style="text-align:left">

@@ -8,8 +8,8 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
 
     $routeProvider.when('/', {
-      templateUrl: admin_url + 'partials/home.html',
-      controller: homeController
+      templateUrl: admin_url + 'partials/releases.html',
+      controller: releasesController
     }).
     when('/releases', {
       templateUrl: admin_url + 'partials/releases.html',
