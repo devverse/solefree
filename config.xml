@@ -29,9 +29,13 @@
 	<icon src="icons/android/drawable_xhdpi_ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
 
 	<!-- Iphone -->
-	<icon src="icons/ios/Icon-Small-50" gap:platform="ios" width="57" height="57" />
+	<icon src="icons/ios/Icon-Small-57.png" gap:platform="ios" width="57" height="57" />
 	<icon src="icons/ios/Icon-72.png" gap:platform="ios" width="72" height="72" />
 	<icon src="icons/ios/Icon@2x.png" gap:platform="ios" width="114" height="114" />
+	<icon src="icons/ios/Icon-40@3x.png" gap:platform="ios" width="120" height="120" />
+	<icon src="icons/ios/Icon-76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="icons/ios/Icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
 
 	<!-- retina iPad support: PhoneGap 2.5.0+ only -->
 	<icon src="icons/ios/Icon-72@2x.png" gap:platform="ios" width="144" height="144" />
@@ -41,10 +45,6 @@
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
 
     <gap:splash src="splash/splash.png" />
-<!-- 	<gap:splash src="splash/android/res/drawable-mdpi/splash_1.9.png" gap:platform="android" gap:qualifier="mdpi" />
-	<gap:splash src="splash/android/res/drawable-hdpi/splash_1.9.png" gap:platform="android" gap:qualifier="hdpi" />
-	<gap:splash src="splash/android/res/drawable-xhdpi/splash_1.9.png" gap:platform="android" gap:qualifier="xhdpi" />
-	<gap:splash src="splash/android/res/drawable-xxhdpi/splash_1.9.png" gap:platform="android" gap:qualifier="xxhdpi" /> -->
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
