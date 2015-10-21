@@ -12,9 +12,10 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     window.open(product.link, '_blank', 'location=yes');
   };
 
-  $scope.details = function(product) {
+  $scope.details = function(event, product) {
+    event.preventDefault()
     localStorage.setItem("product_details", JSON.stringify(product));
-    window.location.href = '#/details';
+    $location.path('details');
   };
 
   $scope.sneakerRating = function(product, status) {

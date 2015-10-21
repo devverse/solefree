@@ -1,11 +1,10 @@
-var soleinsiderApp = angular.module('soleinsiderApp', []);
-
-
-soleinsiderApp.config(['$routeProvider', '$compileProvider',
-  function($routeProvider, $compileProvider) {
+var soleinsiderApp = angular.module('soleinsiderApp', [
+  'ngRoute',
+  'ngAnimate'
+]).config(['$routeProvider',
+  function($routeProvider) {
     "use strict";
 
-    $compileProvider.urlSanitizationWhitelist(/^\s*(https?|file|ms-appx):/);
 
     $routeProvider.when('/', {
       templateUrl: admin_url + 'partials/releases.html',
@@ -66,8 +65,7 @@ soleinsiderApp.config(['$routeProvider', '$compileProvider',
     when('/clothing', {
       templateUrl: admin_url + 'partials/clothing.html',
       controller: clothingStoreController
-    })
-    .otherwise({redirectTo:'/'});
+    });
   }
 ]);
 
