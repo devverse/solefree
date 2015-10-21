@@ -49,11 +49,11 @@
     <gap:splash src="splash/splash.png" />
 
     <!-- Android Splash -->
-    <gap:splash src="splash/android/drawable-hdpi/soleinsider_splash9.png" gap:platform="android" gap:density="hdpi" />
-	<gap:splash src="splash/android/drawable-mdpi/soleinsider_splash9.png" gap:platform="android" gap:density="mdpi" />
-	<gap:splash src="splash/android/drawable-xdpi/soleinsider_splash9.png" gap:platform="android" gap:density="xdpi" />
-	<gap:splash src="splash/android/drawable-xxdpi/soleinsider_splash9.png" gap:platform="android" gap:density="xxhdpi" />
-	<gap:splash src="splash/android/drawable-xxxdpi/soleinsider_splash9.png" gap:platform="android" gap:density="xxxhdpi" />
+    <gap:splash src="splash/android/drawable-hdpi/soleinsider_splash.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="splash/android/drawable-mdpi/soleinsider_splash.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="splash/android/drawable-xdpi/soleinsider_splash.png" gap:platform="android" gap:density="xdpi" />
+	<gap:splash src="splash/android/drawable-xxdpi/soleinsider_splash.png" gap:platform="android" gap:density="xxhdpi" />
+	<gap:splash src="splash/android/drawable-xxxdpi/soleinsider_splash.png" gap:platform="android" gap:density="xxxhdpi" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
