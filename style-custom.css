@@ -400,15 +400,6 @@ p.ebay-items-heading, p.comments-heading {
   background: rgba(255, 255, 255, 0.9);
 }
 
-.back-button {
-  display: none;
-  max-width: 55% !important;
-  margin-top: -5px;
-  font-size: 18px;
-  font-weight: 400;
-  color: #000;
-}
-
 .spinner {
   text-align: center;
 }
@@ -472,3 +463,21 @@ p.ebay-items-heading, p.comments-heading {
 
 .page-play.ng-enter { animation:slideInRight 2.0s both ease-in; }
 .page-play.ng-leave { animation:rotateFall 2.0s both ease-in; }
+
+.home-button {
+  height: 28px;
+  width: 28px;
+}
+
+.back-button {
+  display: none;
+  max-width: 55% !important;
+  margin-top: -5px;
+  height: 28px;
+  width: 28px;
+}
+
+
+.details-image {
+  height: 65%;
+}

@@ -13,7 +13,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.details = function(event, product) {
-    event.preventDefault()
+    event.preventDefault();
     localStorage.setItem("product_details", JSON.stringify(product));
     $location.path('details');
   };

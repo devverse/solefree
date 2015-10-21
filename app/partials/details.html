@@ -1,19 +1,19 @@
 <!-- page content wrapper starts -->
-<div class="pageContentWrapper" style="margin-top:-20px">
+<div class="pageContentWrapper" style="margin-top:-19px">
   <!-- the viewport -->
   <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
     <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
       <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
-        <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth">
+        <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth details-image">
         <br/>
       </div>
     </div>
     <!-- the controls -->
-    <div class="m-carousel-controls m-carousel-bulleted product-carousel-pagination">
+    <div class="m-carousel-controls m-carousel-hud">
+      <a class="m-carousel-prev" href="#" data-slide="prev">Previous</a>
+      <a class="m-carousel-next" href="#" data-slide="next">Next</a>
     </div>
   </div>
-</div>
-<br/>
 <div class="product-details">
   <span style="font-weight:bold">{{r.name}}</span>
   <br/>
@@ -22,7 +22,7 @@
   </div>
   <div ng-show="r.coming_soon == 0">
     {{r.release_date}}  <br/>
-    <div ng-show="r.price != '0.00'">${{r.price}} </div> 
+    <div ng-show="r.price != '0.00'">${{r.price}} </div>
     <span ng-show="r.price == 0.00">$N/A </span>
   </div>
 </div>
@@ -44,22 +44,22 @@
 </div>
 <!-- Comments -->
 <p class="ebay-items-heading"> Comments ({{comments.length}}) </p>
-  <div id="tab-2" class="tab-content current">
-    <div id="comments" class="">
-      <div ng-repeat="comment in comments" class="commentDiv">
-        <div class="clear"></div>
-        <div class="speach-center" style="margin-bottom:15px">
-          <p>{{comment.comment}}</p>
-          <p> - {{comment.email.substr(0,6)}} ****** <br/> {{comment.comment_date}}</p>
-        </div>
+<div id="tab-2" class="tab-content current">
+  <div id="comments" class="">
+    <div ng-repeat="comment in comments" class="commentDiv">
+      <div class="clear"></div>
+      <div class="speach-center" style="margin-bottom:15px">
+        <p>{{comment.comment}}</p>
+        <p> - {{comment.email.substr(0,6)}} ****** <br/> {{comment.comment_date}}</p>
       </div>
-      <br/><br/><br/><br/><br/><br/><br/>
-      <h4> Leave a comment </h4>
-      <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
-      </textarea>
-      <br/> <br/>
-      <a href="#" class="button_small" ng-click="submitComment()" style="width:90%">
-      <i class="fa fa-comments-o"> </i> &nbsp; Leave Comment</a>
     </div>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <h4> Leave a comment </h4>
+    <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
+    </textarea>
+    <br/> <br/>
+    <a href="#" class="button_small" ng-click="submitComment()" style="width:90%">
+    <i class="fa fa-comments-o"> </i> &nbsp; Leave Comment</a>
   </div>
+</div>
 </div>

@@ -2,7 +2,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.comments = [];
   $scope.slideshow = [];
-  $scope.related = [];
 
   $scope.buyEbayProduct = function(url) {
     window.open(url, '_blank', 'location=yes');
