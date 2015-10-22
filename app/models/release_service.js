@@ -1,5 +1,5 @@
-soleinsiderApp.factory('release_service', ['util_service', '$rootScope', '$q', '$http',
-  function(util_service, $rootScope, $q, $http) {
+soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
+  function($rootScope, $q, $http) {
 
     var api = soleinsider.base_url;
 

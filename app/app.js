@@ -60,10 +60,6 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
     when('/store', {
       templateUrl: admin_url + 'partials/store.html',
       controller: storeController
-    }).
-    when('/clothing', {
-      templateUrl: admin_url + 'partials/clothing.html',
-      controller: clothingStoreController
     });
   }
 ]);
