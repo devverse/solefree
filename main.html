@@ -55,16 +55,16 @@
           
           <div class="navbarpages">
             <div class="navbar_home_link">
-            <a href="#" class="home_link">
-              <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-128.png" class="home-button"/>
-              <img src="https://cdn1.iconfinder.com/data/icons/arrows-38/512/Back_Previous_Move_Arrow_Direction-128.png" class="back-button"/>
-            </a>
+              <a href="#" class="home_link">
+                <img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-128.png" class="home-button"/>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuS0FoFxWW0SW3CaMOKuDBU7BMpl-f7n07jl-sFxAo8JJb0hMj" class="back-button"/>
+              </a>
             </div>
             <div class="navbar_page_center">SoleInsider</div>
             <div class="menu_open_icon_white"><a href="#" class="open-panel"><img src="images/menu.png" alt="" title=""></a></div>
           </div>
           <div id="pages_maincontent" class="" ng-app="soleinsiderApp" ng-controller="appController">
-                <div ng-cloak ng-show="show_loading == true" class="spinner">
+            <div ng-cloak ng-show="show_loading == true" class="spinner">
               <img src="images/spinner.gif"/>
             </div>
             <div ng-cloak ng-show="show_featured == true">
@@ -80,22 +80,20 @@
                     <p>{{f.name}} - ${{f.price}}</p>
                     <img src="{{f.image.sizes.IPhone.url}}" ng-show="show_featured == true" class="featuredImage" style="clear:both;width: 45% !important;">
                     <br/><br/>
-                    <a class="button_small" ng-click="buyProduct(f)" style="width:80%"> <i class="fa fa-cart-plus"> </i> &nbsp; Details</a>
+                    <a class="button_small" ng-click="buyProduct(f)" style="width:80%"> Details</a>
                   </span>
                 </span>
                 <!-- the controls -->
-                <div class="m-carousel-controls m-carousel-bulleted featured-carousel-pagination">
+                <div class="m-carousel-controls m-carousel-hud">
+                  <a class="m-carousel-prev" href="#" data-slide="prev">Previous</a>
+                  <a class="m-carousel-next" href="#" data-slide="next">Next</a>
                 </div>
               </span>
-              
             </div>
             <div ng-view>
             </div>
-            
             <div class="clear"></div>
           </div>
-          
-          
         </div>
       </div></div>
       <!-- Bottom Toolbar-->
@@ -103,9 +101,9 @@
         <div class="toolbar-inner">
           <ul class="toolbar_icons icons_4row">
             <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title=""></a></li>
-            <li><a href="features.html"><img src="images/icons/white/settings.png" alt="" title=""></a></li>
-            <li><a href="photos.html"><img src="images/icons/white/photos.png" alt="" title=""></a></li>
-            <li><a href="#" data-popup=".popup-social" class="open-popup"><img src="images/icons/white/heart.png" alt="" title=""></a></li>
+            <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title=""></a></li>
+            <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title=""></a></li>
+            <li><a href="#" data-popup=".popup-login" class="open-popup"><img src="images/icons/white/user.png" alt="" title=""></a></li>
           </ul>
         </div>
       </div>
@@ -118,10 +116,9 @@
   <script type="text/javascript" src="js/framework7.min.js"></script>
   <script type="text/javascript" src="js/my-app.js"></script>
   <!-- Setup angular classes -->
-    <script src="http://code.angularjs.org/1.2.14/angular.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
-
+  <script src="http://code.angularjs.org/1.2.14/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
   <script src="js/toastr.js"></script>
   <script src="app/config.js"></script>
   <script src="app/ads.js"></script>
