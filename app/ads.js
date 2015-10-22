@@ -7,6 +7,7 @@ admobid = {
 };
 
 function showBannerAd() {
+    return true;
     if (typeof AdMob != 'undefined') {
         AdMob.createBanner({
             adId : admobid.banner,
@@ -17,6 +18,7 @@ function showBannerAd() {
 }
 
 function removeBannerAd() {
+    return true;
 	if (typeof AdMob != 'undefined') {
 		AdMob.removeBanner();
 	}

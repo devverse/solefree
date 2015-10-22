@@ -16,9 +16,10 @@ function pastReleasesController($scope, $rootScope, $location, release_service) 
       });
   };
 
-  $scope.details = function(product) {
+  $scope.details = function(event, product) {
+    event.preventDefault();
     localStorage.setItem("product_details", JSON.stringify(product));
-    $location.path('/details')
+    $location.path('details');
   };
 
   $scope.init = (function() {

@@ -1,17 +1,20 @@
 <div ng-cloak ng-show="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
 </div>
-
 <input type="text" ng-model="search" class="search-field" placeholder="Search"ng-show="show_loading == false" />
 <ul class="posts" style="margin-top:10px">
   <li class="swipeout" ng-repeat="r in releases | filter:filterReleases | filter:search" style="clear:both;"
     <div class="swipeout-content item-content" >
       <div class="post_entry">
-        <div class="post_thumb"><a href="#" ng-click="details(r)">
+        <div class="post_thumb"><a ng-click="details($event, r)">
         <img src="http://soleinsider.com/public/products/{{r.image}}"></a></div>
         <div class="post_details">
-          <h4> <a href="#" ng-click="details(r)">{{r.name}} </a> </h4>
-          <span class='date' style="font-size:11px">{{r.release_date}}</span>
+          <h4 class="sneaker_title">
+          <a href="#" ng-click="details($event, r)">{{r.name}} </a>
+          </h4>
+          <div class="date_price">
+            <span class="date">{{r.release_date}}</span>
+          </div>
           <br/>
         </div>
       </div>

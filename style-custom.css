@@ -467,6 +467,7 @@ p.ebay-items-heading, p.comments-heading {
 .home-button {
   height: 28px;
   width: 28px;
+  margin-top: -6px;
 }
 
 .back-button {
