@@ -1,4 +1,4 @@
-function newsController($scope, $rootScope, news_service, mixpanel_service) {
+function newsController($scope, $rootScope, news_service) {
   
   $scope.news = [];
   $scope.show_loading = true;
@@ -22,4 +22,4 @@ function newsController($scope, $rootScope, news_service, mixpanel_service) {
   })();
 }
 
-newsController.$inject = ['$scope', '$rootScope', 'news_service', 'mixpanel_service'];
+newsController.$inject = ['$scope', '$rootScope', 'news_service'];

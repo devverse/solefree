@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/framework7.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="style-custom.css">
-  <link type="text/css" rel="stylesheet" href="css/swipebox.css">
   <link type="text/css" rel='stylesheet' href='css/carousel-style.css'>
   <link type="text/css" rel='stylesheet' href='css/carousel.css'>
   <link href="css/toastr.css" rel="stylesheet" type="text/css">
@@ -23,11 +22,9 @@
     <nav class="list-nav">
       <ul>
         <li class="cart-icon_"><a href="#/store" class="close-panel">Sneaker Store</a></li>
-        <!--  <li class="cart-icon"><a href="#/clothing" class="close-panel">Clothing Store</a></li> -->
         <li class="cart-icon_"><a href="#/releases" class="close-panel">Releases</a></li>
         <li class="cart-icon_"><a href="#/past_releases" class="close-panel">Past Releases</a></li>
         <li class="heart-icon_"><a href="#/restocks" class="close-panel">Restocks</a></li>
-        <!-- <li class="heart-icon"><a href="#/restock_history" class="close-panel">Past Restocks</a></li> -->
         <li class="photos-icon_"><a href="#/gallery" class="close-panel">Gallery</a></li>
         <li class="list-icon_"><a href="#/news" class="close-panel">News</a></li>
         <li class="about-icon_"><a href="#/account" class="close-panel">My Account</a></li>
@@ -80,13 +77,13 @@
                     <p>{{f.name}} - ${{f.price}}</p>
                     <img src="{{f.image.sizes.IPhone.url}}" ng-show="show_featured == true" class="featuredImage" style="clear:both;width: 45% !important;">
                     <br/><br/>
-                    <a class="button_small" ng-click="buyProduct(f)" style="width:80%"> Details</a>
+                    <a class="button_small" ng-click="buyProduct(f)" style="width:30%"> Details</a>
                   </span>
                 </span>
                 <!-- the controls -->
-                <div class="m-carousel-controls m-carousel-hud">
-                  <a class="m-carousel-prev" href="#" data-slide="prev">Previous</a>
-                  <a class="m-carousel-next" href="#" data-slide="next">Next</a>
+                <div class="m-carousel-controls m-carousel-hud" style="display:block !important">
+                  <a class="m-carousel-prev" href="#" data-slide="prev" style="opacity:0.3">Previous</a>
+                  <a class="m-carousel-next" href="#" data-slide="next" style="opacity:0.3">Next</a>
                 </div>
               </span>
             </div>
@@ -150,6 +147,5 @@
   <script src="app/models/instagram_service.js"></script>
   <script src='js/moment.js'></script>
   <script src='js/carousel.js'></script>
-  <script src="assets/toast/javascript/jquery.toastmessage.js"></script>
 </body>
 </html>
