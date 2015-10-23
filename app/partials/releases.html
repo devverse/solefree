@@ -28,8 +28,8 @@
   </div>
 </div>
 <br/>
-<h3 class="page_subtitle coming-soon" ng-show="coming.length > 0"> No Release Date Yet </h3>
-<li class="swipeout" ng-repeat="r in coming | filter: search" ng-cloak>
+<h3 class="page_subtitle coming-soon" ng-show="coming.length > 0" ng-show="show_loading == false"> No Release Date Yet </h3>
+<li class="swipeout" ng-repeat="r in coming | filter: search" ng-cloak ng-show="show_loading == false">
   <div class="swipeout-content item-content" >
     <div class="post_entry">
       <div class="post_thumb">
