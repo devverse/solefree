@@ -1,5 +1,6 @@
 var soleinsiderApp = angular.module('soleinsiderApp', [
   'ngRoute',
+  'ngSanitize',
 ]).config(['$routeProvider',
   function($routeProvider) {
     "use strict";
