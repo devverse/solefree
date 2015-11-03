@@ -4,7 +4,7 @@ onDeviceReady: function() {
 
     navigator.splashscreen.hide(); 
 
-    }, 1000); 
+    }, 2000); 
 
 } 
 
