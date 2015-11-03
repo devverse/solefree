@@ -47,6 +47,8 @@
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
 
     <gap:splash src="splash/splash.png" />
+
+    <gap:splash gap:platform="ios" src="splash/splash.png" width="640" height="960"/>
 	
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
