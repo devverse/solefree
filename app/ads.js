@@ -1,3 +1,13 @@
+onDeviceReady: function() { 
+
+    setTimeout(function() { 
+
+    navigator.splashscreen.hide(); 
+
+    }, 1000); 
+
+} 
+
 var admobid = {};
 
 // for Android
