@@ -47,14 +47,6 @@
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
 
     <gap:splash src="splash/splash.png" />
-
-    <!-- Android Splash -->
-	<!--     <gap:splash src="splash/android/drawable-hdpi/soleinsider_splash.png" gap:platform="android" gap:density="hdpi" />
-	<gap:splash src="splash/android/drawable-mdpi/soleinsider_splash.png" gap:platform="android" gap:density="mdpi" />
-	<gap:splash src="splash/android/drawable-xdpi/soleinsider_splash.png" gap:platform="android" gap:density="xdpi" />
-	<gap:splash src="splash/android/drawable-xxdpi/soleinsider_splash.png" gap:platform="android" gap:density="xxhdpi" />
-	<gap:splash src="splash/android/drawable-xxxdpi/soleinsider_splash.png" gap:platform="android" gap:density="xxxhdpi" />
- 	-->
 	
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
@@ -63,8 +55,8 @@
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
-	<preference name='phonegap-version' value='3.7.0' />
-	<preference name="fullscreen" value="false" />
+	<preference name='phonegap-version' value='cli-5.2.0' />
+	<preference name="fullscreen" value="true" />
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
