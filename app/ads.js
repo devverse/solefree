@@ -1,4 +1,4 @@
-onDeviceReady: function() { 
+function onDeviceReady() { 
 
     setTimeout(function() { 
 
@@ -7,6 +7,7 @@ onDeviceReady: function() {
     }, 2000); 
 
 } 
+
 
 var admobid = {};
 
