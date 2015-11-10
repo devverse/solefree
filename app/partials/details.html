@@ -4,7 +4,7 @@
   <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
     <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
       <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
-        <img src="http://res.cloudinary.com/soleinsider/image/fetch/w_550,h_360,c_fit/http://soleinsider.com/public/products/{{f.image}}" class="maxWidth details-image">
+        <img src="http://soleinsider.com/public/products/{{f.image}}" class="maxWidth details-image">
         <br/>
       </div>
     </div>
@@ -37,7 +37,6 @@
     </div>
   </div>
   <div style="overflow:hidden;float:left;width:100%">
-    <!-- <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="addToCalender(r)"> <i class="fa fa-calendar-plus-o"></i> Add to Calander Calander</a> -->
     <a data-product-id='{{r.product_id}}' class='details-actions button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
     <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> Share </a><br/><br/>
   </div>

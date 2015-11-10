@@ -2,7 +2,7 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="39"
+	versionCode="40"
 	version 	= "6.3.5"
 	id        = "com.sole.insider.free">
 
@@ -65,20 +65,17 @@
 	<!-- Retina iPad -->
 	<gap:splash src="splash/ios/Default-Portrait@2x.png" gap:platform="ios" width="1536" height="2048" />
 
-	
-	<feature name="http://api.phonegap.com/1.0/network"/>
-
 	<!-- General -->
 	<icon src="icons/icon.png" width="72" height="72" />
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
+	<feature name="http://api.phonegap.com/1.0/network"/>
+
 	<preference name='phonegap-version' value='cli-5.2.0' />
 	<preference name="fullscreen" value="true" />
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
-
-	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.2" />
 	<gap:plugin name="nl.x-services.plugins.calendar" />
