@@ -74,10 +74,10 @@
 
 	<preference name='phonegap-version' value='cli-5.1.0' />
 	<preference name="fullscreen" value="false" />
-<!-- 	<preference name="auto-hide-splash-screen" value="false" />
+	<!-- <preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" /> -->
 
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
-	<gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" />
+	<!-- <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" /> -->
 	<gap:plugin name="cordova-plugin-admob" source="npm" />
 </widget>
