@@ -3,7 +3,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	versionCode="40"
-	version 	= "6.3.5"
+	version 	= "6.3.6"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
