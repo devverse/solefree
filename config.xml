@@ -74,8 +74,8 @@
 
 	<preference name='phonegap-version' value='cli-5.2.0' />
 	<preference name="fullscreen" value="false" />
-	<!-- <preference name="auto-hide-splash-screen" value="false" />
-	<preference name="target-device" value="universal" /> -->
+	<preference name="auto-hide-splash-screen" value="false" />
+	<preference name="target-device" value="universal" />
 
 	<preference name="target-device" value="universal" />
 
