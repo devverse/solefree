@@ -1,4 +1,4 @@
-function storeFinderController($scope, $rootScope, store_finder_service, mixpanel_service) {
+function storeFinderController($scope, $rootScope, store_finder_service) {
   
   $scope.stores = false;
   $scope.search = '';
@@ -29,4 +29,4 @@ function storeFinderController($scope, $rootScope, store_finder_service, mixpane
   })();
 }
 
-storeFinderController.$inject = ['$scope', '$rootScope', 'store_finder_service', 'mixpanel_service'];
+storeFinderController.$inject = ['$scope', '$rootScope', 'store_finder_service'];
