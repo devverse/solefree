@@ -1,1 +1,8 @@
-{{videos}}
+<div ng-cloak ng-show="show_loading == true" class="spinner">
+  <img src="images/spinner.gif"/>
+</div>
+
+<div class="" ng-repeat="r in videos" style="padding:10px">
+<p> {{r.title}} </p>
+{{r.url}}
+</div>
