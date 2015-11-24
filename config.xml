@@ -3,7 +3,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	versionCode="40"
-	version 	= "6.3.6"
+	version 	= "6.3.7"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -81,7 +81,6 @@
 
 	<gap:plugin name="cordova-plugin-inappbrowser" version="1.0.1" source="npm" />
 	<!-- <gap:plugin name="nl.x-services.plugins.socialsharing" version="4.3.0" /> -->
-	<gap:plugin name="cordova-plugin-admob" source="npm" />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
 </widget>
