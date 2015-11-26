@@ -10,7 +10,7 @@ function videoController($scope, $rootScope, $sce, video_service) {
 
         for (var x = 0; x < data.length; x++) {
           var src = '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+  videos[x].src +'" frameborder="0" allowfullscreen></iframe>';
-          videos[x].url = $sce.trustAsHtml(src);
+          videos[x].url = src;
         } 
 
         $scope.videos = videos;
