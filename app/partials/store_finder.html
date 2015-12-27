@@ -1,37 +1,32 @@
-<div class="panel grey" ng-cloak  style="text-align:center">
-    <span style="font-weight:bold;">Store Finder</span>
-</div>
-
 <div class="product" >
-  <h3> Find sneaker spots near you. <br/>Enter your zipcode to search! </h3>
-  <input type="text" ng-model="search" style="background-color:white" > <br/><br/>
-  <button ng-click="storeSearch(search)" data-role="button" data-icon="star" class='btn btn-primary small'>Search</button><br/><br/>
+  <h1> Find sneaker spots near you. Enter your zipcode below <br/><br/>
+  <input type="text" ng-model="search" class="search-field" style="margin-left:1px" placeholder="Store Search..."> </h1> <br/>
+  <a ng-click="storeSearch(search)" class='button_small'>Search</a><br/><br/>
   <div class="alert" ng-show="stores.length == 0">
     <h2> No stores found </h2>
   </div>
-
   <br/>
 </div>
 </div>
-  <div class="row">
-<div ng-repeat="r in stores" class="product">
-
-  <div class="productImages">
-    <img src="{{r.image_url}}" class="productImage">
-  </div>
-
-  <div class="productDetails">
-    <span class="product_title">{{r.name}}</span>
-    <br/>
-    <span ng-repeat="add in r.location.display_address"> 
-        {{add}} <br/> 
-    </span> 
-    {{r.display_phone}}
-    <br/>
-   <a class="button_small" href="{{r.url}}"> Yelp Review </a>  
-  </div>
+<div ng-cloak ng-show="show_loading == true" class="spinner">
+  <img src="images/spinner.gif"/>
 </div>
-
-
-
-</div>
+<ul class="posts" style="margin-top:0px">
+<li class="swipeout" ng-repeat="r in stores" style="clear:both;margin-bottom:10px"
+  <div class="swipeout-content item-content" >
+    <div class="post_entry">
+      <div class="post_thumb"><img src="{{r.image_url}}" alt="" title=""></div>
+      <div class="post_details">
+        <span class="product_title">{{r.name}}</span>
+        <br/>
+        <span ng-repeat="add in r.location.display_address">
+          {{add}} <br/>
+        </span>
+        {{r.display_phone}}
+        <br/><br/>
+        <a class="button_small" href="{{r.url}}"> Reviews </a>
+      </div>
+    </div>
+  </div>
+</li>
+</ul>

@@ -1,8 +1,6 @@
-<ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
-  <li>{{category}} </li>
-</ul>
+<br/>
 <select ng-model="form.type" required ng-change="search(form.type)" class="menu-dropdown">
-  <option value="Best Sellers"> Select A Category </option>
+  <option> Select A Category </option>
   <option ng-repeat="m in menu" value="{{m.name}}">{{m.name}}</option>
 </select>
 <div class="swipeout" ng-repeat="p in products" ng-cloak>

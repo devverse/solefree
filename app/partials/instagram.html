@@ -1,6 +1,16 @@
-<div style="margin-top:0px;margin-bottom:10px;padding:5px" ng-show="show_loading == false">
+<div style="margin-top:0px;margin-bottom:10px;padding:5px">
   We update our gallery every 5 minutes with the freshest sneaker photos on the gram.
 </div>
+
+<div class="instagram_button-container">
+<a class="button_small instagram_button" ng-click="getImagesByHash('jordans')"> #Jordans</a>
+<a class="button_small instagram_button" ng-click="getImagesByHash('lebronsneakers')"> #Lebrons</a>
+<a class="button_small instagram_button" ng-click="getImagesByHash('Yeezyboost')"> #Yeezys</a>
+<a class="button_small instagram_button" ng-click="getImagesByHash('soleinsider')"> #SoleInsider</a>
+<a class="button_small instagram_button" ng-click="getImagesByHash('wdywt')"> #WDYWT</a>
+<a class="button_small instagram_button" ng-click="getImagesByHash('Sneakerheads')"> #Sneakerheads</a>
+</div>
+
 <div ng-cloak ng-show="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
 </div>

@@ -30,9 +30,17 @@ soleinsiderApp.factory('instagram_service', ['$rootScope', '$q', '$http',
       return self.makePost('/mobile/instagram');
     };
 
+    self.getImagesByHash = function(data) {
+      return self.makePost('/mobile/instagram', data);
+    };
+
     return {
       getImages: function() {
         return self.getInstagramImages();
+      },
+
+      getImagesByHash: function(data) {
+        return self.getImagesByHash(data);
       }
     };
   }

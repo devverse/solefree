@@ -2,7 +2,7 @@ function storeController($scope, $rootScope, store_service) {
   $scope.app_name = app_name;
   $scope.page_title = page_title;
   $scope.products = [];
-  $scope.category = "Best Sellers";
+  $scope.category = "";
   $scope.page = 10;
   $scope.searchStr = "nike";
   $scope.showLoading = true;
