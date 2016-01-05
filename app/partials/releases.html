@@ -15,7 +15,17 @@
           </div>
           <div class="post_details">
             <h4 class="sneaker_title">
-            <a href="#" ng-click="details($event, r)">{{r.name}} </a>
+            <a href="#" ng-click="details($event, r)"> 
+            
+            <img src="images/pop.png" style="width:16px;height:16px" ng-show="r.yes_percentage >= 75 && r.yes_percentage < 85">
+
+            <img src="images/fire.png" style="width:16px;height:16px" ng-show="r.yes_percentage >= 85 && r.yes_percentage < 95">
+
+            <img src="images/key.png" style="width:16px;height:16px" ng-show="r.yes_percentage >= 95">
+
+            <img src="images/poop.png" style="width:16px;height:16px" ng-show="r.no_percentage <= 15 && r.no_percentage > 0">
+
+            {{r.name}} </a>
             </h4>
             <div class="date_price">
               <span class="date">{{r.release_date}}</span>

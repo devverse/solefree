@@ -45,6 +45,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     release_service.getReleases().then(
       function(data) {
         $scope.releases = data;
+        console.log(data);
         $scope.show_loading = false;
       }, function(err) {
         alert(err);
