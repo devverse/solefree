@@ -12,7 +12,12 @@ function myReleasesController($scope, $rootScope, release_service) {
       return;
     }
 
-    release_service.getMyReleases();
+    release_service.getMyReleases().then(
+      function(data) {
+        $scope.releases = data;
+      }, function(err) {
+        alert(err);
+      });
   };
 
   $scope.deleteRelease = function(product) {
@@ -27,18 +32,7 @@ function myReleasesController($scope, $rootScope, release_service) {
   };
 
   $scope.init = (function() {
-
     $scope.getMyReleases();
-
-    // Listeners
-    $rootScope.$on('getMyReleases', function(e, data) {
-      $scope.releases = data;
-    });
-
-    $rootScope.$on('deleteRelease', function(e, data) {
-      $scope.getMyReleases();
-    });
-
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.showBannerAd();
