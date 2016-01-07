@@ -1,6 +1,7 @@
 var soleinsiderApp = angular.module('soleinsiderApp', [
   'ngRoute',
   'ngSanitize',
+  'videosharing-embed',
 ]).config(['$routeProvider',
   function($routeProvider) {
     "use strict";
@@ -57,6 +58,26 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
     when('/gallery', {
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController
+    }).
+    when('/videos', {
+      templateUrl: admin_url + 'partials/videos.html',
+      controller: videoController
+    }).
+    when('/finder', {
+      templateUrl: admin_url + 'partials/store_finder.html',
+      controller: storeFinderController
+    }).
+    when('/social', {
+      templateUrl: admin_url + 'partials/social.html',
+      controller: socialController
+    }).
+    when('/more', {
+      templateUrl: admin_url + 'partials/more.html',
+      controller: moreController
+    }).
+    when('/stats', {
+      templateUrl: admin_url + 'partials/stats.html',
+      controller: statsController
     }).
     when('/store', {
       templateUrl: admin_url + 'partials/store.html',

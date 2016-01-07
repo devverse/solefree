@@ -49,12 +49,7 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
     self.getMyReleases = function() {
       var data = "member_id=" + localStorage.getItem("member_id");
 
-      return self.makePost('/mobile/getMyReleases', data).then(
-        function(data) {
-          $rootScope.$broadcast('getMyReleases', data);
-        }, function(err) {
-          alert(err);
-        });
+      return self.makePost('/mobile/getMyReleases', data);
     };
 
     self.sneakerRating = function(data) {

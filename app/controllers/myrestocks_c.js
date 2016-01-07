@@ -1,4 +1,4 @@
-function myRestocksController($scope, $rootScope, restock_service, mixpanel_service) {
+function myRestocksController($scope, $rootScope, restock_service) {
   
   $scope.restocks = [];
 
@@ -31,16 +31,14 @@ function myRestocksController($scope, $rootScope, restock_service, mixpanel_serv
 
     $rootScope.$on('getMyRestocks', function(e, data) {
       $scope.restocks = data;
-      mixpanel_service.trackEvent('My restocks fetched');
     });
 
     $rootScope.$on('deleteRestock', function(e, data) {
       $scope.getRestocks();
-      mixpanel_service.trackEvent('My restocks item deleted');
     });
     $rootScope.$emit("featured", false);
     window.showBannerAd();
   })();
 }
 
-myRestocksController.$inject = ['$scope', '$rootScope', 'restock_service', 'mixpanel_service'];
+myRestocksController.$inject = ['$scope', '$rootScope', 'restock_service'];

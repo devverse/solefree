@@ -79,10 +79,8 @@
   text-align: center;
   width: 99%;
   height: 50px;
-  font-size: 16px;
-  background-color: #202428;
+  background-color: #8E8E93;
   color: #efefef;
-  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   line-height: 50px;
   font-size: 12px;
@@ -477,4 +475,58 @@ p.ebay-items-heading, p.comments-heading {
   display: none;
   max-width: 100% !important;
   margin-top: -4px;
+}
+
+.instagram_button-container {
+  width: 100%;
+}
+
+.instagram_button {
+  width: 35%;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.more-container {
+  width: 90%;
+  display: block;
+  height: 40px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  float: left;
+  font-size: 18px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  line-height: 40px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.more-container a {
+  color: white;
+  margin-top: 50%;
+}
+
+.youtube-subscribe-div {
+  margin: 0 auto;
+}
+
+.youtube-subscribe {
+  display: block;
+  color: #FFF;
+  padding: 10px;
+  width: 100%;
+  background-color: #e52d27;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.user-stats > p {
+  margin-bottom: 10px;
+}
+.user-stats {
+  font-size: 16px;
 }

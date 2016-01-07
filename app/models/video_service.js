@@ -1,4 +1,4 @@
-soleinsiderApp.factory('instagram_service', ['$rootScope', '$q', '$http',
+soleinsiderApp.factory('video_service', ['$rootScope', '$q', '$http',
   function($rootScope, $q, $http) {
 
     var api = soleinsider.base_url;
@@ -26,21 +26,13 @@ soleinsiderApp.factory('instagram_service', ['$rootScope', '$q', '$http',
 
     };
 
-    self.getInstagramImages = function() {
-      return self.makePost('/mobile/instagram');
-    };
-
-    self.getImagesByHash = function(data) {
-      return self.makePost('/mobile/instagram', data);
+    self.getVideos = function() {
+      return self.makePost('/mobile/videos');
     };
 
     return {
-      getImages: function() {
-        return self.getInstagramImages();
-      },
-
-      getImagesByHash: function(data) {
-        return self.getImagesByHash(data);
+      getVideos: function() {
+        return self.getVideos();
       }
     };
   }

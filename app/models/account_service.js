@@ -36,14 +36,18 @@ soleinsiderApp.factory('account_service', ['$rootScope', '$q', '$http',
       return self.makePost('/mobile/updateAccount', post);
     };
 
+    self.getStats = function(post) {
+      return self.makePost('/mobile/getStats', post);
+    };
+
     return {
 
       getAccount: function(post) {
         return self.getAccount(post);
       },
 
-      updateAccount: function(post) {
-        return self.updateAccount(post);
+      getStats: function(post) {
+        return self.getStats(post);
       }
     };
   }
