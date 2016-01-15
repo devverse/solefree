@@ -30,9 +30,17 @@ soleinsiderApp.factory('news_service', ['$rootScope', '$q', '$http',
       return self.makePost('/mobile/rssFeeds');
     };
 
+    self.getFeedsByCategory = function(data) {
+      return self.makePost('/mobile/rssFeedsByCategory', data);
+    }
+
     return {
       getFeeds: function() {
         return self.getFeeds();
+      },
+
+      getFeedsByCategory: function(data) {
+        return self.getFeedsByCategory(data);
       },
     };
 

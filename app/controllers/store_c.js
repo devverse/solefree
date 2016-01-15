@@ -44,6 +44,7 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.search = function(search) {
+    $scope.products = [];
     $scope.showLoading = true;
     $scope.page = 10;
     $scope.searchStr = search;

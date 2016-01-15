@@ -2,14 +2,11 @@
   We update our gallery every 5 minutes with the freshest sneaker photos on the gram.
 </div>
 
-<div class="instagram_button-container">
-<a class="button_small instagram_button" ng-click="getImagesByHash('jordans')"> #Jordans</a>
-<a class="button_small instagram_button" ng-click="getImagesByHash('lebronsneakers')"> #Lebrons</a>
-<a class="button_small instagram_button" ng-click="getImagesByHash('Yeezyboost')"> #Yeezys</a>
-<a class="button_small instagram_button" ng-click="getImagesByHash('soleinsider')"> #SoleInsider</a>
-<a class="button_small instagram_button" ng-click="getImagesByHash('wdywt')"> #WDYWT</a>
-<a class="button_small instagram_button" ng-click="getImagesByHash('Sneakerheads')"> #Sneakerheads</a>
-</div>
+<br/>
+<select ng-model="hash" required ng-change="getImagesByHash(hash)" class="menu-dropdown">
+  <option> Select A Category </option>
+  <option ng-repeat="m in menu | orderBy:'name'" value="{{m.hash}}">{{m.name}}</option>
+</select>
 
 <div ng-cloak ng-show="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
