@@ -36,8 +36,8 @@
   </div>
 </div>
 <br/>
-<h3 class="page_subtitle coming-soon" ng-show="coming.length > 0" ng-show="show_loading == false"> No Release Date Yet </h3>
-<li class="swipeout" ng-repeat="r in coming | filter: search" ng-cloak ng-show="show_loading == false">
+<!-- <h3 class="page_subtitle coming-soon" ng-show="coming.length > 0" ng-show="show_coming == true"> No Release Date Yet </h3> -->
+<li class="swipeout" ng-repeat="r in coming | filter: search" ng-cloak ng-show="show_coming == true">
   <div class="swipeout-content item-content" >
     <div class="post_entry">
       <div class="post_thumb">
@@ -47,6 +47,7 @@
       </div>
       <div class="post_details">
         <h4 class="sneaker_title"> <a href="#" ng-click="details($event, r)"> {{r.name}} </a> </h4>
+        <p> Release date coming soon </p>
         <div ng-show="r.yes_percentage >= 90">
           <img src="images/fire.png" style="width:12px;height:12px"/>
           <img src="images/fire.png" style="width:12px;height:12px"/>

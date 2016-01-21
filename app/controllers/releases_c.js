@@ -7,6 +7,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.showerror = false;
   $scope.errorMessage = "";
   $scope.show_loading = true;
+  $scope.show_coming = false;
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
@@ -45,7 +46,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     release_service.getReleases().then(
       function(data) {
         $scope.releases = data;
-        console.log(data);
         $scope.show_loading = false;
       }, function(err) {
         alert(err);

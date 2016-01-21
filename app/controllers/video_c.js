@@ -2,6 +2,11 @@ function videoController($scope, $rootScope, $sce, video_service) {
   
   $scope.videos = [];
 
+  $scope.goToUrl = function($event) {
+    $event.preventDefault();
+    window.open('https://www.youtube.com/channel/UC93B-5jj6sd-kpKRfwWe-Bg', '_blank', 'location=yes');
+  };
+
   $scope.getVideos = function() {
     $scope.showLoading = true;
     video_service.getVideos().then(

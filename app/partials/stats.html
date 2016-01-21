@@ -1,17 +1,10 @@
-<div class="login-background">
-  <div class="login-background-inside contactform" style="text-align:left">
-    <div>
-    <div ng-cloak ng-show="show_loading == true" class="spinner">
-	  <img src="images/spinner.gif"/>
-	</div>
-	<div ng-cloak ng-show="show_loading == false" class="user-stats">
-		<br/>
-		<p>  <b> Comments Left: </b>  {{stats.comment_count}} </p> 
-		<p>  <b> Releases Watching: </b>  {{stats.release_alert_count}} </p> 
-		<p>  <b> Total Votes:  </b>  {{stats.release_interest_count}} </p> 
-		<p>  <b> Restocks Watching:  </b>  {{stats.restock_alert_count}} </p>  
-    </div>
-    </div>
-  </div>
+<div style="margin-top:0px;margin-bottom:10px;padding:5px;font-size:20px">
+  <h1> Your Stats </h1>
 </div>
+
+<div style="padding:5px">
+	<p>  <b> Comments Left: </b>  {{stats.comment_count}} <br/>
+	<b> Releases Watching: </b>  {{stats.release_alert_count}} <br/>
+	<b> Total Votes:  </b>  {{stats.release_interest_count}} <br/>
+	<b> Restocks Watching:  </b>  {{stats.restock_alert_count}} </p>
 </div>
