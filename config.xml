@@ -2,8 +2,8 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="40"
-	version 	= "6.3.7"
+	versionCode="41"
+	version 	= "6.4.0"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -79,7 +79,7 @@
 
 	<preference name="target-device" value="universal" />
 
-	<plugin name="org.apache.cordova.inappbrowser" source="npm" />
+	<plugin name="org.apache.cordova.inappbrowser" spec="0.6.0" source="pgb" />
 	<plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
 	<plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
 	<plugin name="org.pushandplay.cordova.apprate" spec="1.1.7" source="pgb" />
