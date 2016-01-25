@@ -1,10 +1,20 @@
 @font-face {
   font-family: 'Open Sans';
-  src: url('fonts/OpenSans-Regular.ttf')  format('truetype') /* Safari, Android, iOS */
+  src: url('fonts/OpenSans-Regular.ttf')  format('truetype')
 }
 
-* {http://localhost/solefree/main.html#
-  font-family: 'Open Sans', sans-serif;
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Thin.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('fonts/Roboto-Regular.ttf')  format('truetype')
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -528,4 +538,8 @@ p.ebay-items-heading, p.comments-heading {
 }
 .user-stats {
   font-size: 16px;
+}
+
+.navbar_page_center {
+  font-family: 'Roboto Regular'
 }

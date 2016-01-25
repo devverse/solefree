@@ -14,7 +14,6 @@ admobid = {
 };
 
 function showBannerAd() {
-    return true;
     if (typeof AdMob != 'undefined') {
         AdMob.createBanner({
             adId : admobid.banner,
@@ -25,14 +24,12 @@ function showBannerAd() {
 }
 
 function removeBannerAd() {
-    return true;
 	if (typeof AdMob != 'undefined') {
 		AdMob.removeBanner();
 	}
 }
 
 function prepareInterstitial() {
-    return true;
 	if(typeof AdMob != 'undefined') {
 	 	AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow: false} );
 	}
@@ -40,10 +37,9 @@ function prepareInterstitial() {
 
 
 function showInterstitial() {
-    return true;
     if(typeof AdMob != 'undefined') {
     	AdMob.showInterstitial();
     }
 }
 
-// document.addEventListener('prepareInterstitial', prepareInterstitial, false);
+document.addEventListener('prepareInterstitial', prepareInterstitial, false);
