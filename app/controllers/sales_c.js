@@ -1,4 +1,4 @@
-function salesController($scope, $rootScope, sales_service, mixpanel_service) {
+function salesController($scope, $rootScope, sales_service) {
 
   $scope.products = [];
 
@@ -20,12 +20,11 @@ function salesController($scope, $rootScope, sales_service, mixpanel_service) {
 
     $rootScope.$on('getSales', function(e, data) {
       $scope.sales = data;
-      mixpanel_service.trackEvent('Sales items fetched');
     });
 
-    $rootScope.$emit("featured", true);
+    $rootScope.$emit("featured", false);
     window.removeBannerAd();
   })();
 }
 
-salesController.$inject = ['$scope', '$rootScope', 'sales_service', 'mixpanel_service'];
+salesController.$inject = ['$scope', '$rootScope', 'sales_service'];

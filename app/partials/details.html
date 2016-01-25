@@ -1,6 +1,5 @@
 <!-- page content wrapper starts -->
 <div class="pageContentWrapper" style="margin-top:-19px">
-  <!-- the viewport -->
   <div class="normal-div_ product-carousel m-carousel m-fluid m-carousel-photos" style="width:100%">
     <div class="normal-div_ m-carousel-inner featuredImageDiv overflowVisible">
       <div class="normal-div_ m-item overflowVisible" ng-repeat="f in slideshow" product-images-directive>
@@ -38,13 +37,13 @@
   </div>
   <div style="overflow:hidden;float:left;width:100%">
     <a data-product-id='{{r.product_id}}' class='details-actions button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
-  <!--   <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-calendar-plus-o"></i> Share </a><br/><br/> -->
+    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-share-alt"></i> &nbsp; Share This </a><br/><br/> 
   </div>
 </div>
 <!-- Comments -->
 <!-- <p class="ebay-items-heading"> Comments ({{comments.length}}) </p> -->
 <div id="tab-2" class="tab-content current">
-  <div id="comments" class="">
+  <div id="comments"> <br/>
     <div ng-repeat="comment in comments" class="commentDiv">
       <div class="clear"></div>
       <div class="speach-center" style="margin-bottom:15px">
@@ -52,8 +51,7 @@
         <p> - {{comment.email.substr(0,6)}} ****** <br/> {{comment.comment_date}}</p>
       </div>
     </div>
-    <br/><br/><br/><br/><br/><br/><br/>
-    <h4> Leave a comment </h4>
+    <br/><br/><br/><br/><br/><br/>
     <textarea style="width:100%;height:90px" class="blue" ng-model="new_comment">
     </textarea>
     <br/> <br/>

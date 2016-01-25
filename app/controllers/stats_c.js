@@ -1,16 +1,14 @@
 function statsController($scope, $rootScope, account_service) {
 
-  $scope.stats = '';
+  $scope.stats = false;
 
   $scope.getStats = function() {
   	$scope.show_loading = true
 
   	var post = "member_id=" + soleinsider.member_id;
-
     account_service.getStats(post).then(
       function(data) {
         $scope.stats = data[0];
-        console.log($scope.stats);
         $scope.show_loading = false;
       }, function(err) {
         alert(err);

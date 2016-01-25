@@ -1,16 +1,19 @@
-<div class="panel grey" ng-cloak ng-show="show_featured == true" style="text-align:center">
-  <span style="font-weight:bold;">Sales</span>
+<div ng-cloak ng-show="show_loading == true" class="spinner">
+  <img src="images/spinner.gif"/>
 </div>
-<div ng-repeat="r in sales | filter:formatPrice" class="product">
 
-  <div class="productImages">
-    <img src="{{r.image}}" class="productImage">
-  </div>
-
-  <div class="productDetails">
-    <span class="product_title">{{r.name}}</span>
-    <br/> <b class='price'>${{r.price}} </b>
-    <br/>
-    <a class='button blue radius' href="" ng-click="buyProduct(r)">Buy Now</a>
-  </div>
-</div>
+<ul class="posts" style="margin-top:0px">
+  <li ng-repeat="r in sales | filter:formatPrice" style="clear:both;margin-bottom:10px"
+    <div class="swipeout-content item-content" >
+      <div class="post_entry">
+        <div class="post_thumb"><img src="{{r.image}}" alt="" title=""></div>
+        <div class="post_details">
+            <span class="product_title">{{r.name}}</span>
+            <br/> <b class='price'>${{r.price}} </b>
+          <br/><br/> 
+          <a class="button_small" ng-click="buyProduct(r)" style="width:60%"> Buy Now </a>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
