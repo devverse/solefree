@@ -86,6 +86,4 @@
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<plugin name="org.pushandplay.cordova.apprate" />
 	<plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />
-	<plugin name="com.admob.google" source="plugins.cordova.io" version="2.0.14"/>
-
 </widget>
