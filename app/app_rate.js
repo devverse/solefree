@@ -1,7 +1,7 @@
-document.addEventListener("deviceready", function(){
+document.addEventListener("deviceready", function() {
 	var customLocale = {};
-	customLocale.title = "Rate %@";
-	customLocale.message = "If you enjoy using %@, would you mind taking a moment to rate it? It won’t take more than a minute. Thanks for your support!";
+	customLocale.title = "Rate SoleInsider";
+	customLocale.message = "If you enjoy using SoleInsider, would you mind taking a moment to rate it? It won’t take more than a minute. Thanks for your support!";
 	customLocale.cancelButtonLabel = "No, Thanks";
 	customLocale.laterButtonLabel = "Remind Me Later";
 	customLocale.rateButtonLabel = "Rate It Now";
@@ -14,4 +14,16 @@ document.addEventListener("deviceready", function(){
 	AppRate.preferences.usesUntilPrompt = 1;
 	AppRate.preferences.promptAgainForEachNewVersion = false;
 	AppRate.promptForRating();
+});
+
+document.addEventListener("deviceready", function() {
+	var now             = new Date().getTime(),
+	    _5_sec_from_now = new Date(now + 10*1000);
+
+	cordova.plugins.notification.local.schedule({
+	    text: "Delayed Notification",
+	    at: _5_sec_from_now,
+	    led: "FF0000",
+	    sound: null
+	});
 });
