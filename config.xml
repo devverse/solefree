@@ -3,7 +3,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	versionCode="41"
-	version 	= "6.4.1"
+	version 	= "6.4.0"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -83,7 +83,7 @@
 
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="cordova-plugin-admob" spec="2.9.9" source="npm" />
-	<plugin name="org.pushandplay.cordova.apprate" />
+	<plugin name="org.pushandplay.cordova.apprate" spec="1.1.7" source="pgb" />
 	<plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />
