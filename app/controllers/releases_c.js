@@ -80,7 +80,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.addReminder = function(product) {
-
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
       $scope.showerror = true;
@@ -95,13 +94,13 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       function(data) {
         $scope.showmsg = true;
         $scope.sneakerName = product.name;
-        toastr.error("Reminder added for " + product.name);
+        toastr.success("Reminder added for " + product.name);
       },
       function(err) {
         alert(err);
       }
     );
-  }
+  };
 
   $scope.init = (function() {
     $scope.getReleases();

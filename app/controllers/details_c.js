@@ -58,7 +58,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.addReminder = function(product) {
-
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
       toastr.error("You must be logged for reminders");
@@ -70,13 +69,31 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showmsg = true;
         $scope.showerror = false;
         $scope.sneakerName = product.name;
+        $scope.addLocalNotification(product);
         toastr.success("Reminder saved for " + product.name);
       },
       function(err) {
         alert(err);
       }
     );
-  }
+  };
+
+  $scope.addLocalNotification = function(product) {
+    var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
+  
+    if (typeof cordova == 'undefined') {
+      return;
+    }
+
+    cordova.plugins.notification.local.schedule({
+      id: product.id,
+      title: product.name,
+      text: product.name + " Releasing Today",
+      at: _5_sec_from_now,
+      led: "FF0000",
+      sound: null
+    });
+  };
 
   $scope.sneakerRating = function(product, status) {
     var member_id = localStorage.getItem("member_id");
