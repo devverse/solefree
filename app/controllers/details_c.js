@@ -79,26 +79,16 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.addLocalNotification = function(product) {
-      var now             = new Date().getTime(),
-          _5_sec_from_now = new Date(now + 15*1000);
-
-      cordova.plugins.notification.local.schedule({
-          text: "Sneaker Release",
-          at: _5_sec_from_now,
-          led: "FF0000",
-          sound: null
-      });
-
-    // var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
+    var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
   
-    // cordova.plugins.notification.local.schedule({
-    //   id: product.id,
-    //   title: "Sneaker Release",
-    //   text: product.name + " Releasing Today",
-    //   at: _5_sec_from_now,
-    //   led: "FF0000",
-    //   sound: null
-    // });
+    cordova.plugins.notification.local.schedule({
+      id: product.id,
+      title: "Sneaker Release",
+      text: product.name + " Releasing Today",
+      at: formatted,
+      led: "FF0000",
+      sound: null
+    });
   };
 
   $scope.sneakerRating = function(product, status) {
