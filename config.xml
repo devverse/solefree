@@ -84,6 +84,6 @@
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="com.indigoway.cordova.whitelist.whitelistplugin" spec="1.1.1" source="pgb" />
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
-	<plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
 	<plugin name="cordova-admob" source="npm"/>
+	<plugin name="de.appplant.cordova.plugin.local-notification-ios9-fix" spec="0.8.2" source="pgb" />
 </widget>
