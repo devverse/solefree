@@ -81,13 +81,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.addLocalNotification = function(product) {
     var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
   
-    if (typeof cordova == 'undefined') {
-      return;
-    }
-
     cordova.plugins.notification.local.schedule({
       id: product.id,
-      title: product.name,
+      title: "Sneaker Release",
       text: product.name + " Releasing Today",
       at: _5_sec_from_now,
       led: "FF0000",
