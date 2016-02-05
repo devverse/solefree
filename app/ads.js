@@ -1,12 +1,10 @@
-var deviceReady = false;
-var admobid = {};
-
 function onDeviceReady() { 
     setTimeout(function() { 
     navigator.splashscreen.hide(); 
     deviceReady = true;
     }, 2000); 
 }
+
 
 // for Android
 admobid = {
@@ -15,7 +13,7 @@ admobid = {
 };
 
 function showBannerAd() {
-    if (typeof AdMob != 'undefined' && deviceReady == true) {
+    if (typeof AdMob != 'undefined') {
         AdMob.createBanner({
             adId : admobid.banner,
             position : AdMob.AD_POSITION.BOTTOM_CENTER,
@@ -25,20 +23,20 @@ function showBannerAd() {
 }
 
 function removeBannerAd() {
-	if (typeof AdMob != 'undefined' && deviceReady == true) {
+	if (typeof AdMob != 'undefined') {
 		AdMob.removeBanner();
 	}
 }
 
 function prepareInterstitial() {
-	if(typeof AdMob != 'undefined' && deviceReady == true) {
+	if(typeof AdMob != 'undefined') {
 	 	AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow: false} );
 	}
 }
 
 
 function showInterstitial() {
-    if(typeof AdMob != 'undefined' && deviceReady == true) {
+    if(typeof AdMob != 'undefined') {
     	AdMob.showInterstitial();
     }
 }
