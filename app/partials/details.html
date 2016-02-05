@@ -37,7 +37,7 @@
   </div>
   <div style="overflow:hidden;float:left;width:100%">
     <a data-product-id='{{r.product_id}}' class='details-actions button_small' ng-click="addReminder(r)"> <i class="fa fa-clock-o"></i> &nbsp; Remind Me</a>
-    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share(r)"> <i class="fa fa-share-alt"></i> &nbsp; Share This </a><br/><br/> 
+    <a href="{{r.link}}" class="details-actions button_small" ng-show="build == 'android'" ng-click="share($event, r)"> <i class="fa fa-share-alt"></i> &nbsp; Share This </a><br/><br/> 
   </div>
 </div>
 <!-- Comments -->
