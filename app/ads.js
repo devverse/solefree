@@ -2,8 +2,7 @@ function onDeviceReady() {
     setTimeout(function() { 
     navigator.splashscreen.hide(); 
     }, 2000); 
-} 
-
+}
 
 var admobid = {};
 
