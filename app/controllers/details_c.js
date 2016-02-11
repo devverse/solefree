@@ -119,7 +119,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.getComments = function(product) {
-    var post = "&product_id=" + $scope.product_id;
+    var post = "product_id=" + $scope.product_id;
     comments_service.getComments(post).then(function(data) {
       $scope.formatComments(data);
     }, function(err) {
@@ -149,6 +149,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.addToCalender = function(event, product) {
+    event.preventDefault();
+
     var startDate, endDate;
     var title = product.name;
     var location = "SoleInsider";
@@ -170,7 +172,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     window.plugins.calendar.createEventInteractively(title, location, notes, startDate, endDate, success, error);
   };
 
-  $scope.submitComment = function() {
+  $scope.submitComment = function(event) {
+    event.preventDefault();
+
     var member_id = localStorage.getItem("member_id");
 
     var post = "member_id=" + member_id;
