@@ -7,7 +7,6 @@ function appController($scope, $rootScope, $window, app_service) {
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
-    mixpanel_service.trackEvent('Featured product click');
   };
 
   $scope.getFeaturedProducts = function() {

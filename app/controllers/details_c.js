@@ -34,6 +34,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   };
 
+  $scope.numberWithCommas = function(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
   $scope.loadProduct = function() {
     $scope.showRelatedItems();
     product = JSON.parse(localStorage.getItem("product_details"));
@@ -46,6 +50,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     $scope.r = product;
     $scope.product_id = product.product_id;
+    $scope.views = $scope.numberWithCommas(product.views * 2);
   };
 
   $scope.getSlideShow = function() {
@@ -88,7 +93,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       text: product.name + " Releasing Today",
       at: formatted,
       led: "FF0000",
-      sound: null
+      sound: null,
+      icon: "file://icons/push/logo.png"
     });
   };
 

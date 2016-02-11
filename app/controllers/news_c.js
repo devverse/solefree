@@ -4,12 +4,17 @@ function newsController($scope, $rootScope, news_service) {
   $scope.show_loading = true;
   $scope.menu = [
     {'name' : 'Nike'},
+    {'name' : 'Adidas'},
     {'name' : 'Yeezy'},
     {'name' : 'Puma'},
     {'name' : 'Jordan'},
     {'name' : 'Reebok'},
-    {'name' : 'Li-Ning'},
+    {'name' : 'Converse'},
     {'name' : 'Under Armour'},
+    {'name' : 'Timberland'},
+    {'name' : 'Saucony'},
+    {'name' : 'Vans'},
+    {'name' : 'Diadora'},
   ];
 
   $scope.getNews = function() {
