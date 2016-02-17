@@ -3,7 +3,7 @@
 </div>
 <div ng-repeat="c in coupons" class="product">
   <div class="productImages">
-    <img src="{{c.logo}}" class="productImage" />
+    <img ng-src="{{c.logo}}" class="productImage" />
   </div>
   <div class="productDetails">
     <span class="product_title">{{c.name}}</span>

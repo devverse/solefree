@@ -1,4 +1,4 @@
-function newsController($scope, $rootScope, news_service) {
+function newsController($scope, $rootScope, $location, news_service) {
   
   $scope.news = [];
   $scope.show_loading = true;
@@ -21,13 +21,32 @@ function newsController($scope, $rootScope, news_service) {
     $scope.showLoading = true;
     news_service.getFeeds().then(
       function(data) {
-        $scope.news = data;
-        $scope.show_loading = false;
+        $scope.formatData(data);
       }, function(err) {
         alert(err);
       });
   };
 
+  $scope.formatData = function(data) {
+    $scope.show_loading = false;
+
+    for (var x = 0; x < data.length; x++) {
+      var html, image;
+
+      html = $.parseHTML(data[x].description);
+
+      image = $(html).find('img:first');
+      
+      if (typeof image != "undefined") {
+        data[x].thumbnail = image.attr('src');
+      } else {
+        data[x].thumbnail = '';
+      }
+
+      $scope.news.push(data[x]);
+    }
+  };
+  
   $scope.getFeedsByCategory = function(category) {
     $scope.news = [];
     $scope.showLoading = true;
@@ -35,11 +54,17 @@ function newsController($scope, $rootScope, news_service) {
     var post = "category=" + category;
     news_service.getFeedsByCategory(post).then(
       function(data) {
-        $scope.news = data;
-        $scope.show_loading = false;
+        $scope.formatData(data);
       }, function(err) {
         alert(err);
       });
+  };
+
+  $scope.view = function(event, article) {
+    event.preventDefault();
+    localStorage.setItem("article", JSON.stringify(article));
+    console.log($location);
+    $location.path('view');
   };
 
   $scope.init = (function() {
@@ -50,4 +75,4 @@ function newsController($scope, $rootScope, news_service) {
   })();
 }
 
-newsController.$inject = ['$scope', '$rootScope', 'news_service'];
+newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service'];

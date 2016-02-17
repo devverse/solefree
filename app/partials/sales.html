@@ -6,7 +6,7 @@
   <li ng-repeat="r in sales | filter:formatPrice" style="clear:both;margin-bottom:10px"
     <div class="swipeout-content item-content" >
       <div class="post_entry">
-        <div class="post_thumb"><img src="{{r.image}}" alt="" title=""></div>
+        <div class="post_thumb"><img ng-src="{{r.image}}" alt="" title=""></div>
         <div class="post_details">
             <span class="product_title">{{r.name}}</span>
             <br/> <b class='price'>${{r.price}} </b>

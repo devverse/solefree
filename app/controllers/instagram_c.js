@@ -4,12 +4,15 @@ function instagramController($scope, $rootScope, instagram_service) {
   $scope.show_loading = true;
 
   $scope.menu = [
+    {'hash' : 'adidasboost', 'name' : 'Adidas'},
     {'hash' : 'lebrons', 'name' : 'Lebrons'},
     {'hash' : 'jordans', 'name' : 'Jordans'},
     {'hash' : 'Yeezyboost', 'name' : 'Yeezy'},
     {'hash' : 'soleinsider', 'name' : 'SoleInsider'},
     {'hash' : 'Supreme', 'name' : 'Supreme'},
     {'hash' : 'Kith', 'name' : 'Kith'},
+    {'hash' : 'walklikeus', 'name' : 'Walk Like Us'},
+    {'hash' : 'Sneakerhead', 'name' : 'Sneakerhead'},
   ];
 
   $scope.getImagesByHash = function(hash) {

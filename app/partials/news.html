@@ -15,12 +15,17 @@
 <div class="" ng-repeat="r in news | filter:search" style="padding:10px">
   <div class="swipeout-content item-content" >
     <div class="post_entry">
-        <h4> {{r.title}}  </h4>
-        <div>
-          <p ng-bind-html="r.description"></p>
-
-       </div>
-
+        <div class="post_thumb">
+        <a href="#" ng-click="view($event, r)">
+          <img ng-src="{{r.thumbnail}}" />
+        </a>
+        </div>
+        <div class="post_details">
+        <h4 class="sneaker_title">
+        <a href="#" ng-click="view($event, r)"> 
+          {{r.title}}</a>
+        </h4>
+        </div>
     </div>
   </div>
-</div> 
+</div>

@@ -13,9 +13,9 @@
 </div>
 
 <ul id="photoslist" class="photo_gallery_11" >
-    <li class="" ng-repeat="img in images">
-    <a rel="gallery-3" href="{{img.image}}" title="Photo title" class="swipebox">
-        <img src="{{img.image}}" class="instagramImage" style="width:100%" />
+    <li ng-repeat="img in images">
+    <a rel="gallery-3" href="{{img.image}}">
+        <img ng-src="{{img.image}}" class="instagramImage" style="width:100%" />
     </a>
     </li>
 </ul>

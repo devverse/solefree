@@ -55,6 +55,10 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
       templateUrl: admin_url + 'partials/news.html',
       controller: newsController
     }).
+    when('/view', {
+      templateUrl: admin_url + 'partials/view.html',
+      controller: viewController
+    }).
     when('/gallery', {
       templateUrl: admin_url + 'partials/instagram.html',
       controller: instagramController

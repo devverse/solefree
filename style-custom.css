@@ -544,10 +544,26 @@ p.ebay-items-heading, p.comments-heading {
 .user-stats > p {
   margin-bottom: 10px;
 }
+
 .user-stats {
   font-size: 16px;
 }
 
+.article-view h1 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: 'Roboto Medium';
+}
+
+.article-view img {
+  width: 99%;
+  height: auto;
+}
+
+.article-view {
+  padding: 10px;
+}
 .navbar_page_center {
   font-family: 'Roboto Regular'
 }
