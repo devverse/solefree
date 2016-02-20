@@ -37,6 +37,7 @@ function myRestocksController($scope, $rootScope, restock_service) {
       $scope.getRestocks();
     });
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
     window.showBannerAd();
   })();
 }

@@ -42,6 +42,7 @@ function instagramController($scope, $rootScope, instagram_service) {
   $scope.init = (function() {
     $scope.getImages();
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
     window.showBannerAd();
   })();
 }

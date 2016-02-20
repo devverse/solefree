@@ -25,6 +25,7 @@ function pastReleasesController($scope, $rootScope, $location, release_service) 
   $scope.init = (function() {
     $scope.getPastReleases();
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
     window.showBannerAd();
   })();
 

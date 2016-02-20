@@ -1,7 +1,5 @@
 function viewController($scope, $rootScope, news_service) {
   
-  $scope.article = '';
-
   $scope.loadArticle = function() {
     article = JSON.parse(localStorage.getItem("article"));
     $scope.article = article;

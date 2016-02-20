@@ -23,6 +23,7 @@ function salesController($scope, $rootScope, sales_service) {
     });
 
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
     window.removeBannerAd();
   })();
 }

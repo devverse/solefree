@@ -28,6 +28,7 @@ function videoController($scope, $rootScope, $sce, video_service) {
   $scope.init = (function() {
     $scope.getVideos();
     $rootScope.$emit("featured", false);
+    $rootScope.$emit("showback_button", true);
     window.showBannerAd();
   })();
 }
