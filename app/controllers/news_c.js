@@ -75,7 +75,7 @@ function newsController($scope, $rootScope, $location, news_service) {
 
     category = localStorage.getItem("category");
 
-    if (typeof category != null && category != "null") {
+    if (typeof category != null && category != "null" && category != null) {
       $scope.getFeedsByCategory(category);
     } else {
       $scope.getNews();

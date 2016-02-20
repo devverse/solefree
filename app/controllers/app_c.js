@@ -1,4 +1,4 @@
-function appController($scope, $rootScope, $window, app_service) {
+function appController($scope, $rootScope, $window, $location, app_service) {
 
   $scope.message = "";
   $scope.showads = soleinsider.showads;
@@ -48,7 +48,7 @@ function appController($scope, $rootScope, $window, app_service) {
 
     $(".back-button").on('click', function(event) {
       event.preventDefault();
-      window.history.go(-1);
+      $window.history.back();
     });
 
     $(".home-button").on('click', function(event) {
@@ -58,4 +58,4 @@ function appController($scope, $rootScope, $window, app_service) {
   })();
 }
 
-appController.$inject = ['$scope', '$rootScope', '$window', 'app_service'];
+appController.$inject = ['$scope', '$rootScope', '$window', '$location', 'app_service'];
