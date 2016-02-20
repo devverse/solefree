@@ -48,11 +48,13 @@ function appController($scope, $rootScope, $window, $location, app_service) {
 
     $(".back-button").on('click', function(event) {
       event.preventDefault();
+      
       $window.history.back();
     });
 
     $(".home-button").on('click', function(event) {
       event.preventDefault();
+
       window.location = "main.html";
     });
   })();
