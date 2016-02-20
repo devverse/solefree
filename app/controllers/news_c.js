@@ -19,6 +19,8 @@ function newsController($scope, $rootScope, $location, news_service) {
 
   $scope.getNews = function() {
     $scope.showLoading = true;
+    localStorage.setItem("category", null);
+
     news_service.getFeeds().then(
       function(data) {
         $scope.formatData(data);
@@ -51,6 +53,8 @@ function newsController($scope, $rootScope, $location, news_service) {
     $scope.news = [];
     $scope.showLoading = true;
 
+    localStorage.setItem("category", category);
+
     var post = "category=" + category;
     news_service.getFeedsByCategory(post).then(
       function(data) {
@@ -63,12 +67,20 @@ function newsController($scope, $rootScope, $location, news_service) {
   $scope.view = function(event, article) {
     event.preventDefault();
     localStorage.setItem("article", JSON.stringify(article));
-    console.log($location);
     $location.path('view');
   };
 
   $scope.init = (function() {
-    $scope.getNews();
+    var category;
+
+    category = localStorage.getItem("category");
+
+    if (typeof category != null && category != "null") {
+      $scope.getFeedsByCategory(category);
+    } else {
+      $scope.getNews();
+    }
+    
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.showBannerAd();

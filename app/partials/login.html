@@ -3,11 +3,11 @@
     <div ng-show="showLogin == true" ng-model="newaccount">
       <h2 class="page_subtitle"> Login </h2>
       <label>Email:</label>
-      <input type="text" name="username" class="form_input required" ng-model="account.email">
+      <input type="text" name="username" class="form_input" ng-model="account.email">
       <label>Password:</label>
-      <input type="password" name="phone" value="" class="form_input required email" ng-model="account.password">
+      <input type="password" name="phone" value="" class="form_input email" ng-model="account.password">
       <br/><br/>
-      <a href="#" class="button_small" ng-click="login(account, $event)"> Login </a>
+      <a href="#" class="button_small" ng-click="login($event, account)"> Login </a>
       <a href="#/signup"  class='button_small'> Or Signup</a>
     </div>
   </div>

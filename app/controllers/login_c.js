@@ -19,7 +19,7 @@ function loginController($scope, $rootScope, login_service) {
     $scope.toggleLogin();
   };
 
-  $scope.login = function(account, $event) {
+  $scope.login = function($event, account) {
     $event.preventDefault();
 
     var post = "&username=" + account.email;
