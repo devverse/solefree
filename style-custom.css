@@ -494,6 +494,9 @@ p.ebay-items-heading, p.comments-heading {
   margin-top: -4px;
 }
 
+.back-button img {
+  max-width: 80% !important;
+}
 .instagram_button-container {
   width: 100%;
 }

@@ -4,8 +4,15 @@ function storeFinderController($scope, $rootScope, store_finder_service) {
   $scope.search = '';
   $scope.show_loading = false;
 
+  $scope.openLink = function($event, link) {
+    event.preventDefault();
+    
+    window.open(link, '_blank', 'location=yes');
+  };
+
   $scope.storeSearch = function(zipcode) {
     $scope.show_loading = true;
+    $scope.stores = false;
 
     var post = "zipcode=" + zipcode;
     store_finder_service.search(post).then(
@@ -29,7 +36,8 @@ function storeFinderController($scope, $rootScope, store_finder_service) {
 
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
-    window.removeBannerAd();
+    $rootScope.$emit("showback_button", false);
+    window.showBannerAd();
   })();
 }
 
