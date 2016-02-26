@@ -488,6 +488,12 @@ p.ebay-items-heading, p.comments-heading {
   margin-top: -6px;
 }
 
+.home-button img {
+  max-width: 30% !important;
+  height: auto;
+  max-height: 40px;
+}
+
 .back-button {
   display: none;
   max-width: 100% !important;

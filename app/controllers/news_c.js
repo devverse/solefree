@@ -1,6 +1,7 @@
 function newsController($scope, $rootScope, $location, news_service) {
   
-  $scope.news = [];
+  $scope.category = '';
+  $scope.news = false;
   $scope.show_loading = true;
   $scope.menu = [
     {'name' : 'Nike'},
@@ -15,6 +16,7 @@ function newsController($scope, $rootScope, $location, news_service) {
     {'name' : 'Saucony'},
     {'name' : 'Vans'},
     {'name' : 'Diadora'},
+    {'name' : 'Asics'}
   ];
 
   $scope.getNews = function() {
@@ -31,6 +33,7 @@ function newsController($scope, $rootScope, $location, news_service) {
 
   $scope.formatData = function(data) {
     $scope.show_loading = false;
+    $scope.news = [];
 
     for (var x = 0; x < data.length; x++) {
       var html, image;
@@ -50,7 +53,6 @@ function newsController($scope, $rootScope, $location, news_service) {
   };
   
   $scope.getFeedsByCategory = function(category) {
-    $scope.news = [];
     $scope.showLoading = true;
 
     localStorage.setItem("category", category);
@@ -58,6 +60,7 @@ function newsController($scope, $rootScope, $location, news_service) {
     var post = "category=" + category;
     news_service.getFeedsByCategory(post).then(
       function(data) {
+        $scope.category = category;
         $scope.formatData(data);
       }, function(err) {
         alert(err);

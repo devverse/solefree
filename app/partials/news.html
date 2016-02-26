@@ -12,6 +12,10 @@
 </div>
 
 
+<div ng-show="news.length == 0" style="padding:10px">
+  No News Found for {{category}}
+</div>
+
 <div class="" ng-repeat="r in news | filter:search" style="padding:10px">
   <div class="swipeout-content item-content" >
     <div class="post_entry">
