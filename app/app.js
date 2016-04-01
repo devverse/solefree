@@ -107,7 +107,7 @@ soleinsiderApp.directive('releasesDirective', function() {
     if (scope.$last) {
       setTimeout(function() {
        $("#pages_maincontent").scrollTop(localStorage.getItem("scrollPosition"));
-      }, 100);
+      }, 10);
     }
   };
 });
@@ -132,7 +132,9 @@ soleinsiderApp.directive('productImagesDirective', function() {
     if (scope.$last) {
       $('.product-carousel').carousel();
       ngrepeat_counter = 1;
-        window.scrollTo(0, 0);
+      setTimeout(function() {
+        $("#pages_maincontent").scrollTop(0);
+      }, 10);
     }
   };
 });

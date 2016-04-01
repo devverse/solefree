@@ -176,7 +176,7 @@ ul.tabs li.current{
   float: left;
   display: inline;
   text-align: left;
-  width: 98%;
+  width: 96%;
   font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
@@ -580,4 +580,19 @@ p.ebay-items-heading, p.comments-heading {
 
 .releasing-today {
   background-image: url('images/connect.png')
+}
+
+.product-details {
+  overflow: hidden;
+}
+
+.product-details-left {
+  float: left;
+  width: 60%;
+}
+
+.product-details-right {
+  float: right;
+  width: 38%;
+  margin-top: -10px;
 }

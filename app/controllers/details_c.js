@@ -51,6 +51,14 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.r = product;
     $scope.product_id = product.product_id;
     $scope.views = $scope.numberWithCommas(product.views * 2);
+    new JustGage({
+      id: "popularity-gage",
+      value: product.yes_percentage,
+      min: 0,
+      max: 100,
+      title: "Popularity",
+      startAnimationTime: 2000,
+    });
   };
 
   $scope.getSlideShow = function() {
