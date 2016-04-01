@@ -8,6 +8,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.errorMessage = "";
   $scope.show_loading = true;
   $scope.show_coming = false;
+  $scope.scrollPosition = 0;
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
@@ -15,6 +16,8 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.details = function(event, product) {
     event.preventDefault();
+
+    localStorage.setItem("scrollPosition", $scope.scrollPosition);
     localStorage.setItem("product_details", JSON.stringify(product));
     $location.path('details');
   };
@@ -43,10 +46,20 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.getReleases = function() {
     $scope.showLoading = true;
+
+    var cachedReleases = release_service.getCachedReleases();
+
+    if (cachedReleases) {
+      $scope.releases = cachedReleases;
+      $scope.show_loading = false;
+      return;
+    }
+
     release_service.getReleases().then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
+        release_service.setCachedReleases(data);
       }, function(err) {
         alert(err);
       });
@@ -63,10 +76,21 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
    $scope.filterReleases = function(product) {
+    var releaseDate, today;
+
     product.showBuyLink = false;
 
     if (product.link.length > 2) {
       product.showBuyLink = true;
+    }
+
+    releaseDate = moment(product.release_date, "MMMM Do, YYYY").format('L');
+    today = moment().format('L');
+
+    if (today === releaseDate) {
+      product.releasing_today = true;
+    } else {
+      product.releasing_today = false;
     }
 
     if (product.coming_soon === '1' && $scope.last_product_id != product.id) {
@@ -103,6 +127,10 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.init = (function() {
+    $("#pages_maincontent").scroll(function () { 
+      $scope.scrollPosition = $("#pages_maincontent").scrollTop();
+    });
+
     $scope.getReleases();
     $scope.getComingSoon();
     $rootScope.$emit("featured", true);

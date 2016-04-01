@@ -76,7 +76,7 @@
   margin-bottom: 5px;
   border-bottom: 1px #eee solid;
   margin-bottom: 1px;
-  width: 95%;
+  width: 99%;
   margin-left: 5px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -176,8 +176,8 @@ ul.tabs li.current{
   float: left;
   display: inline;
   text-align: left;
-  width: 95%;
-  font-size: 12px;
+  width: 98%;
+  font-size: 14px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
@@ -348,18 +348,18 @@ a.portfolio-wide-item {
 }
 
 .portfolio-wide-item .overlay {
-    background-color: rgba(0,0,0,0.7);
-    z-index: 9;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9;
 }
 
 .portfolio-wide-item p {
-    color: rgba(255,255,255,0.5);
-    position: absolute;
-    width: 100%;
-    top: 45%;
-    margin-top: 0px;
-    z-index: 98;
-    text-align: center;
+  color: rgba(255,255,255,0.5);
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  margin-top: 0px;
+  z-index: 98;
+  text-align: center;
 }
 
 .overlay {
@@ -503,6 +503,7 @@ p.ebay-items-heading, p.comments-heading {
 .back-button img {
   max-width: 80% !important;
 }
+
 .instagram_button-container {
   width: 100%;
 }
@@ -575,4 +576,8 @@ p.ebay-items-heading, p.comments-heading {
 }
 .navbar_page_center {
   font-family: 'Roboto Regular'
+}
+
+.releasing-today {
+  background-image: url('images/connect.png')
 }

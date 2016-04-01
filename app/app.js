@@ -102,6 +102,16 @@ soleinsiderApp.config(['$httpProvider',
 ]);
 
 var ngrepeat_counter = 1;
+soleinsiderApp.directive('releasesDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last) {
+      setTimeout(function() {
+       $("#pages_maincontent").scrollTop(localStorage.getItem("scrollPosition"));
+      }, 100);
+    }
+  };
+});
+
 soleinsiderApp.directive('featuredDirective', function() {
   return function(scope, element, attrs) {
     var link = '<a href="#" data-slide="' + ngrepeat_counter + '">' + ngrepeat_counter + '</a>';

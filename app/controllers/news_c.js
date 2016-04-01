@@ -45,7 +45,7 @@ function newsController($scope, $rootScope, $location, news_service) {
       if (typeof image != "undefined") {
         data[x].thumbnail = image.attr('src');
       } else {
-        data[x].thumbnail = '';
+        data[x].thumbnail = 'http://soleinsider.com/images/default.jpg';
       }
 
       $scope.news.push(data[x]);

@@ -3,6 +3,10 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
 
     var api = soleinsider.base_url;
 
+    self.cachedReleases = [];
+    self.cachedComingSoon = [];
+    self.expiration = 0;
+
     self.makePost = function(endpoint, post) {
 
       post = (!post) ? {} : post;
@@ -24,6 +28,40 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
       });
       return deferred.promise;
 
+    };
+
+    self.getCachedReleases = function() {
+      if (moment().unix() > self.expiration) {
+        self.cachedReleases = [];
+      }
+
+      if (self.cachedReleases.length == 0) {
+        return false;
+      }
+
+      return self.cachedReleases;
+    };
+
+    self.setCachedReleases = function(releases) {
+      self.expiration = moment().unix() + 3600;
+      self.cachedReleases = releases;
+    };
+
+    self.getCachedComingSoon = function() {
+      if (moment().unix() > self.expiration) {
+        self.cachedComingSoon = [];
+      }
+
+      if (self.cachedComingSoon.length == 0) {
+        return false;
+      }
+
+      return self.cachedReleases;
+    };
+
+    self.setCachedComingSoon = function(releases) {
+      self.expiration = moment().unix() + 3600;
+      self.cachedComingSoon = releases;
     };
 
     self.getComingSoon = function() {
@@ -89,6 +127,22 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
     };
 
     return {
+
+      getCachedReleases: function() {
+        return self.getCachedReleases();
+      },
+
+      setCachedReleases: function(releases) {
+        return self.setCachedReleases(releases);
+      },
+
+      getCachedComingSoon: function() {
+        return self.getCachedComingSoon();
+      },
+
+      setCachedComingSoon: function(releases) {
+        return self.setCachedComingSoon(releases);
+      },
 
       getPastReleases: function() {
         return self.getPastReleases();
