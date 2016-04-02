@@ -43,7 +43,7 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
     };
 
     self.setCachedReleases = function(releases) {
-      self.expiration = moment().unix() + 3600;
+      self.expiration = moment().unix() + 1800;
       self.cachedReleases = releases;
     };
 
