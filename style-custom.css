@@ -588,11 +588,12 @@ p.ebay-items-heading, p.comments-heading {
 
 .product-details-left {
   float: left;
-  width: 60%;
+  width: 58%;
 }
 
 .product-details-right {
   float: right;
-  width: 38%;
-  margin-top: -10px;
+  width: 36%;
+  margin-top: -7px;
+  margin-right: 5px;
 }

@@ -57,7 +57,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       min: 0,
       max: 100,
       title: "Popularity",
-      startAnimationTime: 2000,
+      startAnimationTime: 3000,
     });
   };
 
