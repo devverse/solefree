@@ -228,6 +228,7 @@ ul.tabs li.current{
   background-color: #eee;
 }
 
+
 .details-actions {
   width: 100%;
   text-align: center;
@@ -264,7 +265,7 @@ ul.tabs li.current{
 }
 
 .button_small {
-  background-color: #333 !important;
+  background-color: #333;
 }
 
 /* 27. Portfolio */ 
@@ -597,3 +598,18 @@ p.ebay-items-heading, p.comments-heading {
   margin-top: -7px;
   margin-right: 5px;
 }
+
+
+.details-actions-buy {
+  width: 100%;
+  text-align: center;
+  padding: 10px 10px !important;
+  margin-bottom: 1px;
+  text-align: left;
+  color: #fff;
+  text-align: center;
+  background-color: #0C91BE;
+  font-size: 20px;
+  display: inline-block;
+}
+

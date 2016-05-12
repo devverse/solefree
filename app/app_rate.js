@@ -11,7 +11,7 @@ document.addEventListener("deviceready", function() {
 	AppRate.preferences.storeAppURL.android = 'market://details?id=com.sole.insider.free';
 	AppRate.preferences.customLocale = customLocale;
 	AppRate.preferences.displayAppName = 'SoleInsider';
-	AppRate.preferences.usesUntilPrompt = 15;
+	AppRate.preferences.usesUntilPrompt = 3;
 	AppRate.preferences.promptAgainForEachNewVersion = true;
-	AppRate.promptForRating();
+	AppRate.promptForRating(false);
 });
