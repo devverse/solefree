@@ -21,6 +21,10 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.getDefaultItems = function() {
+
+    $scope.completeSearch('nike sale');
+    return;
+
     store_service.getDefaultItems().then(function(data) {
       $scope.products = data;
       $scope.showLoading = false;

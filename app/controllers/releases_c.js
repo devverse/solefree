@@ -10,7 +10,8 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.show_coming = false;
   $scope.scrollPosition = 0;
 
-  $scope.buyProduct = function(product) {
+  $scope.buyProduct = function(event, product) {
+    event.preventDefault()
     window.open(product.link, '_blank', 'location=yes');
   };
 

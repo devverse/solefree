@@ -265,7 +265,7 @@ ul.tabs li.current{
 }
 
 .button_small {
-  background-color: #333;
+  background-color: #333 !important;
 }
 
 /* 27. Portfolio */ 
