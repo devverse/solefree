@@ -16,7 +16,15 @@
   No News Found for {{category}}
 </div>
 
-<div class="" ng-repeat="r in news | filter:search" style="padding:10px">
+<div class="" ng-repeat="r in news | filter:search" style="padding:2px">
+  <div class="news-item" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
+    <div class="news-item-title">
+      <a href="#" ng-click="view($event, r)"> {{r.title}}</a>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="" ng-repeat="r in news | filter:search" style="padding:10px">
   <div class="swipeout-content item-content" >
     <div class="post_entry">
         <div class="post_thumb">
@@ -32,4 +40,4 @@
         </div>
     </div>
   </div>
-</div>
+</div> -->

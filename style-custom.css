@@ -599,7 +599,6 @@ p.ebay-items-heading, p.comments-heading {
   margin-right: 5px;
 }
 
-
 .details-actions-buy {
   width: 100%;
   text-align: center;
@@ -613,3 +612,32 @@ p.ebay-items-heading, p.comments-heading {
   display: inline-block;
 }
 
+/* News Section */
+.news-item {
+  overflow: hidden;
+  width: 100%;
+  background-color: #ccc;
+  display: block;
+  min-height:  40px;
+  margin-bottom: 2px;
+  height: 100%;
+  max-height: 250px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.news-item-title {
+  background-color: black;
+  float: left;
+  padding: 10px;
+  width: 85%;
+  cursor: pointer;
+  margin-top: 2px;
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
+.news-item-title a {
+    color: #fff;
+    font-size: 18px;
+}
