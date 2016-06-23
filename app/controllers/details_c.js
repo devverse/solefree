@@ -212,6 +212,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getSlideShow();
     $scope.getComments();
     window.removeBannerAd();
+    window.randomInterstitial();
     $scope.build = soleinsider.build;
   })();
 

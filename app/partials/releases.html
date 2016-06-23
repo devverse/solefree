@@ -23,7 +23,7 @@
 
               <div class="date" ng-show="{{r.releasing_today}}"> Releasing Today! <br/></div>
 
-              <div ng-show="r.yes_percentage >= 90">
+              <div ng-show="r.yes_percentage >= 90" ng-hide="r.showBuyLink">
                 <img src="images/fire.png" style="width:12px;height:12px"/>
                 <img src="images/fire.png" style="width:12px;height:12px"/>
                 <img src="images/fire.png" style="width:12px;height:12px"/>
@@ -32,7 +32,7 @@
               </div>
 
 
-              <a href="" class="button_small" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)" style="padding: 5px;"> Buy Now </a>
+              <a href="" class="button_small" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)" style="padding: 5px;font-size:12px;margin-top:-1px"> Buy Now </a>
             </div>
           </div>
         </div>

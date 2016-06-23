@@ -137,6 +137,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $rootScope.$emit("featured", true);
     $rootScope.$emit("showback_button", false);
     window.removeBannerAd();
+    window.randomInterstitial();
   })();
 }
 

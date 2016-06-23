@@ -35,8 +35,30 @@ function prepareInterstitial() {
 
 function showInterstitial() {
     if(typeof AdMob != 'undefined') {
-    	AdMob.showInterstitial();
+        AdMob.isInterstitialReady(function(isready) {
+    	   if(isready) AdMob.showInterstitial();
+        });
     }
+}
+
+function randomInterstitial() {
+
+    var adCount = localStorage.getItem("adCount");
+
+    if(adCount == null || isNaN(adCount)) {
+        localStorage.setItem("adCount", 1);
+        return;
+    }
+
+    if (adCount == 2) {
+        localStorage.setItem("adCount", 1);
+        prepareInterstitial();
+        showInterstitial();
+    } else {
+        adCount = parseInt(adCount) + 1;
+        localStorage.setItem("adCount", adCount);
+    }
+
 }
 
 document.addEventListener('prepareInterstitial', prepareInterstitial, false);

@@ -123,6 +123,7 @@ function storeController($scope, $rootScope, store_service) {
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.removeBannerAd();
+    window.randomInterstitial();
   })();
 }
 
