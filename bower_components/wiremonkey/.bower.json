@@ -1,0 +1,28 @@
+{
+  "name": "wiremonkey",
+  "description": "A javascript realtime internet connection tracker and notfier",
+  "authors": "Ryvan Prabhu",
+  "ignore": [
+    "src",
+    "node_modules",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "npm-debug.log",
+    "Gruntfile.js",
+    "Gruntfile.js.save",
+    "package.json"
+  ],
+  "homepage": "https://github.com/ryvan-js/wiremonkey",
+  "_release": "c19ab1ecd6",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c19ab1ecd628d6963e6fb55d58f6880a2de3b660"
+  },
+  "_source": "https://github.com/ryvan-js/wiremonkey.git",
+  "_target": "*",
+  "_originalSource": "wiremonkey",
+  "_direct": true
+}
