@@ -28,35 +28,30 @@ function removeBannerAd() {
 }
 
 function prepareInterstitial() {
+    alert('prepareInterstitial');
 	if(typeof AdMob != 'undefined') {
 	 	AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow: false} );
 	}
 }
 
 function showInterstitial() {
+    alert('showInterstitial');
     if(typeof AdMob != 'undefined') {
         AdMob.isInterstitialReady(function(isready) {
-    	   if(isready) AdMob.showInterstitial();
+    	   if(isready) {
+                AdMob.showInterstitial();
+            }
         });
     }
 }
 
 function randomInterstitial() {
+    var random = Math.floor(Math.random() * 2) + 1;
 
-    var adCount = localStorage.getItem("adCount");
-
-    if(adCount == null || isNaN(adCount)) {
-        localStorage.setItem("adCount", 1);
-        return;
-    }
-
-    if (adCount == 2) {
+    if (random == 2) {
         localStorage.setItem("adCount", 1);
         prepareInterstitial();
         showInterstitial();
-    } else {
-        adCount = parseInt(adCount) + 1;
-        localStorage.setItem("adCount", adCount);
     }
 
 }
