@@ -61,6 +61,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
         $scope.releases = data;
         $scope.show_loading = false;
         release_service.setCachedReleases(data);
+        $scope.releaseAddedAlert(data);
       }, function(err) {
         alert(err);
       });
@@ -125,6 +126,34 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
         alert(err);
       }
     );
+  };
+
+  $scope.releaseAddedAlert = function(data) {
+    if (localStorage.getItem('release-date-id') == null) {
+      localStorage.setItem('release-date-id', 2427);
+    }
+    
+    var newReleases = 0;
+    var newHigh = 0;
+    var currentHigh = parseInt(localStorage.getItem('release-date-id'));
+
+    for (var key in data) {
+      for (var x = 0; x < data[key].products.length; x++) {
+        if (data[key].products[x].id > currentHigh) {
+          newHigh = data[key].products[x].id;
+          currentHigh = newHigh
+          newReleases++;
+        }
+      }
+    }
+
+    if (newReleases > 0) {
+      toastr.success(newReleases + " New Releases Added");
+      localStorage.setItem('release-date-id', newHigh);
+    }
+
+    console.log(currentHigh);
+    console.log(newHigh);
   };
 
   $scope.init = (function() {
