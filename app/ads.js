@@ -35,13 +35,13 @@ function prepareInterstitial() {
 }
 
 function showInterstitial() {
-    alert('showInterstitial');
+    alert('showingInterstitial');
     if(typeof AdMob != 'undefined') {
-        AdMob.isInterstitialReady(function(isready) {
-    	   if(isready) {
+        //AdMob.isInterstitialReady(function(isready) {
+    	   //if(isready) {
                 AdMob.showInterstitial();
-            }
-        });
+            //}
+        //});
     }
 }
 

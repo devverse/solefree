@@ -32,3 +32,6 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 }
+
+startTrackerWithId('UA-18545304-13');
+alert('Starting analyitcs');
