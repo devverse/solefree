@@ -28,10 +28,15 @@ function removeBannerAd() {
 }
 
 function prepareInterstitial() {
-    alert('prepareInterstitial');
 	if(typeof AdMob != 'undefined') {
-	 	AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow: false} );
-	}
+        alert('admob defined');
+	 	AdMob.prepareInterstitial({
+           adId:admobid.interstitial, 
+           autoShow: true
+        });
+	} else {
+        alert('admob not defined');
+    }
 }
 
 function showInterstitial() {
@@ -51,7 +56,7 @@ function randomInterstitial() {
     if (random == 2) {
         localStorage.setItem("adCount", 1);
         prepareInterstitial();
-        showInterstitial();
+       // showInterstitial();
     }
 
 }
