@@ -4,14 +4,14 @@ admobid = {
     interstitial: 'ca-app-pub-0083160636450496/7728851959'
 };
 
-document.addEventListener("deviceready", OnDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { 
-    setTimeout(function() { 
-    navigator.splashscreen.hide(); 
-    deviceReady = true;
-    }, 2000); 
-
+    // setTimeout(function() { 
+    // navigator.splashscreen.hide(); 
+    // deviceReady = true;
+    // }, 2000); 
+    alert('deviceready');
     window.ga.startTrackerWithId('UA-18545304-13');
     alert('Starting analyitcs');
 }
