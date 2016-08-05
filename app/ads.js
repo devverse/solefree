@@ -4,15 +4,16 @@ admobid = {
     interstitial: 'ca-app-pub-0083160636450496/7728851959'
 };
 
+document.addEventListener("deviceready", OnDeviceReady, false);
+
 function onDeviceReady() { 
     setTimeout(function() { 
     navigator.splashscreen.hide(); 
     deviceReady = true;
-    
-    window.analytics.startTrackerWithId('UA-18545304-13');
-    alert('Starting analyitcs');
-
     }, 2000); 
+
+    window.ga.startTrackerWithId('UA-18545304-13');
+    alert('Starting analyitcs');
 }
 
 function showBannerAd() {
