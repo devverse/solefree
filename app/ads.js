@@ -8,6 +8,10 @@ function onDeviceReady() {
     setTimeout(function() { 
     navigator.splashscreen.hide(); 
     deviceReady = true;
+    
+    window.analytics.startTrackerWithId('UA-18545304-13');
+    alert('Starting analyitcs');
+
     }, 2000); 
 }
 
@@ -29,34 +33,19 @@ function removeBannerAd() {
 
 function prepareInterstitial() {
 	if(typeof AdMob != 'undefined') {
-        alert('admob defined');
 	 	AdMob.prepareInterstitial({
            adId:admobid.interstitial, 
            autoShow: true
         });
-	} else {
-        alert('admob not defined');
-    }
-}
-
-function showInterstitial() {
-    alert('showingInterstitial');
-    if(typeof AdMob != 'undefined') {
-        //AdMob.isInterstitialReady(function(isready) {
-    	   //if(isready) {
-                AdMob.showInterstitial();
-            //}
-        //});
-    }
+	}
 }
 
 function randomInterstitial() {
-    var random = Math.floor(Math.random() * 2) + 1;
+    var random = Math.floor((Math.random() * 10) + 1);
 
-    if (random == 2) {
+    if (random == 1 || random == 2) {
         localStorage.setItem("adCount", 1);
         prepareInterstitial();
-       // showInterstitial();
     }
 
 }

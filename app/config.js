@@ -32,6 +32,3 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 }
-
-window.analytics.startTrackerWithId('UA-18545304-13');
-alert('Starting analyitcs');
