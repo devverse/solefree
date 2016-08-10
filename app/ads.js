@@ -7,12 +7,12 @@ admobid = {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { 
-    // setTimeout(function() { 
-    // navigator.splashscreen.hide(); 
-    // deviceReady = true;
-    // }, 2000); 
+    setTimeout(function() { 
+        navigator.splashscreen.hide(); 
+        deviceReady = true;
+    }, 2000); 
     alert('deviceready test');
-    window.analytics.startTrackerWithId('UA-18545304-13');
+    window.ga.startTrackerWithId('UA-18545304-13');
     alert('Starting analyitcs');
 }
 
