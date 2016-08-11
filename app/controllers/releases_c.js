@@ -151,9 +151,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       toastr.success(newReleases + " New Releases Added");
       localStorage.setItem('release-date-id', newHigh);
     }
-
-    console.log(currentHigh);
-    console.log(newHigh);
   };
 
   $scope.init = (function() {

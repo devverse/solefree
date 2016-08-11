@@ -43,10 +43,9 @@ function prepareInterstitial() {
 }
 
 function randomInterstitial() {
-    var random = Math.floor((Math.random() * 10) + 1);
+    var random = Math.floor((Math.random() * 14) + 1);
 
-    if (random == 1 || random == 2) {
-        localStorage.setItem("adCount", 1);
+    if (random == 1) {
         prepareInterstitial();
     }
 
