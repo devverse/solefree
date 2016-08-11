@@ -8,10 +8,12 @@ function statsController($scope, $rootScope, account_service) {
     var member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
       
-      $stats.comment_count = 0;
-      $scope.release_alert_count = 0;
-      $scope.release_interest_count = 0;
-      $scope.restock_alert_count = 0;
+      $scope.stats = {};
+
+      $scope.stats.comment_count = 0;
+      $scope.stats.release_alert_count = 0;
+      $scope.stats.release_interest_count = 0;
+      $scope.stats.restock_alert_count = 0;
 
       $().toastmessage('showErrorToast', "You need to be logged to view your stats");
       return false;
