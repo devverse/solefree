@@ -12,11 +12,8 @@ function onDeviceReady() {
     //     deviceReady = true;
     // }, 2000); 
 
-
     setTimeout(function() { 
-        alert('deviceready analytics');
         analytics.startTrackerWithId('UA-18545304-13');
-        alert('Starting analyitcs in timeout');
     }, 4000); 
 }
 

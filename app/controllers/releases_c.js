@@ -130,7 +130,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.releaseAddedAlert = function(data) {
     if (localStorage.getItem('release-date-id') == null) {
-      localStorage.setItem('release-date-id', 2427);
+      localStorage.setItem('release-date-id', 2480);
     }
     
     var newReleases = 0;
