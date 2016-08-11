@@ -36,7 +36,7 @@ function storeFinderController($scope, $rootScope, store_finder_service) {
 
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
-    $rootScope.$emit("showback_button", false);
+    $rootScope.$emit("showback_button", true);
     window.showBannerAd();
   })();
 }

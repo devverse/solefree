@@ -5,7 +5,14 @@ function statsController($scope, $rootScope, account_service) {
   $scope.getStats = function() {
   	$scope.show_loading = true
 
-  	var post = "member_id=" + soleinsider.member_id;
+    var member_id = localStorage.getItem("member_id");
+    if (member_id == "false" || member_id == 0 || member_id == null) {
+      $().toastmessage('showErrorToast', "You need to be logged to view your stats");
+      return false;
+    }
+
+  	var post = "member_id=" + member_id;
+
     account_service.getStats(post).then(
       function(data) {
         $scope.stats = data[0];
