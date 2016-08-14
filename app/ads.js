@@ -12,9 +12,9 @@ function onDeviceReady() {
     //     deviceReady = true;
     // }, 2000); 
 
-    setTimeout(function() { 
-        analytics.startTrackerWithId('UA-18545304-13');
-    }, 4000); 
+    // setTimeout(function() { 
+    //     analytics.startTrackerWithId('UA-18545304-13');
+    // }, 4000); 
 }
 
 function showBannerAd() {
