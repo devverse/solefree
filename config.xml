@@ -80,7 +80,6 @@
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
 	<preference name="exit-on-suspend" value="false" />
-	<preference name="android-build-tool" value="gradle" /> 
 
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="cordova-plugin-admobpro" source="npm"/>
