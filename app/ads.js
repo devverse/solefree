@@ -7,10 +7,10 @@ admobid = {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { 
-    setTimeout(function() { 
-        navigator.splashscreen.hide(); 
-        deviceReady = true;
-    }, 2000); 
+    // setTimeout(function() { 
+    //     navigator.splashscreen.hide(); 
+    //     deviceReady = true;
+    // }, 2000); 
 
     setTimeout(function() { 
         analytics.startTrackerWithId('UA-18545304-13');
@@ -18,23 +18,26 @@ function onDeviceReady() {
 }
 
 function showBannerAd() {
-    if (typeof admob != 'undefined') {
-        admob.createBannerView({
-            adId : admobid.banner
+    if (typeof AdMob != 'undefined') {
+        AdMob.createBanner({
+            adId : admobid.banner,
+            position : AdMob.AD_POSITION.BOTTOM_CENTER,
+            autoShow : true
         });
     }
 }
 
 function removeBannerAd() {
-	if (typeof admob != 'undefined') {
-		admob.removeBanner();
+	if (typeof AdMob != 'undefined') {
+		AdMob.removeBanner();
 	}
 }
 
 function prepareInterstitial() {
-	if(typeof admob != 'undefined') {
-	 	admob.requestInterstitialAd({
-           adId:admobid.interstitial
+	if(typeof AdMob != 'undefined') {
+	 	AdMob.prepareInterstitial({
+           adId:admobid.interstitial, 
+           autoShow: true
         });
 	}
 }
