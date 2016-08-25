@@ -33,7 +33,7 @@ function showBannerAd() {
 
 function removeBannerAd() {
 	if (typeof admob != 'undefined') {
-		admob.removeBanner();
+		admob.destroyBannerView();
 	}
 }
 
