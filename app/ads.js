@@ -27,7 +27,7 @@ function onDeviceReady() {
 
 function showBannerAd() {
     if (typeof admob != 'undefined') {
-        admob.createBanner();
+        admob.createBannerView();
     }
 }
 
@@ -39,7 +39,7 @@ function removeBannerAd() {
 
 function prepareInterstitial() {
 	if(typeof admob != 'undefined') {
-	 	admob.prepareInterstitial();
+	 	admob.requestInterstitialAd();
 	}
 }
 
