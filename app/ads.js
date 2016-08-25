@@ -14,31 +14,32 @@ function onDeviceReady() {
 
     setTimeout(function() { 
         analytics.startTrackerWithId('UA-18545304-13');
-    }, 4000); 
+    }, 4000);
+
+    admob.setOptions({
+        publisherId:          "ca-app-pub-0083160636450496/6391719559",  // Required
+        interstitialAdId:     "cca-app-pub-0083160636450496/7728851959",
+        autoShowInterstitial: true,
+        autoShowBanner: true
+
+    });
 }
 
 function showBannerAd() {
-    if (typeof AdMob != 'undefined') {
-        AdMob.createBanner({
-            adId : admobid.banner,
-            position : AdMob.AD_POSITION.BOTTOM_CENTER,
-            autoShow : true
-        });
+    if (typeof admob != 'undefined') {
+        admob.createBanner();
     }
 }
 
 function removeBannerAd() {
-	if (typeof AdMob != 'undefined') {
-		AdMob.removeBanner();
+	if (typeof admob != 'undefined') {
+		admob.removeBanner();
 	}
 }
 
 function prepareInterstitial() {
-	if(typeof AdMob != 'undefined') {
-	 	AdMob.prepareInterstitial({
-           adId:admobid.interstitial, 
-           autoShow: true
-        });
+	if(typeof admob != 'undefined') {
+	 	admob.prepareInterstitial();
 	}
 }
 
