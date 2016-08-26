@@ -1,3 +1,3 @@
 window.onload = function(){
-    WireMonkey.init();
+    // WireMonkey.init();
 }
