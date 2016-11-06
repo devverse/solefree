@@ -1,5 +1,5 @@
 var url = window.location.href;
-var serviceURL = "http://soleinsider.com/public";
+var serviceURL = "http://localhost/soleinsider/public";
 
 var admin_url = 'app/';
 var app_name = "SoleInsider";
@@ -11,7 +11,7 @@ soleinsider.username = "";
 soleinsider.member_id = false;
 soleinsider.cache = false;
 soleinsider.show_featured = true;
-soleinsider.version = "6.4.4";
+soleinsider.version = "6.5.0";
 soleinsider.build = "android";
 soleinsider.localhost = (url.indexOf("localhost") != -1 ? true :  false);
 

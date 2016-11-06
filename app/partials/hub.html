@@ -1,0 +1,38 @@
+<div class="headline-title-div">
+	<a href="#" class="headline-title" ng-click="goToUrl($event)">
+		{{hub.type}} Hub
+	</a>
+</div>
+
+<div ng-cloak ng-show="show_loading == true" class="spinner">
+  <img src="images/spinner.gif"/>
+</div>
+
+<!-- The latest {{hub.type}} news -->
+<div class="" ng-repeat="r in hub.news | filter:search" style="padding:0px; width:100%">
+  <div class="news-item-mini" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
+    <div class="news-item-mini-title">
+      <a href="#" ng-click="view($event, r)"> {{r.title}}</a>
+    </div>
+  </div>
+</div>
+<h1> Upcoming Releases </h1>
+<ul class="posts" style="margin-top:10px">
+  <li class="swipeout" ng-repeat="r in hub.releases" style="clear:both;"
+    <div class="swipeout-content item-content" >
+      <div class="post_entry">
+        <div class="post_thumb"><a ng-click="details($event, r)">
+        <img ng-src="http://soleinsider.com/public/products/{{r.image}}"></a></div>
+        <div class="post_details">
+          <h4 class="sneaker_title">
+          <a href="#" ng-click="details($event, r)">{{r.name}} </a>
+          </h4>
+          <div class="date_price">
+            <span class="date">{{r.release_date}}</span>
+          </div>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

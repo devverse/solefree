@@ -17,27 +17,9 @@
 </div>
 
 <div class="" ng-repeat="r in news | filter:search" style="padding:2px">
-  <div class="news-item" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
-    <div class="news-item-title">
+  <div ng-class="r.news_class" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
+    <div ng-class="r.news_class_title">
       <a href="#" ng-click="view($event, r)"> {{r.title}}</a>
     </div>
   </div>
 </div>
-
-<!-- <div class="" ng-repeat="r in news | filter:search" style="padding:10px">
-  <div class="swipeout-content item-content" >
-    <div class="post_entry">
-        <div class="post_thumb">
-        <a href="#" ng-click="view($event, r)">
-          <img ng-src="{{r.thumbnail}}" />
-        </a>
-        </div>
-        <div class="post_details">
-        <h4 class="sneaker_title">
-        <a href="#" ng-click="view($event, r)"> 
-          {{r.title}}</a>
-        </h4>
-        </div>
-    </div>
-  </div>
-</div> -->

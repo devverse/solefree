@@ -4,22 +4,12 @@
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url('fonts/Roboto-Thin.ttf')  format('truetype')
-}
-
-@font-face {
-  font-family: 'Roboto Regular';
-  src: url('fonts/Roboto-Regular.ttf')  format('truetype')
-}
-
-@font-face {
-  font-family: 'Roboto Medium';
-  src: url('fonts/Roboto-Medium.ttf')  format('truetype')
+  font-family: 'Aldrich';
+  src: url('fonts/Aldrich-Regular.ttf')  format('truetype')
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -51,7 +41,7 @@
   font-size: 14px;
   font-weight: 100;
   text-transform: uppercase;
-  font-family: "Roboto Medium";
+  font-family: "Aldrich",  sans-serif;;
 }
 
 .sneaker_title {
@@ -538,19 +528,21 @@ p.ebay-items-heading, p.comments-heading {
   margin-top: 50%;
 }
 
-.youtube-subscribe-div {
+.headline-title-div {
   margin: 0 auto;
 }
 
-.youtube-subscribe {
+.headline-title {
   display: block;
   color: #FFF;
   padding: 10px;
   width: 100%;
-  background-color: #e52d27;
+  background-color: blue;
   text-align: center;
   margin-bottom: 10px;
 }
+
+
 
 .user-stats > p {
   margin-bottom: 10px;
@@ -564,7 +556,7 @@ p.ebay-items-heading, p.comments-heading {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
-  font-family: 'Roboto Medium';
+  font-family: 'Aldrich';
 }
 
 .article-view img {
@@ -575,8 +567,9 @@ p.ebay-items-heading, p.comments-heading {
 .article-view {
   padding: 10px;
 }
+
 .navbar_page_center {
-  font-family: 'Roboto Regular'
+  font-family: 'Aldrich';
 }
 
 .releasing-today {
@@ -613,6 +606,20 @@ p.ebay-items-heading, p.comments-heading {
 }
 
 /* News Section */
+.news-item-mini {
+  width: 49%;
+  background-color: #ccc;
+  display: block;
+  min-height:  40px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  height: 100%;
+  max-height: 130px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  float :left;
+}
+
 .news-item {
   overflow: hidden;
   width: 100%;
@@ -638,6 +645,22 @@ p.ebay-items-heading, p.comments-heading {
 }
 
 .news-item-title a {
-    color: #fff;
-    font-size: 18px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.news-item-mini-title {
+  background-color: black;
+  float: left;
+  padding: 12px;
+  width: 85%;
+  cursor: pointer;
+  margin-top: 2px;
+  margin-left: 2px;
+  opacity: 0.7;
+}
+
+.news-item-mini-title a {
+  color: #fff;
+  font-size: 12px;
 }

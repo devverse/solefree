@@ -48,6 +48,14 @@ function newsController($scope, $rootScope, $location, news_service) {
         data[x].thumbnail = 'http://soleinsider.com/images/default.jpg';
       }
 
+      data[x].news_class = 'news-item-mini';
+      data[x].news_class_title = 'news-item-mini-title ';
+
+      if (x % 5 == 0) {
+        data[x].news_class = 'news-item';
+        data[x].news_class_title = 'news-item-title ';
+      }
+
       $scope.news.push(data[x]);
     }
   };

@@ -6,10 +6,17 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
   function($routeProvider) {
     "use strict";
 
-
     $routeProvider.when('/', {
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
+    }).
+    when('/hub/:type', {
+      templateUrl: admin_url + 'partials/hub.html',
+      controller: hubController
+    }).
+    when('/home', {
+      templateUrl: admin_url + 'partials/home.html',
+      controller: homeController
     }).
     when('/releases', {
       templateUrl: admin_url + 'partials/releases.html',
