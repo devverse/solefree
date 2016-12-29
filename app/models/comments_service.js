@@ -34,6 +34,10 @@ soleinsiderApp.factory('comments_service', ['$rootScope', '$q', '$http',
       return self.makePost('/mobile/leaveComment', data);
     };
 
+    self.voteComment = function(data) {
+      return self.makePost('/mobile/voteComment', data);
+    };
+
     return {
 
       leaveComment: function(post) {
@@ -42,6 +46,10 @@ soleinsiderApp.factory('comments_service', ['$rootScope', '$q', '$http',
 
       getComments: function(post) {
         return self.getComments(post);
+      },
+
+      voteComment: function(post) {
+        return self.voteComment(post);
       }
     };
 

@@ -4,6 +4,8 @@ function hubController($scope, $rootScope, $routeParams, $location, hub_service)
 		'yeezy' : '',
 		'nike' : '',
 		'jordan' : '',
+		'adidas' : '',
+		'puma' : '',
 		'adidas' : ''
 
 	};

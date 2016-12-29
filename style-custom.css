@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: 'Open Sans Bold';
+  src: url('fonts/OpenSans-Bold.ttf')  format('truetype')
+}
+
+@font-face {
   font-family: 'Aldrich';
   src: url('fonts/Aldrich-Regular.ttf')  format('truetype')
 }
@@ -20,10 +25,6 @@
   width: 88%;
 }
 
-.date_price {
-  overflow: hidden;
-}
-
 .date {
   width: 99%;
   float: left;
@@ -31,7 +32,7 @@
 }
 
 .price {
-  width: 30%;
+  width: 100%;
   float: left;
   font-size: 12px;
 }
@@ -172,9 +173,9 @@ ul.tabs li.current{
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #FFFFFF;
-  border: solid 1px #cacaca;
+  border: solid 1px #fff;
 }
 
 .speach-left {
@@ -211,6 +212,44 @@ ul.tabs li.current{
   background-color: #0b84fe!important;
   color: #FFFFFF!important;
   border: none!important;
+}
+
+.comment-container {
+  overflow: hidden;
+}
+
+.comment-profile {
+  float: left;
+  width: 20%;
+  margin-bottom: 10px;
+  padding-top: 5px !important;
+}
+
+.comment-details {
+  float: left;
+  margin-top: 5px !important;
+  width: 70%;
+}
+
+.comment-name {
+  margin-bottom: 1px;
+  font-family: "Open Sans Bold";
+  font-weight: bold;
+  padding: 0px !important;
+  font-size: 14px;
+  border-bottom: 1px #333;
+}
+
+.comment-date {
+  font-weight: 100;
+  font-size: 10px;
+  padding: 0px !important;
+}
+
+.comment-comment {
+  font-size: 16px;
+  padding: 3px !important;
+  border-bottom: 1px #ccc solid;
 }
 
 .product-details {
@@ -258,6 +297,18 @@ ul.tabs li.current{
   background-color: #333 !important;
 }
 
+.button_small_buy {
+  width: 100%;
+  text-align: center;
+  text-align: left;
+  color: #fff;
+  text-align: center;
+  background-color: #0C91BE;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px;
+}
 /* 27. Portfolio */ 
 
 .portfolio-wide {
@@ -537,12 +588,27 @@ p.ebay-items-heading, p.comments-heading {
   color: #FFF;
   padding: 10px;
   width: 100%;
-  background-color: blue;
+  background-color: #BBB;
   text-align: center;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
+.hub-block {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-decoration: underline;
+  clear: both;
+  width: 100%;
+  font-family: 'Aldrich';
+}
 
+.hub-section {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
 
 .user-stats > p {
   margin-bottom: 10px;
@@ -663,4 +729,8 @@ p.ebay-items-heading, p.comments-heading {
 .news-item-mini-title a {
   color: #fff;
   font-size: 12px;
+}
+
+.comment-rating {
+  cursor: pointer;
 }

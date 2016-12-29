@@ -2,13 +2,46 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.comments = [];
   $scope.slideshow = [];
+  $scope.votes = [];
 
   $scope.buyEbayProduct = function(url) {
     window.open(url, '_blank', 'location=yes');
   };
 
-  $scope.buyProduct = function(product) {
+  $scope.buyProduct = function(event, product) {
+    event.preventDefault();
     window.open(product.link, '_blank', 'location=yes');
+  };
+
+  $scope.isUndefined = function (text) {
+    return (text === null);
+  };
+
+  $scope.voteUp = function(event, comment) {
+    if ($scope.votes.indexOf(comment.id) != -1 ) {
+      toastr.error("You've already rated this comment");
+    } else {
+      $scope.votes.push(comment.id);
+      comment.votes_up++; 
+
+      var post = "comment_id=" + comment.id;
+      post += "&comment_vote=1";
+
+      comments_service.voteComment(post);
+    }
+  };
+
+  $scope.voteDown = function(event, comment) {
+    if ($scope.votes.indexOf(comment.id) != -1 ) {
+      toastr.error("You've already rated this comment");
+    } else {
+      $scope.votes.push(comment.id);
+      comment.votes_down++; 
+
+      var post = "comment_id=" + comment.id;
+      post += "&comment_vote=0";
+      comments_service.voteComment(post);
+    }
   };
 
   $scope.showComments = function() {
@@ -64,6 +97,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         max: 100,
         title: "Popularity",
         startAnimationTime: 3000,
+        levelColors: ['#CE1B21', '#D0532A', '#FFC414', '#85A137']
       });
     }
   };
