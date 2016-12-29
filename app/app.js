@@ -97,6 +97,82 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
     when('/store', {
       templateUrl: admin_url + 'partials/store.html',
       controller: storeController
+    }).
+    when('/stories', {
+      templateUrl: admin_url + 'partials/stories/stories.html',
+      controller: storiesController
+    }).
+    when('/jordan-1', {
+      templateUrl: admin_url + 'partials/stories/jordan-1.html',
+      controller: storyController
+    }).
+    when('/jordan-2', {
+      templateUrl: admin_url + 'partials/stories/jordan-2.html',
+      controller: storyController
+    }).
+    when('/jordan-3', {
+      templateUrl: admin_url + 'partials/stories/jordan-3.html',
+      controller: storyController
+    }).
+    when('/jordan-4', {
+      templateUrl: admin_url + 'partials/stories/jordan-4.html',
+      controller: storyController
+    }).
+    when('/jordan-5', {
+      templateUrl: admin_url + 'partials/stories/jordan-5.html',
+      controller: storyController
+    }).
+    when('/jordan-6', {
+      templateUrl: admin_url + 'partials/stories/jordan-6.html',
+      controller: storyController
+    }).
+    when('/jordan-7', {
+      templateUrl: admin_url + 'partials/stories/jordan-7.html',
+      controller: storyController
+    }).
+    when('/jordan-8', {
+      templateUrl: admin_url + 'partials/stories/jordan-8.html',
+      controller: storyController
+    }).
+    when('/jordan-9', {
+      templateUrl: admin_url + 'partials/stories/jordan-9.html',
+      controller: storyController
+    }).
+    when('/jordan-10', {
+      templateUrl: admin_url + 'partials/stories/jordan-10.html',
+      controller: storyController
+    }).
+    when('/jordan-11', {
+      templateUrl: admin_url + 'partials/stories/jordan-11.html',
+      controller: storyController
+    }).
+    when('/jordan-12', {
+      templateUrl: admin_url + 'partials/stories/jordan-12.html',
+      controller: storyController
+    }).
+    when('/jordan-13', {
+      templateUrl: admin_url + 'partials/stories/jordan-13.html',
+      controller: storyController
+    }).
+    when('/jordan-14', {
+      templateUrl: admin_url + 'partials/stories/jordan-14.html',
+      controller: storyController
+    }).
+    when('/jordan-15', {
+      templateUrl: admin_url + 'partials/stories/jordan-15.html',
+      controller: storyController
+    }).
+    when('/jordan-16', {
+      templateUrl: admin_url + 'partials/stories/jordan-16.html',
+      controller: storyController
+    }).
+    when('/jordan-17', {
+      templateUrl: admin_url + 'partials/stories/jordan-17.html',
+      controller: storyController
+    }).
+    when('/jordan-30', {
+      templateUrl: admin_url + 'partials/stories/jordan-30.html',
+      controller: storyController
     });
   }
 ]);
