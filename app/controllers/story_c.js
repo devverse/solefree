@@ -2,7 +2,7 @@ function storyController($scope, $rootScope)
 {
     $scope.init = (function ()
     {
-    	$("html, body").animate({
+    	$("#pages_maincontent").animate({
 	      scrollTop: 0
 	    }, 10);
 

@@ -170,8 +170,64 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
       templateUrl: admin_url + 'partials/stories/jordan-17.html',
       controller: storyController
     }).
+    when('/jordan-18', {
+      templateUrl: admin_url + 'partials/stories/jordan-18.html',
+      controller: storyController
+    }).
+    when('/jordan-18-5', {
+      templateUrl: admin_url + 'partials/stories/jordan-18-5.html',
+      controller: storyController
+    }).
+    when('/jordan-19', {
+      templateUrl: admin_url + 'partials/stories/jordan-19.html',
+      controller: storyController
+    }).
+    when('/jordan-20', {
+      templateUrl: admin_url + 'partials/stories/jordan-20.html',
+      controller: storyController
+    }).
+    when('/jordan-21', {
+      templateUrl: admin_url + 'partials/stories/jordan-21.html',
+      controller: storyController
+    }).
+    when('/jordan-22', {
+      templateUrl: admin_url + 'partials/stories/jordan-22.html',
+      controller: storyController
+    }).
+    when('/jordan-23', {
+      templateUrl: admin_url + 'partials/stories/jordan-23.html',
+      controller: storyController
+    }).
+    when('/jordan-24', {
+      templateUrl: admin_url + 'partials/stories/jordan-24.html',
+      controller: storyController
+    }).
+    when('/jordan-25', {
+      templateUrl: admin_url + 'partials/stories/jordan-25.html',
+      controller: storyController
+    }).
+    when('/jordan-26', {
+      templateUrl: admin_url + 'partials/stories/jordan-26.html',
+      controller: storyController
+    }).
+    when('/jordan-27', {
+      templateUrl: admin_url + 'partials/stories/jordan-27.html',
+      controller: storyController
+    }).
+    when('/jordan-28', {
+      templateUrl: admin_url + 'partials/stories/jordan-28.html',
+      controller: storyController
+    }).
+    when('/jordan-29', {
+      templateUrl: admin_url + 'partials/stories/jordan-29.html',
+      controller: storyController
+    }).
     when('/jordan-30', {
       templateUrl: admin_url + 'partials/stories/jordan-30.html',
+      controller: storyController
+    }).
+    when('/jordan-31', {
+      templateUrl: admin_url + 'partials/stories/jordan-31.html',
       controller: storyController
     });
   }

@@ -1,5 +1,7 @@
 function storiesController($scope, $rootScope, $location)
 {
+	$scope.scrollPosition = 0;
+
 	$scope.stories = [
 		{ 'link' : 'jordan-1', 'name': 'Air Jordan 1' },
 		{ 'link' : 'jordan-2', 'name': 'Air Jordan 2' },
@@ -18,23 +20,41 @@ function storiesController($scope, $rootScope, $location)
 		{ 'link' : 'jordan-15', 'name': 'Air Jordan 15' },
 		{ 'link' : 'jordan-16', 'name': 'Air Jordan 16' },
 		{ 'link' : 'jordan-17', 'name': 'Air Jordan 17' },
+		{ 'link' : 'jordan-18', 'name': 'Air Jordan 18' },
+		{ 'link' : 'jordan-18-5', 'name': 'Air Jordan 18.5' },
+		{ 'link' : 'jordan-19', 'name': 'Air Jordan 19' },
+		{ 'link' : 'jordan-20', 'name': 'Air Jordan 20' },
+		{ 'link' : 'jordan-21', 'name': 'Air Jordan 21' },
+		{ 'link' : 'jordan-22', 'name': 'Air Jordan 22' },
+		{ 'link' : 'jordan-23', 'name': 'Air Jordan 23' },
+		{ 'link' : 'jordan-24', 'name': 'Air Jordan 24' },
+		{ 'link' : 'jordan-25', 'name': 'Air Jordan 25' },
+		{ 'link' : 'jordan-26', 'name': 'Air Jordan 26' },
+		{ 'link' : 'jordan-27', 'name': 'Air Jordan 27' },
+		{ 'link' : 'jordan-28', 'name': 'Air Jordan 28' },
+		{ 'link' : 'jordan-29', 'name': 'Air Jordan 29' },
+		{ 'link' : 'jordan-30', 'name': 'Air Jordan 30' },
+		{ 'link' : 'jordan-31', 'name': 'Air Jordan 31' },
 	];
 
 	$scope.view = function(event, story) {
 		event.preventDefault();
+
+      	$scope.scrollPosition = $("#pages_maincontent").scrollTop();
+		localStorage.setItem("scrollPosition", $scope.scrollPosition);
+
 		$location.path(story.link);
-
-		$("html, body").animate({
-	      scrollTop: 0
-	    }, 10);
-
 	};
 
     $scope.init = (function ()
     {
+    	$("#pages_maincontent").animate({
+	      scrollTop: localStorage.getItem('scrollPosition')
+	    }, 10);
+
 	    $rootScope.$emit("featured", false);
 	    $rootScope.$emit("showback_button", true);
-	    window.showBannerAd();
+	    window.removeBannerAd();
 	    window.randomInterstitial();
     })();
 }
