@@ -51,11 +51,11 @@
 <!-- <p class="ebay-items-heading"> Comments ({{comments.length}}) </p> -->
 <div id="tab-2" class="tab-content current">
   <div id="comments"> <br/>
-    <div ng-repeat="comment in comments" class="commentDiv">
+    <div ng-repeat="comment in comments | filter:filterComments" class="commentDiv">
       <div class="clear"></div>
       <div class="speach-center" style="margin-bottom:15px">
         <div class="comment-profile">
-          <img src="icons/icon.png" style="height:64px;width:64px" />
+          <img src="images/profiles/{{comment.profile_image}}" style="height:64px;width:64px" />
         </div>
         <div class="comment-details">
           <div class="comment-name" ng-if="comment.email.length > 0"> {{comment.email.substr(0,6)}} - <span class="comment-date"> <i class="fa fa-clock-o"></i> {{comment.comment_date}} </span>  </div>

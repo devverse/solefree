@@ -44,6 +44,14 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     }
   };
 
+  $scope.filterComments = function(comment) {
+    if (!comment.profile_image) {
+      comment.profile_image = "default.png";
+    }
+
+    return comment;
+  };
+
   $scope.showComments = function() {
     $scope.commentDisplay = true;
     $scope.relatedDisplay = false;

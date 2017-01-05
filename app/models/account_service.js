@@ -42,6 +42,10 @@ soleinsiderApp.factory('account_service', ['$rootScope', '$q', '$http',
 
     return {
 
+      updateAccount: function(post) {
+        return self.updateAccount(post);
+      },
+
       getAccount: function(post) {
         return self.getAccount(post);
       },

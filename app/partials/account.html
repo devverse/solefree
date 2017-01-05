@@ -1,17 +1,55 @@
 <div class="login-background">
   <div class="login-background-inside">
     <div class="static-notification-blue" ng-show="showError == true">
-      <p class="center-text uppercase" style="text-align:center">You have to be logged in</p>
+      <p class="center-text uppercase" style="text-align:left">You have to be logged in</p>
     </div>
     <div ng-show="showError == true" style="text-align:center">
       <a href="#/login" class="button_small"> Login</a>
     </div>
     <div id="" style="margin-top:0px" ng-show="showError == false">
-      <h2 class="page_subtitle">Update your account </h2>
-      <h2 id="Note"></h2>
+      <h2 class="page_subtitle">Manage your account </h2>
       <div class="contactform">
         <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate"/>
-          
+
+          <label>Current Profile Image</label>
+          <div class="current-profile-image">
+            <img src="images/profiles/{{account.profile_image}}" width="96px" height="96px" />
+          </div>
+          <br/><br/>
+
+          <label>Select A New Profile Image</label>
+          <div class="profile-images">
+            <div class="profile-image">
+              <input type="radio" name="profile" value="default.png">
+              <img src="images/profiles/default.png" width="96px" height="96px" />
+            </div>
+            <div class="profile-image">
+              <input type="radio" name="profile" value="1.png">
+              <img src="images/profiles/1.png" width="96px" height="96px" />
+            </div>
+            <div class="profile-image">
+              <input type="radio" name="profile" value="2.png">
+              <img src="images/profiles/2.png" width="96px" height="96px" />
+            </div>
+            <div class="profile-image">
+              <input type="radio" name="profile" value="3.png">
+              <img src="images/profiles/3.png" width="96px" height="96px" />
+            </div>
+            <div class="profile-image">
+              <input type="radio" name="profile" value="4.png">
+              <img src="images/profiles/4.png" width="96px" height="96px" />
+            </div>
+            <div class="profile-image">
+              <input type="radio" name="profile" value="5.png">
+              <img src="images/profiles/5.png" width="96px" height="96px" />
+            </div>
+            <div class="profile-image">
+              <input type="radio" name="profile" value="6.png">
+              <img src="images/profiles/6.png" width="96px" height="96px" />
+            </div>
+          </div>
+
+          <br/>
           <label>Your Email Address:</label>
           <input type="text" class="form_input required email" placeholder="Username" ng-model="account.email"/>
           
@@ -31,7 +69,7 @@
             <option value="9">Alltel</option>
           </select>
           <br/><br/>
-          <a href="# "class="button_small" ng-click="updateAccount(account)"> Update Account </a>
+          <a href="# "class="button_small" ng-click="updateAccount($event, account)"> Update Account </a>
         </form>
       </div>
     </div>

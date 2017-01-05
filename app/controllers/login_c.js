@@ -1,4 +1,4 @@
-function loginController($scope, $rootScope, login_service) {
+function loginController($scope, $rootScope, $location, login_service) {
 
   $scope.confirmation = "";
   $scope.showConfirmation = false;
@@ -31,6 +31,7 @@ function loginController($scope, $rootScope, login_service) {
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
         toastr.success("You are now logged in");
+        $location.path('account');
       } else {
         toastr.error("Incorrect username or password");
       }
@@ -76,6 +77,7 @@ function loginController($scope, $rootScope, login_service) {
           localStorage.setItem("member_id", data);
           $().toastmessage('showErrorToast', "Your account has been created");
           $scope.toggleLogin();
+
         } else {
           $().toastmessage('showErrorToast', "This username is already in use");
         }
@@ -94,4 +96,4 @@ function loginController($scope, $rootScope, login_service) {
   })();
 }
 
-loginController.$inject = ['$scope', '$rootScope', 'login_service'];
+loginController.$inject = ['$scope', '$rootScope', '$location', 'login_service'];
