@@ -1,5 +1,5 @@
 var url = window.location.href;
-var serviceURL = "http://localhost/soleinsider/public";
+var serviceURL = "http://soleinsider.com/public";
 
 var admin_url = 'app/';
 var app_name = "SoleInsider";
