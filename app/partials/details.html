@@ -16,9 +16,6 @@
   <a ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='details-actions-buy'> <i class="fa fa-shopping-basket"></i> &nbsp; Buy</a>
   <a ng-click="openSiteLink($event, r)" class='details-actions-site'> <i class="fa fa-external-links"></i> &nbsp; View Full Post
   </a>
-
-
-  <div class='details-actions button_small'> <i class="fa fa-eye"></i> &nbsp; Views ({{views}})</div>
  <div class="product-details" style="padding:10px;">
    <div class="product-details-left">
     <span style="font-weight:bold">{{r.name}}</span>
@@ -30,6 +27,7 @@
       {{r.release_date}}  <br/>
       <div ng-show="r.price != '0.00'">${{r.price}} </div>
       <span ng-show="r.price == 0.00">$N/A </span>
+      <span class="view-count"> {{views}} Views </span>
     </div>
     </div>
     <div class="product-details-right">
@@ -59,16 +57,18 @@
       <div class="clear"></div>
       <div class="speach-center" style="margin-bottom:15px">
         <div class="comment-profile">
-          <img src="images/profiles/{{comment.profile_image}}" style="height:64px;width:64px" />
+          <img src="images/profiles/{{comment.profile_image}}" style="height:48px;width:48px" />
         </div>
         <div class="comment-details">
           <div class="comment-name" ng-if="comment.email.length > 0"> {{comment.email.substr(0,6)}} - <span class="comment-date"> <i class="fa fa-clock-o"></i> {{comment.comment_date}} </span>  </div>
           <div class="comment-name" ng-show="isUndefined(comment.email)"> Anonymous - <span class="comment-date"> <i class="fa fa-clock-o"></i> {{comment.comment_date}} </span> </div>
           <div class="comment-comment">{{comment.comment}}</div>
+  
           <div class="comment-rate">
-            <i class="fa fa-thumbs-o-up comment-rating"  ng-click="voteUp($event, comment)"> </i> ({{comment.votes_up}}) |
 
-            <i class="fa fa-thumbs-o-down comment-rating"  ng-click="voteDown($event, comment)"> </i> ({{comment.votes_down}})
+            <i class="fa fa-thumbs-o-up comment-rating fa-lg" ng-click="voteUp($event, comment)"> </i> <span ng-click="voteUp($event, comment)">({{comment.votes_up}}) </span> &nbsp;
+
+            <i class="fa fa-thumbs-o-down comment-rating fa-lg" ng-click="voteDown($event, comment)"> </i> <span ng-click="voteDown($event, comment)"> ({{comment.votes_down}}) </span>
           </div>
         </div>
       </div>
