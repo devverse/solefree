@@ -13,6 +13,11 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     window.open(product.link, '_blank', 'location=yes');
   };
 
+  $scope.openSiteLink = function(event, product) {
+    event.preventDefault();
+    window.open(product.link, '_blank', 'location=yes');
+  };
+
   $scope.isUndefined = function (text) {
     return (text === null);
   };

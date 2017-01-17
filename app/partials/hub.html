@@ -1,14 +1,8 @@
-<div class="headline-title-div">
-	<a href="#" class="headline-title" ng-click="goToUrl($event)">
-		{{hub.type}} Hub
-	</a>
-</div>
-
 <div ng-cloak ng-show="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
 </div>
 <div class="hub-section">
-  <span class="hub-block">The latest {{hub.type}} news  </span>
+  <div class="hub-block">Latest {{hub.type}} news  </div>
   <div ng-repeat="r in hub.news | filter:search" style="padding:0px; width:100%">
     <div class="news-item-mini" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
       <div class="news-item-mini-title">
@@ -17,8 +11,10 @@
     </div>
   </div>
 </div>
+<div style="clear:both"></div>
+<hr/>
 <div class="hub-section">
-  <span class="hub-block">Upcoming Releases </span>
+  <div class="hub-block">Upcoming Releases </div>
   <ul class="posts" style="margin-top:10px">
     <li class="swipeout" ng-repeat="r in hub.releases" style="clear:both;"
       <div class="swipeout-content item-content" >

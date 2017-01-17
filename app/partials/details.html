@@ -13,7 +13,11 @@
       <a class="m-carousel-next" href="#" data-slide="next">Next</a>
     </div>
   </div>
-  <a ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='details-actions-buy'> <i class="fa fa-shopping-cart"></i> &nbsp; Buy</a>
+  <a ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='details-actions-buy'> <i class="fa fa-shopping-basket"></i> &nbsp; Buy</a>
+  <a ng-click="openSiteLink($event, r)" class='details-actions-site'> <i class="fa fa-external-links"></i> &nbsp; View Full Post
+  </a>
+
+
   <div class='details-actions button_small'> <i class="fa fa-eye"></i> &nbsp; Views ({{views}})</div>
  <div class="product-details" style="padding:10px;">
    <div class="product-details-left">

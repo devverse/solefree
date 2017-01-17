@@ -2,18 +2,13 @@
   <img src="images/spinner.gif"/>
 </div>
 
-
 <div class="youtube-subscribe-div">
 	<a href="#" class="youtube-subscribe" ng-click="goToUrl($event)">
-	Click Here To Subscribe To Our YouTube Channel
+		<i class="fa fa-youtube-square"></i> &nbsp;Subscribe To Our YouTube Channel
 	</a>
 </div>
 
-<input type="text" ng-model="search" class="search-field" placeholder="Search" ng-show="show_loading == false"/>
-
 <div class="" ng-repeat="r in videos | filter:search" style="padding:10px;text-align:center">
-<p style="text-align:left"> {{r.title}} </p>
-
 <embed-video data-ng-href="{{r.url}}" controls=0 width="98%" height="220px"><a href="{{r.url}}">Watch</a></embed-video>
 
 

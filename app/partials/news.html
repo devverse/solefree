@@ -1,11 +1,9 @@
-<br/>
+<br/><br/>
 <select ng-model="form.type" required ng-change="getFeedsByCategory(form.type)" class="menu-dropdown">
   <option> Select A Category </option>
   <option ng-repeat="m in menu | orderBy:'name'" value="{{m.name}}">{{m.name}}</option>
   <option  value="Uncategorized"> Uncategorized</option>
 </select>
-
-<input type="text" ng-model="search" class="search-field" placeholder="Search" ng-show="show_loading == false"/>
 
 <div ng-cloak ng-show="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
