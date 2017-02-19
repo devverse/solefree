@@ -10,6 +10,10 @@ function hubController($scope, $rootScope, $routeParams, $location, hub_service)
 
 	};
 
+	$scope.details = function(event) {
+		event.preventDefault();
+	};
+
 	$scope.getHubPage = function(type) {
 		$scope.hub = {};
 		$scope.hub.type = type;

@@ -95,5 +95,3 @@ function loginController($scope, $rootScope, $location, login_service) {
     window.removeBannerAd();
   })();
 }
-
-loginController.$inject = ['$scope', '$rootScope', '$location', 'login_service'];

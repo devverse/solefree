@@ -37,9 +37,6 @@ soleinsiderApp.factory('login_service', ['$rootScope', '$q', '$http',
     };
 
     return {
-      init: function() {
-
-      },
 
       login: function(post) {
         return self.login(post);

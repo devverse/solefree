@@ -1,6 +1,7 @@
 <div class="login-background">
   <div class="login-background-inside contactform" style="text-align:center">
-    <div ng-show="showLogin == true" ng-model="newaccount">
+    <div ng-show="showLogin == true" ng-model="account">
+      <br/>
       <h2 class="page_subtitle"> Login </h2>
       <label>Email:</label>
       <input type="text" name="username" class="form_input" ng-model="account.email">
@@ -8,7 +9,7 @@
       <input type="password" name="phone" value="" class="form_input email" ng-model="account.password">
       <br/><br/>
       <a href="#" class="button_small" ng-click="login($event, account)"> Login </a>
-      <a href="#/signup"  class='button_small'> Or Signup</a>
+      <a href="#/signup"  class='button_small'> Signup</a>
     </div>
   </div>
   <div id="pages_maincontent" ng-show="showLogin == false" style="" class="static-notification-blue">

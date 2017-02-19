@@ -15,7 +15,6 @@ function newsController($scope, $rootScope, $location, news_service) {
     {'name' : 'Timberland'},
     {'name' : 'Saucony'},
     {'name' : 'Vans'},
-    {'name' : 'Diadora'},
     {'name' : 'Asics'}
   ];
 

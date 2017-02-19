@@ -15,7 +15,23 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.openSiteLink = function(event, product) {
     event.preventDefault();
-    window.open(product.link, '_blank', 'location=yes');
+    var slug = $scope.sluggify(product.name) +  '/';
+    var today = new Date();
+    var urlDate = today.getFullYear() + "/" + today.getMonth() + "/";
+
+    alert(urlDate);
+
+    var link = 'http://soleinsider.com/view/' + urlDate + slug  + product.id;
+    window.open(link, '_blank', 'location=yes');
+  };
+
+  $scope.sluggify = function(text) {
+    return text.toString().toLowerCase()
+      .replace(/\s+/g, '-')           // Replace spaces with -
+      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+      .replace(/^-+/, '')             // Trim - from start of text
+      .replace(/-+$/, '');            // Trim - from end of text
   };
 
   $scope.isUndefined = function (text) {

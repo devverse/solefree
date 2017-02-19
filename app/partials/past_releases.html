@@ -2,7 +2,7 @@
 <div ng-cloak ng-show="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
 </div>
-<input type="text" ng-model="search" class="search-field" placeholder="Search"ng-show="show_loading == false" />
+<!-- <input type="text" ng-model="search" class="search-field" placeholder="Search"ng-show="show_loading == false" /> -->
 <ul class="posts" style="margin-top:10px">
   <li class="swipeout" ng-repeat="r in releases | filter:filterReleases | filter:search" style="clear:both;"
     <div class="swipeout-content item-content" >
