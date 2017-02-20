@@ -18,10 +18,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var slug = $scope.sluggify(product.name) +  '/';
     var today = new Date();
     var urlDate = today.getFullYear() + "/" + today.getMonth() + "/";
-
-    alert(urlDate);
-
     var link = 'http://soleinsider.com/view/' + urlDate + slug  + product.id;
+
     window.open(link, '_blank', 'location=yes');
   };
 

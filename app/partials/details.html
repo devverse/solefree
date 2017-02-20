@@ -24,10 +24,10 @@
       Coming Soon
     </div>
     <div ng-show="r.coming_soon == 0">
-      {{r.release_date}}  <br/>
+      {{r.release_date}}
       <div ng-show="r.price != '0.00'">${{r.price}} </div>
-      <span ng-show="r.price == 0.00">$N/A </span> 
-      <br/> <span class="view-count"> {{views}} Views </span>
+      <div ng-show="r.price == 0.00">$N/A </div> 
+      <span class="view-count"> {{views}} Views </span>
     </div>
     </div>
     <div class="product-details-right">

@@ -1,4 +1,4 @@
-function loginController($scope, $rootScope, $location, login_service) {
+function loginController($scope, $rootScope, login_service, $location) {
 
   $scope.confirmation = "";
   $scope.showConfirmation = false;
@@ -19,7 +19,7 @@ function loginController($scope, $rootScope, $location, login_service) {
     $scope.toggleLogin();
   };
 
-  $scope.login = function($event, account) {
+  $scope.doLogin = function($event, account) {
     $event.preventDefault();
 
     var post = "&username=" + account.email;

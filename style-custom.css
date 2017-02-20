@@ -234,8 +234,9 @@ ul.tabs li.current{
 }
 
 .comment-comment {
-  font-size: 16px;
-  border-bottom: 1px #ccc dashed;
+  font-size: 18px;
+  border-bottom: 1px #ccc solid;
+  padding: 2px;
 }
 
 .comment-rate {
@@ -786,4 +787,9 @@ p.ebay-items-heading, p.comments-heading {
 
 .view-count {
   color: green;
+}
+
+.comment-rate span {
+  font-size: 18px;
+  cursor: pointer;
 }

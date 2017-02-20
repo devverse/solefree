@@ -8,13 +8,12 @@
       <label>Password:</label>
       <input type="password" name="phone" value="" class="form_input email" ng-model="account.password">
       <br/><br/>
-      <a href="#" class="button_small" ng-click="login($event, account)"> Login </a>
+      <a href="#" class="button_small" ng-click="doLogin($event, account)"> Login </a>
       <a href="#/signup"  class='button_small'> Signup</a>
     </div>
   </div>
-  <div id="pages_maincontent" ng-show="showLogin == false" style="" class="static-notification-blue">
-    <br/>
-    <p class="center-text uppercase"> <br/>You are logged in as {{username}} <br/>
+  <div id="pages_maincontent" ng-show="showLogin == false" class="static-notification-blue" style="margin-top:-30px;">
+    <p class="center-text uppercase" style="text-align:center"> <br/>You are logged in as {{username}} <br/> <br/>
       <a class='button_small' ng-click="logout()">Logout</a>
     </p>
   </div>
