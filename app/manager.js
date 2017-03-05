@@ -7,11 +7,6 @@ admobid = {
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { 
-    // setTimeout(function() { 
-    //     navigator.splashscreen.hide(); 
-    //     deviceReady = true;
-    // }, 2000); 
-
     setTimeout(function() { 
         analytics.startTrackerWithId('UA-18545304-13');
     }, 4000);
@@ -21,29 +16,32 @@ function onDeviceReady() {
         interstitialAdId:     "cca-app-pub-0083160636450496/7728851959",
         autoShowInterstitial: true,
         autoShowBanner: true
-
     });
 }
 
 function showBannerAd() {
+    return;
     if (typeof admob != 'undefined') {
         admob.createBannerView();
     }
 }
 
 function removeBannerAd() {
+    return;
 	if (typeof admob != 'undefined') {
 		admob.destroyBannerView();
 	}
 }
 
 function prepareInterstitial() {
+    return;
 	if(typeof admob != 'undefined') {
 	 	admob.requestInterstitialAd();
 	}
 }
 
 function randomInterstitial() {
+    return;
     var random = Math.floor((Math.random() * 15) + 1);
 
     if (random == 3) {
