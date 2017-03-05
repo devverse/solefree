@@ -1,6 +1,5 @@
 <br/><br/>
-<select ng-model="form.type" required ng-change="search(form.type)" class="menu-dropdown">
-  <option> Select A Category </option>
+<select class="menu-dropdown" class="menu-category">
   <option ng-repeat="m in menu" value="{{m.name}}">{{m.name}}</option>
 </select>
 <div class="swipeout" ng-repeat="p in products" ng-cloak>

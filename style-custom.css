@@ -23,6 +23,7 @@
 
 .paginate_button {
   width: 88%;
+  background-color: #0C91BE;
 }
 
 .date {
@@ -210,12 +211,13 @@ ul.tabs li.current{
   width: 15%;
   margin-bottom: 10px;
   padding-top: 5px !important;
+  margin-right: 5px;
 }
 
 .comment-details {
   float: left;
   margin-top: 5px !important;
-  width: 84%;
+  width: 80%;
 }
 
 .comment-name {
@@ -712,12 +714,12 @@ p.ebay-items-heading, p.comments-heading {
 .news-item-title {
   background-color: black;
   float: left;
-  padding: 10px;
-  width: 85%;
+  padding: 5px;
+  width: 99%;
   cursor: pointer;
   margin-top: 2px;
   margin-left: 2px;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .news-item-title a {
@@ -731,8 +733,6 @@ p.ebay-items-heading, p.comments-heading {
   padding: 12px;
   width: 85%;
   cursor: pointer;
-  margin-top: 2px;
-  margin-left: 2px;
   opacity: 0.9;
 }
 

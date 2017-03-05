@@ -3,7 +3,7 @@ function myReleasesController($scope, $rootScope, release_service) {
   $scope.showerror = false;
   $scope.errorMessage = "";
 
-  $scope.getMyReleases = function() {
+  $scope.getReleases = function() {
 
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
@@ -32,12 +32,10 @@ function myReleasesController($scope, $rootScope, release_service) {
   };
 
   $scope.init = (function() {
-    $scope.getMyReleases();
+    $scope.getReleases();
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.showBannerAd();
     window.randomInterstitial();
   })();
-}
-
-myReleasesController.$inject = ['$scope', '$rootScope', 'release_service'];
+};

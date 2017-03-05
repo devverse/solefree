@@ -4,7 +4,7 @@
 <div class="hub-section">
   <div class="hub-block"> <h1>Latest {{hub.type}} news </h1> </div>
   <div ng-repeat="r in hub.news | filter:search" style="padding:0px; width:100%">
-    <div class="news-item-mini" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
+    <div class="news-item-mini" style="background-image: url({{r.thumbnail}}); height:100%;" ng-click="view($event, r)">
       <div class="news-item-mini-title">
         <a href="#" ng-click="view($event, r)"> {{r.title}}</a>
       </div>

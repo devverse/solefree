@@ -2,6 +2,7 @@ function storeController($scope, $rootScope, store_service) {
   $scope.app_name = app_name;
   $scope.page_title = page_title;
   $scope.products = [];
+  $scope.menu = [];
   $scope.category = "";
   $scope.page = 10;
   $scope.searchStr = "nike";
@@ -21,16 +22,7 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.getDefaultItems = function() {
-
-    $scope.completeSearch('nike sale');
-    return;
-
-    store_service.getDefaultItems().then(function(data) {
-      $scope.products = data;
-      $scope.showLoading = false;
-    }, function(err) {
-      window.console.log(err);
-    });
+    $scope.completeSearch('adidas sale');
   };
 
   $scope.getCache = function(functionName) {
@@ -57,12 +49,8 @@ function storeController($scope, $rootScope, store_service) {
 
     if (products !== false) {
       $scope.products = products;
-      $('#content-container').toggleClass('active');
-      $('#sidemenu').toggleClass('active');
-      setTimeout(function() {
-        $('#sidemenu-container').toggleClass('active');
-      }, 500);
       $scope.showLoading = false;
+      $scope.$apply();
     } else {
       $scope.completeSearch(search);
     }
@@ -124,6 +112,10 @@ function storeController($scope, $rootScope, store_service) {
     $rootScope.$emit("showback_button", true);
     window.removeBannerAd();
     window.randomInterstitial();
+
+    $(".menu-dropdown").change(function() {
+      $scope.search(this.value);
+    });
   })();
 }
 
