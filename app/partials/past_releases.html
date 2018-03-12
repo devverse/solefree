@@ -1,24 +1,47 @@
 <br/>
-<div ng-cloak ng-show="show_loading == true" class="spinner">
-  <img src="images/spinner.gif"/>
-</div>
-<!-- <input type="text" ng-model="search" class="search-field" placeholder="Search"ng-show="show_loading == false" /> -->
-<ul class="posts" style="margin-top:10px">
-  <li class="swipeout" ng-repeat="r in releases | filter:filterReleases | filter:search" style="clear:both;"
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-        <div class="post_thumb"><a ng-click="details($event, r)">
-        <img ng-src="http://soleinsider.com/public/products/{{r.image}}"></a></div>
-        <div class="post_details">
-          <h4 class="sneaker_title">
-          <a href="#" ng-click="details($event, r)">{{r.name}} </a>
-          </h4>
-          <div class="date_price">
-            <span class="date">{{r.release_date}}</span>
-          </div>
-          <br/>
+<div ng-cloak ng-show="show_loading == true" >
+  <div class="loading-wrapper">
+    <div class="loading-item" ng-repeat="i in [1, 2, 3, 4]">
+        <div class="animated-background">
+            <div class="background-masker header-top"></div>
+            <div class="background-masker header-left"></div>
+            <div class="background-masker header-right"></div>
+            <div class="background-masker header-bottom"></div>
+            <div class="background-masker subheader-left"></div>
+            <div class="background-masker subheader-right"></div>
+            <div class="background-masker subheader-bottom"></div>
+            <div class="background-masker content-top"></div>
+            <div class="background-masker content-first-end"></div>
+            <div class="background-masker content-second-line"></div>
+            <div class="background-masker content-second-end"></div>
+            <div class="background-masker content-third-line"></div>
+            <div class="background-masker content-third-end"></div>
         </div>
-      </div>
     </div>
-  </li>
-</ul>
+  </div>
+</div>
+
+
+<div class="posts">
+  <div ng-repeat="r in releases">
+
+        <div class="blog-fullwidth animated fadeinup delay-1">
+            <div class="blog-header">
+              <div class="blog-author">
+                <span>{{r.name}}</span>
+                <span class="small">Released On {{r.release_date}} </span>
+              </div>
+            </div>
+            <div class="blog-image">
+              <a href="#" ng-click="details($event, r)">
+                <img ng-src="http://soleinsider.com/public/products/mobile/{{r.image}}"/>
+              <a>
+              <a href="#" ng-click="details($event, r)">
+                <div class="opacity-overlay-top"></div>
+              </a>
+            </div>
+            <div class="blog-preview p-10">
+                <a href="/" class="waves-effect waves-light btn primary-color" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a>
+            </div>
+          </div>
+</div>

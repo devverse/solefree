@@ -1,0 +1,19 @@
+<div class="h-banner animated fadeindown">
+  <div class="parallax">
+    <!-- Slider -->
+    <div class="swiper-container slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="img/5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="img/8.jpg" alt="">
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- End of Slider -->
+    <div class="banner-title">Halo</div>
+  </div>
+ </div>

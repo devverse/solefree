@@ -1,6 +1,7 @@
 function salesController($scope, $rootScope, sales_service) {
 
   $scope.products = [];
+  $scope.show_loading = true;
 
   $scope.buyProduct = function(product) {
     window.open(product.link, '_blank', 'location=yes');
@@ -20,6 +21,7 @@ function salesController($scope, $rootScope, sales_service) {
 
     $rootScope.$on('getSales', function(e, data) {
       $scope.sales = data;
+      $scope.show_loading = false;
     });
 
     $rootScope.$emit("featured", false);

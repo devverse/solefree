@@ -48,19 +48,12 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.getReleases = function() {
     $scope.showLoading = true;
 
-    var cachedReleases = release_service.getCachedReleases();
-
-    if (cachedReleases) {
-      $scope.releases = cachedReleases;
-      $scope.show_loading = false;
-      return;
-    }
+    console.log('getReleases');
 
     release_service.getReleases().then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
-        release_service.setCachedReleases(data);
         $scope.releaseAddedAlert(data);
       }, function(err) {
         alert(err);
@@ -132,7 +125,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     if (localStorage.getItem('release-date-id') == null) {
       localStorage.setItem('release-date-id', 2480);
     }
-    
+
     var newReleases = 0;
     var newHigh = 0;
     var currentHigh = parseInt(localStorage.getItem('release-date-id'));
@@ -154,7 +147,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.init = (function() {
-    $("#pages_maincontent").scroll(function () { 
+    $("#pages_maincontent").scroll(function () {
       $scope.scrollPosition = $("#pages_maincontent").scrollTop();
     });
 

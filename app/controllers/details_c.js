@@ -41,7 +41,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       toastr.error("You've already rated this comment");
     } else {
       $scope.votes.push(comment.id);
-      comment.votes_up++; 
+      comment.votes_up++;
 
       var post = "comment_id=" + comment.id;
       post += "&comment_vote=1";
@@ -55,7 +55,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       toastr.error("You've already rated this comment");
     } else {
       $scope.votes.push(comment.id);
-      comment.votes_down++; 
+      comment.votes_down++;
 
       var post = "comment_id=" + comment.id;
       post += "&comment_vote=0";
@@ -116,17 +116,17 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.product_id = product.product_id;
     $scope.views = $scope.numberWithCommas(product.views * 2);
 
-    if (product.yes_percentage) {
-      new JustGage({
-        id: "popularity-gage",
-        value: product.yes_percentage,
-        min: 0,
-        max: 100,
-        title: "Popularity",
-        startAnimationTime: 3000,
-        levelColors: ['#CE1B21', '#D0532A', '#FFC414', '#85A137']
-      });
-    }
+    // if (product.yes_percentage) {
+    //   new JustGage({
+    //     id: "popularity-gage",
+    //     value: product.yes_percentage,
+    //     min: 0,
+    //     max: 100,
+    //     title: "Popularity",
+    //     startAnimationTime: 3000,
+    //     levelColors: ['#CE1B21', '#D0532A', '#FFC414', '#85A137']
+    //   });
+    // }
   };
 
   $scope.getSlideShow = function() {
@@ -218,8 +218,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     event.preventDefault();
 
     return window.plugins.socialsharing.share(
-      '#SoleInsider ' + product.name, 
-      product.name, 
+      '#SoleInsider ' + product.name,
+      product.name,
       'http://soleinsider.com/public/products/' + product.image,
        null);
   };
@@ -230,7 +230,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var startDate, endDate;
     var title = product.name;
     var location = "SoleInsider";
-    
+
     var date = product.release_date_calendar;
     startDate =  new Date(date);
     endDate = new Date(date);

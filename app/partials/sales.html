@@ -1,23 +1,40 @@
-<div ng-cloak ng-show="show_loading == true" class="spinner">
-  <img src="images/spinner.gif"/>
-</div>
-
-<ul class="posts" style="margin-top:0px">
-  <li ng-repeat="r in sales | filter:formatPrice" style="clear:both;margin-bottom:10px"
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-        <div class="post_thumb">
-        <a ng-click="buyProduct(r)">
-          <img ng-src="{{r.image}}" alt="" title="">
-        </a>
-        </div>
-        <div class="post_details">
-            <span class="product_title">{{r.name}}</span>
-            <br/> <b class='price'>${{r.price}} </b>
-          <br/><br/> 
-          <a class="button_small_buy" ng-click="buyProduct(r)"> Details </a>
-        </div>
+<br/>
+<div class="animated fadeinup page">
+  <div ng-cloak ng-show="show_loading == true" >
+    <div class="loading-wrapper">
+      <div class="loading-item" ng-repeat="i in [1, 2, 3, 4]">
+          <div class="animated-background">
+              <div class="background-masker header-top"></div>
+              <div class="background-masker header-left"></div>
+              <div class="background-masker header-right"></div>
+              <div class="background-masker header-bottom"></div>
+              <div class="background-masker subheader-left"></div>
+              <div class="background-masker subheader-right"></div>
+              <div class="background-masker subheader-bottom"></div>
+              <div class="background-masker content-top"></div>
+              <div class="background-masker content-first-end"></div>
+              <div class="background-masker content-second-line"></div>
+              <div class="background-masker content-second-end"></div>
+              <div class="background-masker content-third-line"></div>
+              <div class="background-masker content-third-end"></div>
+          </div>
       </div>
     </div>
-  </li>
-</ul>
+  </div>
+
+
+  <div ng-repeat="r in sales | filter:formatPrice" class="shop-category center-align animated fadeinup delay-1">
+      <div class="category-image">
+        <img ng-src="{{r.image}}" alt="">
+        <a href="/" ng-click="buyProduct(r)"><div class="opacity-overlay"></div></a>
+      </div>
+      <div class="category-preview p-20">
+        <h6 class="uppercase">{{r.name}}</h6>
+        <h5 class="price">${{r.price}}</h5>
+        <div class="rating"> </div>
+        <a href="/" ng-click="buyProduct(r)" class="waves-effect waves-light btn primary-color">Buy</a>
+      </div>
+  </div>
+
+
+</div>

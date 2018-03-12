@@ -5,19 +5,46 @@
   <option  value="Uncategorized"> Uncategorized</option>
 </select>
 
-<div ng-cloak ng-show="show_loading == true" class="spinner">
-  <img src="images/spinner.gif"/>
-</div>
-
-
 <div ng-show="news.length == 0" style="padding:10px">
   No News Found for {{category}}
 </div>
 
-<div class="" ng-repeat="r in news | filter:search" style="padding:2px">
-  <div ng-class="r.news_class" style="background-image: url({{r.thumbnail}})" ng-click="view($event, r)">
-    <div ng-class="r.news_class_title">
-      <a href="#" ng-click="view($event, r)"> {{r.title}}</a>
+
+<div ng-show="show_loading == true" >
+  <div class="loading-wrapper">
+    <div class="loading-item" ng-repeat="i in [1, 2, 3, 4]">
+        <div class="animated-background">
+            <div class="background-masker header-top"></div>
+            <div class="background-masker header-left"></div>
+            <div class="background-masker header-right"></div>
+            <div class="background-masker header-bottom"></div>
+            <div class="background-masker subheader-left"></div>
+            <div class="background-masker subheader-right"></div>
+            <div class="background-masker subheader-bottom"></div>
+            <div class="background-masker content-top"></div>
+            <div class="background-masker content-first-end"></div>
+            <div class="background-masker content-second-line"></div>
+            <div class="background-masker content-second-end"></div>
+            <div class="background-masker content-third-line"></div>
+            <div class="background-masker content-third-end"></div>
+        </div>
     </div>
   </div>
 </div>
+
+<div ng-repeat="r in news | filter:search" class="blog-card animated fadein">
+    <div class="blog-header">
+      <img class="avatar circle" src="img/user4.jpg" alt="">
+      <div class="blog-author">
+        <span>Jassie North</span>
+        <span class="small">1hour ago - 62 Share</span>
+      </div>
+    </div>
+    <div class="blog-image">
+      <img src="{{r.thumbnail}}" alt="">
+    </div>
+    <div class="blog-preview p-20">
+      <p>{{r.title}}</p>
+      <a href="#" ng-click="view($event, r)" class="waves-effect waves-light btn primary-color">Read</a>
+    </div>
+  </div>
