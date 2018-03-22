@@ -1,19 +1,54 @@
-<div class="swiper-container slider m-b-20 swiper-container-horizontal">
-              <div class="swiper-wrapper" style="transform: translate3d(-1252px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1" style="width: 626px;">
-                  <img src="img/8.jpg" alt="">
-                </div>
-                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 626px;">
-                  <img src="img/5.jpg" alt="">
-                </div>
-                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 626px;">
-                  <img src="img/8.jpg" alt="">
-                </div>
-              <div class="swiper-slide swiper-slide-duplicate swiper-slide-next" data-swiper-slide-index="0" style="width: 626px;">
-                  <img src="img/5.jpg" alt="">
-                </div></div>
-              <!-- Add Arrows -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-              <!-- Add Pagination -->
-              <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span></div>
-            </div>
+<!-- Slider -->
+<div class="swiper-container slider slider-images">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" ng-repeat="f in slideshow">
+      <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-image"/>
+    </div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+<!-- End of Slider -->
+
+<div class="p-10">
+  <div class="details-info">
+    <h2 >{{r.name}}</h2>
+    <div class="details">
+      <div class="details-left">
+        <div ng-show="r.coming_soon == 1">
+          Coming Soon
+        </div>
+        <div ng-show="r.coming_soon == 0">
+          {{r.release_date}}
+          <div ng-show="r.price != '0.00'">${{r.price}} </div>
+          <div ng-show="r.price == 0.00">$N/A </div>
+          <span class="view-count"> {{views}} Views </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <a ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='waves-effect waves-light btn primary-color fullwidth'>  Buy</a>
+    <a ng-click="openSiteLink($event, r)" class='waves-effect waves-light btn primary-color fullwidth'>  View Full Post </a>
+  <div>
+
+  <div class="details-vote">
+    <div class="details-vote-right" ng-click="sneakerRating(r,'yes')">
+      <a> Cop ({{r.yes_percentage}}%)</a>
+    </div>
+    <div class="details-vote-left" ng-click="sneakerRating(r,'no')">
+      <a> Drop ({{r.no_percentage}}%)</a>
+    </div>
+  </div>
+  <br/>
+</div>
+
+<div class="details">
+  <div class="details-center">
+      <div id="resale-gage" class="gage"></div>
+  </div>
+  <div class="details-center">
+      <div id="popularity-gage" class="gage"></div>
+  </div>
+</div>

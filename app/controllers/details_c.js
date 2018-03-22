@@ -116,23 +116,43 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.product_id = product.product_id;
     $scope.views = $scope.numberWithCommas(product.views * 2);
 
-    // if (product.yes_percentage) {
-    //   new JustGage({
-    //     id: "popularity-gage",
-    //     value: product.yes_percentage,
-    //     min: 0,
-    //     max: 100,
-    //     title: "Popularity",
-    //     startAnimationTime: 3000,
-    //     levelColors: ['#CE1B21', '#D0532A', '#FFC414', '#85A137']
-    //   });
-    // }
+    if (product.yes_percentage) {
+      new JustGage({
+        id: "popularity-gage",
+        value: product.yes_percentage,
+        min: 0,
+        max: 100,
+        title: "Popularity",
+        startAnimationTime: 3000,
+        levelColors: ['#6D8BF3']
+      });
+    }
+
+    var resale = product.resale || 65;
+
+    new JustGage({
+      id: "resale-gage",
+      value: resale,
+      min: 0,
+      max: 100,
+      title: "Resale Value",
+      startAnimationTime: 3000,
+      levelColors: ['#85A137']
+    });
   };
 
   $scope.getSlideShow = function() {
     var post = "&product_id=" + $scope.product_id;
     release_service.getSlideShow(post).then(function(data) {
       $scope.slideshow = data;
+
+      new Swiper('.slider-images', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 5000,
+        loop: true
+      });
+
     }, function(err) {
       window.console.log(err);
     });

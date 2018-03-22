@@ -10,9 +10,9 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
     }).
-    when('/', {
-      templateUrl: admin_url + 'partials/home.html',
-      controller: homeController
+    when('/releases', {
+      templateUrl: admin_url + 'partials/releases.html',
+      controller: releasesController
     }).
     when('/hub/:type', {
       templateUrl: admin_url + 'partials/hub.html',
