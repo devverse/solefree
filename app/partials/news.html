@@ -1,4 +1,11 @@
-<br/><br/>
+<div class="h-banner animated fadeindown">
+          <div class="parallax primary-color">
+          </div>
+            <div class="banner-title">News</div>
+          </div>
+         </div>
+
+
 <select ng-model="form.type" required ng-change="getFeedsByCategory(form.type)" class="menu-dropdown">
   <option> Select A Category </option>
   <option ng-repeat="m in menu | orderBy:'name'" value="{{m.name}}">{{m.name}}</option>

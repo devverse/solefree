@@ -1,4 +1,4 @@
-function storiesController($scope, $rootScope, $location)
+function storiesController($scope, $rootScope, $location, menu_service)
 {
 	$scope.scrollPosition = 0;
 
@@ -40,7 +40,7 @@ function storiesController($scope, $rootScope, $location)
 	$scope.view = function(event, story) {
 		event.preventDefault();
 
-      	$scope.scrollPosition = $("#pages_maincontent").scrollTop();
+      $scope.scrollPosition = $("#pages_maincontent").scrollTop();
 		localStorage.setItem("scrollPosition", $scope.scrollPosition);
 
 		$location.path(story.link);
@@ -48,13 +48,14 @@ function storiesController($scope, $rootScope, $location)
 
     $scope.init = (function ()
     {
-    	$("#pages_maincontent").animate({
-	      scrollTop: localStorage.getItem('scrollPosition')
-	    }, 10);
-
+  
 	    $rootScope.$emit("featured", false);
 	    $rootScope.$emit("showback_button", true);
 	    window.removeBannerAd();
 	    window.randomInterstitial();
+			menu_service.handleMenu();
+			menu_service.handleSwiper();
     })();
 }
+
+storiesController.$inject = ['$scope', '$rootScope', '$location', 'menu_service'];

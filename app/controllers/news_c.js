@@ -1,5 +1,5 @@
-function newsController($scope, $rootScope, $location, news_service) {
-  
+function newsController($scope, $rootScope, $location, news_service, menu_service) {
+
   $scope.category = '';
   $scope.news = false;
   $scope.show_loading = true;
@@ -40,7 +40,7 @@ function newsController($scope, $rootScope, $location, news_service) {
       html = $.parseHTML(data[x].description);
 
       image = $(html).find('img:first');
-      
+
       if (typeof image != "undefined") {
         data[x].thumbnail = image.attr('src');
       } else {
@@ -58,7 +58,7 @@ function newsController($scope, $rootScope, $location, news_service) {
       $scope.news.push(data[x]);
     }
   };
-  
+
   $scope.getFeedsByCategory = function(category) {
     $scope.showLoading = true;
 
@@ -90,12 +90,13 @@ function newsController($scope, $rootScope, $location, news_service) {
     } else {
       $scope.getNews();
     }
-    
+
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
+    menu_service.handleMenu();
     window.showBannerAd();
     window.randomInterstitial();
   })();
 }
 
-newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service'];
+newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service'];

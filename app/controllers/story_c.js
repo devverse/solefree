@@ -1,4 +1,4 @@
-function storyController($scope, $rootScope)
+function storyController($scope, $rootScope, menu_service)
 {
 
     $scope.init = (function () {
@@ -18,3 +18,5 @@ function storyController($scope, $rootScope)
 	    window.randomInterstitial();
     })();
 }
+
+storyController.$inject = ['$scope', '$rootScope', 'menu_service'];

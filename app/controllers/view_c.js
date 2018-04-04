@@ -1,5 +1,5 @@
-function viewController($scope, $rootScope, news_service) {
-  
+function viewController($scope, $rootScope, news_service, menu_service) {
+
   $scope.loadArticle = function() {
     article = JSON.parse(localStorage.getItem("article"));
     $scope.article = article;
@@ -12,7 +12,8 @@ function viewController($scope, $rootScope, news_service) {
     $rootScope.$emit("showback_button", true);
     window.showBannerAd();
     window.randomInterstitial();
+    menu_service.handleMenu();
   })();
 }
 
-viewController.$inject = ['$scope', '$rootScope', 'news_service'];
+viewController.$inject = ['$scope', '$rootScope', 'news_service', 'menu_service'];

@@ -1,4 +1,4 @@
-function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service) {
+function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, menu_service) {
 
   $scope.comments = [];
   $scope.slideshow = [];
@@ -21,6 +21,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var link = 'http://soleinsider.com/view/' + urlDate + slug  + product.id;
 
     window.open(link, '_blank', 'location=yes');
+    event.preventDefault();
   };
 
   $scope.sluggify = function(text) {
@@ -294,9 +295,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getComments();
     window.removeBannerAd();
     window.randomInterstitial();
-    $scope.build = soleinsider.build;
+    menu_service.handleMenu();
+    menu_service.handleSwiper();
   })();
 
 }
 
-detailsController.$inject = ['$scope', '$rootScope', '$location', '$filter', 'comments_service', 'release_service'];
+detailsController.$inject = ['$scope', '$rootScope', '$location', '$filter', 'comments_service', 'release_service', 'menu_service'];
