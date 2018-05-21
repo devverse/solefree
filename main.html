@@ -1,287 +1,201 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <title>SoleInsider</title>
-    <meta content="IE=edge" http-equiv="x-ua-compatible">
-    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="yes" name="apple-touch-fullscreen">
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <!-- Icons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
-    <!-- Styles -->
-    <link href="css/keyframes.css" rel="stylesheet" type="text/css">
-    <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
-    <link href="css/swiper.css" rel="stylesheet" type="text/css">
-    <link href="css/swipebox.min.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="style-custom.css" rel="stylesheet" type="text/css">
-  </head>
 
-  <body>
-    <div class="m-scene" id="main"> <!-- Main Container -->
+<head>
+  <title>SoleInsider</title>
+  <meta content="IE=edge" http-equiv="x-ua-compatible">
+  <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <!-- Icons -->
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">
+  <!-- Styles -->
+  <link href="css/keyframes.css" rel="stylesheet" type="text/css">
+  <link href="css/materialize.min.css" rel="stylesheet" type="text/css">
+  <link href="css/swiper.css" rel="stylesheet" type="text/css">
+  <link href="css/swipebox.min.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="style-custom.css" rel="stylesheet" type="text/css"> </head>
 
-      <!-- Sidebars -->
-      <!-- Right Sidebar -->
-      <ul id="slide-out" class="side-nav">
-        <li class="sidenav-header">
-          <!-- Srearch bar -->
-          <nav class="transparent no-shadow">
-            <div class="nav-wrapper">
-              <form>
-                <div class="input-field">
-                  <input id="search" type="search" required>
-                  <label for="search"><i class="ion-android-search"></i></label>
-                  <i class="ion-android-close"></i>
-                </div>
-              </form>
-            </div>
-          </nav>
-        </li>
-        <!-- Tabs -->
-        <li>
-          <ul class="tabs">
-            <li class="tab col s3"><a class="active" href="#sidebar1">Social</a></li>
-            <li class="tab col s3"><a href="#sidebar2">Chat</a></li>
-          </ul>
-        </li>
-        <li id="sidebar1" class="p-20">
-          <!-- Facebook -->
-          <div class="facebook">
-            <h6 class="follow-us">Notifications</h6>
-            <div class="face-notification">
-              <img src="img/user2.jpg" alt="" class="cricle">
-              <div>
-                <p>Mike Green</p>
-                <span>Sent you a message</span>
-                <span class="small">Today at 16:48</span>
-              </div>
-            </div>
-            <div class="face-notification">
-              <img src="img/user.jpg" alt="" class="cricle">
-              <div>
-                <p>Lara Connors</p>
-                <span>Post a photo with you</span>
-                <span class="small">Today at 14:26</span>
-              </div>
-            </div>
-            <div class="face-notification">
-              <img src="img/user3.jpg" alt="" class="cricle">
-              <div>
-                <p>Mike Green</p>
-                <span>Post something...</span>
-                <span class="small">Yesterday at 03:19</span>
-              </div>
-            </div>
+<body>
+  <div class="m-scene" id="main">
+    <!-- Main Container -->
+    <!-- Sidebars -->
+    <!-- Right Sidebar -->
+    <ul id="slide-out" class="side-nav">
+      <li class="sidenav-header">
+        <!-- Srearch bar -->
+        <nav class="transparent no-shadow">
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field"> <input id="search" type="search" required> <label for="search"><i class="ion-android-search"></i></label> <i class="ion-android-close"></i> </div>
+            </form>
           </div>
-
-        </li>
-        <li id="sidebar2" class="p-20">
-          <!-- Chat -->
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user.jpg" alt="" class="cricle">
-              <span class="dot green"></span>
-            </div>
-            <div class="chat-message">
-              <p>Mike Green</p>
-              <span>Sent you a message</span>
-              <span class="small">online</span>
-            </div>
+        </nav>
+      </li>
+      <!-- Tabs -->
+      <li>
+        <ul class="tabs">
+          <li class="tab col s3"><a class="active" href="#sidebar1">Social</a></li>
+          <li class="tab col s3"><a href="#sidebar2">Chat</a></li>
+        </ul>
+      </li>
+      <li id="sidebar1" class="p-20">
+        <!-- Facebook -->
+        <div class="facebook">
+          <h6 class="follow-us">Notifications</h6>
+          <div class="face-notification"> <img src="img/user2.jpg" alt="" class="cricle">
+            <div>
+              <p>Mike Green</p> <span>Sent you a message</span> <span class="small">Today at 16:48</span> </div>
           </div>
-
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user2.jpg" alt="" class="cricle">
-              <span class="dot green"></span>
-            </div>
-            <div class="chat-message">
-              <p>Lora Bell</p>
-              <span>6 New messages</span>
-              <span class="small">online</span>
-            </div>
+          <div class="face-notification"> <img src="img/user.jpg" alt="" class="cricle">
+            <div>
+              <p>Lara Connors</p> <span>Post a photo with you</span> <span class="small">Today at 14:26</span> </div>
           </div>
-
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user3.jpg" alt="" class="cricle">
-              <span class="dot orange"></span>
-            </div>
-            <div class="chat-message">
-              <p>Tony Lee</p>
-              <span>Away from keyboard.</span>
-              <span class="small">Away</span>
-            </div>
-          </div>
-
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user4.jpg" alt="" class="cricle">
-              <span class="dot grey"></span>
-            </div>
-            <div class="chat-message">
-              <p>Jim Connor</p>
-              <span>Is offline.</span>
-              <span class="small">offline</span>
-            </div>
-          </div>
-
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user5.jpg" alt="" class="cricle">
-              <span class="dot green"></span>
-            </div>
-            <div class="chat-message">
-              <p>Sara Lower</p>
-              <span>Sent you a message</span>
-              <span class="small">online</span>
-            </div>
-          </div>
-
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user.jpg" alt="" class="cricle">
-              <span class="dot grey"></span>
-            </div>
-            <div class="chat-message">
-              <p>Mick Pole</p>
-              <span>Is offline.</span>
-              <span class="small">offline</span>
-            </div>
-          </div>
-
-          <div class="chat-sidebar">
-            <div class="chat-img">
-              <img src="img/user3.jpg" alt="" class="cricle">
-              <span class="dot green"></span>
-            </div>
-            <div class="chat-message">
-              <p>James Tree</p>
-              <span>Awaiting your reply.</span>
-              <span class="small">online</span>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <!-- Left Sidebar -->
-      <ul id="slide-out-left" class="side-nav collapsible">
-        <li>
-          <div class="sidenav-header primary-color">
-            <div class="nav-avatar">
-              <img class="circle avatar" src="img/user.jpg" alt="">
-              <div class="avatar-body">
-                <h3>So</h3>
-                <p>Material Mobile</p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li><a href="#/store" class="no-child"><i class="ion-android-playstore"> </i>Store</a></li>
-        <li><a href="#/releases" class="no-child"> <i class="ion-android-playstore"></i>Releases</a></li>
-        <li><a href="#/sales" class="no-child"><i class="ion-android-playstore"></i> Sales</a></li>
-        <li><a href="#/news" class="no-child"><i class="ion-android-playstore"></i> Sneaker News</a></li>
-        <li><a href="#/stories" class="no-child"><i class="ion-android-playstore"></i> Sneaker History </a></li>
-        <li><a href="#/account" class="no-child"><i class="ion-android-playstore"></i> My Account</a></li>
-        <li><a href="#/more" class="no-child">More...</a></li>
-      </ul>
-      <!-- End of Sidebars -->
-
-      <!-- Page Content -->
-      <div id="content" ng-app="soleinsiderApp" ng-controller="appController">
-
-        <!-- Toolbar -->
-        <div id="toolbar" class="halo-nav box-shad-none">
-          <div class="open-left" id="open-left" data-activates="slide-out-left">
-            <i class="ion-android-menu"></i>
-          </div>
-          <span class="title none">SoleInsider</span>
-          <div class="open-right" id="open-right" data-activates="slide-out">
-            <i class="ion-android-person"></i>
+          <div class="face-notification"> <img src="img/user3.jpg" alt="" class="cricle">
+            <div>
+              <p>Mike Green</p> <span>Post something...</span> <span class="small">Yesterday at 03:19</span> </div>
           </div>
         </div>
-
-
-
-        <!-- Main Content -->
-           <div ng-view>
+      </li>
+      <li id="sidebar2" class="p-20">
+        <!-- Chat -->
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user.jpg" alt="" class="cricle"> <span class="dot green"></span> </div>
+          <div class="chat-message">
+            <p>Mike Green</p> <span>Sent you a message</span> <span class="small">online</span> </div>
+        </div>
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user2.jpg" alt="" class="cricle"> <span class="dot green"></span> </div>
+          <div class="chat-message">
+            <p>Lora Bell</p> <span>6 New messages</span> <span class="small">online</span> </div>
+        </div>
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user3.jpg" alt="" class="cricle"> <span class="dot orange"></span> </div>
+          <div class="chat-message">
+            <p>Tony Lee</p> <span>Away from keyboard.</span> <span class="small">Away</span> </div>
+        </div>
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user4.jpg" alt="" class="cricle"> <span class="dot grey"></span> </div>
+          <div class="chat-message">
+            <p>Jim Connor</p> <span>Is offline.</span> <span class="small">offline</span> </div>
+        </div>
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user5.jpg" alt="" class="cricle"> <span class="dot green"></span> </div>
+          <div class="chat-message">
+            <p>Sara Lower</p> <span>Sent you a message</span> <span class="small">online</span> </div>
+        </div>
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user.jpg" alt="" class="cricle"> <span class="dot grey"></span> </div>
+          <div class="chat-message">
+            <p>Mick Pole</p> <span>Is offline.</span> <span class="small">offline</span> </div>
+        </div>
+        <div class="chat-sidebar">
+          <div class="chat-img"> <img src="img/user3.jpg" alt="" class="cricle"> <span class="dot green"></span> </div>
+          <div class="chat-message">
+            <p>James Tree</p> <span>Awaiting your reply.</span> <span class="small">online</span> </div>
+        </div>
+      </li>
+    </ul>
+    <!-- Left Sidebar -->
+    <ul id="slide-out-left" class="side-nav collapsible">
+      <li>
+        <div class="sidenav-header primary-color">
+          <div class="nav-avatar"> <img class="circle avatar" src="img/user.jpg" alt="">
+            <div class="avatar-body">
+              <h3>So</h3>
+              <p>Material Mobile</p>
             </div>
-        <!-- End of Main Contents -->
+          </div>
+        </div>
+      </li>
+      <li><a href="#/store" class="no-child"><i class="ion-android-playstore"> </i>Store</a></li>
+      <li><a href="#/releases" class="no-child"> <i class="ion-android-playstore"></i>Releases</a></li>
+      <li><a href="#/sales" class="no-child"><i class="ion-android-playstore"></i> Sales</a></li>
+      <li><a href="#/news" class="no-child"><i class="ion-android-playstore"></i> Sneaker News</a></li>
+      <li><a href="#/stories" class="no-child"><i class="ion-android-playstore"></i> Sneaker History </a></li>
+      <li><a href="#/account" class="no-child"><i class="ion-android-playstore"></i> My Account</a></li>
+      <li><a href="#/more" class="no-child">More...</a></li>
+    </ul>
+    <!-- End of Sidebars -->
+    <!-- Page Content -->
+    <div id="content" ng-app="soleinsiderApp" ng-controller="appController">
+      <!-- Toolbar -->
+      <div id="toolbar" class="halo-nav box-shad-none">
+        <div class="open-left" id="open-left" data-activates="slide-out-left"> <i class="ion-android-menu"></i> </div> <span class="title none">SoleInsider</span>
+        <div class="open-right" id="open-right" data-activates="slide-out"> <i class="ion-android-person"></i> </div>
+      </div>
+      <!-- Main Content -->
+      <div ng-view> </div>
+      <!-- End of Main Contents -->
+    </div>
+    <!-- End of Page Content -->
+  </div>
+  <!-- End of Page Container -->
+  <script src="cordova.js"></script>
+  <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+  <script src="js/lib/angular.js"></script>
+  <script src="js/lib/angular-route.js"></script>
+  <script src="js/lib/angular-animate.js"></script>
+  <script src="js/lib/angular-sanitize.min.js"></script>
+  <script src="bower_components/ng-videosharing-embed/build/ng-videosharing-embed.min.js"></script>
+  <script src="app/manager.js"></script>
+  <script src="js/toastr.js"></script>
+  <script src="js/gage.js"></script>
+  <script src="app/config.js"></script>
+  <!-- <script src="app/app_rate.js"></script> -->
+  <script src="app/app.js"></script>
+  <script src="app/models/login_service.js"></script>
+  <script src="app/models/store_service.js"></script>
+  <script src="app/models/release_service.js"></script>
+  <script src="app/models/restock_service.js"></script>
+  <script src="app/models/cache_service.js"></script>
+  <script src="app/models/app_service.js"></script>
+  <script src="app/models/account_service.js"></script>
+  <script src="app/models/comments_service.js"></script>
+  <script src="app/models/news_service.js"></script>
+  <script src="app/models/store_finder_service.js"></script>
+  <script src="app/models/video_service.js"></script>
+  <script src="app/models/sales_service.js"></script>
+  <script src="app/models/hub_service.js"></script>
+  <script src="app/models/menu_service.js"></script>
+  <script src="app/controllers/app_c.js"></script>
+  <script src="app/controllers/store_c.js"></script>
+  <script src="app/controllers/releases_c.js"></script>
+  <script src="app/controllers/account_c.js"></script>
+  <script src="app/controllers/past_releases_c.js"></script>
+  <script src="app/controllers/past_restocks_c.js"></script>
+  <script src="app/controllers/restocks_c.js"></script>
+  <script src="app/controllers/myrestocks_c.js"></script>
+  <script src="app/controllers/myreleases_c.js"></script>
+  <script src="app/controllers/details_c.js"></script>
+  <script src="app/controllers/news_c.js"></script>
+  <script src="app/controllers/storefinder_c.js"></script>
+  <script src="app/controllers/home_c.js"></script>
+  <script src="app/controllers/hub_c.js"></script>
+  <script src="app/controllers/video_c.js"></script>
+  <script src="app/controllers/social_c.js"></script>
+  <script src="app/controllers/more_c.js"></script>
+  <script src="app/controllers/stats_c.js"></script>
+  <script src="app/controllers/sales_c.js"></script>
+  <script src="app/controllers/view_c.js"></script>
+  <script src="app/controllers/stories_c.js"></script>
+  <script src="app/controllers/story_c.js"></script>
+  <script src="app/controllers/store_item_c.js"></script>
+  <script src="app/controllers/login_c.js"></script>
+  <script src="app/controllers/signup_c.js"></script>
+  <script src="js/jquery-2.1.0.min.js"></script>
+  <script src="js/jquery.swipebox.min.js"></script>
+  <script src="js/jquery.smoothState.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/jquery.mixitup.min.js"></script>
+  <script src="js/masonry.min.js"></script>
+  <script src="js/chart.min.js"></script>
+  <script src="js/functions.js"></script>
+  <script src='js/moment.js'></script>
+</body>
 
-
-      </div> <!-- End of Page Content -->
-
-    </div> <!-- End of Page Container -->
-
-
-    <script src="cordova.js"></script>
-    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-    <script src="js/lib/angular.js"></script>
-    <script src="js/lib/angular-route.js"></script>
-    <script src="js/lib/angular-animate.js"></script>
-    <script src="js/lib/angular-sanitize.min.js"></script>
-    <script src="bower_components/ng-videosharing-embed/build/ng-videosharing-embed.min.js"></script>
-    <script src="app/manager.js"></script>
-    <script src="js/toastr.js"></script>
-    <script src="js/gage.js"></script>
-    <script src="app/config.js"></script>
-    <!-- <script src="app/app_rate.js"></script> -->
-    <script src="app/app.js"></script>
-
-    <script src="app/models/login_service.js"></script>
-    <script src="app/models/store_service.js"></script>
-    <script src="app/models/release_service.js"></script>
-    <script src="app/models/restock_service.js"></script>
-    <script src="app/models/cache_service.js"></script>
-    <script src="app/models/app_service.js"></script>
-    <script src="app/models/account_service.js"></script>
-    <script src="app/models/comments_service.js"></script>
-    <script src="app/models/news_service.js"></script>
-    <script src="app/models/instagram_service.js"></script>
-    <script src="app/models/store_finder_service.js"></script>
-    <script src="app/models/video_service.js"></script>
-    <script src="app/models/sales_service.js"></script>
-    <script src="app/models/hub_service.js"></script>
-    <script src="app/models/menu_service.js"></script>
-
-    <script src="app/controllers/app_c.js"></script>
-    <script src="app/controllers/store_c.js"></script>
-    <script src="app/controllers/releases_c.js"></script>
-    <script src="app/controllers/account_c.js"></script>
-    <script src="app/controllers/past_releases_c.js"></script>
-    <script src="app/controllers/past_restocks_c.js"></script>
-    <script src="app/controllers/restocks_c.js"></script>
-    <script src="app/controllers/myrestocks_c.js"></script>
-    <script src="app/controllers/myreleases_c.js"></script>
-    <script src="app/controllers/details_c.js"></script>
-    <script src="app/controllers/news_c.js"></script>
-    <script src="app/controllers/instagram_c.js"></script>
-    <script src="app/controllers/storefinder_c.js"></script>
-    <script src="app/controllers/home_c.js"></script>
-    <script src="app/controllers/hub_c.js"></script>
-    <script src="app/controllers/video_c.js"></script>
-    <script src="app/controllers/social_c.js"></script>
-    <script src="app/controllers/more_c.js"></script>
-    <script src="app/controllers/stats_c.js"></script>
-    <script src="app/controllers/sales_c.js"></script>
-    <script src="app/controllers/view_c.js"></script>
-    <script src="app/controllers/stories_c.js"></script>
-    <script src="app/controllers/story_c.js"></script>
-    <script src="app/controllers/store_item_c.js"></script>
-    <script src="app/controllers/login_c.js"></script>
-    <script src="app/controllers/signup_c.js"></script>
-
-
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script src="js/jquery.swipebox.min.js"></script>
-    <script src="js/jquery.smoothState.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/jquery.mixitup.min.js"></script>
-    <script src="js/masonry.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/functions.js"></script>
-    <script src='js/moment.js'></script>
-  </body>
 </html>

@@ -1,9 +1,12 @@
 function storeItemController($scope, $rootScope, $routeParams, store_service) {
   $scope.products = [];
-  $scope.category = "";
   $scope.page = 10;
   $scope.showLoading = true;
   $scope.type = '';
+  $scope.searchStr = '';
+  $scope.searcher = {
+    'sneakers': "vapormax"
+  };
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
@@ -25,7 +28,6 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
 
   $scope.search = function(search) {
     $scope.products = [];
-    $scope.showLoading = true;
     $scope.page = 10;
     $scope.searchStr = search;
     $scope.category = $scope.searchStr.replace("_", " ");
@@ -49,29 +51,33 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
     });
   };
 
-  $scope.sortBy = function(field, reverse, primer){
+  $scope.sortBy = function(field, reverse, primer) {
     var key = primer ?
-      function(x) {return primer(x[field])} :
-      function(x) {return x[field]};
+      function(x) {
+        return primer(x[field])
+      } :
+      function(x) {
+        return x[field]
+      };
 
     reverse = !reverse ? 1 : -1;
 
-    return function (a, b) {
+    return function(a, b) {
       return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
     }
   }
 
-  $scope.paginate = function(){
+  $scope.paginate = function() {
     $scope.showLoading = true;
     $scope.page = $scope.page + 20;
     var post = "search=" + $scope.searchStr;
     post += "&offset=" + $scope.page;
 
-    store_service.paginate(post).then(function (data) {
+    store_service.paginate(post).then(function(data) {
       $scope.showLoading = false;
-        $scope.completePaginate(data);
-    }, function (err) {
-        window.console.log(err);
+      $scope.completePaginate(data);
+    }, function(err) {
+      window.console.log(err);
     });
   }
 
@@ -83,7 +89,8 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
 
   $scope.init = (function() {
     $scope.type = $routeParams.type;
-    $scope.search($scope.type);
+    $scope.searchStr = $scope.searcher[$scope.type];
+    $scope.search($scope.searchStr);
   })();
 }
 

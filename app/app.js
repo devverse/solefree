@@ -66,10 +66,6 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
       templateUrl: admin_url + 'partials/view.html',
       controller: viewController
     }).
-    when('/gallery', {
-      templateUrl: admin_url + 'partials/instagram.html',
-      controller: instagramController
-    }).
     when('/videos', {
       templateUrl: admin_url + 'partials/videos.html',
       controller: videoController
@@ -245,7 +241,7 @@ soleinsiderApp.directive('releasesDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last) {
       setTimeout(function() {
-       $("#pages_maincontent").scrollTop(localStorage.getItem("scrollPosition"));
+        $("#pages_maincontent").scrollTop(localStorage.getItem("scrollPosition"));
       }, 10);
     }
   };
@@ -280,8 +276,19 @@ soleinsiderApp.directive('productImagesDirective', function() {
 
 soleinsiderApp.directive('lazyLoadDirective', function() {
   return function(scope, element, attrs) {
-    if (scope.$last){
+    if (scope.$last) {
       $('img.lazy').lazyload();
     }
+  };
+});
+
+soleinsiderApp.directive('profileLoader', function() {
+  return {
+    restrict: 'AEC',
+    scope: {
+      title: '@'
+    },
+    templateUrl: admin_url + 'directives/profile-loader.html',
+    transclude: true
   };
 });

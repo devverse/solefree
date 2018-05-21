@@ -1,30 +1,25 @@
 <div class="h-banner animated fadeindown">
-          <div class="parallax primary-color">
-          </div>
-            <div class="banner-title">Stories</div>
-          </div>
-         </div>
-
-  <div class="animated fadeinup page">
+  <div class="parallax primary-color"> </div>
+  <div class="banner-title">Stories</div>
+</div>
+</div>
+<div class="animated fadeinup page">
   <div class="posts">
     <div ng-repeat="r in stories" style="clear:both;width:100%;margin-bottom:0px" releases-directive>
-        <div ng-cloak>
-          <div class="blog-fullwidth animated fadeinup delay-1">
-              <div class="blog-header">
-                <div class="blog-author">
-                  <span>{{r.name}}</span>
-                </div>
-              </div>
-              <div class="blog-image">
-                <a href="#" ng-click="view($event, r)">
+      <div ng-cloak>
+        <div class="blog-fullwidth animated fadeinup delay-1">
+          <div class="blog-header">
+            <div class="blog-author"> <span>{{r.name}}</span> </div>
+          </div>
+          <div class="blog-image"> <a href="#" ng-click="view($event, r)">
                   <img ng-src="images/stories/{{r.link}}.jpg" />
                 <a>
                 <a href="#" ng-click="view($event, r)">
                   <div class="opacity-overlay-top"></div>
                 </a>
-              </div>
-            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 </div>
