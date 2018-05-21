@@ -37,7 +37,7 @@ function hubController($scope, $rootScope, $routeParams, $location, hub_service)
 	      html = $.parseHTML(data[x].description);
 
 	      image = $(html).find('img:first');
-	      
+
 	      if (typeof image != "undefined") {
 	        data[x].thumbnail = image.attr('src');
 	      } else {
@@ -54,12 +54,11 @@ function hubController($scope, $rootScope, $routeParams, $location, hub_service)
 	    $location.path('view');
 	};
 
-    $scope.init = (function ()
-    {
-	 	var type = $routeParams.type;   
-	 	$scope.getHubPage(type);
+    $scope.init = (function () {
+	 		var type = $routeParams.type;
+	 		$scope.getHubPage(type);
 
-	 	$rootScope.$emit("featured", false);
+	 		$rootScope.$emit("featured", false);
 	    $rootScope.$emit("showback_button", true);
 	    window.showBannerAd();
 	    window.randomInterstitial();

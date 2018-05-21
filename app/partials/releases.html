@@ -44,8 +44,8 @@
 </div>
 
 <div class="posts">
-  <div ng-repeat="(key, value) in releases" style="clear:both;width:100%;margin-bottom:0px" releases-directive>
-      <div ng-class="{'releasing-today': r.releasing_today == true }" ng-repeat="r in value.products" ng-cloak>
+  <div ng-repeat="r in releases" style="clear:both;width:100%;margin-bottom:0px" releases-directive>
+      <div ng-class="{'releasing-today': r.releasing_today == true }" ng-cloak>
         <div class="blog-fullwidth animated fadeinup delay-1">
             <div class="blog-header">
               <div class="blog-author">

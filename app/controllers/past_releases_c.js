@@ -1,4 +1,4 @@
-function pastReleasesController($scope, $rootScope, $location, release_service) {
+function pastReleasesController($scope, $rootScope, $location, release_service, menu_service) {
 
   $scope.releases = [];
   $scope.showmsg = false;
@@ -24,11 +24,10 @@ function pastReleasesController($scope, $rootScope, $location, release_service) 
 
   $scope.init = (function() {
     $scope.getPastReleases();
-    $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
-    window.showBannerAd();
+    menu_service.handleMenu();
   })();
 
 }
 
-pastReleasesController.$inject = ['$scope', '$rootScope', '$location', 'release_service'];
+pastReleasesController.$inject = ['$scope', '$rootScope', '$location', 'release_service', 'menu_service'];

@@ -1,0 +1,17 @@
+<div class="h-banner animated fadeindown">
+  <div class="parallax primary-color"> </div>
+  <div class="banner-title">{{type}}</div>
+</div>
+<div class="posts">
+  <div ng-repeat="r in products">
+    <div class="blog-fullwidth animated fadeinup delay-1">
+      <div class="blog-header">
+        <div class="blog-author"> <span>{{r.brandedName}}</span> </div>
+      </div>
+      <div class="blog-image"> <a href="#" ng-click="details($event, r)">
+                <img ng-src="{{r.image.sizes.IPhone.url}}"/>
+              </a> </div>
+      <div class="blog-preview p-10"> <a href="/" class="waves-effect waves-light btn primary-color" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a> </div>
+    </div>
+  </div>
+</div>

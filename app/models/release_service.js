@@ -69,7 +69,7 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
     };
 
     self.getReleases = function() {
-      return self.makePost('/mobile/releaseDatesFormatted');
+      return self.makePost('/mobile/releaseDatesUnformatted');
     };
 
     self.getPastReleases = function() {

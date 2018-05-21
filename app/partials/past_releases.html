@@ -1,47 +1,50 @@
-<br/>
-<div ng-cloak ng-show="show_loading == true" >
+<div class="h-banner animated fadeindown">
+  <div class="parallax primary-color">
+  </div>
+  <div class="banner-title">Past Releases</div>
+</div>
+</div>
+<div ng-cloak ng-show="show_loading == true">
   <div class="loading-wrapper">
     <div class="loading-item" ng-repeat="i in [1, 2, 3, 4]">
-        <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
-            <div class="background-masker subheader-left"></div>
-            <div class="background-masker subheader-right"></div>
-            <div class="background-masker subheader-bottom"></div>
-            <div class="background-masker content-top"></div>
-            <div class="background-masker content-first-end"></div>
-            <div class="background-masker content-second-line"></div>
-            <div class="background-masker content-second-end"></div>
-            <div class="background-masker content-third-line"></div>
-            <div class="background-masker content-third-end"></div>
-        </div>
+      <div class="animated-background">
+        <div class="background-masker header-top"></div>
+        <div class="background-masker header-left"></div>
+        <div class="background-masker header-right"></div>
+        <div class="background-masker header-bottom"></div>
+        <div class="background-masker subheader-left"></div>
+        <div class="background-masker subheader-right"></div>
+        <div class="background-masker subheader-bottom"></div>
+        <div class="background-masker content-top"></div>
+        <div class="background-masker content-first-end"></div>
+        <div class="background-masker content-second-line"></div>
+        <div class="background-masker content-second-end"></div>
+        <div class="background-masker content-third-line"></div>
+        <div class="background-masker content-third-end"></div>
+      </div>
     </div>
   </div>
 </div>
-
-
 <div class="posts">
   <div ng-repeat="r in releases">
-
-        <div class="blog-fullwidth animated fadeinup delay-1">
-            <div class="blog-header">
-              <div class="blog-author">
-                <span>{{r.name}}</span>
-                <span class="small">Released On {{r.release_date}} </span>
-              </div>
-            </div>
-            <div class="blog-image">
-              <a href="#" ng-click="details($event, r)">
+    <div class="blog-fullwidth animated fadeinup delay-1">
+      <div class="blog-header">
+        <div class="blog-author">
+          <span>{{r.name}}</span>
+          <span class="small">Released On {{r.release_date}} </span>
+        </div>
+      </div>
+      <div class="blog-image">
+        <a href="#" ng-click="details($event, r)">
                 <img ng-src="http://soleinsider.com/public/products/mobile/{{r.image}}"/>
               <a>
               <a href="#" ng-click="details($event, r)">
                 <div class="opacity-overlay-top"></div>
               </a>
-            </div>
-            <div class="blog-preview p-10">
-                <a href="/" class="waves-effect waves-light btn primary-color" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a>
-            </div>
-          </div>
+      </div>
+      <div class="blog-preview p-10">
+        <a href="/" class="waves-effect waves-light btn primary-color" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a>
+      </div>
+    </div>
+  </div>
 </div>

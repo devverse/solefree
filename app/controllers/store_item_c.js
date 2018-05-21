@@ -1,28 +1,12 @@
-function storeController($scope, $rootScope, store_service) {
-  $scope.app_name = app_name;
-  $scope.page_title = page_title;
+function storeItemController($scope, $rootScope, $routeParams, store_service) {
   $scope.products = [];
-  $scope.menu = [];
   $scope.category = "";
   $scope.page = 10;
-  $scope.searchStr = "nike";
   $scope.showLoading = true;
+  $scope.type = '';
 
   $scope.buyProduct = function(product) {
     window.open(product.clickUrl, '_blank', 'location=yes');
-  };
-
-  $scope.getMenu = function() {
-    store_service.getMenu().then(function(data) {
-      data.sort($scope.sortBy('name', false, function(a){return a.toUpperCase()}))
-      $scope.menu = data;
-    }, function(err) {
-      window.console.log(err);
-    });
-  };
-
-  $scope.getDefaultItems = function() {
-    $scope.completeSearch('adidas sale');
   };
 
   $scope.getCache = function(functionName) {
@@ -50,20 +34,12 @@ function storeController($scope, $rootScope, store_service) {
     if (products !== false) {
       $scope.products = products;
       $scope.showLoading = false;
-      $scope.$apply();
     } else {
       $scope.completeSearch(search);
     }
   };
 
   $scope.completeSearch = function(search) {
-
-    $('#content-container').toggleClass('active');
-    $('#sidemenu').toggleClass('active');
-    setTimeout(function() {
-      $('#sidemenu-container').toggleClass('active');
-    }, 500);
-
     store_service.search(search).then(function(data) {
       $scope.products = data;
       $scope.setCache(search, data);
@@ -106,17 +82,9 @@ function storeController($scope, $rootScope, store_service) {
   };
 
   $scope.init = (function() {
-    $scope.getMenu();
-    $scope.getDefaultItems();
-    $rootScope.$emit("featured", false);
-    $rootScope.$emit("showback_button", true);
-    window.removeBannerAd();
-    window.randomInterstitial();
-
-    $(".menu-dropdown").change(function() {
-      $scope.search(this.value);
-    });
+    $scope.type = $routeParams.type;
+    $scope.search($scope.type);
   })();
 }
 
-storeController.$inject = ['$scope', '$rootScope', 'store_service'];
+storeItemController.$inject = ['$scope', '$rootScope', '$routeParams', 'store_service'];

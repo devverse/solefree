@@ -98,9 +98,9 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
       templateUrl: admin_url + 'partials/store.html',
       controller: storeController
     }).
-    when('/stories', {
-      templateUrl: admin_url + 'partials/stories/stories.html',
-      controller: storiesController
+    when('/store-item/:type', {
+      templateUrl: admin_url + 'partials/store-item.html',
+      controller: storeItemController
     }).
     when('/jordan-1', {
       templateUrl: admin_url + 'partials/stories/jordan-1.html',
@@ -274,17 +274,6 @@ soleinsiderApp.directive('productImagesDirective', function() {
       setTimeout(function() {
         $("#pages_maincontent").scrollTop(0);
       }, 10);
-    }
-  };
-});
-
-
-soleinsiderApp.directive('ebayItemsDirective', function() {
-  return function(scope, element, attrs) {
-    ngrepeat_counter++;
-    if (scope.$last) {
-      $('.ebay-product-carousel').carousel();
-      ngrepeat_counter = 1;
     }
   };
 });

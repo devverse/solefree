@@ -122,6 +122,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.releaseAddedAlert = function(data) {
+
     if (localStorage.getItem('release-date-id') == null) {
       localStorage.setItem('release-date-id', 2480);
     }
@@ -131,9 +132,9 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     var currentHigh = parseInt(localStorage.getItem('release-date-id'));
 
     for (var key in data) {
-      for (var x = 0; x < data[key].products.length; x++) {
-        if (data[key].products[x].id > currentHigh) {
-          newHigh = data[key].products[x].id;
+      for (var x = 0; x < data[key].length; x++) {
+        if (data[key][x].id > currentHigh) {
+          newHigh = data[key][x].id;
           currentHigh = newHigh
           newReleases++;
         }
