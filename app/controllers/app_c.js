@@ -37,10 +37,10 @@ function appController($scope, $rootScope, $window, $location, app_service) {
     });
 
     $rootScope.$on('showback_button', function(e, status) {
-      alert(status);
       if (status == true) {
         $(".home-button").hide();
         $(".back-button").show();
+
         return;
       }
 
@@ -52,7 +52,6 @@ function appController($scope, $rootScope, $window, $location, app_service) {
       event.preventDefault();
       $window.history.back();
     });
-
   })();
 }
 

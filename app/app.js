@@ -291,3 +291,26 @@ soleinsiderApp.directive('profileLoader', function() {
     transclude: true
   };
 });
+
+soleinsiderApp.directive('releasesLoader', function() {
+  return {
+    restrict: 'AEC',
+    scope: {
+      title: '@'
+    },
+    templateUrl: admin_url + 'directives/releases-loader.html',
+    transclude: true
+  };
+});
+
+
+soleinsiderApp.directive('newsLoader', function() {
+  return {
+    restrict: 'AEC',
+    scope: {
+      title: '@'
+    },
+    templateUrl: admin_url + 'directives/news-loader.html',
+    transclude: true
+  };
+});

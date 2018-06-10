@@ -90,12 +90,10 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
     } else {
       $scope.getNews();
     }
-
+    
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
-    window.showBannerAd();
-    window.randomInterstitial();
   })();
 }
 

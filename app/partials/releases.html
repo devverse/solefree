@@ -1,55 +1,39 @@
 <div class="h-banner animated fadeindown">
-      <div class="parallax">
-        <!-- Slider -->
-        <div class="swiper-container slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/5.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/8.jpg" alt="">
-            </div>
-          </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-        </div>
-        <!-- End of Slider -->
-        <div class="banner-title">Halo</div>
+  <div class="parallax">
+    <!-- Slider -->
+    <div class="swiper-container slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"> <img src="img/5.jpg" alt=""> </div>
+        <div class="swiper-slide"> <img src="img/8.jpg" alt=""> </div>
       </div>
-     </div>
-<br/>
-
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- End of Slider -->
+    <div class="banner-title">Halo</div>
+  </div>
+</div> <br/>
 <div class="animated fadeinup">
-
-<profile-loader ng-show="show_loading == true"> </profile-loader>
-
-<div class="posts">
-  <div ng-repeat="r in releases" style="clear:both;width:100%;margin-bottom:0px" releases-directive>
+  <releases-loader ng-show="show_loading == true"> </releases-loader>
+  <div class="posts">
+    <div ng-repeat="r in releases" style="clear:both;width:100%;margin-bottom:0px" releases-directive>
       <div ng-class="{'releasing-today': r.releasing_today == true }" ng-cloak>
         <div class="blog-fullwidth animated fadeinup delay-1">
-            <div class="blog-header">
-              <div class="blog-author">
-                <span>{{r.name}}</span>
-                <span class="small">{{r.release_date}} </span>
-              </div>
-            </div>
-            <div class="blog-image">
-              <a href="#" ng-click="details($event, r)">
+          <div class="blog-header">
+            <div class="blog-author"> <span>{{r.name}}</span> <span class="small">{{r.release_date}} </span> </div>
+          </div>
+          <div class="blog-image"> <a href="#" ng-click="details($event, r)">
                 <img ng-src="http://soleinsider.com/public/products/mobile/{{r.image}}"/>
               <a>
               <a href="#" ng-click="details($event, r)">
                 <div class="opacity-overlay-top"></div>
-              </a>
-            </div>
-            <div class="blog-preview p-10">
-                <a href="/" class="waves-effect waves-light btn primary-color" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a>
-            </div>
-          </div>
+              </a> </div>
+          <div class="blog-preview p-10"> <a href="/" class="waves-effect waves-light btn primary-color" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a> </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-
-<!--
+  <!--
 <div class="feature-list">
     <div class="feature-list-image">
       <a href="#" ng-click="details($event, r)">

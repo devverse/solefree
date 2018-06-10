@@ -8,7 +8,7 @@
   <option  value="Uncategorized"> Uncategorized</option>
 </select>
 <div ng-show="news.length == 0" style="padding:10px"> No News Found for {{category}} </div>
-<profile-loader ng-show="show_loading == true"> </profile-loader>
+<news-loader ng-show="show_loading == true"> </news-loader>
 <div ng-repeat="r in news | filter:search" class="blog-card animated fadein">
   <div class="blog-header"> <img class="avatar circle" src="img/user4.jpg" alt="">
     <div class="blog-author"> <span>Jassie North</span> <span class="small">1hour ago - 62 Share</span> </div>

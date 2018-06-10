@@ -4,7 +4,7 @@
 </div>
 </div>
 <div class="animated fadeinup page">
-  <profile-loader ng-show="show_loading == true"> </profile-loader>
+  <releases-loader ng-show="show_loading == true"> </releases-loader>
   <div ng-repeat="r in sales | filter:formatPrice" class="shop-category center-align animated fadeinup delay-1">
     <div class="category-image"> <img ng-src="{{r.image}}" alt="">
       <a href="/" ng-click="buyProduct(r)">
