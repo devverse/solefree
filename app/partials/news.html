@@ -1,57 +1,19 @@
 <div class="h-banner animated fadeindown">
-          <div class="parallax primary-color">
-          </div>
-            <div class="banner-title">News</div>
-          </div>
-         </div>
-
-
-<select ng-model="form.type" required ng-change="getFeedsByCategory(form.type)" class="menu-dropdown">
+  <div class="parallax primary-color"> </div>
+  <div class="banner-title">News</div>
+</div>
+</div> <select ng-model="form.type" required ng-change="getFeedsByCategory(form.type)" class="menu-dropdown">
   <option> Select A Category </option>
   <option ng-repeat="m in menu | orderBy:'name'" value="{{m.name}}">{{m.name}}</option>
   <option  value="Uncategorized"> Uncategorized</option>
 </select>
-
-<div ng-show="news.length == 0" style="padding:10px">
-  No News Found for {{category}}
-</div>
-
-
-<div ng-show="show_loading == true" >
-  <div class="loading-wrapper">
-    <div class="loading-item" ng-repeat="i in [1, 2, 3, 4]">
-        <div class="animated-background">
-            <div class="background-masker header-top"></div>
-            <div class="background-masker header-left"></div>
-            <div class="background-masker header-right"></div>
-            <div class="background-masker header-bottom"></div>
-            <div class="background-masker subheader-left"></div>
-            <div class="background-masker subheader-right"></div>
-            <div class="background-masker subheader-bottom"></div>
-            <div class="background-masker content-top"></div>
-            <div class="background-masker content-first-end"></div>
-            <div class="background-masker content-second-line"></div>
-            <div class="background-masker content-second-end"></div>
-            <div class="background-masker content-third-line"></div>
-            <div class="background-masker content-third-end"></div>
-        </div>
-    </div>
-  </div>
-</div>
-
+<div ng-show="news.length == 0" style="padding:10px"> No News Found for {{category}} </div>
+<profile-loader ng-show="show_loading == true"> </profile-loader>
 <div ng-repeat="r in news | filter:search" class="blog-card animated fadein">
-    <div class="blog-header">
-      <img class="avatar circle" src="img/user4.jpg" alt="">
-      <div class="blog-author">
-        <span>Jassie North</span>
-        <span class="small">1hour ago - 62 Share</span>
-      </div>
-    </div>
-    <div class="blog-image">
-      <img src="{{r.thumbnail}}" alt="">
-    </div>
-    <div class="blog-preview p-20">
-      <p>{{r.title}}</p>
-      <a href="#" ng-click="view($event, r)" class="waves-effect waves-light btn primary-color">Read</a>
-    </div>
+  <div class="blog-header"> <img class="avatar circle" src="img/user4.jpg" alt="">
+    <div class="blog-author"> <span>Jassie North</span> <span class="small">1hour ago - 62 Share</span> </div>
   </div>
+  <div class="blog-image"> <img src="{{r.thumbnail}}" alt=""> </div>
+  <div class="blog-preview p-20">
+    <p>{{r.title}}</p> <a href="#" ng-click="view($event, r)" class="waves-effect waves-light btn primary-color">Read</a> </div>
+</div>

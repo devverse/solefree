@@ -4,27 +4,7 @@
 </div>
 </div>
 <div class="animated fadeinup page">
-  <div ng-cloak ng-show="show_loading == true">
-    <div class="loading-wrapper">
-      <div class="loading-item" ng-repeat="i in [1, 2, 3, 4]">
-        <div class="animated-background">
-          <div class="background-masker header-top"></div>
-          <div class="background-masker header-left"></div>
-          <div class="background-masker header-right"></div>
-          <div class="background-masker header-bottom"></div>
-          <div class="background-masker subheader-left"></div>
-          <div class="background-masker subheader-right"></div>
-          <div class="background-masker subheader-bottom"></div>
-          <div class="background-masker content-top"></div>
-          <div class="background-masker content-first-end"></div>
-          <div class="background-masker content-second-line"></div>
-          <div class="background-masker content-second-end"></div>
-          <div class="background-masker content-third-line"></div>
-          <div class="background-masker content-third-end"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <profile-loader ng-show="show_loading == true"> </profile-loader>
   <div ng-repeat="r in sales | filter:formatPrice" class="shop-category center-align animated fadeinup delay-1">
     <div class="category-image"> <img ng-src="{{r.image}}" alt="">
       <a href="/" ng-click="buyProduct(r)">

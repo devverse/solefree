@@ -1,35 +1,24 @@
 <ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
-<li>{{category}} </li>
-</ul>  
-
-<ul class="portfolioMenuWrapper" id="" style="text-align:center;margin-bottom:30px;overflow:hidden;margin-left:5%">
-<div class="button_menu_small" ng-repeat="m in menu" ng-click="search(m.search)">
-  {{m.name}}
-</div>
+  <li>{{category}} </li>
 </ul>
-<div class="loading" ng-show="showLoading == true" style="text-align:center">
-  <img src="images/loading.gif" width="250px" height="250px" />
-</div>
-<div class="swipeout" ng-repeat="p in products" ng-cloak  ng-show="showLoading == false">
-    <div class="swipeout-content item-content" >
-      <div class="post_entry">
-          <div class="post_thumb">
-          <a href="#" ng-click="details(r)">
+<ul class="portfolioMenuWrapper" id="" style="text-align:center;margin-bottom:30px;overflow:hidden;margin-left:5%">
+  <div class="button_menu_small" ng-repeat="m in menu" ng-click="search(m.search)"> {{m.name}} </div>
+</ul>
+<div class="loading" ng-show="showLoading == true" style="text-align:center"> <img src="images/loading.gif" width="250px" height="250px" /> </div>
+<div class="swipeout" ng-repeat="p in products" ng-cloak ng-show="showLoading == false">
+  <div class="swipeout-content item-content">
+    <div class="post_entry">
+      <div class="post_thumb"> <a href="#" ng-click="details(r)">
           <img ng-src="{{p.image.sizes.IPhone.url}}"/>
-          </a>
-          </div>  
-          <div class="post_details">
-          <h4 class="sneaker_title">  
+          </a> </div>
+      <div class="post_details">
+        <h4 class="sneaker_title">
           <a href="#" ng-click="details(r)">{{p.name}} </a> </h4>
-          <div class="date_price">
-            <span class="date" style="width:20%;margin-top:5px">
+        <div class="date_price"> <span class="date" style="width:20%;margin-top:5px">
             {{p.priceLabel}}
-            </span>
-            <span class="price">
+            </span> <span class="price">
               <a href="" ng-click="buyProduct(p)" class="button_small">Details</a>
-            </span>
-            <br/>
-          </div>
+            </span> <br/> </div>
       </div>
     </div>
-</div>
+  </div>

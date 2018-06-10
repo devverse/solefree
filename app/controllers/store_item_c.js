@@ -1,21 +1,27 @@
-function storeItemController($scope, $rootScope, $routeParams, store_service) {
+function storeItemController($scope, $rootScope, $routeParams, store_service, menu_service) {
   $scope.products = [];
   $scope.page = 10;
-  $scope.showLoading = true;
+  $scope.show_loading = true;
   $scope.type = '';
   $scope.searchStr = '';
   $scope.searcher = {
-    'sneakers': "vapormax"
+    "sneakers": "nike sneakers",
+    "clothing": "mens clothing",
+    "accessories": "mens watches",
+    "sale": "mens sale"
   };
 
-  $scope.buyProduct = function(product) {
+  $scope.buyProduct = function(event, product) {
+    event.preventDefault();
     window.open(product.clickUrl, '_blank', 'location=yes');
   };
 
   $scope.getCache = function(functionName) {
+    return false;
+
     var retrievedObject = localStorage.getItem(functionName);
     if (typeof retrievedObject === 'string' || typeof retrievedObject == undefined) {
-      $scope.showLoading = false;
+      $scope.show_loading = false;
       return JSON.parse(retrievedObject);
     } else {
       return false;
@@ -35,7 +41,7 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
 
     if (products !== false) {
       $scope.products = products;
-      $scope.showLoading = false;
+      $scope.show_loading = false;
     } else {
       $scope.completeSearch(search);
     }
@@ -45,7 +51,7 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
     store_service.search(search).then(function(data) {
       $scope.products = data;
       $scope.setCache(search, data);
-      $scope.showLoading = false;
+      $scope.show_loading = false;
     }, function(err) {
       window.console.log(err);
     });
@@ -68,13 +74,13 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
   }
 
   $scope.paginate = function() {
-    $scope.showLoading = true;
+    $scope.show_loading = true;
     $scope.page = $scope.page + 20;
     var post = "search=" + $scope.searchStr;
     post += "&offset=" + $scope.page;
 
     store_service.paginate(post).then(function(data) {
-      $scope.showLoading = false;
+      $scope.show_loading = false;
       $scope.completePaginate(data);
     }, function(err) {
       window.console.log(err);
@@ -91,7 +97,9 @@ function storeItemController($scope, $rootScope, $routeParams, store_service) {
     $scope.type = $routeParams.type;
     $scope.searchStr = $scope.searcher[$scope.type];
     $scope.search($scope.searchStr);
+    $rootScope.$emit("showback_button", true);
+    menu_service.handleMenu();
   })();
 }
 
-storeItemController.$inject = ['$scope', '$rootScope', '$routeParams', 'store_service'];
+storeItemController.$inject = ['$scope', '$rootScope', '$routeParams', 'store_service', 'menu_service'];

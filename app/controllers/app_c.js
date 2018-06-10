@@ -30,12 +30,14 @@ function appController($scope, $rootScope, $window, $location, app_service) {
 
   $scope.init = (function() {
     $scope.getFeaturedProducts();
+
     $rootScope.$on('featured', function(e, status) {
       $scope.show_featured = status;
       $scope.show_loading = false;
     });
 
     $rootScope.$on('showback_button', function(e, status) {
+      alert(status);
       if (status == true) {
         $(".home-button").hide();
         $(".back-button").show();
@@ -48,15 +50,9 @@ function appController($scope, $rootScope, $window, $location, app_service) {
 
     $(".back-button").on('click', function(event) {
       event.preventDefault();
-      
       $window.history.back();
     });
 
-    $(".home-button").on('click', function(event) {
-      event.preventDefault();
-
-      window.location = "main.html";
-    });
   })();
 }
 

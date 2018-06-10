@@ -25,10 +25,6 @@ soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http',
       return deferred.promise;
     };
 
-    self.getMenu = function() {
-      return self.makePost('/store/getMenu');
-    };
-
     self.search = function(search) {
       var post = "search=" + search;
       return self.makePost('/store/search', post);
@@ -38,21 +34,9 @@ soleinsiderApp.factory('store_service', ['$rootScope', '$q', '$http',
       return self.makePost('/store/paginate', post);
     };
 
-    self.getDefaultItems = function() {
-      return self.makePost('/store/getDefaultItems', '');
-    };
-
     return {
-      getMenu: function() {
-        return self.getMenu();
-      },
-
       search: function(search) {
         return self.search(search);
-      },
-
-      getDefaultItems: function() {
-        return self.getDefaultItems();
       },
       paginate: function(post) {
         return self.paginate(post);
