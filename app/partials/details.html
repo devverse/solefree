@@ -1,16 +1,21 @@
-<!-- Slider -->
-<div class="swiper-container slider slider-images">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide" ng-repeat="f in slideshow">
-      <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-image"/>
+<div class="h-banner animated fadeindown">
+  <div class="parallax min-height-250">
+    <!-- Slider -->
+    <div class="swiper-container slider slider-images">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" ng-repeat="f in slideshow" my-repeat-directive>
+          <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-image" />
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
+    <!-- End of Slider -->
   </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
 </div>
-<!-- End of Slider -->
 
-<div class="p-10">
+
+<div class="p-10 details-body">
   <div class="details-info">
     <h2 >{{r.name}}</h2>
     <div class="details">

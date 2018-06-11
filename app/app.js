@@ -314,3 +314,17 @@ soleinsiderApp.directive('newsLoader', function() {
     transclude: true
   };
 });
+
+soleinsiderApp.directive('myRepeatDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      new Swiper('.slider-images', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 5000,
+        loop: false
+      });
+      $('.parallax').parallax();
+    }
+  };
+});

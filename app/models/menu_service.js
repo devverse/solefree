@@ -57,6 +57,10 @@ soleinsiderApp.factory('menu_service', ['$rootScope', '$q', '$http',
       $('.parallax').parallax();
     };
 
+    self.handleParallax = function() {
+      $('.parallax').parallax();
+    };
+
     return {
 
       handleMenu: function() {
@@ -65,6 +69,10 @@ soleinsiderApp.factory('menu_service', ['$rootScope', '$q', '$http',
 
       handleSwiper: function() {
         return self.handleSwiper();
+      },
+
+      handleParallax: function() {
+        return self.handleParallax();
       }
     };
 

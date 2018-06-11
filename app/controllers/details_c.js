@@ -1,12 +1,7 @@
 function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, menu_service) {
-
   $scope.comments = [];
   $scope.slideshow = [];
   $scope.votes = [];
-
-  $scope.buyEbayProduct = function(url) {
-    window.open(url, '_blank', 'location=yes');
-  };
 
   $scope.buyProduct = function(event, product) {
     event.preventDefault();
@@ -77,34 +72,11 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.relatedDisplay = false;
   };
 
-  $scope.showRelatedItems = function() {
-    $scope.commentDisplay = false;
-    $scope.relatedDisplay = true;
-  };
-
-  $scope.getRelatedItems = function(product) {
-    var keywords;
-
-    if (product.description.length > 2) {
-      keywords = product.description;
-    } else {
-      keywords = product.name;
-    }
-
-    release_service.getRelatedItems(keywords, product.id).then(function(data) {
-      $scope.related = data;
-    }, function(err) {
-      window.console.log(err);
-    });
-
-  };
-
   $scope.numberWithCommas = function(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
   $scope.loadProduct = function() {
-    $scope.showRelatedItems();
     product = JSON.parse(localStorage.getItem("product_details"));
 
     product.showBuyLink = false;
@@ -146,14 +118,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var post = "&product_id=" + $scope.product_id;
     release_service.getSlideShow(post).then(function(data) {
       $scope.slideshow = data;
-
-      new Swiper('.slider-images', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        autoplay: 5000,
-        loop: true
-      });
-
     }, function(err) {
       window.console.log(err);
     });
@@ -290,13 +254,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
+    menu_service.handleMenu();
     $scope.loadProduct();
     $scope.getSlideShow();
     $scope.getComments();
-    window.removeBannerAd();
-    window.randomInterstitial();
-    menu_service.handleMenu();
-    menu_service.handleSwiper();
   })();
 
 }
