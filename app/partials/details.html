@@ -34,16 +34,16 @@
   </div>
 
   <div>
-    <a ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='waves-effect waves-light btn primary-color fullwidth'>  Buy</a>
-    <a ng-click="openSiteLink($event, r)" class='waves-effect waves-light btn primary-color fullwidth'>  View Full Post </a>
+    <a href="#" ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='waves-effect waves-light btn primary-color fullwidth'>  Buy</a>
+    <a href="#" ng-click="openSiteLink($event, r)" class='waves-effect waves-light btn primary-color fullwidth'>  View Full Post </a>
   <div>
 
   <div class="details-vote">
-    <div class="details-vote-right" ng-click="sneakerRating(r,'yes')">
-      <a> Cop ({{r.yes_percentage}}%)</a>
+    <div class="details-vote-right" ng-click="sneakerRating($event, r,'yes')">
+      <a href="#">  Cop ({{r.yes_percentage}}%)</a>
     </div>
-    <div class="details-vote-left" ng-click="sneakerRating(r,'no')">
-      <a> Drop ({{r.no_percentage}}%)</a>
+    <div class="details-vote-left" ng-click="sneakerRating($event, r,'no')">
+      <a href="#"> Pass ({{r.no_percentage}}%)</a>
     </div>
   </div>
   <br/>

@@ -1,21 +1,24 @@
-<div class="login-background">
-  <div class="login-background-inside contactform" style="text-align:center">
-    <div ng-show="showLogin == true" ng-model="account">
-      <br/>
-      <h2 class="page_subtitle"> Login </h2>
-      <label>Email:</label>
-      <input type="text" name="username" class="form_input" ng-model="account.email">
-      <label>Password:</label>
-      <input type="password" name="phone" value="" class="form_input email" ng-model="account.password">
-      <br/><br/>
-      <a href="#" class="button_small" ng-click="doLogin($event, account)"> Login </a>
-      <a href="#/signup"  class='button_small'> Signup</a>
-    </div>
-  </div>
-  <div id="pages_maincontent" ng-show="showLogin == false" class="static-notification-blue" style="margin-top:-30px;">
-    <p class="center-text uppercase" style="text-align:center"> <br/>You are logged in as {{username}} <br/> <br/>
-      <a class='button_small' ng-click="logout()">Logout</a>
-    </p>
-  </div>
+<div class="h-banner animated fadeindown">
+  <div class="parallax primary-color"> </div>
 </div>
+<div class="login-form animated fadeinup delay-2 z-depth-1">
+  <h1>Login</h1>
+  <div ng-show="showLogin == true" ng-model="account">
+    <div class="input-field">
+      <i class="ion-md-contact prefix"></i>
+      <input type="text" id="login" ng-model="account.email">
+      <label for="login">Username</label>
+    </div>
+    <div class="input-field" style="margin-bottom:20px;">
+      <i class="ion-md-lock prefix"></i>
+      <input id="login-psw" type="password" ng-model="account.password">
+      <label for="login-psw">Password</label>
+    </div>
+    <a class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" href="#" ng-click="doLogin($event, account)">Login</a>
+    <span>Don't have an account? <a class="primary-text" href="#/signup">Sign Up</a></span>
+  </div>
+  <div ng-show="showLogin == false">
+    <a class='waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4' ng-click="logout()">Logout</a>
+  </div>
+
 </div>

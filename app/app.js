@@ -239,8 +239,9 @@ var ngrepeat_counter = 1;
 soleinsiderApp.directive('releasesDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last) {
+      console.log('scroll', localStorage.getItem("scrollPosition"));
       setTimeout(function() {
-        $("#pages_maincontent").scrollTop(localStorage.getItem("scrollPosition"));
+        $("#content").scrollTop(localStorage.getItem("scrollPosition"));
       }, 10);
     }
   };
@@ -321,7 +322,7 @@ soleinsiderApp.directive('myRepeatDirective', function() {
       new Swiper('.slider-images', {
         pagination: '.swiper-pagination',
         paginationClickable: true,
-        autoplay: 5000,
+        autoplay: 2500,
         loop: false
       });
       $('.parallax').parallax();

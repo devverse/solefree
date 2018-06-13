@@ -1,36 +1,54 @@
-<br/>
-<div class="login-background">
-  <div class="login-background-inside">
-    <div class="static-notification-blue" ng-show="showError == true">
-      <p class="center-text uppercase" style="text-align:left">You have to be logged in</p>
-    </div>
-    <div ng-show="showError == true" style="text-align:center"> <a href="#/login" class="button_small"> Login</a> </div>
-    <div id="" style="margin-top:0px" ng-show="showError == false">
-      <h2 class="page_subtitle">Manage your account </h2>
-      <div class="contactform">
-        <form class="cmxform" id="ContactForm" method="post" action="" novalidate="novalidate" /> <label>Current Profile Image</label>
-        <div class="current-profile-image"> <img src="images/profiles/{{account.profile_image}}" width="64px" height="40px" /> </div> <br/><br/> <label>Select A New Profile Image</label>
-        <div class="profile-images">
-          <div class="profile-image"> <input type="radio" name="profile" value="default.png"> <img src="images/profiles/default.png" width="64px" height="40px" /> </div>
-          <div class="profile-image"> <input type="radio" name="profile" value="1.png"> <img src="images/profiles/1.png" width="64px" height="40px" /> </div>
-          <div class="profile-image"> <input type="radio" name="profile" value="2.png"> <img src="images/profiles/2.png" width="64px" height="40px" /> </div>
-          <div class="profile-image"> <input type="radio" name="profile" value="3.png"> <img src="images/profiles/3.png" width="64px" height="40px" /> </div>
-          <div class="profile-image"> <input type="radio" name="profile" value="4.png"> <img src="images/profiles/4.png" width="64px" height="40px" /> </div>
-          <div class="profile-image"> <input type="radio" name="profile" value="5.png"> <img src="images/profiles/5.png" width="64px" height="40px" /> </div>
-          <div class="profile-image"> <input type="radio" name="profile" value="6.png"> <img src="images/profiles/6.png" width="64px" height="40px" /> </div>
-        </div> <br/> <label>Your Email Address:</label> <input type="text" class="form_input required email" placeholder="Username" ng-model="account.email" /> <label>Phone: (NO SPACES OR HYPHENS)</label> <input type="text" name="phone" value="" class="form_input required email"
-          placeholder="Phone Number" ng-model="account.phone_number"> <label>Carriers</label> <select class="carrier" data-theme="c" ng-model="account.carrier">
-            <option value="1">AT&T</option>
-            <option value="2">Verizon</option>
-            <option value="3">T-Mobile</option>
-            <option value="4">Sprint</option>
-            <option value="5">Virgin Mobile</option>
-            <option value="6">US Cellular</option>
-            <option value="7">Nextel</option>
-            <option value="8">Boost</option>
-            <option value="9">Alltel</option>
-          </select> <br/><br/> <a href="# " class="button_small" ng-click="updateAccount($event, account)"> Update Account </a> </form>
+<div class="h-banner animated fadeindown">
+  <div class="parallax primary-color"> </div>
+  <div class="banner-title">Manage Account </div>
+</div>
+</div>
+<div class="page-content">
+  <div ng-show="showError == false">
+    <div class="contactform">
+      <form method="post" action="">
+      <label>Current Profile Image</label>
+      <div class="current-profile-image"> <img src="images/profiles/{{account.profile_image}}" width="64px" height="40px" /> </div> <br/><br/> <label>Select A New Profile Image</label>
+      <div class="profile-images input-field">
+        <div class="profile-image"> <input type="radio" name="profile" value="default.png"> <img src="images/profiles/default.png" width="64px" height="40px" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="1.png"> <img src="images/profiles/1.png" width="64px" height="40px" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="2.png"> <img src="images/profiles/2.png" width="64px" height="40px" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="3.png"> <img src="images/profiles/3.png" width="64px" height="40px" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="4.png"> <img src="images/profiles/4.png" width="64px" height="40px" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="5.png"> <img src="images/profiles/5.png" width="64px" height="40px" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="6.png"> <img src="images/profiles/6.png" width="64px" height="40px" /> </div>
       </div>
+      <br/>
+
+      <div class="input-field">
+        <i class="ion-md-contact prefix"></i>
+        <input type="text" id="login" ng-model="account.email"
+        <label for="login">Username</label>
+      </div>
+
+      <div class="input-field">
+        <i class="ion-md-contact prefix"></i>
+        <input type="text" id="login" ng-model="account.phone_number"
+        <label for="login">Phone: (NO SPACES OR HYPHENS)</label>
+      </div>
+
+      <br/>
+      <label>Carriers</label>
+      <select class="carrier browser-default" ng-model="account.carrier">
+          <option value="1">AT&T</option>
+          <option value="2">Verizon</option>
+          <option value="3">T-Mobile</option>
+          <option value="4">Sprint</option>
+          <option value="5">Virgin Mobile</option>
+          <option value="6">US Cellular</option>
+          <option value="7">Nextel</option>
+          <option value="8">Boost</option>
+          <option value="9">Alltel</option>
+        </select> <br/><br/> <a href="# " class="waves-effect waves-light btn primary-color fullwidth" ng-click="updateAccount($event, account)"> Update Account </a> </form>
     </div>
+  </div>
+  <div ng-show="showError == true">
+    <p class="center-text uppercase" style="text-align:left">Login to manage your account</p>
+      <a href="#/login" class='waves-effect waves-light btn primary-color fullwidth'> Login </a>
   </div>
 </div>

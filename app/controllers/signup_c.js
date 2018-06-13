@@ -38,7 +38,9 @@ function signupController($scope, $rootScope, login_service) {
     }
   };
 
-  $scope.register = function(newaccount) {
+  $scope.register = function(event, newaccount) {
+    event.preventDefault();
+    
     var validated = $scope.validateAccount(newaccount);
 
     if (!validated) {

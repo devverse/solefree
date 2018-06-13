@@ -1,10 +1,22 @@
-<div style="margin-top:0px;margin-bottom:5px;padding:10px;font-size:20px">
-  <h1> Your Stats </h1>
+<div class="h-banner animated fadeindown">
+  <div class="parallax primary-color"> </div>
+  <div class="banner-title">Your Soleinsider Stats</div>
 </div>
-
-<div style="padding:10px">
-	<p>  <b> Comments Left: </b>  {{stats.comment_count}} <br/>
-	<b> Releases Watching: </b>  {{stats.release_alert_count}} <br/>
-	<b> Total Votes:  </b>  {{stats.release_interest_count}} <br/>
-	<b> Restocks Watching:  </b>  {{stats.restock_alert_count}} </p>
+</div>
+<div>
+  <div class="single-news animated fadeinright delay-2">
+    <h4 class="single-news-title"> Comments Left</h4>
+    <span class="single-news-channel"> {{stats.comment_count}} </span>
+    <div class="clr"> </div>
+  </div>
+  <div class="single-news animated fadeinright delay-2">
+    <h4 class="single-news-title"> Total Votes</h4>
+    <span class="single-news-channel"> {{stats.release_interest_count}} </span>
+    <div class="clr"> </div>
+  </div>
+  <div class="single-news animated fadeinright delay-2">
+    <h4 class="single-news-title"> Releases Watching</h4>
+    <span class="single-news-channel"> {{stats.release_alert_count}} </span>
+    <div class="clr"> </div>
+  </div>
 </div>

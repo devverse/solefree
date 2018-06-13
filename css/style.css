@@ -2,11 +2,11 @@
 Project: Halo
 Version: 1.0
 Last change: first release
-Primary use: App & Mobile Website 
+Primary use: App & Mobile Website
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 [Table of contents]
-1. Typography 
+1. Typography
 2. Utility & Colors
 3. Layout
 4. Animation
@@ -303,7 +303,7 @@ blockquote {
 }
 #blockui {
     /* Prevent link from triggering while drag over */
-    
+
     position: absolute;
     height: 100%;
     width: 100%;
@@ -316,7 +316,7 @@ blockquote {
     background: url(../img/1.jpg) no-repeat center / cover !important;
 }
 .bg-2 {
-    background: url(../img/2.jpg) no-repeat center / cover !important;
+    background: url(../img/1.jpg) no-repeat center / cover !important;
 }
 .bg-3 {
     background: url(../img/3.jpg) no-repeat center / cover !important;
@@ -349,7 +349,19 @@ blockquote {
     background: url(../img/opacity.jpg) no-repeat center / cover !important;
 }
 .bg-shop {
-    background: url(../img/banner.jpg) no-repeat center / cover !important;
+    background: url(../images/store/banner.jpg) no-repeat center / cover !important;
+}
+.bg-shop-sneakers {
+    background: url(../images/store/sneakers.jpg) no-repeat center / cover !important;
+}
+.bg-shop-clothes {
+    background: url(../images/store/clothes.jpg) no-repeat center / cover !important;
+}
+.bg-shop-accessories {
+    background: url(../images/store/accessories.jpg) no-repeat center / cover !important;
+}
+.bg-shop-sales {
+    background: url(../images/store/sales.jpg) no-repeat center / cover !important;
 }
 .opacity-overlay {
     position: absolute;
@@ -1393,7 +1405,7 @@ li.your-comment {
     border-bottom: 90px solid #fff;
     border-left: 768px solid rgba(255, 255, 255, 0);
     /* Maintain smooth edge of triangle in FF */
-    
+
     -moz-transform: scale(.9999);
 }
 .slider-sliced .slider-bottom-left {
@@ -1415,7 +1427,7 @@ li.your-comment {
     border-bottom: 90px solid #fff;
     border-right: 768px solid rgba(255, 255, 255, 0);
     /* Maintain smooth edge of triangle in FF */
-    
+
     -moz-transform: scale(.9999);
 }
 .slider-sliced .swiper-container-horizontal>.swiper-pagination .swiper-pagination-bullet {
@@ -1505,7 +1517,7 @@ li.your-comment {
     background: #fff;
     height: calc(100vh - 56px) !important;
     /* Center slide text vertically */
-    
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;

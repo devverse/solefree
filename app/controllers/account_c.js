@@ -1,4 +1,4 @@
-function accountController($scope, $rootScope, $route, account_service) {
+function accountController($scope, $rootScope, $route, account_service, menu_service) {
 
   $scope.confirmation = "";
   $scope.showConfirmation = false;
@@ -18,8 +18,8 @@ function accountController($scope, $rootScope, $route, account_service) {
     post += "&phone=" + account.phone_number;
     post += "&carrier=" + account.carrier;
 
-    if($("input[name='profile']:checked").is(':checked')) { 
-      post += "&profile=" + $("input[name='profile']:checked").val(); 
+    if($("input[name='profile']:checked").is(':checked')) {
+      post += "&profile=" + $("input[name='profile']:checked").val();
     }
 
     account_service.updateAccount(post).then(function(data) {
@@ -62,6 +62,6 @@ function accountController($scope, $rootScope, $route, account_service) {
     $scope.showConfirmation = false;
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
-    window.removeBannerAd();
+    menu_service.handleMenu();
   })();
 }

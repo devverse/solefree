@@ -10,13 +10,13 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.openSiteLink = function(event, product) {
     event.preventDefault();
+
     var slug = $scope.sluggify(product.name) +  '/';
     var today = new Date();
     var urlDate = today.getFullYear() + "/" + today.getMonth() + "/";
     var link = 'http://soleinsider.com/view/' + urlDate + slug  + product.id;
 
     window.open(link, '_blank', 'location=yes');
-    event.preventDefault();
   };
 
   $scope.sluggify = function(text) {
@@ -159,7 +159,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     });
   };
 
-  $scope.sneakerRating = function(product, status) {
+  $scope.sneakerRating = function(event, product, status) {
+    event.preventDefault();
+    
     var member_id = localStorage.getItem("member_id");
 
     if (status == "yes" && parseInt(product.yes_percentage) < 98) {

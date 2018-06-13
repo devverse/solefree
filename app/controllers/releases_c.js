@@ -18,7 +18,8 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.details = function(event, product) {
     event.preventDefault();
 
-    localStorage.setItem("scrollPosition", $scope.scrollPosition);
+    var offset = document.documentElement.scrollTop || document.body.scrollTop;
+    localStorage.setItem("scrollPosition", offset);
     localStorage.setItem("product_details", JSON.stringify(product));
     $location.path('details');
 
@@ -124,7 +125,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   $scope.releaseAddedAlert = function(data) {
 
     if (localStorage.getItem('release-date-id') == null) {
-      localStorage.setItem('release-date-id', 2480);
+      localStorage.setItem('release-date-id', 4420);
     }
 
     var newReleases = 0;
@@ -148,9 +149,9 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.init = (function() {
-    $("#pages_maincontent").scroll(function () {
-      $scope.scrollPosition = $("#pages_maincontent").scrollTop();
-    });
+    // $("#content").scroll(function () {
+    //   $scope.scrollPosition = $("#content").scrollTop();
+    // });
 
     $scope.getReleases();
     $scope.getComingSoon();

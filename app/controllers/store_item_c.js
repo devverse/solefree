@@ -5,10 +5,22 @@ function storeItemController($scope, $rootScope, $routeParams, store_service, me
   $scope.type = '';
   $scope.searchStr = '';
   $scope.searcher = {
-    "sneakers": "nike sneakers",
-    "clothing": "mens clothing",
-    "accessories": "mens watches",
-    "sale": "mens sale"
+    "sneakers": {
+      name: "nike sneakers",
+      class: 'bg-shop-sneakers'
+    },
+    "clothing": {
+      name: "mens shirts",
+      class: 'bg-shop-clothes'
+    },
+    "accessories": {
+      name: "mens watches",
+      class: 'bg-shop-accessories'
+    },
+    "sale": {
+      name: "mens sale",
+      class: 'bg-shop-sales'
+    },
   };
 
   $scope.buyProduct = function(event, product) {
@@ -95,10 +107,12 @@ function storeItemController($scope, $rootScope, $routeParams, store_service, me
 
   $scope.init = (function() {
     $scope.type = $routeParams.type;
-    $scope.searchStr = $scope.searcher[$scope.type];
+    $scope.searchStr = $scope.searcher[$scope.type].name;
+    $scope.searchClass = $scope.searcher[$scope.type].class;
     $scope.search($scope.searchStr);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
+    menu_service.handleSwiper();
   })();
 }
 

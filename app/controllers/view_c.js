@@ -13,6 +13,7 @@ function viewController($scope, $rootScope, news_service, menu_service) {
     window.showBannerAd();
     window.randomInterstitial();
     menu_service.handleMenu();
+    menu_service.handleSwiper();
   })();
 }
 
