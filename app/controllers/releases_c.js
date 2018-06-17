@@ -49,7 +49,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.getReleases = function() {
-    $scope.showLoading = true;
+    $scope.show_loading = true;
 
     release_service.getReleases().then(
       function(data) {
@@ -149,10 +149,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.init = (function() {
-    // $("#content").scroll(function () {
-    //   $scope.scrollPosition = $("#content").scrollTop();
-    // });
-
     $scope.getReleases();
     $scope.getComingSoon();
     $rootScope.$emit("featured", true);

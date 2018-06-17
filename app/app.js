@@ -241,7 +241,7 @@ soleinsiderApp.directive('releasesDirective', function() {
     if (scope.$last) {
       console.log('scroll', localStorage.getItem("scrollPosition"));
       setTimeout(function() {
-        $("#content").scrollTop(localStorage.getItem("scrollPosition"));
+        window.scroll(0, localStorage.getItem("scrollPosition"));
       }, 10);
     }
   };

@@ -2,6 +2,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.comments = [];
   $scope.slideshow = [];
   $scope.votes = [];
+  $scope.member_id = '';
 
   $scope.buyProduct = function(event, product) {
     event.preventDefault();
@@ -161,7 +162,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
-    
+
     var member_id = localStorage.getItem("member_id");
 
     if (status == "yes" && parseInt(product.yes_percentage) < 98) {
@@ -253,6 +254,12 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     });
   };
 
+  $scope.scrollTop = function() {
+    $("html, body").animate({
+      scrollTop: 0
+    }, "fast");
+  };
+
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
@@ -260,6 +267,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.loadProduct();
     $scope.getSlideShow();
     $scope.getComments();
+    $scope.scrollTop();
   })();
 
 }
