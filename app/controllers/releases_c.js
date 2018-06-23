@@ -155,9 +155,17 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     menu_service.handleMenu();
     // menu_service.handleSwiper();
 
-    $scope.$on('vsRepeatReinitialized', function() {
-      alert('vsRepeatReinitialized');
-    });
+    // set initial limit to say 30.
+    $scope.renderLimit = 30;
+    // bind this function with directive.
+    $scope.updateLimit = function(value){
+      if(value == 'bottom'){
+        console.log('updateLimit xxx');
+        $scope.contValue += 1;
+        $scope.renderLimit += 30;
+        console.log('here!!');
+      }
+    };
 
   })();
 }

@@ -6,15 +6,14 @@
 <div class="animated fadeinup">
   <releases-loader ng-show="show_loading == true"> </releases-loader>
   <div class="posts">
-    <div vs-repeat="options">
-    <div ng-repeat="r in releases | filter:filterReleases" style="clear:both;width:100%;margin-bottom:0px" lazy-load scroll-directive>
+    <div ng-repeat="r in releases | filter:filterReleases track by r.id" style="clear:both;width:100%;margin-bottom:0px" scroll-directive>
       <div ng-class="{'releasing-today': r.releasing_today == true }" ng-cloak>
         <div class="blog-fullwidth animated fadeinup delay-1">
           <div class="blog-header">
             <div class="blog-author"> <span>{{r.name}}</span> <span class="small">{{r.release_date}} </span> </div>
           </div>
           <div class="blog-image"> <a href="#" ng-click="details($event, r)">
-                <img data-src="http://soleinsider.com/public/products/mobile/{{r.image}}" class="lazy-load"/>
+                <img ng-src="http://soleinsider.com/public/products/mobile/{{r.image}}" class="lazy-load"/>
               <a>
               <a href="#" ng-click="details($event, r)">
                 <div class="opacity-overlay-top"></div>
@@ -26,5 +25,4 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
