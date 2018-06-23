@@ -1,4 +1,4 @@
-function releasesController($scope, $rootScope, $filter, $location, release_service, menu_service) {
+function releasesController($scope, $rootScope, $filter, $location, release_service, menu_service, State) {
 
   var last_product_id = false;
 
@@ -46,14 +46,14 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   var getReleases = function() {
     $scope.show_loading = true;
 
-    release_service.getReleases().then(
+    State.formData.releases.then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
 
         var randomProduct =  data[Math.floor(Math.random() * data.length)];
         $scope.header = randomProduct.image;
-        
+
       }, function(err) {
         alert(err);
       });
@@ -66,7 +66,9 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     // menu_service.handleSwiper();
+
+
   })();
 }
 
-releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'menu_service'];
+releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'menu_service', 'State'];
