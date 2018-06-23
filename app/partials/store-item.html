@@ -2,7 +2,7 @@
   <div class="parallax primary-color {{searchClass}}"> </div>
   <div class="banner-title" style="text-transform: capitalize">{{type}}</div>
 </div> <br/>
-<releases-loader ng-show="show_loading == true"> </releases-loader>
+<releases-loader ng-if="show_loading == true"> </releases-loader>
 <div class="blog-fullwidth animated fadeinup delay-1" ng-repeat="r in products">
   <div class="blog-image"> <img src="{{r.image.sizes.Original.url}}" alt="">
     <div class="opacity-overlay-top"></div>

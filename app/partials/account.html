@@ -4,7 +4,7 @@
 </div>
 </div>
 <div class="page-content">
-  <div ng-show="showError == false">
+  <div ng-if="showError == false">
     <div class="contactform">
       <form method="post" action="">
       <label>Current Profile Image</label>
@@ -47,7 +47,7 @@
         </select> <br/><br/> <a href="# " class="waves-effect waves-light btn primary-color fullwidth" ng-click="updateAccount($event, account)"> Update Account </a> </form>
     </div>
   </div>
-  <div ng-show="showError == true">
+  <div ng-if="showError == true">
     <p class="center-text uppercase" style="text-align:left">Login to manage your account</p>
       <a href="#/login" class='waves-effect waves-light btn primary-color fullwidth'> Login </a>
   </div>

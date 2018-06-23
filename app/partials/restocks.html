@@ -1,11 +1,11 @@
-<div ng-cloak ng-show="show_loading == true" class="spinner">
+<div ng-cloak ng-if="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
 </div>
 
-<div style="margin-top:-10px;margin-bottom:10px;padding:15px" ng-show="show_loading == false">
+<div style="margin-top:-10px;margin-bottom:10px;padding:15px" ng-if="show_loading == false">
   We regularly check sites for restocks. When we find one, we'll send you an email and a text message alert.
 </div>
-<input type="text" ng-model="search" class="search-field" placeholder="Search" ng-show="show_loading == false"/>
+<input type="text" ng-model="search" class="search-field" placeholder="Search" ng-if="show_loading == false"/>
 
 <ul class="posts" style="margin-top:0px">
   <li class="swipeout" ng-repeat="r in restocks | filter:search" style="clear:both;margin-bottom:10px"

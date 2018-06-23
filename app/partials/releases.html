@@ -4,7 +4,7 @@
 </div>
 <br/>
 <div class="animated fadeinup">
-  <releases-loader ng-show="show_loading == true"> </releases-loader>
+  <releases-loader ng-if="show_loading == true"> </releases-loader>
   <div class="posts">
     <div ng-repeat="r in releases | filter:filterReleases track by r.id" style="clear:both;width:100%;margin-bottom:0px" scroll-directive>
       <div ng-class="{'releasing-today': r.releasing_today == true }" ng-cloak>
@@ -20,7 +20,7 @@
               </a> </div>
 
           <div class="blog-preview p-10">
-            <a href="#" class="waves-effect waves-light btn primary-color fullwidth" ng-show="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a>
+            <a href="#" class="waves-effect waves-light btn primary-color fullwidth" ng-if="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a>
           </div>
         </div>
       </div>

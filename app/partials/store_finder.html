@@ -2,13 +2,13 @@
   <h1> Find sneaker spots near you. Enter your zipcode below <br/><br/>
   <input type="text" ng-model="search" class="search-field" style="margin-left:1px" placeholder="Store Search..."> </h1> <br/>
   <a ng-click="storeSearch(search)" class='button_small_buy'>Search</a><br/><br/>
-  <div class="alert" ng-show="stores.length == 0">
+  <div class="alert" ng-if="stores.length == 0">
     <h2> No stores found </h2>
   </div>
   <br/>
 </div>
 </div>
-<div ng-cloak ng-show="show_loading == true" class="spinner">
+<div ng-cloak ng-if="show_loading == true" class="spinner">
   <img src="images/spinner.gif"/>
 </div>
 <ul class="posts" style="margin-top:0px">

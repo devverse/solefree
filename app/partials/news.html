@@ -7,8 +7,8 @@
   <option ng-repeat="m in menu | orderBy:'name'" value="{{m.name}}">{{m.name}}</option>
   <option  value="Uncategorized"> Uncategorized</option>
 </select>
-<div ng-show="news.length == 0" style="padding:10px"> No News Found for {{category}} </div>
-<news-loader ng-show="show_loading == true"> </news-loader>
+<div ng-if="news.length == 0" style="padding:10px"> No News Found for {{category}} </div>
+<news-loader ng-if="show_loading == true"> </news-loader>
 <div ng-repeat="r in news | filter:search" class="blog-card animated fadein">
   <div class="blog-image"> <img src="{{r.thumbnail}}" alt=""> </div>
   <div class="blog-preview p-20">

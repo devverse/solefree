@@ -16,14 +16,14 @@
     <h2>{{r.name}}</h2>
     <div class="details">
       <div class="details-left">
-        <div ng-show="r.coming_soon == 1"> Coming Soon </div>
-        <div ng-show="r.coming_soon == 0"> {{r.release_date}}
-          <div ng-show="r.price != '0.00'">${{r.price}} </div>
-          <div ng-show="r.price == 0.00">$N/A </div> <span class="view-count"> {{views}} Views </span> </div>
+        <div ng-if="r.coming_soon == 1"> Coming Soon </div>
+        <div ng-if="r.coming_soon == 0"> {{r.release_date}}
+          <div ng-if="r.price != '0.00'">${{r.price}} </div>
+          <div ng-if="r.price == 0.00">$N/A </div> <span class="view-count"> {{views}} Views </span> </div>
       </div>
     </div>
   </div>
-  <div> <a href="#" ng-click="buyProduct($event, r)" ng-show="r.showBuyLink" class='waves-effect waves-light btn primary-color fullwidth'>  Buy</a> <a href="#" ng-click="openSiteLink($event, r)" class='waves-effect waves-light btn primary-color fullwidth'>  View Full Post </a>
+  <div> <a href="#" ng-click="buyProduct($event, r)" ng-if="r.showBuyLink" class='waves-effect waves-light btn primary-color fullwidth'>  Buy</a> <a href="#" ng-click="openSiteLink($event, r)" class='waves-effect waves-light btn primary-color fullwidth'>  View Full Post </a>
     <div>
       <div class="details-vote">
         <div class="details-vote-right" ng-click="sneakerRating($event, r,'yes')"> <a href="#">  Cop ({{r.yes_percentage}}%)</a> </div>
@@ -44,7 +44,7 @@
           <img src="images/profiles/{{comment.profile_image}}" class="details-avatar">
           <div class="comment-body">
             <span class="author uppercase" ng-if="comment.email.length > 0"> {{comment.email.substr(0,6)}}</span>
-            <span class="author uppercase" ng-show="isUndefined(comment.email)"> SoleInsider User</span>
+            <span class="author uppercase" ng-if="isUndefined(comment.email)"> SoleInsider User</span>
             <span class="date">{{comment.comment_date}}</span>
             <p> {{comment.comment}}</p>
           </div>

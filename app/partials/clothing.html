@@ -4,8 +4,8 @@
 <ul class="portfolioMenuWrapper" id="" style="text-align:center;margin-bottom:30px;overflow:hidden;margin-left:5%">
   <div class="button_menu_small" ng-repeat="m in menu" ng-click="search(m.search)"> {{m.name}} </div>
 </ul>
-<div class="loading" ng-show="showLoading == true" style="text-align:center"> <img src="images/loading.gif" width="250px" height="250px" /> </div>
-<div class="swipeout" ng-repeat="p in products" ng-cloak ng-show="showLoading == false">
+<div class="loading" ng-if="showLoading == true" style="text-align:center"> <img src="images/loading.gif" width="250px" height="250px" /> </div>
+<div class="swipeout" ng-repeat="p in products" ng-cloak ng-if="showLoading == false">
   <div class="swipeout-content item-content">
     <div class="post_entry">
       <div class="post_thumb"> <a href="#" ng-click="details(r)">

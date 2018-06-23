@@ -3,7 +3,7 @@
 </div>
 <div class="login-form animated fadeinup delay-2 z-depth-1">
   <h1>Login</h1>
-  <div ng-show="showLogin == true" ng-model="account">
+  <div ng-if="showLogin == true" ng-model="account">
     <div class="input-field">
       <i class="ion-md-contact prefix"></i>
       <input type="text" id="login" ng-model="account.email">
@@ -17,7 +17,7 @@
     <a class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" href="#" ng-click="doLogin($event, account)">Login</a>
     <span>Don't have an account? <a class="primary-text" href="#/signup">Sign Up</a></span>
   </div>
-  <div ng-show="showLogin == false">
+  <div ng-if="showLogin == false">
     <a class='waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4' ng-click="logout()">Logout</a>
   </div>
 

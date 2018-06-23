@@ -43,20 +43,20 @@
 </head>
 <body>
 <!-- website wrapper starts -->
-<div class="websiteWrapper" ng-app="soleinsiderApp" ng-controller="clothingStoreController"> 
-  
+<div class="websiteWrapper" ng-app="soleinsiderApp" ng-controller="clothingStoreController">
+
   <!-- header outer wrapper starts -->
   <div class="headerOuterWrapper">
     <!-- header outer wrapper starts -->
   <div class="headerOuterWrapper">
-    <div class="headerWrapper"> 
-    <span class="mainLogo">SoleInsider</span> 
+    <div class="headerWrapper">
+    <span class="mainLogo">SoleInsider</span>
     <a href="" class="mainMenuButton"></a></div>
   </div>
-  <!-- header outer wrapper ends --> 
+  <!-- header outer wrapper ends -->
   </div>
-  <!-- header outer wrapper ends --> 
-  
+  <!-- header outer wrapper ends -->
+
   <!-- main menu outer wrapper starts -->
   <div class="mainMenuOuterWrapper mainMenuHidden">
     <ul class="mainMenuWrapper">
@@ -65,27 +65,27 @@
       </li>
     </ul>
   </div>
-  <!-- main menu outer wrapper ends --> 
-  
+  <!-- main menu outer wrapper ends -->
+
   <!-- page wrapper starts -->
-  <div class="pageWrapper blogPageWrapper"> 
-    
+  <div class="pageWrapper blogPageWrapper">
+
     <!-- blog posts wrapper starts -->
-    <div class="blogPostsWrapper"> 
-  
+    <div class="blogPostsWrapper">
+
 
     <ul class="portfolioMenuWrapper" id="portfolioMenuWrapper" style="text-align:center">
       <li style="text-align:center">{{category}}</li>
-    </ul>  
+    </ul>
 
-    <div class="loading" ng-show="showLoading == true" style="text-align:center">
+    <div class="loading" ng-if="showLoading == true" style="text-align:center">
           <img src="img/spinner.gif" width="100px" height="100px" />
         </div>
 
-        <div class="loading" ng-show="showLoading == false" style="text-align:center">
+        <div class="loading" ng-if="showLoading == false" style="text-align:center">
           <div ng-repeat="p in products" class="product" ng-cloak>
 
-             <div class="pageContentWrapper"> 
+             <div class="pageContentWrapper">
 
             <div style="float:left;width:50%">
               <img src="{{p.image.sizes.IPhone.url}}" alt="{{p.name}}"  width="100%" class="productImage">
@@ -105,38 +105,38 @@
         </div>
 
 
-      
+
 
     </div>
-    <!-- blog posts wrapper ends --> 
-    
+    <!-- blog posts wrapper ends -->
+
      <br/>
-   <a class="buttonWrapper buttonBlack" style="padding:10px" ng-click="paginate()">Next</a> 
+   <a class="buttonWrapper buttonBlack" style="padding:10px" ng-click="paginate()">Next</a>
 
 
   </div>
-  <!-- page wrapper ends --> 
-  
+  <!-- page wrapper ends -->
 
-  
+
+
   <!-- footer wrapper starts -->
-  <div class="footerWrapper"> 
+  <div class="footerWrapper">
     <!-- copyright wrapper starts -->
-    <div class="copyrightWrapper"> 
-      <!-- copyright starts --> 
-      <span class="copyright">&copy; 2015 SoleInsider</span> 
-      <!-- copyright ends --> 
-      <!-- back to top button starts --> 
-      <a href="" class="backToTopButton"></a> 
-      <!-- back to top button ends --> 
+    <div class="copyrightWrapper">
+      <!-- copyright starts -->
+      <span class="copyright">&copy; 2015 SoleInsider</span>
+      <!-- copyright ends -->
+      <!-- back to top button starts -->
+      <a href="" class="backToTopButton"></a>
+      <!-- back to top button ends -->
     </div>
-    <!-- copyright wrapper ends --> 
+    <!-- copyright wrapper ends -->
   </div>
-  <!-- footer wrapper ends --> 
-  
+  <!-- footer wrapper ends -->
+
 </div>
 <!-- website wrapper ends -->
-    
+
 <!-- preloader starts -->
 <div class="preloader"></div>
 <!-- preloader ends -->

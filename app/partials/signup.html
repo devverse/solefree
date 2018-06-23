@@ -3,7 +3,7 @@
 </div>
 <div class="login-form animated fadeinup delay-2 z-depth-1">
   <h1>Signup</h1>
-  <div ng-show="showLogin == true" ng-model="newaccount">
+  <div ng-if="showLogin == true" ng-model="newaccount">
     <div class="input-field">
       <i class="ion-md-contact prefix"></i>
       <input type="text" id="login" ng-model="newaccount.username">
@@ -34,7 +34,7 @@
     </div>
     <a class="waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4" href="#" ng-click="register($event, newaccount)">Signup</a>
   </div>
-  <div ng-show="showLogin == false">
+  <div ng-if="showLogin == false">
     You are logged in as {{username}}
     <br/><br/><br/>
     <a class='waves-effect waves-light btn-large accent-color width-100 m-b-20 animated bouncein delay-4' ng-click="logout()">Logout</a>
