@@ -23,32 +23,6 @@
   <div class="m-scene" id="main">
     <!-- Main Container -->
     <!-- Sidebars -->
-    <!-- Right Sidebar -->
-    <ul id="slide-out" class="side-nav">
-      <!-- Tabs -->
-      <li>
-        <ul class="tabs">
-          <li class="tab col s3"><a class="active" href="#sidebar1">Notifications</a></li>
-        </ul>
-      </li>
-      <li id="sidebar1" class="p-20">
-        <!-- Facebook -->
-        <div class="facebook">
-          <div class="face-notification"> <img src="img/user2.jpg" alt="" class="cricle">
-            <div>
-              <p>Mike Green</p> <span>Sent you a message</span> <span class="small">Today at 16:48</span> </div>
-          </div>
-          <div class="face-notification"> <img src="img/user.jpg" alt="" class="cricle">
-            <div>
-              <p>Lara Connors</p> <span>Post a photo with you</span> <span class="small">Today at 14:26</span> </div>
-          </div>
-          <div class="face-notification"> <img src="img/user3.jpg" alt="" class="cricle">
-            <div>
-              <p>Mike Green</p> <span>Post something...</span> <span class="small">Yesterday at 03:19</span> </div>
-          </div>
-        </div>
-      </li>
-    </ul>
     <!-- Left Sidebar -->
     <ul id="slide-out-left" class="side-nav collapsible">
       <li>
@@ -74,8 +48,6 @@
         <div class="open-left home-button" id="open-left" data-activates="slide-out-left"> <i class="ion-md-menu"></i> </div>
         <div class="open-left back-button" id="open-left" data-activates="slide-out-left"> <i class="ion-md-arrow-back"></i> </div>
         <span class="title none">SoleInsider</span>
-        <div class="open-right" id="open-right" data-activates="slide-out"> <i class="ion-md-notifications"></i>
-        </div>
       </div>
       <!-- Main Content -->
       <div ng-view> </div>
@@ -90,6 +62,7 @@
   <script src="js/lib/angular-route.js"></script>
   <script src="js/lib/angular-animate.js"></script>
   <script src="js/lib/angular-sanitize.min.js"></script>
+  <script src="js/lib/angular-vs-repeat.js"></script>
   <script src="bower_components/ng-videosharing-embed/build/ng-videosharing-embed.min.js"></script>
   <script src="app/manager.js"></script>
   <script src="js/toastr.js"></script>
@@ -142,6 +115,7 @@
   <script src="js/chart.min.js"></script>
   <script src="js/functions.js"></script>
   <script src='js/moment.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.8.0/lazyload.min.js"></script>
 </body>
 
 </html>

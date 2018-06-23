@@ -150,13 +150,15 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.init = (function() {
     $scope.getReleases();
-    $scope.getComingSoon();
-    $rootScope.$emit("featured", true);
+    //$rootScope.$emit("featured", true);
     $rootScope.$emit("showback_button", false);
-    window.removeBannerAd();
-    window.randomInterstitial();
     menu_service.handleMenu();
-    menu_service.handleSwiper();
+    // menu_service.handleSwiper();
+
+    $scope.$on('vsRepeatReinitialized', function() {
+      alert('vsRepeatReinitialized');
+    });
+
   })();
 }
 

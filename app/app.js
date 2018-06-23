@@ -270,10 +270,12 @@ soleinsiderApp.directive('productImagesDirective', function() {
   };
 });
 
-soleinsiderApp.directive('lazyLoadDirective', function() {
+soleinsiderApp.directive('lazyLoad', function() {
   return function(scope, element, attrs) {
     if (scope.$last) {
-      $('img.lazy').lazyload();
+      new LazyLoad({
+          elements_selector: ".lazy-load"
+      });
     }
   };
 });
