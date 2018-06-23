@@ -3,43 +3,6 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
   'ngSanitize',
 ]);
 
-soleinsiderApp.factory('State', function($q, $http){
-  var api = soleinsider.base_url;
-  
-  self.makePost = function(endpoint, post) {
-
-    post = (!post) ? {} : post;
-    if (!endpoint) {
-      window.alert("Could not connect, please check your internet connection");
-      return;
-    }
-
-    var deferred = $q.defer();
-    $http.post(api + endpoint, post).success(function(data) {
-      if (data) {
-        if (data == 'false') {
-          data = [];
-        }
-        deferred.resolve(data);
-      } else {
-        deferred.reject("Data was rejected: " + post);
-      }
-    });
-    return deferred.promise;
-
-  };
-
-  self.getCachedReleases = function() {
-    return self.makePost('/mobile/releaseDatesUnformatted');
-  };
-
-  return {
-    formData:{
-      releases: self.getCachedReleases()
-    },
-  };
-});
-
 soleinsiderApp.config(['$routeProvider',
   function($routeProvider) {
     "use strict";
@@ -270,14 +233,11 @@ soleinsiderApp.config(['$httpProvider',
   }
 ]);
 
-var ngrepeat_counter = 1;
 soleinsiderApp.directive('scrollDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last) {
-      console.log('scroll', localStorage.getItem("scrollPosition"));
-      setTimeout(function() {
-        window.scroll(0, localStorage.getItem("scrollPosition"));
-      }, 10);
+      console.log('done');
+    //  window.scroll(0, localStorage.getItem("scrollPosition"));
     }
   };
 });
