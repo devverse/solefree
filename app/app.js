@@ -13,10 +13,6 @@ var soleinsiderApp = angular.module('soleinsiderApp', [
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
     }).
-    when('/hub/:type', {
-      templateUrl: admin_url + 'partials/hub.html',
-      controller: hubController
-    }).
     when('/releases', {
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
@@ -236,7 +232,7 @@ soleinsiderApp.config(['$httpProvider',
 ]);
 
 var ngrepeat_counter = 1;
-soleinsiderApp.directive('releasesDirective', function() {
+soleinsiderApp.directive('scrollDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last) {
       console.log('scroll', localStorage.getItem("scrollPosition"));
