@@ -50,6 +50,10 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
+
+        var randomProduct =  data[Math.floor(Math.random() * data.length)];
+        $scope.header = randomProduct.image;
+        
       }, function(err) {
         alert(err);
       });
