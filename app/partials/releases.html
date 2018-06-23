@@ -6,7 +6,7 @@
 <div class="animated fadeinup">
   <releases-loader ng-if="show_loading == true"> </releases-loader>
   <div class="posts">
-    <div ng-repeat="r in releases track by r.id" style="clear:both;width:100%;margin-bottom:0px" scroll-directive>
+    <div ng-repeat="r in releases track by r.id" style="clear:both;width:100%;margin-bottom:0px">
       <div ng-class="{'releasing-today': r.releasing_today == true }" ng-cloak>
         <div class="blog-fullwidth animated fadeinup delay-1">
           <div class="blog-header">

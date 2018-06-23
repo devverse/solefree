@@ -1,4 +1,4 @@
-function newsController($scope, $rootScope, $location, news_service, menu_service) {
+function newsController($scope, $rootScope, $location, news_service, menu_service, State) {
 
   $scope.category = '';
   $scope.news = false;
@@ -22,7 +22,7 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
     $scope.showLoading = true;
     localStorage.setItem("category", null);
 
-    news_service.getFeeds().then(
+    State.data.news.then(
       function(data) {
         $scope.formatData(data);
       }, function(err) {
@@ -81,20 +81,11 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
   };
 
   $scope.init = (function() {
-    var category;
-
-    category = localStorage.getItem("category");
-
-    if (typeof category != null && category != "null" && category != null) {
-      $scope.getFeedsByCategory(category);
-    } else {
-      $scope.getNews();
-    }
-    
+    $scope.getNews();
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
   })();
 }
 
-newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service'];
+newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service', 'State'];

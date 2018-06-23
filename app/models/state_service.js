@@ -29,9 +29,19 @@ soleinsiderApp.factory('State', function($q, $http){
     return self.makePost('/mobile/releaseDatesUnformatted');
   };
 
+  self.getNews = function() {
+    return self.makePost('/mobile/rssFeeds');
+  };
+
+  self.pastReleases = function() {
+    return self.makePost('/mobile/pastReleaseDates');
+  };
+
   return {
-    formData:{
-      releases: self.getCachedReleases()
+    data:{
+      releases: self.getCachedReleases(),
+      news: self.getNews(),
+      pastReleases: self.getPastReleases()
     },
   };
 });

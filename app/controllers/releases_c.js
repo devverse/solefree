@@ -46,7 +46,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   var getReleases = function() {
     $scope.show_loading = true;
 
-    State.formData.releases.then(
+    State.data.releases.then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
@@ -66,8 +66,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     // menu_service.handleSwiper();
-
-
   })();
 }
 
