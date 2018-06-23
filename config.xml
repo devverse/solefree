@@ -2,8 +2,8 @@
 
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
-versionCode="45"
-	version 	= "6.5.0"
+versionCode="46"
+	version 	= "7.0.0"
 	id        = "com.sole.insider.free">
 
 	<name>SoleInsider</name>
@@ -59,7 +59,7 @@ versionCode="45"
   	<gap:splash src="splash/ios/Default@2x~iphone_640x960.png" gap:platform="ios" width="640" height="960" />
   	<gap:splash src="splash/ios/ios/Default~ipad.png" gap:platform="ios" width="720" height="1200" />
 	<gap:splash src="splash/ios/Default-Portrait~ipad_768x1024.png" gap:platform="ios" width="768" height="1024" />
-	<gap:splash src="splash/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048" />	
+	<gap:splash src="splash/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048" />
   	<gap:splash src="splash/ios/Default-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008" />
 	<gap:splash src="splash/ios/Default-Landscape~ipad_1024x768.png" gap:platform="ios" width="1024" height="768" />
 	<gap:splash src="splash/ios/Default-Landscape~ipad_1024x748.png" gap:platform="ios" width="1024" height="748" />
@@ -86,7 +86,7 @@ versionCode="45"
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
 	<preference name="exit-on-suspend" value="false" />
-	<preference name="android-build-tool" value="gradle" /> 
+	<preference name="android-build-tool" value="gradle" />
 	<allow-navigation href="*" />
 
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />

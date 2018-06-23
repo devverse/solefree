@@ -2,11 +2,8 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   var last_product_id = false;
 
-  $scope.coming = [];
   $scope.releases = [];
-  $scope.showmsg = false;
   $scope.show_loading = true;
-  $scope.show_coming = false;
   $scope.scrollPosition = 0;
 
   $scope.buyProduct = function(event, product) {
@@ -26,7 +23,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   };
 
   $scope.sneakerRating = function(product, status) {
-
     var member_id = localStorage.getItem("member_id");
 
     if (status == "yes" && parseInt(product.yes_percentage) < 98) {
@@ -47,7 +43,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     });
   };
 
-  $scope.getReleases = function() {
+  var getReleases = function() {
     $scope.show_loading = true;
 
     release_service.getReleases().then(
@@ -59,46 +55,9 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       });
   };
 
-  $scope.getComingSoon = function() {
-    release_service.getComingSoon().then(
-      function(data) {
-        $scope.coming = data;
-        $scope.show_coming = true;
-      }, function(err) {
-        alert(err);
-      });
-  };
-
-   $scope.filterReleases = function(product) {
-    var releaseDate, today;
-
-    product.showBuyLink = false;
-
-    if (product.link.length > 2) {
-      product.showBuyLink = true;
-    }
-
-    releaseDate = moment(product.release_date, "MMMM Do, YYYY").format('L');
-    today = moment().format('L');
-
-    if (today === releaseDate) {
-      product.releasing_today = true;
-    } else {
-      product.releasing_today = false;
-    }
-
-    if (product.coming_soon === '1' &&  last_product_id != product.id) {
-      last_product_id = product.id
-      $scope.coming.push(product);
-    } else if (last_product_id == product.id) {
-      return;
-    } else {
-      return product;
-    }
-  };
 
   $scope.init = (function() {
-    $scope.getReleases();
+    getReleases();
     //$rootScope.$emit("featured", true);
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
