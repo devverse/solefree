@@ -140,7 +140,7 @@ function storiesController($scope, $rootScope, $location, menu_service) {
 
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
-    $rootScope.$emit("showback_button", true);
+    $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     menu_service.handleSwiper();
   })();

@@ -23,18 +23,6 @@ soleinsiderApp.config(['$routeProvider',
       templateUrl: admin_url + 'partials/past_releases.html',
       controller: pastReleasesController
     }).
-    when('/restock_history', {
-      templateUrl: admin_url + 'partials/past_restocks.html',
-      controller: pastRestocksController
-    }).
-    when('/restocks', {
-      templateUrl: admin_url + 'partials/restocks.html',
-      controller: restocksController
-    }).
-    when('/myrestocks', {
-      templateUrl: admin_url + 'partials/myrestocks.html',
-      controller: myRestocksController
-    }).
     when('/myreleases', {
       templateUrl: admin_url + 'partials/myreleases.html',
       controller: myReleasesController
@@ -62,10 +50,6 @@ soleinsiderApp.config(['$routeProvider',
     when('/view', {
       templateUrl: admin_url + 'partials/view.html',
       controller: viewController
-    }).
-    when('/finder', {
-      templateUrl: admin_url + 'partials/store_finder.html',
-      controller: storeFinderController
     }).
     when('/social', {
       templateUrl: admin_url + 'partials/social.html',

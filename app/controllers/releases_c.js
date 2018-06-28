@@ -62,10 +62,10 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.init = (function() {
     getReleases();
-    //$rootScope.$emit("featured", true);
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     // menu_service.handleSwiper();
+    window.randomInterstitial();
   })();
 }
 

@@ -24,7 +24,7 @@ function pastReleasesController($scope, $rootScope, $location, release_service, 
 
   $scope.init = (function() {
     $scope.getPastReleases();
-    $rootScope.$emit("showback_button", true);
+    $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
   })();
 

@@ -1,4 +1,4 @@
-/*------------------------------------------------------------------
+/images/*------------------------------------------------------------------
 Project: Halo
 Version: 1.0
 Last change: first release
@@ -313,41 +313,49 @@ blockquote {
 /* Background & Overlay */
 
 .bg-1 {
-    background: url(../img/1.jpg) no-repeat center / cover !important;
+    background: url(../images/1.jpg) no-repeat center / cover !important;
 }
 .bg-2 {
-    background: url(../img/1.jpg) no-repeat center / cover !important;
+    background: url(../images/1.jpg) no-repeat center / cover !important;
 }
 .bg-3 {
-    background: url(../img/3.jpg) no-repeat center / cover !important;
+    background: url(../images/3.jpg) no-repeat center / cover !important;
 }
 .bg-4 {
-    background: url(../img/4.jpg) no-repeat center / cover !important;
+    background: url(../images/4.jpg) no-repeat center / cover !important;
 }
 .bg-5 {
-    background: url(../img/5.jpg) no-repeat center / cover !important;
+    background: url(../images/5.jpg) no-repeat center / cover !important;
 }
 .bg-9 {
-    background: url(../img/9.jpg) no-repeat center / cover !important;
+    background: url(../images/9.jpg) no-repeat center / cover !important;
 }
 .bg-v-1 {
-    background: url(../img/v1.jpg) no-repeat center / cover !important;
+    background: url(../images/v1.jpg) no-repeat center / cover !important;
 }
 .bg-v-2 {
-    background: url(../img/v2.jpg) no-repeat center / cover !important;
+    background: url(../images/v2.jpg) no-repeat center / cover !important;
 }
 .bg-v-3 {
-    background: url(../img/v3.jpg) no-repeat center / cover !important;
+    background: url(../images/v3.jpg) no-repeat center / cover !important;
 }
 .bg-v-4 {
-    background: url(../img/v4.jpg) no-repeat center / cover !important;
+    background: url(../images/v4.jpg) no-repeat center / cover !important;
 }
 .bg-blur {
-    background: url(../img/blur.jpg) no-repeat center / cover !important;
+    background: url(../images/blur.jpg) no-repeat center / cover !important;
 }
 .bg-opacity {
-    background: url(../img/opacity.jpg) no-repeat center / cover !important;
+    background: url(../images/opacity.jpg) no-repeat center / cover !important;
 }
+.bg-history {
+    background: url(../images/history.jpg) no-repeat center / cover !important;
+}
+
+.bg-releases {
+    background: url(../images/releases.jpg) no-repeat center / cover !important;
+}
+
 .bg-shop {
     background: url(../images/store/banner.jpg) no-repeat center / cover !important;
 }

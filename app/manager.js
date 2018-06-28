@@ -1,53 +1,48 @@
 // for Android
 admobid = {
-    banner: 'ca-app-pub-0083160636450496/6391719559',
-    interstitial: 'ca-app-pub-0083160636450496/7728851959'
+  banner: 'ca-app-pub-0083160636450496/6391719559',
+  interstitial: 'ca-app-pub-0083160636450496/7728851959'
 };
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() { 
-    setTimeout(function() { 
-        analytics.startTrackerWithId('UA-18545304-13');
-    }, 4000);
+function onDeviceReady() {
+  setTimeout(function() {
+    analytics.startTrackerWithId('UA-18545304-13');
+  }, 4000);
 
-    admob.setOptions({
-        publisherId:          "ca-app-pub-0083160636450496/6391719559",  // Required
-        interstitialAdId:     "cca-app-pub-0083160636450496/7728851959",
-        autoShowInterstitial: true,
-        autoShowBanner: true
-    });
+  admob.setOptions({
+    publisherId: "ca-app-pub-0083160636450496/6391719559", // Required
+    interstitialAdId: "cca-app-pub-0083160636450496/7728851959",
+    autoShowInterstitial: true,
+    autoShowBanner: true
+  });
 }
 
 function showBannerAd() {
-    return;
-    if (typeof admob != 'undefined') {
-        admob.createBannerView();
-    }
+  if (typeof admob != 'undefined') {
+    admob.createBannerView();
+  }
 }
 
 function removeBannerAd() {
-    return;
-	if (typeof admob != 'undefined') {
-		admob.destroyBannerView();
-	}
+  if (typeof admob != 'undefined') {
+    admob.destroyBannerView();
+  }
 }
 
 function prepareInterstitial() {
-    return;
-	if(typeof admob != 'undefined') {
-	 	admob.requestInterstitialAd();
-	}
+  if (typeof admob != 'undefined') {
+    admob.requestInterstitialAd();
+  }
 }
 
 function randomInterstitial() {
-    return;
-    var random = Math.floor((Math.random() * 15) + 1);
+  var random = Math.floor((Math.random() * 15) + 1);
 
-    if (random == 3) {
-        prepareInterstitial();
-    }
-
+  if (random === 3) {
+    prepareInterstitial();
+  }
 }
 
 document.addEventListener('prepareInterstitial', prepareInterstitial, false);
