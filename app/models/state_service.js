@@ -1,4 +1,4 @@
-
+ 
 soleinsiderApp.factory('State', function($q, $http){
   var api = soleinsider.base_url;
 
