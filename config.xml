@@ -94,4 +94,6 @@ versionCode="46"
 	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm" />
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
+	<plugin name="cordova-plugin-globalization" spec="~1.11.0" />
+	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 </widget>
