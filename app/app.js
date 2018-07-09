@@ -304,16 +304,19 @@ soleinsiderApp.directive('newsLoader', function() {
   };
 });
 
-soleinsiderApp.directive('myRepeatDirective', function() {
+soleinsiderApp.directive('slideshowDirective', function() {
   return function(scope, element, attrs) {
     if (scope.$last){
-      new Swiper('.slider-images', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        autoplay: 2500,
-        loop: false
-      });
-      $('.parallax').parallax();
+      setTimeout(function() {
+        new Swiper('.slider-images', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          autoplay: 2500,
+          loop: false
+        });
+        //$('.parallax').parallax();
+      }, 500);
+
     }
   };
 });

@@ -3,7 +3,7 @@
     <!-- Slider -->
     <div class="swiper-container slider slider-images">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" ng-repeat="f in slideshow" my-repeat-directive> <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-image" /> </div>
+        <div class="swiper-slide" ng-repeat="f in slideshow" slideshow-directive> <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-images" /> </div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
@@ -11,7 +11,8 @@
     <!-- End of Slider -->
   </div>
 </div>
-<div class="p-10 details-body">
+<br/>
+<div class="p-10 details-body animated fadeinup">
   <div class="details-info">
     <h2>{{r.name}}</h2>
     <div class="details">
@@ -41,7 +42,7 @@
       <h3 class="uppercase">{{comments.length}} Comments</h3>
       <ul class="comments-list">
         <li ng-repeat="comment in comments | filter:filterComments">
-          <img src="images/profiles/{{comment.profile_image}}" class="details-avatar">
+          <img ng-src="images/profiles/{{comment.profile_image}}" class="details-avatar">
           <div class="comment-body">
             <span class="author uppercase" ng-if="comment.email.length > 0"> {{comment.email.substr(0,6)}}</span>
             <span class="author uppercase" ng-if="isUndefined(comment.email)"> SoleInsider User</span>

@@ -3,22 +3,8 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
   $scope.category = '';
   $scope.news = false;
   $scope.show_loading = true;
-  $scope.menu = [
-    {'name' : 'Nike'},
-    {'name' : 'Adidas'},
-    {'name' : 'Yeezy'},
-    {'name' : 'Puma'},
-    {'name' : 'Jordan'},
-    {'name' : 'Reebok'},
-    {'name' : 'Converse'},
-    {'name' : 'Under Armour'},
-    {'name' : 'Timberland'},
-    {'name' : 'Saucony'},
-    {'name' : 'Vans'},
-    {'name' : 'Asics'}
-  ];
 
-  $scope.getNews = function() {
+  var getNews = function() {
     $scope.showLoading = true;
     localStorage.setItem("category", null);
 
@@ -58,22 +44,6 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
       $scope.news.push(data[x]);
     }
   };
-
-  $scope.getFeedsByCategory = function(category) {
-    $scope.showLoading = true;
-
-    localStorage.setItem("category", category);
-
-    var post = "category=" + category;
-    news_service.getFeedsByCategory(post).then(
-      function(data) {
-        $scope.category = category;
-        $scope.formatData(data);
-      }, function(err) {
-        alert(err);
-      });
-  };
-
   $scope.view = function(event, article) {
     event.preventDefault();
     localStorage.setItem("article", JSON.stringify(article));
@@ -81,9 +51,8 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
   };
 
   $scope.init = (function() {
-    $scope.getNews();
-    $rootScope.$emit("featured", false);
-    $rootScope.$emit("showback_button", true);
+    getNews();
+    $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
   })();
 }

@@ -64,7 +64,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     getReleases();
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
-    // menu_service.handleSwiper();
     window.randomInterstitial();
   })();
 }

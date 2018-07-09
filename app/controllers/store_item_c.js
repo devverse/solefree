@@ -6,19 +6,19 @@ function storeItemController($scope, $rootScope, $routeParams, store_service, me
   $scope.searchStr = '';
   $scope.searcher = {
     "sneakers": {
-      name: "nike sneakers",
+      name: ["nike sneakers", "adidas sneakers", "ysl sneakers", "mens jordans"],
       class: 'bg-shop-sneakers'
     },
     "clothing": {
-      name: "mens shirts",
+      name: ["mens shirts", "stussy shirts", "mens sale shirts", "mens t-shirt", "nba jerseys"],
       class: 'bg-shop-clothes'
     },
     "accessories": {
-      name: "mens watches",
+      name: ["mens sunglasses", "mens backpack", "mens ray ban",  "cologne", "mens watches", "mens wallets"],
       class: 'bg-shop-accessories'
     },
     "sale": {
-      name: "mens sale",
+      name: ["mens sale", "mens sneaker sale", "mens clothing sale"],
       class: 'bg-shop-sales'
     },
   };
@@ -107,7 +107,9 @@ function storeItemController($scope, $rootScope, $routeParams, store_service, me
 
   $scope.init = (function() {
     $scope.type = $routeParams.type;
+
     $scope.searchStr = $scope.searcher[$scope.type].name;
+    $scope.searchStr = $scope.searchStr[Math.floor(Math.random() * $scope.searchStr.length)];
     $scope.searchClass = $scope.searcher[$scope.type].class;
     $scope.search($scope.searchStr);
     $rootScope.$emit("showback_button", true);

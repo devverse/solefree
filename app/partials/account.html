@@ -1,52 +1,64 @@
 <div class="h-banner animated fadeindown">
   <div class="parallax primary-color"> </div>
-  <div class="banner-title">Manage Account </div>
 </div>
-</div>
-<div class="page-content">
+<div class="login-form animated fadeinup delay-2 z-depth-1">
+  <h1>My Account</h1>
   <div ng-if="showError == false">
-    <div class="contactform">
-      <form method="post" action="">
-      <label>Current Profile Image</label>
-      <div class="current-profile-image"> <img src="images/profiles/{{account.profile_image}}" width="64px" height="40px" /> </div> <br/><br/> <label>Select A New Profile Image</label>
-      <div class="profile-images input-field">
-        <div class="profile-image"> <input type="radio" name="profile" value="default.png"> <img src="images/profiles/default.png" width="64px" height="40px" /> </div>
-        <div class="profile-image"> <input type="radio" name="profile" value="1.png"> <img src="images/profiles/1.png" width="64px" height="40px" /> </div>
-        <div class="profile-image"> <input type="radio" name="profile" value="2.png"> <img src="images/profiles/2.png" width="64px" height="40px" /> </div>
-        <div class="profile-image"> <input type="radio" name="profile" value="3.png"> <img src="images/profiles/3.png" width="64px" height="40px" /> </div>
-        <div class="profile-image"> <input type="radio" name="profile" value="4.png"> <img src="images/profiles/4.png" width="64px" height="40px" /> </div>
-        <div class="profile-image"> <input type="radio" name="profile" value="5.png"> <img src="images/profiles/5.png" width="64px" height="40px" /> </div>
-        <div class="profile-image"> <input type="radio" name="profile" value="6.png"> <img src="images/profiles/6.png" width="64px" height="40px" /> </div>
-      </div>
-      <br/>
 
-      <div class="input-field">
-        <i class="ion-md-contact prefix"></i>
-        <input type="text" id="login" ng-model="account.email"
-        <label for="login">Username</label>
+    <div class="input-field">
+      <h4>Current Profile Image</h4>
+      <div class="current-profile-image">
+          <img ng-src="images/profiles/{{account.profile_image}}" width="64px" height="40px" />
       </div>
-
-      <div class="input-field">
-        <i class="ion-md-contact prefix"></i>
-        <input type="text" id="login" ng-model="account.phone_number"
-        <label for="login">Phone: (NO SPACES OR HYPHENS)</label>
-      </div>
-
-      <br/>
-      <label>Carriers</label>
-      <select class="carrier browser-default" ng-model="account.carrier">
-          <option value="1">AT&T</option>
-          <option value="2">Verizon</option>
-          <option value="3">T-Mobile</option>
-          <option value="4">Sprint</option>
-          <option value="5">Virgin Mobile</option>
-          <option value="6">US Cellular</option>
-          <option value="7">Nextel</option>
-          <option value="8">Boost</option>
-          <option value="9">Alltel</option>
-        </select> <br/><br/> <a href="# " class="waves-effect waves-light btn primary-color fullwidth" ng-click="updateAccount($event, account)"> Update Account </a> </form>
     </div>
+
+    <form action="#" class="m-b-30">
+
+
+
+    <div class="input-field">
+      <h4>Select New Profile Image</h4>
+      <div class="profile-images input-field">
+        <div class="profile-image"> <input type="radio" name="profile" value="default.png" id="profile1"> <label for="profile1"> </label><img src="images/profiles/default.png" /> </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="1.png" id="profile2"> <label for="profile2"> </label><img src="images/profiles/1.png" />  </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="2.png" id="profile3"> <label for="profile3"></label><img src="images/profiles/2.png" />  </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="3.png" id="profile4"> <label for="profile4"></label><img src="images/profiles/3.png" />  </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="4.png" id="profile5"> <label for="profile5"></label><img src="images/profiles/4.png" />  </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="5.png" id="profile6"> <label for="profile6"></label><img src="images/profiles/5.png" />  </div>
+        <div class="profile-image"> <input type="radio" name="profile" value="6.png" id="profile7"> <label for="profile7"></label><img src="images/profiles/6.png" />  </div>
+      </div>
+    </div>
+
+    <br/><hr/><br/>
+
+    <div class="input-field">
+      <i class="ion-md-contact prefix"></i>
+      <input type="text" id="login" ng-model="account.email">
+    </div>
+    <div class="input-field">
+      <i class="ion-md-call prefix"></i>
+      <input type="text" id="login" ng-model="account.phone_number">
+    </div>
+
+    <div class="input-fields" style="margin-bottom:20px;">
+      <label>Carrier</label>
+      <select class="browser-default" id="login-carriers" ng-model="account.carrier">
+        <option value="1">AT&T</option>
+        <option value="2">Verizon</option>
+        <option value="3">T-Mobile</option>
+        <option value="4">Sprint</option>
+        <option value="5">Virgin Mobile</option>
+        <option value="6">US Cellular</option>
+        <option value="7">Nextel</option>
+        <option value="8">Boost</option>
+      </select>
+    </div>
+  </form>
+
+    <a href="# " class="waves-effect waves-light btn primary-color fullwidth" ng-click="updateAccount($event, account)"> Update Account </a> </form>
+
   </div>
+
   <div ng-if="showError == true">
     <p class="center-text uppercase" style="text-align:left">Login to manage your account</p>
       <a href="#/login" class='waves-effect waves-light btn primary-color fullwidth'> Login </a>

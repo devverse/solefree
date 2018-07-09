@@ -101,7 +101,7 @@
 }
 
 .current-profile-image {
-  max-width: 200px;
+  max-width: 100px;
 }
 
 .profile-images {
@@ -110,11 +110,12 @@
 }
 
 .profile-image {
-   float: left;
-   max-width: 45%;
-   padding: 5px;
+  width: 100%;
+  height: auto;
 }
 
-.profile-image img{
-  height: 110px;
+.profile-image img {
+  width: 35%;
+  height: 100%;
+  max-height: 120px;
 }

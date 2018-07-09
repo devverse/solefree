@@ -264,6 +264,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
+    menu_service.handleSwiper();
     $scope.loadProduct();
     $scope.getSlideShow();
     $scope.getComments();
