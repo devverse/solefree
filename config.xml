@@ -82,7 +82,7 @@ versionCode="46"
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<preference name='phonegap-version' value='cli-7.0.1' />
-	<preference name="fullscreen" value="false" />
+	<preference name="fullscreen" value="true" />
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
 	<preference name="exit-on-suspend" value="false" />
