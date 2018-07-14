@@ -269,6 +269,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getSlideShow();
     $scope.getComments();
     $scope.scrollTop();
+    window.randomInterstitial();
   })();
 
 }

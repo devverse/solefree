@@ -54,6 +54,7 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
     getNews();
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
+    window.randomInterstitial();
   })();
 }
 

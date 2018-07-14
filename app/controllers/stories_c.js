@@ -143,6 +143,7 @@ function storiesController($scope, $rootScope, $location, menu_service) {
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     menu_service.handleSwiper();
+    window.randomInterstitial();
   })();
 }
 

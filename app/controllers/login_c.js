@@ -92,6 +92,6 @@ function loginController($scope, $rootScope, login_service, $location) {
     $scope.toggleLogin();
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
-    window.removeBannerAd();
+    window.randomInterstitial();
   })();
 }

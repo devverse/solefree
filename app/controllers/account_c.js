@@ -63,5 +63,6 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
+    window.randomInterstitial();
   })();
 }

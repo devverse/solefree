@@ -1,4 +1,4 @@
- 
+
 soleinsiderApp.factory('State', function($q, $http){
   var api = soleinsider.base_url;
 
@@ -33,7 +33,7 @@ soleinsiderApp.factory('State', function($q, $http){
     return self.makePost('/mobile/rssFeeds');
   };
 
-  self.pastReleases = function() {
+  self.getPastReleases = function() {
     return self.makePost('/mobile/pastReleaseDates');
   };
 

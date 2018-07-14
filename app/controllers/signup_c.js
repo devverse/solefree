@@ -40,7 +40,7 @@ function signupController($scope, $rootScope, login_service) {
 
   $scope.register = function(event, newaccount) {
     event.preventDefault();
-    
+
     var validated = $scope.validateAccount(newaccount);
 
     if (!validated) {
@@ -77,7 +77,7 @@ function signupController($scope, $rootScope, login_service) {
     $scope.toggleLogin();
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
-    window.removeBannerAd();
+    window.randomInterstitial();
   })();
 }
 

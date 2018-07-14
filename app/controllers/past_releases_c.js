@@ -26,6 +26,7 @@ function pastReleasesController($scope, $rootScope, $location, release_service, 
     $scope.getPastReleases();
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
+    window.randomInterstitial();
   })();
 
 }

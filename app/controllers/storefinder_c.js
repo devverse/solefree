@@ -1,12 +1,12 @@
 function storeFinderController($scope, $rootScope, store_finder_service) {
-  
+
   $scope.stores = false;
   $scope.search = '';
   $scope.show_loading = false;
 
   $scope.openLink = function($event, link) {
     event.preventDefault();
-    
+
     window.open(link, '_blank', 'location=yes');
   };
 
@@ -24,7 +24,7 @@ function storeFinderController($scope, $rootScope, store_finder_service) {
           for (var i =0; i < data.businesses.length; i++) {
             if (data.businesses[i].image_url) {
               stores.push(data.businesses[i]);
-            } 
+            }
           }
           $scope.stores = stores;
           $scope.show_loading = false;
@@ -37,7 +37,7 @@ function storeFinderController($scope, $rootScope, store_finder_service) {
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
-    window.showBannerAd();
+    window.randomInterstitial();
   })();
 }
 

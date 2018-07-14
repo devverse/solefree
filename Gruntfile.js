@@ -4,27 +4,47 @@ module.exports = function (grunt) {
   grunt.initConfig({
     meta: {
       version: '4.5.0',
-      banner: '/*! SoleInsider  - v<%= meta.version %> - ' 
+      banner: '/*! SoleInsider  - v<%= meta.version %> - '
     },
 
     lint: {
       files: ['Gruntfile.js']
     },
- 
+
    concat: {
       application: {
         src: [
+          'app/manager.js',
           'app/config.js',
           'app/controllers/*.js',
           'app/models/*.js',
         ],
-        dest: 'app/dist/application.concat.js'
+        dest: 'dist/application.concat.js'
       },
-      plugins: {
+      library: {
         src: [
-          'js/plugins/*.js',
+          'js/lib/angular.js',
+          'js/lib/angular-route.js',
+          'js/lib/angular-animate.js',
+          'js/lib/angular-sanitize.min.js',
+          'js/lib/angular-vs-repeat.js'
         ],
-        dest: 'app/dist/plugins.concat.js'
+        dest: 'dist/library.concat.js'
+      },
+      vendor: {
+        src: [
+          'js/jquery-2.1.0.min.js',
+          'js/jquery.smoothState.min.js',
+          'js/materialize.min.js',
+          'js/swiper.min.js',
+          'js/functions.js',
+          'js/moment.js',
+          'js/lazyload.min.js',
+          'js/gage.js',
+          'js/toastr.js',
+          'js/toastr-init.js'
+        ],
+        dest: 'dist/vendor.concat.js'
       }
     },
     watch: {
@@ -54,15 +74,17 @@ module.exports = function (grunt) {
         jQuery: true
       }
     },
-    
+
   uglify: {
     application: {
         files: {
-          'app/dist/application.min.js': ['app/dist/application.concat.js']
+          'dist/application.min.js': ['dist/application.concat.js'],
+          'dist/vendor.min.js': ['dist/vendor.concat.js'],
+          'dist/library.min.js': ['dist/library.concat.js']
         }
     }
   }
-    
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -70,6 +92,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
-  // Default task.  
+  // Default task.
   grunt.registerTask('default', [ 'concat','uglify']);
 };

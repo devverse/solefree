@@ -28,6 +28,7 @@ function salesController($scope, $rootScope, sales_service, menu_service) {
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
     menu_service.handleSwiper();
+    window.randomInterstitial();
   })();
 }
 

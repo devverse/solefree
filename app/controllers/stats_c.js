@@ -7,7 +7,7 @@ function statsController($scope, $rootScope, account_service) {
 
     var member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      
+
       $scope.stats = {};
 
       $scope.stats.comment_count = 0;
@@ -34,6 +34,7 @@ function statsController($scope, $rootScope, account_service) {
   	$scope.getStats();
   	$rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
+    window.randomInterstitial();
   })();
 }
 

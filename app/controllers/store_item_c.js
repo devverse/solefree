@@ -108,13 +108,14 @@ function storeItemController($scope, $rootScope, $routeParams, store_service, me
   $scope.init = (function() {
     $scope.type = $routeParams.type;
 
+    $rootScope.$emit("showback_button", true);
     $scope.searchStr = $scope.searcher[$scope.type].name;
     $scope.searchStr = $scope.searchStr[Math.floor(Math.random() * $scope.searchStr.length)];
     $scope.searchClass = $scope.searcher[$scope.type].class;
     $scope.search($scope.searchStr);
-    $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
     menu_service.handleSwiper();
+    window.randomInterstitial();
   })();
 }
 

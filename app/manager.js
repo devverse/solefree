@@ -20,12 +20,14 @@ function onDeviceReady() {
 }
 
 function showBannerAd() {
+  return;
   if (typeof admob != 'undefined') {
     admob.createBannerView();
   }
 }
 
 function removeBannerAd() {
+  return;
   if (typeof admob != 'undefined') {
     admob.destroyBannerView();
   }
