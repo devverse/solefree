@@ -1,37 +1,37 @@
-$(function () {
-    'use strict';
-
-    var duration_CONSTANT = 250;
-    var options = {
-        prefetch: true,
-        cacheLength: 20,
-        blacklist: '.no-smoothState',
-        onStart: {
-            duration: duration_CONSTANT,
-            render: function ($container) {
-                $('#bottom-sheet').closeModal();
-                $container.addClass('is-exiting');
-                smoothState.restartCSSAnimations();
-                setTimeout(function () { }, duration_CONSTANT * 2);
-            }
-        },
-        onReady: {
-            duration: 0,
-            render: function ($container, $newContent) {
-                $container.removeClass('is-exiting');
-                $container.html($newContent);
-            }
-        },
-        onAfter: function ($container, $newContent) {
-            setTimeout(function () {
-                ResizeHandler = ResizeHandler || function () { };
-                ResizeHandler();
-            }, 500)
-            initiate_plugins(); // All onAfter calls goes inside this function
-        }
-    };
-    var smoothState = $('#main').smoothState(options).data('smoothState');
-});
+// $(function () {
+//     'use strict';
+//
+//     var duration_CONSTANT = 250;
+//     var options = {
+//         prefetch: true,
+//         cacheLength: 20,
+//         blacklist: '.no-smoothState',
+//         onStart: {
+//             duration: duration_CONSTANT,
+//             render: function ($container) {
+//                 $('#bottom-sheet').closeModal();
+//                 $container.addClass('is-exiting');
+//                 smoothState.restartCSSAnimations();
+//                 setTimeout(function () { }, duration_CONSTANT * 2);
+//             }
+//         },
+//         onReady: {
+//             duration: 0,
+//             render: function ($container, $newContent) {
+//                 $container.removeClass('is-exiting');
+//                 $container.html($newContent);
+//             }
+//         },
+//         onAfter: function ($container, $newContent) {
+//             setTimeout(function () {
+//                 ResizeHandler = ResizeHandler || function () { };
+//                 ResizeHandler();
+//             }, 500)
+//             initiate_plugins(); // All onAfter calls goes inside this function
+//         }
+//     };
+//     var smoothState = $('#main').smoothState(options).data('smoothState');
+// });
 ////--> Call all function for Ajax <--////
 function initiate_plugins() {
 
@@ -74,11 +74,12 @@ function initiate_plugins() {
     });
 
     // Material Layout
-    $('.parallax').parallax();
+  //  $('.parallax').parallax();
     $(function () {
         var hBanner = $('.h-banner').height();
         var cbHeight = hBanner - 56;
         var hHeight = hBanner - 86; // for Title
+
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();
             if (scroll >= cbHeight) {
@@ -159,10 +160,11 @@ var swiper = new Swiper('.slider-sliced', {
 
 // Material Layout
 $('.parallax').parallax();
-$(function () {
+$( document ).ready(function() {
     var hBanner = $('.h-banner').height();
     var cbHeight = hBanner - 56;
     var hHeight = hBanner - 86; // for Title
+
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll >= cbHeight) {
@@ -175,10 +177,12 @@ $(function () {
         if (scroll >= hHeight) {
             $(".banner-title").hide();
             $(".halo-nav .title").show();
+            $(".halo-nav").addClass('h-bg');
         }
         if (scroll <= hHeight) {
             $(".banner-title").show();
             $(".halo-nav .title").hide();
+            $(".halo-nav").removeClass('h-bg');
         }
     });
     // opacity Plush button

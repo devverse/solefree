@@ -1,3 +1,54 @@
+// for Android
+admobid = {
+  banner: 'ca-app-pub-0083160636450496/6391719559',
+  interstitial: 'ca-app-pub-0083160636450496/7728851959'
+};
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+  setTimeout(function() {
+    analytics.startTrackerWithId('UA-18545304-13');
+  }, 4000);
+
+  admob.setOptions({
+    publisherId: "ca-app-pub-0083160636450496/6391719559", // Required
+    interstitialAdId: "cca-app-pub-0083160636450496/7728851959",
+    autoShowInterstitial: true,
+    autoShowBanner: true
+  });
+}
+
+function showBannerAd() {
+  return;
+  if (typeof admob != 'undefined') {
+    admob.createBannerView();
+  }
+}
+
+function removeBannerAd() {
+  return;
+  if (typeof admob != 'undefined') {
+    admob.destroyBannerView();
+  }
+}
+
+function prepareInterstitial() {
+  if (typeof admob != 'undefined') {
+    admob.requestInterstitialAd();
+  }
+}
+
+function randomInterstitial() {
+  var random = Math.floor((Math.random() * 15) + 1);
+
+  if (random === 3) {
+    prepareInterstitial();
+  }
+}
+
+document.addEventListener('prepareInterstitial', prepareInterstitial, false);
+
 var url = window.location.href;
 var serviceURL = "http://soleinsider.com/public";
 
@@ -264,6 +315,7 @@ function clothingStoreController($scope, $rootScope, clothing_store_service) {
 function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, menu_service) {
   $scope.comments = [];
   $scope.slideshow = [];
+  $scope.slideshowlist = [];
   $scope.votes = [];
   $scope.member_id = '';
 
@@ -382,6 +434,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var post = "&product_id=" + $scope.product_id;
     release_service.getSlideShow(post).then(function(data) {
       $scope.slideshow = data;
+      $scope.slideshowlist = data.slice(1);
     }, function(err) {
       window.console.log(err);
     });
@@ -2417,7 +2470,7 @@ soleinsiderApp.factory('sales_service', ['$rootScope', '$q', '$http',
 
   }
 ]);
- 
+
 soleinsiderApp.factory('State', function($q, $http){
   var api = soleinsider.base_url;
 
@@ -2452,7 +2505,7 @@ soleinsiderApp.factory('State', function($q, $http){
     return self.makePost('/mobile/rssFeeds');
   };
 
-  self.pastReleases = function() {
+  self.getPastReleases = function() {
     return self.makePost('/mobile/pastReleaseDates');
   };
 

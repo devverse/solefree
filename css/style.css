@@ -431,7 +431,8 @@ blockquote {
     display: none;
 }
 .h-banner {
-    height: 212px;
+    height: auto;
+    min-height: 212px;
     position: relative;
     z-index: 1;
 }

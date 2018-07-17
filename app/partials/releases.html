@@ -2,7 +2,7 @@
   <div class="parallax bg-releases"></div>
   <div class="banner-title">Releases</div>
 </div>
-<div class="">
+<div>
   <releases-loader ng-if="show_loading == true"> </releases-loader>
   <div class="posts">
     <div vs-repeat="options">
@@ -18,7 +18,7 @@
               <a href="#" ng-click="details($event, r)">
                 <div class="opacity-overlay-top"></div>
               </a> </div>
-            <div class="blog-preview p-10"> <a href="#" class="waves-effect waves-light btn primary-color fullwidth" ng-if="r.link.length > 0" ng-click="buyProduct($event, r)"> Buy Now </a> </div>
+            <div class="blog-preview p-10"> <a href="#" class="waves-effect btn primary-color fullwidth" ng-if="r.link.length > 0" ng-click="buyProduct($event, r)"> Buy Now </a> </div>
           </div>
         </div>
       </div>
