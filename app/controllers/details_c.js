@@ -1,6 +1,7 @@
 function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, menu_service) {
   $scope.comments = [];
   $scope.slideshow = [];
+  $scope.slideshowlist = [];
   $scope.votes = [];
   $scope.member_id = '';
 
@@ -119,6 +120,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var post = "&product_id=" + $scope.product_id;
     release_service.getSlideShow(post).then(function(data) {
       $scope.slideshow = data;
+      $scope.slideshowlist = data.slice(1);
     }, function(err) {
       window.console.log(err);
     });

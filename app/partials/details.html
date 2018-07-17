@@ -1,20 +1,20 @@
 <div class="h-banner animated fadeindown">
-  <div class="parallax min-height-250">
-    <!-- Slider -->
-    <div class="swiper-container slider slider-images">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide" ng-repeat="f in slideshow" slideshow-directive> <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-images" /> </div>
-      </div>
-      <!-- Add Pagination -->
-      <div class="swiper-pagination"></div>
+  <div class="parallax"> </div>
+  <div class="news-main animated fadein delay-1"> <img alt="" src="http://soleinsider.com/public/products/{{slideshow[0].image}}">
+    <div class="opacity-overlay-black"> </div>
+    <div class="top-news animated fadeinright delay-1">
+      <h4 class="top-news-title">
+        {{r.name}}
+      </h4>
+      <span class="top-news-category">{{r.release_date}}</span>
+      <div class="clr"> </div>
     </div>
-    <!-- End of Slider -->
   </div>
 </div>
-<br/>
 <div class="p-10 details-body animated fadeinup">
   <div class="details-info">
-    <h2>{{r.name}}</h2>
+    <div ng-repeat="f in slideshowlist"> <img ng-src="http://soleinsider.com/public/products/{{f.image}}" class="max-images" /> </div>
+    <br/>
     <div class="details">
       <div class="details-left">
         <div ng-if="r.coming_soon == 1"> Coming Soon </div>
