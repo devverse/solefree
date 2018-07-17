@@ -8,7 +8,7 @@
     <div vs-repeat="options">
       <div ng-repeat="r in releases track by r.id" style="clear:both;width:100%;margin-bottom:0px">
         <div ng-class="{'releasing-today': r.releasing_today == true }" ng-cloak>
-          <div class="blog-fullwidth animated fadeinup delay-1">
+          <div class="blog-fullwidth">
             <div class="blog-header">
               <div class="blog-author"> <span>{{r.name}}</span> <span class="small">{{r.release_date}} </span> </div>
             </div>
