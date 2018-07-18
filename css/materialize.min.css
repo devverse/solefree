@@ -5823,11 +5823,6 @@ small {
   background-color: #26a69a;
   text-align: center;
   letter-spacing: .5px;
-  -webkit-transition: .2s ease-out;
-  -moz-transition: .2s ease-out;
-  -o-transition: .2s ease-out;
-  -ms-transition: .2s ease-out;
-  transition: .2s ease-out;
   cursor: pointer; }
   .btn:hover, .btn-large:hover {
     background-color: #2bbbad; }
@@ -6316,12 +6311,7 @@ input[type=text], input[type=password], input[type=email], input[type=url], inpu
     top: 0.8rem;
     left: 0.75rem;
     font-size: 1rem;
-    cursor: text;
-    -webkit-transition: .2s ease-out;
-    -moz-transition: .2s ease-out;
-    -o-transition: .2s ease-out;
-    -ms-transition: .2s ease-out;
-    transition: .2s ease-out; }
+    cursor: text; }
   .input-field label.active {
     font-size: 0.8rem;
     -webkit-transform: translateY(-140%);

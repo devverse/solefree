@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
@@ -11,7 +11,7 @@ module.exports = function (grunt) {
       files: ['Gruntfile.js']
     },
 
-   concat: {
+    concat: {
       application: {
         src: [
           'app/manager.js',
@@ -72,6 +72,18 @@ module.exports = function (grunt) {
           'js/toastr-init.js'
         ],
         dest: 'dist/vendor.concat.js'
+      },
+      css: {
+        src: [
+          'css/placeholder.min.css',
+          'css/keyframes.css',
+          'css/materialize.min.css',
+          'css/swiper.css',
+          'css/swipebox.min.css',
+          'css/style.css',
+          'style-custom.css'
+        ],
+        dest: 'dist/stylesheet.concat.css'
       }
     },
     watch: {
@@ -102,15 +114,27 @@ module.exports = function (grunt) {
       }
     },
 
-  uglify: {
-    application: {
+    uglify: {
+      application: {
         files: {
-          'dist/application.min.js': ['dist/application.concat.js'],
-          'dist/vendor.min.js': ['dist/vendor.concat.js'],
-          'dist/library.min.js': ['dist/library.concat.js']
+          'dist/js/application.min.js': ['dist/application.concat.js'],
+          'dist/js/vendor.min.js': ['dist/vendor.concat.js'],
+          'dist/js/library.min.js': ['dist/library.concat.js']
         }
+      }
+    },
+
+    cssmin: {
+      options: {
+        shorthandCompacting: false,
+        roundingPrecision: -1
+      },
+      target: {
+        files: {
+          'dist/css/stylesheet.min.css': ['dist/stylesheet.concat.css']
+        }
+      }
     }
-  }
 
   });
 
@@ -118,7 +142,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task.
-  grunt.registerTask('default', [ 'concat','uglify']);
+  grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
 };

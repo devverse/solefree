@@ -4,7 +4,8 @@
   "description": "SoleInsider Web Application",
   "main": "Gruntfile.js",
   "dependencies": {
-    "grunt": "~0.4.0"
+    "grunt": "~0.4.0",
+    "grunt-contrib-cssmin": "^2.2.1"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

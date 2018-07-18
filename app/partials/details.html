@@ -24,7 +24,7 @@
       </div>
     </div>
   </div>
-  <div> <a href="#" ng-click="buyProduct($event, r)" ng-if="r.showBuyLink" class='waves-effect btn primary-color fullwidth'>  Buy</a> <a href="#" ng-click="openSiteLink($event, r)" class='waves-effect btn primary-color fullwidth'>  View Full Post </a>
+  <div> <a href="#" ng-click="buyProduct($event, r)" ng-if="r.showBuyLink" class='btn primary-color fullwidth'>  Buy</a> <a href="#" ng-click="openSiteLink($event, r)" class='waves-effect btn primary-color fullwidth'>  View Full Post </a>
     <div>
       <div class="details-vote">
         <div class="details-vote-right" ng-click="sneakerRating($event, r,'yes')"> <a href="#">  Cop ({{r.yes_percentage}}%)</a> </div>
@@ -52,8 +52,7 @@
           </div>
           </div>
         </li>
-
         <textarea id="textarea1" class="materialize-textarea" placeholder="Write your comment..." ng-model="new_comment"></textarea> </li>
-        <a href="#" class='waves-effect btn primary-color fullwidth' ng-click="submitComment($event)"> Leave Comment </a>
+        <a href="#" class='btn primary-color fullwidth' ng-click="submitComment($event)"> Leave Comment </a>
       </ul>
     </div>
