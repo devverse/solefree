@@ -1,40 +1,5 @@
-// $(function () {
-//     'use strict';
-//
-//     var duration_CONSTANT = 250;
-//     var options = {
-//         prefetch: true,
-//         cacheLength: 20,
-//         blacklist: '.no-smoothState',
-//         onStart: {
-//             duration: duration_CONSTANT,
-//             render: function ($container) {
-//                 $('#bottom-sheet').closeModal();
-//                 $container.addClass('is-exiting');
-//                 smoothState.restartCSSAnimations();
-//                 setTimeout(function () { }, duration_CONSTANT * 2);
-//             }
-//         },
-//         onReady: {
-//             duration: 0,
-//             render: function ($container, $newContent) {
-//                 $container.removeClass('is-exiting');
-//                 $container.html($newContent);
-//             }
-//         },
-//         onAfter: function ($container, $newContent) {
-//             setTimeout(function () {
-//                 ResizeHandler = ResizeHandler || function () { };
-//                 ResizeHandler();
-//             }, 500)
-//             initiate_plugins(); // All onAfter calls goes inside this function
-//         }
-//     };
-//     var smoothState = $('#main').smoothState(options).data('smoothState');
-// });
-////--> Call all function for Ajax <--////
 function initiate_plugins() {
-
+    console.log('initiate_pluginsinitiate_pluginsinitiate_plugins');
 
     // Left Sidebar
     $('#open-left').sideNav({
@@ -43,20 +8,9 @@ function initiate_plugins() {
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
 
-
-    // Scrolling Floating Action Button
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        if (scroll >= 1) {
-            $(".floating-button").addClass("scrolled-down");
-        } else {
-            $(".floating-button").removeClass("scrolled-down");
-        }
-    });
-
-    // Row Height for Drawer
-    var grandparent_height = $('#grandparent').height();
-    $('.child').height(grandparent_height * 0.25);
+    // // Row Height for Drawer
+    // var grandparent_height = $('#grandparent').height();
+    // $('.child').height(grandparent_height * 0.25);
 
     // Swiper Sliders
     var swiper = new Swiper('.slider', {
@@ -74,7 +28,7 @@ function initiate_plugins() {
     });
 
     // Material Layout
-  //  $('.parallax').parallax();
+    $('.parallax').parallax();
     $(function () {
         var hBanner = $('.h-banner').height();
         var cbHeight = hBanner - 56;
@@ -130,18 +84,18 @@ $('#open-left').sideNav({
 
 
 // Scrolling Floating Action Button
-$(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 1) {
-        $(".floating-button").addClass("scrolled-down");
-    } else {
-        $(".floating-button").removeClass("scrolled-down");
-    }
-});
+// $(window).scroll(function () {
+//     var scroll = $(window).scrollTop();
+//     if (scroll >= 1) {
+//         $(".floating-button").addClass("scrolled-down");
+//     } else {
+//         $(".floating-button").removeClass("scrolled-down");
+//     }
+// });
 
 // Row Height for Drawer
-var grandparent_height = $('#grandparent').height();
-$('.child').height(grandparent_height * 0.25);
+// var grandparent_height = $('#grandparent').height();
+// $('.child').height(grandparent_height * 0.25);
 
 // Swiper sliders
 var swiper = new Swiper('.slider', {
@@ -185,12 +139,12 @@ $( document ).ready(function() {
             console.log('removeClass h-bg !!!!!!!!!');
         }
         // For heading Title
-        if (scroll >= hHeight) {
+        if (scroll >= hHeight && bannerTitleElement.is(":visible")) {
             bannerTitleElement.hide();
             haloNavTitleElement.show();
             console.log('show title');
         }
-        if (scroll <= hHeight) {
+        if (scroll <= hHeight && haloNavTitleElement.is(":visible")) {
             bannerTitleElement.show();
             haloNavTitleElement.hide();
             console.log('hide title !!!!!!!!!!!!!!!!');
@@ -200,16 +154,16 @@ $( document ).ready(function() {
     var fadeStart = 50 // 100px scroll or less will equiv to 1 opacity
     fadeUntil = 150 // 150px scroll or more will equiv to 0 opacity
     fading = $('.resize');
-    $(window).on('scroll', function () {
-        var offset = $(document).scrollTop(),
-            opacity = 0;
-        if (offset <= fadeStart) {
-            opacity = 1;
-        } else if (offset <= fadeUntil) {
-            opacity = 1 - offset / fadeUntil;
-        }
-        fading.css({
-            'transform': 'scale(' + opacity + ')'
-        });
-    });
+    // $(window).on('scroll', function () {
+    //     var offset = $(document).scrollTop(),
+    //         opacity = 0;
+    //     if (offset <= fadeStart) {
+    //         opacity = 1;
+    //     } else if (offset <= fadeUntil) {
+    //         opacity = 1 - offset / fadeUntil;
+    //     }
+    //     fading.css({
+    //         'transform': 'scale(' + opacity + ')'
+    //     });
+    // });
 });

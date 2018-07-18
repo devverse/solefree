@@ -16,6 +16,7 @@ module.exports = function (grunt) {
         src: [
           'app/manager.js',
           'app/config.js',
+          'app/settings.js',
           'app/models/state_service.js',
           'app/models/login_service.js',
           'app/models/store_service.js',
@@ -32,7 +33,18 @@ module.exports = function (grunt) {
           'app/controllers/releases_c.js',
           'app/controllers/account_c.js',
           'app/controllers/past_releases_c.js',
-          'app/controllers/details_c.js'
+          'app/controllers/details_c.js',
+          'app/controllers/news_c.js',
+          'app/controllers/social_c.js',
+          'app/controllers/more_c.js',
+          'app/controllers/stats_c.js',
+          'app/controllers/sales_c.js',
+          'app/controllers/view_c.js',
+          'app/controllers/stories_c.js',
+          'app/controllers/story_c.js',
+          'app/controllers/store_item_c.js',
+          'app/controllers/login_c.js',
+          'app/controllers/signup_c.js'
         ],
         dest: 'dist/application.concat.js'
       },
