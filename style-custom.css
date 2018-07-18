@@ -25,6 +25,7 @@
 
 .blog-fullwidth {
   margin-bottom: 0px;
+  min-height: 300px;
 }
 
 .max-image {

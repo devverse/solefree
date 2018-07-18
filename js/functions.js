@@ -159,30 +159,41 @@ var swiper = new Swiper('.slider-sliced', {
 });
 
 // Material Layout
-$('.parallax').parallax();
+//$('.parallax').parallax();
 $( document ).ready(function() {
     var hBanner = $('.h-banner').height();
+
+    if (!hBanner || hBanner === 0) {
+      hBanner = 212;
+    }
+
     var cbHeight = hBanner - 56;
-    var hHeight = hBanner - 86; // for Title
+    var hHeight = hBanner - 86;
+    var haloNavElement = $(".halo-nav");
+    var haloNavTitleElement = $(".halo-nav .title");
+    var bannerTitleElement = $(".banner-title");
 
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        if (scroll >= cbHeight) {
-            $(".halo-nav").addClass('h-bg');
+
+        if (scroll >= cbHeight && !haloNavElement.hasClass('h-bg')) {
+            haloNavElement.addClass('h-bg');
+            console.log('addClass h-bg');
         }
-        if (scroll <= cbHeight) {
-            $(".halo-nav").removeClass('h-bg');
+        if (scroll <= cbHeight && haloNavElement.hasClass('h-bg')) {
+            haloNavElement.removeClass('h-bg');
+            console.log('removeClass h-bg !!!!!!!!!');
         }
         // For heading Title
         if (scroll >= hHeight) {
-            $(".banner-title").hide();
-            $(".halo-nav .title").show();
-            $(".halo-nav").addClass('h-bg');
+            bannerTitleElement.hide();
+            haloNavTitleElement.show();
+            console.log('show title');
         }
         if (scroll <= hHeight) {
-            $(".banner-title").show();
-            $(".halo-nav .title").hide();
-            $(".halo-nav").removeClass('h-bg');
+            bannerTitleElement.show();
+            haloNavTitleElement.hide();
+            console.log('hide title !!!!!!!!!!!!!!!!');
         }
     });
     // opacity Plush button
