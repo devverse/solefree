@@ -477,11 +477,11 @@ blockquote {
     z-index: 2;
     top: 0px;
     background: none;
-    -webkit-transition: height 0.3s;
+    /* -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
     -ms-transition: height 0.3s;
     -o-transition: height 0.3s;
-    transition: height 0.3s;
+    transition: height 0.3s; */
 }
 .halo-nav {
     background: none;
@@ -1038,25 +1038,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .blog-fullwidth .blog-preview h4 {
     margin-top: 0;
 }
-/* Promo */
 
-.promo {
-    margin-bottom: 20px;
-}
-.promo i {
-    margin: 0;
-    font-size: 96px;
-    display: block;
-}
-h6.promo-caption {
-    font-size: 22px;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-.promo p {
-    padding: 0 20px;
-}
 /* Features List */
 
 .feature-list {
@@ -1084,30 +1066,8 @@ h6.promo-caption {
     margin: 2px 0 10px;
     text-transform: uppercase;
 }
-/* Project */
 
-.project-image {
-    margin: 20px;
-}
-.project-info {
-    padding: 0 20px;
-}
-.project-info h2 {
-    margin-bottom: 0;
-}
-.project-social-share {
-    position: absolute;
-    right: 0;
-    top: -4px;
-}
-.project-social-share i {
-    margin-left: 10px;
-}
-.project-comments .comments-list .author {
-    margin-bottom: 0;
-}
 /* Card */
-
 .card {
     margin: 20px;
     padding: 20px;
@@ -1175,73 +1135,8 @@ li.your-comment {
     padding-top: 4px;
     display: block;
 }
-/* Calendar */
 
-.calendar table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-.calendar td,
-.calendar th {
-    padding: 0;
-}
-.calendar {
-    text-align: center;
-    padding: 0 20px 20px;
-}
-.calendar thead {
-    color: #fff;
-    opacity: 0.9;
-    border: none;
-}
-.calendar tbody {
-    color: #fff;
-}
-.calendar tbody td:hover {
-    background-color: rgba(255, 255, 255, .2);
-}
-.calendar td {
-    border: 2px solid transparent;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    width: calc(13vw - 16px);
-    height: calc(13vw - 16px);
-    line-height: calc(13vw - 18px);
-    margin: 5px;
-}
-.calendar .prev-month,
-.calendar .next-month {
-    opacity: 0.4;
-}
-.current-day {
-    background: #fff;
-    color: #FF4081;
-}
-.calendar tbody td.current-day:hover {
-    background-color: rgba(255, 255, 255, 1);
-}
-.event {
-    cursor: pointer;
-    position: relative;
-}
-.event:after {
-    background: #fff;
-    border-radius: 50%;
-    bottom: 3px;
-    display: block;
-    content: '';
-    height: 4px;
-    left: 50%;
-    margin: 0px 0 0 -2px;
-    position: absolute;
-    width: 4px;
-}
-.event.current-day:after {
-    background: #fff;
-}
 /* Activity */
-
 .activity {
     margin: 0 20px;
     padding: 20px 0;

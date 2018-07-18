@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     meta: {
-      version: '4.5.0',
+      version: '7.0.0',
       banner: '/*! SoleInsider  - v<%= meta.version %> - '
     },
 

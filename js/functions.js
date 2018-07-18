@@ -1,16 +1,10 @@
 function initiate_plugins() {
-    console.log('initiate_pluginsinitiate_pluginsinitiate_plugins');
-
-    // Left Sidebar
+  // Left Sidebar
     $('#open-left').sideNav({
         menuWidth: 240, // Default is 240
         edge: 'left', // Choose the horizontal origin
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
-
-    // // Row Height for Drawer
-    // var grandparent_height = $('#grandparent').height();
-    // $('.child').height(grandparent_height * 0.25);
 
     // Swiper Sliders
     var swiper = new Swiper('.slider', {
@@ -83,20 +77,6 @@ $('#open-left').sideNav({
 });
 
 
-// Scrolling Floating Action Button
-// $(window).scroll(function () {
-//     var scroll = $(window).scrollTop();
-//     if (scroll >= 1) {
-//         $(".floating-button").addClass("scrolled-down");
-//     } else {
-//         $(".floating-button").removeClass("scrolled-down");
-//     }
-// });
-
-// Row Height for Drawer
-// var grandparent_height = $('#grandparent').height();
-// $('.child').height(grandparent_height * 0.25);
-
 // Swiper sliders
 var swiper = new Swiper('.slider', {
     pagination: '.swiper-pagination',
@@ -150,20 +130,4 @@ $( document ).ready(function() {
             console.log('hide title !!!!!!!!!!!!!!!!');
         }
     });
-    // opacity Plush button
-    var fadeStart = 50 // 100px scroll or less will equiv to 1 opacity
-    fadeUntil = 150 // 150px scroll or more will equiv to 0 opacity
-    fading = $('.resize');
-    // $(window).on('scroll', function () {
-    //     var offset = $(document).scrollTop(),
-    //         opacity = 0;
-    //     if (offset <= fadeStart) {
-    //         opacity = 1;
-    //     } else if (offset <= fadeUntil) {
-    //         opacity = 1 - offset / fadeUntil;
-    //     }
-    //     fading.css({
-    //         'transform': 'scale(' + opacity + ')'
-    //     });
-    // });
 });

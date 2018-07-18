@@ -3,11 +3,11 @@
   <div class="banner-title" style="text-transform: capitalize">{{type}}</div>
 </div> <br/>
 <releases-loader ng-if="show_loading == true"> </releases-loader>
-<div class="blog-fullwidth animated fadeinup delay-1" ng-repeat="r in products">
+<div class="blog-fullwidth animated fadeinup" ng-repeat="r in products">
   <div class="blog-image"> <img ng-src="{{r.image.sizes.Original.url}}" alt="">
     <div class="opacity-overlay-top"></div>
   </div>
   <div class="blog-preview p-20">
     <h4 class="uppercase">{{r.brandedName}}</h4>
-    <p>{{r.priceLabel}} - ({{r.discount}}% Off) </p> <a href="#" ng-click="details($event, r)" class="waves-effect waves-light btn primary-color">Details</a> </div>
-</div> <button ng-click="paginate($event)" class="waves-effect waves-light btn primary-color" style="width:100%"> View More </button>
+    <p>{{r.priceLabel}} - ({{r.discount}}% Off) </p> <a href="#" ng-click="details($event, r)" class="btn primary-color">Details</a> </div>
+</div> <button ng-click="paginate($event)" class="btn primary-color" style="width:100%"> View More </button>

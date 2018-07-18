@@ -6,7 +6,7 @@
 <releases-loader ng-if="show_loading == true"> </releases-loader>
 <div class="animated fadeinup">
   <div ng-repeat="r in releases track by r.id">
-    <div class="blog-fullwidth animated fadeinup delay-1">
+    <div class="blog-fullwidth animated fadeinup">
       <div class="blog-header">
         <div class="blog-author"> <span>{{r.name}}</span> <span class="small">Released On {{r.release_date}} </span> </div>
       </div>
@@ -16,7 +16,7 @@
               <a href="#" ng-click="details($event, r)">
                 <div class="opacity-overlay-top"></div>
               </a> </div>
-      <div class="blog-preview p-10"> <a href="/" class="waves-effect waves-light btn primary-color" ng-if="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a> </div>
+      <div class="blog-preview p-10"> <a href="/" class="btn primary-color" ng-if="r.showBuyLink" ng-click="buyProduct($event, r)"> Buy Now </a> </div>
     </div>
   </div>
 </div>
