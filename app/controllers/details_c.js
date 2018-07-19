@@ -165,7 +165,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
 
-    window.vibrate(10);
+    // Vibrate
+    window.vibrate(5);
 
     var member_id = localStorage.getItem("member_id");
 
@@ -274,7 +275,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getComments();
     $scope.scrollTop();
     window.randomInterstitial();
-    window.vibrate(3000);
+
+    window.badge.increase(1, function (badge) {
+      alert('increase');
+    });
   })();
 
 }

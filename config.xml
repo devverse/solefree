@@ -56,19 +56,19 @@ versionCode="46"
 
 	<!-- IOS -->
 	<gap:splash src="splash/ios/Default~iphone.png"  gap:platform="ios" width="320" height="480" />
-  	<gap:splash src="splash/ios/Default@2x~iphone_640x960.png" gap:platform="ios" width="640" height="960" />
-  	<gap:splash src="splash/ios/ios/Default~ipad.png" gap:platform="ios" width="720" height="1200" />
+  <gap:splash src="splash/ios/Default@2x~iphone_640x960.png" gap:platform="ios" width="640" height="960" />
+  <gap:splash src="splash/ios/ios/Default~ipad.png" gap:platform="ios" width="720" height="1200" />
 	<gap:splash src="splash/ios/Default-Portrait~ipad_768x1024.png" gap:platform="ios" width="768" height="1024" />
 	<gap:splash src="splash/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048" />
-  	<gap:splash src="splash/ios/Default-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008" />
+  <gap:splash src="splash/ios/Default-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008" />
 	<gap:splash src="splash/ios/Default-Landscape~ipad_1024x768.png" gap:platform="ios" width="1024" height="768" />
 	<gap:splash src="splash/ios/Default-Landscape~ipad_1024x748.png" gap:platform="ios" width="1024" height="748" />
-  	<gap:splash src="splash/ios/Default-Landscape@2x~ipad_2048x1536.png" gap:platform="ios" width="2048" height="1536" />
-  	<gap:splash src="splash/ios/Default-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1496" />
-  	<gap:splash src="splash/ios/Default-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136" />
-  	<gap:splash src="splash/ios/Default-750@2x~iphone6-landscape_1334x750.png" gap:platform="ios" width="1334" height="750" />
-  	<gap:splash src="splash/ios/Default-750@2x~iphone6-portrait_750x1334.png" gap:platform="ios" width="750" height="1334" />
-  	<gap:splash src="splash/ios/Default-1242@3x~iphone6s-landscape_2208x1242.png" gap:platform="ios" width="2208" height="1242" />
+  <gap:splash src="splash/ios/Default-Landscape@2x~ipad_2048x1536.png" gap:platform="ios" width="2048" height="1536" />
+  <gap:splash src="splash/ios/Default-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1496" />
+  <gap:splash src="splash/ios/Default-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136" />
+  <gap:splash src="splash/ios/Default-750@2x~iphone6-landscape_1334x750.png" gap:platform="ios" width="1334" height="750" />
+  <gap:splash src="splash/ios/Default-750@2x~iphone6-portrait_750x1334.png" gap:platform="ios" width="750" height="1334" />
+  <gap:splash src="splash/ios/Default-1242@3x~iphone6s-landscape_2208x1242.png" gap:platform="ios" width="2208" height="1242" />
 	<gap:splash src="splash/ios/Default-1242@3x~iphone6s-portrait_1242x2208.png" gap:platform="ios" width="1242" height="2208" />
 
 
@@ -101,4 +101,5 @@ versionCode="46"
 	<plugin name="cordova-plugin-globalization" spec="~1.11.0" />
 	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 	<plugin name="cordova-plugin-vibration" spec="~3.1.0" />
+	<plugin name="cordova-plugin-badge" spec="~0.8.7" />
 </widget>

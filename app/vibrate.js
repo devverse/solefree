@@ -4,8 +4,8 @@ var vibrate = function() {
 
 window.vibrate = vibrate;
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyVibate, false);
 
-function onDeviceReady() {
+function onDeviceReadyVibate() {
     window.vibrate = navigator.vibrate;
 }
