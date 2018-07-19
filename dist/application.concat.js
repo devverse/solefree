@@ -55,11 +55,11 @@ var vibrate = function() {
 
 window.vibrate = vibrate;
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyVibate, false);
 
-function onDeviceReady() {
+function onDeviceReadyVibate() {
     window.vibrate = navigator.vibrate;
-}
+};
 
 var url = window.location.href;
 var serviceURL = "http://soleinsider.com/public";
@@ -1022,6 +1022,10 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     window.randomInterstitial();
+
+    // window.badge.increase(1, function(badge) {
+    //
+    // });
   })();
 }
 
@@ -1146,29 +1150,29 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.openSiteLink = function(event, product) {
     event.preventDefault();
 
-    var slug = $scope.sluggify(product.name) +  '/';
+    var slug = $scope.sluggify(product.name) + '/';
     var today = new Date();
     var urlDate = today.getFullYear() + "/" + today.getMonth() + "/";
-    var link = 'http://soleinsider.com/view/' + urlDate + slug  + product.id;
+    var link = 'http://soleinsider.com/view/' + urlDate + slug + product.id;
 
     window.open(link, '_blank', 'location=yes');
   };
 
   $scope.sluggify = function(text) {
     return text.toString().toLowerCase()
-      .replace(/\s+/g, '-')           // Replace spaces with -
-      .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-      .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-      .replace(/^-+/, '')             // Trim - from start of text
-      .replace(/-+$/, '');            // Trim - from end of text
+      .replace(/\s+/g, '-') // Replace spaces with -
+      .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+      .replace(/\-\-+/g, '-') // Replace multiple - with single -
+      .replace(/^-+/, '') // Trim - from start of text
+      .replace(/-+$/, ''); // Trim - from end of text
   };
 
-  $scope.isUndefined = function (text) {
+  $scope.isUndefined = function(text) {
     return (text === null);
   };
 
   $scope.voteUp = function(event, comment) {
-    if ($scope.votes.indexOf(comment.id) != -1 ) {
+    if ($scope.votes.indexOf(comment.id) != -1) {
       toastr.error("You've already rated this comment");
     } else {
       $scope.votes.push(comment.id);
@@ -1182,7 +1186,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.voteDown = function(event, comment) {
-    if ($scope.votes.indexOf(comment.id) != -1 ) {
+    if ($scope.votes.indexOf(comment.id) != -1) {
       toastr.error("You've already rated this comment");
     } else {
       $scope.votes.push(comment.id);
@@ -1298,7 +1302,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
 
-    window.vibrate(10);
+    // Vibrate
+    window.vibrate(5);
 
     var member_id = localStorage.getItem("member_id");
 
@@ -1313,8 +1318,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&product_id=" + product.id;
     post += "&status=" + status;
 
-    release_service.sneakerRating(post).then(function(data) {
-    }, function(err) {
+    release_service.sneakerRating(post).then(function(data) {}, function(err) {
       window.console.log(err);
     });
   };
@@ -1346,7 +1350,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       '#SoleInsider ' + product.name,
       product.name,
       'http://soleinsider.com/public/products/' + product.image,
-       null);
+      null);
   };
 
   $scope.addToCalender = function(event, product) {
@@ -1357,7 +1361,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var location = "SoleInsider";
 
     var date = product.release_date_calendar;
-    startDate =  new Date(date);
+    startDate = new Date(date);
     endDate = new Date(date);
 
     var notes = product.name + " Releasing " + startDate;
@@ -1383,7 +1387,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&comment=" + $scope.new_comment;
 
     comments_service.leaveComment(post).then(function(data) {
-      toastr.success("Comment posted!");
+      window.vibrate(5);
+      toastr.success("Comment left!");
       $scope.getComments();
       $scope.new_comment = "";
     }, function(err) {
@@ -1407,7 +1412,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getComments();
     $scope.scrollTop();
     window.randomInterstitial();
-    window.vibrate(3000);
   })();
 
 }

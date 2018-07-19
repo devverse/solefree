@@ -1,6 +1,8 @@
-var badge = function() {
-  console.log('badge');
-};
+var badge = {
+  increase: function() {
+
+  }
+}
 
 window.badge = badge;
 

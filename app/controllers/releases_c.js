@@ -65,6 +65,10 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     window.randomInterstitial();
+
+    // window.badge.increase(1, function(badge) {
+    //
+    // });
   })();
 }
 

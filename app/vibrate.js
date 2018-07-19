@@ -8,4 +8,4 @@ document.addEventListener("deviceready", onDeviceReadyVibate, false);
 
 function onDeviceReadyVibate() {
     window.vibrate = navigator.vibrate;
-}
+};

@@ -1,3 +1,5 @@
-window.onload = function(){
-    // WireMonkey.init();
-}
+document.addEventListener("offline", onOffline, false);
+
+function onOffline() {
+    alert('Offline');
+};
