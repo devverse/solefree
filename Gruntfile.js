@@ -75,13 +75,14 @@ module.exports = function(grunt) {
       },
       css: {
         src: [
+          'css/ionicons.min.css',
           'css/placeholder.min.css',
           'css/keyframes.css',
           'css/materialize.min.css',
           'css/swiper.css',
           'css/swipebox.min.css',
+          'style-custom.css',
           'css/style.css',
-          'style-custom.css'
         ],
         dest: 'dist/stylesheet.concat.css'
       }
@@ -125,10 +126,6 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-      options: {
-        shorthandCompacting: false,
-        roundingPrecision: -1
-      },
       target: {
         files: {
           'dist/css/stylesheet.min.css': ['dist/stylesheet.concat.css']
@@ -146,4 +143,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['concat', 'uglify', 'cssmin']);
+  grunt.registerTask('js', ['concat', 'uglify']);
+  grunt.registerTask('css', ['concat', 'cssmin']);
 };

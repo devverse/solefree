@@ -64,8 +64,8 @@ function initiate_plugins() {
     $('.parallax').parallax();
     $(function () {
         var hBanner = $('.h-banner').height();
-        var cbHeight = hBanner - 56;
-        var hHeight = hBanner - 86; // for Title
+        var cbHeight = hBanner - 86;
+        var hHeight = hBanner - 116; // for Title
 
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();

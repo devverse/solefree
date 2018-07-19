@@ -1,4 +1,4 @@
-/images/*------------------------------------------------------------------
+/*------------------------------------------------------------------
 Project: Halo
 Version: 1.0
 Last change: first release
@@ -313,22 +313,22 @@ blockquote {
 /* Background & Overlay */
 
 .bg-1 {
-    background: url(../images/1.jpg) no-repeat center / cover !important;
+    background: url(../../images/1.jpg) no-repeat center / cover !important;
 }
 .bg-2 {
-    background: url(../images/1.jpg) no-repeat center / cover !important;
+    background: url(../../images/1.jpg) no-repeat center / cover !important;
 }
 .bg-3 {
-    background: url(../images/3.jpg) no-repeat center / cover !important;
+    background: url(../../images/3.jpg) no-repeat center / cover !important;
 }
 .bg-4 {
-    background: url(../images/4.jpg) no-repeat center / cover !important;
+    background: url(../../images/4.jpg) no-repeat center / cover !important;
 }
 .bg-5 {
-    background: url(../images/5.jpg) no-repeat center / cover !important;
+    background: url(../../images/5.jpg) no-repeat center / cover !important;
 }
 .bg-9 {
-    background: url(../images/9.jpg) no-repeat center / cover !important;
+    background: url(../../images/9.jpg) no-repeat center / cover !important;
 }
 .bg-v-1 {
     background: url(../images/v1.jpg) no-repeat center / cover !important;
@@ -349,27 +349,27 @@ blockquote {
     background: url(../images/opacity.jpg) no-repeat center / cover !important;
 }
 .bg-history {
-    background: url(../images/history.jpg) no-repeat center / cover !important;
+    background: url(../../images/history.jpg) no-repeat center / cover !important;
 }
 
 .bg-releases {
-    background: url(../images/releases.jpg) no-repeat center / cover !important;
+    background: url(../../images/releases.jpg) no-repeat center / cover !important;
 }
 
 .bg-shop {
-    background: url(../images/store/banner.jpg) no-repeat center / cover !important;
+    background: url(../../images/store/banner.jpg) no-repeat center / cover !important;
 }
 .bg-shop-sneakers {
-    background: url(../images/store/sneakers.jpg) no-repeat center / cover !important;
+    background: url(../../images/store/sneakers.jpg) no-repeat center / cover !important;
 }
 .bg-shop-clothes {
-    background: url(../images/store/clothes.jpg) no-repeat center / cover !important;
+    background: url(../../images/store/clothes.jpg) no-repeat center / cover !important;
 }
 .bg-shop-accessories {
-    background: url(../images/store/accessories.jpg) no-repeat center / cover !important;
+    background: url(../../images/store/accessories.jpg) no-repeat center / cover !important;
 }
 .bg-shop-sales {
-    background: url(../images/store/sales.jpg) no-repeat center / cover !important;
+    background: url(../../images/store/sales.jpg) no-repeat center / cover !important;
 }
 .opacity-overlay {
     position: absolute;
@@ -430,12 +430,17 @@ blockquote {
 .none {
     display: none;
 }
+.h-banner-home {
+    min-height: 220px !important;
+}
+
 .h-banner {
     height: auto;
     min-height: 180px;
     position: relative;
     z-index: 1;
 }
+
 .h-banner .parallax {
     height: 100%;
 }
@@ -509,8 +514,6 @@ blockquote {
     bottom: 71px;
     color: #fff;
     opacity: 0.6;
-    "
-
 }
 /* Page Header */
 
@@ -628,7 +631,7 @@ footer.page-footer {
     width: 100%;
     height: 56px;
     position: fixed;
-    z-index: 99999;
+    z-index: 99;
     top: 0;
     left: 0;
     right: 0;
@@ -990,7 +993,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     margin-bottom: 20px;
 }
 .blog-fullwidth .blog-header {
-    padding: 20px 20px 20px 80px;
+    /* padding: 20px 20px 20px 80px; */
     position: absolute;
     top: 0;
     left: 0;
@@ -1443,97 +1446,7 @@ li.your-comment {
     -webkit-align-items: center;
     align-items: center;
 }
-/* Tweet */
 
-.twitter {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-}
-.tweet {
-    margin-bottom: 20px;
-}
-.tweet h3 {
-    font-size: 12px;
-    margin: 0 0 5px;
-    opacity: 0.4;
-    webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-.tweet h3:hover {
-    opacity: 1;
-}
-.tweet p {
-    font-size: 12px;
-}
-.tweet p a {
-    font-size: 12px;
-    display: inline;
-    height: auto;
-    line-height: normal;
-    padding: 0;
-}
-/* Facebook */
-
-.facebook {
-    padding: 10px 0;
-}
-.face-notification {
-    display: flex;
-    align-items: flex-start;
-    padding: 10px 0;
-}
-.face-notification img {
-    margin-right: 10px;
-    margin-top: 4px;
-    width: 32px;
-    height: 32px;
-    color: #fff;
-    border-radius: 50%;
-    line-height: 48px;
-    text-align: center;
-}
-.face-notification div {
-    flex: 1;
-    font-size: 12px;
-}
-.face-notification p {
-    margin: 0;
-    font-size: 14px;
-    color: #444;
-}
-.face-notification div .small {
-    opacity: 0.4;
-    display: block;
-}
-/* Follow us */
-
-.follow-us {
-    opacity: 0.6;
-    text-transform: uppercase;
-    webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-.follow-us i {
-    font-size: inherit;
-}
-.follow-us:hover {
-    opacity: 1;
-}
-/* Portfolio */
-
-.portfolio .row {
-    padding: 2px;
-    margin-bottom: 0;
-}
-.portfolio .row .col.s6 {
-    padding: 2px 2px 0;
-}
-.portfolio .row .col.s6 img {
-    margin-bottom: 4px;
-}
-.portfolio .row .col.s6 a:last-child img {
-    margin-bottom: 2px;
-}
 /* Checkout */
 
 .checkout-header {
@@ -2336,43 +2249,4 @@ span.data-color {
 }
 .mix figure {
     display: none;
-}
-/* Gallery Card */
-
-.grid-item.gallery-item-card {
-    background-color: #fff;
-    border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-    margin: 0 3px 6px;
-    width: calc(50% - 6px);
-}
-.gallery-item-header {
-    padding: 10px 20px;
-    position: relative;
-}
-.gallery-item-header img {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-.gallery-item-header span {
-    display: block;
-    font-size: 14px;
-}
-/* Gallery Fullwidth */
-
-.gallery-fullwidth .mix,
-.gallery-fullwidth .gap {
-    float: none;
-    width: 100%;
-    margin: 0;
-}
-/* filter */
-
-#filter.grid .mix {
-    width: 50%;
-}
-#filter .mix {
-    width: 100%;
 }

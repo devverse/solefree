@@ -45,7 +45,7 @@
           <img ng-src="images/profiles/{{comment.profile_image}}" class="details-avatar">
           <div class="comment-body">
             <span class="author uppercase" ng-if="comment.email.length > 0"> {{comment.email.substr(0,6)}}</span>
-            <span class="author uppercase" ng-if="isUndefined(comment.email)"> SoleInsider User</span>
+            <span class="author uppercase" ng-if="isUndefined(comment.email)"> Anonymous</span>
             <div class="date">{{comment.comment_date}}</div>
             <div>
             <p> {{comment.comment}}</p>
