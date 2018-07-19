@@ -165,6 +165,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
 
+    window.vibrate(10);
+
     var member_id = localStorage.getItem("member_id");
 
     if (status == "yes" && parseInt(product.yes_percentage) < 98) {
@@ -272,6 +274,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getComments();
     $scope.scrollTop();
     window.randomInterstitial();
+    window.vibrate(3000);
   })();
 
 }

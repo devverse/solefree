@@ -15,6 +15,7 @@ module.exports = function(grunt) {
       application: {
         src: [
           'app/manager.js',
+          'app/vibrate.js',
           'app/config.js',
           'app/settings.js',
           'app/models/state_service.js',

@@ -40,14 +40,26 @@ function prepareInterstitial() {
 }
 
 function randomInterstitial() {
-  var random = Math.floor((Math.random() * 15) + 1);
+  var random = Math.floor((Math.random() * 30) + 1);
 
-  if (random === 3) {
+  if (random === 1) {
     prepareInterstitial();
   }
 }
 
 document.addEventListener('prepareInterstitial', prepareInterstitial, false);
+
+var vibrate = function() {
+  console.log('vibrate');
+};
+
+window.vibrate = vibrate;
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    window.vibrate = navigator.vibrate;
+}
 
 var url = window.location.href;
 var serviceURL = "http://soleinsider.com/public";
@@ -1286,6 +1298,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
 
+    window.vibrate(10);
+
     var member_id = localStorage.getItem("member_id");
 
     if (status == "yes" && parseInt(product.yes_percentage) < 98) {
@@ -1393,6 +1407,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     $scope.getComments();
     $scope.scrollTop();
     window.randomInterstitial();
+    window.vibrate(3000);
   })();
 
 }
