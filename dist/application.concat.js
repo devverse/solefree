@@ -111,7 +111,7 @@ soleinsiderApp.factory('State', function($q, $http){
 
   };
 
-  self.getCachedReleases = function() {
+  self.getReleases = function() {
     return self.makePost('/mobile/releaseDatesUnformatted');
   };
 
@@ -125,7 +125,7 @@ soleinsiderApp.factory('State', function($q, $http){
 
   return {
     data:{
-      releases: self.getCachedReleases(),
+      releases: self.getReleases(),
       news: self.getNews(),
       pastReleases: self.getPastReleases()
     },
@@ -421,99 +421,6 @@ soleinsiderApp.factory('release_service', [ '$rootScope', '$q', '$http',
   }
 ]);
 
-soleinsiderApp.factory('restock_service', ['$rootScope', '$q', '$http',
-  function($rootScope, $q, $http) {
-
-    var api = soleinsider.base_url;
-
-    self.makePost = function(endpoint, post) {
-
-      post = (!post) ? {} : post;
-      if (!endpoint) {
-        window.alert("Could not connect to database");
-        return;
-      }
-
-      var deferred = $q.defer();
-      $http.post(api + endpoint, post).success(function(data) {
-        if (data) {
-          if (data == 'false') {
-            data = [];
-          }
-          deferred.resolve(data);
-        } else {
-          deferred.reject("Data was rejected: " + post);
-        }
-      });
-      return deferred.promise;
-
-    };
-
-    self.getMyRestocks = function() {
-      var data = "member_id=" + localStorage.getItem("member_id");
-      return self.makePost('/mobile/getMyRestocks', data).then(
-        function(data) {
-          $rootScope.$broadcast('getMyRestocks', data);
-        }, function(err) {
-          alert(err);
-        });
-
-    };
-
-    self.getPastRestocks = function() {
-      return self.makePost('/mobile/getAvailabilityHistory');
-    };
-
-    self.getRestocks = function() {
-      return self.makePost('/mobile/productsChecks');
-    };
-
-    self.addAlert = function(product) {
-
-      member_id = localStorage.getItem("member_id");
-      var data = "product_id=" + product.id;
-      data += "&member_id=" + member_id;
-      return self.makePost('/mobile/addRestockAlert', data);
-    };
-
-    self.deleteRestock = function(product) {
-
-      member_id = localStorage.getItem("member_id");
-      var data = "product_id=" + product.id;
-      data += "&member_id=" + member_id;
-      return self.makePost('/mobile/deleteRestock', data).then(
-        function(data) {
-          $rootScope.$broadcast('deleteRestock', data);
-        }, function(err) {
-          alert(err);
-        });
-    };
-
-    return {
-
-      getRestocks: function() {
-        return self.getRestocks();
-      },
-
-      getPastRestocks: function() {
-        return self.getPastRestocks();
-      },
-
-      addAlert: function(product) {
-        return self.addAlert(product);
-      },
-
-      getMyRestocks: function() {
-        return self.getMyRestocks();
-      },
-
-      deleteRestock: function(product) {
-        return self.deleteRestock(product);
-      }
-    };
-
-  }
-]);
 soleinsiderApp.factory('app_service', ['$rootScope', '$q', '$http',
   function($rootScope, $q, $http) {
 
@@ -1042,7 +949,9 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
 
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      $().toastmessage('showErrorToast', "You need to be logged to update your account");
+      $.jnoty("Your must be logged in to update your account", {
+        theme: 'error'
+      });
       return false;
     }
 
@@ -1056,7 +965,9 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     }
 
     account_service.updateAccount(post).then(function(data) {
-      toastr.success("Your account has been udpated");
+      $.jnoty("Your account has been udpated", {
+        theme: 'success'
+      });
       $route.reload();
     }, function(err) {
       window.console.log(err);
@@ -1083,7 +994,9 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     member_id = localStorage.getItem("member_id");
     username = localStorage.getItem("username");
 
-    toastr.success("Cache has been cleared");
+    $.jnoty("Cache has been cleared", {
+      theme: 'success'
+    });
     localStorage.clear();
 
     localStorage.setItem("member_id", member_id);
@@ -1096,7 +1009,6 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
-    window.randomInterstitial();
   })();
 }
 
@@ -1173,7 +1085,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.voteUp = function(event, comment) {
     if ($scope.votes.indexOf(comment.id) != -1) {
-      toastr.error("You've already rated this comment");
+      $.jnoty("You've already rated this comment", {
+        theme: 'error'
+      });
+
     } else {
       $scope.votes.push(comment.id);
       comment.votes_up++;
@@ -1187,7 +1102,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.voteDown = function(event, comment) {
     if ($scope.votes.indexOf(comment.id) != -1) {
-      toastr.error("You've already rated this comment");
+      $.jnoty("You've already rated this comment", {
+        theme: 'error'
+      });
     } else {
       $scope.votes.push(comment.id);
       comment.votes_down++;
@@ -1266,7 +1183,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.addReminder = function(product) {
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      toastr.error("You must be logged for reminders");
+      $.jnoty("You must be logged for reminders", {
+        theme: 'error'
+      });
       return;
     }
 
@@ -1276,7 +1195,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showerror = false;
         $scope.sneakerName = product.name;
         $scope.addLocalNotification(product);
-        toastr.success("Reminder saved for " + product.name);
+        $.jnoty("Reminder saved for " + product.name, {
+          theme: 'success'
+        });
       },
       function(err) {
         alert(err);
@@ -1388,7 +1309,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     comments_service.leaveComment(post).then(function(data) {
       window.vibrate(5);
-      toastr.success("Comment left!");
+      $.jnoty("Comment Left Successfully", {
+        theme: 'success'
+      });
       $scope.getComments();
       $scope.new_comment = "";
     }, function(err) {
@@ -1933,10 +1856,16 @@ function loginController($scope, $rootScope, login_service, $location) {
         localStorage.setItem("username", account.email);
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
-        toastr.success("You are now logged in");
+
+        $.jnoty("You are now logged in", {
+          theme: 'success'
+        });
         $location.path('account');
       } else {
-        toastr.error("Incorrect username or password");
+
+        $.jnoty("Incorrect username or password", {
+          theme: 'error'
+        });
       }
     }, function(err) {
 
@@ -1964,7 +1893,10 @@ function loginController($scope, $rootScope, login_service, $location) {
       $("html, body").animate({
         scrollTop: 0
       }, "slow");
-      $().toastmessage('showErrorToast', "Incorrect information used");
+      $.jnoty("Incorrect information used", {
+        theme: 'error'
+      });
+
       return;
     } else {
 
@@ -1978,11 +1910,15 @@ function loginController($scope, $rootScope, login_service, $location) {
         if (data !== "false" && data !== false && data.length !== 0) {
           localStorage.setItem("username", newaccount.username);
           localStorage.setItem("member_id", data);
-          $().toastmessage('showErrorToast', "Your account has been created");
+          $.jnoty("Your account has been created", {
+            theme: 'success'
+          });
           $scope.toggleLogin();
 
         } else {
-          $().toastmessage('showErrorToast', "This username is already in use");
+          $.jnoty("This username is already in use", {
+            theme: 'error'
+          });
         }
       }, function(err) {
         window.console.log(err);

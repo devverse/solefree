@@ -25,7 +25,7 @@ soleinsiderApp.factory('State', function($q, $http){
 
   };
 
-  self.getCachedReleases = function() {
+  self.getReleases = function() {
     return self.makePost('/mobile/releaseDatesUnformatted');
   };
 
@@ -39,7 +39,7 @@ soleinsiderApp.factory('State', function($q, $http){
 
   return {
     data:{
-      releases: self.getCachedReleases(),
+      releases: self.getReleases(),
       news: self.getNews(),
       pastReleases: self.getPastReleases()
     },

@@ -9,7 +9,9 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
 
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      $().toastmessage('showErrorToast', "You need to be logged to update your account");
+      $.jnoty("Your must be logged in to update your account", {
+        theme: 'error'
+      });
       return false;
     }
 
@@ -23,7 +25,9 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     }
 
     account_service.updateAccount(post).then(function(data) {
-      toastr.success("Your account has been udpated");
+      $.jnoty("Your account has been udpated", {
+        theme: 'success'
+      });
       $route.reload();
     }, function(err) {
       window.console.log(err);
@@ -50,7 +54,9 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     member_id = localStorage.getItem("member_id");
     username = localStorage.getItem("username");
 
-    toastr.success("Cache has been cleared");
+    $.jnoty("Cache has been cleared", {
+      theme: 'success'
+    });
     localStorage.clear();
 
     localStorage.setItem("member_id", member_id);
@@ -63,6 +69,5 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     menu_service.handleMenu();
-    window.randomInterstitial();
   })();
 }

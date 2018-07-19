@@ -23,7 +23,9 @@ function myReleasesController($scope, $rootScope, release_service) {
   $scope.deleteRelease = function(product) {
     release_service.deleteRelease(product).then(
       function(data) {
-        toastr.success("Reminder deleted for " + product.name);
+        $.jnoty("Reminder deleted for " + product.name, {
+          theme: 'success'
+        });
       },
       function(err) {
         alert(err);

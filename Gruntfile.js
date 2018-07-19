@@ -18,11 +18,12 @@ module.exports = function(grunt) {
           'app/vibrate.js',
           'app/config.js',
           'app/settings.js',
+          'app/badge.js',
+          'app/connection.js',
           'app/models/state_service.js',
           'app/models/login_service.js',
           'app/models/store_service.js',
           'app/models/release_service.js',
-          'app/models/restock_service.js',
           'app/models/app_service.js',
           'app/models/account_service.js',
           'app/models/comments_service.js',
@@ -53,7 +54,6 @@ module.exports = function(grunt) {
         src: [
           'js/lib/angular.js',
           'js/lib/angular-route.js',
-          'js/lib/angular-animate.js',
           'js/lib/angular-sanitize.min.js',
           'js/lib/angular-vs-repeat.js'
         ],
@@ -62,6 +62,7 @@ module.exports = function(grunt) {
       vendor: {
         src: [
           'js/jquery-2.1.0.min.js',
+          'js/jnoty.js',
           'js/jquery.smoothState.min.js',
           'js/materialize.min.js',
           'js/swiper.min.js',
@@ -69,8 +70,6 @@ module.exports = function(grunt) {
           'js/moment.js',
           'js/lazyload.min.js',
           'js/gage.js',
-          'js/toastr.js',
-          'js/toastr-init.js'
         ],
         dest: 'dist/vendor.concat.js'
       },
@@ -82,6 +81,7 @@ module.exports = function(grunt) {
           'css/materialize.min.css',
           'css/swiper.css',
           'css/swipebox.min.css',
+          'css/jnoty.css',
           'style-custom.css',
           'css/style.css',
         ],

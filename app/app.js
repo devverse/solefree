@@ -15,10 +15,6 @@ soleinsiderApp.config(['$routeProvider',
       templateUrl: admin_url + 'partials/releases.html',
       controller: releasesController
     }).
-    when('/releases', {
-      templateUrl: admin_url + 'partials/releases.html',
-      controller: releasesController
-    }).
     when('/past_releases', {
       templateUrl: admin_url + 'partials/past_releases.html',
       controller: pastReleasesController
@@ -316,7 +312,6 @@ soleinsiderApp.directive('slideshowDirective', function() {
         });
         //$('.parallax').parallax();
       }, 500);
-
     }
   };
 });

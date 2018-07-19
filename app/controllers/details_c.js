@@ -36,7 +36,10 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.voteUp = function(event, comment) {
     if ($scope.votes.indexOf(comment.id) != -1) {
-      toastr.error("You've already rated this comment");
+      $.jnoty("You've already rated this comment", {
+        theme: 'error'
+      });
+
     } else {
       $scope.votes.push(comment.id);
       comment.votes_up++;
@@ -50,7 +53,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
   $scope.voteDown = function(event, comment) {
     if ($scope.votes.indexOf(comment.id) != -1) {
-      toastr.error("You've already rated this comment");
+      $.jnoty("You've already rated this comment", {
+        theme: 'error'
+      });
     } else {
       $scope.votes.push(comment.id);
       comment.votes_down++;
@@ -129,7 +134,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.addReminder = function(product) {
     member_id = localStorage.getItem("member_id");
     if (member_id == "false" || member_id == 0 || member_id == null) {
-      toastr.error("You must be logged for reminders");
+      $.jnoty("You must be logged for reminders", {
+        theme: 'error'
+      });
       return;
     }
 
@@ -139,7 +146,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         $scope.showerror = false;
         $scope.sneakerName = product.name;
         $scope.addLocalNotification(product);
-        toastr.success("Reminder saved for " + product.name);
+        $.jnoty("Reminder saved for " + product.name, {
+          theme: 'success'
+        });
       },
       function(err) {
         alert(err);
@@ -251,7 +260,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     comments_service.leaveComment(post).then(function(data) {
       window.vibrate(5);
-      toastr.success("Comment left!");
+      $.jnoty("Comment Left Successfully", {
+        theme: 'success'
+      });
       $scope.getComments();
       $scope.new_comment = "";
     }, function(err) {

@@ -30,10 +30,16 @@ function loginController($scope, $rootScope, login_service, $location) {
         localStorage.setItem("username", account.email);
         localStorage.setItem("member_id", data.id);
         $scope.toggleLogin();
-        toastr.success("You are now logged in");
+
+        $.jnoty("You are now logged in", {
+          theme: 'success'
+        });
         $location.path('account');
       } else {
-        toastr.error("Incorrect username or password");
+
+        $.jnoty("Incorrect username or password", {
+          theme: 'error'
+        });
       }
     }, function(err) {
 
@@ -61,7 +67,10 @@ function loginController($scope, $rootScope, login_service, $location) {
       $("html, body").animate({
         scrollTop: 0
       }, "slow");
-      $().toastmessage('showErrorToast', "Incorrect information used");
+      $.jnoty("Incorrect information used", {
+        theme: 'error'
+      });
+
       return;
     } else {
 
@@ -75,11 +84,15 @@ function loginController($scope, $rootScope, login_service, $location) {
         if (data !== "false" && data !== false && data.length !== 0) {
           localStorage.setItem("username", newaccount.username);
           localStorage.setItem("member_id", data);
-          $().toastmessage('showErrorToast', "Your account has been created");
+          $.jnoty("Your account has been created", {
+            theme: 'success'
+          });
           $scope.toggleLogin();
 
         } else {
-          $().toastmessage('showErrorToast', "This username is already in use");
+          $.jnoty("This username is already in use", {
+            theme: 'error'
+          });
         }
       }, function(err) {
         window.console.log(err);
