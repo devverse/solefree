@@ -102,5 +102,4 @@ versionCode="46"
 	<plugin name="cordova-plugin-badge" spec="~0.8.7" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
-	<plugin name="cordova-plugin-animated-splashscreen" source="npm" />
 </widget>
