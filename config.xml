@@ -45,7 +45,7 @@ versionCode="46"
 	<icon src="icons/windows/icon.png" gap:platform="winphone" />
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
 
-  <gap:splash src="splash/splash.png" />
+  <gap:splash src="splash.png" />
 
     <!-- Android touch -->
 	<gap:splash src="splash/android/drawable-mdpi/soleinsider_splash.png" platform="android" qualifier="mdpi" />
@@ -79,7 +79,8 @@ versionCode="46"
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
-	<preference name='phonegap-version' value='cli-7.0.1' />
+	<preference name="SplashScreen" value="splash" />
+	<preference name='phonegap-version' value='cli-8.0.0' />
 	<preference name="fullscreen" value="false" />
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
@@ -88,21 +89,6 @@ versionCode="46"
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#2196F3" />
 	<preference name="StatusBarStyle" value="lightcontent" />
-
-	<!-- Splash -->
-	<preference name="AnimatedSplashScreenAnimationDuration" value="5" />
-	<preference name="SplashScreen" value="none" />
-	<preference name="AnimatedSplashScreenAnimationRepeatCount" value="0" />
-	<preference name="AnimatedSplashScreenIosImages" value="1.jpg,2.jpg,3.jpg,4.jpg,5.jpg" />
-
-	<platform name="ios">
-		<custom-resource catalog="animated-1" idiom="universal" scale="1x" src="splash/ios/animated/1.jpg" type="image" />
-		<custom-resource catalog="animated-2" idiom="universal" scale="1x" src="splash/ios/animated/2.jpg" type="image" />
-		<custom-resource catalog="animated-3" idiom="universal" scale="1x" src="splash/ios/animated/3.jpg" type="image" />
-		<custom-resource catalog="animated-4" idiom="universal" scale="1x" src="splash/ios/animated/4.jpg" type="image" />
-		<custom-resource catalog="animated-5" idiom="universal" scale="1x" src="splash/ios/animated/5.jpg" type="image" />
-	</platform>
-	<!-- Splash -->
 	<allow-navigation href="*" />
 
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />

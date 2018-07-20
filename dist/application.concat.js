@@ -836,20 +836,18 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.releaseAddedAlert = function(data) {
     if (localStorage.getItem('release-date-id') == null) {
-      localStorage.setItem('release-date-id', 2480);
+      localStorage.setItem('release-date-id', 4500);
     }
 
     var newReleases = 0;
     var newHigh = 0;
     var currentHigh = parseInt(localStorage.getItem('release-date-id'));
 
-    for (var key in data) {
-      for (var x = 0; x < data[key].products.length; x++) {
-        if (data[key].products[x].id > currentHigh) {
-          newHigh = data[key].products[x].id;
-          currentHigh = newHigh
-          newReleases++;
-        }
+    for (var x = 0; x < data.length; x++) {
+      if (data[x].id > currentHigh) {
+        newHigh = data[x].id;
+        currentHigh = newHigh
+        newReleases++;
       }
     }
 
@@ -861,7 +859,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       localStorage.setItem('release-date-id', newHigh);
 
       window.badge.increase(newHigh, function(badge) {
-
       });
     }
   };
@@ -1119,51 +1116,38 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     });
   };
 
-  $scope.addReminder = function(product) {
-    member_id = localStorage.getItem("member_id");
-    if (member_id == "false" || member_id == 0 || member_id == null) {
-      $.jnoty("You must be logged for reminders", {
-        theme: 'error'
-      });
-      return;
-    }
-
-    release_service.addReminder(product, member_id).then(
-      function(data) {
-        $scope.showmsg = true;
-        $scope.showerror = false;
-        $scope.sneakerName = product.name;
-        $scope.addLocalNotification(product);
-        $.jnoty("Reminder saved for " + product.name, {
-          theme: 'success'
-        });
-      },
-      function(err) {
-        alert(err);
-      }
-    );
+  $scope.addReminder = function(event, product) {
+    event.preventDefault();
+    $scope.addLocalNotification(product);
+    $.jnoty("Reminder saved for " + product.name, {
+      theme: 'success'
+    });
   };
 
   $scope.addLocalNotification = function(product) {
     var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
-    formatted = new Date(formatted);
+    formattedDate = new Date(formatted);
 
-    cordova.plugins.notification.local.schedule({
-      id: product.id,
-      title: "Sneaker Release",
-      text: product.name + " Releasing Today",
-      at: formatted,
-      led: "FF0000",
-      sound: null,
-      icon: "file://icons/push/logo.png"
-    });
+    if (typeof cordova != "undefined") {
+      cordova.plugins.notification.local.schedule({
+        id: product.id,
+        title: "Sneaker Release",
+        text: product.name + " Releasing Today",
+        at: formattedDate,
+        led: "FF0000",
+        sound: null,
+        icon: "file://icons/push/logo.png"
+      });
+    }
+
+    window.vibrate(1);
   };
 
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
 
     // Vibrate
-    window.vibrate(5);
+    window.vibrate(1);
 
     var member_id = localStorage.getItem("member_id");
 

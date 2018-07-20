@@ -86,7 +86,7 @@ module.exports = function(grunt) {
           'css/materialize.min.css',
           'css/swiper.css',
           'css/jnoty.css',
-          'style-custom.css',
+          'css/style-custom.css',
           'css/style.css',
         ],
         dest: 'dist/stylesheet.concat.css'
