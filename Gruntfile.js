@@ -14,12 +14,6 @@ module.exports = function(grunt) {
     concat: {
       application: {
         src: [
-          'app/manager.js',
-          'app/vibrate.js',
-          'app/config.js',
-          'app/settings.js',
-          'app/badge.js',
-          'app/connection.js',
           'app/models/state_service.js',
           'app/models/login_service.js',
           'app/models/store_service.js',
@@ -38,7 +32,6 @@ module.exports = function(grunt) {
           'app/controllers/details_c.js',
           'app/controllers/news_c.js',
           'app/controllers/social_c.js',
-          'app/controllers/more_c.js',
           'app/controllers/stats_c.js',
           'app/controllers/sales_c.js',
           'app/controllers/view_c.js',
@@ -73,6 +66,18 @@ module.exports = function(grunt) {
         ],
         dest: 'dist/vendor.concat.js'
       },
+      cardova: {
+        src: [
+          'app/manager.js',
+          'app/vibrate.js',
+          'app/config.js',
+          'app/settings.js',
+          'app/badge.js',
+          'app/connection.js',
+          'app/app_rate.js',
+        ],
+        dest: 'dist/cardova.concat.js'
+      },
       css: {
         src: [
           'css/ionicons.min.css',
@@ -80,7 +85,6 @@ module.exports = function(grunt) {
           'css/keyframes.css',
           'css/materialize.min.css',
           'css/swiper.css',
-          'css/swipebox.min.css',
           'css/jnoty.css',
           'style-custom.css',
           'css/style.css',
@@ -121,7 +125,8 @@ module.exports = function(grunt) {
         files: {
           'dist/js/application.min.js': ['dist/application.concat.js'],
           'dist/js/vendor.min.js': ['dist/vendor.concat.js'],
-          'dist/js/library.min.js': ['dist/library.concat.js']
+          'dist/js/library.min.js': ['dist/library.concat.js'],
+          'dist/js/cardova.min.js': ['dist/cardova.concat.js'],
         }
       }
     },

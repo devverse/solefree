@@ -51,10 +51,6 @@ soleinsiderApp.config(['$routeProvider',
       templateUrl: admin_url + 'partials/social.html',
       controller: socialController
     }).
-    when('/more', {
-      templateUrl: admin_url + 'partials/more.html',
-      controller: moreController
-    }).
     when('/stats', {
       templateUrl: admin_url + 'partials/stats.html',
       controller: statsController

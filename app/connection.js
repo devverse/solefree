@@ -1,5 +1,7 @@
 document.addEventListener("offline", onOffline, false);
 
 function onOffline() {
-    alert('Offline');
+  $.jnoty("You are no longer online", {
+    theme: 'success'
+  });
 };

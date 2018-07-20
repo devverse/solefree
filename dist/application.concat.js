@@ -1,89 +1,3 @@
-// for Android
-admobid = {
-  banner: 'ca-app-pub-0083160636450496/6391719559',
-  interstitial: 'ca-app-pub-0083160636450496/7728851959'
-};
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-  setTimeout(function() {
-    analytics.startTrackerWithId('UA-18545304-13');
-  }, 4000);
-
-  admob.setOptions({
-    publisherId: "ca-app-pub-0083160636450496/6391719559", // Required
-    interstitialAdId: "cca-app-pub-0083160636450496/7728851959",
-    autoShowInterstitial: true,
-    autoShowBanner: true
-  });
-}
-
-function showBannerAd() {
-  return;
-  if (typeof admob != 'undefined') {
-    admob.createBannerView();
-  }
-}
-
-function removeBannerAd() {
-  return;
-  if (typeof admob != 'undefined') {
-    admob.destroyBannerView();
-  }
-}
-
-function prepareInterstitial() {
-  if (typeof admob != 'undefined') {
-    admob.requestInterstitialAd();
-  }
-}
-
-function randomInterstitial() {
-  var random = Math.floor((Math.random() * 30) + 1);
-
-  if (random === 1) {
-    prepareInterstitial();
-  }
-}
-
-document.addEventListener('prepareInterstitial', prepareInterstitial, false);
-
-var vibrate = function() {
-  console.log('vibrate');
-};
-
-window.vibrate = vibrate;
-
-document.addEventListener("deviceready", onDeviceReadyVibate, false);
-
-function onDeviceReadyVibate() {
-    window.vibrate = navigator.vibrate;
-};
-
-var url = window.location.href;
-var serviceURL = "http://soleinsider.com/public";
-
-var admin_url = 'app/';
-var app_name = "SoleInsider";
-var page_title = "SoleInsider";
-
-var soleinsider = {};
-soleinsider.base_url = serviceURL;
-soleinsider.username = "";
-soleinsider.member_id = false;
-soleinsider.cache = false;
-soleinsider.show_featured = true;
-soleinsider.version = "7.0.0";
-soleinsider.build = "android";
-soleinsider.localhost = (url.indexOf("localhost") != -1 ? true :  false);
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-  window.StatusBar.overlaysWebView(false);
-}
-
 
 soleinsiderApp.factory('State', function($q, $http){
   var api = soleinsider.base_url;
@@ -1412,17 +1326,6 @@ function socialController($scope, $rootScope) {
 
   $scope.init = (function() {
     $rootScope.$emit("featured", false);
-    $rootScope.$emit("showback_button", true);
-    window.randomInterstitial();
-  })();
-}
-
-socialController.$inject = ['$scope', '$rootScope'];
-
-function moreController($scope, $rootScope) {
-
-  $scope.init = (function() {
-  	$rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.randomInterstitial();
   })();
