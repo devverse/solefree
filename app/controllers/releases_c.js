@@ -50,13 +50,40 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
-
-        var randomProduct =  data[Math.floor(Math.random() * data.length)];
-        $scope.header = randomProduct.image;
-
+        $scope.releaseAddedAlert(data);
       }, function(err) {
         alert(err);
       });
+  };
+
+  $scope.releaseAddedAlert = function(data) {
+    if (localStorage.getItem('release-date-id') == null) {
+      localStorage.setItem('release-date-id', 2480);
+    }
+
+    var newReleases = 0;
+    var newHigh = 0;
+    var currentHigh = parseInt(localStorage.getItem('release-date-id'));
+
+    for (var x = 0; x < data.length; x++) {
+      if (data[x].id > currentHigh) {
+        newHigh = data[x].id;
+        currentHigh = newHigh
+        newReleases++;
+      }
+    }
+
+    if (newReleases > 0) {
+      $.jnoty(newReleases + " New Releases Added", {
+        theme: 'success'
+      });
+
+      localStorage.setItem('release-date-id', newHigh);
+
+      window.badge.increase(newHigh, function(badge) {
+
+      });
+    }
   };
 
 
@@ -65,10 +92,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
     $rootScope.$emit("showback_button", false);
     menu_service.handleMenu();
     window.randomInterstitial();
-
-    // window.badge.increase(1, function(badge) {
-    //
-    // });
   })();
 }
 
