@@ -24,7 +24,10 @@
       </div>
     </div>
   </div>
-  <div> <a href="#" ng-click="buyProduct($event, r)" ng-if="r.showBuyLink" class='btn primary-color fullwidth'>  Buy</a> <a href="#" ng-click="openSiteLink($event, r)" class='btn primary-color fullwidth'>  View Full Post </a>
+  <div>
+    <a href="#" ng-click="buyProduct($event, r)" ng-if="r.showBuyLink" class='btn primary-color fullwidth'>  Buy</a>
+    <a href="#" ng-click="openSiteLink($event, r)" class='btn primary-color fullwidth'>  View Full Post </a>
+    <a href="#" ng-click="addReminder($event, r)" class='btn primary-color fullwidth'>  Add Reminder </a>
     <div>
       <div class="details-vote">
         <div class="details-vote-right" ng-click="sneakerRating($event, r,'yes')"> <a href="#">  Cop ({{r.yes_percentage}}%)</a> </div>

@@ -58,7 +58,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
 
   $scope.releaseAddedAlert = function(data) {
     if (localStorage.getItem('release-date-id') == null) {
-      localStorage.setItem('release-date-id', 2480);
+      localStorage.setItem('release-date-id', 4500);
     }
 
     var newReleases = 0;
@@ -81,7 +81,6 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       localStorage.setItem('release-date-id', newHigh);
 
       window.badge.increase(newHigh, function(badge) {
-
       });
     }
   };

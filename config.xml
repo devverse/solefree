@@ -45,7 +45,7 @@ versionCode="46"
 	<icon src="icons/windows/icon.png" gap:platform="winphone" />
 	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
 
-    <gap:splash src="splash/splash.png" />
+  <gap:splash src="splash/splash.png" />
 
     <!-- Android touch -->
 	<gap:splash src="splash/android/drawable-mdpi/soleinsider_splash.png" platform="android" qualifier="mdpi" />
@@ -72,8 +72,6 @@ versionCode="46"
 	<gap:splash src="splash/ios/Default-1242@3x~iphone6s-portrait_1242x2208.png" gap:platform="ios" width="1242" height="2208" />
 
 
-
-
 	<!-- General -->
 	<icon src="icons/icon.png" width="72" height="72" />
 	<icon src="icons/icon.png" width="48" height="48" />
@@ -90,6 +88,21 @@ versionCode="46"
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#2196F3" />
 	<preference name="StatusBarStyle" value="lightcontent" />
+
+	<!-- Splash -->
+	<preference name="AnimatedSplashScreenAnimationDuration" value="5" />
+	<preference name="SplashScreen" value="none" />
+	<preference name="AnimatedSplashScreenAnimationRepeatCount" value="0" />
+	<preference name="AnimatedSplashScreenIosImages" value="1.jpg,2.jpg,3.jpg,4.jpg,5.jpg" />
+
+	<platform name="ios">
+		<custom-resource catalog="animated-1" idiom="universal" scale="1x" src="splash/ios/animated/1.jpg" type="image" />
+		<custom-resource catalog="animated-2" idiom="universal" scale="1x" src="splash/ios/animated/2.jpg" type="image" />
+		<custom-resource catalog="animated-3" idiom="universal" scale="1x" src="splash/ios/animated/3.jpg" type="image" />
+		<custom-resource catalog="animated-4" idiom="universal" scale="1x" src="splash/ios/animated/4.jpg" type="image" />
+		<custom-resource catalog="animated-5" idiom="universal" scale="1x" src="splash/ios/animated/5.jpg" type="image" />
+	</platform>
+	<!-- Splash -->
 	<allow-navigation href="*" />
 
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
@@ -99,8 +112,9 @@ versionCode="46"
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
 	<plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
 	<plugin name="cordova-plugin-globalization" spec="~1.11.0" />
-	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 	<plugin name="cordova-plugin-vibration" spec="~3.1.0" />
 	<plugin name="cordova-plugin-badge" spec="~0.8.7" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
+	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
+	<plugin name="cordova-plugin-animated-splashscreen" source="npm" />
 </widget>
