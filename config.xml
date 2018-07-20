@@ -80,7 +80,7 @@ versionCode="46"
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
 	<preference name="SplashScreen" value="splash" />
-	<preference name='phonegap-version' value='cli-8.0.0' />
+	<preference name='phonegap-version' value='cli-7.0.1' />
 	<preference name="fullscreen" value="false" />
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
@@ -91,7 +91,7 @@ versionCode="46"
 	<preference name="StatusBarStyle" value="lightcontent" />
 	<allow-navigation href="*" />
 
-	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
+	<plugin spec="cordova-plugin-statusbar" source="git" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<gap:plugin name="phonegap-admob" source="npm"/>
 	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm" />
