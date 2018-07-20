@@ -14979,7 +14979,6 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     font-size: 14px;
     position: fixed;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
 }
 
 .jnoty-info .jnoty-content .jnoty-header {
@@ -15049,7 +15048,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=(0.9*100));
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=(0.9*100));
     zoom: 1;
-    width: 350px;
+    width: 300px;
     padding: 10px;
     margin: 10px;
     text-align: left;
@@ -15121,27 +15120,6 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
     }
 }
 
-.feature-list {
-  flex-direction: column;
-}
-
-.feature-list-image {
-  flex: 1;
-  padding-right: 5px;
-}
-
-.feature-list-title {
-  flex: 1;
-}
-
-.feature-list-title h6 {
-  font-size: 14px;
-}
-
-.feature-list-hot {
-  display: flex;
-}
-
 .blog-fullwidth .blog-header {
   padding: 10px;
 }
@@ -15158,10 +15136,6 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .release-slide {
   padding-top: 300px;
-}
-
-.min-height-250 {
-  min-height: 250px;
 }
 
 .fullwidth {

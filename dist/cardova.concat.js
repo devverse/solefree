@@ -101,8 +101,16 @@ function onDeviceReadyBadge() {
 
 document.addEventListener("offline", onOffline, false);
 
+document.addEventListener("online", onOnline, false);
+
 function onOffline() {
-  $.jnoty("You are no longer online", {
+  $.jnoty("You are offline", {
+    theme: 'success'
+  });
+};
+
+function onOnline() {
+  $.jnoty("You are back online", {
     theme: 'success'
   });
 };
