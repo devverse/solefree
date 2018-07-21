@@ -7,5 +7,7 @@ window.vibrate = vibrate;
 document.addEventListener("deviceready", onDeviceReadyVibate, false);
 
 function onDeviceReadyVibate() {
-    window.vibrate = navigator.vibrate;
+    if (typeof navigator.vibrate == "function") {
+      window.vibrate = navigator.vibrate;
+    }
 };

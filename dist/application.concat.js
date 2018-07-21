@@ -1140,14 +1140,11 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       });
     }
 
-    window.vibrate(1);
+    window.vibrate(200);
   };
 
   $scope.sneakerRating = function(event, product, status) {
     event.preventDefault();
-
-    // Vibrate
-    window.vibrate(1);
 
     var member_id = localStorage.getItem("member_id");
 
@@ -1163,7 +1160,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&status=" + status;
 
     release_service.sneakerRating(post).then(function(data) {}, function(err) {
-      window.console.log(err);
+      // Vibrate
+      window.vibrate(200);
     });
   };
 

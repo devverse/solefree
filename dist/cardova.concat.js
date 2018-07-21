@@ -58,7 +58,9 @@ window.vibrate = vibrate;
 document.addEventListener("deviceready", onDeviceReadyVibate, false);
 
 function onDeviceReadyVibate() {
-    window.vibrate = navigator.vibrate;
+    if (typeof navigator.vibrate == "function") {
+      window.vibrate = navigator.vibrate;
+    }
 };
 
 var url = window.location.href;
@@ -124,3 +126,13 @@ document.addEventListener("deviceready", function() {
 	AppRate.preferences.promptAgainForEachNewVersion = true;
 	AppRate.promptForRating(false);
 });
+
+document.addEventListener("deviceready", onDeviceReadyNotification, false);
+
+function onDeviceReadyNotification() {
+  cordova.plugins.notification.local.schedule({
+    title: 'My first notification',
+    text: 'Thats pretty easy...',
+    foreground: true
+  });
+};
