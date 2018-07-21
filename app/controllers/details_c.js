@@ -147,7 +147,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     if (typeof cordova != "undefined") {
       alert("cordova defined!");
       alert(typeof cordova.plugins.notification);
-      alert(typeof cordova.plugins.notification.schedule);
+      alert(cordova.plugins.notification.schedule);
       // cordova.plugins.notification.local.schedule({
       //   id: product.id,
       //   title: "Sneaker Release",
