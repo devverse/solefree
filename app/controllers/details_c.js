@@ -163,12 +163,14 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       var response = cordova.plugins.notification.local.schedule({
           title: 'My first notification',
           text: 'Thats pretty easy...',
+          trigger: { in: 10, unit: 'second' },
           foreground: true
       });
 
       var response2 = cordova.plugins.notification.local.schedule({
           title: 'My second notification',
           text: 'Thats pretty easy...',
+          trigger: { in: 10, unit: 'second' },
           foreground: false
       });
 
