@@ -89,9 +89,10 @@ versionCode="46"
 	<preference name="auto-hide-splash-screen" value="false" />
 	<preference name="target-device" value="universal" />
 	<preference name="exit-on-suspend" value="false" />
+	<preference name="android-targetSdkVersion" value="23"/>
 	<allow-navigation href="*" />
 
-	<plugin spec="cordova-plugin-statusbar" source="git" />
+	<plugin spec="cordova-plugin-statusbar" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="phonegap-admob" source="npm"/>
 	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm" />
@@ -102,4 +103,6 @@ versionCode="46"
 	<plugin name="cordova-plugin-badge" spec="~0.8.7" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
+	<plugin name="cordova-plugin-local-notifications"
+    spec="https://github.com/katzer/cordova-plugin-local-notifications.git#0.9.0-beta.0" />
 </widget>
