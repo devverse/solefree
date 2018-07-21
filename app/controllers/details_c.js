@@ -174,10 +174,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&product_id=" + product.id;
     post += "&status=" + status;
 
-    release_service.sneakerRating(post).then(function(data) {}, function(err) {
-      // Vibrate
+    release_service.sneakerRating(post).then(function(data) { // Vibrate
       window.vibrate(200);
-    });
+    }, function(err) {});
   };
 
   $scope.getComments = function(product) {
@@ -244,12 +243,12 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&comment=" + $scope.new_comment;
 
     comments_service.leaveComment(post).then(function(data) {
-      window.vibrate(5);
       $.jnoty("Comment Left Successfully", {
         theme: 'success'
       });
       $scope.getComments();
       $scope.new_comment = "";
+      window.vibrate(5);
     }, function(err) {
       window.console.log(err);
     });

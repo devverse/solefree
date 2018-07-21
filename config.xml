@@ -102,5 +102,5 @@ versionCode="46"
 	<plugin name="cordova-plugin-badge" spec="~0.8.7" />
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
-	<plugin name="cordova-plugin-local-notifications-mm" spec="~1.0.10" source="npm" />
+	<plugin name="phonegap-plugin-local-notification" spec="~v1.0.1" />
 </widget>

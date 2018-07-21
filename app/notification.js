@@ -1,9 +1,18 @@
 document.addEventListener("deviceready", onDeviceReadyNotification, false);
 
 function onDeviceReadyNotification() {
-  cordova.plugins.notification.local.schedule({
-    title: 'My first notification',
-    text: 'Thats pretty easy...',
-    foreground: true
-  });
+  if ('Notification' in window) {
+    Notification.requestPermission(function(permission) {
+      if (permission === 'granted') {
+        var notification = new Notification('My title', {
+          tag: 'message1',
+          body: 'My body'
+        });
+      }
+    });
+  }
+
+  alert('addLocalNotification');
 };
+
+alert('onDeviceReadyNotification');
