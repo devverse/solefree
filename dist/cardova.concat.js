@@ -80,6 +80,12 @@ soleinsider.version = "7.0.0";
 soleinsider.build = "android";
 soleinsider.localhost = (url.indexOf("localhost") != -1 ? true :  false);
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+  window.StatusBar.overlaysWebView(false);
+}
+
 var badge = {
   increase: function() {
 

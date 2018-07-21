@@ -1126,17 +1126,25 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
     formattedDate = new Date(formatted);
 
-    alert(formatted);
+
+    alert(formattedDate);
 
     if (typeof cordova != "undefined") {
-      cordova.plugins.notification.local.schedule({
-        id: product.id,
-        title: "Sneaker Release",
-        text: product.name + " Releasing Today",
-        at: formattedDate,
-        led: "FF0000",
-        sound: null,
-        icon: "file://icons/push/logo.png"
+      // cordova.plugins.notification.local.schedule({
+      //   id: product.id,
+      //   title: "Sneaker Release",
+      //   text: product.name + " Releasing Today",
+      //   at: formattedDate,
+      //   led: "FF0000",
+      //   sound: null,
+      //   icon: "file://icons/push/logo.png"
+      // });
+
+      var response = cordova.plugins.notification.local.schedule({
+          title: 'My first notification',
+          text: 'Thats pretty easy...',
+          trigger: { in: 10, unit: 'second' },
+          foreground: true
       });
 
       $.jnoty("Reminder saved for " + product.name, {
