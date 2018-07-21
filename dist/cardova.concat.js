@@ -80,12 +80,6 @@ soleinsider.version = "7.0.0";
 soleinsider.build = "android";
 soleinsider.localhost = (url.indexOf("localhost") != -1 ? true :  false);
 
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
-  window.StatusBar.overlaysWebView(false);
-}
-
 var badge = {
   increase: function() {
 
@@ -127,9 +121,9 @@ document.addEventListener("deviceready", function() {
 	AppRate.promptForRating(false);
 });
 
-document.addEventListener("deviceready", onDeviceReadyNotification, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReadyNotification() {
+function onDeviceReady() {
   if ('Notification' in window) {
     var notInWindow = "yes";
     Notification.requestPermission(function(permission) {
@@ -159,5 +153,3 @@ function onDeviceReadyNotification() {
   alert('Notification notInWindow ' + notInWindow);
   alert('cordova notification ' + notInWindownotification);
 };
-
-onDeviceReadyNotification();

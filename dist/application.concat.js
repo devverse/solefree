@@ -1370,8 +1370,9 @@ function statsController($scope, $rootScope, account_service) {
       $scope.stats.release_interest_count = 0;
       $scope.stats.restock_alert_count = 0;
 
-      toastr.error("You need to be logged to view your stats");
-      return false;
+      $.jnoty("You need to be logged to view your stats", {
+        theme: 'error'
+      });
     }
 
   	var post = "member_id=" + member_id;
