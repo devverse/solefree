@@ -146,7 +146,8 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
     if (typeof cordova != "undefined") {
       alert("cordova defined!");
-      alert(typeof cordova.plugins.notification)
+      alert(typeof cordova.plugins.notification);
+      alert(typeof cordova.plugins.notification.schedule);
       // cordova.plugins.notification.local.schedule({
       //   id: product.id,
       //   title: "Sneaker Release",
@@ -157,11 +158,22 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       //   icon: "file://icons/push/logo.png"
       // });
 
-      cordova.plugins.notification.local.schedule({
+      alert(cordova.plugins.notification.local.getDefaults());
+
+      var response = cordova.plugins.notification.local.schedule({
           title: 'My first notification',
           text: 'Thats pretty easy...',
           foreground: true
       });
+
+      var response2 = cordova.plugins.notification.local.schedule({
+          title: 'My second notification',
+          text: 'Thats pretty easy...',
+          foreground: false
+      });
+
+        alert(response);
+        alert(response2);
 
       $.jnoty("Reminder saved for " + product.name, {
         theme: 'success'
