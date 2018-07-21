@@ -137,24 +137,36 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.addLocalNotification = function(product) {
+
     var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
     formattedDate = new Date(formatted);
 
+
+    alert(formattedDate);
+
     if (typeof cordova != "undefined") {
+      alert("cordova defined!");
+      alert(typeof cordova.plugins.notification)
+      // cordova.plugins.notification.local.schedule({
+      //   id: product.id,
+      //   title: "Sneaker Release",
+      //   text: product.name + " Releasing Today",
+      //   at: formattedDate,
+      //   led: "FF0000",
+      //   sound: null,
+      //   icon: "file://icons/push/logo.png"
+      // });
+
       cordova.plugins.notification.local.schedule({
-        id: product.id,
-        title: "Sneaker Release",
-        text: product.name + " Releasing Today",
-        at: formattedDate,
-        led: "FF0000",
-        sound: null,
-        icon: "file://icons/push/logo.png"
+          title: 'My first notification',
+          text: 'Thats pretty easy...',
+          foreground: true
       });
 
       $.jnoty("Reminder saved for " + product.name, {
         theme: 'success'
       });
-      
+
       window.vibrate(200);
     } else {
       $.jnoty("Failed to add reminder for " + product.name, {

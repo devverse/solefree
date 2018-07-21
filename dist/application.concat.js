@@ -1122,8 +1122,11 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   };
 
   $scope.addLocalNotification = function(product) {
+
     var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
     formattedDate = new Date(formatted);
+
+    alert(formatted);
 
     if (typeof cordova != "undefined") {
       cordova.plugins.notification.local.schedule({
@@ -1139,7 +1142,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       $.jnoty("Reminder saved for " + product.name, {
         theme: 'success'
       });
-      
+
       window.vibrate(200);
     } else {
       $.jnoty("Failed to add reminder for " + product.name, {
