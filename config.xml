@@ -92,7 +92,7 @@ versionCode="46"
 	<preference name="android-targetSdkVersion" value="23"/>
 	<allow-navigation href="*" />
 
-	<plugin spec="cordova-plugin-statusbar" />
+	<plugin spec="cordova-plugin-statusbar" source="git" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="phonegap-admob" source="npm"/>
 	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm" />
