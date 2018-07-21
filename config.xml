@@ -79,6 +79,8 @@ versionCode="46"
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
+	<framework src="com.android.support:support-v4:26.+" value="gradle" />
+
 	<preference name="android-build-tool" value="gradle" />
 	<preference name='phonegap-version' value='cli-7.0.1' />
 	<preference name="SplashScreen" value="splash" />
@@ -90,8 +92,8 @@ versionCode="46"
 	<preference name="target-device" value="universal" />
 	<preference name="exit-on-suspend" value="false" />
 	<preference name="android-minSdkVersion" value="17" />
-<preference name="android-targetSdkVersion" value="23" />
-<preference name="android-compileSdkVersion" value="26" />
+	<preference name="android-targetSdkVersion" value="23" />
+	<preference name="android-compileSdkVersion" value="26" />
 	<allow-navigation href="*" />
 
 	<plugin spec="cordova-plugin-statusbar" source="git" />
@@ -106,5 +108,5 @@ versionCode="46"
 	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
 	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
 	<plugin name="cordova-plugin-local-notifications"
-    spec="https://github.com/katzer/cordova-plugin-local-notifications.git#0.9.0-beta.2" />
+    spec="https://github.com/katzer/cordova-plugin-local-notifications.git#0.9.0-beta.0" />
 </widget>
