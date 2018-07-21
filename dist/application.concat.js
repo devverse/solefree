@@ -1119,9 +1119,6 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.addReminder = function(event, product) {
     event.preventDefault();
     $scope.addLocalNotification(product);
-    $.jnoty("Reminder saved for " + product.name, {
-      theme: 'success'
-    });
   };
 
   $scope.addLocalNotification = function(product) {
@@ -1138,9 +1135,20 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
         sound: null,
         icon: "file://icons/push/logo.png"
       });
+
+      $.jnoty("Reminder saved for " + product.name, {
+        theme: 'success'
+      });
+      
+      window.vibrate(200);
+    } else {
+      $.jnoty("Failed to add reminder for " + product.name, {
+        theme: 'error'
+      });
+      window.vibrate(200);
     }
 
-    window.vibrate(200);
+
   };
 
   $scope.sneakerRating = function(event, product, status) {
@@ -1159,9 +1167,9 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     post += "&product_id=" + product.id;
     post += "&status=" + status;
 
-    release_service.sneakerRating(post).then(function(data) { // Vibrate
-      window.vibrate(200);
+    release_service.sneakerRating(post).then(function(data) {
     }, function(err) {});
+    window.vibrate(200);
   };
 
   $scope.getComments = function(product) {
@@ -1187,11 +1195,17 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
   $scope.share = function(event, product) {
     event.preventDefault();
 
-    return window.plugins.socialsharing.share(
-      '#SoleInsider ' + product.name,
-      product.name,
-      'http://soleinsider.com/public/products/' + product.image,
-      null);
+    if (window.plugins) {
+       window.plugins.socialsharing.share(
+        '#SoleInsider ' + product.name,
+        product.name,
+        'http://soleinsider.com/products/' + product.image,
+        null);
+    } else {
+      $.jnoty("Failed to share " + product.name, {
+        theme: 'error'
+      });
+    }
   };
 
   $scope.addToCalender = function(event, product) {

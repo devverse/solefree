@@ -85,10 +85,10 @@ module.exports = function(grunt) {
           'css/placeholder.min.css',
           'css/keyframes.css',
           'css/materialize.min.css',
-          'css/swiper.css',
-          'css/jnoty.css',
           'css/style-custom.css',
           'css/style.css',
+          'css/swiper.css',
+          'css/jnoty.css',
         ],
         dest: 'dist/stylesheet.concat.css'
       }
