@@ -108,11 +108,20 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       });
     }
 
-    var resale = product.resale || 65;
+    var resale = product.resale || "medium";
+    var resaleValue = 55;
+
+    if (resale === "low") {
+      resaleValue = 30;
+    } else if (resale === "medium") {
+      resaleValue = 55;
+    } else if (resale === "high") {
+      resaleValue = 100;
+    }
 
     new JustGage({
       id: "resale-gage",
-      value: resale,
+      value: resaleValue,
       min: 0,
       max: 100,
       title: "Resale Value",

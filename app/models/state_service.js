@@ -1,5 +1,4 @@
-
-soleinsiderApp.factory('State', function($q, $http){
+soleinsiderApp.factory('state_service', function($q, $http){
   var api = soleinsider.base_url;
 
   self.makePost = function(endpoint, post) {

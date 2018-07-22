@@ -1,4 +1,4 @@
-function newsController($scope, $rootScope, $location, news_service, menu_service, State) {
+function newsController($scope, $rootScope, $location, news_service, menu_service, state_service) {
 
   $scope.category = '';
   $scope.news = false;
@@ -8,7 +8,7 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
     $scope.showLoading = true;
     localStorage.setItem("category", null);
 
-    State.data.news.then(
+    state_service.data.news.then(
       function(data) {
         $scope.formatData(data);
       }, function(err) {
@@ -58,4 +58,4 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
   })();
 }
 
-newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service', 'State'];
+newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service', 'state_service'];

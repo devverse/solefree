@@ -1,5 +1,311 @@
+var soleinsiderApp = angular.module('soleinsiderApp', [
+  'ngRoute',
+  'ngSanitize',
+]);
 
-soleinsiderApp.factory('State', function($q, $http){
+soleinsiderApp.config(['$routeProvider',
+  function($routeProvider) {
+    "use strict";
+
+    $routeProvider.when('/', {
+      templateUrl: admin_url + 'partials/releases.html',
+      controller: releasesController
+    }).
+    when('/releases', {
+      templateUrl: admin_url + 'partials/releases.html',
+      controller: releasesController
+    }).
+    when('/past_releases', {
+      templateUrl: admin_url + 'partials/past_releases.html',
+      controller: pastReleasesController
+    }).
+    when('/account', {
+      templateUrl: admin_url + 'partials/account.html',
+      controller: accountController
+    }).
+    when('/login', {
+      templateUrl: admin_url + 'partials/login.html',
+      controller: loginController
+    }).
+    when('/signup', {
+      templateUrl: admin_url + 'partials/signup.html',
+      controller: signupController
+    }).
+    when('/details', {
+      templateUrl: admin_url + 'partials/details.html',
+      controller: detailsController
+    }).
+    when('/news', {
+      templateUrl: admin_url + 'partials/news.html',
+      controller: newsController
+    }).
+    when('/view', {
+      templateUrl: admin_url + 'partials/view.html',
+      controller: viewController
+    }).
+    when('/stats', {
+      templateUrl: admin_url + 'partials/stats.html',
+      controller: statsController
+    }).
+    when('/sales', {
+      templateUrl: admin_url + 'partials/sales.html',
+      controller: salesController
+    }).
+    when('/store', {
+      templateUrl: admin_url + 'partials/store.html',
+      controller: storeController
+    }).
+    when('/store-item/:type', {
+      templateUrl: admin_url + 'partials/store-item.html',
+      controller: storeItemController
+    }).
+    when('/stories', {
+      templateUrl: admin_url + 'partials/stories/stories.html',
+      controller: storiesController
+    }).
+    when('/jordan-1', {
+      templateUrl: admin_url + 'partials/stories/jordan-1.html',
+      controller: storyController
+    }).
+    when('/jordan-2', {
+      templateUrl: admin_url + 'partials/stories/jordan-2.html',
+      controller: storyController
+    }).
+    when('/jordan-3', {
+      templateUrl: admin_url + 'partials/stories/jordan-3.html',
+      controller: storyController
+    }).
+    when('/jordan-4', {
+      templateUrl: admin_url + 'partials/stories/jordan-4.html',
+      controller: storyController
+    }).
+    when('/jordan-5', {
+      templateUrl: admin_url + 'partials/stories/jordan-5.html',
+      controller: storyController
+    }).
+    when('/jordan-6', {
+      templateUrl: admin_url + 'partials/stories/jordan-6.html',
+      controller: storyController
+    }).
+    when('/jordan-7', {
+      templateUrl: admin_url + 'partials/stories/jordan-7.html',
+      controller: storyController
+    }).
+    when('/jordan-8', {
+      templateUrl: admin_url + 'partials/stories/jordan-8.html',
+      controller: storyController
+    }).
+    when('/jordan-9', {
+      templateUrl: admin_url + 'partials/stories/jordan-9.html',
+      controller: storyController
+    }).
+    when('/jordan-10', {
+      templateUrl: admin_url + 'partials/stories/jordan-10.html',
+      controller: storyController
+    }).
+    when('/jordan-11', {
+      templateUrl: admin_url + 'partials/stories/jordan-11.html',
+      controller: storyController
+    }).
+    when('/jordan-12', {
+      templateUrl: admin_url + 'partials/stories/jordan-12.html',
+      controller: storyController
+    }).
+    when('/jordan-13', {
+      templateUrl: admin_url + 'partials/stories/jordan-13.html',
+      controller: storyController
+    }).
+    when('/jordan-14', {
+      templateUrl: admin_url + 'partials/stories/jordan-14.html',
+      controller: storyController
+    }).
+    when('/jordan-15', {
+      templateUrl: admin_url + 'partials/stories/jordan-15.html',
+      controller: storyController
+    }).
+    when('/jordan-16', {
+      templateUrl: admin_url + 'partials/stories/jordan-16.html',
+      controller: storyController
+    }).
+    when('/jordan-17', {
+      templateUrl: admin_url + 'partials/stories/jordan-17.html',
+      controller: storyController
+    }).
+    when('/jordan-18', {
+      templateUrl: admin_url + 'partials/stories/jordan-18.html',
+      controller: storyController
+    }).
+    when('/jordan-18-5', {
+      templateUrl: admin_url + 'partials/stories/jordan-18-5.html',
+      controller: storyController
+    }).
+    when('/jordan-19', {
+      templateUrl: admin_url + 'partials/stories/jordan-19.html',
+      controller: storyController
+    }).
+    when('/jordan-20', {
+      templateUrl: admin_url + 'partials/stories/jordan-20.html',
+      controller: storyController
+    }).
+    when('/jordan-21', {
+      templateUrl: admin_url + 'partials/stories/jordan-21.html',
+      controller: storyController
+    }).
+    when('/jordan-22', {
+      templateUrl: admin_url + 'partials/stories/jordan-22.html',
+      controller: storyController
+    }).
+    when('/jordan-23', {
+      templateUrl: admin_url + 'partials/stories/jordan-23.html',
+      controller: storyController
+    }).
+    when('/jordan-24', {
+      templateUrl: admin_url + 'partials/stories/jordan-24.html',
+      controller: storyController
+    }).
+    when('/jordan-25', {
+      templateUrl: admin_url + 'partials/stories/jordan-25.html',
+      controller: storyController
+    }).
+    when('/jordan-26', {
+      templateUrl: admin_url + 'partials/stories/jordan-26.html',
+      controller: storyController
+    }).
+    when('/jordan-27', {
+      templateUrl: admin_url + 'partials/stories/jordan-27.html',
+      controller: storyController
+    }).
+    when('/jordan-28', {
+      templateUrl: admin_url + 'partials/stories/jordan-28.html',
+      controller: storyController
+    }).
+    when('/jordan-29', {
+      templateUrl: admin_url + 'partials/stories/jordan-29.html',
+      controller: storyController
+    }).
+    when('/jordan-30', {
+      templateUrl: admin_url + 'partials/stories/jordan-30.html',
+      controller: storyController
+    }).
+    when('/jordan-31', {
+      templateUrl: admin_url + 'partials/stories/jordan-31.html',
+      controller: storyController
+    });
+  }
+]);
+
+soleinsiderApp.config(['$httpProvider',
+  function($httpProvider) {
+    "use strict";
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+  }
+]);
+
+
+
+soleinsiderApp.directive("keepScrollPos", function($route, $window, $timeout, $location, $anchorScroll) {
+
+    // cache scroll position of each route's templateUrl
+    var scrollPosCache = {};
+
+
+    // compile function
+    return function(scope, element, attrs) {
+
+        scope.$on('$routeChangeStart', function() {
+            // store scroll position for the current view
+            if ($route.current) {
+                scrollPosCache[$route.current.loadedTemplateUrl] = [ $window.pageXOffset, $window.pageYOffset ];
+            }
+        });
+
+        scope.$on('$routeChangeSuccess', function() {
+
+            // if hash is specified explicitly, it trumps previously stored scroll position
+            if ($location.hash()) {
+                $anchorScroll();
+
+            // else get previous scroll position; if none, scroll to the top of the page
+            } else {
+                var prevScrollPos = scrollPosCache[$route.current.loadedTemplateUrl] || [ 0, 0 ];
+                $timeout(function() {
+                    $window.scrollTo(prevScrollPos[0], prevScrollPos[1]);
+                }, 0);
+            }
+        });
+    }
+});
+
+soleinsiderApp.directive('scrollDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last) {
+      window.scroll(0, localStorage.getItem("scrollPosition"));
+    }
+  };
+});
+
+soleinsiderApp.directive('lazyLoad', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last) {
+      new LazyLoad({
+          elements_selector: ".lazy-load"
+      });
+    }
+  };
+});
+
+soleinsiderApp.directive('profileLoader', function() {
+  return {
+    restrict: 'AEC',
+    scope: {
+      title: '@'
+    },
+    templateUrl: admin_url + 'directives/profile-loader.html',
+    transclude: true
+  };
+});
+
+soleinsiderApp.directive('releasesLoader', function() {
+  return {
+    restrict: 'AEC',
+    scope: {
+      title: '@'
+    },
+    templateUrl: admin_url + 'directives/releases-loader.html',
+    transclude: true
+  };
+});
+
+
+soleinsiderApp.directive('newsLoader', function() {
+  return {
+    restrict: 'AEC',
+    scope: {
+      title: '@'
+    },
+    templateUrl: admin_url + 'directives/news-loader.html',
+    transclude: true
+  };
+});
+
+soleinsiderApp.directive('slideshowDirective', function() {
+  return function(scope, element, attrs) {
+    if (scope.$last){
+      setTimeout(function() {
+        new Swiper('.slider-images', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true,
+          autoplay: 2500,
+          loop: false
+        });
+        //$('.parallax').parallax();
+      }, 500);
+    }
+  };
+});
+
+
+soleinsiderApp.factory('state_service', function($q, $http){
   var api = soleinsider.base_url;
 
   self.makePost = function(endpoint, post) {
@@ -738,8 +1044,6 @@ function appController($scope, $rootScope, $window, $location, app_service) {
   };
 
   $scope.init = (function() {
-    $scope.getFeaturedProducts();
-
     $rootScope.$on('featured', function(e, status) {
       $scope.show_featured = status;
       $scope.show_loading = false;
@@ -776,7 +1080,7 @@ function storeController($scope, $rootScope, menu_service) {
 
 storeController.$inject = ['$scope', '$rootScope', 'menu_service'];
 
-function releasesController($scope, $rootScope, $filter, $location, release_service, menu_service, State) {
+function releasesController($scope, $rootScope, $filter, $location, release_service, menu_service, state_service) {
 
   var last_product_id = false;
 
@@ -824,7 +1128,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   var getReleases = function() {
     $scope.show_loading = true;
 
-    State.data.releases.then(
+    state_service.data.releases.then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
@@ -872,7 +1176,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   })();
 }
 
-releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'menu_service', 'State'];
+releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'menu_service', 'state_service'];
 
 function accountController($scope, $rootScope, $route, account_service, menu_service) {
 
@@ -948,7 +1252,7 @@ function accountController($scope, $rootScope, $route, account_service, menu_ser
   })();
 }
 
-function pastReleasesController($scope, $rootScope, $location, release_service, menu_service, State) {
+function pastReleasesController($scope, $rootScope, $location, release_service, menu_service, state_service) {
 
   $scope.releases = [];
   $scope.showmsg = false;
@@ -957,7 +1261,7 @@ function pastReleasesController($scope, $rootScope, $location, release_service, 
 
    $scope.getPastReleases = function() {
     $scope.showLoading = true;
-    State.data.pastReleases.then(
+    state_service.data.pastReleases.then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
@@ -981,7 +1285,7 @@ function pastReleasesController($scope, $rootScope, $location, release_service, 
 
 }
 
-pastReleasesController.$inject = ['$scope', '$rootScope', '$location', 'release_service', 'menu_service', 'State'];
+pastReleasesController.$inject = ['$scope', '$rootScope', '$location', 'release_service', 'menu_service', 'state_service'];
 
 function detailsController($scope, $rootScope, $location, $filter, comments_service, release_service, menu_service) {
   $scope.comments = [];
@@ -1093,11 +1397,20 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
       });
     }
 
-    var resale = product.resale || 65;
+    var resale = product.resale || "medium";
+    var resaleValue = 55;
+
+    if (resale === "low") {
+      resaleValue = 30;
+    } else if (resale === "medium") {
+      resaleValue = 55;
+    } else if (resale === "high") {
+      resaleValue = 100;
+    }
 
     new JustGage({
       id: "resale-gage",
-      value: resale,
+      value: resaleValue,
       min: 0,
       max: 100,
       title: "Resale Value",
@@ -1126,25 +1439,15 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
     var formatted = moment(product.release_date, 'MMMM Do, YYYY').format("ddd MMM DD YYYY 08:00") + ' GMT-0500 (EST)';
     formattedDate = new Date(formatted);
 
-
-    alert(formattedDate);
-
     if (typeof cordova != "undefined") {
-      // cordova.plugins.notification.local.schedule({
-      //   id: product.id,
-      //   title: "Sneaker Release",
-      //   text: product.name + " Releasing Today",
-      //   at: formattedDate,
-      //   led: "FF0000",
-      //   sound: null,
-      //   icon: "file://icons/push/logo.png"
-      // });
-
-      var response = cordova.plugins.notification.local.schedule({
-          title: 'My first notification',
-          text: 'Thats pretty easy...',
-          trigger: { in: 10, unit: 'second' },
-          foreground: true
+      cordova.plugins.notification.local.schedule({
+        id: product.id,
+        title: "Sneaker Release",
+        text: product.name + " Releasing Today",
+        trigger: {at: formattedDate},
+        led: "FF0000",
+        sound: null,
+        icon: "file://icons/push/logo.png"
       });
 
       $.jnoty("Reminder saved for " + product.name, {
@@ -1286,7 +1589,7 @@ function detailsController($scope, $rootScope, $location, $filter, comments_serv
 
 detailsController.$inject = ['$scope', '$rootScope', '$location', '$filter', 'comments_service', 'release_service', 'menu_service'];
 
-function newsController($scope, $rootScope, $location, news_service, menu_service, State) {
+function newsController($scope, $rootScope, $location, news_service, menu_service, state_service) {
 
   $scope.category = '';
   $scope.news = false;
@@ -1296,7 +1599,7 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
     $scope.showLoading = true;
     localStorage.setItem("category", null);
 
-    State.data.news.then(
+    state_service.data.news.then(
       function(data) {
         $scope.formatData(data);
       }, function(err) {
@@ -1346,23 +1649,7 @@ function newsController($scope, $rootScope, $location, news_service, menu_servic
   })();
 }
 
-newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service', 'State'];
-
-function socialController($scope, $rootScope) {
-
-  $scope.openLink = function($event, url) {
-    $event.preventDefault();
-    window.open(url, '_blank', 'location=yes');
-  };
-
-  $scope.init = (function() {
-    $rootScope.$emit("featured", false);
-    $rootScope.$emit("showback_button", true);
-    window.randomInterstitial();
-  })();
-}
-
-socialController.$inject = ['$scope', '$rootScope'];
+newsController.$inject = ['$scope', '$rootScope', '$location', 'news_service', 'menu_service', 'state_service'];
 
 function statsController($scope, $rootScope, account_service) {
 
@@ -1405,7 +1692,7 @@ function statsController($scope, $rootScope, account_service) {
   })();
 }
 
-socialController.$inject = ['$scope', '$rootScope', 'account_service'];
+statsController.$inject = ['$scope', '$rootScope', 'account_service'];
 
 function salesController($scope, $rootScope, sales_service, menu_service) {
 
@@ -1443,25 +1730,27 @@ function salesController($scope, $rootScope, sales_service, menu_service) {
 
 salesController.$inject = ['$scope', '$rootScope', 'sales_service', 'menu_service'];
 
-function viewController($scope, $rootScope, news_service, menu_service) {
+function viewController($scope, $rootScope, $timeout, $window, news_service, menu_service) {
 
   $scope.loadArticle = function() {
     article = JSON.parse(localStorage.getItem("article"));
     $scope.article = article;
+
+    $timeout(function() {
+        $window.scrollTo(0, 0);
+    }, 100);
   };
 
   $scope.init = (function() {
-    $("body").scrollTop();
     $scope.loadArticle();
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.randomInterstitial();
     menu_service.handleMenu();
-    menu_service.handleSwiper();
   })();
 }
 
-viewController.$inject = ['$scope', '$rootScope', 'news_service', 'menu_service'];
+viewController.$inject = ['$scope', '$rootScope', '$timeout', '$window', 'news_service', 'menu_service'];
 
 function storiesController($scope, $rootScope, $location, menu_service) {
   $scope.scrollPosition = 0;

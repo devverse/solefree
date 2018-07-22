@@ -112,22 +112,18 @@ $( document ).ready(function() {
 
         if (scroll >= cbHeight && !haloNavElement.hasClass('h-bg')) {
             haloNavElement.addClass('h-bg');
-            console.log('addClass h-bg');
         }
         if (scroll <= cbHeight && haloNavElement.hasClass('h-bg')) {
             haloNavElement.removeClass('h-bg');
-            console.log('removeClass h-bg !!!!!!!!!');
         }
         // For heading Title
         if (scroll >= hHeight && bannerTitleElement.is(":visible")) {
             bannerTitleElement.hide();
             haloNavTitleElement.show();
-            console.log('show title');
         }
         if (scroll <= hHeight && haloNavTitleElement.is(":visible")) {
             bannerTitleElement.show();
             haloNavTitleElement.hide();
-            console.log('hide title !!!!!!!!!!!!!!!!');
         }
     });
 });

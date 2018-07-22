@@ -39,4 +39,4 @@ function statsController($scope, $rootScope, account_service) {
   })();
 }
 
-socialController.$inject = ['$scope', '$rootScope', 'account_service'];
+statsController.$inject = ['$scope', '$rootScope', 'account_service'];

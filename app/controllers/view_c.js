@@ -1,19 +1,21 @@
-function viewController($scope, $rootScope, news_service, menu_service) {
+function viewController($scope, $rootScope, $timeout, $window, news_service, menu_service) {
 
   $scope.loadArticle = function() {
     article = JSON.parse(localStorage.getItem("article"));
     $scope.article = article;
+
+    $timeout(function() {
+        $window.scrollTo(0, 0);
+    }, 100);
   };
 
   $scope.init = (function() {
-    $("body").scrollTop();
     $scope.loadArticle();
     $rootScope.$emit("featured", false);
     $rootScope.$emit("showback_button", true);
     window.randomInterstitial();
     menu_service.handleMenu();
-    menu_service.handleSwiper();
   })();
 }
 
-viewController.$inject = ['$scope', '$rootScope', 'news_service', 'menu_service'];
+viewController.$inject = ['$scope', '$rootScope', '$timeout', '$window', 'news_service', 'menu_service'];

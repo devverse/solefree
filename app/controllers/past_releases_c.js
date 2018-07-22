@@ -1,4 +1,4 @@
-function pastReleasesController($scope, $rootScope, $location, release_service, menu_service, State) {
+function pastReleasesController($scope, $rootScope, $location, release_service, menu_service, state_service) {
 
   $scope.releases = [];
   $scope.showmsg = false;
@@ -7,7 +7,7 @@ function pastReleasesController($scope, $rootScope, $location, release_service, 
 
    $scope.getPastReleases = function() {
     $scope.showLoading = true;
-    State.data.pastReleases.then(
+    state_service.data.pastReleases.then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
@@ -31,4 +31,4 @@ function pastReleasesController($scope, $rootScope, $location, release_service, 
 
 }
 
-pastReleasesController.$inject = ['$scope', '$rootScope', '$location', 'release_service', 'menu_service', 'State'];
+pastReleasesController.$inject = ['$scope', '$rootScope', '$location', 'release_service', 'menu_service', 'state_service'];

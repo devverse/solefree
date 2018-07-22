@@ -19,10 +19,6 @@ soleinsiderApp.config(['$routeProvider',
       templateUrl: admin_url + 'partials/past_releases.html',
       controller: pastReleasesController
     }).
-    when('/myreleases', {
-      templateUrl: admin_url + 'partials/myreleases.html',
-      controller: myReleasesController
-    }).
     when('/account', {
       templateUrl: admin_url + 'partials/account.html',
       controller: accountController
@@ -46,10 +42,6 @@ soleinsiderApp.config(['$routeProvider',
     when('/view', {
       templateUrl: admin_url + 'partials/view.html',
       controller: viewController
-    }).
-    when('/social', {
-      templateUrl: admin_url + 'partials/social.html',
-      controller: socialController
     }).
     when('/stats', {
       templateUrl: admin_url + 'partials/stats.html',

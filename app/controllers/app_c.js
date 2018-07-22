@@ -29,8 +29,6 @@ function appController($scope, $rootScope, $window, $location, app_service) {
   };
 
   $scope.init = (function() {
-    $scope.getFeaturedProducts();
-
     $rootScope.$on('featured', function(e, status) {
       $scope.show_featured = status;
       $scope.show_loading = false;

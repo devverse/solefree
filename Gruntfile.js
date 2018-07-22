@@ -14,6 +14,7 @@ module.exports = function(grunt) {
     concat: {
       application: {
         src: [
+          'app/app.js',
           'app/models/state_service.js',
           'app/models/login_service.js',
           'app/models/store_service.js',
@@ -31,7 +32,6 @@ module.exports = function(grunt) {
           'app/controllers/past_releases_c.js',
           'app/controllers/details_c.js',
           'app/controllers/news_c.js',
-          'app/controllers/social_c.js',
           'app/controllers/stats_c.js',
           'app/controllers/sales_c.js',
           'app/controllers/view_c.js',

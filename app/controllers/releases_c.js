@@ -1,4 +1,4 @@
-function releasesController($scope, $rootScope, $filter, $location, release_service, menu_service, State) {
+function releasesController($scope, $rootScope, $filter, $location, release_service, menu_service, state_service) {
 
   var last_product_id = false;
 
@@ -46,7 +46,7 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   var getReleases = function() {
     $scope.show_loading = true;
 
-    State.data.releases.then(
+    state_service.data.releases.then(
       function(data) {
         $scope.releases = data;
         $scope.show_loading = false;
@@ -94,4 +94,4 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
   })();
 }
 
-releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'menu_service', 'State'];
+releasesController.$inject = ['$scope', '$rootScope', '$filter', '$location', 'release_service', 'menu_service', 'state_service'];
