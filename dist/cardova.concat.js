@@ -40,7 +40,7 @@ function prepareInterstitial() {
 }
 
 function randomInterstitial() {
-  var random = Math.floor((Math.random() * 30) + 1);
+  var random = Math.floor((Math.random() * 50) + 1);
 
   if (random === 1) {
     prepareInterstitial();

@@ -77,11 +77,8 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       $.jnoty(newReleases + " New Releases Added", {
         theme: 'success'
       });
-
       localStorage.setItem('release-date-id', newHigh);
-
-      window.badge.increase(newHigh, function(badge) {
-      });
+      window.notification.badge.set(newHigh);
     }
   };
 

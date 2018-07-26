@@ -4,7 +4,7 @@
 
 .blog-fullwidth {
   margin-bottom: 0px;
-  min-height: 200px;
+  min-height: 200px !important;
   z-index: 10;
 }
 

@@ -304,7 +304,6 @@ soleinsiderApp.directive('slideshowDirective', function() {
   };
 });
 
-
 soleinsiderApp.factory('state_service', function($q, $http){
   var api = soleinsider.base_url;
 
@@ -1159,11 +1158,8 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
       $.jnoty(newReleases + " New Releases Added", {
         theme: 'success'
       });
-
       localStorage.setItem('release-date-id', newHigh);
-
-      window.badge.increase(newHigh, function(badge) {
-      });
+      window.notification.badge.set(newHigh);
     }
   };
 
