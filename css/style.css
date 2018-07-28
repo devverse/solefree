@@ -818,7 +818,6 @@ blockquote {
 .details-avatar {
     width: 60px;
     height: 40px;
-    position: absolute;
     left: 20px;
     z-index: 99999999;
 }
@@ -952,28 +951,30 @@ textarea.materialize-textarea:focus:not([readonly]) {
     overflow: hidden;
 }
 .comments-list li {
-    margin-bottom: 32px;
+    margin-bottom: 5px;
+    display: flex;
 }
 .comments-list .avatar {
     position: absolute;
     left: 20px;
 }
 .comments-list .comment-body {
-    margin-left: 60px;
-    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-bottom: 15px;
     width: auto;
 }
 .comments-list .comment-body p {
     font-size: 1em;
 }
+
 .comments-list .author {
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     display: inline-block;
 }
 .comments-list .date {
-    float: right;
-    font-size: 1em;
+    font-size: .9em;
     opacity: 0.6;
+    margin-bottom: 10px;
 }
 li.your-comment {
     padding-left: 56px;
