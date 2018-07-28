@@ -40,9 +40,9 @@ function prepareInterstitial() {
 }
 
 function randomInterstitial() {
-  var random = Math.floor((Math.random() * 50) + 1);
+  var random = Math.floor((Math.random() * 100) + 1);
 
-  if (random === 1) {
+  if (random === 2) {
     prepareInterstitial();
   }
 }
@@ -87,8 +87,14 @@ function onDeviceReady() {
 }
 
 var badge = {
+  clear: function() {
+    return;
+  },
   increase: function() {
-
+    return;
+  },
+  set: function() {
+    return;
   }
 }
 
@@ -97,8 +103,10 @@ window.badge = badge;
 document.addEventListener("deviceready", onDeviceReadyBadge, false);
 
 function onDeviceReadyBadge() {
-    window.badge = cordova.plugins.notification.badge;
-    cordova.plugins.notification.badge.configure({ autoClear: true });
+    cordova.plugins.notification.badge.requestPermission(function (granted) {
+      window.badge = cordova.plugins.notification.badge;
+      cordova.plugins.notification.badge.configure({ autoClear: true });
+    });
 }
 
 document.addEventListener("offline", onOffline, false);
@@ -126,3 +134,9 @@ document.addEventListener("deviceready", function() {
 	AppRate.preferences.promptAgainForEachNewVersion = true;
 	AppRate.promptForRating(false);
 });
+
+document.addEventListener("deviceready", onDeviceReadySplash, false);
+
+function onDeviceReadySplash() {
+  navigator.splashscreen.show();
+}

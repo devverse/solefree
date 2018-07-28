@@ -1,13 +1,13 @@
 var badge = {
   clear: function() {
     return;
-  };
+  },
   increase: function() {
     return;
-  };
+  },
   set: function() {
     return;
-  };
+  }
 }
 
 window.badge = badge;

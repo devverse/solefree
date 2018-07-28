@@ -11682,7 +11682,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .gage {
   max-width: 150px;
-  max-height: 120px;
+  max-height: 180px;
 }
 
 .current-profile-image {
@@ -12527,25 +12527,9 @@ blockquote {
     height: 40px;
     position: absolute;
     left: 20px;
+    z-index: 999999;
 }
-
-.unknow-avatar {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    border-radius: 50%;
-}
-.unknow-avatar span {
-    display: block;
-    font-size: 24px;
-    color: #ffffff;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-weight: 100;
-}
-.avatar.with-letter span {
+ .avatar.with-letter span {
     line-height: 40px;
     width: 40px;
     height: 40px;
@@ -12554,39 +12538,9 @@ blockquote {
     font-weight: 100;
     display: block;
 }
-/* Tab */
 
-.tabs .tab a,
-.tabs .tab a:hover {
-    color: #2196F3;
-    opacity: 0.6;
-}
-.tabs .tab a.active {
-    color: #2196F3;
-    opacity: 1;
-}
-.tabs .indicator {
-    background-color: #2196F3;
-}
-/* Searchbar */
 
-.input-field input[type=search] ~ i,
-.input-field input[type=search] ~ i {
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    color: transparent;
-    cursor: pointer;
-    font-size: 2rem;
-    transition: .3s color;
-}
-.input-field input[type=search]:focus + label i,
-.input-field input[type=search]:focus ~ i,
-.input-field input[type=search]:focus ~ i {
-    color: #444;
-}
 /* input */
-
 input[type=text]:focus:not([readonly])+label,
 input[type=password]:focus:not([readonly])+label,
 input[type=email]:focus:not([readonly])+label,
@@ -12692,7 +12646,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 /* Comments */
 
 .comments {
-    padding: 20px;
+    padding: 10px;
     border-top: 1px solid #ddd;
 }
 .comments h3 {
@@ -12712,7 +12666,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     left: 20px;
 }
 .comments-list .comment-body {
-    padding-left: 56px;
+    margin-left: 60px;
     margin-bottom: 30px;
     width: auto;
 }

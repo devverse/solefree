@@ -1159,7 +1159,11 @@ function releasesController($scope, $rootScope, $filter, $location, release_serv
         theme: 'success'
       });
       localStorage.setItem('release-date-id', newHigh);
-      window.notification.badge.set(newHigh);
+
+      window.notification.badge.clear();
+      widow.notification.badge.increase(newHigh, function (badge) {
+          // badge is now 11 (10 + 1)
+      });
     }
   };
 

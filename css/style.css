@@ -959,7 +959,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     left: 20px;
 }
 .comments-list .comment-body {
-    padding-left: 56px;
+    margin-left: 60px;
     margin-bottom: 30px;
     width: auto;
 }
