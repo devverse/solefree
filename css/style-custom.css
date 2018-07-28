@@ -74,7 +74,8 @@
 
 .gage {
   max-width: 150px;
-  max-height: 180px;
+  max-height: 120px;
+  z-index: 10;
 }
 
 .current-profile-image {

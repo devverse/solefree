@@ -11682,7 +11682,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 
 .gage {
   max-width: 150px;
-  max-height: 180px;
+  max-height: 120px;
+  z-index: 10;
 }
 
 .current-profile-image {
@@ -12527,7 +12528,7 @@ blockquote {
     height: 40px;
     position: absolute;
     left: 20px;
-    z-index: 999999;
+    z-index: 99999999;
 }
  .avatar.with-letter span {
     line-height: 40px;

@@ -49,11 +49,19 @@ versionCode="46"
 
     <!-- Android touch -->
 	<platform name="android">
-		<splash src="splash/android/drawable-mdpi/soleinsider_splash.png" platform="android" qualifier="mdpi" />
-		<splash src="splash/android/drawable-hdpi/soleinsider_splash.png" platform="android" qualifier="hdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" platform="android" qualifier="xhdpi" />
-		<splash src="splash/android/drawable-xxhdpi/soleinsider_splash.png" platform="android" qualifier="xxhdpi" />
-		<splash src="splash/android/drawable-xxxhdpi/soleinsider_splash.png" platform="android" qualifier="xxxhdpi" />
+		<splash src="splash.png" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-hdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-ldpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-mdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xhdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xxhdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xxxhdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-hdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-ldpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-mdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xhdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xxhdpi" />
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xxxhdpi" />
 	</platform>
 	<!-- IOS -->
 	<platform name="ios">
@@ -86,7 +94,7 @@ versionCode="46"
 	<preference name="android-build-tool" value="gradle" />
 	<preference name='phonegap-version' value='cli-7.0.1' />
 	<preference name="SplashScreen" value="splash" />
-	<preference name="SplashScreenDelay" value="4000" />
+	<preference name="SplashScreenDelay" value="3000" />
 	<preference name="AutoHideSplashScreen" value="true" />
 	<preference name="SplashMaintainAspectRatio" value="true" />
 	<preference name="SplashShowOnlyFirstTime" value="false" />
