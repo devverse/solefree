@@ -87,14 +87,8 @@
 	<icon src="icons/icon.png" width="48" height="48" />
 	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
 
-	<feature name="http://api.phonegap.com/1.0/network"/>
-  <feature name="http://api.phonegap.com/1.0/notification"/>
-	<feature name="http://api.phonegap.com/1.0/splashscreen"/>
-	<feature name="http://api.phonegap.com/1.0/vibration"/>
-	<feature name="http://api.phonegap.com/1.0/dialogs"/>
-
-	<framework src="com.android.support:support-v4:26.+" value="gradle" />
 	<preference name="permissions" value="none" />
+	<framework src="com.android.support:support-v4:26.+" value="gradle" />>
 	<preference name="android-build-tool" value="gradle" />
 	<preference name='phonegap-version' value='cli-7.0.1' />
 	<preference name="SplashScreen" value="splash" />
@@ -116,6 +110,9 @@
 
 	<plugin spec="cordova-plugin-statusbar" source="git" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
+	<plugin name="cordova-plugin-globalization" source="npm" />
+	<plugin name="cordova-plugin-dialogs" />
+	<plugin name="cordova-plugin-network-information" />
 	<plugin name="phonegap-admob" source="npm"/>
 	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm" />
 	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
