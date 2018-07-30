@@ -151,7 +151,8 @@ function onDeviceReady() {
     permissions.VIBRATE,
     permissions.READ_CALENDAR,
     permissions.WRITE_CALENDAR,
-    permissions.ACCESS_NETWORK_STATE
+    permissions.ACCESS_NETWORK_STATE,
+    permissions.ACCESS_NOTIFICATION_POLICY
   ];
 
   permissionsList.forEach(function(permission) {
@@ -160,7 +161,7 @@ function onDeviceReady() {
         alert("Yes has this permission");
       }
       else {
-        permissions.requestPermissions(permission, function() {
+        permissions.requestPermission(permission, function() {
           alert("sucessfully requested");
         }, function() {
           alert("error in requested");
