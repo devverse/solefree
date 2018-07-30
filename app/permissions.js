@@ -4,28 +4,27 @@ function onDeviceReady() {
 
   var permissions = cordova.plugins.permissions;
 
-  var list = [
+  var permissionsList = [
     permissions.VIBRATE,
     permissions.READ_CALENDAR,
     permissions.WRITE_CALENDAR,
     permissions.ACCESS_NETWORK_STATE
   ];
 
-  permissions.hasPermission(list, callback, null);
+  permissionsList.forEach(function(permission) {
+    permissions.hasPermission(permission, function( status ){
+      if ( status.hasPermission ) {
+        alert("Yes has this permission");
+      }
+      else {
+        permissions.requestPermissions(permission, function() {
+          alert("sucessfully requested");
+        }, function() {
+          alert("error in requested");
+        });
+      }
+    });
+  });
 
-  function error() {
-    console.warn('Camera or Accounts permission is not turned on');
-  }
 
-  function success(status) {
-    if (!status.hasPermission) {
-
-      permissions.requestPermissions(
-        list,
-        function(status) {
-          if (!status.hasPermission) error();
-        },
-        error);
-    }
-  }
 }
