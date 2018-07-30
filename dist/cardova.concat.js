@@ -120,7 +120,7 @@ function onOffline() {
 document.addEventListener("deviceready", function() {
 	var customLocale = {};
 	customLocale.title = "Rate SoleInsider";
-	customLocale.message = "If you enjoy using SoleInsider, would you mind taking a moment to rate it? It won’t take more than a minute. Thanks for your support!";
+	customLocale.message = "Are you enjoying SoleInsider? Take a moment to rate it";
 	customLocale.cancelButtonLabel = "No, Thanks";
 	customLocale.laterButtonLabel = "Remind Me Later";
 	customLocale.rateButtonLabel = "Rate It Now";

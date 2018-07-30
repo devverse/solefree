@@ -75,7 +75,8 @@ module.exports = function(grunt) {
           'app/badge.js',
           'app/connection.js',
           'app/app_rate.js',
-          'app/splash.js'
+          'app/splash.js',
+          'app/permissions'
         ],
         dest: 'dist/cardova.concat.js'
       },
