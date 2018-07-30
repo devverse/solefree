@@ -5,7 +5,7 @@ function onDeviceReady() {
 
   var permissions = cordova.plugins.permissions;
 
-  alert(permissions):
+  alert(permissions);
   permissions.hasPermission(permissions.VIBRATE, function( status ){
     if ( status.hasPermission ) {
       alert("Yes :D ");
