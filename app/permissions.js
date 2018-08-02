@@ -1,7 +1,6 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReadyPermissions, false);
 
-function onDeviceReady() {
-
+function onDeviceReadyPermissions() {
   var permissions = cordova.plugins.permissions;
 
   var permissionsList = [
@@ -13,19 +12,14 @@ function onDeviceReady() {
   ];
 
   permissionsList.forEach(function(permission) {
-    permissions.hasPermission(permission, function( status ){
-      if ( status.hasPermission ) {
-        alert("Yes has this permission");
-      }
-      else {
+    permissions.hasPermission(permission, function(status) {
+      if (!status.hasPermission) {
         permissions.requestPermission(permission, function() {
-          alert("sucessfully requested");
+          console.log("sucessfully requested");
         }, function() {
-          alert("error in requested");
+          console.log("error in requested");
         });
       }
     });
   });
-
-
-}
+};
