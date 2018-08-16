@@ -1,130 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget xmlns		= "http://www.w3.org/ns/widgets"
-	xmlns:gap	= "http://phonegap.com/ns/1.0"
-	versionCode="47"
-	version 	= "7.0.1"
-	id        = "com.sole.insider.free">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" versionCode="47" version="7.0.1" id="com.sole.insider.free">
 
 	<name>SoleInsider</name>
 
 	<description>
-		SoleInsider. Sneaker releases, Jordans, jordan, release dates, sneaker, sneakers, sneakerhead
+		SoleInsider. Sneaker releases, Jordans, jordan.
 	</description>
 
-	<author href="soleinsiderapp@gmail.com"
-		email="soleinsiderapp@gmail.com">
+	<author href="soleinsiderapp@gmail.com" email="soleinsiderapp@gmail.com">
 		SoleInsider
 	</author>
 
 	<gap:platforms>
-		<gap:platform name="android" minVersion="2" />
-		<gap:platform name="webos" />
+		<gap:platform name="android" minVersion="2"/>
+		<gap:platform name="webos"/>
 	</gap:platforms>
 
 	<!-- Android -->
-	<icon src="icons/android/drawable_ldpi_ic_launcher.png" gap:platform="android" gap:density="ldpi" />
-	<icon src="icons/android/drawable_mdpi_ic_launcher.png" gap:platform="android" gap:density="mdpi" />
-	<icon src="icons/android/drawable_hdpi_ic_launcher.png" gap:platform="android" gap:density="hdpi" />
-	<icon src="icons/android/drawable_xhdpi_ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
-	<icon src="icons/android/drawable_xxhdpi_ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
-	<icon src="icons/android/drawable_xxxhdpi_ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
+	<icon src="icons/android/drawable_ldpi_ic_launcher.png" platform="android" gap:density="ldpi"/>
+	<icon src="icons/android/drawable_mdpi_ic_launcher.png" platform="android" gap:density="mdpi"/>
+	<icon src="icons/android/drawable_hdpi_ic_launcher.png" platform="android" gap:density="hdpi"/>
+	<icon src="icons/android/drawable_xhdpi_ic_launcher.png" platform="android" gap:density="xhdpi"/>
+	<icon src="icons/android/drawable_xxhdpi_ic_launcher.png" platform="android" gap:density="xxhdpi"/>
+	<icon src="icons/android/drawable_xxxhdpi_ic_launcher.png" platform="android" gap:density="xxxhdpi"/>
 
 	<!-- Iphone -->
-	<icon src="icons/ios/Icon-40x40.png" gap:platform="ios" width="40" height="40" />
-	<icon src="icons/ios/Icon-Small-57.png" gap:platform="ios" width="57" height="57" />
-	<icon src="icons/ios/Icon-72.png" gap:platform="ios" width="72" height="72" />
-	<icon src="icons/ios/Icon@2x.png" gap:platform="ios" width="114" height="114" />
-	<icon src="icons/ios/Icon-40@3x.png" gap:platform="ios" width="120" height="120" />
-	<icon src="icons/ios/Icon-76.png" gap:platform="ios" width="76" height="76" />
-	<icon src="icons/ios/Icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+	<platform name="ios">
+		<icon src="icons/ios/icon-40.png" width="40" height="40"/>
+		<icon src="icons/ios/Icon-Small-57.png" width="57" height="57"/>
+		<icon src="icons/ios/Icon-72.png" width="72" height="72"/>
+		<icon src="icons/ios/Icon@2x.png" width="114" height="114"/>
+		<icon src="icons/ios/Icon-40@3x.png" width="120" height="120"/>
+		<icon src="icons/ios/Icon-76.png" width="76" height="76"/>
+		<icon src="icons/ios/Icon-76@2x.png" width="152" height="152"/>
+	</platform>
 
 	<!-- retina iPad support: PhoneGap 2.5.0+ only -->
-	<icon src="icons/ios/Icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+	<icon src="icons/ios/Icon-72@2x.png" gap:platform="ios" width="144" height="144"/>
 
 	<!-- Windows -->
-	<icon src="icons/windows/icon.png" gap:platform="winphone" />
-	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background" />
+	<icon src="icons/windows/icon.png" gap:platform="winphone"/>
+	<icon src="icons/windows/tileicon.png" gap:platform="winphone" gap:role="background"/>
 
-  <splash src="splash.png" />
+	<splash src="splash.png"/>
 
-    <!-- Android touch -->
+	<!-- Android touch -->
 	<platform name="android">
-		<splash src="splash.png" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-hdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-ldpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-mdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xhdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xxhdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xxxhdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-hdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-ldpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-mdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xhdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xxhdpi" />
-		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xxxhdpi" />
+		<splash src="splash.png"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-hdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-ldpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-mdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xhdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xxhdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="port-xxxhdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-hdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-ldpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-mdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xhdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xxhdpi"/>
+		<splash src="splash/android/drawable-xhdpi/soleinsider_splash.png" density="land-xxxhdpi"/>
 	</platform>
 	<!-- IOS -->
 	<platform name="ios">
-		<splash src="splash/ios/Default~iphone.png"  gap:platform="ios" width="320" height="480" />
-	  <splash src="splash/ios/Default@2x~iphone_640x960.png" gap:platform="ios" width="640" height="960" />
-	  <splash src="splash/ios/ios/Default~ipad.png" gap:platform="ios" width="720" height="1200" />
-		<splash src="splash/ios/Default-Portrait~ipad_768x1024.png" gap:platform="ios" width="768" height="1024" />
-		<splash src="splash/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048" />
-	  <splash src="splash/ios/Default-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008" />
-		<splash src="splash/ios/Default-Landscape~ipad_1024x768.png" gap:platform="ios" width="1024" height="768" />
-		<splash src="splash/ios/Default-Landscape~ipad_1024x748.png" gap:platform="ios" width="1024" height="748" />
-	  <splash src="splash/ios/Default-Landscape@2x~ipad_2048x1536.png" gap:platform="ios" width="2048" height="1536" />
-	  <splash src="splash/ios/Default-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1496" />
-	  <splash src="splash/ios/Default-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136" />
-	  <splash src="splash/ios/Default-750@2x~iphone6-landscape_1334x750.png" gap:platform="ios" width="1334" height="750" />
-	  <splash src="splash/ios/Default-750@2x~iphone6-portrait_750x1334.png" gap:platform="ios" width="750" height="1334" />
-	  <splash src="splash/ios/Default-1242@3x~iphone6s-landscape_2208x1242.png" gap:platform="ios" width="2208" height="1242" />
-		<splash src="splash/ios/Default-1242@3x~iphone6s-portrait_1242x2208.png" gap:platform="ios" width="1242" height="2208" />
+		<splash src="splash/ios/Default~iphone.png" gap:platform="ios" width="320" height="480"/>
+		<splash src="splash/ios/Default@2x~iphone_640x960.png" gap:platform="ios" width="640" height="960"/>
+		<splash src="splash/ios/ios/Default~ipad.png" gap:platform="ios" width="720" height="1200"/>
+		<splash src="splash/ios/Default-Portrait~ipad_768x1024.png" gap:platform="ios" width="768" height="1024"/>
+		<splash src="splash/ios/Default-Portrait@2x~ipad_1536x2048.png" gap:platform="ios" width="1536" height="2048"/>
+		<splash src="splash/ios/Default-Portrait@2x~ipad_1536x2008.png" gap:platform="ios" width="1536" height="2008"/>
+		<splash src="splash/ios/Default-Landscape~ipad_1024x768.png" gap:platform="ios" width="1024" height="768"/>
+		<splash src="splash/ios/Default-Landscape~ipad_1024x748.png" gap:platform="ios" width="1024" height="748"/>
+		<splash src="splash/ios/Default-Landscape@2x~ipad_2048x1536.png" gap:platform="ios" width="2048" height="1536"/>
+		<splash src="splash/ios/Default-Landscape@2x~ipad_2048x1496.png" gap:platform="ios" width="2048" height="1496"/>
+		<splash src="splash/ios/Default-568h@2x~iphone_640x1136.png" gap:platform="ios" width="640" height="1136"/>
+		<splash src="splash/ios/Default-750@2x~iphone6-landscape_1334x750.png" gap:platform="ios" width="1334" height="750"/>
+		<splash src="splash/ios/Default-750@2x~iphone6-portrait_750x1334.png" gap:platform="ios" width="750" height="1334"/>
+		<splash src="splash/ios/Default-1242@3x~iphone6s-landscape_2208x1242.png" gap:platform="ios" width="2208" height="1242"/>
+		<splash src="splash/ios/Default-1242@3x~iphone6s-portrait_1242x2208.png" gap:platform="ios" width="1242" height="2208"/>
 	</platform>
 
 	<!-- General -->
-	<icon src="icons/icon.png" width="72" height="72" />
-	<icon src="icons/icon.png" width="48" height="48" />
-	<icon src="icons/icon.png" width="36" height="36"  gap:role="default"  />
+	<icon src="icons/icon.png" width="72" height="72"/>
+	<icon src="icons/icon.png" width="48" height="48"/>
+	<icon src="icons/icon.png" width="36" height="36" gap:role="default"/>
 
-	<preference name="permissions" value="none" />
-	<framework src="com.android.support:support-v4:26.+" value="gradle" />>
-	<preference name="android-build-tool" value="gradle" />
-	<preference name='phonegap-version' value='cli-7.0.1' />
-	<preference name="SplashScreen" value="splash" />
-	<preference name="SplashScreenDelay" value="3000" />
-	<preference name="AutoHideSplashScreen" value="true" />
-	<preference name="SplashMaintainAspectRatio" value="true" />
-	<preference name="SplashShowOnlyFirstTime" value="false" />
-	<preference name="StatusBarOverlaysWebView" value="false" />
-	<preference name="StatusBarBackgroundColor" value="#2196F3" />
-	<preference name="StatusBarStyle" value="lightcontent" />
-	<preference name="fullscreen" value="false" />
-	<preference name="auto-hide-splash-screen" value="false" />
-	<preference name="target-device" value="universal" />
-	<preference name="exit-on-suspend" value="false" />
-	<preference name="android-minSdkVersion" value="17" />
-	<preference name="android-targetSdkVersion" value="26" />
-	<preference name="android-compileSdkVersion" value="26" />
-	<allow-navigation href="*" />
+	<preference name="permissions" value="none"/>
+	<framework src="com.android.support:support-v4:26.+" value="gradle"/>>
+	<preference name="android-build-tool" value="gradle"/>
+	<preference name='phonegap-version' value='cli-7.0.1'/>
+	<preference name="SplashScreen" value="splash"/>
+	<preference name="SplashScreenDelay" value="3000"/>
+	<preference name="AutoHideSplashScreen" value="true"/>
+	<preference name="SplashMaintainAspectRatio" value="true"/>
+	<preference name="SplashShowOnlyFirstTime" value="false"/>
+	<preference name="StatusBarOverlaysWebView" value="false"/>
+	<preference name="StatusBarBackgroundColor" value="#2196F3"/>
+	<preference name="StatusBarStyle" value="lightcontent"/>
+	<preference name="fullscreen" value="false"/>
+	<preference name="auto-hide-splash-screen" value="false"/>
+	<preference name="target-device" value="universal"/>
+	<preference name="exit-on-suspend" value="false"/>
+	<preference name="android-minSdkVersion" value="17"/>
+	<preference name="android-targetSdkVersion" value="26"/>
+	<preference name="android-compileSdkVersion" value="26"/>
+	<allow-navigation href="*"/>
 
-	<plugin spec="cordova-plugin-statusbar" source="git" />
-	<plugin name="cordova-plugin-inappbrowser" source="npm" />
-	<plugin name="cordova-plugin-globalization" source="npm" />
-	<plugin name="cordova-plugin-dialogs" />
-	<plugin name="cordova-plugin-network-information" />
+	<plugin spec="cordova-plugin-statusbar" source="git"/>
+	<plugin name="cordova-plugin-inappbrowser" source="npm"/>
+	<plugin name="cordova-plugin-globalization" source="npm"/>
+	<plugin name="cordova-plugin-dialogs"/>
+	<plugin name="cordova-plugin-network-information"/>
 	<plugin name="phonegap-admob" source="npm"/>
-	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm" />
-	<plugin name="cordova-plugin-x-socialsharing" source="npm" />
-	<plugin name="cordova-plugin-whitelist" spec="~1.3.1" />
-	<plugin name="cordova-plugin-globalization" spec="~1.11.0" />
-	<plugin name="cordova-plugin-vibration" spec="~3.1.0" />
-	<plugin name="cordova-plugin-badge" spec="~0.8.7" />
-	<plugin name="cordova-plugin-network-information" spec="~2.0.1" />
-	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
-	<plugin name="cordova-plugin-local-notifications"
-    spec="https://github.com/katzer/cordova-plugin-local-notifications.git#0.9.0-beta.0" />
-	<plugin name="cordova-plugin-android-permissions" />
+	<plugin name="cordova-plugin-apprate" spec="1.1.8" source="npm"/>
+	<plugin name="cordova-plugin-x-socialsharing" source="npm"/>
+	<plugin name="cordova-plugin-whitelist" spec="~1.3.1"/>
+	<plugin name="cordova-plugin-globalization" spec="~1.11.0"/>
+	<plugin name="cordova-plugin-vibration" spec="~3.1.0"/>
+	<plugin name="cordova-plugin-badge" spec="~0.8.7"/>
+	<plugin name="cordova-plugin-network-information" spec="~2.0.1"/>
+	<plugin name="cordova-plugin-splashscreen" spec="~5.0.2"/>
+	<plugin name="cordova-plugin-local-notifications" spec="https://github.com/katzer/cordova-plugin-local-notifications.git#0.9.0-beta.0"/>
+	<plugin name="cordova-plugin-android-permissions"/>
 
 </widget>
